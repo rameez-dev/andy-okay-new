@@ -1,74 +1,86 @@
 {
   "sections": {
-    "main": {
-      "type": "main-product",
-      "blocks": {
-        "vendor": {
-          "type": "vendor",
-          "settings": {}
-        },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "payment_terms": {
-          "type": "payment_terms",
-          "settings": {}
-        },
-        "separator": {
-          "type": "separator",
-          "settings": {}
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {}
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {}
-        },
-        "pickup_availability": {
-          "type": "pickup_availability",
-          "settings": {}
-        },
-        "complementary_products": {
-          "type": "complementary_products",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "vendor",
-        "title",
-        "price",
-        "payment_terms",
-        "separator",
-        "description",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "complementary_products"
-      ],
+    "amai_stp-product-snippet": {
+      "type": "amai_stp-product-snippet",
       "settings": {}
     },
-    "related-products": {
-      "type": "related-products",
+    "pwyw": {
+      "type": "pwyw",
+      "settings": {}
+    },
+    "main": {
+      "type": "product-template",
+      "settings": {}
+    },
+    "product-info": {
+      "type": "product-info",
+      "settings": {}
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {}
+    },
+    "trustbadges-v2": {
+      "type": "trustbadges-v2",
+      "settings": {}
+    },
+    "super-happy-customers": {
+      "type": "super-happy-customers",
+      "settings": {}
+    },
+    "looxReviews": {
+      "type": "looxReviews",
+      "settings": {}
+    },
+    "product-stories": {
+      "type": "product-stories",
+      "settings": {}
+    },
+    "product-instagram": {
+      "type": "product-instagram",
+      "settings": {}
+    },
+    "trustbadges": {
+      "type": "trustbadges",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {}
+    },
+    "frame-choose-popup": {
+      "type": "frame-choose-popup",
+      "settings": {}
+    },
+    "donation-choose-popup": {
+      "type": "donation-choose-popup",
+      "settings": {}
+    },
+    "gallery-experience-choose-popup": {
+      "type": "gallery-experience-choose-popup",
+      "settings": {}
+    },
+    "size-chart-popup": {
+      "type": "size-chart-popup",
       "settings": {}
     }
   },
   "order": [
+    "amai_stp-product-snippet",
+    "pwyw",
     "main",
-    "related-products"
+    "product-info",
+    "product-recommendations",
+    "trustbadges-v2",
+    "super-happy-customers",
+    "looxReviews",
+    "product-stories",
+    "product-instagram",
+    "trustbadges",
+    "newsletter",
+    "frame-choose-popup",
+    "donation-choose-popup",
+    "gallery-experience-choose-popup",
+    "size-chart-popup"
   ]
 }
