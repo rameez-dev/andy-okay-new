@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "number-with-background-image": {
+      "type": "number-with-background-image",
+      "settings": {}
+    },
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {}
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {}
+    },
+    "three-column": {
+      "type": "three-column",
+      "settings": {}
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {}
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-two",
+      "settings": {}
+    },
+    "logolist": {
+      "type": "logolist",
+      "settings": {}
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-three",
+      "settings": {}
+    },
+    "explore": {
+      "type": "explore",
+      "settings": {}
+    }
+  },
+  "order": [
+    "number-with-background-image",
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "three-column",
+    "image-with-text",
+    "text-with-backgroundimage-two",
+    "logolist",
+    "text-with-backgroundimage-three",
+    "explore"
+  ]
+}

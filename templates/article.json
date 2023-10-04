@@ -1,16 +1,16 @@
 {
   "sections": {
     "main": {
-      "type": "main-article",
+      "type": "article-template",
       "settings": {}
     },
-    "prev-next-blog-posts": {
-      "type": "prev-next-blog-posts",
+    "shop-now": {
+      "type": "shop-now",
       "settings": {}
     }
   },
   "order": [
     "main",
-    "prev-next-blog-posts"
+    "shop-now"
   ]
 }

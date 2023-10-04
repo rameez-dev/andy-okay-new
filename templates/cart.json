@@ -1,11 +1,21 @@
 {
   "sections": {
     "main": {
-      "type": "main-cart",
+      "type": "cart-template",
+      "settings": {}
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {}
+    },
+    "protection-price-detail-popup": {
+      "type": "protection-price-detail-popup",
       "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "recently-viewed-products",
+    "protection-price-detail-popup"
   ]
 }
