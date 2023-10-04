@@ -1,189 +1,156 @@
-{%- if section.blocks.size > 0 -%}
-  <div class="section-spacing {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-    <div class="container container--md">
-      <div class="timeline">
-        {%- assign carousel_id = 'carousel-' | append: section.id -%}
+<section id="section-{{ section.id }}" class="Section Section--spacingNormal" data-section-id="{{ section.id }}" data-section-type="timeline">
+  <div class="Container">
+    <div class="Timeline">
+      <div class="Timeline__ListItem">
+        {%- for block in section.blocks -%}
+          <div {{ block.shopify_attributes }} class="Timeline__Item {% if forloop.first %}is-selected{% endif %}" data-index="{{ forloop.index0 }}">
+            <div class="Timeline__ImageWrapper {% if block.settings.apply_overlay %}Image--contrast{% endif %}" {% if block.settings.image %}style="background: url({{ block.settings.image | img_url: '1x1' }})"{% endif %}>
+              {%- if block.settings.image -%}
+                <div class="Timeline__Image Image--lazyLoad hide-no-js" data-bgset="{{ block.settings.image | img_url: 'x650' }} [(max-width: 640px)] | {{ block.settings.image | img_url: '1000x' }}"></div>
 
-        <timeline-carousel id="{{ carousel_id }}" class="timeline__carousel full-bleed sm:unbleed">
-          {%- for block in section.blocks -%}
-            <div class="timeline__item {% if forloop.first %}is-selected{% endif %}" style="--timeline-item-mobile-text-color: {{ block.settings.mobile_text_color.rgb }}" {{ block.shopify_attributes }}>
-              <div class="timeline__item-image-wrapper">
-                {%- if block.settings.image -%}
-                  <picture>
-                    {%- if block.settings.mobile_image -%}
-                      <source
-                          media="(max-width: 699px)"
-                          srcset="{{ block.settings.mobile_image | image_url: width: '400x' }} 400w, {{ block.settings.mobile_image | image_url: width: '600x' }} 600w, {{ block.settings.mobile_image | image_url: width: '800x' }} 800w, {{ block.settings.mobile_image | image_url: width: '1000x' }} 1000w"
-                          width="{{ block.settings.mobile_image.width }}"
-                          height="{{ block.settings.mobile_image.height }}"
-                      >
-                    {%- endif -%}
-
-                    {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', sizes: 'min(50vw, 575px)', widths: '600,700,800,1000,1200,1400,1600,1800', class: 'image-cover' -}}
-                  </picture>
-                {%- else -%}
-                  {%- capture placeholder_image -%}lifestyle-{% cycle '1', '2' %}{%- endcapture -%}
-                  {{- placeholder_image | placeholder_svg_tag: 'placeholder placeholder--invert image-cover' -}}
-                {%- endif -%}
-              </div>
-
-              <div class="timeline__item-content" {% if forloop.first %}reveal-on-scroll="true"{% endif %}>
-                <div class="prose">
-                  {%- if block.settings.subheading != blank -%}
-                    <p class="h6">{{ block.settings.subheading }}</p>
-                  {%- endif -%}
-
-                  {%- if block.settings.title != blank -%}
-                    <p class="h2">{{ block.settings.title }}</p>
-                  {%- endif -%}
-
-                  {{- block.settings.content -}}
-
-                  {%- if block.settings.link_text != blank -%}
-                    {%- render 'button', href: block.settings.link_url, content: block.settings.link_text, style: block.settings.link_style -%}
-                  {%- endif -%}
+                <noscript>
+                  <div class="Timeline__Image" style="background-image: url({{ block.settings.image | img_url: '1000x' }})"></div>
+                </noscript>
+              {%- else -%}
+                <div class="Timeline__Image">
+                  <div class="PlaceholderBackground">
+                    {%- capture placeholder -%}{% cycle 'lifestyle-1', 'lifestyle-2' %}{%- endcapture -%}
+                    {{ placeholder | placeholder_svg_tag: 'PlaceholderBackground__Svg PlaceholderSvg--dark' }}
+                  </div>
                 </div>
-              </div>
+              {%- endif -%}
             </div>
-          {%- endfor -%}
-        </timeline-carousel>
 
-        <carousel-navigation align-selected aria-controls="{{ carousel_id }}" class="timeline__nav hide-scrollbar bleed sm:unbleed">
-          {%- for block in section.blocks -%}
-            <button class="heading" aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
-              {{- block.settings.label | default: forloop.index -}}
-            </button>
-          {%- endfor -%}
-        </carousel-navigation>
+            {%- capture section_inner -%}
+              {%- if block.settings.subheading != blank or block.settings.heading != blank -%}
+                <header class="Timeline__Header SectionHeader SectionHeader--center">
+                  {%- if block.settings.subheading != blank -%}
+                    <h3 class="SectionHeader__SubHeading Heading u-h6">{{ block.settings.subheading | escape }}</h3>
+                  {%- endif -%}
+
+                  {%- if block.settings.heading != blank -%}
+                    <h2 class="SectionHeader__Heading Heading u-h1">{{ block.settings.heading | escape }}</h2>
+                  {%- endif -%}
+
+                  {%- if block.settings.content != blank -%}
+                    <div class="SectionHeader__Description Rte">
+                      {{ block.settings.content }}
+                    </div>
+                  {%- endif -%}
+                </header>
+              {%- endif -%}
+            {%- endcapture -%}
+
+            {%- if section_inner -%}
+              <div class="Timeline__Inner">
+                {{ section_inner }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
       </div>
+
+      {%- if section.blocks.size >= 2 -%}
+        <div class="Timeline__Nav">
+          <div class="Timeline__NavWrapper {% if section.blocks.size <= 3 %}Timeline__NavWrapper--center{% endif %}">
+            {%- for block in section.blocks -%}
+              <button type="button" class="Timeline__NavItem {% if forloop.first %}is-selected{% endif %} Link Link--primary" data-index="{{ forloop.index0 }}">
+                <span class="Timeline__NavLabel">{{ block.settings.title | truncate: 20 | escape }}</span>
+              </button>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
     </div>
   </div>
-{%- endif -%}
+</section>
+
+<style>
+  #section-{{ section.id }} .Timeline__ListItem {
+    color: {{ section.settings.text_color }};
+  }
+</style>
 
 {% schema %}
 {
-  "name": "t:sections.timeline.name",
-  "class": "shopify-section--timeline",
-  "tag": "section",
-  "disabled_on": {
-    "groups": ["header", "custom.overlay"]
-  },
-  "max_blocks": 10,
+  "name": "Timeline",
+  "class": "shopify-section--bordered shopify-section--timeline",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "separate_section_with_border",
-      "label": "t:global.section.separate_section_with_border",
-      "default": true
+      "type": "color",
+      "id": "text_color",
+      "label": "Mobile text color",
+      "default": "#ffffff"
     }
   ],
   "blocks": [
     {
       "type": "item",
-      "name": "t:sections.timeline.blocks.item.name",
+      "name": "Item",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:global.image.image",
-          "info": "t:sections.timeline.blocks.item.image_info"
+          "label": "Image",
+          "info": "1200 x 1200px .jpg recommended"
         },
         {
-          "type": "image_picker",
-          "id": "mobile_image",
-          "label": "t:global.image.mobile_image",
-          "info": "t:sections.timeline.blocks.item.mobile_image_info"
+          "type": "checkbox",
+          "id": "apply_overlay",
+          "label": "Apply overlay on image",
+          "info": "Only applied on mobile. This can improve text visibility.",
+          "default": true
         },
         {
-          "type": "inline_richtext",
-          "id": "label",
-          "label": "t:sections.timeline.blocks.item.label",
-          "default": "2020"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "subheading",
-          "label": "t:global.text.subheading",
-          "default": "Subheading"
-        },
-        {
-          "type": "inline_richtext",
+          "type": "text",
           "id": "title",
-          "label": "t:global.text.heading",
+          "label": "Label",
+          "default": "2000",
+          "info": "Maximum 20 characters allowed."
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Sub-heading",
+          "default": "Sub-heading"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
           "default": "Heading"
         },
         {
           "type": "richtext",
           "id": "content",
-          "label": "t:global.text.content",
-          "default": "<p>Use this text to share information about what happened to your brand at a specific time.</p>"
-        },
-        {
-          "type": "text",
-          "id": "link_text",
-          "label": "t:global.text.button_text"
-        },
-        {
-          "type": "url",
-          "id": "link_url",
-          "label": "t:global.text.button_link"
-        },
-        {
-          "type": "select",
-          "id": "link_style",
-          "label": "t:global.text.link_style",
-          "options": [
-            {
-              "value": "outline",
-              "label": "t:global.text.link_style_options.outline"
-            },
-            {
-              "value": "solid",
-              "label": "t:global.text.link_style_options.solid"
-            },
-            {
-              "value": "link",
-              "label": "t:global.text.link_style_options.link"
-            }
-          ],
-          "default": "link"
-        },
-        {
-          "type": "header",
-          "content": "t:global.colors.category"
-        },
-        {
-          "type": "color",
-          "id": "mobile_text_color",
-          "label": "t:sections.timeline.blocks.item.mobile_text_color",
-          "default": "#ffffff"
+          "label": "Text",
+          "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.timeline.presets.timeline.name",
+      "category": "Text",
+      "name": "Timeline",
+      "settings": {},
       "blocks": [
         {
           "type": "item",
           "settings": {
-            "label": "2000",
             "title": "2000"
           }
         },
         {
           "type": "item",
           "settings": {
-            "label": "2010",
-            "title": "2010"
+            "title": "2001"
           }
         },
         {
           "type": "item",
           "settings": {
-            "label": "2020",
-            "title": "2020"
+            "title": "2002"
           }
         }
       ]

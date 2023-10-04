@@ -1,0 +1,126 @@
+
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "cellAlign": "center",
+  "setGallerySize": true,
+  "freeScroll": true,
+  "wrapAround": true,
+  "pauseAutoPlayOnHover": false,
+  "autoPlay": {% if section.settings.autoplay %}{{ section.settings.cycle_speed | times: 1000 }}{% else %}false{% endif %},
+  "pageDots": false,
+  "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+}
+{%- endcapture -%}
+{%- if section.settings.show == true -%}
+<section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow" style="background-color: {{ section.settings.background_color }};">
+  <div class="fake-instagram">
+    <h2 style="color: {{ section.settings.heading_text_color }};">{{ section.settings.heading }}</h2>
+    {%- if section.settings.label_link != blank -%}
+        <div style="color: {{ section.settings.label_text_color }};">
+            <a href="{{ section.settings.label_link }}" >{{ section.settings.label_text | escape }}</a>
+        </div>
+    {%- endif -%}
+  </div> 
+  <div class="Carousel instagram-carousal" data-flickity-config='{{ flickity_options }}'>
+    {%- for block in section.blocks -%}
+      <div class="slide-item" id="Slide{{ block.id }}" class="carousel-cell" >
+        <a href="{{ block.settings.label_link }}" ><img class="Image--lazyLoad"
+          data-src="{{ block.settings.image | img_url: 'master' }}"
+          alt="{{ block.settings.image.alt | escape }}" ></a>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Instagram List",
+  "class": "shopify-section--slideshow",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto rotate between slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "unit": "sec",
+      "label": "Change slides every",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Instagram List"
+    },
+    {
+      "type": "color",
+      "id": "heading_text_color",
+      "label": "Heading Text Color",
+      "default": "#000000"
+    },
+    {
+        "type": "text",
+        "id": "label_text",
+        "label": "Label text",
+        "default": "Follow us on Instagram"
+    },
+    {
+        "type": "url",
+        "id": "label_link",
+        "label": "Label link"
+    },
+    {
+        "type": "color",
+        "id": "label_text_color",
+        "label": "label Text Color",
+        "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "label_link",
+          "label": "Label link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Custom",
+      "name": "Instagram List",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

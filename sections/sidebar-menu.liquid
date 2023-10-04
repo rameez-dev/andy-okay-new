@@ -1,0 +1,267 @@
+{%- assign main_menu_handle = section.settings.primary_menu | default: 'main-menu' -%}
+{%- assign main_menu = linklists[main_menu_handle] -%}
+<style>  
+  #flags-mobile {
+    height: 13px; 
+    width: 22px;
+    margin-right: 2.5px; 
+  }
+  .collapsible-content-main {
+    padding-left: 30px;
+  } 
+  .drawer-secondary-link-list {
+    margin: 35px 15px 0px 15px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .drawer-secondary-link-list>li {
+    padding-bottom: 10px;
+    width: 50%;
+    font-family: 'Adobe Caslon Pro';
+    color: #595959;
+    font-size: 15px;
+  }
+  .drawer-trustpilot-container{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .drawer-trustpilot-text{
+    font-family: 'Adobe Caslon Pro';
+    color: black;
+    padding: 10px;
+  }
+</style>
+<section id="sidebar-menu" class="SidebarMenu Drawer Drawer--small Drawer--fromLeft" aria-hidden="true" data-section-id="{{ section.id }}" data-section-type="sidebar-menu">
+    <header class="Drawer__Header" data-drawer-animated-left>
+      <button class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer" data-drawer-id="sidebar-menu" aria-label="{{ 'header.navigation.close_sidebar' | t }}">
+        {%- include 'icon' with 'close' -%}
+      </button>
+    </header>
+
+    <div class="Drawer__Content">
+      <div class="Drawer__Main drawer-menu" data-drawer-animated-left data-scrollable>
+        <div class="Drawer__Container drawer-sidebar">
+          <div>
+            <div>
+              <nav class="SidebarMenu__Nav SidebarMenu__Nav--primary" aria-label="{{ 'header.navigation.sidebar_title' | t }}">
+                {%- for link in main_menu.links -%}
+                {% assign members-color = '' %}
+                {% if link.title == 'MEMBERS CLUB' %}
+                  {% assign members-color = 'members-club-color' %}
+                {% endif %}
+                  <div class="Collapsible">
+                    {%- if link.links != blank -%}
+                      <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
+                        {{- link.title | escape -}} <span class="Collapsible__Plus"></span>
+                      </button>
+
+                      <div class="Collapsible__Inner">
+                        <div class="Collapsible__Content collapsible-content-main">
+                          {%- for sub_link in link.links -%}
+                            <div class="Collapsible">
+                              {%- if sub_link.links != blank -%}
+                                <button class="Collapsible__Button Heading Text--subdued Link--primary u-h7" data-action="toggle-collapsible" {% if sub_link.links != blank %}aria-expanded="true"{% endif %}>
+                                  {{- sub_link.title | escape -}} {%- comment -%} <span class="Collapsible__Plus"></span>{%- endcomment -%} 
+                                </button>
+
+                                <div class="Collapsible__Inner" style="overflow: visible; height: auto;">
+                                  <div class="Collapsible__Content">
+                                    <ul class="Linklist Linklist--bordered Linklist--spacingLoose">
+                                      {%- for sub_sub_link in sub_link.links -%}
+                                        <li class="Linklist__Item">
+                                          <a href="{{ sub_sub_link.url }}" class="Text--subdued Link Link--primary">{{ sub_sub_link.title | escape }}</a>
+                                        </li>
+                                      {%- endfor -%}
+                                    </ul>
+                                  </div>
+                                </div>
+                              {%- else -%}
+                                <a href="{{ sub_link.url }}" class="Collapsible__Button Heading Text--subdued Link Link--primary u-h7">{{ sub_link.title | escape }}</a>
+                              {%- endif -%}
+                            </div>
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    {%- else -%}
+                      <a href="{{ link.url }}" class="Collapsible__Button  {{members-color}} Heading Link Link--primary u-h6">{{ link.title | escape }}</a>
+                    {%- endif -%}
+                  </div>
+                  {% if link.title == 'SHOP ART' %}
+                    <div class="Collapsible"><a href="/collections/going-fast" class="Collapsible__Button  almost_gone_color Heading Link Link--primary u-h6">ALMOST GONE</a></div>
+                  {% endif %}
+                {%- endfor -%}
+              </nav>
+              <ul class="drawer-secondary-link-list">
+                <li><a href="https://andyokay.com/pages/about-us">About Us</a></li>
+                <li><a href="https://andyokay.com/pages/faq">FAQs</a></li>
+                <li><a href="https://andyokay.com/pages/shipping-returns">Shipping & Returns</a></li>
+                <li><a href="https://andyokay.com/pages/contact">Contact Us</a></li>
+              </ul>
+            </div>
+                
+            {%- if section.settings.show_social_media -%}
+              {%- capture social_media -%}
+                {% include 'social-media', class: 'SidebarMenu__Social', spacing: 'fill' %}
+              {%- endcapture -%}
+            {%- endif -%}
+
+            {%- if settings.currency_conversion_enabled or social_media != blank -%}
+              <aside class="Drawer__Footer" data-drawer-animated-bottom>
+
+                <style>
+                  button.new-currency-drawer{
+                    margin: 25px 0px 0px 15px;
+                    padding: 10px;
+                    border-radius: 4px;
+                    background-color: #f2f2f2;
+                  }
+                  button.new-currency-drawer>span[name="currency-name"]{
+                    color: black;
+                  }
+                  button.new-currency-drawer>span>img{
+                    transform: translateY(-3px);
+                    vertical-align: bottom !important;
+                  }
+                </style>
+
+                {%- if settings.currency_conversion_enabled -%}
+                <button class="new-currency-drawer" data-action="open-drawer" data-drawer-id="sidebar-menu-currency" aria-label="{{ 'header.navigation.open_sidebar' | t }}">
+                  <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags" >
+                  </span>
+                  <span name="currency-name">
+                    United States ({{ shop.currency }})
+                  </span>
+                  &nbsp;&nbsp;{%- include 'icon' with 'select-arrow' -%}
+                </button>
+                {% endif %}
+                
+                {% comment %} {%- if settings.currency_conversion_enabled -%}
+                  <div class="SidebarMenu__CurrencySelector">
+                    <div class="Select Select--transparent">
+                      <span>
+                        <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags-mobile" >
+                      </span>
+                      <select class="CurrencySelector__Select" title="{{ 'header.navigation.currency_selector' | t | escape }}">
+                        {%- capture codes -%}USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,BWP,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ILS,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK{%- endcapture -%}
+                        {%- assign supported_codes = settings.currency_conversion_supported_currencies | remove_first: shop.currency | upcase | split: ' ' | uniq -%}
+
+                        <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
+
+                        {%- for code in supported_codes -%}
+                          {%- if codes contains code -%}
+                            <option value="{{ code }}">{{ code }}</option>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </select>
+
+                      {%- include 'icon' with 'select-arrow' -%}
+                    </div>
+                  </div>
+                {%- endif -%} {% endcomment %}
+
+                {%- if social_media != blank -%}
+                  {{ social_media }}
+                {%- endif -%}
+                
+              </aside>
+            {%- endif -%}
+          </div>
+          <div class="drawer-trustpilot-container">
+            <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
+            <p class="drawer-trustpilot-text">65,000+ artworks sold for charity</p>
+          </div>
+          
+
+          {%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
+          {%- comment -%} // client asked to hide below section
+          <nav class="SidebarMenu__Nav SidebarMenu__Nav--secondary">
+            <ul class="Linklist Linklist--spacingLoose">
+              {%- for link in secondary_menu.links -%}
+                <li class="Linklist__Item">
+                  <a href="{{ link.url }}" class="Text--subdued Link Link--primary">{{ link.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+                {%- endcomment -%}
+              {%- comment -%}We automatically add some links to the secondary menu{%- endcomment -%}
+              {%- comment -%}
+              {%- if shop.customer_accounts_enabled -%}
+                <li class="Linklist__Item">
+                  <a href="{% if customer %}/account{% else %}/account/login{% endif %}" class="Text--subdued Link Link--primary">{{ 'header.navigation.account' | t }}</a>
+                </li>
+              {%- endif -%}
+            </ul>
+          </nav>
+          {%- endcomment -%}
+        </div>
+      </div>
+{% comment %}  this is moved on top
+      {%- if section.settings.show_social_media -%}
+        {%- capture social_media -%}
+          {% include 'social-media', class: 'SidebarMenu__Social', spacing: 'fill' %}
+        {%- endcapture -%}
+      {%- endif -%}
+
+      {%- if settings.currency_conversion_enabled or social_media != blank -%}
+        <aside class="Drawer__Footer" data-drawer-animated-bottom>
+          
+          {%- if settings.currency_conversion_enabled -%}
+            <div class="SidebarMenu__CurrencySelector">
+              <div class="Select Select--transparent">
+                <span>
+                  <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags-mobile" >
+                </span>
+                <select class="CurrencySelector__Select" title="{{ 'header.navigation.currency_selector' | t | escape }}">
+                  {%- capture codes -%}USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,BWP,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ILS,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK{%- endcapture -%}
+                  {%- assign supported_codes = settings.currency_conversion_supported_currencies | remove_first: shop.currency | upcase | split: ' ' | uniq -%}
+
+                  <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
+
+                  {%- for code in supported_codes -%}
+                    {%- if codes contains code -%}
+                      <option value="{{ code }}">{{ code }}</option>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </select>
+
+                {%- include 'icon' with 'select-arrow' -%}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if social_media != blank -%}
+            {{ social_media }}
+          {%- endif -%}
+          
+        </aside>
+      {%- endif -%} {% endcomment %}
+    </div>
+</section>
+{% schema %}
+{
+  "name": "Sidebar menu",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "primary_menu",
+      "label": "Primary menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "secondary_menu",
+      "label": "Secondary menu",
+      "info": "This menu won't show dropdown items."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_media",
+      "label": "Show social media",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

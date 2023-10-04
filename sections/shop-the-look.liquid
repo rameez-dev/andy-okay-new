@@ -1,349 +1,383 @@
-{%- if section.blocks.size > 0 -%}
-  <div class="section-spacing {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-    <div class="container container--xl">
-      <div class="section-stack">
-        {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content -%}
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "pageDots": false,
+  "draggable": {% if section.blocks.size == 1 %}false{% else %}true{% endif %},
+  "cellAlign": "center",
+  "wrapAround": false,
+  "percentPosition": false,
+  "dragThreshold": 10,
+  "cellSelector": ".ShopTheLook__Item",
+  "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25},
+  "breakpoints": [
+    {
+      "matches": "lap-and-up",
+      "settings": {
+        "prevNextButtons": true,
+        "draggable": false,
+        "wrapAround": true
+      }
+    }
+  ]
+}
+{%- endcapture -%}
 
-        {%- comment -%}
-          IMPLEMENTATION NOTE: Mobile and desktop are sharing many similarities in the markup, but the way elements are transitioned differs.
-          Therefore, in order to minimize the amount of duplicated code, we do a for loop where the first iteration renders the mobile while the second iteration renders the desktop.
-        {%- endcomment -%}
-        {%- for i in (1..2) -%}
-          {%- capture device -%}{% cycle 'mobile', 'desktop' %}{%- endcapture -%}
+<section class="Section Section--spacingNormal" data-section-id="{{ section.id }}" data-section-type="shop-the-look">
+  {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+    <header class="SectionHeader SectionHeader--center">
+      <div class="Container">
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+        {%- endif -%}
 
-          {%- capture content -%}
-            {%- for block in section.blocks -%}
-              {%- liquid
-                assign show_placeholder = false
-                assign products_count = 0
-
-                for product_index in (1..4)
-                  assign product_id = 'product_' | append: product_index
-
-                  if block.settings[product_id] != blank
-                    assign products_count = products_count | plus: 1
-                  endif
-                endfor
-
-                if products_count == 0
-                  assign show_placeholder = true
-                  assign products_count = 3
-                endif
-              -%}
-
-              <div class="shop-the-look__item snap-start {% if forloop.first %}is-selected{% endif %} w-full" {% if device == 'mobile' %}data-popover-id="shop-the-look-item-popover-{{ block.id }}"{% endif %} {% if forloop.parentloop.last %}{{ block.shopify_attributes }}{% endif %}>
-                <div class="shop-the-look__image-wrapper">
-                  {%- if block.settings.image != blank -%}
-                    {%- capture sizes -%}(max-width: 999px) 100vw, min(60vw, 550px){%- endcapture -%}
-                    {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', widths: '400,500,600,700,800,1000,1200,1400,1600,1800', sizes: sizes, class: 'image-cover' -}}
-                  {%- else -%}
-                    {%- capture placeholder -%}{% cycle 'collection-1', 'collection-2', 'collection-3', 'collection-4' %}{%- endcapture -%}
-                    {{- placeholder | placeholder_svg_tag: 'placeholder--invert' | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"' -}}
-                  {%- endif -%}
-
-                  <carousel-navigation aria-controls="shop-the-look-item-carousel-{{ block.id }}-{% if device == 'mobile' %}md{% else %}md-max{% endif %}" class="shop-the-look__hot-spot-list">
-                    {%- for product_index in (1..products_count) -%}
-                      {%- capture horizontal_position_id -%}product_{{ product_index }}_horizontal_position{%- endcapture -%}
-                      {%- capture vertical_position_id -%}product_{{ product_index }}_vertical_position{%- endcapture -%}
-
-                      <button class="shop-the-look__hot-spot" style="--shop-the-look-hot-spot-top: {{ block.settings[vertical_position_id] }}%; --shop-the-look-hot-spot-left: {{ block.settings[horizontal_position_id] }}%; {% render 'surface', background: block.settings.hot_spots_background %}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ 'general.accessibility.go_to_item' | t: index: product_index | escape }}">
-                        <span class="sr-only">{{- 'general.accessibility.go_to_item' | t: index: product_index -}}</span>
-                      </button>
-                    {%- endfor -%}
-                  </carousel-navigation>
-                </div>
-
-                {%- if device == 'mobile' -%}
-                  <shop-the-look-popover id="shop-the-look-item-popover-{{ block.id }}" class="shop-the-look__popover popover">
-                    <p class="h4" slot="header">{{ section.settings.popover_title }}</p>
-
-                    <scroll-carousel id="shop-the-look-item-carousel-{{ block.id }}-{% if device == 'mobile' %}md{% else %}md-max{% endif %}" class="shop-the-look__item-carousel scroll-area bleed snap-x">
-                      {%- for product_index in (1..products_count) -%}
-                        <div class="shop-the-look__item-product w-full snap-center {% if forloop.first %}is-selected{% endif %}">
-                          {%- unless show_placeholder -%}
-                            {%- capture product_id -%}product_{{ product_index }}{%- endcapture -%}
-                            {%- render 'product-card', product: block.settings[product_id], show_vendor: settings.show_vendor, show_rating: settings.show_rating, quick_buy_context: 'mobile' -%}
-                          {%- else -%}
-                            {%- render 'product-card-placeholder', loop_index: forloop.index0, show_vendor: settings.show_vendor, show_rating: settings.show_rating -%}
-                          {%- endunless -%}
-                        </div>
-                      {%- endfor -%}
-                    </scroll-carousel>
-                  </shop-the-look-popover>
-                {%- else -%}
-                  <div class="shop-the-look__item-content">
-                    <shop-the-look-product-list-carousel class="shop-the-look__item-carousel w-full" id="shop-the-look-item-carousel-{{ block.id }}-{% if device == 'mobile' %}md{% else %}md-max{% endif %}">
-                      {%- for product_index in (1..products_count) -%}
-                        <div class="shop-the-look__item-product w-full snap-center {% if forloop.first %}is-selected{% endif %}">
-                          {%- unless show_placeholder -%}
-                            {%- capture product_id -%}product_{{ product_index }}{%- endcapture -%}
-                            {%- render 'product-card', product: block.settings[product_id], show_vendor: settings.show_vendor, show_rating: settings.show_rating, quick_buy_context: 'desktop' -%}
-                          {%- else -%}
-                            {%- render 'product-card-placeholder', loop_index: forloop.index0, show_vendor: settings.show_vendor, show_rating: settings.show_rating -%}
-                          {%- endunless -%}
-                        </div>
-                      {%- endfor -%}
-                    </shop-the-look-product-list-carousel>
-
-                    {%- comment -%}The link of the first product is re-assigned in JS when the product changes{%- endcomment -%}
-                    {%- assign button_text = 'sections.shop_the_look.view_product' | t -%}
-                    {%- assign href_attribute = block.settings.product_1.url | default: '#' -%}
-                    {%- render 'button', href: href_attribute, content: button_text -%}
-
-                    {%- if products_count > 1 -%}
-                      <carousel-navigation aria-controls="shop-the-look-item-carousel-{{ block.id }}-{% if device == 'mobile' %}md{% else %}md-max{% endif %}" class="page-dots">
-                        {%- for i in (1..products_count) -%}
-                          <button class="tap-area" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" aria-label="{{ 'general.accessibility.go_to_item' | t: index: forloop.index | escape }}">
-                            <span class="sr-only">{{- 'general.accessibility.go_to_item' | t: index: forloop.index -}}</span>
-                          </button>
-                        {%- endfor -%}
-                      </carousel-navigation>
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
-              </div>
-            {%- endfor -%}
-          {% endcapture %}
-
-          <div class="{% if device == 'mobile' %}md{% else %}md-max{% endif %}:hidden">
-            {%- if device == 'mobile' -%}
-              <div class="v-stack gap-6">
-                <shop-the-look-mobile-carousel class="shop-the-look__carousel scroll-area snap-x bleed">
-                  {{- content -}}
-                </shop-the-look-mobile-carousel>
-
-                {%- assign button_text = 'sections.shop_the_look.view_products' | t -%}
-                {%- render 'button', type: 'button', content: button_text, stretch: true -%}
-              </div>
-            {%- else -%}
-              <div class="floating-controls-container">
-                <shop-the-look-desktop-carousel class="shop-the-look__carousel is-scrollable" id="shop-the-look-carousel-{{ section.id }}-md">
-                  {{- content -}}
-                </shop-the-look-desktop-carousel>
-
-                {%- if section.blocks.size > 1 -%}
-                  <button is="carousel-prev-button" type="button" class="prev-next-button prev-next-button--prev circle-button circle-button--lg hover:animate-icon-inline" aria-controls="shop-the-look-carousel-{{ section.id }}-md">
-                    <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
-                    {%- render 'icon' with 'arrow-left', direction_aware: true -%}
-                  </button>
-
-                  <button is="carousel-next-button" type="button" class="prev-next-button prev-next-button--next circle-button circle-button--lg hover:animate-icon-inline" aria-controls="shop-the-look-carousel-{{ section.id }}-md">
-                    <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
-                    {%- render 'icon' with 'arrow-right', direction_aware: true -%}
-                  </button>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-          </div>
-        {%- endfor -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
       </div>
-    </div>
+    </header>
+  {%- endif -%}
+
+  <div class="ShopTheLook Carousel" data-flickity-config='{{ flickity_options }}'>
+    {%- for block in section.blocks -%}
+      {%- if block.settings.image == blank and block.settings.product_1 == blank and block.settings.product_2 == blank and block.settings.product_3 == blank -%}
+        {%- assign show_on_boarding = true -%}
+      {%- else -%}
+        {%- assign show_on_boarding = false -%}
+      {%- endif -%}
+
+      <div {{ block.shopify_attributes }} class="ShopTheLook__Item Carousel__Cell {% if forloop.first %}is-selected{% endif %}" id="block-{{ block.id }}" data-slide-index="{{ forloop.index0 }}">
+        <div class="ShopTheLook__Inner">
+          {%- comment -%}
+            Implementation note 1: on desktop, we need to have a maximum height of 550px. To achieve that, we need to calculate a maximum allowed width, whose
+            calculation is max_allowed_height * image_aspect_ratio
+          {%- endcomment -%}
+
+          {%- if block.settings.image -%}
+            {%- assign max_width = 550 | times: block.settings.image.aspect_ratio | round -%}
+          {%- else -%}
+            {%- assign max_width = 550 -%}
+          {%- endif -%}
+
+          <div class="ShopTheLook__ImageWrapper" style="width: {{ max_width }}px; {% if block.settings.image %}background: url({{ block.settings.image | img_url: '1x1', format: 'jpg' }}){% endif %}">
+            <div class="{% if block.settings.image %}AspectRatio AspectRatio--withFallback{% endif %}" {% if block.settings.image %}style="max-width: {{ block.settings.image.width }}px; padding-bottom: {{ 100.0 | divided_by: block.settings.image.aspect_ratio }}%; --aspect-ratio: {{ block.settings.image.aspect_ratio }}"{% endif %}>
+              {%- comment -%}If we have no image and no product for the block, we display a placeholder{%- endcomment -%}
+              {%- if show_on_boarding -%}
+                {%- capture placeholder -%}{% cycle 'collection-1', 'collection-2', 'collection-3', 'collection-4' %}{%- endcapture -%}
+                {{ placeholder | placeholder_svg_tag: 'PlaceholderSvg PlaceholderSvg--dark' }}
+              {%- else -%}
+                {%- if block.settings.image != blank -%}
+                  {%- assign desired_sizes = '200, 400, 600,700,800,1000,1200' -%}
+                  {%- assign image_url = block.settings.image | img_url: '1x1', format: 'pjpg' | replace: '_1x1.', '_{width}x.' -%}
+
+                  {%- include 'image-size', image: block.settings.image, desired_sizes: desired_sizes -%}
+
+                  <img class="ShopTheLook__Image Image--lazyLoad Image--fadeIn"
+                       data-src="{{ image_url }}"
+                       data-widths="[{{ supported_sizes }}]"
+                       data-sizes="auto"
+                       alt="{{ block.settings.image.alt | escape }}">
+
+                  <noscript>
+                    <img class="ShopTheLook__Image" src="{{ block.settings.image | img_url: '600x' }}" alt="{{ block.settings.image.alt | escape }}">
+                  </noscript>
+                {%- else -%}
+                  {%- capture placeholder -%}{% cycle 'collection-1', 'collection-2', 'collection-3', 'collection-4' %}{%- endcapture -%}
+                  {{ placeholder | placeholder_svg_tag: 'PlaceholderSvg PlaceholderSvg--dark' }}
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+
+            {%- for i in (1..3) -%}
+              {%- assign product_setting = 'product_' | append: i -%}
+              {%- assign product = all_products[block.settings[product_setting]] -%}
+
+              {%- if product == empty and show_on_boarding == false -%}
+                {%- continue -%}
+              {%- endif -%}
+
+              {%- assign product_horizontal_position_setting = 'product_' | append: i | append: '_horizontal_position' -%}
+              {%- assign product_vertical_position_setting = 'product_' | append: i | append: '_vertical_position' -%}
+              {%- assign product_horizontal_position = block.settings[product_horizontal_position_setting] -%}
+              {%- assign product_vertical_position = block.settings[product_vertical_position_setting] -%}
+
+              <span class="ShopTheLook__Dot ShopTheLook__Dot--{{ block.settings.dot_style }} {% if forloop.first %}is-active{% endif %}" data-product-index="{{ i }}" style="left: {{ product_horizontal_position }}%; top: {{ product_vertical_position }}%"></span>
+            {%- endfor -%}
+          </div>
+
+          {%- assign first_product = '' -%}
+          {%- assign products_count = 0 -%}
+
+          {%- capture shop_the_look_products -%}
+            {%- if show_on_boarding -%}
+              {%- for i in (1..3) -%}
+                {%- assign products_count = products_count | plus: 1 -%}
+
+                <div class="ShopTheLook__ProductItem Carousel__Cell {% if forloop.first %}is-selected{% endif %}" data-product-url="#">
+                  <div class="ProductItem">
+                    <div class="ProductItem__Wrapper">
+                      <a href="#" class="ProductItem__ImageWrapper">
+                        {%- capture placeholder -%}{% cycle 'product-1', 'product-2', 'product-3' %}{%- endcapture -%}
+                        {{ placeholder | placeholder_svg_tag: 'ProductItem__Image PlaceholderSvg PlaceholderSvg--dark' }}
+                      </a>
+
+                      <div class="ProductItem__Info ProductItem__Info--center">
+                        <h2 class="ProductItem__Title Heading">{{ 'home_page.onboarding.product_title' | t }}</h2>
+
+                        <div class="ProductItem__PriceList Heading">
+                          <span class="ProductItem__Price Price Text--subdued" data-money-convertible>{{ 4500 | money_without_trailing_zeros }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {%- endfor -%}
+            {%- else -%}
+              {%- for i in (1..3) -%}
+                {%- assign product_setting = 'product_' | append: i -%}
+                {%- assign product = all_products[block.settings[product_setting]] -%}
+
+                {%- if product == empty -%}
+                  {%- continue -%}
+                {%- endif -%}
+
+                {%- if first_product == blank -%}
+                  {%- assign first_product = product -%}
+                {%- endif -%}
+
+                {%- assign products_count = products_count | plus: 1 -%}
+
+                <div class="ShopTheLook__ProductItem {% unless section.settings.show_mobile_product_info %}ShopTheLook__ProductItem--withHiddenInfo{% endunless %} Carousel__Cell {% if forloop.first %}is-selected{% endif %}" data-product-url="{{ product.url | escape }}">
+                  {% include 'product-item', product: product, show_product_info: true, show_vendor: false, show_price_on_hover: false, show_color_swatch: false, show_labels: false %}
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- comment -%}
+          IMPLEMENTATION NOTE: the products are displayed in two different ways on mobile and desktop. Unfortunately, we have to duplicate the carousel
+          {%- endcomment -%}
+
+          {%- capture flickity_desktop_inner_options -%}
+          {
+            "prevNextButtons": false,
+            "pageDots": {% if products_count > 1 %}true{% else %}false{% endif %},
+            "draggable": false,
+            "wrapAround": true,
+            "cellSelector": ".ShopTheLook__ProductItem"
+          }
+          {%- endcapture -%}
+
+          <div class="ShopTheLook__ProductList Carousel Carousel--fadeIn hidden-pocket" data-flickity-config='{{ flickity_desktop_inner_options }}' data-look-index="{{ forloop.index0 }}">
+            {{ shop_the_look_products }}
+            <a href="{{ first_product.url }}" class="ShopTheLook__ViewButton Button Button--primary Button--full">{{ 'home_page.shop_the_look.view_product' | t }}</a>
+          </div>
+        </div>
+      </div>
+
+      {%- comment -%}
+      IMPLEMENTATION NOTE: the popover on modal must be outside the main carousel as it is positioned using position: fixed, which does not work if inside
+                           the main carousel due to the transform that create a new coordinates context
+      {%- endcomment -%}
+
+      {%- capture flickity_mobile_inner_options -%}
+      {
+        "prevNextButtons": false,
+        "pageDots": false,
+        "draggable": {% if products_count == 1 %}false{% else %}true{% endif %},
+        "wrapAround": true
+      }
+      {%- endcapture -%}
+
+      <div id="block-{{ block.id }}-popover" class="Popover Popover--secondary hidden-lap-and-up" aria-hidden="true">
+        <header class="Popover__Header">
+          <button class="Popover__Close Icon-Wrapper--clickable" data-action="close-popover">{% include 'icon' with 'close' %}</button>
+          <span class="Popover__Title Heading u-h4">{{ 'home_page.shop_the_look.popover_title' | t }}</span>
+        </header>
+
+        <div class="Popover__Content">
+          <div class="ShopTheLook__ProductList Carousel" data-flickity-config='{{ flickity_mobile_inner_options }}' data-look-index="{{ forloop.index0 }}">
+            {{ shop_the_look_products }}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
   </div>
-{%- endif -%}
+
+  <div class="ShopTheLook__DiscoverButtonWrapper hidden-lap-and-up">
+    <button class="ShopTheLook__ViewButton Button Button--primary" aria-haspopup="true" aria-expanded="false" aria-controls="block-{{ section.blocks.first.id }}-popover" data-action="open-look">
+      {{- 'home_page.shop_the_look.view_products' | t -}}
+    </button>
+  </div>
+</section>
 
 {% schema %}
-  {
-    "name": "t:sections.shop_the_look.name",
-    "class": "shopify-section--shop-the-look",
-    "tag": "section",
-    "max_blocks": 5,
-    "disabled_on": {
-      "groups": ["header", "custom.overlay"]
+{
+  "name": "Shop the look",
+  "class": "shopify-section--bordered",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "For best results (especially on mobile), we recommend using images with the same dimensions."
     },
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "separate_section_with_border",
-        "label": "t:global.section.separate_section_with_border",
-        "default": true
-      },
-      {
-        "type": "inline_richtext",
-        "id": "subheading",
-        "label": "t:global.text.subheading"
-      },
-      {
-        "type": "inline_richtext",
-        "id": "title",
-        "label": "t:global.text.heading",
-        "default": "Shop the look"
-      },
-      {
-        "type": "richtext",
-        "id": "content",
-        "label": "t:global.text.content"
-      },
-      {
-        "type": "inline_richtext",
-        "id": "popover_title",
-        "label": "t:sections.shop_the_look.popover_title",
-        "default": "Shop the look"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "look",
-        "name": "t:sections.shop_the_look.blocks.look.name",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "t:global.image.image",
-            "info": "t:sections.shop_the_look.blocks.look.image_size_recommendation"
-          },
-          {
-            "type": "color",
-            "id": "hot_spots_background",
-            "label": "t:sections.shop_the_look.blocks.look.hot_spots_background",
-            "default": "#ffffff"
-          },
-          {
-            "type": "header",
-            "content": "t:sections.shop_the_look.blocks.look.product_1_category"
-          },
-          {
-            "type": "product",
-            "id": "product_1",
-            "label": "t:sections.shop_the_look.blocks.look.product"
-          },
-          {
-            "type": "range",
-            "id": "product_1_horizontal_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_horizontal_position",
-            "min": 5,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 55
-          },
-          {
-            "type": "range",
-            "id": "product_1_vertical_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_vertical_position",
-            "min": 5,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 30
-          },
-          {
-            "type": "header",
-            "content": "t:sections.shop_the_look.blocks.look.product_2_category"
-          },
-          {
-            "type": "product",
-            "id": "product_2",
-            "label": "t:sections.shop_the_look.blocks.look.product"
-          },
-          {
-            "type": "range",
-            "id": "product_2_horizontal_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_horizontal_position",
-            "min": 5,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 25
-          },
-          {
-            "type": "range",
-            "id": "product_2_vertical_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_vertical_position",
-            "min": 5,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 40
-          },
-          {
-            "type": "header",
-            "content": "t:sections.shop_the_look.blocks.look.product_3_category"
-          },
-          {
-            "type": "product",
-            "id": "product_3",
-            "label": "t:sections.shop_the_look.blocks.look.product"
-          },
-          {
-            "type": "range",
-            "id": "product_3_horizontal_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_horizontal_position",
-            "min": 5,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 65
-          },
-          {
-            "type": "range",
-            "id": "product_3_vertical_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_vertical_position",
-            "min": 10,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 60
-          },
-          {
-            "type": "header",
-            "content": "t:sections.shop_the_look.blocks.look.product_4_category"
-          },
-          {
-            "type": "product",
-            "id": "product_4",
-            "label": "t:sections.shop_the_look.blocks.look.product"
-          },
-          {
-            "type": "range",
-            "id": "product_4_horizontal_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_horizontal_position",
-            "min": 5,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 85
-          },
-          {
-            "type": "range",
-            "id": "product_4_vertical_position",
-            "label": "t:sections.shop_the_look.blocks.look.product_vertical_position",
-            "min": 10,
-            "max": 95,
-            "step": 1,
-            "unit": "%",
-            "default": 85
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "t:sections.shop_the_look.presets.shop_the_look.name",
-        "blocks": [
-          {
-            "type": "look",
-            "settings": {
-              "product_1_horizontal_position": 35,
-              "product_1_vertical_position": 35,
-              "product_2_horizontal_position": 34,
-              "product_2_vertical_position": 65,
-              "product_3_horizontal_position": 66,
-              "product_3_vertical_position": 42
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "Shop"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our looks"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_product_info",
+      "label": "Show product info on mobile",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "look",
+      "name": "Look",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "975 x 1185px .jpg recommended (vertical image) or 1200 x 1200px .jpg recommended (square image)."
+        },
+        {
+          "type": "select",
+          "id": "dot_style",
+          "label": "Hotspot style",
+          "options": [
+            {
+              "value": "light",
+              "label": "Light"
+            },
+            {
+              "value": "dark",
+              "label": "Dark"
             }
-          },
-          {
-            "type": "look",
-            "settings": {
-              "product_1_horizontal_position": 30,
-              "product_1_vertical_position": 35,
-              "product_2_horizontal_position": 70,
-              "product_2_vertical_position": 30,
-              "product_3_horizontal_position": 60,
-              "product_3_vertical_position": 65
-            }
+          ],
+          "default": "light"
+        },
+        {
+          "type": "header",
+          "content": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product",
+          "info": "Product not showing correctly? [Learn more](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+        },
+        {
+          "type": "range",
+          "id": "product_1_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "product_1_vertical_position",
+          "label": "Vertical position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product",
+          "info": "Product not showing correctly? [Learn more](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+        },
+        {
+          "type": "range",
+          "id": "product_2_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "product_2_vertical_position",
+          "label": "Vertical position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 50
+        },
+        {
+          "type": "header",
+          "content": "Product 3"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product",
+          "info": "Product not showing correctly? [Learn more](http://support.maestrooo.com/article/153-home-page-shop-the-look-section-is-displaying-incorrect-products)."
+        },
+        {
+          "type": "range",
+          "id": "product_3_horizontal_position",
+          "label": "Horizontal position",
+          "min": 5,
+          "max": 95,
+          "step": 1,
+          "unit": "%",
+          "default": 85
+        },
+        {
+          "type": "range",
+          "id": "product_3_vertical_position",
+          "label": "Vertical position",
+          "min": 10,
+          "max": 90,
+          "step": 1,
+          "unit": "%",
+          "default": 85
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Shop the look",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "look",
+          "settings": {
+            "product_1_horizontal_position": 30,
+            "product_1_vertical_position": 40,
+            "product_2_horizontal_position": 45,
+            "product_2_vertical_position": 65,
+            "product_3_horizontal_position": 70,
+            "product_3_vertical_position": 50
           }
-        ]
-      }
-    ]
-  }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

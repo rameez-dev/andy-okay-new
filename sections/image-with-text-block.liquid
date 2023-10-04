@@ -1,246 +1,137 @@
-{%- if section.settings.image != blank or section.blocks.size > 0 -%}
-  <style>
-    #shopify-section-{{ section.id }} {
-      --content-over-media-content-max-width: {% if section.settings.content_width == 'sm' %}190px{% elsif section.settings.content_width == 'md' %}250px{% else %}320px{% endif %};
-    }
+<section class="Section" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="image-with-text-block">
+  {%- capture mobile_size -%}750x{% if section.settings.image.height >= 960 %}960{% else %}{{ section.settings.image.height }}{% endif %}{%- endcapture -%}
 
-    @media screen and (min-width: 700px) {
-      #shopify-section-{{ section.id }} {
-        --content-over-media-content-max-width: {% if section.settings.content_width == 'sm' %}240px{% elsif section.settings.content_width == 'md' %}380px{% else %}520px{% endif %};
-      }
-    }
-  </style>
+  <div class="FlexboxIeFix">
+    <div class="ImageHero ImageHero--large" {% if section.settings.image %}style="background: url({{ section.settings.image | img_url: '1x1', format: 'pjpg' }})"{% endif %}>
+      <div class="ImageHero__ImageWrapper">
+        <div class="ImageHero__Image Image--lazyLoad Image--zoomOut {% if section.settings.show_parallax %}ImageHero__Image--parallax{% endif %}"
+             data-optimumx="1.4"
+             data-expand="-150"
+             {% if section.settings.image %}data-bgset="{{ section.settings.image | img_url: mobile_size, crop: 'center' }} 750w, {{ section.settings.image | img_url: '1000x' }} 1000w, {{ section.settings.image | img_url: '1500x' }} 1500w"{% endif %}>
+        </div>
 
-  <div class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %}">
-    <image-banner class="image-with-text-block {% if section.settings.enable_parallax %}image-with-text-block--parallax {% endif %}content-over-media content-over-media--{{ section.settings.image_size }}">
-      {%- if section.settings.image != blank -%}
-        <picture>
-          {%- if section.settings.mobile_image != blank -%}
-            <source
-                media="(max-width: 699px)"
-                srcset="{{ section.settings.mobile_image | image_url: width: '400x' }} 400w, {{ section.settings.mobile_image | image_url: width: '600x' }} 600w, {{ section.settings.mobile_image | image_url: width: '800x' }} 800w, {{ section.settings.mobile_image | image_url: width: '1000x' }} 1000w"
-                width="{{ section.settings.mobile_image.width }}"
-                height="{{ section.settings.mobile_image.height }}"
-            >
-          {%- endif -%}
+        <noscript>
+          <div class="ImageHero__ImageWrapper" style="background-image: url({{ section.settings.image | img_url: '1000x' }})"></div>
+        </noscript>
 
-          {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: 'lazy', sizes: '100vw', widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200' -}}
-        </picture>
-      {%- else -%}
-        {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder' | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"' -}}
-      {%- endif -%}
+        {%- unless section.settings.image != blank -%}
+          <div class="PlaceholderBackground PlaceholderBackground--Dark">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'PlaceholderBackground__Svg' }}
+          </div>
+        {%- endunless -%}
+      </div>
 
-      {%- if section.blocks.size > 0 -%}
-        <div class="content text-center" style="{% render 'surface', background: section.settings.block_background, text_color: section.settings.block_text_color %}">
-          <div class="prose text-sm sm:text-base">
-            {%- for block in section.blocks -%}
-              {%- case block.type -%}
-                {%- when 'subheading' -%}
-                  {%- if block.settings.text != blank -%}
-                    <p class="h6" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
-                  {%- endif -%}
+      {%- if section.settings.title != blank or section.settings.content != blank or section.settings.button_label != blank -%}
+        <div class="ImageHero__Wrapper">
+          <div class="ImageHero__Block ImageHero__Block--{{ section.settings.block_size }}">
+            {%- if section.settings.title != blank -%}
+              <h3 class="ImageHero__BlockHeading Heading u-h6">{{ section.settings.title | escape }}</h3>
+            {%- endif -%}
 
-                {%- when 'richtext' -%}
-                  {%- if block.settings.content != blank -%}
-                    <div {{ block.shopify_attributes }}>
-                      {{- block.settings.content -}}
-                    </div>
-                  {%- endif -%}
+            {%- if section.settings.content != blank -%}
+              <div class="ImageHero__BlockContent Rte">
+                {{ section.settings.content }}
+              </div>
+            {%- endif -%}
 
-                {%- when 'link' -%}
-                  <a {% if block.settings.url %}href="{{ block.settings.url }}"{% endif %} class="link" {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</a>
-
-                {%- when 'liquid' -%}
-                  {%- if block.settings.liquid != blank -%}
-                    <div {{ block.shopify_attributes }}>
-                      {{- block.settings.liquid -}}
-                    </div>
-                  {%- endif -%}
-
-              {%- endcase -%}
-            {%- endfor -%}
+            {%- if section.settings.button_label != blank -%}
+              <a href="{{ section.settings.button_link }}" class="ImageHero__BlockLink Link Link--underline">{{ section.settings.button_label | escape }}</a>
+            {%- endif -%}
           </div>
         </div>
       {%- endif -%}
-    </image-banner>
+    </div>
   </div>
-{%- endif -%}
+</section>
+
+<style>
+  #section-{{ section.id }},
+  #section-{{ section.id }} .Heading {
+    color: {{ section.settings.text_color }};
+  }
+
+  #section-{{ section.id }} .ImageHero__Block {
+    background: {{ section.settings.background }};
+  }
+</style>
 
 {% schema %}
 {
-  "name": "t:sections.image_with_text_block.name",
-  "class": "shopify-section--image-with-text-block",
-  "tag": "section",
-  "max_blocks": 6,
-  "disabled_on": {
-    "groups": ["header", "custom.overlay"]
-  },
+  "name": "Image with text block",
   "settings": [
-    {
-      "type": "select",
-      "id": "image_size",
-      "label": "t:global.image.size",
-      "options": [
-        {
-          "value": "auto",
-          "label": "t:global.sizes.original_image_ratio"
-        },
-        {
-          "value": "xs",
-          "label": "t:global.sizes.x_small"
-        },
-        {
-          "value": "sm",
-          "label": "t:global.sizes.small"
-        },
-        {
-          "value": "md",
-          "label": "t:global.sizes.medium"
-        },
-        {
-          "value": "lg",
-          "label": "t:global.sizes.large"
-        },
-        {
-          "value": "fill",
-          "label": "t:global.sizes.fit_screen"
-        }
-      ],
-      "info": "t:global.image.ratio_avoid_cropping_info",
-      "default": "lg"
-    },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "t:global.image.image",
-      "info": "t:sections.image_with_text_block.image_size_recommendation"
+      "label": "Image",
+      "info": "1500 x 800px .jpg recommended"
     },
     {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "t:global.image.mobile_image",
-      "info": "t:sections.image_with_text_block.mobile_image_size_recommendation"
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#1c1b1b"
     },
     {
       "type": "select",
-      "id": "content_width",
-      "label": "t:global.sizes.content_width",
+      "id": "block_size",
+      "label": "Block size",
       "options": [
         {
-          "value": "sm",
-          "label": "t:global.sizes.small"
+          "value": "small",
+          "label": "Small"
         },
         {
-          "value": "md",
-          "label": "t:global.sizes.medium"
+          "value": "normal",
+          "label": "Normal"
         },
         {
-          "value": "lg",
-          "label": "t:global.sizes.large"
+          "value": "large",
+          "label": "Large"
         }
       ],
-      "default": "sm"
+      "default": "small"
     },
     {
-      "type": "checkbox",
-      "id": "enable_parallax",
-      "label": "t:sections.image_with_text_block.enable_parallax",
-      "info": "t:sections.image_with_text_block.enable_parallax_info",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "remove_vertical_spacing",
-      "label": "t:global.spacing.remove_vertical_spacing",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "t:global.colors.category"
-    },
-    {
-      "type": "color",
-      "id": "block_text_color",
-      "label": "t:sections.image_with_text_block.block_text_color"
-    },
-    {
-      "type": "color",
-      "id": "block_background",
-      "label": "t:sections.image_with_text_block.block_background"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "subheading",
-      "name": "t:sections.image_with_text_block.blocks.subheading.name",
-      "settings": [
-        {
-          "type": "inline_richtext",
-          "id": "text",
-          "label": "t:global.text.text",
-          "default": "Subheading"
-        }
-      ]
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Your story"
     },
     {
       "type": "richtext",
-      "name": "t:sections.image_with_text_block.blocks.paragraph.name",
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "content",
-          "label": "t:global.text.content",
-          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-        }
-      ]
+      "id": "content",
+      "label": "Text",
+      "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
     },
     {
-      "type": "liquid",
-      "name": "t:sections.image_with_text_block.blocks.liquid.name",
-      "settings": [
-        {
-          "type": "liquid",
-          "id": "liquid",
-          "label": "t:global.code.liquid",
-          "default": "<p>Use this text to output some custom Liquid code to include widget or dynamic code.</p>"
-        }
-      ]
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
     },
     {
-      "type": "link",
-      "name": "t:sections.image_with_text_block.blocks.link.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "t:global.text.text",
-          "default": "Link text"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "t:global.text.link"
-        }
-      ]
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_parallax",
+      "label": "Show parallax scrolling effect",
+      "info": "Only applies to desktop.",
+      "default": true
     }
   ],
   "presets": [
     {
-      "name": "t:sections.image_with_text_block.presets.image_with_text_block.name",
-      "blocks": [
-       {
-          "type": "subheading",
-          "settings": {
-            "text": "Image with text block"
-          }
-        },
-        {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Add your own custom content to give more information about your store, availability details...</p>"
-          }
-        }
-      ]
+      "category": "Image",
+      "name": "Image with text block",
+      "settings": {}
     }
   ]
 }

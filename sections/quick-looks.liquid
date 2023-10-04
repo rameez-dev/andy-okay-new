@@ -1,0 +1,224 @@
+<div class="tags-section quick-looks">
+  <div class="tags-section-holder">
+    <div class="Container">
+      {% if section.settings.title != blank %}
+        <h3 class="SectionHeader__Heading Heading u-h3">{{ section.settings.title }}</h3>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <p class="SectionHeader__Detail">{{ section.settings.subtitle }}</p>
+      {% endif %}
+      <div class="links-section">
+        <!-- Tile html -->
+        {% for block in section.blocks %}
+          {%- comment -%}
+          <a class="link_list" href="javascript:void(0)" data-list-id={{ forloop.index }}>
+          {%- endcomment -%}  
+          <a class="link_list" href="{{ block.settings.popup_btn_url }}">
+            <div class="link-list">
+              <figure class="prod__list-icon">
+              	 <img class="Image--lazyLoad list-image" src="{{ block.settings.image | img_url: '60x' }}" />
+              </figure>
+                <h3 class="list-title">{{ block.settings.title }}</h3>
+            </div>
+          </a>
+        {% endfor %}
+
+        <!-- Pop Html -->
+        <aside 
+            class="NewsletterPopup quick-looks-popup"
+            aria-hidden="true">
+            <button class="NewsletterPopup__Close close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
+            <div class="Slideshow">
+              <div class="Slideshow__Carousel Carousel">
+              {% for block in section.blocks %}
+                
+                <div class="Slideshow__Slide Carousel__Cell" style="background-color:{{block.settings.popup_background_color }}">
+                  <div class="popup-holder">
+                    <div class="image-holder">
+                      <div class="desktop-image">
+                        {% assign image_url = block.settings.popup_image | img_url: 'master' %}
+                        <img class="Image--lazyLoad hide-no-js"
+                            data-src="{{ image_url }}"
+                            data-optimumx="1.2"
+                            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                            data-sizes="auto"
+                            alt="{{ block.settings.popup_image.alt | escape }}">
+                      </div>
+
+                      <div class="mobile-image">
+                        {% assign mob_image_url = block.settings.popup_mob_image | img_url: 'master' %}
+                        <img class="Image--lazyLoad hide-no-js"
+                            data-src="{{ mob_image_url }}"
+                            data-optimumx="1.2"
+                            data-widths="[400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200]"
+                            data-sizes="auto"
+                            alt="{{ block.settings.mob_image_url.alt | escape }}">
+                      </div>
+                    </div>
+
+                    <div class="popup-body">
+                      {%- if block.settings.title != blank -%}
+                        {%- if block.settings.left == true -%}
+                          <h2 style="color:{{block.settings.popup_title_color }}" class="SectionHeader__Heading  SectionHeader__Heading--emphasize Heading u-h1 first-heading pop_first_heading">{{ block.settings.popup_title }}</h2>
+                        {%- else -%}
+                          <h2 style="color:{{block.settings.popup_title_color }}" class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 first-heading">{{ block.settings.popup_title }}</h2>
+                        {%- endif -%}
+                      {%- endif -%}
+
+                      {%- if block.settings.popup_text != blank -%}
+                        <div style="color:{{block.settings.popup_description_color }}" class="SectionHeader__SubHeading Heading u-h6 Rte">
+                        {{ block.settings.popup_text }}
+                        </div>
+                      {%- endif -%}
+
+                      {% if block.settings.popup_btn_url != blank %}
+                        <a class="Button Button--primary list-btn" href="{{ block.settings.popup_btn_url }}">{{ block.settings.popup_btn_copy }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                
+              {% endfor %}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    var $carousel = $('.quick-looks-popup .Slideshow__Carousel.Carousel').flickity({
+      prevNextButtons: {% if section.blocks.size > 1 %}true{% else %}false{% endif %},
+      setGallerySize: true,
+      adaptiveHeight: false,
+      wrapAround: false,
+      dragThreshold: 15,
+      pauseAutoPlayOnHover: false,
+      autoPlay: false,
+      pageDots: false,
+      arrowShape: {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+    });
+
+    $('.link_list').click(function(){
+      //below line to comment the functionality as per requirement to stop pop up
+      return;
+      var list_id = $(this).data('list-id');
+      list_id -= 1;
+      $(".quick-looks-popup").addClass('visible');
+      $('body').addClass("story-popup-visible");
+      $carousel.flickity( 'select', list_id );
+      setTimeout(function(){
+        $carousel.flickity('resize');
+      }, 200);
+    });
+
+    $('.quick-looks-popup .close').click(function(){
+      $('.quick-looks-popup').removeClass('visible');
+      $('body').removeClass("story-popup-visible");
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Quick Looks",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "Popup"
+        },
+        {
+          "type": "color",
+          "id": "popup_background_color",
+          "label": "Background color",
+          "default": "#000"
+        },
+        {
+          "type": "image_picker",
+          "id": "popup_image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "popup_mob_image",
+          "label": "Mobile image"
+        },
+        {
+          "type": "text",
+          "id": "popup_title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "popup_title_color",
+          "label": "Title color",
+          "default": "#fafaff"
+        },
+        {
+          "type": "richtext",
+          "id": "popup_text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "popup_description_color",
+          "label": "Description color",
+          "default": "#fafaff"
+        },
+        {
+          "type": "text",
+          "id": "popup_btn_copy",
+          "label": "Button copy"
+        },
+        {
+          "type": "url",
+          "id": "popup_btn_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "left",
+          "label": "Align Heading Left",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Custom",
+      "name": "Quick Looks",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

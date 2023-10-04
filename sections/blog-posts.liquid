@@ -1,127 +1,171 @@
-{%- comment -%}
-------------------------------------------------------------------------------------------------------------------------
-LIQUID
-------------------------------------------------------------------------------------------------------------------------
-{%- endcomment -%}
-<div class="section-spacing {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-  <div class="container container--lg">
-    <div class="section-stack">
-      {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: 'center' -%}
+<section class="Section Section--spacingNormal" id="section-{{ section.id }}" data-section-type="article-list" data-section-id="{{ section.id }}">
+  <div class="Container">
+    {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <header class="SectionHeader SectionHeader--center">
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+        {%- endif -%}
 
-      <blog-posts class="blog-post-list justify-center {% unless section.settings.stack_on_mobile %}blog-post-list--carousel scroll-area snap-x bleed md:unbleed{% endunless %}" {% if settings.stagger_blog_posts_apparition %}reveal-on-scroll="true"{% endif %}>
-        {%- capture sizes -%}(max-width: 699px) 95vw, (max-width: 1149px) calc(100vw / 2), calc((80rem - (5rem * ({{ section.settings.blog.articles_count | default: 3 | at_most: 3 }} - 1) / 3){%- endcapture -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
 
-        {%- for article in section.settings.blog.articles limit: section.settings.posts_count -%}
-          {%- render 'blog-post-card', article: article, blog: section.settings.blog, show_category: section.settings.show_category, show_excerpt: section.settings.show_excerpt, show_read_more: section.settings.show_read_more, sizes: sizes -%}
-        {%- else -%}
+    {%- assign show_placeholders = true -%}
+
+    <div class="ArticleListWrapper">
+      <div class="ArticleList Grid Grid--m Grid--center">
+        {%- assign block = section.blocks.first -%}
+
+        {%- case block.type -%}
+          {%- when 'article' -%}
+            {%- for i in (1..3) -%}
+              {%- assign article_option = 'article_' | append: i -%}
+              {%- assign article = articles[block.settings[article_option]] -%}
+
+              {%- unless article == empty -%}
+                <div class="Grid__Cell 1/2--tablet 1/3--lap-and-up {% if forloop.index == 3 %}hidden-tablet{% endif %}">
+                  {%- include 'article-item', article: article -%}
+                </div>
+
+                {%- assign show_placeholders = false -%}
+              {%- endunless -%}
+            {%- endfor -%}
+
+          {%- when 'blog' -%}
+            {%- assign blog = blogs[block.settings.blog] -%}
+
+            {%- for article in blog.articles limit: 3 -%}
+              <div class="Grid__Cell 1/2--tablet 1/3--lap-and-up {% if forloop.index == 3 %}hidden-tablet{% endif %}">
+                {%- include 'article-item', article: article -%}
+              </div>
+
+              {%- assign show_placeholders = false -%}
+            {%- endfor -%}
+        {%- endcase -%}
+
+        {%- if show_placeholders -%}
           {%- for i in (1..3) -%}
-            {%- render 'blog-post-card', show_category: section.settings.show_category, show_excerpt: section.settings.show_excerpt -%}
-          {%- endfor -%}
-        {%- endfor -%}
-      </blog-posts>
+            <div class="Grid__Cell 1/2--tablet 1/3--lap-and-up {% if forloop.index == 3 %}hidden-tablet{% endif %}">
+              <article class="ArticleItem">
+                {%- capture placeholder -%}{% cycle 'lifestyle-1', 'lifestyle-2' %}{%- endcapture -%}
 
-      {%- if section.settings.button_text != blank -%}
-        <div class="justify-self-center">
-          {%- assign button_link = section.settings.button_link | default: section.settings.blog.url -%}
-          {%- render 'button', href: button_link, content: section.settings.button_text -%}
-        </div>
-      {%- endif -%}
+                <div class="ArticleItem__ImageWrapper AspectRatio" style="--aspect-ratio: 1.7">
+                  {{ placeholder | placeholder_svg_tag: 'ArticleItem__Image PlaceholderBackground PlaceholderSvg--dark' }}
+                </div>
+
+                <div class="ArticleItem__Content">
+                  {%- if section.settings.show_category -%}
+                    <span class="ArticleItem__Category Heading u-h6 Text--subdued">{{ 'home_page.onboarding.article_category' | t }}</span>
+                  {%- endif -%}
+
+                  <h2 class="ArticleItem__Title Heading u-h2">
+                    <a href="#">{{ 'home_page.onboarding.article_name' | t }}</a>
+                  </h2>
+
+                  <p class="ArticleItem__Excerpt">{{ 'home_page.onboarding.article_excerpt' | t }}</p>
+
+                  <a href="#" class="ArticleItem__Link Link Link--underline">{{ 'blog.article.read_more' | t }}</a>
+                </div>
+              </article>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
     </div>
+
+    {%- if section.settings.button_text != blank -%}
+      <div class="SectionFooter">
+        <a href="{{ section.settings.button_link }}" class="Button Button--primary">{{ section.settings.button_text | escape }}</a>
+      </div>
+    {%- endif -%}
   </div>
-</div>
+</section>
 
 {% schema %}
 {
-  "name": "t:sections.blog_posts.name",
-  "class": "shopify-section--blog-posts",
-  "tag": "section",
-  "disabled_on": {
-    "groups": ["header", "custom.overlay"]
-  },
+  "name": "Blog posts",
+  "class": "shopify-section--bordered",
+  "max_blocks": 1,
   "settings": [
     {
-      "type": "checkbox",
-      "id": "separate_section_with_border",
-      "label": "t:global.section.separate_section_with_border",
-      "default": true
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading"
     },
     {
-      "type": "blog",
-      "id": "blog",
-      "label": "t:sections.blog_posts.blocks.blog.blog"
-    },
-    {
-      "type": "range",
-      "id": "posts_count",
-      "min": 2,
-      "max": 9,
-      "label": "t:sections.blog_posts.blocks.blog.posts_count",
-      "default": 3
-    },
-    {
-      "type": "checkbox",
-      "id": "stack_on_mobile",
-      "label": "t:sections.blog_posts.stack_on_mobile",
-      "default": false
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
     },
     {
       "type": "checkbox",
       "id": "show_category",
-      "label": "t:global.blog.show_category",
-      "info": "t:global.blog.show_category_info",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_excerpt",
-      "label": "t:global.blog.show_excerpt",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_read_more",
-      "label": "t:global.blog.show_read_more",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "t:global.section.header_category"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "subheading",
-      "label": "t:global.text.subheading"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "title",
-      "label": "t:global.text.heading",
-      "default": "Blog posts"
-    },
-    {
-      "type": "richtext",
-      "id": "content",
-      "label": "t:global.text.content"
+      "label": "Show article category",
+      "info": "The first article's tag is used as the main category.",
+      "default": false
     },
     {
       "type": "url",
       "id": "button_link",
-      "label": "t:global.text.button_link",
-      "info": "t:sections.blog_posts.button_link_info"
+      "label": "Button link"
     },
     {
       "type": "text",
       "id": "button_text",
-      "label": "t:global.text.button_text",
-      "default": "View all"
+      "label": "Button text",
+      "default": "View all articles"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article_1",
+          "label": "Article 1"
+        },
+        {
+          "type": "article",
+          "id": "article_2",
+          "label": "Article 2"
+        },
+        {
+          "type": "article",
+          "id": "article_3",
+          "label": "Article 3"
+        }
+      ]
+    },
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blog"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.blog_posts.presets.blog_posts.name",
-      "settings": {
-        "blog": "news"
-      }
+      "category": "Blog",
+      "name": "Blog posts",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        }
+      ]
     }
   ]
 }

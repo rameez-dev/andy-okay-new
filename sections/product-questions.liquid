@@ -1,0 +1,291 @@
+<style>
+  	.pr-faq-section{
+     	max-width:850px;
+      	margin:80px auto 50px;
+        text-align:center;
+  	}
+  
+    @media (min-width: 768px) and (max-width:990px){
+  		.pr-faq-section{
+          max-width:90%;
+  		}
+    }
+  	
+  	@media (max-width:767px){
+        .pr-faq-section{
+          max-width:85%;
+  		}
+    }
+  
+  
+    .char-faq {
+      padding: 0px;
+      text-align:left;
+    }
+  	
+  	.pr-faq-section h2{
+        font-size:32px;
+        text-align:center;
+        text-transform:uppercase;
+        font-weight: bold;
+        font-family: DIN Next LT Pro Bold;
+    }
+  	
+    @media (max-width:460px){
+		.pr-faq-section h2{
+            font-size:28px;
+        }
+	
+    }
+  
+  
+    .faq__group {
+      overflow: hidden;
+      border-top: 1px solid #d1d1d1;
+    }
+    
+    .faq__group:last-child{
+       border-bottom: 1px solid #d1d1d1;
+    }
+  
+    .faq__title {
+      margin: 0 auto;
+      padding: 15px 30px 15px 0px;
+      cursor: pointer;
+      position: relative;
+      max-width:600px;
+    }
+    .faq__title:after {
+      top: 21px;
+      right: 0;
+      content: "";
+      background: url({{ 'faq-arrow.png' | asset_url}}) no-repeat;
+      z-index: 500;
+      display: block;
+      position: absolute;
+      transition: transform 0.25s ease;
+      width:18px;
+      height:11px;
+      background-size:100% 100%;
+    }
+  	.faq__group.is-expanded .faq__title:after {
+      transform: rotate(180deg);
+    }
+  
+    .faq__title h4 {
+      margin: 0;
+      line-height: 20px;
+      transition: all 150ms ease;
+      font-weight: normal;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  	
+  	@media (max-width:460px){
+		.faq__title h4 {
+           font-size: 16px;
+        }
+	
+    }
+  	
+    .faq__title span {
+      left: 0;
+      position: absolute;
+      border-radius: 50%;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border: 2px solid #000;
+    }
+    .faq__title span:before,
+    .faq__title span:after {
+      left: 4px;
+      content: "";
+      width: 12px;
+      height: 2px;
+      display: block;
+      margin-top: 9px;
+      position: absolute;
+      background: #fff;
+      z-index: 500;
+      transition: transform 0.25s ease;
+    }
+    .faq__title span:after {
+      transform: rotate(90deg);
+    }
+    
+    
+  .faq__content {
+    height: 0;
+    margin: 0 auto;
+    opacity: 0;
+    padding: 0;
+    visibility: hidden;
+    transition: opacity 250ms ease;
+    max-width:600px;
+  }
+  
+  .faq__content p {
+    margin: 0 0 0px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  	@media (max-width:460px){
+		.faq__content p {
+          font-size: 14px;
+          line-height: 18px;
+        }
+	
+    }
+  
+  .faq__content p:last-of-type {
+    margin: 0;
+  }
+  
+  .faq__group.is-expanded .faq__content {
+    opacity: 1;
+    padding: 10px 0;
+    visibility: visible;
+    display: block;
+    height: auto;
+  }
+  
+  .faq_link{
+     font-size: 18px;
+     margin-top: 15px;
+     display: inline-block;
+     font-family: Adobe Caslon Pro;
+     font-weight: 500;
+     font-style: italic;
+  }
+  
+  </style>
+  {%- if section.settings.show == true -%}
+  <div class="pr-faq-section" data-section-type="faq" data-section-id="{{ section.id }}">
+    <h2>{{section.settings.heading}}</h2>
+    <article class="char-faq" style="background-color: {{section.settings.background-color}}">
+      {% for block in section.blocks %}
+      <div class="faq__group faq--group-{{ forloop.index }}">
+        <div class="faq__title js-collapser-toggle" data-target=".faq--group-{{ forloop.index }}">
+          <h4 style="color: {{section.settings.text-color}}" >{{block.settings.title}}</h4>
+        </div>
+        <div class="faq__content">
+          <p style="color: {{section.settings.text-color}}" >{{block.settings.answer}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </article>
+    {%if section.settings.link != blank %}
+    <a href="{{ section.settings.link }}" class="faq_link" style="color: {{section.settings.link-color}}"> {{section.settings.link-text}}</a>
+    {%endif%}
+  </div>
+  {%- endif -%}
+  {% schema %}
+  {
+    "name": "Questions",
+    "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show",
+      "default": false
+    },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"   
+      },
+      {
+        "id": "background-color",
+        "type": "color",
+        "label": "Background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "id": "link-text",
+        "type": "text",
+        "label": "link Text",
+        "default": "Read All Here >" 
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "Link URL"
+      },
+      {
+        "id": "link-color",
+        "type": "color",
+        "label": "Link color",
+        "default": "#a7967c"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "question",
+        "name": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %} 
+  
+  <script>
+  // Accordion functionality
+    
+  const Collapser = {
+    config: {
+      expandClass: "is-expanded",
+      targetExpandClass: "target-expanded",
+      targetClass: "is-open",
+    },
+  
+    expand: function (target, parent) {
+      $(parent)
+        .find("." + Collapser.config.expandClass)
+        .removeClass(Collapser.config.expandClass);
+      $(parent)
+        .find("." + Collapser.config.targetClass)
+        .removeClass(Collapser.config.targetClass);
+      $(target).addClass(Collapser.config.expandClass);
+    },
+  
+    collapse: function (target, parent) {
+      $(target).removeClass(Collapser.config.expandClass);
+    },
+  
+    init: function (className) {
+      $(className).on("click", function (e) {
+        e.preventDefault();
+        const target = $(this).attr("data-target"),
+          parent = $(this).parent();
+  
+        if ($(target).hasClass(Collapser.config.expandClass)) {
+          Collapser.collapse(target, parent);
+        } else {
+          Collapser.expand(target, parent);
+        }
+      });
+    },
+  };
+  
+  Collapser.init(".js-collapser-toggle");
+  </script>
+  

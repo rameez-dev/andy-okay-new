@@ -1,0 +1,85 @@
+{%- if section.settings.show == true -%}
+<div class="section-details explore" style="background-color: {{section.settings.backgroud-color}}">
+  <div class="section-details-holder">
+    <h2 class="SectionHeader__Heading Heading u-h2 details-heading" style="color: {{section.settings.text-color}}">{{ section.settings.heading}}</h2>
+  </div>
+  <ul class="section-details-list">
+    {% for block in section.blocks %}
+      <li class="section-detail">
+        <a href="{% if block.settings.link != blank %}{{ block.settings.link }}{% else %}javascript-void:(0){% endif %}">
+          <div class="section-holder" style="background-image: url({{block.settings.image | img_url: 'master'}});">
+            <h3 class="SectionHeader__Heading Heading u-h3 section-heading" style="color: {{block.settings.text-color}}">{{ block.settings.heading}}</h3>
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{%endif%}
+{% schema %}
+  { 
+    "name":"Explore",
+    "settings": [
+      {
+        "id": "backgroud-color",
+        "type": "color",
+        "label": "Background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Text"
+      },
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      }
+    ],
+    
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Explore Details",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Background image"
+          },
+          {
+            "id": "heading",
+            "type": "text",
+            "label": "Headind"
+          },
+          {
+            "id": "text-color",
+            "type": "color",
+            "label": "Text color",
+            "default": "#000000"
+          },
+          {
+            "id": "link",
+            "type": "url",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "category": "Text",
+        "name": "Sponsor"
+      }
+    ]
+  }
+{% endschema %}

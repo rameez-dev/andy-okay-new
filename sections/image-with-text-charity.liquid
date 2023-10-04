@@ -1,0 +1,89 @@
+{%- if section.settings.show == true -%}
+{% for block in section.blocks %}
+{%- if block.settings.show == true -%}
+{%- if page.handle == block.settings.handle -%}
+<div class="mission-block-section">
+  <div class="block-content " style="background-color: {{block.settings.backgroud-color}}">
+    <div class="content-holder image-text">
+      <h4 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4 content-heading" style="color: {{block.settings.text-color}}">{{block.settings.heading}}</h4>
+      <div class="SectionHeader__SubHeading Heading u-h6 content-detail" style="color: {{block.settings.text-color}}">
+        {{block.settings.paragraph}}
+      </div>
+    </div>
+  </div>
+  {%- if block.settings.image != blank -%}
+  <div class="block-image">
+    <img src="{{block.settings.image | img_url: 'master' }}" alt="">
+  </div>
+  {%endif%}
+</div>
+{%endif%}
+{%- endif -%}
+{%endfor%}
+{%endif%}
+{% schema %}
+  { 
+    "name":"Image With Text",
+    "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image-with-text",
+      "name": "Image With Text",
+    "settings": [
+      {
+        "id": "handle",
+        "type": "text",
+        "label": "Charity Page Handle"
+      },
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"   
+      },
+      {
+        "id": "paragraph",
+        "type": "richtext",
+        "label": "Paragraph"
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"  
+      },
+      {
+        "id": "backgroud-color",
+        "type": "color",
+        "label": "Background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      }
+    ]
+    }
+    ],
+
+    "presets": [
+      {
+      "category": "Text",
+      "name": "Image With Text"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{% assign looxstats = shop.metafields.loox["global_stats"] | split: ',' %}
+<header class="PageHeader super-happy-customers-header">
+    <div class="SectionHeader SectionHeader--center">
+        <!-- <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1> -->
+        <h1 class="SectionHeader__Heading Heading u-h1 super-happy-customers-title">Super Happy Customers</h1>
+        {% comment %} super happy customers summary {% endcomment %}
+        <div class="super-happy-customers-summary">
+            <div class="super-happy-customers-summary-stars">
+            <span class="super-happy-customers-summary-text">Excellent:</span>
+            <div class="heading__stars">
+                <i data-panel="dist" class="fa star fa-star"></i>
+                <i data-panel="dist" class="fa star fa-star"></i>
+                <i data-panel="dist" class="fa star fa-star"></i>
+                <i data-panel="dist" class="fa star fa-star"></i>
+                <i data-panel="dist" class="fa star fa-star"></i>
+            </div>
+            </div>
+            <div class="super-happy-customers-summary-average-reviews-container">
+            <div class="super-happy-customers-summary-average">
+                <span class="super-happy-customers-summary-text">Average:</span>
+                <div class="super-happy-customers-summary-number">4.9/{{looxstats[0]}}</div>
+            </div>
+            <div class="super-happy-customers-summary-reviews">
+                <span class="super-happy-customers-summary-text" >Reviews:</span>
+                <div class="super-happy-customers-summary-number">{{looxstats[1]}}</div>
+            </div>
+            </div>
+        </div>
+        {% comment %} super happy customers summary {% endcomment %}
+    </div>
+</header>

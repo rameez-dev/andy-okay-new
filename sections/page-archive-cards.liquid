@@ -1,0 +1,200 @@
+{%- if section.settings.show == true -%}
+<section data-section-type="faq" data-section-id="{{ section.id }}">
+  <article class="char-content">
+    <div class="container">
+      <div class="card-gr card-space--wide justify--center">
+        {% for block in section.blocks %}
+        {%- if block.settings.show == true -%}
+        <div class="card-gr__item card-full sm-one-half md-one-third col-one-4">
+          <a href="{{block.settings.page-url}}" class="andy__pro-card__link" target="_blank">
+            <div class="andy__pro-card" style="background-color: {{section.settings.card-color}}; box-shadow: 10px 10px 0px 0px {{section.settings.contrast-color}};">
+              {% if block.settings.employees != blank and block.settings.show-employees == true %}
+              <span class="andy__pro-card__tag">{{block.settings.employees}}</span>
+              {% endif %}
+              {% if block.settings.month != blank and block.settings.show-month == true %}
+              <span class="andy__pro-card__tag">{{block.settings.month}}</span>
+              {% endif %}
+              <div class="andy__pro-card__owner">
+                <img class="andy__pro-card__owner-logo" src="{{block.settings.image | img_url: 'small'}}" />
+              </div>
+              {% if block.settings.artists != blank and block.settings.show-artists == true %}
+              <div class="andy__pro-card__sqft"><span>{{block.settings.artists}}</span> Artists</div>
+              {% endif %}
+              {% if block.settings.reached != blank and block.settings.show-reached == true %}
+              <div class="andy__pro-card__sqft"><span>{{block.settings.reached}}</span></div>
+              {% endif %}
+              {% if block.settings.raised != blank and block.settings.show-raised == true %}
+              <div class="andy__pro-card__sqft"><span>{{block.settings.raised}}</span></div>
+              {% endif %}
+              {% if block.settings.operations != blank and block.settings.show-operations == true %}
+              <div class="andy__pro-card__sqft"><span>{{block.settings.operations}}</span></div>
+              {% endif %}
+              {% if block.settings.carbon != blank and block.settings.show-carbon == true %}
+              <div class="andy__pro-card__carbon-offset"><span>{{block.settings.carbon}}</span>
+              </div>
+              {% endif %}
+              {% if block.settings.trees != blank and block.settings.show-trees == true %}
+              <div class="andy__pro-card__trees-planted"><span>{{block.settings.trees}}</span></div>
+              {% endif %}
+            </div>
+          </a>
+        </div>
+        {%endif%}
+        {% endfor %}
+      </div>
+    </div>
+  </article>
+</section>
+{%endif%}
+
+{% schema %}
+{
+"name":"Cards List",
+"settings": [
+{
+"id": "card-color",
+"type": "color",
+"label": "Card color",
+"default": "#e4e4e4"
+},
+{
+"id": "contrast-color",
+"type": "color",
+"label": "Contrast color",
+"default": "#269976"
+},
+{
+"type": "checkbox",
+"id": "show",
+"label": "Show",
+"default": false
+}
+],
+
+"blocks": [
+{
+"type": "image",
+"name": "Charity Card Detail",
+"limit": 12,
+"settings": [
+{
+"type": "checkbox",
+"id": "show",
+"label": "Show",
+"default": false
+},
+{
+"id": "employees",
+"type": "text",
+"label": "Total Employees"
+},
+{
+"type": "checkbox",
+"id": "show-employees",
+"label": "Show Employees Tag",
+"default": false
+},
+{
+"id": "year",
+"type": "text",
+"label": "Charity Year : 20XX"
+},
+{
+"id": "month",
+"type": "text",
+"label": "Charity Month in Letters"
+},
+{
+"type": "checkbox",
+"id": "show-month",
+"label": "Show Month Tag",
+"default": false
+},
+{
+"id": "image",
+"type": "image_picker",
+"label": "Logo"
+},
+{
+"id": "artists",
+"type": "text",
+"label": "Total Artists"
+},
+{
+"type": "checkbox",
+"id": "show-artists",
+"label": "Show Artists Tag",
+"default": false
+},
+{
+"id": "reached",
+"type": "text",
+"label": "Reached"
+},
+{
+"type": "checkbox",
+"id": "show-reached",
+"label": "Show Reached Tag",
+"default": false
+},
+{
+"id": "raised",
+"type": "text",
+"label": "Charity Raised"
+},
+{
+"type": "checkbox",
+"id": "show-raised",
+"label": "Show Charity Raised Tag",
+"default": false
+},
+{
+"id": "operations",
+"type": "text",
+"label": "Sq. feet of Operations"
+},
+{
+"type": "checkbox",
+"id": "show-operations",
+"label": "Show Operations Tag",
+"default": false
+},
+{
+"id": "carbon",
+"type": "text",
+"label": "Tons of Carbon"
+},
+{
+"type": "checkbox",
+"id": "show-carbon",
+"label": "Show Carbon Tag",
+"default": false
+},
+{
+"id": "trees",
+"type": "text",
+"label": "No. of Trees"
+},
+{
+"type": "checkbox",
+"id": "show-trees",
+"label": "Show Trees Tag",
+"default": false
+},
+{
+"id": "page-url",
+"type": "url",
+"label": "Charity Detail Page URL"
+}
+]
+}
+],
+
+"presets": [
+{
+"category": "Text",
+"name": "Cards List"
+}
+]
+}
+{% endschema %}

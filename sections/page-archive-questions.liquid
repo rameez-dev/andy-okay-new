@@ -1,0 +1,112 @@
+<section data-section-type="faq" data-section-id="{{ section.id }}">
+  {%- if section.settings.show == true -%}
+    <article class="char-faq" style="background-color: {{section.settings.backgroud-color}}">
+      <div class="container">
+        <h2>{{section.settings.heading}}</h2>
+        
+        {% for block in section.blocks %}
+        <div class="faq__group faq--group-{{ forloop.index }}">
+          <div class="faq__title js-collapser-toggle" data-target=".faq--group-{{ forloop.index }}">
+            <h4 style="color: {{section.settings.text-color}}" >{{block.settings.title}}</h4>
+          </div>
+          <div class="faq__content">
+            <p style="color: {{section.settings.text-color}}" >{{block.settings.answer}}</p>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+    </article>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Questions",
+  "settings": [
+  {
+    "type": "checkbox",
+    "id": "show",
+    "label": "Show",
+    "default": false
+  },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"   
+    },
+    {
+      "id": "backgroud-color",
+      "type": "color",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "id": "text-color",
+      "type": "color",
+      "label": "Text color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} 
+
+<script>
+// Accordion functionality
+  
+const Collapser = {
+  config: {
+    expandClass: "is-expanded",
+    targetExpandClass: "target-expanded",
+    targetClass: "is-open",
+  },
+
+  expand: function (target, parent) {
+    $(parent)
+      .find("." + Collapser.config.expandClass)
+      .removeClass(Collapser.config.expandClass);
+    $(parent)
+      .find("." + Collapser.config.targetClass)
+      .removeClass(Collapser.config.targetClass);
+    $(target).addClass(Collapser.config.expandClass);
+  },
+
+  collapse: function (target, parent) {
+    $(target).removeClass(Collapser.config.expandClass);
+  },
+
+  init: function (className) {
+    $(className).on("click", function (e) {
+      e.preventDefault();
+      const target = $(this).attr("data-target"),
+        parent = $(this).parent();
+
+      if ($(target).hasClass(Collapser.config.expandClass)) {
+        Collapser.collapse(target, parent);
+      } else {
+        Collapser.expand(target, parent);
+      }
+    });
+  },
+};
+
+Collapser.init(".js-collapser-toggle");
+</script>

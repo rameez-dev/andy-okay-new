@@ -1,0 +1,13 @@
+{%- if section.settings.show == true -%}
+<div class="banner-section" style="background-image: url({{section.settings.image | img_url: 'master'}});">
+  <div class="banner-content">
+    <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 content-heading" style="color: {{section.settings.text-color}}">{{ section.settings.heading}}</h2>
+    <div class="SectionHeader__SubHeading Heading u-h6 content-detail" style="color: {{section.settings.text-color}}">
+    	{{ section.settings.paragraph}}
+    </div>
+    {%if section.settings.link != blank %}
+    <a href="{{ section.settings.link }}" class="Button Button--primary">{{section.settings.button}}</a>
+    {%endif%}
+  </div>
+</div>
+{%endif%}

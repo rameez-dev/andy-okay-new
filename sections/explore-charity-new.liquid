@@ -1,0 +1,118 @@
+{%- if section.settings.show == true -%}
+{% for block in section.blocks %}
+{%- if block.type == 'specs' -%}
+{%- if block.settings.show == true and page.handle == block.settings.handle -%}
+<div class="section-details explore" style="background-color: {{block.settings.backgroud-color}}">
+  <div class="section-details-holder">
+    <h2 class="SectionHeader__Heading Heading u-h2 details-heading" style="color: {{block.settings.text-color}}">{{
+      block.settings.heading}}</h2>
+  </div>
+  <ul class="section-details-list">
+    
+    {% for block in section.blocks %}
+    {% if block.type == 'quote' %}
+    {%- if page.handle == block.settings.handle -%}
+    <li class="section-detail">
+      <a href="{% if block.settings.link != blank %}{{ block.settings.link }}{% else %}javascript-void:(0){% endif %}">
+        <div class="section-holder" style="background-image: url({{block.settings.image | img_url: 'master'}});">
+          <h3 class="SectionHeader__Heading Heading u-h3 section-heading" style="color: {{block.settings.text-color}}">
+            {{ block.settings.heading}}</h3>
+        </div>
+      </a>
+    </li>
+    {%- endif -%}
+    {%- endif -%}
+    {% endfor %}
+  </ul>
+</div>
+{%endif%}
+{%endif%}
+{%endfor%}
+{%endif%}
+
+{% schema %}{
+  "name": "Explore",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Over All Show",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Explore Details",
+      "settings": [
+        {
+          "id": "handle",
+          "type": "text",
+          "label": "Charity Page Handle"
+        },
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Background image"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "id": "text-color",
+          "type": "color",
+          "label": "Text color",
+          "default": "#000000"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "name": "Page-Wise Specs",
+      "settings": [
+        {
+          "id": "handle",
+          "type": "text",
+          "label": "Charity Page Handle"
+        },
+        {
+          "type": "checkbox",
+          "id": "show",
+          "label": "Show",
+          "default": false
+        },
+        {
+          "id": "backgroud-color",
+          "type": "color",
+          "label": "Background color-1",
+          "default": "#FFFFFF"
+        },
+        {
+          "id": "text-color",
+          "type": "color",
+          "label": "Text color",
+          "default": "#000000"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Sponsor"
+    }
+  ]
+}
+{% endschema %}

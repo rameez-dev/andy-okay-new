@@ -1,153 +1,115 @@
-{%- comment -%}
-----------------------------------------------------------------------------------------------------------------------
-SOCIAL MEDIA
-----------------------------------------------------------------------------------------------------------------------
-
-Output a list of social media icons based on the social URL settings.
-
-* layout: either support "list" or "block" (default to list)
-{%- endcomment -%}
+{%- assign social_media_count = 0 -%}
 
 {%- capture social_media -%}
-  {%- if settings.social_facebook != blank or shop.brand.metafields.social_links.facebook != blank -%}
-    <li class="social-media__item branding-colors--facebook">
-      <a href="{{ settings.social_facebook | default: shop.brand.metafields.social_links.facebook }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Facebook' }}">
-        {%- render 'icon' with 'facebook' -%}
+  {%- if settings.social_facebook != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_facebook | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Facebook">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'facebook' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_twitter != blank or shop.brand.metafields.social_links.twitter != blank -%}
-    <li class="social-media__item branding-colors--twitter">
-      <a href="{{ settings.social_twitter | default: shop.brand.metafields.social_links.twitter }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Twitter' }}">
-        {%- render 'icon' with 'twitter' -%}
+  {%- if settings.social_twitter != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_twitter | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Twitter">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'twitter' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_instagram != blank or shop.brand.metafields.social_links.instagram != blank -%}
-    <li class="social-media__item branding-colors--instagram">
-      <a href="{{ settings.social_instagram | default: shop.brand.metafields.social_links.instagram }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Instagram' }}">
-        {%- render 'icon' with 'instagram' -%}
+  {%- if settings.social_instagram != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_instagram | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Instagram">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'instagram' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_threads != blank or shop.brand.metafields.social_links.threads != blank -%}
-    <li class="social-media__item branding-colors--instagram">
-      <a href="{{ settings.social_threads | default: shop.brand.metafields.social_links.threads }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Threads' }}">
-        {%- render 'icon' with 'threads' -%}
+  {%- if settings.social_pinterest != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_pinterest | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Pinterest">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'pinterest' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_pinterest != blank or shop.brand.metafields.social_links.pinterest != blank -%}
-    <li class="social-media__item branding-colors--pinterest">
-      <a href="{{ settings.social_pinterest | default: shop.brand.metafields.social_links.pinterest }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Pinterest' }}">
-        {%- render 'icon' with 'pinterest' -%}
+  {%- if settings.social_youtube != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_youtube | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="YouTube">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'youtube' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_youtube != blank or shop.brand.metafields.social_links.youtube != blank -%}
-    <li class="social-media__item branding-colors--youtube">
-      <a href="{{ settings.social_youtube | default: shop.brand.metafields.social_links.youtube }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'YouTube' }}">
-        {%- render 'icon' with 'youtube' -%}
+  {%- if settings.social_vimeo != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_vimeo | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Vimeo">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'vimeo' -%}</span>
       </a>
     </li>
-  {%- endif -%}
 
-  {%- if settings.social_tiktok != blank or shop.brand.metafields.social_links.tiktok != blank -%}
-    <li class="social-media__item branding-colors--tiktok">
-      <a href="{{ settings.social_tiktok | default: shop.brand.metafields.social_links.tiktok }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'TikTok' }}">
-        {%- render 'icon' with 'tiktok' -%}
-      </a>
-    </li>
-  {%- endif -%}
-
-  {%- if settings.social_vimeo != blank or shop.brand.metafields.social_links.vimeo != blank -%}
-    <li class="social-media__item branding-colors--vimeo">
-      <a href="{{ settings.social_vimeo | default: shop.brand.metafields.social_links.vimeo }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Vimeo' }}">
-        {%- render 'icon' with 'vimeo' -%}
-      </a>
-    </li>
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
   {%- if settings.social_linkedin != blank -%}
-    <li class="social-media__item branding-colors--linkedin">
-      <a href="{{ settings.social_linkedin }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'LinkedIn' }}">
-        {%- render 'icon' with 'linkedin' -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_linkedin | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'linkedin' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_snapchat != blank or shop.brand.metafields.social_links.snapchat != blank -%}
-    <li class="social-media__item branding-colors--snapchat">
-      <a href="{{ settings.social_snapchat | default: shop.brand.metafields.social_links.snapchat }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Snapchat' }}">
-        {%- render 'icon' with 'snapchat' -%}
+  {%- if settings.social_snapchat != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_snapchat | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="SnapChat">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'snapchat' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_whatsapp != blank -%}
-    <li class="social-media__item branding-colors--whatsapp">
-      <a href="{{ settings.social_whatsapp }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'WhatsApp' }}">
-        {%- render 'icon' with 'whatsapp' -%}
+  {%- if settings.social_tumblr != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_tumblr | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Tumblr">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'tumblr' -%}</span>
       </a>
     </li>
+
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 
-  {%- if settings.social_tumblr != blank or shop.brand.metafields.social_links.tumblr != blank -%}
-    <li class="social-media__item branding-colors--tumblr">
-      <a href="{{ settings.social_tumblr | default: shop.brand.metafields.social_links.tumblr }}" class="tap-area"  target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Tumblr' }}">
-        {%- render 'icon' with 'tumblr' -%}
+  {%- if settings.social_fancy != blank -%}
+    <li class="HorizontalList__Item">
+      <a href="{{ settings.social_fancy | replace_first: 'https://', '' | replace_first: 'http://', '' | prepend: 'https://' }}" class="Link Link--primary" target="_blank" rel="noopener" aria-label="Fancy">
+        <span class="Icon-Wrapper--clickable">{%- include 'icon' with 'fancy' -%}</span>
       </a>
     </li>
-  {%- endif -%}
 
-  {%- if settings.social_wechat != blank -%}
-    <li class="social-media__item branding-colors--wechat">
-      <a href="{{ settings.social_wechat }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'WeChat' }}">
-        {%- render 'icon' with 'wechat' -%}
-      </a>
-    </li>
-  {%- endif -%}
-
-  {%- if settings.social_reddit != blank -%}
-    <li class="social-media__item branding-colors--reddit">
-      <a href="{{ settings.social_reddit }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Reddit' }}">
-        {%- render 'icon' with 'reddit' -%}
-      </a>
-    </li>
-  {%- endif -%}
-
-  {%- if settings.social_line != blank -%}
-    <li class="social-media__item branding-colors--line">
-      <a href="{{ settings.social_line }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'LINE' }}">
-        {%- render 'icon' with 'line' -%}
-      </a>
-    </li>
-  {%- endif -%}
-
-  {%- if settings.social_spotify != blank -%}
-    <li class="social-media__item branding-colors--spotify">
-      <a href="{{ settings.social_spotify }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: 'Spotify' }}">
-        {%- render 'icon' with 'spotify' -%}
-      </a>
-    </li>
-  {%- endif -%}
-
-  {%- if settings.social_21buttons != blank -%}
-    <li class="social-media__item branding-colors--21buttons">
-      <a href="{{ settings.social_21buttons }}" class="tap-area" target="_blank" rel="noopener" aria-label="{{ 'general.social.follow_on' | t: social_media: '21 Buttons' }}">
-        {%- render 'icon' with '21buttons' -%}
-      </a>
-    </li>
+    {% assign social_media_count = social_media_count | plus: 1 %}
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if social_media != blank -%}
-  <ul class="social-media social-media--{{ layout | default: 'list' }} unstyled-list" role="list">
-    {{- social_media -}}
+{%- assign spacing_to_use = spacing -%}
+
+{%- if spacing == 'large' and social_media_count > 6 -%}
+  {%- assign spacing_to_use = 'small' -%}
+{%- endif -%}
+
+{%- if social_media_count > 0 -%}
+  <ul class="{{ class }} HorizontalList {% if spacing %}HorizontalList--spacing{{ spacing | capitalize }}{% endif %}">
+    {{ social_media }}
   </ul>
 {%- endif -%}

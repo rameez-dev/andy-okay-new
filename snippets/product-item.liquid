@@ -1,0 +1,308 @@
+{% assign has_charity = false %}
+{% assign charity_org = '' %}
+  
+{% assign has_artist = false %}
+{% assign artist_name = '' %}
+{% for tag in product.tags %}
+  {% assign product_tag_first = tag | downcase | split: ':' | first %}
+  {% if product_tag_first == 'charity' %}
+    {% assign has_charity = true %}
+    {% assign charity_org = tag | split: ':' | last | split: '-' | join: ' ' %}
+  {% elsif product_tag_first == 'artist' %}
+    {% assign has_artist = true %}
+    {% assign artist_name = tag | split: ':' | last | split: '-' | join: ' ' %}
+  {% endif %}
+{% endfor %}
+
+<div class="ProductItem {% if use_horizontal %}ProductItem--horizontal{% endif %}">
+  <div class="ProductItem__Wrapper">
+    {%- comment -%}
+    We are using LazySizes to efficiently choose the most appropriate image in the set. However, because internally LazySizes uses srcset, we need to make
+    sure that the image sizes we offer is not larger than the max size uploaded by the merchants.
+    {%- endcomment -%}
+
+    {%- if settings.product_image_size == 'natural' or use_horizontal -%}
+      {%- assign use_natural_size = true -%}
+    {%- else -%}
+      {%- assign use_natural_size = false -%}
+    {%- endif -%}
+
+    {%- if settings.product_show_secondary_image and product.images[1] != blank and use_horizontal != true -%}
+      {%- assign has_alternate_image = true -%}
+    {%- else -%}
+      {%- assign has_alternate_image = false -%}
+    {%- endif -%}
+    {%- comment -%}this is for quickview
+    <div class="quick-view-button"><a class="quick-view" data-handle="{{ product.handle }}" href="javascript:void(0);">Quick View</a></div>
+    {%- endcomment -%}
+    <a href="{% if is_sold_out_collection == true %}javascript:void(0);{% else %}{{ product.url | within: collection }}{% endif %}" class="ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %} {% if is_sold_out_collection == true %}soldout-newsletter-popup-trigger{% endif %}">
+      {%- if use_horizontal -%}
+        {%- assign max_width = 125 -%}
+      {%- else -%}
+        {%- assign max_width = product.featured_image.width -%}
+      {%- endif -%}
+
+      <div class="AspectRatio AspectRatio--{% if use_natural_size %}withFallback{% else %}{{ settings.product_image_size }}{% endif %}" style="max-width: {{ max_width }}px; {% if use_natural_size %}padding-bottom: {{ 100.0 | divided_by: product.featured_image.aspect_ratio }}%;{% endif %} --aspect-ratio: {{ product.featured_image.aspect_ratio }}">
+        {%- comment -%}
+        IMPLEMENTATION NOTE: The alternate image (not visible by default) should be the first in the DOM, as the spinner (Image__Loader element) is
+        displayed based on the immediately previously shown image.
+        {%- endcomment -%}
+
+        {%- if has_alternate_image -%}
+          {%- include 'image-size', sizes: '200,300', image: product.images[1] -%}
+          {%- assign image_url = product.images[1] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+          <img class="ProductItem__Image ProductItem__Image--alternate Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.images[1].alt | escape }}" data-image-id="{{ product.images[1].id }}">
+        {%- endif -%}
+
+        {%- include 'image-size', sizes: '200,300', image: product.featured_image -%}
+        {%- assign image_url = product.featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+        <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ product.featured_image.alt | escape }}" data-image-id="{{ product.featured_image.id }}">
+        <span class="Image__Loader"></span>
+
+        <noscript>
+          <img class="ProductItem__Image ProductItem__Image--alternate" src="{{ product.images[1] | img_url: '300x' }}" alt="{{ product.images[1].alt | escape }}">
+          <img class="ProductItem__Image" src="{{ product.featured_image | img_url: '300x' }}" alt="{{ product.featured_image.alt | escape }}">
+        </noscript>
+        
+      </div>
+    </a>
+
+    {%- if show_labels -%}
+      {%- capture product_labels -%}
+        {%- for tag in product.tags -%}
+          {%- if tag contains '__label' -%}
+            <span class="ProductItem__Label Heading Text--subdued">{{ tag | split: '__label:' | last }}</span>
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+		{%- comment -%}
+        {%- if product.available -%}
+          {%- if product.compare_at_price > product.price -%}
+            <span class="ProductItem__Label Heading Text--subdued">{{ 'product.labels.on_sale' | t }}</span>
+          {%- endif -%}
+        {%- else -%}
+          <span class="ProductItem__Label Heading Text--subdued">{{ 'product.labels.sold_out' | t }}</span>
+        {%- endif -%}
+    	{%- endcomment -%}
+      {%- endcapture -%}
+
+      {%- if product_labels != blank -%}
+        <div class="ProductItem__LabelList">
+          {{ product_labels }}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_product_info -%}
+      <div class="ProductItem__Info {% unless use_horizontal %}ProductItem__Info--{{ settings.product_info_alignment }}{% endunless %} make-center">
+        {%- if show_vendor -%}
+          <p class="ProductItem__Vendor Heading">{{ product.vendor }}</p>
+        {%- endif -%}
+
+        {% if has_charity %}
+          {%- comment -%}<p>Support <span class="Heading">{{ charity_org }}</span></p>{%- endcomment -%}
+          <p class="hide-on-pdp">Support <span class="">{{ charity_org }}</span></p>
+        {% endif %}
+
+        <div class="title-price-container">
+          <h2 class="ProductItem__Title Heading">
+            <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+          </h2>
+          
+          {%- if product.template_suffix != 'coming-soon' -%}
+            {% unless is_sold_out_collection %}
+            <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %}">
+              <span class="divider-line">|</span>
+              {%- if product.compare_at_price > product.price -%}
+                <span class="ProductItem__Price Price Price--highlight Text--subdued">{{ product.price | money_without_trailing_zeros }}</span>
+                <span class="ProductItem__Price Price Price--compareAt Text--subdued" >{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+              {%- elsif product.price_varies -%}
+                {%- capture formatted_min_price -%}<span >{{ product.price_min | money_without_trailing_zeros }}</span>{%- endcapture -%}
+                {%- capture formatted_max_price -%}<span >{{ product.price_max | money_without_trailing_zeros }}</span>{%- endcapture -%}
+                <span class="ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
+              {%- else -%}
+                <span class="ProductItem__Price Price Text--subdued" >{{ product.price | money_without_trailing_zeros }}</span>
+              {%- endif -%}
+            </div>
+            {% endunless %}
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} //removed as per requirement
+        {% if has_artist %}
+          <p class="ProductItem__Vendor Heading">{{ artist_name }}</p>
+        {% endif %}
+        {%- endcomment -%}
+
+        {% comment %} <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}" style="text-align:center"></div> {% endcomment %}
+
+        {%- if show_color_swatch -%}
+          {%- assign color_swatch_list = '' -%}
+
+          {%- capture color_swatch -%}
+            {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
+            {%- capture color_name -%}{{ section.id }}-{{ product.id }}-{% increment color_name %}{%- endcapture -%}
+
+            {%- for option in product.options_with_values -%}
+              {%- assign downcased_option = option.name | downcase -%}
+
+              {%- if color_label contains downcased_option -%}
+                {%- assign variant_option = 'option' | append: forloop.index -%}
+
+                {%- for value in option.values -%}
+        		  {% unless value contains '% off)' %}
+                  {%- assign downcased_value = value | downcase -%}
+                  {%- capture color_id -%}{{ section.id }}-{{ product.id }}-{% increment color_index %}{%- endcapture -%}
+
+                  {%- for variant in product.variants -%}
+                    {% unless variant.metafields.secomapp.freegifts %}
+					{% unless variant.title contains '(Freegifts)' %}
+
+                    {%- if variant[variant_option] == value -%}
+                      {%- assign variant_for_value = variant -%}
+                      {%- break -%}
+                    {%- endif -%}
+                    {% endunless %}
+					{% endunless %}   
+                  {%- endfor -%}
+
+                  <div class="ProductItem__ColorSwatchItem">
+                    {%- if variant_for_value.image -%}
+                      {%- include 'image-size', sizes: '200', image: variant_for_value.image -%}
+                      {%- assign variant_image_url = variant_for_value.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    {%- endif -%}
+
+                    {%- assign color_swatch_name = value | handle | append: '.png' -%}
+                    {%- assign color_swatch_image = images[color_swatch_name] -%}
+
+                    <input class="ColorSwatch__Radio" type="radio" name="{{ color_name }}" id="{{ color_id }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked="checked"{% endif %} data-variant-url="{{ variant_for_value.url }}{% if variant_for_value.image %}#Image{{ variant_for_value.image.id }}{% endif %}" {% if variant_for_value.image %}data-image-id="{{ variant_for_value.image.id }}" data-image-url="{{ variant_image_url }}" data-image-widths="[{{ supported_sizes }}]" data-image-aspect-ratio="{{ variant_for_value.image.aspect_ratio }}"{% endif %} aria-hidden="true">
+                    <label class="ColorSwatch ColorSwatch--small" for="{{ color_id }}" style="background-color: {{ value | replace: ' ', '' | downcase }}; {% if color_swatch_image != blank %}background-image: url({{ color_swatch_image | img_url: '64x64' }}){% endif %}" title="{{ value | escape }}" data-tooltip="{{ value | escape }}"></label>
+                  </div> 
+        		{% endunless %}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          {%- if color_swatch != blank -%}
+            {%- capture color_swatch_list -%}
+              <div class="ProductItem__ColorSwatchList">
+                {{- color_swatch -}}
+              </div>
+            {%- endcapture -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- if show_price_on_hover == nil -%}
+          {%- assign show_price_on_hover = settings.product_show_price_on_hover -%}
+        {%- endif -%}
+
+        {%- if show_price_on_hover and color_swatch_list != blank -%}
+          {{- color_swatch_list -}}
+        {%- endif -%}
+
+        {%- if show_price_on_hover == false and color_swatch_list != blank -%}
+          {{- color_swatch_list -}}
+        {%- endif -%}
+        
+        <!-- xs stock bar app -->
+        {% assign xs_total_left = 0 %}
+        {% assign xs_variant_left = "" %}
+        {% assign is_Large_left = false %}
+        {% for variant in product.variants %}
+        {% unless variant.metafields.secomapp.freegifts %}
+		      {% unless variant.title contains '(Freegifts)' %}
+            {%- if variant.option2 -%}
+              {% if variant.option1 == 'MEDIUM 12x16" 30x40cm' %}
+                {% if variant.option2 == 'No Frame' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% elsif variant.option2 == 'Black' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% elsif variant.option2 == 'White' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% elsif variant.option2 == 'Oak' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% endif %}
+              {% elsif variant.option1 == 'LARGE 20x28" 50x70cm' and variant.inventory_quantity > 0 and is_Large_left == false %}
+                {% if variant.option2 == 'No Frame'  %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                  {% assign is_Large_left = true %}
+                {% elsif variant.option2 == 'Black' %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                  {% assign is_Large_left = true %}
+                {% elsif variant.option2 == 'White'  %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                  {% assign is_Large_left = true %}
+                {% elsif variant.option2 == 'Oak' %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                  {% assign is_Large_left = true %}
+                {% endif %}
+              {% elsif variant.option1 == 'X-Large 28x40" 70x100cm' and xs_total_left == 0 and variant.inventory_quantity > 0 %}
+                {% if variant.option2 == 'No Frame' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% elsif variant.option2 == 'Black' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% elsif variant.option2 == 'White' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% elsif variant.option2 == 'Oak' and xs_total_left == 0 %}
+                  {% assign xs_total_left = variant.inventory_quantity %}
+                  {% assign xs_variant_left = variant.id %}
+                {% endif %}
+              {% endif %}
+            {%- else  %}
+              {% if variant.option1 == 'MEDIUM 12x16" 30x40cm' %}
+                {% assign xs_total_left = variant.inventory_quantity %}
+                {% assign xs_variant_left = variant.id %}
+              {% elsif variant.option1 == 'LARGE 20x28" 50x70cm' and variant.inventory_quantity > 0 %}
+                {% assign xs_total_left = variant.inventory_quantity %}
+                {% assign xs_variant_left = variant.id %}
+              {% elsif variant.option1 == 'X-Large 28x40" 70x100cm' and xs_total_left == 0 and variant.inventory_quantity > 0 %}
+                {% assign xs_total_left = variant.inventory_quantity %}
+                {% assign xs_variant_left = variant.id %}
+              {% endif %}
+            {%- endif -%}
+          {% endunless %}
+		{% endunless %}  
+        {% endfor %}
+        {% unless is_sold_out_collection %}
+        <div style="display: none;" class="xs-stock-bar hide-on-pdp" data-xs-grid-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}' data-xs-stock-left="{{ xs_total_left }}" data-xs-variant-left="{{ xs_variant_left }}" data-inv='{{ product.variants.first.inventory_management }}'>
+          <div class="xs-stock-progress" data-xs-stock-progress>
+            <span class="xs-stock-spinner" data-xs-stock-spinner ></span>
+          </div> 
+          <div class="xs-stock-text xs-stock-cont">
+            <span style="color: #000000;">ONLY</span>
+            <span class="xs-stock-amount" data-xs-stock-text></span>
+            <span class="xs-stock-text-total-custom" style="color: #000000;" data-xs-stock-text-total-custom></span>
+          </div>
+        </div>
+        {% endunless %}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if use_horizontal -%}
+    <a href="{{ associated_product.url }}" class="ProductItem__ViewButton Button Button--secondary hidden-pocket">{{ 'collection.product.view_product' | t }}</a>
+  {%- endif -%}
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('.soldout-newsletter-popup-trigger').click(function(){
+      $('.NewsletterPopup.soldout-popup').addClass('visible');
+      $('body').addClass('soldout-popup-visible');
+    });
+  });
+</script>

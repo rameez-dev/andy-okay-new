@@ -1,0 +1,53 @@
+{%include 'text-with-backgroundimage'%}
+
+{% schema %}
+  { 
+    "name":"Text With ImageThree",
+    "settings": [
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "paragraph",
+        "type": "richtext",
+        "label": "Content"
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Background image"
+      },
+      {
+        "id": "button",
+        "type": "text",
+        "label": "Button Text" 
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "Button link"
+      },
+      
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "category": "Text",
+        "name": "Hero overlay"
+      }
+    ]
+  }
+{% endschema %}
