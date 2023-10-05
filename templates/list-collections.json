@@ -2,7 +2,15 @@
   "sections": {
     "main": {
       "type": "list-collections-template",
-      "settings": {}
+      "settings": {
+        "collections_to_show": "all",
+        "image_size": "small",
+        "add_spacing": true,
+        "expand_collection": false,
+        "apply_overlay": false,
+        "text_color": "#ffffff",
+        "button_color": "#363636"
+      }
     }
   },
   "order": [

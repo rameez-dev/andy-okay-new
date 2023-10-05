@@ -34,7 +34,13 @@
     },
     "collection-footer": {
       "type": "collection-footer",
-      "settings": {}
+      "settings": {
+        "show_section": false,
+        "text_color": "#ffffff",
+        "apply_overlay": false,
+        "title": "Our story",
+        "content": "<p>Add your own custom content to explain your processes...<\/p>"
+      }
     }
   },
   "order": [
