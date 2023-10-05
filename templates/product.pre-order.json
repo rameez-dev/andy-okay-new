@@ -14,7 +14,13 @@
     },
     "recently-viewed-products": {
       "type": "recently-viewed-products",
-      "settings": {}
+      "settings": {
+        "show_section": true,
+        "title": "You might also like:",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
     }
   },
   "order": [

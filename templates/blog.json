@@ -2,15 +2,34 @@
   "sections": {
     "main": {
       "type": "blog-template",
-      "settings": {}
+      "settings": {
+        "show_rss": false,
+        "show_tags": false,
+        "show_featured_article": false,
+        "show_category": true
+      }
     },
     "blog-hero": {
       "type": "blog-hero",
-      "settings": {}
+      "settings": {
+        "show": true,
+        "heading": "THE GALLERIST",
+        "paragraph": "<p>Providing you with the latest news and insights on the art world, focusing on gallery artists and their work. Our team of art experts will be sharing their knowledge and expertise to keep you up-to-date with the latest trend.<\/p>",
+        "image": "shopify:\/\/shop_images\/hero_banner-resized-1.jpg",
+        "text-color": "#000000"
+      }
     },
     "shop-now": {
       "type": "shop-now",
-      "settings": {}
+      "settings": {
+        "show_section": true,
+        "title": "",
+        "collection": "just-released",
+        "grid_items_count": 12,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
     }
   },
   "order": [

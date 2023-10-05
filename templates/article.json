@@ -2,11 +2,25 @@
   "sections": {
     "main": {
       "type": "article-template",
-      "settings": {}
+      "settings": {
+        "show_article_image": true,
+        "show_date": true,
+        "show_category": true,
+        "show_author": false,
+        "show_share_buttons": true
+      }
     },
     "shop-now": {
       "type": "shop-now",
-      "settings": {}
+      "settings": {
+        "show_section": true,
+        "title": "",
+        "collection": "just-released",
+        "grid_items_count": 12,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
     }
   },
   "order": [
