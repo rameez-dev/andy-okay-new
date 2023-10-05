@@ -2,10 +2,1057 @@
   "sections": {
     "slideshow": {
       "type": "slideshow",
+      "blocks": {
+        "1ef45436-7520-4016-9268-345b70759769": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andy_desktop.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/750_2.jpg",
+            "apply_overlay": false,
+            "content_position": "middleCenter",
+            "subheading": "Limited art drops from award-winning artists to support important causes",
+            "title": "Gallery ART 82% Off for charity",
+            "title_mobile": "Gallery ART<br>\n82% Off <br>\nfor charity",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1ef45436-7520-4016-9268-345b70759769"
+      ],
+      "settings": {
+        "show_fullscreen": false,
+        "show_arrow": false,
+        "autoplay": false,
+        "cycle_speed": 6,
+        "text_color": "#ffffff",
+        "button_color": "#000000",
+        "button_background": "#ffffff"
+      }
+    },
+    "1629722231c92f1c0e": {
+      "type": "logolist-home",
+      "blocks": {
+        "5bcb6382-f9b0-4c14-8ec8-3176c59c5ae8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-header.png"
+          }
+        },
+        "0d2b835b-4b58-47fb-bd89-83a244d84a7d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/smile2.png"
+          }
+        },
+        "a8ccc9a0-734a-4f9b-a108-d2a54754ffe1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ptsduk2.png"
+          }
+        },
+        "ec2acdbf-ae53-4ba6-94c1-8f66ce4a30b0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/abc.png"
+          }
+        },
+        "be9897c8-914d-48fc-98fc-24ae41259907": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/amazonwatch5.png"
+          }
+        },
+        "05e8ab77-1631-46e9-a8de-7b9cb97e6aac": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/greenpeace_vit2_b1cd6905-81dc-4c6f-ae94-1befb87d09f5.png"
+          }
+        },
+        "4fd1b91c-a9a6-426e-8b64-b5a4219432b6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pangeaseed.png"
+          }
+        },
+        "6ce043c5-94a3-498e-963d-0fea1a9bc337": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sealegacy.png"
+          }
+        },
+        "04657013-4962-42d3-ade9-0edd4811a0b8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rainforesttrust.png"
+          }
+        },
+        "393d40cf-97b2-4057-b5ff-ce29e77d6bb4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wwf_vit.png"
+          }
+        }
+      },
+      "block_order": [
+        "5bcb6382-f9b0-4c14-8ec8-3176c59c5ae8",
+        "0d2b835b-4b58-47fb-bd89-83a244d84a7d",
+        "a8ccc9a0-734a-4f9b-a108-d2a54754ffe1",
+        "ec2acdbf-ae53-4ba6-94c1-8f66ce4a30b0",
+        "be9897c8-914d-48fc-98fc-24ae41259907",
+        "05e8ab77-1631-46e9-a8de-7b9cb97e6aac",
+        "4fd1b91c-a9a6-426e-8b64-b5a4219432b6",
+        "6ce043c5-94a3-498e-963d-0fea1a9bc337",
+        "04657013-4962-42d3-ade9-0edd4811a0b8",
+        "393d40cf-97b2-4057-b5ff-ce29e77d6bb4"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 3,
+        "background_color": "#161616",
+        "heading": "",
+        "heading_text_color": "#8a8a8a"
+      }
+    },
+    "1642540604407ce1ad": {
+      "type": "numberbadges",
+      "blocks": {
+        "5ea55816-6d97-477e-873b-d5e50be1ad3f": {
+          "type": "badges",
+          "settings": {
+            "title": "226",
+            "subheading": "Signed Artists"
+          }
+        },
+        "d0c3d900-0a1e-4acb-9012-c05d97e5db7f": {
+          "type": "badges",
+          "settings": {
+            "title": "71.341",
+            "subheading": "Sold for Charity"
+          }
+        },
+        "7d847131-15e2-49e3-b92e-c3130bd5fab1": {
+          "type": "badges",
+          "settings": {
+            "title": "12",
+            "subheading": "Non Profit Partners"
+          }
+        }
+      },
+      "block_order": [
+        "5ea55816-6d97-477e-873b-d5e50be1ad3f",
+        "d0c3d900-0a1e-4acb-9012-c05d97e5db7f",
+        "7d847131-15e2-49e3-b92e-c3130bd5fab1"
+      ],
       "settings": {}
+    },
+    "1642537533f81e6dfa": {
+      "type": "text-with-link",
+      "settings": {
+        "heading": "Art for Earth lovers",
+        "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with important nonprofits, we made it happen...<\/p>",
+        "link-text": "FIND OUT MORE",
+        "link": "shopify:\/\/pages\/impact",
+        "background-color": "#ffffff",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "16377864870ab9146c": {
+      "type": "text-with-background",
+      "blocks": {
+        "4898f2aa-9960-4346-b5d8-28a4bdf9b267": {
+          "type": "text",
+          "settings": {
+            "title_color": "#971414",
+            "background_color": "#181818",
+            "title": "This is first slide"
+          }
+        },
+        "09ce34a4-1007-4393-a0d7-207b21c36ff0": {
+          "type": "text",
+          "settings": {
+            "title_color": "#ffffff",
+            "background_color": "#ea2525",
+            "title": "This is second slide"
+          }
+        },
+        "2ba8f314-7a5a-47ef-9e80-1c61db9ddbbb": {
+          "type": "text",
+          "settings": {
+            "title_color": "#160202",
+            "background_color": "#296c7f",
+            "title": "This is third slide"
+          }
+        },
+        "9a71fc85-af64-4a38-87b2-72a0f5fd7e29": {
+          "type": "text",
+          "settings": {
+            "title_color": "#a61717",
+            "background_color": "#7c9e2f",
+            "title": "This is fourth slide"
+          }
+        }
+      },
+      "block_order": [
+        "4898f2aa-9960-4346-b5d8-28a4bdf9b267",
+        "09ce34a4-1007-4393-a0d7-207b21c36ff0",
+        "2ba8f314-7a5a-47ef-9e80-1c61db9ddbbb",
+        "9a71fc85-af64-4a38-87b2-72a0f5fd7e29"
+      ],
+      "disabled": true,
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 5
+      }
+    },
+    "160745450950754497": {
+      "type": "quick-looks",
+      "blocks": {
+        "82d2cc96-d2b1-4349-b7f1-4c9223e6f176": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/astro.jpg",
+            "title": "Astronauts",
+            "popup_background_color": "#fcf2e8",
+            "popup_title": "",
+            "popup_title_color": "#150c0c",
+            "popup_text": "",
+            "popup_description_color": "#0d2b2b",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/astronauts",
+            "left": true
+          }
+        },
+        "d5cdba60-5ac4-4c04-8388-b3a585d3c601": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/animals.jpg",
+            "title": "Animals",
+            "popup_background_color": "#fcf2e8",
+            "popup_title": "",
+            "popup_title_color": "#0d2b2b",
+            "popup_text": "",
+            "popup_description_color": "#0d2b2b",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/animals",
+            "left": true
+          }
+        },
+        "d88674ca-5101-4547-8740-9abba5891fec": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/popart.jpg",
+            "title": "Contemporary",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/pop-art",
+            "left": true
+          }
+        },
+        "7ffcaee8-eae3-48f3-b659-f208ba42991b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/floral_4cf9c7fb-3ab1-445e-b1ce-979fdd5a93a7.jpg",
+            "title": "Floral",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/floral",
+            "left": true
+          }
+        },
+        "bed987ba-3c0e-4332-8e01-973dcc21c67b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/gaming.jpg",
+            "title": "Gaming",
+            "popup_background_color": "#fcf2e8",
+            "popup_title": "",
+            "popup_title_color": "#0d2b2b",
+            "popup_text": "",
+            "popup_description_color": "#0d2b2b",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/gaming",
+            "left": true
+          }
+        },
+        "7c219c9e-ef62-4df1-8c09-cb7211f1fb50": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/motivational_982f550f-ec00-43a1-a97c-4b99f8dd9f93.jpg",
+            "title": "Motivational",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/motivational-art",
+            "left": true
+          }
+        },
+        "3640fa5c-e34e-40dd-a9c3-7e2a5dbfa452": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/landscape.jpg",
+            "title": "Nature",
+            "popup_background_color": "#fcf2e8",
+            "popup_title": "",
+            "popup_title_color": "#0d2b2b",
+            "popup_text": "",
+            "popup_description_color": "#0d2b2b",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/nature",
+            "left": true
+          }
+        },
+        "6af4f2c7-c3fc-4b20-9ae5-abfb137f1c78": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/photography.jpg",
+            "title": "Photo Art",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/photography",
+            "left": true
+          }
+        },
+        "0961a735-eda2-4c2c-a7c4-0ea6437b5489": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/space.jpg",
+            "title": "Space",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/space",
+            "left": true
+          }
+        },
+        "d8eaad19-3aaa-4527-9d03-edb9cb337db2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/surreal.jpg",
+            "title": "Surreal Art",
+            "popup_background_color": "#fcf2e8",
+            "popup_title": "",
+            "popup_title_color": "#0d2b2b",
+            "popup_text": "",
+            "popup_description_color": "#0d2b2b",
+            "popup_btn_copy": "Take action",
+            "popup_btn_url": "shopify:\/\/collections\/surreal",
+            "left": true
+          }
+        }
+      },
+      "block_order": [
+        "82d2cc96-d2b1-4349-b7f1-4c9223e6f176",
+        "d5cdba60-5ac4-4c04-8388-b3a585d3c601",
+        "d88674ca-5101-4547-8740-9abba5891fec",
+        "7ffcaee8-eae3-48f3-b659-f208ba42991b",
+        "bed987ba-3c0e-4332-8e01-973dcc21c67b",
+        "7c219c9e-ef62-4df1-8c09-cb7211f1fb50",
+        "3640fa5c-e34e-40dd-a9c3-7e2a5dbfa452",
+        "6af4f2c7-c3fc-4b20-9ae5-abfb137f1c78",
+        "0961a735-eda2-4c2c-a7c4-0ea6437b5489",
+        "d8eaad19-3aaa-4527-9d03-edb9cb337db2"
+      ],
+      "settings": {
+        "title": "Shop by style",
+        "subtitle": ""
+      }
+    },
+    "16131224958a8baaef": {
+      "type": "featured-collections",
+      "blocks": {
+        "16131224958a8baaef-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "just-released",
+            "title": "",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "16131224958a8baaef-0"
+      ],
+      "settings": {
+        "title": "LATEST AND GREATEST",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "16059880715e2bb83c": {
+      "type": "reviews",
+      "blocks": {
+        "828f4629-667e-4a80-b08b-7ec1965c8bfe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Buzzfeed_logo_PNG3_1b6b7af2-cb53-4703-9e85-58b1367b6a9d.png",
+            "title": "Will purchase more!",
+            "review": "“No long review needed. The art itself and the purpose behind it does all the talking\"",
+            "name": ""
+          }
+        },
+        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Variety_logo_PNG1_adfe71e9-1629-48de-bc73-04a9428ec585.png",
+            "title": "I'm so glad I ordered",
+            "review": "\"Some of the best art in the world. Plain and simple.\"",
+            "name": ""
+          }
+        },
+        "674b6132-eac8-4557-82b1-d2f6fa605097": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wired-logo.png",
+            "title": "JUST PERFECT!",
+            "review": "“Art so good that you will actually want to invite your friends over to your home to see it\"",
+            "name": ""
+          }
+        },
+        "40247eea-ce08-4c28-9a22-c2d488c4a8c9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/highsnob2.png",
+            "title": "Lovely piece of art",
+            "review": "“A triumph of epic art and causes\"",
+            "name": ""
+          }
+        },
+        "a63b2f0c-c31c-4616-9435-559a3510ec45": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GQstyle.png",
+            "title": "For Earth. Not profit.",
+            "review": "\"Art for Causes is the perfect matching of beautiful art and important purpose.\"",
+            "name": ""
+          }
+        }
+      },
+      "block_order": [
+        "828f4629-667e-4a80-b08b-7ec1965c8bfe",
+        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9",
+        "674b6132-eac8-4557-82b1-d2f6fa605097",
+        "40247eea-ce08-4c28-9a22-c2d488c4a8c9",
+        "a63b2f0c-c31c-4616-9435-559a3510ec45"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 3,
+        "title_color": "#313131",
+        "review_color": "#707070",
+        "name_color": "#ffffff",
+        "background_color": "#ffffff",
+        "heading": "68,800+ customers and counting",
+        "button_text": ""
+      }
+    },
+    "1625374692c4d0a8c9": {
+      "type": "featured-collections",
+      "blocks": {
+        "162537469203ba0fa9-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "top-10",
+            "title": "",
+            "grid_items_count": 10,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "162537469203ba0fa9-0"
+      ],
+      "settings": {
+        "title": "OUR BEST SELLERS",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "1643642736f42e4efd": {
+      "type": "featured-collections",
+      "blocks": {
+        "1643642736f42e4efd-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "going-fast",
+            "title": "ALMOST GONE",
+            "grid_items_count": 8,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1643642736f42e4efd-0"
+      ],
+      "settings": {
+        "title": "AND LOST FOREVER",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "16616061592e8072c4": {
+      "type": "front-page-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/norris_yim_a_man_from_nirvana_share_the_meal.jpg",
+        "title": "NEW DROP!",
+        "content": "<p>The modern take on a real classic. 'A Man From Nirvana' by Norris Yim for Share The Meal live now.<\/p>",
+        "button_label": "Purchase for purpose",
+        "button_link": "shopify:\/\/products\/a-man-from-nirvana"
+      }
+    },
+    "154b9c6e-9c0c-4aef-897e-159bd94c086a": {
+      "type": "featured-collections",
+      "blocks": {
+        "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "summer-wall-art",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0"
+      ],
+      "settings": {
+        "title": "HOT PICKS OF THE SEASON",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "1",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "1616425219eaa2e028": {
+      "type": "featured-collections",
+      "blocks": {
+        "161642521918356043-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "astronauts",
+            "title": "",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#0086bc"
+          }
+        },
+        "b69874bf-7f21-4147-9f2b-374f087d0eff": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all products",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "161642521918356043-0",
+        "b69874bf-7f21-4147-9f2b-374f087d0eff"
+      ],
+      "settings": {
+        "title": "ABOVE AND BEYOND",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "16408572584cf4e97b": {
+      "type": "featured-collections",
+      "blocks": {
+        "16408572584cf4e97b-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "animals",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16408572584cf4e97b-0"
+      ],
+      "settings": {
+        "title": "domestic and wild",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "1616425487e7f8d53c": {
+      "type": "featured-collections",
+      "blocks": {
+        "1616425487e7f8d53c-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "motivational-art",
+            "title": "",
+            "grid_items_count": 12,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1616425487e7f8d53c-0"
+      ],
+      "settings": {
+        "title": "Reach your goals",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "161039065890033dbc": {
+      "type": "featured-collections",
+      "blocks": {
+        "161039065890033dbc-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "pop-art",
+            "title": "Pop Art",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "161039065890033dbc-0"
+      ],
+      "settings": {
+        "title": "iconic imagery",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "1629722279ac42c7cf": {
+      "type": "blog-posts-new",
+      "blocks": {
+        "1629722279ac42c7cf-0": {
+          "type": "blog",
+          "settings": {
+            "blog": "the-gallerist"
+          }
+        }
+      },
+      "block_order": [
+        "1629722279ac42c7cf-0"
+      ],
+      "settings": {
+        "subheading": "The low-down on top trends, artist interviews and cool guides that make a difference.",
+        "title": "The Gallerist",
+        "button_link": "https:\/\/andyokay.com\/blogs\/okay-blog",
+        "button_text": "View All >",
+        "button_text_color": "#000000"
+      }
+    },
+    "1571758473108": {
+      "type": "featured-collections",
+      "blocks": {
+        "18bd032c-7869-430d-8d86-b3c9c5e04384": {
+          "type": "collection",
+          "settings": {
+            "collection": "photography",
+            "title": "PHOTO ART",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "18bd032c-7869-430d-8d86-b3c9c5e04384"
+      ],
+      "settings": {
+        "title": "FITS ANY ROOM",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "160614414236913c9b": {
+      "type": "tags",
+      "blocks": {
+        "ee60afc2-b8f1-4e59-a424-5e67f69905d9": {
+          "type": "tag",
+          "settings": {
+            "label": "Motivational artworks",
+            "url": "shopify:\/\/collections\/motivational-art",
+            "filling_color": "#002366",
+            "text_color": "#ffffff"
+          }
+        },
+        "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080": {
+          "type": "tag",
+          "settings": {
+            "label": "Flooko, Nick Flook",
+            "url": "shopify:\/\/collections\/nick-flook",
+            "filling_color": "#ececec",
+            "text_color": "#000000"
+          }
+        },
+        "606c5e46-b137-4b08-9d2d-1e27294edfcc": {
+          "type": "tag",
+          "settings": {
+            "label": "Astronaut in flowers",
+            "url": "shopify:\/\/collections\/astronauts",
+            "filling_color": "#aa9d82",
+            "text_color": "#ffffff"
+          }
+        },
+        "6394b706-10e7-4319-a4a7-d71dcea5ba8d": {
+          "type": "tag",
+          "settings": {
+            "label": "Cool gaming pictures",
+            "url": "shopify:\/\/collections\/gaming",
+            "filling_color": "#ececec",
+            "text_color": "#000000"
+          }
+        },
+        "b1baecde-e153-437a-b414-1ea05e6e7ffb": {
+          "type": "tag",
+          "settings": {
+            "label": "Big moons",
+            "url": "shopify:\/\/collections\/moons",
+            "filling_color": "#ececec",
+            "text_color": "#1c1b1b"
+          }
+        },
+        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9": {
+          "type": "tag",
+          "settings": {
+            "label": "Hippie boho art",
+            "url": "shopify:\/\/collections\/hippie-wall-art",
+            "filling_color": "#000000",
+            "text_color": "#ffffff"
+          }
+        },
+        "b811c0fb-9032-4f3f-b903-a3b8e1887243": {
+          "type": "tag",
+          "settings": {
+            "label": "Nicebleed",
+            "url": "shopify:\/\/collections\/nicebleed",
+            "filling_color": "#002366",
+            "text_color": "#ffffff"
+          }
+        },
+        "cc79b94f-db63-437b-8fda-fa5921ab93fd": {
+          "type": "tag",
+          "settings": {
+            "label": "Surf images",
+            "url": "shopify:\/\/collections\/coastal-wall-art",
+            "filling_color": "#aa9d82",
+            "text_color": "#ffffff"
+          }
+        },
+        "8859c39a-9d69-43ce-b677-20a87cac74a0": {
+          "type": "tag",
+          "settings": {
+            "label": "Vibrant pop art",
+            "url": "shopify:\/\/collections\/pop-art",
+            "filling_color": "#ececec",
+            "text_color": "#1c1b1b"
+          }
+        }
+      },
+      "block_order": [
+        "ee60afc2-b8f1-4e59-a424-5e67f69905d9",
+        "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080",
+        "606c5e46-b137-4b08-9d2d-1e27294edfcc",
+        "6394b706-10e7-4319-a4a7-d71dcea5ba8d",
+        "b1baecde-e153-437a-b414-1ea05e6e7ffb",
+        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9",
+        "b811c0fb-9032-4f3f-b903-a3b8e1887243",
+        "cc79b94f-db63-437b-8fda-fa5921ab93fd",
+        "8859c39a-9d69-43ce-b677-20a87cac74a0"
+      ],
+      "settings": {
+        "title": "TRENDING SEARCHES"
+      }
+    },
+    "1640887620025213cd": {
+      "type": "featured-collections",
+      "blocks": {
+        "1640887620025213cd-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "surreal",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1640887620025213cd-0"
+      ],
+      "settings": {
+        "title": "beyond reality",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "1597932365863": {
+      "type": "featured-collections",
+      "blocks": {
+        "1597932365863-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "sold-out",
+            "title": "just sold out",
+            "grid_items_count": 16,
+            "button_text": "",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1597932365863-0"
+      ],
+      "settings": {
+        "title": "gone forever",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": true,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "1596738774492": {
+      "type": "maestrooo-instagram",
+      "disabled": true,
+      "settings": {
+        "title": "Follow Andy okay on IG",
+        "subheading": "<p>More than art. Every day on IG we feature in depth stories about our artists, and the inspiration behind the art they've created. <a href=\"https:\/\/www.instagram.com\/andy.okay\/\" target=\"_blank\" title=\"https:\/\/www.instagram.com\/andy.okay\/\">Check it out!<\/a><\/p>",
+        "button_text": "",
+        "button_link": "",
+        "layout": "grid",
+        "image_size": "medium",
+        "full_width": true,
+        "add_spacing": false,
+        "rows_count": 1,
+        "show_author": true,
+        "show_caption": true,
+        "show_date": false,
+        "click_action": "open_instagram",
+        "heading_color": "#000000",
+        "subheading_color": "#d3d3d3",
+        "button_background": "#000000",
+        "button_color": "#ffffff",
+        "overlay_color": "#f71997",
+        "overlay_text_color": "#ffffff",
+        "overlay_opacity": 79
+      }
+    },
+    "1608562192030793bb": {
+      "type": "trustbadges",
+      "blocks": {
+        "99b3def7-b1c4-4788-8c09-cbfad90a5987": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shipping.png",
+            "title": "FAST DELIVERY",
+            "subheading": "99% of all orders arrives fast <br> in 3-5 business days"
+          }
+        },
+        "0a9f5d8b-9504-4b20-a0bf-0d2bda0202d6": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/certified.png",
+            "title": "CERTIFIED",
+            "subheading": "Certificate of <br> authenticity included"
+          }
+        },
+        "770a2e03-d0ca-4315-b095-1995954480cd": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shake.png",
+            "title": "ARTISTS SUPPORTED",
+            "subheading": "Our artists are supported <br>from every purchase"
+          }
+        },
+        "75714b74-f137-4c0f-8676-cd073f9b1efc": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/earth.png",
+            "title": "EARTH CONSCIOUS",
+            "subheading": "Each artwork linked to a <br> cause and supports charity"
+          }
+        }
+      },
+      "block_order": [
+        "99b3def7-b1c4-4788-8c09-cbfad90a5987",
+        "0a9f5d8b-9504-4b20-a0bf-0d2bda0202d6",
+        "770a2e03-d0ca-4315-b095-1995954480cd",
+        "75714b74-f137-4c0f-8676-cd073f9b1efc"
+      ],
+      "settings": {}
+    },
+    "1637503490a04c051a": {
+      "type": "trustbadges-v2",
+      "blocks": {
+        "66635bdc-eb4a-4deb-9ffb-2d99bd83501d": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/award_47.png",
+            "title": "Officially Licensed Artworks Only"
+          }
+        },
+        "8d7817b7-b9a9-403e-86b6-6aa576c79565": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/truck2.png",
+            "title": "Free Shipping on All Orders Above <span data-money-convertible>$69<\/span>"
+          }
+        },
+        "a1c7db9b-4886-42fe-bef2-3c8416b55a2b": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thumbup2.png",
+            "title": "100% Safe and Secure Transactions"
+          }
+        }
+      },
+      "block_order": [
+        "66635bdc-eb4a-4deb-9ffb-2d99bd83501d",
+        "8d7817b7-b9a9-403e-86b6-6aa576c79565",
+        "a1c7db9b-4886-42fe-bef2-3c8416b55a2b"
+      ],
+      "settings": {
+        "text_color": "#ffffff",
+        "background_color": "#000000"
+      }
+    },
+    "1562334343415": {
+      "type": "newsletter",
+      "settings": {
+        "section_size": "small",
+        "text_color": "#ffffff",
+        "button_color": "#000000",
+        "button_background_color": "#ad9c81",
+        "input_border_color": "#ffffff",
+        "subheading": "",
+        "title": "Newsletter",
+        "content": "<p>Join 45,000 club members for exclusive drops and offers. Free.<\/p>"
+      }
     }
   },
   "order": [
-    "slideshow"
+    "slideshow",
+    "1629722231c92f1c0e",
+    "1642540604407ce1ad",
+    "1642537533f81e6dfa",
+    "16377864870ab9146c",
+    "160745450950754497",
+    "16131224958a8baaef",
+    "16059880715e2bb83c",
+    "1625374692c4d0a8c9",
+    "1643642736f42e4efd",
+    "16616061592e8072c4",
+    "154b9c6e-9c0c-4aef-897e-159bd94c086a",
+    "1616425219eaa2e028",
+    "16408572584cf4e97b",
+    "1616425487e7f8d53c",
+    "161039065890033dbc",
+    "1629722279ac42c7cf",
+    "1571758473108",
+    "160614414236913c9b",
+    "1640887620025213cd",
+    "1597932365863",
+    "1596738774492",
+    "1608562192030793bb",
+    "1637503490a04c051a",
+    "1562334343415"
   ]
 }
