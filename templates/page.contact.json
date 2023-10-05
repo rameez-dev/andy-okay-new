@@ -2,6 +2,19 @@
   "sections": {
     "main": {
       "type": "page-contact-template",
+      "blocks": {
+        "page-contact-template-0": {
+          "type": "text",
+          "settings": {
+            "title": "Your order number",
+            "use_long_text": false,
+            "is_required": true
+          }
+        }
+      },
+      "block_order": [
+        "page-contact-template-0"
+      ],
       "settings": {}
     }
   },
