@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "loox-referrals-entry-widget": {
+      "type": "loox-referrals-entry-widget",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "loox-referrals-entry-widget"
+  ]
+}
