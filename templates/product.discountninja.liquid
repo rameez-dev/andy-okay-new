@@ -1,0 +1,16 @@
+{% comment %}V4.5.0 - August 2021
+This liquid snippet is used by Discount Ninja
+Do not modify or remove this snippet, this snippet can be overwritten when the app is upgraded
+{% endcomment %}
+
+{%- layout none -%}
+
+{%- comment -%}Return Json payload{%- endcomment -%}
+{
+  "Handle": "{{product.handle}}",
+  "Price": {{product.price_min | default: 0}},
+  "CompareAtPrice": {{product.compare_at_price_max | default: 0}},
+  "Collections": "{{product.collections | map: 'handle' | join: ','}}",
+  "Tags": "{{product.tags | join: ', '}}",
+  "Available": {{product.available}}
+}

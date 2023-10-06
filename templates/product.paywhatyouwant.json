@@ -1,0 +1,377 @@
+{
+  "sections": {
+    "amai_stp-product-snippet": {
+      "type": "amai_stp-product-snippet",
+      "settings": {}
+    },
+    "pwyw": {
+      "type": "pwyw",
+      "settings": {}
+    },
+    "main": {
+      "type": "product-template",
+      "settings": {
+        "pwyw_btn_color": "#313131",
+        "show_share_buttons": false,
+        "show_vendor": false,
+        "show_sku": false,
+        "description_below_add_to_cart": true,
+        "show_review_section": true,
+        "product_review": "Ordered on Sunday and arrived on Tuesday. Great quality print. Looks crisp as even in the biggest size. Absolutely fizzin!",
+        "product_review_by": "Harry G.",
+        "selector_mode": "block",
+        "show_color_swatch": false,
+        "show_color_carousel": false,
+        "show_quantity_selector": false,
+        "show_inventory_quantity": false,
+        "inventory_quantity_threshold": 25,
+        "show_price_in_button": false,
+        "show_payment_button": false,
+        "image_size": "medium",
+        "stack_images": false,
+        "show_thumbnails": true,
+        "enable_image_zoom": false,
+        "tab_page_1_handle": "product-details",
+        "tab_page_2_handle": "shipping",
+        "reviews_enabled": false,
+        "featured_image_size": "normal",
+        "enable_read_more": true
+      }
+    },
+    "trustbadges-v2": {
+      "type": "trustbadges-v2",
+      "blocks": {
+        "6f8b21b5-fab0-4f24-8662-eaea1e356426": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/award_47.png",
+            "title": "Officially Licensed Artworks Only"
+          }
+        },
+        "39e75d2c-e3c9-4b77-b0eb-4cfeea7b0bb6": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/truck_47_v2.png",
+            "title": "Free Shipping on All Orders Above <span data-money-convertible>$69<\/span>"
+          }
+        },
+        "cd0e15c5-3921-4299-b9f9-821975598dd8": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/thumb_47.png",
+            "title": "100% Safe and Secure Transactions"
+          }
+        }
+      },
+      "block_order": [
+        "6f8b21b5-fab0-4f24-8662-eaea1e356426",
+        "39e75d2c-e3c9-4b77-b0eb-4cfeea7b0bb6",
+        "cd0e15c5-3921-4299-b9f9-821975598dd8"
+      ],
+      "settings": {
+        "text_color": "#ffffff",
+        "background_color": "#000000"
+      }
+    },
+    "super-happy-customers": {
+      "type": "super-happy-customers",
+      "settings": {}
+    },
+    "looxReviews": {
+      "type": "looxReviews",
+      "settings": {}
+    },
+    "product-stories": {
+      "type": "product-stories",
+      "blocks": {
+        "14ff120b-3e52-4925-aef5-6c9fb0064967": {
+          "type": "story",
+          "settings": {
+            "product": "",
+            "subheading": "PAY WHAT YOU CAN",
+            "subheading_color": "#9c9c9c",
+            "title": "WE GIVE BACK, TOGETHER",
+            "image": "shopify:\/\/shop_images\/wegiveback.jpg",
+            "image_position": "left",
+            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never before seen.  To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customer a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $2 to $200 extra for their artwork, knowing that the more they chose to pay, the more positive impact it creates.<\/p>",
+            "link_text": "",
+            "link_url": "",
+            "urltext_color": "#e06db6",
+            "text_color": "#d3d3d3"
+          }
+        },
+        "f0ea4428-00f3-47e5-8583-342a56bedf89": {
+          "type": "story",
+          "settings": {
+            "product": "",
+            "subheading": "our founder",
+            "subheading_color": "#7d7d7d",
+            "title": "MEET ANDY",
+            "image": "shopify:\/\/shop_images\/me_923858d1-3604-4d70-94f1-c9d3fdd2504f.jpg",
+            "image_position": "right",
+            "content": "<p>Announced a ”World Hero” by WWF, Andy has over 20 years of experience creating art that tells important stories. <\/p><p>Working hand-in-hand with organisations like UN, Peta, Save Movement, WWF, Rainforest Trust and many more, Andy understands the needs of the communities being served and the power art has to raise awareness. <br\/><br\/>Art for Causes is the product born after 20 years of networking with amazing artists all around the globe, and important organisations of all sizes.  And a need to do more.<br\/><br\/><a href=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\" target=\"_blank\" title=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\"><strong>Click here for an interview with Andy<\/strong><\/a><br\/><em>15min read<\/em><\/p>",
+            "link_text": "",
+            "link_url": "",
+            "urltext_color": "#3d85df",
+            "text_color": "#313131"
+          }
+        }
+      },
+      "block_order": [
+        "14ff120b-3e52-4925-aef5-6c9fb0064967",
+        "f0ea4428-00f3-47e5-8583-342a56bedf89"
+      ],
+      "settings": {}
+    },
+    "product-questions": {
+      "type": "product-questions",
+      "blocks": {
+        "bdd7637b-f990-442f-ba13-02d8189675e3": {
+          "type": "question",
+          "settings": {
+            "title": "How can you offer such affordable art?",
+            "answer": "<p>This price is only possible due to the incredible artists involved, who allows us to lower the price significantly for one of their artworks. Without their honorable participation, we wouldn't exist. <\/p><p><\/p>"
+          }
+        },
+        "5a27f48a-c2f6-40a8-be5e-a9d12d73813e": {
+          "type": "question",
+          "settings": {
+            "title": "Will the price effect the quality?",
+            "answer": "<p>Founded by artists, rest assure that the quality of the product is our top priority. Some of us have been working with paper, details and perfection for over 20 years, and we use all our knowledge (and connections) to bring you something we truly can stand behind. <\/p><p><\/p>"
+          }
+        },
+        "70df1123-723a-47cc-be63-ead4b71b30d0": {
+          "type": "question",
+          "settings": {
+            "title": "How much actually goes to the cause?",
+            "answer": "<p>We donate a third of our profit to non-profit organisations. For each artwork what you choose to donate will go directly to the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
+          }
+        },
+        "4cb04a59-4c09-4f24-9864-7fb99cad394a": {
+          "type": "question",
+          "settings": {
+            "title": "How much do the artists get?",
+            "answer": "<p>Founded by artists, we always want the artists to be fairly compensated as well. We know it's hours and hours of hard work behind each and every one of these artworks. That's why we offer the artists an upfront payment so everyone involved get compensated for their contribution. <\/p>"
+          }
+        },
+        "6a16682a-90e9-4120-a340-2639a261b8f7": {
+          "type": "question",
+          "settings": {
+            "title": "I really want to try it. But first, do you have any guarantee?",
+            "answer": "<p>No worries. We offer 100% customer satisfaction, or your money back. If by any chance you're not completely happy with any part of your customer experience, neither are we. Just let us know and we'll fix it!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bdd7637b-f990-442f-ba13-02d8189675e3",
+        "5a27f48a-c2f6-40a8-be5e-a9d12d73813e",
+        "70df1123-723a-47cc-be63-ead4b71b30d0",
+        "4cb04a59-4c09-4f24-9864-7fb99cad394a",
+        "6a16682a-90e9-4120-a340-2639a261b8f7"
+      ],
+      "custom_css": [],
+      "settings": {
+        "show": true,
+        "heading": "Have QUESTIONS? We got answers",
+        "background-color": "#ffffff",
+        "text-color": "#000000",
+        "link-text": "Read all here >",
+        "link": "https:\/\/andyokay.com\/pages\/faq",
+        "link-color": "#a7967c"
+      }
+    },
+    "product-instagram": {
+      "type": "product-instagram",
+      "blocks": {
+        "2a9c96f4-b1a5-440e-9886-30f99500d6e3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": "https:\/\/www.instagram.com\/andy.okay\/"
+          }
+        },
+        "b7851576-e54d-4693-b6fe-0c99b8eb8d24": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": "https:\/\/www.instagram.com\/andy.okay\/"
+          }
+        },
+        "34e9da48-79d1-4369-a87c-8a2565bcc03b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": "https:\/\/www.instagram.com\/andy.okay\/"
+          }
+        },
+        "7f5b68bd-fccb-4a95-94d5-511a6965017a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": ""
+          }
+        },
+        "615666e0-0c11-420f-970a-9a31cea92ebf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": ""
+          }
+        },
+        "6282384f-fb4f-4143-866f-c61726b2b22c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": ""
+          }
+        },
+        "9d91f441-392b-498d-bf4a-8c61178b7f0b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": ""
+          }
+        },
+        "d94d1592-3a73-44d3-843a-6dc9e6841155": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ig_casper.jpg",
+            "label_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "2a9c96f4-b1a5-440e-9886-30f99500d6e3",
+        "b7851576-e54d-4693-b6fe-0c99b8eb8d24",
+        "34e9da48-79d1-4369-a87c-8a2565bcc03b",
+        "7f5b68bd-fccb-4a95-94d5-511a6965017a",
+        "615666e0-0c11-420f-970a-9a31cea92ebf",
+        "6282384f-fb4f-4143-866f-c61726b2b22c",
+        "9d91f441-392b-498d-bf4a-8c61178b7f0b",
+        "d94d1592-3a73-44d3-843a-6dc9e6841155"
+      ],
+      "settings": {
+        "show": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background_color": "#ffffff",
+        "heading": "25.000 COLLECTORS AND COUNTING",
+        "heading_text_color": "#000000",
+        "label_text": "Follow us on Instagram",
+        "label_link": "https:\/\/www.instagram.com\/andy.okay\/",
+        "label_text_color": "#000000"
+      }
+    },
+    "trustbadges": {
+      "type": "trustbadges",
+      "blocks": {
+        "5fc5aa8a-b308-41ff-86e3-fd137bf6dd29": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shipping.png",
+            "title": "FAST DELIVERY",
+            "subheading": "99% of all orders arrives fast <br> in 5-7 business days"
+          }
+        },
+        "dd807ca0-31b4-4ee6-bc38-25b4f48fd819": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/certified.png",
+            "title": "CERTIFIED",
+            "subheading": "Certificate of <br> authenticity inlcuded"
+          }
+        },
+        "9b7812ea-1f4b-4335-bdb3-e689b6ec0fce": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shake.png",
+            "title": "ARTISTS SUPPORTED",
+            "subheading": "Our artists are supported <br>from every purchase"
+          }
+        },
+        "1ca93ebb-37bc-4e87-8375-c4968717e04d": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/earth.png",
+            "title": "EARTH CONSCIOUS",
+            "subheading": "Each artwork is linked <br> to a cause & benefits charity"
+          }
+        }
+      },
+      "block_order": [
+        "5fc5aa8a-b308-41ff-86e3-fd137bf6dd29",
+        "dd807ca0-31b4-4ee6-bc38-25b4f48fd819",
+        "9b7812ea-1f4b-4335-bdb3-e689b6ec0fce",
+        "1ca93ebb-37bc-4e87-8375-c4968717e04d"
+      ],
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "section_size": "small",
+        "text_color": "#ffffff",
+        "button_color": "#000000",
+        "button_background_color": "#a6967c",
+        "input_border_color": "#ffffff",
+        "subheading": "",
+        "title": "NEWSLETTER",
+        "content": "<p>Sign up for the latest news, offers and styles.<\/p>"
+      }
+    },
+    "price-detail-popup": {
+      "type": "price-detail-popup",
+      "settings": {
+        "title": "The more you pay, the more we give.",
+        "content": "<p>When you buy an artwork at Andy okay, you are free to use our slider and choose the price you can pay. <br\/><br\/>- ⅓ of the profits from your purchase will be donated to the nonprofit that is linked to the artwork.<br\/><br\/>- ⅓ of the profits will go back to the artist who made the artwork. <br\/><br\/>Our mission is to support nonprofits and artists while providing meaningful art to customers at prices everyone can afford. <\/p>",
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "free-shipping-popup": {
+      "type": "free-shipping-popup",
+      "settings": {
+        "title": "Free Shipping. Worldwide.",
+        "content": "<p>We offer free worldwide shipping on all orders for $59 or more.<br\/><br\/>If you place an order for less than $59, we have to charge a flat rate of $5.99 to cover a part of our shipping costs.<br\/><strong><br\/><\/strong>With our unique production chain, your art will be shipped locally in over 30 of the biggest countries. This makes delivery faster for you, but also reduces shipping distances, customs fees and carbon emissions.<br\/><br\/>Faster, smarter, greener.<\/p>",
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "free-art-popup": {
+      "type": "free-art-popup",
+      "settings": {
+        "title": "Give more. Get more.",
+        "content": "<p>The more you buy in Art for Causes, the more you'll get.<br\/><br\/>If you buy 2 artworks you get to choose an exclusive artwork for free with your order. <br\/><br\/>If you purchase 3 artworks from Andy okay, you'll even get to choose 2 free artworks. <br\/><br\/>The value of these exclusive artworks are between $149-$795 each, which means this is no doubt one of the best art offers in the world. <br\/><br\/><\/p>",
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "size-chart-popup": {
+      "type": "size-chart-popup",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/sizeguide-v2.jpg",
+        "title": "",
+        "content": "",
+        "link_text": "",
+        "link": ""
+      }
+    }
+  },
+  "order": [
+    "amai_stp-product-snippet",
+    "pwyw",
+    "main",
+    "trustbadges-v2",
+    "super-happy-customers",
+    "looxReviews",
+    "product-stories",
+    "product-questions",
+    "product-instagram",
+    "trustbadges",
+    "newsletter",
+    "price-detail-popup",
+    "free-shipping-popup",
+    "free-art-popup",
+    "size-chart-popup"
+  ]
+}
