@@ -1,0 +1,93 @@
+<style>
+    :root {
+        /* Colors */
+
+        --background      : {{settings.background}};
+        --light-background: {{settings.light_background}};
+        --heading-color   : {{settings.heading_color}};
+        --text-color      : {{settings.text_color}};
+        --text-color-light: {{settings.text_light_color}};
+        --link-color      : {{settings.link_color}};
+        --border-color    : {{settings.background | color_mix: settings.text_color, 85}};
+        
+        --button-background: {{settings.button_background}};
+        --button-text-color: {{settings.button_text_color}};
+        --cart-background: #163bbc;
+
+        --header-background       : {{settings.header_background}};
+        --header-heading-color    : {{settings.header_heading_color}};
+        --header-light-text-color : {{settings.header_light_color}};
+        --header-border-color     : {{settings.header_background | color_mix: settings.header_heading_color, 85}};
+
+        --footer-background    : {{settings.footer_background}};
+        --footer-text-color    : {{settings.footer_text_color}};
+        --footer-heading-color : {{settings.footer_heading_color}};
+        --footer-border-color  : {{settings.footer_background | color_mix: settings.footer_text_color, 85}};
+
+        --navigation-background      : {{settings.navigation_background}};
+        --navigation-text-color      : {{settings.navigation_text_color}};
+        --navigation-text-color-light: rgba(var(--navigation-text-color), 0.5);
+        --navigation-border-color    : rgba(var(--navigation-text-color), 0.25);
+
+        --newsletter-popup-background : {{settings.newsletter_popup_background}};
+        --newsletter-popup-text-color : {{settings.newsletter_popup_text_color}};
+
+        --secondary-elements-background       : {{settings.secondary_elements_background}};
+        --secondary-elements-text-color       : {{settings.secondary_elements_text_color}};
+        --secondary-elements-text-color-light : rgba(var(--secondary-elements-text-color), 0.5);
+        --secondary-elements-border-color     : rgba(var(--secondary-elements-text-color), 0.25);
+
+        --product-sale-price-color: {{settings.product_on_sale_color}};
+
+        /* Typography */
+
+        --heading-font-family : {{settings.heading_font.family}}, {{ settings.heading_font.fallback_families }};
+        --heading-font-weight : {{settings.heading_font.weight}};
+        --heading-font-style  : {{settings.heading_font.style}};
+        --heading-font-size   : {{settings.heading_size}};
+
+        --text-font-family : {{settings.text_font.family}}, {{ settings.text_font.fallback_families }};
+        --text-font-weight : {{settings.text_font.weight}};
+        --text-font-style  : {{settings.text_font.style}};
+
+        --uppercase-heading: {% if settings.uppercase_heading %}true{% else %}false{% endif %};
+
+        --base-text-font-size   : {{settings.base_text_font_size}}px;
+        --default-text-font-size: 14px;
+
+        /* Products */
+
+        --product-info-alignment         : {{settings.product_info_alignment}};
+        --product-show-price-on-hover    : {{settings.product_show_price_on_hover}};
+        --product-list-horizontal-spacing: {{settings.product_list_horizontal_spacing}};
+        --product-list-vertical-spacing  : {{settings.product_list_vertical_spacing}};
+
+        --cursor-zoom-in-svg    : "{{ 'cursor-zoom-in.svg' | asset_url }}";
+        --cursor-zoom-in-2x-svg : "{{ 'cursor-zoom-in-2x.svg' | asset_url }}";
+
+        /* Animation */
+
+        --drawer-transition-timing: cubic-bezier(0.645, 0.045, 0.355, 1);
+        --show-page-transition: {% if settings.show_page_transition %}true{% else %}false{% endif %};
+        --show-button-transition: {% if settings.show_button_transition %}true{% else %}false{% endif %};
+        --show-image-zooming: {% if settings.show_image_zooming %}true{% else %}false{% endif %};
+        --show-element-staggering: {% if settings.show_element_staggering %}true{% else %}false{% endif %};
+
+        /* Other */
+
+        --header-base-height: 80px; /* We use this value for browsers that do not support CSS variables */
+        --color-swatch-circle: false;
+    }
+
+    {% comment %} {{ settings.heading_font | font_face: font_display: 'fallback' }}
+    {{ settings.text_font | font_face: font_display: 'fallback' }}
+    
+    {%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
+    {%- assign text_font_italic = settings.text_font | font_modify: 'style', 'italic' -%}
+    {%- assign text_font_bold_italic = text_font_bold | font_modify: 'style', 'italic' -%}
+
+    {{ text_font_bold | font_face: font_display: 'fallback' }}
+    {{ text_font_italic | font_face: font_display: 'fallback' }}
+    {{ text_font_bold_italic | font_face: font_display: 'fallback' }} {% endcomment %}
+    
+</style>

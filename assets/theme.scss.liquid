@@ -67,8 +67,7 @@ $text-font-style  : {{settings.text_font.style}};
 
 $uppercase-heading: {% if settings.uppercase_heading %}true{% else %}false{% endif %};
 
-$base-text-font-size   : {{settings.base_text_font_size}}px;
-$default-text-font-size: 14px;
+$base-text-font-size   : var(--base-text-font-size);
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
@@ -1187,15 +1186,6 @@ $widescreen:       "screen and (min-width: 1500px)";
   text-align: center;
 }
 
-/**
- * In our theme, we express all font sizes in PX. The reason is that our designer is very picky and want each font size to be exactly as on designed files
- * (which is good :p), but as a consequence, sometimes some font sizes scales across devices (smaller on mobile, bigger on desktop), but sometimes it's the
- * same, which make it super hard to use relative units like REM.
- */
-@function to-size($size) {
-  @return $base-text-font-size - ($default-text-font-size - $size);
-}
-
 /*
  * Precomputed linear color channel values, for use in contrast calculations.
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
@@ -1974,7 +1964,7 @@ body {
   border: 1px solid transparent;
   border-radius: 4px;
   text-transform: uppercase;
-  font-size: to-size(22px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 22px);
   text-align: center;
   letter-spacing: 0px;
   font-family: "DIN Next LT Pro Cond";
@@ -2127,7 +2117,7 @@ body {
 }
 
 .Button--small {
-  font-size: to-size(10px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 10px);
   padding: 12px 24px;
 }
 
@@ -3323,7 +3313,7 @@ $drawer-header-height : 50px;
   padding: 0 5px;
   line-height: normal;
   color: $text-color-light;
-  font-size: to-size(12px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   opacity: 0;
   background: rgba($background, 0);
   pointer-events: none;
@@ -3397,7 +3387,7 @@ $drawer-header-height : 50px;
 .Form__Label {
   display: block;
   padding-bottom: 8px;
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   text-transform: uppercase;
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
@@ -3408,7 +3398,7 @@ $drawer-header-height : 50px;
 
 .Form--small .Form__Input,
 .Form--small .Form__Textarea {
-  font-size: to-size(13px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -3479,7 +3469,7 @@ $drawer-header-height : 50px;
   position: absolute;
   right: 12px;
   top: 50%;
-  font-size: to-size(12px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   color: $text-color-light;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -4212,7 +4202,7 @@ select::-ms-expand {
   display: inline-block;
   width: 20px;
   padding: 0;
-  font-size: to-size(10px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 10px);
   text-align: center;
   letter-spacing: normal;
   background: transparent;
@@ -4222,7 +4212,7 @@ select::-ms-expand {
 .QuantitySelector--large {
   .QuantitySelector__CurrentQuantity {
     width: 35px;
-    font-size: to-size(14px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 14px);
   }
 
   .QuantitySelector__Button {
@@ -4241,7 +4231,7 @@ select::-ms-expand {
   }
 
   .QuantitySelector__CurrentQuantity {
-    font-size: to-size(12px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   }
 }
 
@@ -5169,7 +5159,7 @@ select::-ms-expand {
 .AnnouncementBar {
   position: relative;
   text-align: center;
-  font-size: to-size(10px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 10px);
   z-index: 1;
 }
 
@@ -5184,7 +5174,7 @@ select::-ms-expand {
 
 @include av-mq('tablet-and-up') {
   .AnnouncementBar {
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   }
 }
 
@@ -5273,12 +5263,12 @@ select::-ms-expand {
   padding: 120px 40px;
   background: $secondary-elements-background;
   color: $secondary-elements-text-color;
-  font-size: to-size(18px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 18px);
 }
 
 .FeaturedQuote__Author {
   margin-top: 14px;
-  font-size: to-size(14px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 14px);
   opacity: 0.5;
 }
 
@@ -5309,7 +5299,7 @@ select::-ms-expand {
   border: 1px solid transparent;
   border-radius: 0;
   text-transform: uppercase;
-  font-size: to-size(12px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   text-align: center;
   letter-spacing: 0.2em;
   font-family: $heading-font-family;
@@ -5398,7 +5388,7 @@ select::-ms-expand {
       border: 1px solid $border-color;
       background: $light-background;
       color: $text-color-light;
-      font-size: to-size(13px);
+      font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
       pointer-events: none;
       visibility: hidden;
       opacity: 0;
@@ -5973,7 +5963,7 @@ select::-ms-expand {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   font-style: $heading-font-style;
-  font-size: to-size(12px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   line-height: 1;
 }
 
@@ -6517,7 +6507,7 @@ select::-ms-expand {
 
 @include av-mq('tablet-and-up') {
   .SectionHeader__Heading--emphasize {
-    font-size: to-size(22px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 22px);
   }
 }
 
@@ -6565,7 +6555,7 @@ select::-ms-expand {
 
 .Table {
   width: 100%;
-  font-size: to-size(12px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   border-collapse: separate;
   white-space: nowrap;
 
@@ -6783,11 +6773,11 @@ select::-ms-expand {
 .AccountTable th {
   padding-top: 0;
   padding-bottom: 10px;
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
 }
 
 .AccountTable tfoot {
-  font-size: to-size(14px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 14px);
 }
 
 .AccountTable tfoot span + span {
@@ -6853,7 +6843,7 @@ select::-ms-expand {
   width: 4px;
   border-radius: 100%;
   margin: 0 15px;
-  font-size: to-size(10px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 10px);
   vertical-align: middle;
   background: currentColor;
 }
@@ -7747,7 +7737,7 @@ select::-ms-expand {
   margin-bottom: 0;
   padding-top: 9px;
   padding-bottom: 9px;
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   border-bottom: 1px solid $border-color;
   line-height: normal;
   z-index: 1;
@@ -7768,7 +7758,7 @@ select::-ms-expand {
 
 @include av-mq('tablet-and-up') {
   .Cart__ShippingNotice {
-    font-size: to-size(13px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
   }
 }
 
@@ -7807,7 +7797,7 @@ select::-ms-expand {
 
 .CartItem__Title {
   width: 100%;
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7826,7 +7816,7 @@ select::-ms-expand {
 .CartItem__Meta,
 .CartItem__LinePriceList,
 .CartItem__DiscountList {
-  font-size: to-size(9px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 9px);
 }
 
 .CartItem__PropertyList {
@@ -7875,7 +7865,7 @@ select::-ms-expand {
 
 .CartItem__Remove {
   margin: 8px 0;
-  font-size: to-size(8px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 8px);
 
   &::before {
     background: lighten($text-color-light, 15%);
@@ -7888,16 +7878,16 @@ select::-ms-expand {
   }
 
   .CartItem__Title {
-    font-size: to-size(12px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   }
 
   .CartItem__Meta,
   .CartItem__LinePriceList {
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   }
 
   .CartItem__Remove {
-    font-size: to-size(9px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 9px);
   }
 
   .CartItem__PriceList {
@@ -8524,7 +8514,7 @@ select::-ms-expand {
 
 .ProductItem__Label {
   display: block;
-  font-size: to-size(9px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 9px);
   margin: 4px 0;
   padding: 2px 6px;
   background: $background;
@@ -8537,9 +8527,9 @@ select::-ms-expand {
   margin-top: 15px;
 
   @if $uppercase-heading {
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   } @else {
-    font-size: to-size(12px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   }
 }
 
@@ -8651,14 +8641,14 @@ select::-ms-expand {
 
 @include av-mq('tablet-and-up') {
   .ProductItem__Label {
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   }
 
   .ProductItem__Info {
     @if $uppercase-heading {
-      font-size: to-size(12px);
+      font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
     } @else {
-      font-size: to-size(13px);
+      font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
     }
   }
 }
@@ -9683,7 +9673,7 @@ $vertical-spacing-two-products-per-row  : 0px;
   }
 
   .Footer__StoreName {
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   }
 
   .Footer__PaymentList {
@@ -10703,7 +10693,7 @@ nav.Header__SecondaryNav.push-currency-left{
 
 @include av-mq('phone') {
   .ImageHero__Block {
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   }
 }
 
@@ -10808,7 +10798,7 @@ nav.Header__SecondaryNav.push-currency-left{
 }
 
 .Instafeed__LikeCount {
-  font-size: to-size(13px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
 
   svg {
     margin-right: 8px;
@@ -11199,7 +11189,7 @@ body {
 }
 
 .Password__Message {
-  font-size: to-size(13px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
 }
 
 .Password__Form {
@@ -11885,7 +11875,7 @@ body {
   width: fit-content;
   background: $light-background;
   border-radius: 25px;
-  font-size: to-size(13px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
   white-space: nowrap;
   opacity: 0;
   -webkit-box-shadow: 0 2px 10px rgba(#363636, 0.15);
@@ -11912,7 +11902,7 @@ body {
 
   svg {
     margin-right: 12px;
-    font-size: to-size(14px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 14px);
     vertical-align: sub;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -12711,7 +12701,7 @@ body {
 }
 
 .VariantSelector__ChoicePrice {
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
 }
 
 @include av-mq('phone') {
@@ -12766,7 +12756,7 @@ body {
   }
 
   .VariantSelector__ChoicePrice {
-    font-size: to-size(13px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 13px);
   }
 }
 
@@ -12923,11 +12913,11 @@ body {
   }
 
   .spr-icon {
-    font-size: to-size(10px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 10px);
   }
 
   .spr-form-input .spr-icon {
-    font-size: to-size(14px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 14px);
   }
 
   .spr-icon + .spr-icon {
@@ -12974,7 +12964,7 @@ body {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
     font-style: $heading-font-style;
-    font-size: to-size(11px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
     text-transform: uppercase;
     letter-spacing: 0.2em;
   }
@@ -13081,12 +13071,12 @@ body {
     margin: 8px 40px 28px 0 !important;
 
     .spr-review-header-title {
-      font-size: to-size(12px);
+      font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
     }
 
     .spr-review-header-byline,
     .spr-review-content-body {
-      font-size: to-size(14px);
+      font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 14px);
     }
 
     .spr-header {
@@ -13237,7 +13227,7 @@ body {
   background: none;
   width: 100%;
   border: none;
-  font-size: to-size(15px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 15px);
   vertical-align: middle;
 
   &::-webkit-input-placeholder {
@@ -13259,7 +13249,7 @@ body {
 
 .Search__Close {
   color: $text-color-light;
-  font-size: to-size(15px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 15px);
   line-height: 1;
 }
 
@@ -13330,7 +13320,7 @@ display: none;
   }
 
   .Search__Input {
-    font-size: to-size(18px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 18px);
   }
 
   .Search__InputIconWrapper {
@@ -13338,7 +13328,7 @@ display: none;
   }
 
   .Search__Close {
-    font-size: to-size(16px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 16px);
 
     svg {
       stroke-width: 1.25px;
@@ -13725,7 +13715,7 @@ display: none;
   -ms-flex: none;
   flex: none;
   text-align: center;
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   background: #f2f2f2;
   margin: 25px 15px 0px 15px;
   .Select {
@@ -13989,7 +13979,7 @@ display: none;
 
 .Testimonial {
   text-align: center;
-  font-size: to-size(18px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 18px);
 }
 
 .Testimonial__Logo {
@@ -14037,7 +14027,7 @@ display: none;
 
 @include av-mq('tablet-and-up') {
   .Testimonial {
-    font-size: to-size(20px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 20px);
   }
 
   .Testimonial__Content {
@@ -14510,7 +14500,7 @@ display: none;
 
 .Timeline__Nav {
   position: relative;
-  font-size: to-size(11px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 11px);
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   font-style: $heading-font-style;
@@ -14574,7 +14564,7 @@ display: none;
 }
 
 .Timeline__NavItem.is-selected {
-  font-size: to-size(18px);
+  font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 18px);
   color: $text-color;
 
   &::after {
@@ -14598,7 +14588,7 @@ display: none;
   .Timeline__Nav {
     margin-top: 40px;
     background: none;
-    font-size: to-size(12px);
+    font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 12px);
   }
 
   .Timeline__NavWrapper {
