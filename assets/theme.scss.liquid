@@ -45,17 +45,6 @@ $product-sale-price-color: {{settings.product_on_sale_color}};
 
 /* Typography */
 
-{{ settings.heading_font | font_face: font_display: 'fallback' }}
-{{ settings.text_font | font_face: font_display: 'fallback' }}
- 
-{%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
-{%- assign text_font_italic = settings.text_font | font_modify: 'style', 'italic' -%}
-{%- assign text_font_bold_italic = text_font_bold | font_modify: 'style', 'italic' -%}
-
-{{ text_font_bold | font_face: font_display: 'fallback' }}
-{{ text_font_italic | font_face: font_display: 'fallback' }}
-{{ text_font_bold_italic | font_face: font_display: 'fallback' }}
-
 $heading-font-family : {{settings.heading_font.family}}, {{ settings.heading_font.fallback_families }};
 $heading-font-weight : {{settings.heading_font.weight}};
 $heading-font-style  : {{settings.heading_font.style}};

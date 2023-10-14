@@ -79,7 +79,7 @@
         --color-swatch-circle: false;
     }
 
-    {% comment %} {{ settings.heading_font | font_face: font_display: 'fallback' }}
+    {{ settings.heading_font | font_face: font_display: 'fallback' }}
     {{ settings.text_font | font_face: font_display: 'fallback' }}
     
     {%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
@@ -88,6 +88,5 @@
 
     {{ text_font_bold | font_face: font_display: 'fallback' }}
     {{ text_font_italic | font_face: font_display: 'fallback' }}
-    {{ text_font_bold_italic | font_face: font_display: 'fallback' }} {% endcomment %}
-    
+    {{ text_font_bold_italic | font_face: font_display: 'fallback' }} 
 </style>
