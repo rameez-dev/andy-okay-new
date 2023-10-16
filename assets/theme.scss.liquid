@@ -979,10 +979,10 @@ $widescreen:       "screen and (min-width: 1500px)";
 }
 
 .pswp--zoom-allowed .pswp__img {
-  cursor: url($cursor-zoom-in-svg) 18 18, -webkit-zoom-in;
-  cursor: url($cursor-zoom-in-svg) 18 18, zoom-in;
-  cursor: -webkit-image-set(url($cursor-zoom-in-svg) 1x, url($cursor-zoom-in-2x-svg) 2x) 18 18, -webkit-zoom-in;
-  cursor: -webkit-image-set(url($cursor-zoom-in-svg) 1x, url($cursor-zoom-in-2x-svg) 2x) 18 18, zoom-in;
+  cursor: $cursor-zoom-in-svg 18 18, -webkit-zoom-in;
+  cursor: $cursor-zoom-in-svg 18 18, zoom-in;
+  cursor: -webkit-image-set($cursor-zoom-in-svg 1x, $cursor-zoom-in-2x-svg 2x) 18 18, -webkit-zoom-in;
+  cursor: -webkit-image-set($cursor-zoom-in-svg 1x, $cursor-zoom-in-2x-svg 2x) 18 18, zoom-in;
 }
 
 .pswp--zoomed-in .pswp__img {
@@ -8468,45 +8468,11 @@ select::-ms-expand {
   }
 }
 
-$horizontal-spacing-four-products-per-row: 0px;
-$vertical-spacing-four-products-per-row  : 0px;
+$horizontal-spacing-four-products-per-row: var(--horizontal-spacing-four-products-per-row);
+$vertical-spacing-four-products-per-row  : var(--vertical-spacing-four-products-per-row);
 
-$horizontal-spacing-two-products-per-row: 0px;
-$vertical-spacing-two-products-per-row  : 0px;
-
-/* {% if settings.product_list_horizontal_spacing == 'extra_small' %} */
-  $horizontal-spacing-four-products-per-row: 20px;
-  $horizontal-spacing-two-products-per-row : 20px;
-/* {% elsif settings.product_list_horizontal_spacing == 'small' %} */
-  $horizontal-spacing-four-products-per-row: 40px;
-  $horizontal-spacing-two-products-per-row : 40px;
-/* {% elsif settings.product_list_horizontal_spacing == 'medium' %} */
-  $horizontal-spacing-four-products-per-row: 60px;
-  $horizontal-spacing-two-products-per-row : 60px;
-/* {% elsif settings.product_list_horizontal_spacing == 'large' %} */
-  $horizontal-spacing-four-products-per-row: 80px;
-  $horizontal-spacing-two-products-per-row : 80px;
-/* {% elsif settings.product_list_horizontal_spacing == 'extra_large' %} */
-  $horizontal-spacing-four-products-per-row: 100px;
-  $horizontal-spacing-two-products-per-row : 100px;
-/* {% endif %} */
-
-/* {% if settings.product_list_vertical_spacing == 'extra_small' %} */
-  $vertical-spacing-four-products-per-row: 40px;
-  $vertical-spacing-two-products-per-row : 50px;
-/* {% elsif settings.product_list_vertical_spacing == 'small' %} */
-  $vertical-spacing-four-products-per-row: 60px;
-  $vertical-spacing-two-products-per-row : 75px;
-/* {% elsif settings.product_list_vertical_spacing == 'medium' %} */
-  $vertical-spacing-four-products-per-row: 80px;
-  $vertical-spacing-two-products-per-row : 100px;
-/* {% elsif settings.product_list_vertical_spacing == 'large' %} */
-  $vertical-spacing-four-products-per-row: 100px;
-  $vertical-spacing-two-products-per-row : 125px;
-/* {% elsif settings.product_list_vertical_spacing == 'extra_large' %} */
-  $vertical-spacing-four-products-per-row: 120px;
-  $vertical-spacing-two-products-per-row : 150px;
-/* {% endif %} */
+$horizontal-spacing-two-products-per-row: var(--horizontal-spacing-two-products-per-row);
+$vertical-spacing-two-products-per-row  : var(--vertical-spacing-two-products-per-row);
 
 @include av-mq('desk') {
   .CollectionInner__Sidebar {
@@ -11132,10 +11098,10 @@ body {
   }
 
   .Product__Slideshow--zoomable .Product__SlideItem--image {
-    cursor: url($cursor-zoom-in-svg) 18 18, -webkit-zoom-in;
-    cursor: url($cursor-zoom-in-svg) 18 18, zoom-in;
-    cursor: -webkit-image-set(url($cursor-zoom-in-svg) 1x, url($cursor-zoom-in-2x-svg) 2x), -webkit-zoom-in;
-    cursor: -webkit-image-set(url($cursor-zoom-in-svg) 1x, url($cursor-zoom-in-2x-svg) 2x), zoom-in;
+    cursor: $cursor-zoom-in-svg 18 18, -webkit-zoom-in;
+    cursor: $cursor-zoom-in-svg 18 18, zoom-in;
+    cursor: -webkit-image-set($cursor-zoom-in-svg 1x, $cursor-zoom-in-2x-svg 2x), -webkit-zoom-in;
+    cursor: -webkit-image-set($cursor-zoom-in-svg 1x, $cursor-zoom-in-2x-svg 2x), zoom-in;
   }
 
   /* Dots */
