@@ -58,6 +58,41 @@
         /* Other */
 
         --header-base-height: 80px; /* We use this value for browsers that do not support CSS variables */
+
+
+        {%  if settings.product_list_horizontal_spacing == 'extra_small'  %} 
+        --horizontal-spacing-four-products-per-row: 20px;
+        --horizontal-spacing-two-products-per-row : 20px;
+        {%  elsif settings.product_list_horizontal_spacing == 'small'  %} 
+        --horizontal-spacing-four-products-per-row: 40px;
+        --horizontal-spacing-two-products-per-row : 40px;
+        {%  elsif settings.product_list_horizontal_spacing == 'medium'  %} 
+        --horizontal-spacing-four-products-per-row: 60px;
+        --horizontal-spacing-two-products-per-row : 60px;
+        {%  elsif settings.product_list_horizontal_spacing == 'large'  %} 
+        --horizontal-spacing-four-products-per-row: 80px;
+        --horizontal-spacing-two-products-per-row : 80px;
+        {%  elsif settings.product_list_horizontal_spacing == 'extra_large'  %} 
+        --horizontal-spacing-four-products-per-row: 100px;
+        --horizontal-spacing-two-products-per-row : 100px;
+        {%  endif  %} 
+
+        {%  if settings.product_list_vertical_spacing == 'extra_small'  %} 
+        --vertical-spacing-four-products-per-row: 40px;
+        --vertical-spacing-two-products-per-row : 50px;
+        {%  elsif settings.product_list_vertical_spacing == 'small'  %} 
+        --vertical-spacing-four-products-per-row: 60px;
+        --vertical-spacing-two-products-per-row : 75px;
+        {%  elsif settings.product_list_vertical_spacing == 'medium'  %} 
+        --vertical-spacing-four-products-per-row: 80px;
+        --vertical-spacing-two-products-per-row : 100px;
+        {%  elsif settings.product_list_vertical_spacing == 'large'  %} 
+        --vertical-spacing-four-products-per-row: 100px;
+        --vertical-spacing-two-products-per-row : 125px;
+        {%  elsif settings.product_list_vertical_spacing == 'extra_large'  %} 
+        --vertical-spacing-four-products-per-row: 120px;
+        --vertical-spacing-two-products-per-row : 150px;
+        {%  endif  %} 
     }
 
     {{ settings.heading_font | font_face: font_display: 'fallback' }}
