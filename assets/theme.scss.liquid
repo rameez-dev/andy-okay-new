@@ -6,62 +6,55 @@
 
 /* Colors */
 
-$background      : {{settings.background}};
-$light-background: {{settings.light_background}};
-$heading-color   : {{settings.heading_color}};
-$text-color      : {{settings.text_color}};
-$text-color-light: {{settings.text_light_color}};
-$link-color      : {{settings.link_color}};
-$border-color    : {{settings.background | color_mix: settings.text_color, 85}};
+$background      : var(--background);
+$light-background: var(--light-background);
+$heading-color   : var(--heading-color);
+$text-color      : var(--text-color);
+$text-color-light: var(--text-color-light);
+$link-color      : var(--link-color);
+$border-color    : var(--border-color);
  
-$button-background: {{settings.button_background}};
-$button-text-color: {{settings.button_text_color}};
-$cart-background: #163bbc;
+$button-background: var(--button-background);
+$button-text-color: var(--button-text-color);
+$cart-background: var(--cart-background);
 
-$header-background       : {{settings.header_background}};
-$header-heading-color    : {{settings.header_heading_color}};
-$header-light-text-color : {{settings.header_light_color}};
-$header-border-color     : {{settings.header_background | color_mix: settings.header_heading_color, 85}};
+$header-background       : var(--header-background);
+$header-heading-color    : var(--header-heading-color);
+$header-light-text-color : var(--header-light-text-color);
+$header-border-color     : var(--header-border-color);
 
-$footer-background    : {{settings.footer_background}};
-$footer-text-color    : {{settings.footer_text_color}};
-$footer-heading-color : {{settings.footer_heading_color}};
-$footer-border-color  : {{settings.footer_background | color_mix: settings.footer_text_color, 85}};
+$footer-background    : var(--footer-background);
+$footer-text-color    : var(--footer-text-color);
+$footer-heading-color : var(--footer-heading-color);
+$footer-border-color  : var(--footer-border-color);
 
-$navigation-background      : {{settings.navigation_background}};
-$navigation-text-color      : {{settings.navigation_text_color}};
+$navigation-background      : var(--navigation-background);
+$navigation-text-color      : var(--navigation-text-color);
 $navigation-text-color-light: rgba($navigation-text-color, 0.5);
 $navigation-border-color    : rgba($navigation-text-color, 0.25);
 
-$newsletter-popup-background : {{settings.newsletter_popup_background}};
-$newsletter-popup-text-color : {{settings.newsletter_popup_text_color}};
+$newsletter-popup-background : var(--newsletter-popup-background);
+$newsletter-popup-text-color : var(--newsletter-popup-text-color);
 
-$secondary-elements-background       : {{settings.secondary_elements_background}};
-$secondary-elements-text-color       : {{settings.secondary_elements_text_color}};
+$secondary-elements-background       : var(--secondary-elements-background);
+$secondary-elements-text-color       : var(--secondary-elements-text-color);
 $secondary-elements-text-color-light : rgba($secondary-elements-text-color, 0.5);
 $secondary-elements-border-color     : rgba($secondary-elements-text-color, 0.25);
 
-$product-sale-price-color: {{settings.product_on_sale_color}};
+$product-sale-price-color: var(--product-sale-price-color);
 
 /* Typography */
 
-$heading-font-family : {{settings.heading_font.family}}, {{ settings.heading_font.fallback_families }};
-$heading-font-weight : {{settings.heading_font.weight}};
-$heading-font-style  : {{settings.heading_font.style}};
-$heading-font-size   : {{settings.heading_size}};
+$heading-font-family : var(--heading-font-family);
+$heading-font-weight : var(--heading-font-weight);
+$heading-font-style  : var(--heading-font-style);
 
-$text-font-family : {{settings.text_font.family}}, {{ settings.text_font.fallback_families }};
-$text-font-weight : {{settings.text_font.weight}};
-$text-font-style  : {{settings.text_font.style}};
+$text-font-family : var(--text-font-family);
+$text-font-weight : var(--text-font-weight);
+$text-font-style  : var(--text-font-style);
 
 $base-text-font-size   : var(--base-text-font-size);
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-
-/* Products */
-
-$product-info-alignment         : {{settings.product_info_alignment}};
-$product-show-price-on-hover    : {{settings.product_show_price_on_hover}};
 
 $cursor-zoom-in-svg    : var(--cursor-zoom-in-svg);
 $cursor-zoom-in-2x-svg : var(--cursor-zoom-in-2x-svg);
@@ -1438,28 +1431,6 @@ $linear-channel-values:
   .9911020971138298
   1;
 
-/**
- * Calculate the luminance for a color.
- * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- */
-@function luminance($color) {
-  $red: nth($linear-channel-values, red($color) + 1);
-  $green: nth($linear-channel-values, green($color) + 1);
-  $blue: nth($linear-channel-values, blue($color) + 1);
-
-  @return .2126 * $red + .7152 * $green + .0722 * $blue;
-}
-
-/**
- * Calculate the contrast ratio between two colors.
- * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- */
-@function contrast($back, $front) {
-  $back-lum: luminance($back) + .05;
-  $fore-lum: luminance($front) + .05;
-
-  @return max($back-lum, $fore-lum) / min($back-lum, $fore-lum);
-}
 .js .no-js,
 .no-js .hide-no-js {
   display: none !important;
@@ -2009,11 +1980,12 @@ body {
   /* {% if settings.show_button_transition %} */
     @media (-moz-touch-enabled: 0), (hover: hover) {
       &:not([disabled]):hover {
-        @if ((contrast($button-background, $light-background) > 2.5) or ($button-text-color == $background)) {
+        /* {% assign contrast = settings.button_background | color_contrast: settings.light_background %} */
+        /* {% if settings.button_text_color == settings.background %} */
           color: $button-background;
-        } @else {
+        /* {% else %} */
           color: $button-text-color;
-        }
+        /* {% endif %} */
 
         background-color: transparent;
       }
@@ -2032,11 +2004,12 @@ body {
   /* {% if settings.show_button_transition %} */
     @media (-moz-touch-enabled: 0), (hover: hover) {
       &:not([disabled]):hover {
-        @if ((contrast($cart-background, $light-background) > 2.5) or ($button-text-color == $background)) {
+        /* {% assign contrast = '#163bbc' | color_contrast: settings.light_background %} */
+        /* {% if settings.button_text_color == settings.background %} */
           color: $cart-background;
-        } @else {
+        /* {% else %} */
           color: $button-text-color;
-        }
+        /* {% endif %} */
 
         background-color: transparent;
 
@@ -3270,7 +3243,8 @@ $drawer-header-height : 50px;
   background: transparent;
 
   &:focus {
-    border-color: lighten($text-color, 25%);
+    border-color: $text-color;
+    /* border-color: {{ settings.text_color | color_lighten: 25}}; */
     outline: none;
   }
 
@@ -7848,7 +7822,8 @@ select::-ms-expand {
   font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 8px);
 
   &::before {
-    background: lighten($text-color-light, 15%);
+    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), $text-color-light;
+    /* background: {{ settings.text_light_color | color_lighten: 15 }}; */
   }
 }
 
@@ -8588,7 +8563,7 @@ select::-ms-expand {
 }
 
 @media (-moz-touch-enabled: 0), (hover: hover) {
-  @if $product-show-price-on-hover {
+  /* {% if settings.product_show_price_on_hover %} */
     .ProductItem__PriceList--showOnHover {
       opacity: 0;
       -webkit-transform: translateY(10px);
@@ -8602,7 +8577,7 @@ select::-ms-expand {
       -webkit-transform: translateY(0);
       transform: translateY(0);
     }
-  }
+  /* {% endif %} */
 
   .ProductItem__ImageWrapper--withAlternateImage:hover .ProductItem__Image {
     opacity: 0 !important;
@@ -9477,9 +9452,9 @@ $vertical-spacing-two-products-per-row  : 0px;
   background: $footer-background;
   color: $footer-text-color;
 
-  @if $footer-background == $background {
+  /* {% if settings.footer_background == settings.background %} */
     border-top: 1px solid $border-color;
-  }
+  /* {% endif %} */
 }
 
 .Footer--withMargin {

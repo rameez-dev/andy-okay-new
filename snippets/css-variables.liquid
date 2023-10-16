@@ -26,16 +26,12 @@
 
         --navigation-background      : {{settings.navigation_background}};
         --navigation-text-color      : {{settings.navigation_text_color}};
-        --navigation-text-color-light: rgba(var(--navigation-text-color), 0.5);
-        --navigation-border-color    : rgba(var(--navigation-text-color), 0.25);
 
         --newsletter-popup-background : {{settings.newsletter_popup_background}};
         --newsletter-popup-text-color : {{settings.newsletter_popup_text_color}};
 
         --secondary-elements-background       : {{settings.secondary_elements_background}};
         --secondary-elements-text-color       : {{settings.secondary_elements_text_color}};
-        --secondary-elements-text-color-light : rgba(var(--secondary-elements-text-color), 0.5);
-        --secondary-elements-border-color     : rgba(var(--secondary-elements-text-color), 0.25);
 
         --product-sale-price-color: {{settings.product_on_sale_color}};
 
@@ -44,23 +40,13 @@
         --heading-font-family : {{settings.heading_font.family}}, {{ settings.heading_font.fallback_families }};
         --heading-font-weight : {{settings.heading_font.weight}};
         --heading-font-style  : {{settings.heading_font.style}};
-        --heading-font-size   : {{settings.heading_size}};
 
         --text-font-family : {{settings.text_font.family}}, {{ settings.text_font.fallback_families }};
         --text-font-weight : {{settings.text_font.weight}};
         --text-font-style  : {{settings.text_font.style}};
 
-        --uppercase-heading: {% if settings.uppercase_heading %}true{% else %}false{% endif %};
-
         --base-text-font-size   : {{settings.base_text_font_size}}px;
         --default-text-font-size: 14px;
-
-        /* Products */
-
-        --product-info-alignment         : {{settings.product_info_alignment}};
-        --product-show-price-on-hover    : {{settings.product_show_price_on_hover}};
-        --product-list-horizontal-spacing: {{settings.product_list_horizontal_spacing}};
-        --product-list-vertical-spacing  : {{settings.product_list_vertical_spacing}};
 
         --cursor-zoom-in-svg    : "{{ 'cursor-zoom-in.svg' | asset_url }}";
         --cursor-zoom-in-2x-svg : "{{ 'cursor-zoom-in-2x.svg' | asset_url }}";
