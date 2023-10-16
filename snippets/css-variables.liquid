@@ -68,15 +68,10 @@
         /* Animation */
 
         --drawer-transition-timing: cubic-bezier(0.645, 0.045, 0.355, 1);
-        --show-page-transition: {% if settings.show_page_transition %}true{% else %}false{% endif %};
-        --show-button-transition: {% if settings.show_button_transition %}true{% else %}false{% endif %};
-        --show-image-zooming: {% if settings.show_image_zooming %}true{% else %}false{% endif %};
-        --show-element-staggering: {% if settings.show_element_staggering %}true{% else %}false{% endif %};
 
         /* Other */
 
         --header-base-height: 80px; /* We use this value for browsers that do not support CSS variables */
-        --color-swatch-circle: false;
     }
 
     {{ settings.heading_font | font_face: font_display: 'fallback' }}
