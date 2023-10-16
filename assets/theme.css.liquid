@@ -1238,7 +1238,7 @@ body {
 @media (-moz-touch-enabled: 0), (hover: hover) {
   .Button--primary:not([disabled]):hover, .shopify-payment-button__button--unbranded:not([disabled]):hover, #shopify-product-reviews .spr-summary-actions-newreview:not([disabled]):hover, #shopify-product-reviews .spr-button-primary:not(input):not([disabled]):hover {
     {% assign contrast = settings.button_background | color_contrast: settings.light_background %}
-    {% if settings.button_text_color == settings.background %}
+    {% if contrast > 2.5 or settings.button_text_color == settings.background %}
     color: var(--button-background);
     {% else %}
     color: var(--button-text-color);
@@ -1258,7 +1258,7 @@ body {
 @media (-moz-touch-enabled: 0), (hover: hover) {
   .Button--primary--default > button:not([disabled]):hover {
     {% assign contrast = '#163bbc' | color_contrast: settings.light_background %}
-    {% if settings.button_text_color == settings.background %}
+    {% if contrast > 2.5 or settings.button_text_color == settings.background %}
     color: var(--cart-background);
     {% else %}
     color: var(--button-text-color);
@@ -2288,8 +2288,8 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   background: transparent;
 }
 .Form__Input:focus, #shopify-product-reviews .spr-form-input-text:focus, #shopify-product-reviews .spr-form-input-email:focus, #shopify-product-reviews .spr-form-input-textarea:focus, .Form__Textarea:focus {
-  border-color: var(--text-color);
-  /* border-color: {{ settings.text_color | color_lighten: 25}}; */
+  /* border-color: var(--text-color); */
+  border-color: {{ settings.text_color | color_lighten: 25}};
   outline: none;
 }
 .Form__Input::-webkit-input-placeholder, #shopify-product-reviews .spr-form-input-text::-webkit-input-placeholder, #shopify-product-reviews .spr-form-input-email::-webkit-input-placeholder, #shopify-product-reviews .spr-form-input-textarea::-webkit-input-placeholder, .Form__Textarea::-webkit-input-placeholder {
@@ -6191,8 +6191,8 @@ select::-ms-expand {
   font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 8px);
 }
 .CartItem__Remove::before {
-  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), var(--text-color-light);
-  /* background: {{ settings.text_light_color | color_lighten: 15 }}; */
+  /* background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), var(--text-color-light); */
+  background: {{ settings.text_light_color | color_lighten: 15 }};
 }
 @media screen and (min-width: 641px) {
   .CartItem__ImageWrapper {
