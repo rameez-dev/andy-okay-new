@@ -644,10 +644,10 @@ td, th {
   display: block;
 }
 .pswp--zoom-allowed .pswp__img {
-  cursor: url(var(--cursor-zoom-in-svg)) 18 18, -webkit-zoom-in;
-  cursor: url(var(--cursor-zoom-in-svg)) 18 18, zoom-in;
-  cursor: -webkit-image-set(url(var(--cursor-zoom-in-svg)) 1x, url(var(--cursor-zoom-in-2x-svg)) 2x) 18 18, -webkit-zoom-in;
-  cursor: -webkit-image-set(url(var(--cursor-zoom-in-svg)) 1x, url(var(--cursor-zoom-in-2x-svg)) 2x) 18 18, zoom-in;
+  cursor: var(--cursor-zoom-in-svg) 18 18, -webkit-zoom-in;
+  cursor: var(--cursor-zoom-in-svg) 18 18, zoom-in;
+  cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x, var(--cursor-zoom-in-2x-svg) 2x) 18 18, -webkit-zoom-in;
+  cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x, var(--cursor-zoom-in-2x-svg) 2x) 18 18, zoom-in;
 }
 .pswp--zoomed-in .pswp__img {
   cursor: -webkit-grab;
@@ -9150,10 +9150,10 @@ body.story-popup-visible::after {
     display: block !important;
   }
   .Product__Slideshow--zoomable .Product__SlideItem--image {
-    cursor: url(var(--cursor-zoom-in-svg)) 18 18, -webkit-zoom-in;
-    cursor: url(var(--cursor-zoom-in-svg)) 18 18, zoom-in;
-    cursor: -webkit-image-set(url(var(--cursor-zoom-in-svg)) 1x, url(var(--cursor-zoom-in-2x-svg)) 2x), -webkit-zoom-in;
-    cursor: -webkit-image-set(url(var(--cursor-zoom-in-svg)) 1x, url(var(--cursor-zoom-in-2x-svg)) 2x), zoom-in;
+    cursor: var(--cursor-zoom-in-svg) 18 18, -webkit-zoom-in;
+    cursor: var(--cursor-zoom-in-svg) 18 18, zoom-in;
+    cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x, var(--cursor-zoom-in-2x-svg) 2x), -webkit-zoom-in;
+    cursor: -webkit-image-set(var(--cursor-zoom-in-svg) 1x, var(--cursor-zoom-in-2x-svg) 2x), zoom-in;
     /* Dots */
   }
   .Product__SlideshowNav--dots .Product__SlideshowNavScroller {
