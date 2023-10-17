@@ -146,18 +146,19 @@
     font-style: italic;
 }
 
+/* Conflict not removed intentionally */
 @font-face {
-    font-family: 'DIN Next LT Pro Light';
-    src: local('DIN Next LT Pro Regular'), local('DINNextLTPro-Regular'),
-        url('DINNextLTPro-Regular.woff') format('woff');
+    font-family: 'DIN Next LT Pro';
+    src: local('DIN Next LT Pro Condensed'), local('DINNextLTPro-Condensed'),
+        url('DINNextLTPro-Condensed.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'DIN Next LT Pro';
-    src: local('DIN Next LT Pro Condensed'), local('DINNextLTPro-Condensed'),
-        url('DINNextLTPro-Condensed.woff') format('woff');
+    src: local('DIN Next LT Pro Regular'), local('DINNextLTPro-Regular'),
+        url('DINNextLTPro-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
