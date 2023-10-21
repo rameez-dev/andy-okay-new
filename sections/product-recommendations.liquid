@@ -1,0 +1,148 @@
+{%- capture section_settings -%}
+{
+  "productId": {{ product.id | json }},
+  "useRecommendations": {% if product.metafields.sf_related_products.enabled == 1 %}false{% else %}true{% endif %},
+  "recommendationsCount": 4
+}  
+{%- endcapture -%}
+
+{%- capture flickity_options -%}
+{
+  "prevNextButtons": false,
+  "pageDots": false,
+  "wrapAround": false,
+  "contain": true,
+  "cellAlign": "center",
+  "watchCSS": true,
+  "dragThreshold": 8,
+  "groupCells": true,
+  "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+}
+{%- endcapture -%} 
+
+<style>
+  @media #{max-width: 640px} {
+    .ProductList--carousel .Carousel__Cell {
+      width: 55% !important;
+      padding: 0 0 !important;  
+    }   
+  }
+  .recommendation_section {
+    font-size: 20px !important;
+    line-height: 1;
+    margin-bottom: 0px;
+  }
+  ._sub_h_recommendation_section {
+    font-size: 20px !important;
+  }
+  .recommendation_section_c {
+    justify-content: center !important;
+    margin-top: 6px;
+  }
+</style>
+{%- if section.settings.show_product_recommendations -%}
+  <section id="product-recommendations" class="Section Section--spacingNormal Section--spacingNarrow Section--product-recomendations" data-section-id="{{ section.id }}" data-section-type="product-recommendations" data-section-settings='{{ section_settings }}'> 
+  {%- if section.settings.heading != blank -%}
+    <div class="Section--spacingHeading">
+      <header class="SectionHeader SectionHeader--center">
+        <div class="Container recommendation_section_c">
+          <div class="SectionHeader__Heading_Container">
+            <h2 class="SectionHeader__Heading Heading u-h1 recommendation_section">
+              <span>{{ section.settings.heading }}</span>
+              <span class="SectionHeader__SubHeading Heading u-h6 _sub_h_recommendation_section">{{ section.settings.subheading }}</span>
+            </h2>
+          </div>
+        </div>
+      </header>
+    </div>
+    {%- endif -%}
+    <div class="ProductRecommendations"> 
+      {%- if recommendations.performed or product.metafields.sf_related_products.enabled == 1 -%}
+        <div class="ProductListWrapper">
+          <div class="ProductList ProductList--carousel Carousel" data-flickity-config='{{ flickity_options }}'>
+            {%- comment -%}
+            If the merchant is explicitly using SuperFields, we use the hand-picked related products, otherwise we
+            switch to the Shopify automatic recommendation
+            {%- endcomment -%}
+            {%- if product.metafields.sf_related_products.enabled == 1 -%}
+              {%- for i in (1..4) -%}
+                {%- assign related_product_option = 'product_' | append: i -%}
+                {%- assign related_product = all_products[product.metafields.sf_related_products[related_product_option]] -%}
+
+                {%- unless related_product.empty? -%}
+                  <div class="Carousel__Cell">
+                    {% include 'product-item', product: related_product, show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_labels: true %}
+                  </div> 
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- for product in recommendations.products -%}
+              {% if product.type=='giftbox_ghost_product' or product.title == 'Charity Donation' %}{%continue%}{%endif%}
+                <div class="Carousel__Cell">
+                  {% include 'product-item', product: product, show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_labels: true %}
+                </div>
+              {%- else -%}
+                {%- comment -%}Hide the section if there is no recommendations to show{%- endcomment -%}
+                <style>
+                  #shopify-section-{{ section.id }} {
+                    display: none;
+                  }
+                </style>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="header_viewAll">
+        <a href="/collections/all-art">View all &gt;</a>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_recommendations",
+      "label": "Show dynamic recommendations",
+      "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "BUY 2 GET 1 FREE"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "BUNDLE WITH A BESTSELLER"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_info",
+      "label": "Show product info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_color_swatch",
+      "label": "Show color swatch",
+      "info": "Some colors appear white? [Learn more](http://support.maestrooo.com/article/80-product-uploading-custom-color-for-color-swatch).",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

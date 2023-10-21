@@ -1,0 +1,77 @@
+<style>
+  .Blog .Grid__Cell .ArticleItem.new-article-item{
+    padding: 0px 0px 13px 0px;
+    background-color: #f6f6f6;
+  }
+  .ArticleItem.new-article-item{
+    border-radius: 0px !important;
+  } 
+  .ArticleItem.new-article-item .ArticleItem__ImageWrapper{
+    border-radius: 0px !important;
+  }
+
+  .ArticleItem.new-article-item .ArticleItem__Title{
+    font-family: 'DIN Next LT Pro Cond';
+    font-weight: 500;
+    padding-top: 10px;
+    text-transform: uppercase;
+    line-height: 30px;
+    letter-spacing: -1px; 
+    font-size: 32px;
+  }
+  .ArticleItem.new-article-item .ArticleItem__Excerpt{
+    font-family: 'Adobe Caslon Pro';
+    line-height: 1.4;
+    font-size: 18px;
+  }
+  .ArticleItem.new-article-item .ArticleItem__Link{
+    font-family: 'Adobe Caslon Pro';
+    font-style: italic;
+    color: black;
+  }
+  @media only screen and (max-width: 768px) {
+    .ArticleItem.new-article-item .ArticleItem__Excerpt{
+      font-size: 15.5px;
+      margin-top: -5px;
+    }
+    .ArticleItem.new-article-item .ArticleItem__Title{
+      font-size: 26px;
+      line-height: 28px;
+    }
+  }
+
+</style>
+
+<article class="ArticleItem new-article-item" {% if block %}{{ block.shopify_attributes }}{% endif %}>
+  {%- if article.image != blank -%}
+    {%- include 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: article.image -%}
+    {%- assign image_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+    <a class="ArticleItem__ImageWrapper AspectRatio AspectRatio--withFallback" style="background: url({{ article.image | img_url: '1x1', format: 'jpg' }}); padding-bottom: 58%; --aspect-ratio: 1.7" href="{{ article.url }}">
+      <img class="ArticleItem__Image Image--lazyLoad Image--fadeIn"
+           data-src="{{ image_url }}"
+           data-widths="[{{ supported_sizes }}]"
+           data-sizes="auto"
+           alt="{{ article.image.alt | escape }}">
+
+      <noscript>
+        <img class="ArticleItem__Image" src="{{ article.image | img_url: '600x' }}" alt="{{ article.image.alt | escape }}">
+      </noscript>
+    </a>
+  {%- endif -%}
+
+  <div class="ArticleItem__Content">
+    {%- if section.settings.show_category -%}
+      <span class="ArticleItem__Category Heading u-h6 Text--subdued">{{ article.tags.first }}</span>
+    {%- endif -%}
+
+    <h2 class="ArticleItem__Title Heading u-h2">
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </h2>
+
+    {%- unless template.name == 'article' -%}
+      <p class="ArticleItem__Excerpt">{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
+      <a href="{{ article.url }}" class="ArticleItem__Link Link Link--underline">{{ 'blog.article.read_more' | t }}...</a>
+    {%- endunless -%}
+  </div>
+</article>

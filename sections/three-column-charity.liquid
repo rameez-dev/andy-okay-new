@@ -1,0 +1,144 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>		
+{%- if section.settings.show == true -%}
+{% for block in section.blocks %}
+{% if block.type == 'specs' %}
+{%- if block.settings.show == true and page.handle == block.settings.handle -%}
+
+<div class="point-section explore" style="background-color: {{block.settings.backgroud-color}}">
+  {% if block.settings.heading != blank %}
+  <div class="section-details-holder">
+      <h2 class="SectionHeader__Heading Heading u-h2 details-heading" style="color: {{block.settings.text-color}}"> {{ block.settings.heading }}</h2>
+  </div>
+  {% endif %}
+  <ul class="point-list">
+    {% assign counter = 0 %}
+    {% for block in section.blocks %}
+    {% if block.type == 'quote' %}
+    {%- if page.handle == block.settings.handle -%}
+    {%- if counter < 3 -%}
+      <li class="list-items">
+        <div class="items-holder">
+          <h4 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4 item-heading" style="color: {{block.settings.text-color}}">{{ block.settings.heading }}</h4>
+          <div class="SectionHeader__SubHeading Heading u-h6 item-detail" style="color: {{block.settings.text-color}}">
+            {{ block.settings.paragraph }}
+          </div>
+        </div>
+      </li>
+    {% endif %}
+    {% assign counter = counter | plus: 1 %} 
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% endif %}
+{%endfor%}
+{%endif%}
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ $(".point-list").slick({
+    centerMode: true,
+    prevArrow:"<img class='a-left control-c prev slick-prev' src='//cdn.shopify.com/s/files/1/0014/3015/9418/t/11/assets/left-arrow.png?3976639222319904941'>",
+    nextArrow:"<img class='a-right control-c next slick-next' src='//cdn.shopify.com/s/files/1/0014/3015/9418/t/11/assets/right-arrow.png?3976639222319904941'>",
+    centerPadding: '60px',
+    slidesToShow: 1,
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          arrows: true,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+}
+</script>
+{% schema %}
+  { 
+    "name":"Three Column",
+     "settings": [
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Points-Max 3 For 1 Handle",
+        "settings": [
+          {
+            "id": "handle",
+            "type": "text",
+            "label": "Charity Page Handle"
+          },
+          {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading"
+          },
+          {
+            "id": "paragraph",
+            "type": "richtext",
+            "label": "Content"
+          },
+          {
+            "id": "text-color",
+            "type": "color",
+            "label": "Text color",
+            "default": "#000000"
+          }
+        ]
+      },
+      {
+        "type": "specs",
+        "name": "Page-Wise Specs",
+        "settings": [
+          {
+            "id": "handle",
+            "type": "text",
+            "label": "Charity Page Handle"
+          },
+          {
+            "type": "checkbox",
+            "id": "show",
+            "label": "Show",
+            "default": false
+          },
+          {
+            "id": "backgroud-color",
+            "type": "color",
+            "label": "Background color",
+            "default": "#FFFFFF"
+          },
+          {
+            "id": "heading",
+            "type": "text",
+            "label": "Heading"
+          },
+          {
+            "id": "text-color",
+            "type": "color",
+            "label": "Heading",
+            "default": "#000000"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "category": "Text",
+      "name": "Three column"
+    }
+  ]
+}
+{% endschema %}

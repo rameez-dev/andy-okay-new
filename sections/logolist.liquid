@@ -1,0 +1,65 @@
+{%- if section.settings.show == true -%}
+<div class="section-details" style="background-color: {{section.settings.backgroud-color}}">
+  <div class="section-details-holder">
+    <h3 class="SectionHeader__Heading Heading u-h2 details-heading" style="color: {{section.settings.text-color}}">{{ section.settings.text}}</h3>
+  </div>
+  <ul class="section-details-list">
+    {% for block in section.blocks %}
+      <li class="section-detail">
+        <img class="section-logo-img" src="{{block.settings.image | img_url: '200x'}}">
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{%endif%}
+{% schema %}
+  { 
+    "name":"Logo List",
+    "settings": [
+      {
+        "id": "backgroud-color",
+        "type": "color",
+        "label": "Background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "id": "text",
+        "type": "richtext",
+        "label": "Text"
+      },
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      }
+    ],
+    
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Sponsor logo",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Logo"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "category": "Text",
+        "name": "Logo List"
+      }
+    ]
+  }
+{% endschema %}

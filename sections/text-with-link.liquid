@@ -1,0 +1,63 @@
+{%- if section.settings.show == true -%}
+<section class="home-sep-sec" style="background-color: {{section.settings.background-color}}">
+  	<article style="color: {{section.settings.text-color}}">
+      <h3>{{ section.settings.heading}}</h3>
+      <p>{{ section.settings.paragraph}}</p>
+      {%if section.settings.link != blank %}
+      <a class="read_more_sep" href="{{ section.settings.link }}"> {{section.settings.link-text}}</a>
+    </article>
+    {%endif%}
+
+</section>
+{%endif%}
+{% schema %}
+  { 
+    "name":"Text and link",
+    "settings": [
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "paragraph",
+        "type": "richtext",
+        "label": "Content"
+      },
+      {
+        "id": "link-text",
+        "type": "text",
+        "label": "link Text" 
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "link"
+      },
+      {
+        "id": "background-color",
+        "type": "color",
+        "label": "Background color",
+        "default": "#000000"
+      },
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "category": "Text",
+        "name": "Text and link"
+      }
+    ]
+  }
+{% endschema %}

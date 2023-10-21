@@ -1,0 +1,327 @@
+<!doctype html>
+
+<html class="no-js" lang="{{ shop.locale }}">
+
+
+<style>
+.fUldvZ {z-index:99999998!important}
+</style>
+
+
+  <head>
+<link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://conf.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://triplewhale-pixel.web.app/' crossorigin />
+<script>
+/* >> TriplePixel :: start*/
+window.TriplePixelData={TripleName:"andy-okay.myshopify.com",ver:"1.9.0"},function(W,H,A,L,E,_,B,N){function O(U,T,P,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,P?(H.open("POST",U,!0),H.setRequestHeader("Content-Type","application/json")):H.open("GET",U,!0),H.send(JSON.stringify(P||{})),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):P||(N[B]=R)):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1;try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push(location.href),A.setItem(H+"U",JSON.stringify(E))}catch(e){}var i,m,p;A.getItem('"!nC`')||(_=A,A=N,A[H]||(L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)},E=A[H]=function(t,e){return"State"==t?E.s:(W=L(),(E._q=E._q||[]).push([W,t,e]),W)},E.s="Installed",E._q=[],E.ch=W,B="configSecurityConfModel",N[B]=1,O("//conf.config-security.com/model",5),i=L(),m=A[atob("c2NyZWVu")],_.setItem("di_pmt_wt",i),p={id:i,action:"profile",avatar:_.getItem("auth-security_rand_salt_"),time:m[atob("d2lkdGg=")]+":"+m[atob("aGVpZ2h0")],host:A.TriplePixelData.TripleName,url:window.location.href,ref:document.referrer,ver:window.TriplePixelData.ver},O("//api.config-security.com/",5,p),O("//triplewhale-pixel.web.app/dot1.9.txt",5)))}}("","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+    
+    <meta name="google-site-verification" content="Pi_F2Xdjf-c0lyfT8zL72S8jMP_uhcxjXQ0VDnbe7HE" />
+   
+    {% if page.handle == 'about' %}
+		<style type="text/css">
+		body {
+			background-color: white; !important;
+		}
+		</style>
+    
+{% endif %}
+   
+    <!-- Uploadery Fast Loading Script By ShopPad -->
+    <script src='//d1liekpayvooaz.cloudfront.net/apps/uploadery/uploadery.js?shop={{shop.permanent_domain}}'></script>
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+
+    <title>
+      {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {% include 'social-meta-tags' %}
+
+    {{ content_for_header }}
+
+    <link rel="stylesheet" href="{{ 'theme.scss.css' | asset_url }}">
+
+    {%- if template == 'page.archive' -%}
+      <link rel="stylesheet" href="{{ 'archive.css' | asset_url }}">
+      <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}"  type="text/css" media="all" /> 
+    {%- endif -%}
+
+    <script>
+      // This allows to expose several variables to the global scope, to be used in scripts
+      window.theme = {
+        template: {{ template.name | json }},
+        shopCurrency: {{ shop.currency | json }},
+        moneyFormat: {{ shop.money_format | json }},
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        currencyConversionEnabled: {{ settings.currency_conversion_enabled | json }},
+        currencyConversionMoneyFormat: {{ settings.currency_conversion_money_format | json }},
+        currencyConversionRoundAmounts: {{ settings.currency_conversion_round_amounts | json }},
+        productImageSize: {{ settings.product_image_size | json }},
+        searchMode: {{ settings.search_mode | json }},
+        showPageTransition: {{ settings.show_page_transition | json }},
+        showElementStaggering: {{ settings.show_element_staggering | json }},
+        showImageZooming: {{ settings.show_image_zooming | json }}
+      };
+
+      window.languages = {
+        cartAddNote: {{ 'cart.general.add_note' | t | json }},
+        cartEditNote: {{ 'cart.general.edit_note' | t | json }},
+        productImageLoadingError: {{ 'product.slideshow.image_loading_error' | t | json }},
+        productFormAddToCart: {% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t | json }}{% else %}{{ 'product.form.add_to_cart' | t | json }}{% endif %},
+        productFormUnavailable: {{ 'product.form.unavailable' | t | json }},
+        productFormSoldOut: {{ 'product.form.sold_out' | t | json }},
+        shippingEstimatorOneResult: {{ 'cart.shipping_estimator.one_result_title' | t | json }},
+        shippingEstimatorMoreResults: {{ 'cart.shipping_estimator.more_results_title' | t | json }},
+        shippingEstimatorNoResults: {{ 'cart.shipping_estimator.no_results_title' | t | json }}
+      };
+
+      window.lazySizesConfig = {
+        loadHidden: false,
+        hFac: 0.5,
+        expFactor: 2,
+        ricTimeout: 150,
+        lazyClass: 'Image--lazyLoad',
+        loadingClass: 'Image--lazyLoading',
+        loadedClass: 'Image--lazyLoaded'
+      };
+
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+      document.documentElement.style.setProperty('--window-height', window.innerHeight + 'px');
+
+      // We do a quick detection of some features (we could use Modernizr but for so little...)
+      (function() {
+        document.documentElement.className += ((window.CSS && window.CSS.supports('(position: sticky) or (position: -webkit-sticky)')) ? ' supports-sticky' : ' no-supports-sticky');
+        document.documentElement.className += (window.matchMedia('(-moz-touch-enabled: 1), (hover: none)')).matches ? ' no-supports-hover' : ' supports-hover';
+      }());
+
+      (function () {
+  window.onpageshow = function(event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+})();
+    </script>
+
+    <script src="{{ 'lazysizes.min.js' | asset_url }}" async></script>
+
+    {% if settings.currency_conversion_enabled %}
+      <script src="//cdn.shopify.com/s/javascripts/currencies.js" defer></script>
+    {% endif %}
+
+    {%- if template == 'customers/addresses' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer></script>
+      <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
+    {%- endif -%}
+
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?unknown=polyfill&features=fetch,Element.prototype.closest,Element.prototype.remove,Element.prototype.classList,Array.prototype.includes,Array.prototype.fill,Object.assign,CustomEvent,IntersectionObserver,IntersectionObserverEntry" defer></script>
+    <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
+    <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+
+    {% include 'microdata-schema' %}
+  
+	{{ shop.metafields.loox["global_html_head"] }}
+
+  {% include 'bss-product-labels-configs' %}
+  <!-- better-home-screen-icons-head-begins here -->
+  {% if shop.metafields.bhomescreenicons.enabled == "true" %}
+  {% capture snippet_content %}{% include 'better-home-screen-icons-meta-tags'  %}{% endcapture %}
+  {% unless snippet_content contains "Liquid error" %}
+  {{ snippet_content }}
+  {% endunless %}
+  {% endif %}
+  <!-- better-home-screen-icons-head-ends here -->
+  <!-- better-home-screen-icons-head-begin -->
+  {% if shop.metafields.bhomescreenicons.enabled == "true" %}
+  {% capture snippet_content %}{% include 'better-home-screen-icons-meta-tags'  %}{% endcapture %}
+  {% unless snippet_content contains "Liquid error" %}
+  {{ snippet_content }}
+  {% endunless %}
+  {% endif %}
+  <!-- better-home-screen-icons-head-end -->
+<script src='https://appdevelopergroup.co/apps/smartbadge/js/smartbadge.js?shop=andy-okay.myshopify.com' type='text/javascript'></script>
+    <meta name="p:domain_verify" content="e1fb25c4e56e09186ee89f3bf741f707"/>
+{% render 'limoniapps-discountninja-header' %}{%- if product -%}{%- assign discountninjaproduct = product -%}{%- endif -%}{%- if collection -%}{%- assign discountninjacollection = collection -%}{%- endif -%}
+</head>
+
+
+  <body class="prestige--v4 {% if template.directory %}template-{{ template.directory | handle }}{% endif %} template-{{ template.name | handle }}">
+   
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5H4KFZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <a class="PageSkipLink u-visually-hidden" href="#main">{{ 'header.navigation.skip_to_content' | t }}</a>
+    <span class="LoadingBar"></span>
+    <div class="PageOverlay"></div>
+    <div class="PageTransition"></div>
+
+    {% section 'popup' %}
+    {% section 'soldout_popup' %}
+    {% section 'sidebar-menu' %}
+
+    {%- if template != 'cart' -%}
+      {% include 'cart-drawer' %}
+    {%- endif -%}
+
+    <div class="PageContainer">
+      {% section 'announcement' %}
+      {% section 'header' %}
+
+      <main id="main" role="main">
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'footer' %}
+    </div>
+  {% include 'uploadkit' %}
+
+	{{ shop.metafields.loox["global_html_body"] }}
+    
+    <script>
+      $(document).ready(function(){
+        $("[data-xs-grid-stock-bar]").each(function(){
+          let t = $(this);
+          let stockStr = t.attr('data-xs-stock-json'),
+              inv = t.attr('data-inv');
+          console.log(inv);
+          if( stockStr != "" && inv == "shopify"){
+            const stockData = JSON.parse(stockStr);
+            console.log(stockData);
+            
+            let totalStock = 0;
+            for( let s in stockData ){
+              totalStock += parseInt(stockData[s]);
+            }
+            let max_stock = parseInt(totalStock),
+                left = parseInt(t.attr('data-xs-stock-left')),
+                percentage = ( parseFloat(left) / parseFloat(max_stock) ) * 100.0;
+            console.log(left);
+            console.log(max_stock);
+            console.log("dlfk");
+
+            console.log(max_stock);
+            console.log(left);
+
+            if ( left < 0 ){
+              left = 0;
+              t.find("[data-xs-stock-spinner]").css("width", `0%`);
+            }
+            else {
+              t.find("[data-xs-stock-spinner]").css("width", `${percentage}%`);
+            }
+            t.find("[data-xs-stock-text]").text(`${left} out of ${max_stock} left`);
+            
+            if (max_stock >= left ){
+
+              t.show();
+            }
+          }
+        });
+        
+        $("[data-flickity-config]").flickity().flickity("resize");
+      });
+    </script>
+
+    <style>
+      .xs-stock-bar{
+        order: 2;
+        font-family: 'Dosis', sans-serif;
+
+      }
+      .xs-stock-progress {
+        position: relative;
+        height: 4px;
+        background: #eee;
+      }
+
+      span.xs-stock-spinner {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        background: {{ settings.stock_bar_color }};
+        transition: all 0.3s linear;
+      }
+
+      .xs-stock-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 5px;
+      }
+
+      .xs-stock-label {
+        font-size: 13px;
+        background: {{ settings.stock_bar_color }};
+        padding: 4px 7px;
+        text-transform: uppercase;
+        color: #FFF;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-right: 10px;
+      }
+
+      .xs-stock-text {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+      }
+
+      [data-xs-stock-left] {
+        color:{{ settings.stock_bar_color }};
+      }
+      [data-xs-grid-stock-bar] {
+        max-width: 286px;
+        margin: 10px auto;
+      }
+      [data-xs-grid-stock-bar] .xs-stock-text{
+        font-size: 13px;
+        color: {{ settings.stock_bar_color }};
+        padding: 4px 7px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-right: 10px;
+      }
+      
+      
+      [data-xs-grid-stock-bar] .xs-stock-progress {
+        height: 6px;
+      }
+    </style>
+
+<script>
+(function(g,e,o,t,a,r,ge,tl,y){
+s=function(){var def='geotargetlygeocontent1629294920005_default',len=g.getElementsByClassName(def).length;
+if(len>0){for(i=0;i<len;i++){g.getElementsByClassName(def)[i].style.display='inline';}}};
+t=g.getElementsByTagName(e)[0];y=g.createElement(e);
+y.async=true;y.src='https://g1584674680.co/gc?id=-MhOXs2A1VY4Y5dkMVkB&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
+})(document,'script');
+</script>
+<noscript><style>.geotargetlygeocontent1629294920005_default{display:inline !important}</style></noscript>    
+    
+{% include 'limoniapps-discountninja-body' %}
+</body>
+</html>

@@ -1,0 +1,66 @@
+<section data-section-type="faq" data-section-id="{{ section.id }}" >
+  {%- if section.settings.show == true -%}
+    <div class="container">
+    <article class="upper_cont">
+      <div class="card-gr">
+        <div class="card-gr__item card-full md-one-half video">
+          <figure class="vd-container">
+            <img src="{{section.settings.image | img_url: 'master' }}" alt="">
+            
+          </figure> 
+        </div>
+        <div class="card-gr__item card-full md-one-half">
+          <div class="content-container">
+            <h1 style="color: {{section.settings.text-color}}">{{section.settings.heading}}</h1>
+            <p style="color: {{section.settings.text-color}}">{{section.settings.paragraph}}</p>
+          </div>
+        </div>
+      </div>
+      
+     
+    </article>
+  </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+  { 
+    "name":"Image And Text",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show",
+        "label": "Show",
+        "default": false
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"   
+      },
+      {
+        "id": "paragraph",
+        "type": "richtext",
+        "label": "Paragraph"
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"  
+      },
+      {
+        "id": "text-color",
+        "type": "color",
+        "label": "Text color",
+        "default": "#000000"
+      }
+    ],
+
+    "presets": [
+      {
+      "category": "Text",
+      "name": "Image And Text"
+    }
+  ]
+}
+{% endschema %}
