@@ -110,7 +110,10 @@ p {
 
    @font-face {
      font-family: 'IcoMoon';
-     src: url('IcoMoon.woff2') format('woff2'),
+     src: url('IcoMoon.eot');
+     src: url('IcoMoon.eot?#iefix') format('embedded-opentype'),
+          url('IcoMoon.woff2') format('woff2'),
+          url('IcoMoon-Free.svg#IcoMoon-Free') format('svg'),
           url('IcoMoon-Free.woff') format('woff');
      font-weight: normal;
      font-style: normal;
