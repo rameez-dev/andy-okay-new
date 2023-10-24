@@ -7042,7 +7042,7 @@ select::-ms-expand {
   .ProductList--carousel .Carousel__Cell {
     width: 33.3333%;
     left: 0;
-    padding: 0 var(--horizontal-spacing-four-products-per-row) / 2;
+    padding: 0 calc(var(--horizontal-spacing-four-products-per-row) / 2);
     margin-left: 0;
   }
   .ProductList--carousel .flickity-prev-next-button {
@@ -9153,7 +9153,7 @@ body.story-popup-visible::after {
   }
   @supports (--css: variables) {
     .Product__SlideshowNav--dots .Product__SlideshowNavScroller {
-      top: calc(50% + (var(--header-height) / 2));
+      top: calc(50% + calc((var(--header-height) / 2)));
     }
   }
   .Product__SlideshowNavDot {
