@@ -3,7 +3,7 @@
     background-color: white !important;
   }
 </style> 
-<div id="section-{{ section.id }}" class="Section" data-section-id="{{ section.id }}" data-section-type="article-list">
+<div id="section-blog-template" class="Section" data-section-id="blog-template" data-section-type="article-list">
   {%- if blog.articles_count == 0 -%}
     <div class="EmptyState">
       <div class="Container">
@@ -106,23 +106,23 @@
 </div>
 
 <style>
-  #section-{{ section.id }} .ImageHero,
-  #section-{{ section.id }} .ImageHero .Heading {
+  #section-blog-template .ImageHero,
+  #section-blog-template .ImageHero .Heading {
     color: #ffffff;
   }
 
-  #section-{{ section.id }} .ImageHero .Button {
+  #section-blog-template .ImageHero .Button {
     color: #1c1c1c;
     border-color: #ffffff;
   }
 
-  #section-{{ section.id }} .ImageHero .Button::before {
+  #section-blog-template .ImageHero .Button::before {
     background-color: #ffffff;
   }
 
   {%- if settings.show_button_transition -%}
     @media (-moz-touch-enabled: 0), (hover: hover) {
-      #section-{{ section.id }} .ImageHero .Button:hover {
+      #section-blog-template .ImageHero .Button:hover {
         color: #ffffff;
       }
     }
