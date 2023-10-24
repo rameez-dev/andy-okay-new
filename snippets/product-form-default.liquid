@@ -835,7 +835,7 @@ for size, we use it to display a size chart (if applicable)
   {% comment %} product options {% endcomment %}
   {%- for option in product.options_with_values -%}
       {%- assign downcase_option = option.name | downcase -%}
-      {%- capture popover_id -%}popover-{{ product.id }}-{{ section.id }}-{{ option.name | handle }}{%- endcapture -%}
+      {%- capture popover_id -%}popover-{{ product.id }}-product-template-{{ option.name | handle }}{%- endcapture -%}
 
     <div class="ProductForm__Option {% if show_option_label %}ProductForm__Option--labelled{% endif %}">
       {%- if show_option_label -%}
@@ -865,11 +865,11 @@ for size, we use it to display a size chart (if applicable)
             {%- assign color_swatch_name = value | handle | append: '.png' -%}
             {%- assign color_swatch_image = images[color_swatch_name] -%}
 
-            <input id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+            <input id="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
               class="ColorSwatch__Radio" type="radio" name="option-{{ forloop.parentloop.index0 }}"
               value="{{ value | escape }}" {% if value==option.selected_value %}checked="checked" {% endif %}
               data-option-position="{{ option.position }}">
-            <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+            <label for="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
               class="ColorSwatch ColorSwatch--large {% if downcase_value == 'white' %}ColorSwatch--white{% endif %}"
               data-tooltip="{{ value | escape }}"
               style="background-color: {{ value | replace: ' ', '' | downcase }}; {% if color_swatch_image != blank %}background-image: url({{ color_swatch_image | img_url: '64x64' }}){% endif %}">
@@ -902,11 +902,11 @@ for size, we use it to display a size chart (if applicable)
                 {% endif %}
               {% endfor %}
               {% assign variant_values = value | split: ' ' %}
-              <input id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+              <input id="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
                 class="dp-product-section-size-selector-input" type="radio" name="option-{{ forloop.parentloop.index0 }}"
                 value="{{ value | escape }}" {% if value==option.selected_value %}checked="checked" {% endif %}
                 data-option-position="{{ option.position }}">
-              <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+              <label for="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
                 class="dp-product-section-size-selector {% if value == option.selected_value %} currently-selected-size-display {% endif %}">
                {%- assign show = '' -%}
                {%- assign show_grade = '' -%}
@@ -2078,19 +2078,15 @@ THE EXACT SAME ATTRIBUTES.
         $("#reset-passe-money").css("color", "#00934a");
         $(".passe-money").css("opacity", "1");
       }
-      console.log(selectedframe);
       xVariantPrice = xVariants[xid].price;
       xVariantCompare_at_price = xVariants[xid].compare_at_price;
       let selected_frame_id = $('input[name="frame"]:checked').val();
-      console.log('frame id : '+selected_frame_id);
       let selected_frame_price = 0;
       let selected_frame_compare_at_price = 0;
-      // console.log(frames_all_variants);
       if (selected_frame_id != 0){
         selected_frame_price = frames_all_variants[selected_frame_id].price;
         selected_frame_compare_at_price = frames_all_variants[selected_frame_id].compare_at_price;
       } 
-      
       // selected_frame_price = Math.round(Currency.convert(selected_frame_price, 'USD', newCurrency));
       // selected_frame_compare_at_price = Math.round(Currency.convert(selected_frame_compare_at_price, 'USD', newCurrency));
       if(selected_frame_price > 0 ) {
@@ -2120,8 +2116,6 @@ THE EXACT SAME ATTRIBUTES.
       else{
         textaddtocart = 'ADD ART TO CART';
       } 
-  
-      console.log(textaddtocart);
       if ( variant.available){
         $(".ProductForm__AddToCart").append("<div class='cart-animation' style='display:none'><span id='animation_digit'></span></div>");
         $(".ProductForm__AddToCart span").addClass('add-to-cart__text');
@@ -2161,7 +2155,6 @@ THE EXACT SAME ATTRIBUTES.
             } });
         
           if ($("#mat_board_input").is(':checked')) {
-            console.log('mat board is checked ...');
               formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
           }
         }
