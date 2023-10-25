@@ -387,7 +387,7 @@
 }
 @font-face {
     font-family: 'Adobe Caslon Pro';
-    src: url('ACaslonPro-Regular.svg#ACaslonPro-Regular') format('svg');
+    src: url('ACaslonPro-Regular.otf') format("opentype");
     font-weight: normal;
     font-style: normal;
 }
