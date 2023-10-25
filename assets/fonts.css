@@ -276,3 +276,9 @@
     font-style: italic;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Adobe Caslon Pro';
+    src: url('ACaslonPro-Regular.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
