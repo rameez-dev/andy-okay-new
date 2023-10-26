@@ -229,7 +229,13 @@
               </div>
               <div class="prod-info-text-contents">
                   <div class="prod-info-column">
-                    {{ product.description }}         
+                    <div class="hide_on_desk popup_header">
+                      <span class="popup_title">Product Description</span>
+                      <button class="popup_close">{% include 'icon' with 'close' %}</button>
+                    </div>
+                    <div class="popup_content">    
+                      {{ product.description }}   
+                    </div>      
                   </div>
               </div>
               </div>
@@ -243,7 +249,13 @@
               </div>
               <div class="prod-info-text-contents">
                   <div class="prod-info-column">
-                    {{- second_page.content -}}
+                    <div class="hide_on_desk popup_header">
+                      <span class="popup_title">Shipping & Returns</span>
+                      <button class="popup_close">{% include 'icon' with 'close' %}</button>
+                    </div>
+                    <div class="popup_content">
+                      {{- second_page.content -}}
+                    </div>
                 </div>
               </div>
               </div>
@@ -257,8 +269,14 @@
               </div>
               <div class="prod-info-text-contents">   
                   <div class="prod-info-column newfaq">
-                    {{ questions }}
-              </div>
+                    <div class="hide_on_desk popup_header">
+                      <span class="popup_title">FAQ</span>
+                      <button class="popup_close">{% include 'icon' with 'close' %}</button>
+                    </div>
+                    <div class="popup_content">
+                      {{ questions }}
+                    </div>
+                  </div>
               </div>
               </div>
       </div>
@@ -432,8 +450,8 @@
       // elmnt.scrollIntoView();
     });
 
-    $('.prod-info-text-contents').click(function() {
-      $(this).removeClass('visible');
+    $('.prod-info-text-contents .popup_close').click(function() {
+      $(this).closest('.prod-info-text-contents').removeClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "none";
     });
 
