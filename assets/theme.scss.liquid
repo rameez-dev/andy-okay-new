@@ -10561,7 +10561,7 @@ nav.Header__SecondaryNav.push-currency-left{
   box-shadow: 0 1px 4px rgba(#000000, 0.3);
   -webkit-transition: all 0.5s $drawer-transition-timing;
   transition: all 0.5s $drawer-transition-timing;
-  border-radius: 14px;
+  border-radius: 14px 14px 0px 0px;
   
   .Heading {
     color: inherit;
@@ -16927,11 +16927,14 @@ select.CurrencySelector__Select{
   position: sticky;
   top: 0;
   background: {{settings.newsletter_popup_background}};
+  z-index: 999;
 }
 .popup_title {
   margin-left: auto;
   font-family: "DIN Next LT Pro Cond";
   text-transform: uppercase;
+  font-size: 18px;
+  padding-top: 5px;
 }
 .popup_close {
   margin-left: auto;
@@ -16939,17 +16942,29 @@ select.CurrencySelector__Select{
 }
 .popup_close svg {
   width: 15px;
-  transform: scaleX(0.8) translateY(-4px);
+  transform: scaleX(0.8);
   stroke-width: 1.5px;
 }
 .popup_content {
-  padding: 0% 8% 8%;
+  padding: 8% 8% 8%;
+  text-align: left;
+}
+.popup_content .NewsletterPopup__Content {
+  padding: 0 !important;
+  font-family: 'Adobe Caslon Pro Regular';
+}
+.popup_content .NewsletterPopup__Content strong {
+  font-family: 'DIN Next LT Pro Cond';
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 .image_block {
-  text-align: left;
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+.image_block:not(:first-child) {
   margin-top: 30px;
 }
 .image_block_heading {
@@ -16957,6 +16972,40 @@ select.CurrencySelector__Select{
   text-transform: uppercase;
 }
 .image_block_content {
-  font-family: "Adobe Caslon Pro";
+  font-family: "Adobe Caslon Pro Regular";
   font-size: 14px;
+}
+
+@media (min-width: 920px) {
+  .hide_on_desk {
+    display: none;
+  }
+  .prod-info-column .popup_content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 920px) {
+  .prod-info-text-contents {
+    border-radius: 14px 14px 0px 0px;
+  }
+  .prod-info-text-contents::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0px;
+  }
+  .prod-info-text-contents .popup_content .faq__title h4 {
+    font-size: 16px;
+  }
+  .prod-info-text-contents .popup_content .faq__content {
+    font-family: 'Adobe Caslon Pro Regular'
+  }
+  .prod-info-text-contents .popup_content {
+    font-family: 'Adobe Caslon Pro Regular';
+  }
+  .prod-info-text-contents .popup_content strong {
+    font-family: 'DIN Next LT Pro Cond';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
 }
