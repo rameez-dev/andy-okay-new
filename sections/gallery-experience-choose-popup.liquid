@@ -1,6 +1,6 @@
 <aside class="NewsletterPopup site__black--popup soldout-popup gallery-experience-choose" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
   <div class="popup_header">
-    <span class="popup_title">Frames</span>
+    <span class="popup_title">Passe Partout</span>
     <button class="popup_close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
   </div>     
 {% comment %} <button class="NewsletterPopup__Close site__black--close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button> {% endcomment %}  
@@ -39,7 +39,7 @@
     
     <script>
       $(document).ready(function(){
-      $('.gallery-experience-choose').click(function(){
+      $('.gallery-experience-choose .popup_close').click(function(){
         $('.gallery-experience-choose').removeClass('visible');
         document.getElementById("cart-popup-overlay").style.display = "none";
       });
