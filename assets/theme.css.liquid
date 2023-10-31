@@ -8673,33 +8673,24 @@ nav.Header__SecondaryNav.push-currency-left {
 }
 .NewsletterPopup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: calc(100% - 30px);
-  padding: 24px 30px 30px 30px;
+  width: 100%;
+  bottom: 0;
+  right: 0;
   background: var(--newsletter-popup-background);
   color: var(--newsletter-popup-text-color);
+  transform: translate(0%, 100%);
+  -webkit-transform: translate(0%, 100%);
+  visibility: hidden;
   z-index: 50;
+  max-height: calc(100% - 150px);
+  max-width: 420px;
+  overflow-y: auto; 
   text-align: center;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  visibility: hidden;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
   -webkit-transition: all 0.5s var(--drawer-transition-timing);
   transition: all 0.5s var(--drawer-transition-timing);
-  display: none;
-}
-.NewsletterPopup.site__black--popup {
-  padding: 50px 30px 30px 40px;
-  border-radius: 15px;
-  text-align: left;
-}
-@media screen and (max-width: 640px) {
-  .NewsletterPopup.site__black--popup {
-    padding: 40px 20px;
-  }
+  border-radius: 14px 14px 0px 0px;
 }
 .NewsletterPopup .Heading {
   color: inherit;
@@ -8720,9 +8711,22 @@ nav.Header__SecondaryNav.push-currency-left {
   border-color: var(--newsletter-popup-text-color);
 }
 .NewsletterPopup.soldout-popup.visible {
-  opacity: 1;
   visibility: visible;
-  display: block;
+  transform: translate(0%, 0%);
+}
+
+.NewsletterPopup::-webkit-scrollbar {
+-webkit-appearance: none;
+width: 0px;
+}
+
+@media (min-width: 420px) {
+  .NewsletterPopup {
+    max-height: 100%;
+    height: 100%;
+    transform: translate(100%, 0%);  
+    border-radius: 0px;
+  } 
 }
 .NewsletterPopup.site__black--popup .Heading {
   font-size: 32px;
@@ -8839,10 +8843,6 @@ body.story-popup-visible::after {
   margin-top: 32px;
 }
 @media screen and (min-width: 641px) {
-  .NewsletterPopup {
-    max-width: 410px;
-    padding-top: 35px;
-  }
   .NewsletterPopup__Close svg {
     width: 18px;
     height: 18px;
@@ -9366,7 +9366,7 @@ body.story-popup-visible::after {
   }
   .Product__Info {
     position: -webkit-sticky;
-    position: sticky;
+    /* position: sticky; */
     top: var(--header-base-height);
     right: 0;
     width: 375px;
@@ -14302,3 +14302,116 @@ select.CurrencySelector__Select {
 .PageContainer:has(.Button--primary--default.bottomFixed) ~ #giftbox-root iframe[data-cy="launcher"] {
   bottom: 145px !important;
 }
+
+@media (max-width: 920px) {
+  .prod-info-text-contents {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: all 0.5s ease-out;
+    z-index: 50;
+    background: white;
+    max-height: calc(100% - 150px);
+    overflow-y: auto;
+  } 
+  .prod-info-text-contents.visible {
+    visibility: visible;
+    transform: translateY(0%);
+  }
+}
+
+
+.popup_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  position: sticky;
+  top: 0;
+  background: {{ settings.newsletter_popup_background }};
+  z-index: 999;
+}
+.popup_title {
+  margin-left: auto;
+  font-family: "DIN Next LT Pro Cond";
+  text-transform: uppercase;
+  font-size: 18px;
+  padding-top: 5px;
+}
+.popup_close {
+  margin-left: auto;
+  cursor: pointer;
+}
+.popup_close svg {
+  width: 15px;
+  transform: scaleX(0.8);
+  stroke-width: 1.5px;
+}
+.popup_content {
+  padding: 8% 8% 8%;
+  text-align: left;
+}
+.popup_content .NewsletterPopup__Content {
+  padding: 0 !important;
+  font-family: 'Adobe Caslon Pro Regular';
+}
+.popup_content .NewsletterPopup__Content strong {
+  font-family: 'DIN Next LT Pro Cond';
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.image_block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.image_block:not(:first-child) {
+  margin-top: 30px;
+}
+.image_block_heading {
+  font-family: "DIN Next LT Pro Cond";
+  text-transform: uppercase;
+}
+.image_block_content {
+  font-family: "Adobe Caslon Pro Regular";
+  font-size: 14px;
+}
+
+@media (min-width: 920px) {
+  .hide_on_desk {
+    display: none;
+  }
+  .prod-info-column .popup_content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 920px) {
+  .prod-info-text-contents {
+    border-radius: 14px 14px 0px 0px;
+  }
+  .prod-info-text-contents::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0px;
+  }
+  .prod-info-text-contents .popup_content .faq__title h4 {
+    font-size: 16px;
+  }
+  .prod-info-text-contents .popup_content .faq__content {
+    font-family: 'Adobe Caslon Pro Regular'
+  }
+  .prod-info-text-contents .popup_content {
+    font-family: 'Adobe Caslon Pro Regular';
+  }
+  .prod-info-text-contents .popup_content strong {
+    font-family: 'DIN Next LT Pro Cond';
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
