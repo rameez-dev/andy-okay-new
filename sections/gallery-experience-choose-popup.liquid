@@ -2,14 +2,8 @@
     <button class="NewsletterPopup__Close site__black--close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
       
       {%- if section.settings.image != blank -%}
-        <div>
-           {% assign image_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-              <img class="Image--lazyLoad"
-                data-src="{{ image_url }}"
-                data-optimumx="1.2"
-                data-widths="[50,100,300]"
-                data-sizes="auto"
-                alt="Size Chart">
+        <div> 
+          <img src="{{ section.settings.image | img_url: 'master' }}" alt="gallery-mat">
         </div>
       {%- endif -%}
   

@@ -1,10 +1,10 @@
 <link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
 <div style="display: none;" class="xs-stock-bar" data-xs-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}'>
-  <div class="xs-stock-info">
+  <div class="xs-stock-info"> 
     <div class="xs-stock-label">Limited Edition</div>
     <div class="xs-stock-text">Only
       <span data-xs-stock-left></span>
-      left</div> 
+      left</div>  
   </div>
   <div class="xs-stock-progress" data-xs-stock-progress>
     <span class="xs-stock-spinner" data-xs-stock-spinner></span>
@@ -41,41 +41,49 @@
     $(`section.Product`).on("variant:changed", function(e) {
       var variant = event.detail.variant;
       var previousVariant = event.detail.previousVariant;
-
       console.log('rameez');
       console.log(variant.option1);
       if (variant.option1 != previousVariant.option1) {
+        $('#reset-frame-unavailable').hide();
+        $('label[for="white-frame"]').css('display', 'flex');
+        $('label[for="black-frame"').css('display', 'flex');
+        $('label[for="oak-frame"').css('display', 'flex');
         $('.dp-product-section-swatch-selector-price').css('display','block');
+        if( $("#noframe").prop('checked'))
+          $("label[for='noframe']").addClass('currently-selected-swatch-display');
         if (variant.option1 == 'MEDIUM 12x16" 30x40cm') {
           $("label[for='option-product-template-0-0']").addClass('currently-selected-size-display');
           $("label[for='option-product-template-0-1']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-2']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
           //commented some code as frames are not active, GIANT size need fix when enable this code back for frames
-          /*if (! variant.option2 && $('input[name="frame"]:checked').val()) {
+          if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             console.log('inside');
-            $("#reset-frame-money").text(convertedPrice((black_variants[0].price).replace(/[^0-9\.]+/g, "")));
-            $("#reset-compare-price").text(convertedPrice((black_variants[0].compare_at_price).replace(/[^0-9\.]+/g, "")));
+            console.log(black_variants[0])
+            $("#reset-frame-money").text((black_variants[0].price).replace(/[^0-9\.]+/g, ""));
+            $("#reset-compare-price").text((black_variants[0].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[0].id);
             $('#white-frame').val(white_variants[0].id);
-            $('#black-frame').val(black_variants[0].id);
+            $('#black-frame').val(black_variants[0].id); 
             $('#oak-frame').val(oak_variants[0].id);
             
             $("#mat_board_input").attr('value', mat_board_variants[0].id);
             $("#mat_board_input").attr('price', mat_board_variants[0].price);
             $("#reset-passe-money").text(convertedPrice((mat_board_variants[0].price).replace(/[^0-9\.]+/g, "")));
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[0].compare_at_price).replace(/[^0-9\.]+/g, "")));
 
-          }*/
+          }
         } else if (variant.option1 == 'LARGE 20x28" 50x70cm') {
           $("label[for='option-product-template-0-1']").addClass('currently-selected-size-display');
           $("label[for='option-product-template-0-0']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-2']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
           
-          /*if (! variant.option2 && $('input[name="frame"]:checked').val()) {
+          if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             console.log('inside');
-            $("#reset-frame-money").text(convertedPrice((black_variants[1].price).replace(/[^0-9\.]+/g, "")));
-            $("#reset-compare-price").text(convertedPrice((black_variants[1].compare_at_price).replace(/[^0-9\.]+/g, "")));
+            console.log(black_variants[1])
+            $("#reset-frame-money").text((black_variants[1].price).replace(/[^0-9\.]+/g, ""));
+            $("#reset-compare-price").text((black_variants[1].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[1].id);
             $('#white-frame').val(white_variants[1].id);
             $('#black-frame').val(black_variants[1].id);
@@ -84,8 +92,8 @@
             $("#mat_board_input").attr('value', mat_board_variants[1].id);
             $("#mat_board_input").attr('price', mat_board_variants[1].price);
             $("#reset-passe-money").text(convertedPrice((mat_board_variants[1].price).replace(/[^0-9\.]+/g, "")));
-
-          }*/
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[1].compare_at_price).replace(/[^0-9\.]+/g, "")));
+          }
 
         } else if (variant.option1 == 'X-Large 28x40" 70x100cm') {
           $("label[for='option-product-template-0-2']").addClass('currently-selected-size-display');
@@ -93,10 +101,11 @@
           $("label[for='option-product-template-0-1']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
 
-          /*if (! variant.option2 && $('input[name="frame"]:checked').val()) {
+          if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             console.log('inside x large');
-            $("#reset-frame-money").text(convertedPrice((black_variants[2].price).replace(/[^0-9\.]+/g, "")));
-            $("#reset-compare-price").text(convertedPrice((black_variants[2].compare_at_price).replace(/[^0-9\.]+/g, "")));
+            console.log(black_variants[2])
+            $("#reset-frame-money").text((black_variants[2].price).replace(/[^0-9\.]+/g, ""));
+            $("#reset-compare-price").text((black_variants[2].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[2].id);
             $('#white-frame').val(white_variants[2].id);
             $('#black-frame').val(black_variants[2].id);
@@ -105,30 +114,36 @@
             $("#mat_board_input").attr('value', mat_board_variants[2].id);
             $("#mat_board_input").attr('price', mat_board_variants[2].price);
             $("#reset-passe-money").text(convertedPrice((mat_board_variants[2].price).replace(/[^0-9\.]+/g, "")));
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[2].compare_at_price).replace(/[^0-9\.]+/g, "")));
 
-
-          }*/
+          }
         }  else if (variant.option1 == 'GIANT 40x55" 100x140cm') {
           $("label[for='option-product-template-0-3']").addClass('currently-selected-size-display');
           $("label[for='option-product-template-0-0']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-1']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-2']").removeClass('currently-selected-size-display');
 
-          /*if (! variant.option2 && $('input[name="frame"]:checked').val()) {
-            console.log('inside x large');
-            $("#reset-frame-money").text(convertedPrice((black_variants[2].price).replace(/[^0-9\.]+/g, "")));
-            $("#reset-compare-price").text(convertedPrice((black_variants[2].compare_at_price).replace(/[^0-9\.]+/g, "")));
+          if (! variant.option2 && $('input[name="frame"]:checked').val()) {
+            console.log('inside giant large');
+            $("#noframe").prop('checked', true);
             //$('input[name="frame"]:checked').val(black_variants[2].id);
-            $('#white-frame').val(white_variants[2].id);
-            $('#black-frame').val(black_variants[2].id);
-            $('#oak-frame').val(oak_variants[2].id);
-            
-            $("#mat_board_input").attr('value', mat_board_variants[2].id);
-            $("#mat_board_input").attr('price', mat_board_variants[2].price);
-            $("#reset-passe-money").text(convertedPrice((mat_board_variants[2].price).replace(/[^0-9\.]+/g, "")));
+            $("label[for='noframe']").removeClass('currently-selected-swatch-display');
+            $(".dp-product-section-head-frame-value").text('No Frame');
+            $("label[for='black-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='white-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='oak-frame']").removeClass('currently-selected-swatch-display');
 
-
-          }*/ 
+            $('#mat_board_product_container').addClass('passe-text-icon-container-faded');
+            $("#mat_board_input").prop('checked', false);
+            $("#mat_board_input").prop('disabled', true);
+            $("#mat_board_input").attr('name', 'gallery-no-frame');
+            $("#gallery-experience-choose").removeClass('passe-gallery-experience-icon-small');
+            $("#mat_board_toptext_icon_container").addClass("passe-toptext-icon-container-noframe");
+            $('#reset-frame-unavailable').show();
+            $('label[for="white-frame"]').hide();
+            $('label[for="black-frame"').hide();
+            $('label[for="oak-frame"').hide();
+          }
         }
       }
 
@@ -193,15 +208,16 @@
 
   function convertedPrice(frame_price) {
     var newCurrency = $('.CurrencySelector__Select').val();
-    var amount = Math.round(Currency.convert(frame_price, 'USD', newCurrency));
+    // var amount = Math.round(Currency.convert(frame_price, 'USD', newCurrency));
+    var amount = frame_price;
     var moneyFormats = { 
       "USD": "$" + amount, 
       "EUR": "€" + amount, 
       "GBP": "£" + amount, 
       "CAD": "$" + amount, 
       "SEK": amount + " kr", 
-      "DKK": "kr " + amount, 
-      "NOK": "kr " + amount , 
+      "DKK": amount + " kr", 
+      "NOK": amount + " kr", 
       "AUD": "$" + amount 
     };
     

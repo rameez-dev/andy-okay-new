@@ -1,6 +1,6 @@
 {%- comment -%}
 Those are the option names for which we automatically detect swatch. For the color, we use them to display a swatch,
-while
+while 
 for size, we use it to display a size chart (if applicable)
 {%- endcomment -%}  
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
@@ -658,7 +658,7 @@ for size, we use it to display a size chart (if applicable)
     font-size: 8px;
   }
   .passe-toptext-title{
-    padding: 0 10px;
+    padding: 0 10px; 
     color: #707070;
     font-family: 'Adobe Caslon Pro';
   }
@@ -672,7 +672,7 @@ for size, we use it to display a size chart (if applicable)
     font-weight: 700;
     text-align: right;
     font-size: 14px;
-    width: 25%;
+    width: 24%;
     position: relative;
     top: 3px;
     color: #707070;
@@ -756,7 +756,7 @@ for size, we use it to display a size chart (if applicable)
 </script>
 
 {% assign has_max_price = false %}
-{% assign isFrame = true %}
+{% assign isFrame = false %} 
 {% for tag in product.tags %}
 {% if tag contains "xs_max" %}
 {% assign has_max_price = true %}
@@ -806,7 +806,7 @@ for size, we use it to display a size chart (if applicable)
 {%- for oak_item in oak_frames.variants -%}
   <script>
     oak_variants.push({ 'id': '{{oak_item.id}}', 'title': '{{oak_item.title}}', 'price': '{{oak_item.price | money_without_trailing_zeros}}', 'compare_at_price': '{{oak_item.compare_at_price | money_without_trailing_zeros}}' });
-    frames_all_variants['{{oak_item.id}}'] = {{ oak_item | json }} ;
+    frames_all_variants['{{oak_item.id}}'] = {{ oak_item | json }};
   </script>
 {%- endfor -%}
 {%- for mat_item in mat_board_product.variants -%}
@@ -814,6 +814,9 @@ for size, we use it to display a size chart (if applicable)
     mat_board_variants.push({ 'id': '{{mat_item.id}}', 'title': '{{mat_item.title}}', 'price': '{{mat_item.price | money_without_trailing_zeros}}', 'compare_at_price': '{{mat_item.compare_at_price | money_without_trailing_zeros}}' });
   </script>
 {%- endfor -%}
+<script>
+    console.log(frames_all_variants)
+</script>
 
 {%- assign selected_variant = product.selected_or_first_available_variant -%}
 
@@ -1221,9 +1224,22 @@ for size, we use it to display a size chart (if applicable)
                     {%- endif -%}
                 {%- endfor -%}
             </div>
+            <style>
+              .dp-product-section-swatch-selector-unavailable {
+                font-family:'Adobe Caslon Pro';
+                text-align: right;
+                font-size:13px;
+                display:flex;
+                color: #707070;
+              /*   width: 25%; */
+              }
+            </style>
             <div class="dp-product-section-swatch-selector-price" style="display: none;">
                 <span id="reset-frame-money" class="reset-money" ><span class="money"></span></span>
                 <span id="reset-compare-price" class="reset-compare-price" ><span class="money"></span></span>
+            </div>
+            <div class="dp-product-section-swatch-selector-unavailable" id="reset-frame-unavailable" style="display: none;">
+              <span class="frame-unavailable">Not Available</span>
             </div>
         </div>
       </div>
@@ -1232,13 +1248,14 @@ for size, we use it to display a size chart (if applicable)
         {% if selected_variant.option1 == mat_board_product_variant.option1 %}
           {% assign mat_board_product_id = mat_board_product_variant.id %}
           {% assign mat_board_product_price = mat_board_product_variant.price %}
+          {% assign mat_board_product_price_compare_at = mat_board_product_variant.compare_at_price %}
           {% break %}
         {% endif %}
       {% endfor %}
       <div class="passehidden" id="passe-container" data-orientation="horizontal">
         <div class="passecontainer">
           <div id="mat_board_product_container" class=" passe-text-icon-container passe-text-icon-container-faded">
-            <div class="mat_board_input_container">
+            <div class="mat_board_input_container"> 
               <input type="checkbox" id="mat_board_input" name="gallery-no-frame" value="{{mat_board_product_id}}" price="{{mat_board_product_price}}" disabled >
             </div>
             <div id="mat_board_toptext_icon_container" class="passe-toptext-icon-container passe-toptext-icon-container-noframe">
@@ -1247,6 +1264,8 @@ for size, we use it to display a size chart (if applicable)
           </div>
           <div class="passe-money">
             <span id="reset-passe-money" >{{ mat_board_product_price |
+              money_without_trailing_zeros }}</span>
+            <span id="reset-passe-money-compare" class="reset-compare-price">{{ mat_board_product_price_compare_at |
               money_without_trailing_zeros }}</span>
           </div>
         </div>
@@ -1791,18 +1810,24 @@ THE EXACT SAME ATTRIBUTES.
       payBtnText.text(' ');
       //from here all calculations for pricing in cart label
       var price_header_ = $("#price_header_").html().replace(/\<span(.|\s)*?\<\/span\>/, '');
-      price_header_ = Number(price_header_.replace(/[^0-9\.-]+/g, ""));
+      if (newCurrency == 'SEK' || newCurrency == 'NOK')
+        price_header_ = Number(price_header_.replace(/[^0-9-]+/g, ""));
+      else
+        price_header_ = Number(price_header_.replace(/[^0-9\.-]+/g, ""));
       if (isNaN(price_header_)) price_header_ = 0;
 
       var cm_at_price_header_ = $("#cm_at_price_header_").html().replace(/\<span(.|\s)*?\<\/span\>/, '');
-      cm_at_price_header_ = Number(cm_at_price_header_.replace(/[^0-9\.-]+/g, ""));
+      if (newCurrency == 'SEK' || newCurrency == 'NOK')
+        cm_at_price_header_ = Number(cm_at_price_header_.replace(/[^0-9-]+/g, ""));
+      else
+        cm_at_price_header_ = Number(cm_at_price_header_.replace(/[^0-9\.-]+/g, ""));
       if (isNaN(cm_at_price_header_)) cm_at_price_header_ = 0;
 
       var updated_price_header_ = price_header_ + Number(actual_variant_price.replace(/[^0-9\.-]+/g, "")) + price;
       var updated_cm_at_price_header_ = cm_at_price_header_ + Number(cm_at_price.replace(/[^0-9\.-]+/g, ""));
 
       var currency_symbol = cm_at_price.replace(/[\d\., ]/g, '');
-      if (newCurrency == 'SEK') {
+      if (newCurrency == 'SEK' || newCurrency == 'NOK') {
         updated_price_header_ = Math.round(updated_price_header_) + ' ' + currency_symbol;
         updated_cm_at_price_header_ = Math.round(updated_cm_at_price_header_) + ' ' + currency_symbol;
 
@@ -1890,7 +1915,16 @@ THE EXACT SAME ATTRIBUTES.
     maxPrice = maxPrice * 100;
     var a = 'amount_no_decimals';
     var amount = "{" + "{" + a + "}}";
-    var moneyFormats = { "USD": "$" + amount, "EUR": "€" + amount, "GBP": "£" + amount, "CAD": "$" + amount, "SEK": amount + " kr", "AUD": "$" + amount };
+    var moneyFormats = { 
+      "USD": "$" + amount, 
+      "EUR": "€" + amount, 
+      "GBP": "£" + amount, 
+      "CAD": "$" + amount, 
+      "SEK": amount + " kr", 
+      "DKK": amount + " kr", 
+      "NOK": amount + " kr", 
+      "AUD": "$" + amount 
+    };
     var xs_format = moneyFormats[newCurrency] || '{{ amount }}';
     var selectedframe = false; 
     if( $("label[for='black-frame']").hasClass("currently-selected-swatch-display") ||
@@ -2047,7 +2081,7 @@ THE EXACT SAME ATTRIBUTES.
       $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
       $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ) {
         selectedframe = true;
-        $("#reset-passe-money").css("color", "#00934a");
+        $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
       }
       console.log(selectedframe);
@@ -2057,14 +2091,15 @@ THE EXACT SAME ATTRIBUTES.
       console.log('frame id : '+selected_frame_id);
       let selected_frame_price = 0;
       let selected_frame_compare_at_price = 0;
-      if (selected_frame_id != 0 && selected_frame_id){
+      // console.log(frames_all_variants);
+      if (selected_frame_id != 0){
         selected_frame_price = frames_all_variants[selected_frame_id].price;
         selected_frame_compare_at_price = frames_all_variants[selected_frame_id].compare_at_price;
       } 
-
       
-      selected_frame_price = Math.round(Currency.convert(selected_frame_price, 'USD', newCurrency));
-      selected_frame_compare_at_price = Math.round(Currency.convert(selected_frame_compare_at_price, 'USD', newCurrency));
+      console.log(xs_format);
+      // selected_frame_price = Math.round(Currency.convert(selected_frame_price, 'USD', newCurrency));
+      // selected_frame_compare_at_price = Math.round(Currency.convert(selected_frame_compare_at_price, 'USD', newCurrency));
       if(selected_frame_price > 0 ) {
         $('.dp-product-section-swatch-selector-price').css('display','block');
       } else {
@@ -2161,11 +2196,11 @@ THE EXACT SAME ATTRIBUTES.
                 url: reqUrl,
                 success: function (e) {
                   let charityData = {
-                    'items': [{
+                    'items': [{ 
                       'id': e.variant_id,
                       'quantity': 1
                     }]
-                  };
+                  }; 
                   fetch(window.Shopify.routes.root + 'cart/add.js', {
                     method: 'POST',
                     headers: {
