@@ -1,6 +1,6 @@
 <link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
 <div style="display: none;" class="xs-stock-bar" data-xs-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}'>
-  <div class="xs-stock-info">
+  <div class="xs-stock-info"> 
     <div class="xs-stock-label">Limited Edition</div>
     <div class="xs-stock-text">Only
       <span data-xs-stock-left></span>
@@ -60,12 +60,13 @@
             $("#reset-compare-price").text((black_variants[0].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[0].id);
             $('#white-frame').val(white_variants[0].id);
-            $('#black-frame').val(black_variants[0].id);
+            $('#black-frame').val(black_variants[0].id); 
             $('#oak-frame').val(oak_variants[0].id);
             
             $("#mat_board_input").attr('value', mat_board_variants[0].id);
             $("#mat_board_input").attr('price', mat_board_variants[0].price);
             $("#reset-passe-money").text(convertedPrice((mat_board_variants[0].price).replace(/[^0-9\.]+/g, "")));
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[0].compare_at_price).replace(/[^0-9\.]+/g, "")));
 
           }
         } else if (variant.option1 == 'LARGE 20x28" 50x70cm') {
@@ -85,7 +86,7 @@
             $("#mat_board_input").attr('value', mat_board_variants[1].id);
             $("#mat_board_input").attr('price', mat_board_variants[1].price);
             $("#reset-passe-money").text(convertedPrice((mat_board_variants[1].price).replace(/[^0-9\.]+/g, "")));
-
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[1].compare_at_price).replace(/[^0-9\.]+/g, "")));
           }
 
         } else if (variant.option1 == 'X-Large 28x40" 70x100cm') {
@@ -105,7 +106,7 @@
             $("#mat_board_input").attr('value', mat_board_variants[2].id);
             $("#mat_board_input").attr('price', mat_board_variants[2].price);
             $("#reset-passe-money").text(convertedPrice((mat_board_variants[2].price).replace(/[^0-9\.]+/g, "")));
-
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[2].compare_at_price).replace(/[^0-9\.]+/g, "")));
 
           }
         }  else if (variant.option1 == 'GIANT 40x55" 100x140cm') {

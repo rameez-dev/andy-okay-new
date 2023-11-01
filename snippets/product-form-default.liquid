@@ -1,6 +1,6 @@
 {%- comment -%}
 Those are the option names for which we automatically detect swatch. For the color, we use them to display a swatch,
-while
+while 
 for size, we use it to display a size chart (if applicable)
 {%- endcomment -%}  
 <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
@@ -654,7 +654,7 @@ for size, we use it to display a size chart (if applicable)
     font-size: 8px;
   }
   .passe-toptext-title{
-    padding: 0 10px;
+    padding: 0 10px; 
     color: #707070;
     font-family: 'Adobe Caslon Pro';
   }
@@ -668,7 +668,7 @@ for size, we use it to display a size chart (if applicable)
     font-weight: 700;
     text-align: right;
     font-size: 14px;
-    width: 25%;
+    width: 24%;
     position: relative;
     top: 3px;
     color: #707070;
@@ -1241,13 +1241,14 @@ for size, we use it to display a size chart (if applicable)
         {% if selected_variant.option1 == mat_board_product_variant.option1 %}
           {% assign mat_board_product_id = mat_board_product_variant.id %}
           {% assign mat_board_product_price = mat_board_product_variant.price %}
+          {% assign mat_board_product_price_compare_at = mat_board_product_variant.compare_at_price %}
           {% break %}
         {% endif %}
       {% endfor %}
       <div class="passehidden" id="passe-container" data-orientation="horizontal">
         <div class="passecontainer">
           <div id="mat_board_product_container" class=" passe-text-icon-container passe-text-icon-container-faded">
-            <div class="mat_board_input_container">
+            <div class="mat_board_input_container"> 
               <input type="checkbox" id="mat_board_input" name="gallery-no-frame" value="{{mat_board_product_id}}" price="{{mat_board_product_price}}" disabled >
             </div>
             <div id="mat_board_toptext_icon_container" class="passe-toptext-icon-container passe-toptext-icon-container-noframe">
@@ -1256,6 +1257,8 @@ for size, we use it to display a size chart (if applicable)
           </div>
           <div class="passe-money">
             <span id="reset-passe-money" >{{ mat_board_product_price |
+              money_without_trailing_zeros }}</span>
+            <span id="reset-passe-money-compare" class="reset-compare-price">{{ mat_board_product_price_compare_at |
               money_without_trailing_zeros }}</span>
           </div>
         </div>
@@ -2082,7 +2085,7 @@ THE EXACT SAME ATTRIBUTES.
       $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
       $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ) {
         selectedframe = true;
-        $("#reset-passe-money").css("color", "#00934a");
+        $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
       }
       xVariantPrice = xVariants[xid].price;
