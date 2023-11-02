@@ -11,7 +11,7 @@ for size, we use it to display a size chart (if applicable)
     display: none !important;
   }
   .info-with-icon strong{
-    color: #434343;
+    /* color: #434343; */
   } 
 </style>
 <style>
@@ -1414,6 +1414,8 @@ ADD TO CART BUTTON
       text-align: center;
       background-color: white;
       z-index: 10;
+      visibility: visible;
+      transform: translateY(0%);
     }
     .bottomFixed-child{
       margin: 0;
@@ -1424,28 +1426,28 @@ ADD TO CART BUTTON
     }
     #first-truststar.bottomFixed-truststar{
       position: fixed;
-      bottom: 72px;
+      bottom: 68px;
       z-index: 15;
     }
-    .CLS-placeholder{
+    /* .CLS-placeholder{
       margin-top: 30px;
       height: 48px;
       position: relative;
-    }
-    .CLS-truststar-placeholder{
+    } */
+    /* .CLS-truststar-placeholder{
       height: 24px;
       position: relative;
+      margin-top: 12px;
     }
     #cartbutton--reload, #first-truststar{
       position: absolute;
       width: 100%;
-    }
+    } */
     #bottom-fixer{
       margin-top: 0px;
     }
   </style>
 
-<div class="CLS-placeholder">
   <div class="Button--primary--default" id="cartbutton--reload">
     {% comment %}
     <button type="button" id="xs-add-to-cart-btn"
@@ -1490,7 +1492,6 @@ ADD TO CART BUTTON
       </div>
     </button>
   </div>
-</div>
 
 {%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
 {{ form | payment_button }}
@@ -1498,18 +1499,16 @@ ADD TO CART BUTTON
 
 {% comment %} Extended Info {% endcomment %}
 <div class="extented_info leftAligned_imp noTopmargin" >
-  <div class="CLS-truststar-placeholder">
-    <div id="first-truststar" class="info-with-icon Block_imp">
-      <p>{%- include 'icon' with 'trust-shield-new' -%}
-        <strong>Free Delivery</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span></p>
-    </div>
+  <div id="first-truststar" class="info-with-icon Block_imp">
+    <p><img class="icon_img" src="{{ 'FreeShippingabove.svg' |  asset_url }}">
+      <strong>Free Delivery</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span></p>
   </div>
   <div class="info-with-icon Block_imp">
-    <p> {%- include 'icon' with 'trust-shield-new' -%}
+    <p><img class="icon_img" src="{{ 'buy2get1free.svg' |  asset_url }}">
       <strong>Buy 2 Get 1 Free</strong><span  id="custom_color_offer_ending"> [Limited Run]</span></p>
   </div>
   <div class="info-with-icon Block_imp">
-    <p>{%- include 'icon' with 'trust-shield-new' -%}
+    <p><img class="icon_img" src="{{ '100Satisfaction.svg' |  asset_url }}">
       <strong>100% Satisfaction</strong> or 100% Refund</p>
   </div>
   {%- comment -%} <ul class="infoExt-list">
@@ -1532,12 +1531,12 @@ ADD TO CART BUTTON
 {%- endform -%}
 
 <div class="headQuote-content pdp-custom-stars">
+  <div class="new-trust-line">
+    <strong>Excellent</strong>&nbsp;&nbsp; 4.9 out of 5
+  </div>
    <div class="heading__stars">
     <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
    </div>
-  <div class="product_rev_text">
-    4,9/5
-  </div>
 </div>
 
 {%- if size_chart_page != empty -%}
@@ -1980,6 +1979,18 @@ THE EXACT SAME ATTRIBUTES.
         $("#xs-currentVal_button-2").html(price);
         $("#compare_at_price_style_button-2").html(cm_at_price);
 
+        var $wind = $(window);
+        if ( ($wind.scrollTop() >= (250)) && (screen.width < 640) ) {
+          $('#cartbutton--reload').addClass('bottomFixed');
+          $('#bottom-fixer').addClass('bottomFixed-child');
+          $('#first-truststar').addClass('bottomFixed-truststar');
+        }
+        else{
+          $('#cartbutton--reload').removeClass('bottomFixed');
+          $('#bottom-fixer').removeClass('bottomFixed-child');
+          $('#first-truststar').removeClass('bottomFixed-truststar');
+        }
+
       }
 
     button_update(textaddtocart, actual_variant_price, cm_at_price );
@@ -1987,7 +1998,7 @@ THE EXACT SAME ATTRIBUTES.
     $window = $(window);
 
     $window.scroll(function() {
-        if ( ($window.scrollTop() >= (distance+120)) && (screen.width < 640) ) {
+        if ( ($window.scrollTop() >= (250)) && (screen.width < 640) ) {
             $('#cartbutton--reload').addClass('bottomFixed');
             $('#bottom-fixer').addClass('bottomFixed-child');
             $('#first-truststar').addClass('bottomFixed-truststar');
