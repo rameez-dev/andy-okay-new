@@ -4848,7 +4848,7 @@ select::-ms-expand {
 }
 
 .AnnouncementBar__Wrapper {
-  padding: 12px 15px;
+  padding: 10px 15px;
 }
 
 .AnnouncementBar__Content {
@@ -16289,14 +16289,22 @@ table tr td{
 }
 .AnnouncementBar__Content b {
   font-family: 'DIN Next LT Pro';
+
 }
-.AnnouncementBar__Content a {
-  line-height: 1.2em;
+.AnnouncementBar__Content a, .AnnouncementBar__Content b, .AnnouncementBar__Content span {
+  display: inline-block;
+  line-height: 15px;
+}
+.AnnouncementBar__Content span:not(:has(img)) > a, .AnnouncementBar__Content span:not(:has(img)) > span {
+  transform: translateY(4px);
+}
+.AnnouncementBar__Content > span {
+  height: 20px;
 }
 
 .announcement_icon {
   display: inline-block;
-  height: 1.2em; 
+  height: 20px; 
   margin-right: 10px;
 }
 
