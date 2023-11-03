@@ -106,7 +106,8 @@
             "type": "announcement",
             "settings": {
               "content": "New Market Launch: BUY 2, GET 1 FREE",
-              "link": "shopify:\/\/collections\/all-art"
+              "link": "shopify:\/\/collections\/all-art",
+              "icon": "shopify:\/\/shop_images\/a_logo.png"
             }
           },
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {

@@ -97,7 +97,14 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "BUY 2 GET 1 FREE",
+        "subheading": "BUNDLE WITH A BESTSELLER",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
     },
     "trustbadges-v2": {
       "type": "trustbadges-v2",
@@ -354,12 +361,21 @@
     },
     "size-chart-popup": {
       "type": "size-chart-popup",
+      "blocks": {
+        "2a8d544a-9777-42bb-bf41-b2e34ae121bc": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sizeguide-v2.jpg",
+            "heading": "",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "2a8d544a-9777-42bb-bf41-b2e34ae121bc"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/sizeguide-v2.jpg",
-        "title": "",
-        "content": "",
-        "link_text": "",
-        "link": ""
+        "title": "Size Guide"
       }
     }
   },
