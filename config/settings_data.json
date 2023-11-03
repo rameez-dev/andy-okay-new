@@ -42,7 +42,8 @@
     "social_twitter": "https:\/\/twitter.com\/okay_andy",
     "social_instagram": "https:\/\/instagram.com\/andy.okay",
     "favicon": "shopify:\/\/shop_images\/a_logo.png",
-    "checkout_header_image": "shopify:\/\/shop_images\/checkout3.jpg",
+    "checkout_header_image": "shopify:\/\/shop_images\/chackout_background.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/andyokay_2019_v1.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#ffffff",
@@ -111,9 +112,8 @@
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
             "type": "announcement",
             "settings": {
-              "content": "<b>FREE SHIPPING<\/b> on all orders over <span data-money-convertible>$69<\/span>",
-              "link": "shopify:\/\/collections\/all-art",
-              "icon": "shopify:\/\/shop_images\/new_a_icon_941328b3-2b47-4cd1-a04e-6d662e919ab3.png"
+              "content": "FREE SHIPPING on all orders over <span data-money-convertible>$69<\/span>",
+              "link": "shopify:\/\/collections\/all-art"
             }
           },
           "a212f6ea-b83d-4f68-94ea-c4e2e0249693": {
