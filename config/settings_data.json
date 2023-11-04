@@ -105,22 +105,23 @@
           "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
             "type": "announcement",
             "settings": {
-              "content": "New Market Launch: BUY 2, GET 1 FREE",
+              "content": "<b>LAUNCH OFFER <\/b>   Buy 2, Get 1 FREE",
               "link": "shopify:\/\/collections\/all-art",
-              "icon": "shopify:\/\/shop_images\/a_logo.png"
+              "icon": "shopify:\/\/shop_images\/star_icon_27330cb7-9794-4199-9960-d5e76152edde.png"
             }
           },
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
             "type": "announcement",
             "settings": {
-              "content": "FREE SHIPPING on all orders over <span data-money-convertible>$69<\/span>",
-              "link": "shopify:\/\/collections\/all-art"
+              "content": "<b>EXCELLENT<\/b>   +155,000 Collectors",
+              "link": "shopify:\/\/collections\/all-art",
+              "icon": "shopify:\/\/shop_images\/Truststars_5.png"
             }
           },
           "a212f6ea-b83d-4f68-94ea-c4e2e0249693": {
             "type": "announcement",
             "settings": {
-              "content": "+68,000 Happy Customers",
+              "content": "<b>FREE SHIPPING<\/b>   on all orders over $69",
               "link": ""
             }
           }
