@@ -125,12 +125,26 @@ for size, we use it to display a size chart (if applicable)
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: #959595;
     font-family: 'Adobe Caslon Pro';
     text-underline-offset: 5px;
     margin-bottom: 5px;
     font-size: 15px;
+  }
+
+  .about-your-donation .question-icon {
+    font-family: 'San Fransisco Pro';
+    font-weight: bolder;
+    font-size: 10px;
+    color: #7d7d7d;
+    background: #ebebeb;
+    height: 15px;
+    width: 15px;
+    padding: 1.4px;
+    border-radius: 14px;
+    margin-left: 8px;
+    text-align: center;
   }
 
   @media screen and (max-width: 767px) {
@@ -1336,7 +1350,7 @@ for size, we use it to display a size chart (if applicable)
               {% endfor %}
             </div>
           </div>
-          <span id="donation-choose" class="about-your-donation">About your donation</span>
+          <span id="donation-choose" class="about-your-donation">About your donation <span class="question-icon">?</span></span>
         </div>
       </div>
     </div>
