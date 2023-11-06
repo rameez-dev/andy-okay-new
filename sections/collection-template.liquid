@@ -392,6 +392,7 @@
   
     {%- for product in collection.products -%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
       {%- if product.tags contains "Horizonal"-%}
         {% assign horizontal_counter = horizontal_counter | plus: 1 %}      
       {%- elsif product.tags contains "Vertical"-%}
@@ -412,6 +413,7 @@
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
               {%- include 'product-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
             </div>
@@ -427,6 +429,7 @@
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
           {%- if product.tags contains "Vertical"-%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
@@ -445,6 +448,7 @@
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
           {%- if product.tags contains "Horizonal"-%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">

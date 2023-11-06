@@ -335,7 +335,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/details-popup.jpg",
         "title": "Handmade gallery frames for the perfect presentation",
-        "content": "<p>Our high quality frames are available in black, white and beautiful light oak. The glass consists of a high quality acrylic glass that is light and shatter-free for a safe home!<br\/><br\/>Best of all? Our frames works both ways! You can hang them vertically and horizontally.<br\/><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for product description.<\/p>",
+        "content": "<p>Our high quality frames are available in black, white and beautiful light oak. The glass consists of a high quality acrylic glass that is light and shatter-free for a safe home!<br\/><br\/>Best of all? Our frames works both ways! You can hang them vertically and horizontally.<br\/><br\/>Frame width: 12 mm<br\/>Depth: 22 mm<br\/>Material: Pine Wood \/ Solid Oak<br\/><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for product description.<\/p>",
         "link_text": "",
         "link": ""
       }
@@ -354,7 +354,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/passe.jpg",
         "title": "Popup",
-        "content": "<p>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further.<br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world.<br\/><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for product description.<\/p>",
+        "content": "<p>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further.<br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world.<br\/><br\/><em>Sizes<\/em>:<br\/><strong>Medium<\/strong> (12x16\" \/ 30x40cm) - Mat width: 1.4\" \/ 3.5cm<br\/><br\/><strong>Large<\/strong> (20x28\" \/ 50x70cm) - Mat width: 1.8\" \/ 4.5cm<br\/><br\/><strong>X-Large<\/strong> (28x40\" \/ 70x100cm) - Mat width: 2.2\" \/ 5.5cm<br\/><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for product description.<\/p>",
         "link_text": "",
         "link": ""
       }
@@ -365,14 +365,41 @@
         "2a8d544a-9777-42bb-bf41-b2e34ae121bc": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sizeguide-v2.jpg",
-            "heading": "",
-            "content": ""
+            "image": "shopify:\/\/shop_images\/medium-portrait-mount_693a8a0b-5b66-4618-abb1-42d0bdb44a4d.jpg",
+            "heading": "MEDIUM",
+            "content": "Image size - 12x16” | 30x40cm"
+          }
+        },
+        "21c804c0-2d80-4544-a04f-bc7acacfb230": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/large-portrait-mount_80cf7616-d98b-40d7-89f0-82c2019271dc.jpg",
+            "heading": "LARGE",
+            "content": "Image size - 20x28” | 70x100cm"
+          }
+        },
+        "863d8b30-7b11-4e05-8e8d-bea9fce9ad27": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xl-portrait-mount_2eabd6da-a0c7-4178-becf-ff14554c80c1.jpg",
+            "heading": "EXTRA LARGE",
+            "content": "Image size - 28x40” | 70x100cm"
+          }
+        },
+        "cf548a47-7f16-4e6b-ac38-350eefc4fe0a": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/giant-portrait-mount_b55f236c-a451-4cdc-b587-8114338dd682.jpg",
+            "heading": "GIANT",
+            "content": "Image size - 40x55” | 100x140cm"
           }
         }
       },
       "block_order": [
-        "2a8d544a-9777-42bb-bf41-b2e34ae121bc"
+        "2a8d544a-9777-42bb-bf41-b2e34ae121bc",
+        "21c804c0-2d80-4544-a04f-bc7acacfb230",
+        "863d8b30-7b11-4e05-8e8d-bea9fce9ad27",
+        "cf548a47-7f16-4e6b-ac38-350eefc4fe0a"
       ],
       "settings": {
         "title": "Size Guide"
