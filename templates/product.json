@@ -365,7 +365,7 @@
         "2a8d544a-9777-42bb-bf41-b2e34ae121bc": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/medium-portrait-mount_693a8a0b-5b66-4618-abb1-42d0bdb44a4d.jpg",
+            "image": "shopify:\/\/shop_images\/medium-portrait-mount.jpg",
             "heading": "MEDIUM",
             "content": "Image size - 12x16” | 30x40cm"
           }
@@ -373,7 +373,7 @@
         "21c804c0-2d80-4544-a04f-bc7acacfb230": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/large-portrait-mount_80cf7616-d98b-40d7-89f0-82c2019271dc.jpg",
+            "image": "shopify:\/\/shop_images\/large-portrait-mount.jpg",
             "heading": "LARGE",
             "content": "Image size - 20x28” | 70x100cm"
           }
@@ -381,7 +381,7 @@
         "863d8b30-7b11-4e05-8e8d-bea9fce9ad27": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/xl-portrait-mount_2eabd6da-a0c7-4178-becf-ff14554c80c1.jpg",
+            "image": "shopify:\/\/shop_images\/xl-portrait-mount.jpg",
             "heading": "EXTRA LARGE",
             "content": "Image size - 28x40” | 70x100cm"
           }
@@ -389,7 +389,7 @@
         "cf548a47-7f16-4e6b-ac38-350eefc4fe0a": {
           "type": "image_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/giant-portrait-mount_b55f236c-a451-4cdc-b587-8114338dd682.jpg",
+            "image": "shopify:\/\/shop_images\/giant-portrait-mount.jpg",
             "heading": "GIANT",
             "content": "Image size - 40x55” | 100x140cm"
           }
