@@ -11924,6 +11924,13 @@ S .SidebarMenu .Drawer__Main::after {
     -webkit-appearance: none;
     width: 7px;
   }
+  .links-holder.horizontal-scroll {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  .links-holder.horizontal-scroll::-webkit-scrollbar {
+    height: 0px;
+  }
 }
 @media screen and (min-width: 641px) {
   .links-holder {

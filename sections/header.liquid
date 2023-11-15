@@ -82,47 +82,49 @@ Implementation note: make sure that the Search div is always just before the Hea
   <div class="Search__Inner">
     <div class="search_position">
     	<div class="Search__SearchBar">
-      <form action="/search" name="GET" role="search" class="Search__Form">
-        <div class="Search__InputIconWrapper">
-          <span class="hidden-tablet-and-up">{%- include 'icon' with 'search' -%}</span>
-          <span class="hidden-phone">{%- include 'icon' with 'search-desktop' -%}</span>
-        </div>
+        <form action="/search" name="GET" role="search" class="Search__Form">
+          <div class="Search__InputIconWrapper">
+            <span class="hidden-tablet-and-up">{%- include 'icon' with 'search' -%}</span>
+            <span class="hidden-phone">{%- include 'icon' with 'search-desktop' -%}</span>
+          </div>
 
-        <input type="search"  id="searchbox" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Click here to search..." autofocus>
-        <input type="hidden" name="type" value="product">
-      </form>
-
-      <button class="Search__Close Link Link--primary" data-action="close-search">{% include 'icon' with 'close' %}</button>
-    </div>
+          <input type="search"  id="searchbox" class="Search__Input Heading" name="q" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Click here to search..." autofocus>
+          <input type="hidden" name="type" value="product">
+        </form>
+        <button class="Search__Close Link Link--primary" data-action="close-search">{% include 'icon' with 'close' %}</button>
+      </div>
     </div>
 
     <div class="Search__Results" aria-hidden="false">
       <div class="search_preload">
-<!--      tags -->
-           <div class="tags-section">
-            <div class="tags-section-holder">
-              <div class="Container">
-                <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h2>
+        <!--      tags -->
+        <div class="tags-section">
+          <div class="tags-section-holder">
+            <div class="Container">
+              <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h2>
                 <div class="links-section">
-                  {% for block in section.blocks %}
-                    {% if block.type == 'tag' %}
-                  {% assign index = forloop.index | modulo:7 %}
-          
-                    {% if index == 1 %}
-                      <div class="links-holder">
-                    {% endif %}
-          
-                    <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
-                    
-                    {% if index == 0 or forloop.last == true %}
-                      </div>
-                    {% endif %}
-                  {% endif %}
-                  {% endfor %}
+                  <div class="links-holder horizontal-scroll">
+                    {% for block in section.blocks %}
+                      {% if block.type == 'tag' %}
+                        <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
+                        {% comment %} {% assign index = forloop.index | modulo:7 %}         
+                        
+                        {% if index == 1 %}
+                        <div class="links-holder">
+                        {% endif %}
+                        
+                        <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
+                        
+                        {% if index == 0 or forloop.last == true %}
+                          </div>
+                        {% endif %} {% endcomment %}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
+        </div>
 <!-- tags -->
 
 <!--  carousal -->
