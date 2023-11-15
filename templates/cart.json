@@ -6,7 +6,7 @@
         "show_shipping_estimator": false,
         "shipping_estimator_default_country": "United States",
         "show_cart_reviews": true,
-        "review_numbers": "1928",
+        "review_numbers": "2412",
         "reviewer_name": "Angela B.",
         "review_title": "ABSOLUTELY BRILLIANT",
         "review_text": "I came across this site completely by accident but I'm so happy I did. I absolutely LOVE this print. Everyone who comes in my house comments on it. Delivery was fast and the print arrived in perfect condition.",
@@ -25,7 +25,12 @@
     },
     "protection-price-detail-popup": {
       "type": "protection-price-detail-popup",
-      "settings": {}
+      "settings": {
+        "title": "Popup",
+        "content": "<p>You can use this popup to display some useful information to your customers.<\/p>",
+        "link_text": "",
+        "link": ""
+      }
     }
   },
   "order": [

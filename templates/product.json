@@ -59,7 +59,7 @@
           "type": "question",
           "settings": {
             "title": "How much actually goes to the cause?",
-            "answer": "<p>We donate a third of our profit to non-profit organisations. For each artwork what you choose to donate will go directly to the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
+            "answer": "<p>The artists we work with normally sell their art themselves or on other platforms for much more. We collaborate with them and have limited editions that are offered for a much lower price to leave room for donations.<br\/><br\/>For each artwork, what you choose to donate will directly benefit the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
           }
         },
         "682d1f0c-cc77-47e5-9d3a-9cd330ff39bf": {
@@ -73,7 +73,7 @@
           "type": "question",
           "settings": {
             "title": "I really want to try it. But first, do you have any guarantee?",
-            "answer": "<p>No worries. We offer 100% customer satisfaction, or your money back. If by any chance you're not completely happy with any part of your customer experience, neither are we. Just let us know and we'll fix it!<\/p>"
+            "answer": "<p>No worries. We offer 100% customer satisfaction. If by any chance you're not completely happy with your art or any part of your customer experience, neither are we. Just let us know and we'll fix it!<\/p>"
           }
         }
       },
@@ -354,7 +354,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/passe.jpg",
         "title": "Popup",
-        "content": "<p>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further.<br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world.<br\/><br\/><em>Sizes<\/em>:<br\/><strong>Medium<\/strong> (12x16\" \/ 30x40cm) - Mat width: 1.4\" \/ 3.5cm<br\/><br\/><strong>Large<\/strong> (20x28\" \/ 50x70cm) - Mat width: 1.8\" \/ 4.5cm<br\/><br\/><strong>X-Large<\/strong> (28x40\" \/ 70x100cm) - Mat width: 2.2\" \/ 5.5cm<br\/><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for product description.<\/p>",
+        "content": "<p>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further.<br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world.<br\/><br\/><em>Sizes<\/em>:<br\/><strong>Medium<\/strong> (12x16\" \/ 30x40cm) - Mat width: 1.4\" \/ 3.5cm<br\/><strong>Large<\/strong> (20x28\" \/ 50x70cm) - Mat width: 1.8\" \/ 4.5cm<br\/><strong>X-Large<\/strong> (28x40\" \/ 70x100cm) - Mat width: 2.2\" \/ 5.5cm<br\/><br\/><em>Note: The mat board is placed on top of the Fine Art print and covers a little bit of the artwork.<br\/><\/em><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for product description.<\/p>",
         "link_text": "",
         "link": ""
       }
