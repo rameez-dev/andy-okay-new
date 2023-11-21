@@ -180,6 +180,15 @@
               "text_color": "#ffffff"
             }
           },
+          "f9fce2af-3c58-4e7f-9542-8fba1ba1292c": {
+            "type": "tag",
+            "settings": {
+              "label": "Best sellers",
+              "url": "shopify:\/\/collections\/best-selling",
+              "filling_color": "#03021c",
+              "text_color": "#ffffff"
+            }
+          },
           "97c388cf-1143-4414-a9d6-21fbfbee7274": {
             "type": "tag",
             "settings": {
@@ -189,7 +198,61 @@
               "text_color": "#ffffff"
             }
           },
+          "06d8daaf-b20c-4001-902b-7b8512741ae4": {
+            "type": "tag",
+            "settings": {
+              "label": "New Release",
+              "url": "shopify:\/\/collections\/just-released",
+              "filling_color": "#e32c2b",
+              "text_color": "#ffffff"
+            }
+          },
+          "0ce93647-4309-421a-a9bb-1c4384ae0ae7": {
+            "type": "tag",
+            "settings": {
+              "label": "New Release",
+              "url": "shopify:\/\/collections\/just-released",
+              "filling_color": "#e32c2b",
+              "text_color": "#ffffff"
+            }
+          },
+          "e440d5f5-a301-4b62-a078-e3cec8aa7e59": {
+            "type": "tag",
+            "settings": {
+              "label": "New Release",
+              "url": "shopify:\/\/collections\/just-released",
+              "filling_color": "#e32c2b",
+              "text_color": "#ffffff"
+            }
+          },
           "6c668864-f03e-4b44-bd43-84b044b96078": {
+            "type": "tag",
+            "settings": {
+              "label": "Floral",
+              "url": "shopify:\/\/collections\/floral",
+              "filling_color": "#ececec",
+              "text_color": "#1c0a02"
+            }
+          },
+          "55f44f7b-b2a8-4d4b-b07f-90f21e0d6550": {
+            "type": "tag",
+            "settings": {
+              "label": "Floral",
+              "url": "shopify:\/\/collections\/floral",
+              "filling_color": "#ececec",
+              "text_color": "#1c0a02"
+            }
+          },
+          "f4128687-5a9c-42be-a755-a3dc7d4219d2": {
+            "type": "tag",
+            "settings": {
+              "label": "Floral",
+              "url": "shopify:\/\/collections\/floral",
+              "filling_color": "#ececec",
+              "text_color": "#1c0a02"
+            }
+          },
+          "7c06171c-ed94-4d34-89cc-b4bd23deec88": {
             "type": "tag",
             "settings": {
               "label": "Floral",
@@ -216,7 +279,34 @@
               "text_color": "#ffffff"
             }
           },
+          "d0f85089-b03a-4314-817a-db55338002b2": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/alice",
+              "banner": "shopify:\/\/shop_images\/2_cd812ea8-d4f2-45dc-ac90-ee9542173287.jpg",
+              "text_color": "#ffffff"
+            }
+          },
           "255262f0-8be3-4f8c-88bc-f412b77e1788": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/tropic-lines",
+              "banner": "shopify:\/\/shop_images\/3_44e2cdd1-1dca-493d-827e-fd9ff01e23db.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "6aa5eb3e-19a1-4602-9fd0-192d288ad474": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/tropic-lines",
+              "banner": "shopify:\/\/shop_images\/3_44e2cdd1-1dca-493d-827e-fd9ff01e23db.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "f1b468cc-cb15-4838-9d20-cc5f1036e787": {
             "type": "top_search_banner",
             "settings": {
               "label": "",
@@ -229,6 +319,15 @@
             "type": "top_ourPicks",
             "settings": {
               "label": "OUR CURATED PICKS",
+              "url": "shopify:\/\/products\/bedtime",
+              "banner": "shopify:\/\/shop_images\/framed_1_v2.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "49b8c7c8-4b77-4165-b160-201ad6a6ab60": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
               "url": "shopify:\/\/products\/bedtime",
               "banner": "shopify:\/\/shop_images\/framed_1_v2.jpg",
               "text_color": "#ffffff"
@@ -261,7 +360,25 @@
               "text_color": "#ffffff"
             }
           },
+          "42a737d9-b4c9-41f2-b089-b202c4675c0d": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/who-we-are",
+              "banner": "shopify:\/\/shop_images\/framed_4.jpg",
+              "text_color": "#ffffff"
+            }
+          },
           "be778fcd-ab54-4a5a-945d-db8a991a7f64": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/voyager",
+              "banner": "shopify:\/\/shop_images\/framed_5.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "1eebc0ab-0271-4498-ab37-68fee1c40edf": {
             "type": "top_ourPicks",
             "settings": {
               "label": "",
@@ -284,16 +401,29 @@
           "2edd9bb1-28bd-4301-a2df-3e35640c214c",
           "3e618a5b-0c4f-4daf-b2ac-c0c42e1d84d1",
           "bfcc5f0c-8085-4ac6-9f93-c7cb788411b0",
+          "f9fce2af-3c58-4e7f-9542-8fba1ba1292c",
           "97c388cf-1143-4414-a9d6-21fbfbee7274",
+          "06d8daaf-b20c-4001-902b-7b8512741ae4",
+          "0ce93647-4309-421a-a9bb-1c4384ae0ae7",
+          "e440d5f5-a301-4b62-a078-e3cec8aa7e59",
           "6c668864-f03e-4b44-bd43-84b044b96078",
+          "55f44f7b-b2a8-4d4b-b07f-90f21e0d6550",
+          "f4128687-5a9c-42be-a755-a3dc7d4219d2",
+          "7c06171c-ed94-4d34-89cc-b4bd23deec88",
           "2914f54f-e4dd-48a1-9ad7-63d658a16fe9",
           "c27a4fb2-f9ca-4cfd-9702-20124806543b",
+          "d0f85089-b03a-4314-817a-db55338002b2",
           "255262f0-8be3-4f8c-88bc-f412b77e1788",
+          "6aa5eb3e-19a1-4602-9fd0-192d288ad474",
+          "f1b468cc-cb15-4838-9d20-cc5f1036e787",
           "3e799ddc-4abe-41a0-8467-cf061eeb65a9",
+          "49b8c7c8-4b77-4165-b160-201ad6a6ab60",
           "495e710f-62cd-4c69-bcbf-6fa57595eed0",
           "055b420d-0a6a-42d0-9689-bd840170beae",
           "4288066e-e0ba-4ef7-9167-b3afb3aebf22",
+          "42a737d9-b4c9-41f2-b089-b202c4675c0d",
           "be778fcd-ab54-4a5a-945d-db8a991a7f64",
+          "1eebc0ab-0271-4498-ab37-68fee1c40edf",
           "8ace4052-267b-45d6-a614-ff611bf0aa01"
         ],
         "settings": {
