@@ -1,5 +1,49 @@
 {
   "sections": {
+    "aa221530-2d32-4372-ae70-8af3e23296fb": {
+      "type": "trustbadges",
+      "blocks": {
+        "6cc2a033-9983-4669-bd7a-9f4fd1dace02": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shipping.png",
+            "title": "FAST DELIVERY",
+            "subheading": "99% of all orders arrives fast <br> in 3-5 business days"
+          }
+        },
+        "cf947e8f-c236-40e3-83b3-4fa448e3edc8": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/certified.png",
+            "title": "CERTIFIED",
+            "subheading": "Certificate of <br> authenticity included"
+          }
+        },
+        "191a0ae6-de4e-467b-953b-a67b53a3815b": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shake.png",
+            "title": "ARTISTS SUPPORTED",
+            "subheading": "Our artists are supported <br>from every purchase"
+          }
+        },
+        "957a21ab-54fd-41c2-aedf-bb7da1b8b35f": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/earth.png",
+            "title": "EARTH CONSCIOUS",
+            "subheading": "Each artwork linked to a <br> cause and supports charity"
+          }
+        }
+      },
+      "block_order": [
+        "6cc2a033-9983-4669-bd7a-9f4fd1dace02",
+        "cf947e8f-c236-40e3-83b3-4fa448e3edc8",
+        "191a0ae6-de4e-467b-953b-a67b53a3815b",
+        "957a21ab-54fd-41c2-aedf-bb7da1b8b35f"
+      ],
+      "settings": {}
+    },
     "main": {
       "type": "collection-template",
       "settings": {
@@ -10,7 +54,7 @@
         "show_vendor": false,
         "collection_image_size": "small",
         "show_sort_by": false,
-        "show_layout_switch": true,
+        "show_layout_switch": false,
         "show_orientation_filter": true,
         "toolbar_position": "top",
         "filter_position": "sidebar",
@@ -41,11 +85,84 @@
         "title": "Our story",
         "content": "<p>Add your own custom content to explain your processes...<\/p>"
       }
+    },
+    "ce2a4a79-20b4-4e5c-8913-7802409eaf3b": {
+      "type": "new-truspilot",
+      "blocks": {
+        "5f121546-5c56-4f2b-9d66-1c1c6dc43843": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Absolutely brilliant",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "4b2b3c87-48b4-4674-8c9c-f3c190e710c9": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Stunning",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "150f6da4-7ab1-41bf-a4d2-9ef8c0a0be04": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Brilliant",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "e52894b4-fe9a-4231-a436-52bdcdaee5e9": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Awesome",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "5d2641bf-5439-41e8-862e-75e0e81f539a": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Good",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "940b7571-ff74-452c-886d-a488ae551384": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Great",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        }
+      },
+      "block_order": [
+        "5f121546-5c56-4f2b-9d66-1c1c6dc43843",
+        "4b2b3c87-48b4-4674-8c9c-f3c190e710c9",
+        "150f6da4-7ab1-41bf-a4d2-9ef8c0a0be04",
+        "e52894b4-fe9a-4231-a436-52bdcdaee5e9",
+        "5d2641bf-5439-41e8-862e-75e0e81f539a",
+        "940b7571-ff74-452c-886d-a488ae551384"
+      ],
+      "settings": {
+        "heading": "EXCELLENT",
+        "subheading": "4.9 \/ 5 from +2600 Reviews"
+      }
     }
   },
   "order": [
+    "aa221530-2d32-4372-ae70-8af3e23296fb",
     "main",
     "recently-viewed-products",
-    "collection-footer"
+    "collection-footer",
+    "ce2a4a79-20b4-4e5c-8913-7802409eaf3b"
   ]
 }

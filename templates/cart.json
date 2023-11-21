@@ -5,7 +5,7 @@
       "settings": {
         "show_shipping_estimator": false,
         "shipping_estimator_default_country": "United States",
-        "show_cart_reviews": true,
+        "show_cart_reviews": false,
         "review_numbers": "1928",
         "reviewer_name": "Angela B.",
         "review_title": "ABSOLUTELY BRILLIANT",
@@ -25,12 +25,89 @@
     },
     "protection-price-detail-popup": {
       "type": "protection-price-detail-popup",
-      "settings": {}
+      "settings": {
+        "title": "Popup",
+        "content": "<p>You can use this popup to display some useful information to your customers.<\/p>",
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "c1eb4c25-8a23-4cd8-9279-286a0d31e6b1": {
+      "type": "new-truspilot",
+      "blocks": {
+        "ccc4681b-8e48-444c-a118-b2d1e4e80e13": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Absolutely brilliant",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "4ada744b-91d6-46b4-953f-174b7a77197d": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Brilliant",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "88da6063-cc24-474e-be09-74dae793b5bb": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Stunning",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "df80f15d-fede-4669-9ed2-61d1f3031172": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Great",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "d6691dc2-fae9-48b2-9b2c-c7ca297c67c4": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Excellent",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        },
+        "9677a26f-3e1d-45c7-838a-fbca01f16d44": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Awesome",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+          }
+        }
+      },
+      "block_order": [
+        "ccc4681b-8e48-444c-a118-b2d1e4e80e13",
+        "4ada744b-91d6-46b4-953f-174b7a77197d",
+        "88da6063-cc24-474e-be09-74dae793b5bb",
+        "df80f15d-fede-4669-9ed2-61d1f3031172",
+        "d6691dc2-fae9-48b2-9b2c-c7ca297c67c4",
+        "9677a26f-3e1d-45c7-838a-fbca01f16d44"
+      ],
+      "settings": {
+        "heading": "EXCELLENT",
+        "subheading": "<strong>4.9<\/strong> \/ 5 from <strong>+2600 Reviews<\/strong>"
+      }
     }
   },
   "order": [
     "main",
     "recently-viewed-products",
-    "protection-price-detail-popup"
+    "protection-price-detail-popup",
+    "c1eb4c25-8a23-4cd8-9279-286a0d31e6b1"
   ]
 }
