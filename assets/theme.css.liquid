@@ -12116,26 +12116,38 @@ S .SidebarMenu .Drawer__Main::after {
   min-height: 100px;
   flex-direction: row;
 }
+@media only screen and (max-width: 1000px){
+  .trustbadges-2 {
+    padding-inline: 0px;
+  }
+}
 .trustbadges-2 .trustbadges-list {
   align-items: center;
   align-content: center;
   min-height: 80px;
+  justify-content: flex-start !important;
+  overflow-x: auto !important;
+  display: flex !important;
+}
+.trustbadges-2 .trustbadges-list::-webkit-scrollbar {
+  height: 0px !important;
 }
 .trustbadges-2 .trustbadges-list .trustbadges-list-items {
   position: relative;
   display: inline-flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-content: center;
   align-items: center;
   padding: 0;
+  min-width: fit-content;
+  padding-inline-end: 20px;
 }
-.trustbadges-2 .trustbadges-list .trustbadges-list-items:not(:first-child) {
+.trustbadges-2 .trustbadges-list .trustbadges-list-items {
   padding-left: 30px;
 }
 @media screen and (max-width: 640px) {
-  .trustbadges-2 .trustbadges-list .trustbadges-list-items:not(:first-child) {
-    padding-left: 0px;
+  .trustbadges-2 .trustbadges-list .trustbadges-list-items{
+    padding-left: 20px;
   }
 }
 .trustbadges-2 .trustbadges-list .trustbadges-list-items:after {
@@ -12147,11 +12159,11 @@ S .SidebarMenu .Drawer__Main::after {
   top: -5px;
   right: 0px;
 }
-@media screen and (max-width: 640px) {
+/* @media screen and (max-width: 640px) {
   .trustbadges-2 .trustbadges-list .trustbadges-list-items:after {
     display: none;
   }
-}
+} */
 .trustbadges-2 .trustbadges-list .trustbadges-list-items:last-child:after {
   content: "";
   display: none;
