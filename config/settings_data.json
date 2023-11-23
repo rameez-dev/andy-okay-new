@@ -174,10 +174,10 @@
           "bfcc5f0c-8085-4ac6-9f93-c7cb788411b0": {
             "type": "tag",
             "settings": {
-              "label": "Best sellers",
+              "label": "Art Gifts for Men",
               "url": "shopify:\/\/collections\/best-selling",
-              "filling_color": "#03021c",
-              "text_color": "#ffffff"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "f9fce2af-3c58-4e7f-9542-8fba1ba1292c": {
@@ -185,80 +185,80 @@
             "settings": {
               "label": "Best sellers",
               "url": "shopify:\/\/collections\/best-selling",
-              "filling_color": "#03021c",
-              "text_color": "#ffffff"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "97c388cf-1143-4414-a9d6-21fbfbee7274": {
             "type": "tag",
             "settings": {
-              "label": "New Release",
+              "label": "Almost Gone",
               "url": "shopify:\/\/collections\/just-released",
-              "filling_color": "#e32c2b",
-              "text_color": "#ffffff"
+              "filling_color": "#f0f0f0",
+              "text_color": "#e32c2b"
             }
           },
           "06d8daaf-b20c-4001-902b-7b8512741ae4": {
             "type": "tag",
             "settings": {
-              "label": "New Release",
+              "label": "Flower Heads",
               "url": "shopify:\/\/collections\/just-released",
-              "filling_color": "#e32c2b",
-              "text_color": "#ffffff"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "0ce93647-4309-421a-a9bb-1c4384ae0ae7": {
             "type": "tag",
             "settings": {
-              "label": "New Release",
+              "label": "Romantic Wall Art",
               "url": "shopify:\/\/collections\/just-released",
-              "filling_color": "#e32c2b",
-              "text_color": "#ffffff"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "e440d5f5-a301-4b62-a078-e3cec8aa7e59": {
             "type": "tag",
             "settings": {
-              "label": "New Release",
+              "label": "Edgy Art",
               "url": "shopify:\/\/collections\/just-released",
-              "filling_color": "#e32c2b",
-              "text_color": "#ffffff"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "6c668864-f03e-4b44-bd43-84b044b96078": {
             "type": "tag",
             "settings": {
-              "label": "Floral",
+              "label": "Flower Heads",
               "url": "shopify:\/\/collections\/floral",
-              "filling_color": "#ececec",
-              "text_color": "#1c0a02"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "55f44f7b-b2a8-4d4b-b07f-90f21e0d6550": {
             "type": "tag",
             "settings": {
-              "label": "Floral",
+              "label": "Trippy Posters",
               "url": "shopify:\/\/collections\/floral",
-              "filling_color": "#ececec",
-              "text_color": "#1c0a02"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "f4128687-5a9c-42be-a755-a3dc7d4219d2": {
             "type": "tag",
             "settings": {
-              "label": "Floral",
+              "label": "Girl Power Art",
               "url": "shopify:\/\/collections\/floral",
-              "filling_color": "#ececec",
-              "text_color": "#1c0a02"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "7c06171c-ed94-4d34-89cc-b4bd23deec88": {
             "type": "tag",
             "settings": {
-              "label": "Floral",
+              "label": "Futuristic Art",
               "url": "shopify:\/\/collections\/floral",
-              "filling_color": "#ececec",
-              "text_color": "#1c0a02"
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
             }
           },
           "2914f54f-e4dd-48a1-9ad7-63d658a16fe9": {

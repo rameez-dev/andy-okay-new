@@ -1,16 +1,12 @@
 {
   "sections": {
+    "d136e51d-c695-44a5-8779-9163796ebb16": {
+      "type": "collection-header",
+      "settings": {}
+    },
     "aa221530-2d32-4372-ae70-8af3e23296fb": {
       "type": "trustbadges",
       "blocks": {
-        "6cc2a033-9983-4669-bd7a-9f4fd1dace02": {
-          "type": "badges",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/shipping.png",
-            "title": "FAST DELIVERY",
-            "subheading": "99% of all orders arrives fast <br> in 3-5 business days"
-          }
-        },
         "cf947e8f-c236-40e3-83b3-4fa448e3edc8": {
           "type": "badges",
           "settings": {
@@ -24,7 +20,15 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/shake.png",
             "title": "ARTISTS SUPPORTED",
-            "subheading": "Our artists are supported <br>from every purchase"
+            "subheading": "Artists supported <br> from every purchase"
+          }
+        },
+        "6cc2a033-9983-4669-bd7a-9f4fd1dace02": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shipping.png",
+            "title": "FAST DELIVERY",
+            "subheading": "99% of all orders arrives <br> in 3-5 business days"
           }
         },
         "957a21ab-54fd-41c2-aedf-bb7da1b8b35f": {
@@ -32,14 +36,14 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/earth.png",
             "title": "EARTH CONSCIOUS",
-            "subheading": "Each artwork linked to a <br> cause and supports charity"
+            "subheading": "Each artwork supports <br> a specific charity"
           }
         }
       },
       "block_order": [
-        "6cc2a033-9983-4669-bd7a-9f4fd1dace02",
         "cf947e8f-c236-40e3-83b3-4fa448e3edc8",
         "191a0ae6-de4e-467b-953b-a67b53a3815b",
+        "6cc2a033-9983-4669-bd7a-9f4fd1dace02",
         "957a21ab-54fd-41c2-aedf-bb7da1b8b35f"
       ],
       "settings": {}
@@ -47,7 +51,7 @@
     "main": {
       "type": "collection-template",
       "settings": {
-        "show_collection_info": true,
+        "show_collection_info": false,
         "show_collection_image": true,
         "apply_overlay": false,
         "show_color_swatch": false,
@@ -154,11 +158,12 @@
       ],
       "settings": {
         "heading": "EXCELLENT",
-        "subheading": "4.9 \/ 5 from +2600 Reviews"
+        "subheading": "<strong>4.9<\/strong> \/ 5 from <strong>+2600 Reviews<\/strong>"
       }
     }
   },
   "order": [
+    "d136e51d-c695-44a5-8779-9163796ebb16",
     "aa221530-2d32-4372-ae70-8af3e23296fb",
     "main",
     "recently-viewed-products",
