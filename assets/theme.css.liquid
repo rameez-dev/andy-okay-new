@@ -10697,6 +10697,10 @@ body.story-popup-visible::after {
     margin-top: 70px;
     margin-bottom: 48px;
   }
+  .Search__Results:has(.search_preload) {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
 }
 @-webkit-keyframes shopTheLookDotKeyframe {
   0% {
@@ -11884,8 +11888,19 @@ S .SidebarMenu .Drawer__Main::after {
   padding-bottom: 23px;
   padding-top: 4px;
 }
+.search_preload .tags-section {
+  overflow: hidden;
+  margin: 0px 0px 0px 41px;
+  padding-bottom: 10px;
+  padding-top: 4px;
+  max-width: 600px;
+}
 @media screen and (max-width: 640px) {
   .tags-section {
+    margin: 15px 0;
+    padding-bottom: 7px;
+  }
+  .search_preload .tags-section{
     margin: 15px 0;
     padding-bottom: 7px;
   }
