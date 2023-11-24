@@ -100,28 +100,26 @@ Implementation note: make sure that the Search div is always just before the Hea
         <!--      tags -->
         <div class="tags-section">
           <div class="tags-section-holder">
-            <div class="Container">
-              <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h2>
-                <div class="links-section">
-                  <div class="links-holder horizontal-scroll">
-                    {% for block in section.blocks %}
-                      {% if block.type == 'tag' %}
-                        <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
-                        {% comment %} {% assign index = forloop.index | modulo:7 %}         
-                        
-                        {% if index == 1 %}
-                        <div class="links-holder">
-                        {% endif %}
-                        
-                        <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
-                        
-                        {% if index == 0 or forloop.last == true %}
-                          </div>
-                        {% endif %} {% endcomment %}
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                </div>
+            <h2 class="SectionHeader__Heading Heading u-h1 preload-headiing">POPULAR SEARCHES</h2>
+            <div class="links-section">
+              <div class="links-holder horizontal-scroll">
+                {% for block in section.blocks %}
+                  {% if block.type == 'tag' %}
+                    <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
+                    {% comment %} {% assign index = forloop.index | modulo:7 %}         
+                    
+                    {% if index == 1 %}
+                    <div class="links-holder">
+                    {% endif %}
+                    
+                    <a href="{{ block.settings.url }}" class="Button Button--secondary Button--custom" style="background-color: {{ block.settings.filling_color}}; color: {{ block.settings.text_color}}; border-color: {{ block.settings.filling_color}};">{{ block.settings.label }}</a>
+                    
+                    {% if index == 0 or forloop.last == true %}
+                      </div>
+                    {% endif %} {% endcomment %}
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
@@ -741,8 +739,15 @@ HEADER CONTENT
       display: none;
    }
  }
-  .search_preload{
+  .search_preload .top_saerchCarousal, .search_preload .top_ourPicks{
     display:none;
+  }
+  .search_preload .tags-section .SectionHeader__Heading{
+    text-transform: uppercase;
+    font-family: DIN Next LT Pro Cond;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 20px;
   }
   @media (max-width: 767px) {
   .Search__Input{
@@ -751,7 +756,7 @@ HEADER CONTENT
     .Search__Inner{
       max-height:100vh !important;
     }
-     .search_preload{
+    .search_preload .top_saerchCarousal, .search_preload .top_ourPicks{
     display:block;
   }
     .top_saerchCarousal .links-section{
@@ -787,6 +792,9 @@ HEADER CONTENT
     font-weight: 500;
     margin-top: 45px;
     margin-bottom: 5px;
+  }
+  .search_preload .tags-section .SectionHeader__Heading{
+    display: none;
   }
   .search_preload .Container,.search_preload .links-section{
     padding:0px !important;
