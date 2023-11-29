@@ -105,7 +105,7 @@
           "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
             "type": "announcement",
             "settings": {
-              "content": "<b>BFCM OFFER <\/b>   Buy 2, Get 1 FREE",
+              "content": "<b>CYBER WEEK<\/b>   Buy 2, Get 1 FREE",
               "link": "shopify:\/\/collections\/all-art",
               "icon": "shopify:\/\/shop_images\/star_icon_27330cb7-9794-4199-9960-d5e76152edde.png"
             }
@@ -208,13 +208,67 @@
               "text_color": "#000000"
             }
           },
+          "77e5677d-eb8b-4fda-8558-df3eff8d7c3b": {
+            "type": "tag",
+            "settings": {
+              "label": "Romantic Wall Art",
+              "url": "shopify:\/\/collections\/romantic-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f": {
+            "type": "tag",
+            "settings": {
+              "label": "Edgy Art",
+              "url": "shopify:\/\/collections\/edgy-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "61309181-9093-4a30-bb81-5ece40dca53f": {
+            "type": "tag",
+            "settings": {
+              "label": "Flower Heads",
+              "url": "shopify:\/\/collections\/flower-head-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "2ee3fa3e-cdde-4996-b838-89c55daeedcc": {
+            "type": "tag",
+            "settings": {
+              "label": "Trippy Posters",
+              "url": "shopify:\/\/collections\/psychedelic-and-trippy-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "72ee603f-74e1-4108-a78f-5a0bec91d813": {
+            "type": "tag",
+            "settings": {
+              "label": "Girl Power Art",
+              "url": "shopify:\/\/collections\/girly-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "a7732417-a1eb-439b-9b52-8d3339030991": {
+            "type": "tag",
+            "settings": {
+              "label": "Futuristic Art",
+              "url": "shopify:\/\/collections\/futuristic-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
           "38e9d528-6d24-454c-983e-18ed3ff9a870": {
             "type": "top_search_banner",
             "settings": {
               "label": "TOP SEARCHES",
               "url": "shopify:\/\/collections\/astronauts",
               "banner": "shopify:\/\/shop_images\/astronauts_toppicks.jpg",
-              "text_color": "#FFFFFF"
+              "text_color": "#ffffff"
             }
           },
           "d3d62a1e-e3bf-47f1-bb52-85de7a27ce09": {
@@ -223,7 +277,7 @@
               "label": "",
               "url": "shopify:\/\/collections\/romantic-wall-art",
               "banner": "shopify:\/\/shop_images\/Top_Searches_romantic.jpg",
-              "text_color": "#FFFFFF"
+              "text_color": "#ffffff"
             }
           },
           "93c5122a-0c5b-4970-8cb7-bbf5ce7a0d58": {
@@ -232,7 +286,7 @@
               "label": "",
               "url": "shopify:\/\/collections\/nature",
               "banner": "shopify:\/\/shop_images\/toppicks_nature.jpg",
-              "text_color": "#FFFFFF"
+              "text_color": "#ffffff"
             }
           },
           "e04d50cd-22c9-4b95-b2f2-053a3a0fb6e0": {
@@ -241,7 +295,7 @@
               "label": "",
               "url": "shopify:\/\/collections\/surreal",
               "banner": "shopify:\/\/shop_images\/Top_Searches_surreal.jpg",
-              "text_color": "#FFFFFF"
+              "text_color": "#ffffff"
             }
           },
           "3e799ddc-4abe-41a0-8467-cf061eeb65a9": {
@@ -295,7 +349,7 @@
               "label": "",
               "url": "shopify:\/\/products\/youre-my-universe",
               "banner": "shopify:\/\/shop_images\/curatedpicks_ymu.jpg",
-              "text_color": "#FFFFFF"
+              "text_color": "#ffffff"
             }
           },
           "8ace4052-267b-45d6-a614-ff611bf0aa01": {
@@ -313,7 +367,7 @@
               "label": "",
               "url": "shopify:\/\/products\/bloom",
               "banner": "shopify:\/\/shop_images\/curatedpicks_bloom.jpg",
-              "text_color": "#FFFFFF"
+              "text_color": "#ffffff"
             }
           }
         },
@@ -324,6 +378,12 @@
           "ce251a55-b73b-44a0-87b4-d20679785433",
           "d612c144-ad5a-4751-a7d4-43675388db4e",
           "b14268af-7f6f-444c-a8d1-be8c9bbf1650",
+          "77e5677d-eb8b-4fda-8558-df3eff8d7c3b",
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f",
+          "61309181-9093-4a30-bb81-5ece40dca53f",
+          "2ee3fa3e-cdde-4996-b838-89c55daeedcc",
+          "72ee603f-74e1-4108-a78f-5a0bec91d813",
+          "a7732417-a1eb-439b-9b52-8d3339030991",
           "38e9d528-6d24-454c-983e-18ed3ff9a870",
           "d3d62a1e-e3bf-47f1-bb52-85de7a27ce09",
           "93c5122a-0c5b-4970-8cb7-bbf5ce7a0d58",
