@@ -1,0 +1,138 @@
+<style>
+  .banner_image, .banner_image img {
+    width: 100%;
+    position: relative;
+    min-height: 250px;
+  }
+  .new_page_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'DIN Next LT Pro Bold';
+    text-transform: uppercase;
+    font-size: {{ section.settings.text_multi |  times: 80 }}px;
+    color: {{ section.settings.color }};
+  }
+  .cta-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta-button {
+    background-color: #163bbc;
+    color: white;
+    padding: 6px 26px;
+    text-transform: uppercase;
+    font-family: DIN Next LT Pro Cond;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  .Container {
+    font-family: 'Adobe Caslon Pro';
+    line-height: 1.6;
+  }
+  .Container .PageContent h2 {
+    font-family: 'DIN Next LT Pro Bold' !important;
+    font-size: 32px !important;
+    text-transform: uppercase;
+    margin: 40px 0 0 !important;
+    line-height: 1;
+  }
+  .Container .PageContent h3 {
+    font-family: 'Adobe Caslon Pro' !important;
+    font-style: italic !important;
+    font-size: 24px !important;
+    margin: 5px 0 30px !important;
+    line-height: 1;
+  }
+  .Container .PageContent h4 {
+    font-family: 'DIN Next LT Pro Bold' !important;
+    font-size: 24px !important;
+    text-transform: uppercase;
+    margin: 0 !important;
+    line-height: 1;
+  }
+  .Container .PageContent > ul {
+    list-style: none;
+  }
+  .Container .PageContent > ul li::before {
+    content: '-';
+  }
+  @media only screen and (max-width: 768px) {
+    .new_page_title {
+      font-size: {{ section.settings.text_multi |  times: 50 }}px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .Container .PageContent > *:not(:has(img)){
+      margin-left: 150px !important;
+      margin-right: 150px !important;
+    }
+    .Container .PageContent > ul {
+      margin-left: 180px !important;
+    }
+
+  }
+</style>
+
+<div class="banner_image">
+  <img src="{{ section.settings.image | img_url: 'master' }}">
+  <h1 class="new_page_title">{{ page.title }}</h1>
+</div>
+<div class="Container">
+  <div class="PageContent PageContent--narrow Rte">
+    {{ page.content }}
+  </div>
+  {%- if section.settings.button_label != blank -%}
+    <div class="cta-cont">
+      <a class="cta-button" href="{{ section.settings.button_link }}" >{{ section.settings.button_label | escape }}</a>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{ 
+  "name":"Main Page New",
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Header Image"  
+    },
+    {
+      "id": "color",
+      "type": "color",
+      "label": "Text Color",
+      "default": "#ffffff"  
+    },
+    {
+      "id": "text_multi",
+      "type": "range",
+      "label": "Title Size Factor",
+      "min": 0.5,
+      "max": 2,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+  ],
+
+  "presets": [
+    {
+    "name": "Main Page New"
+    }
+  ]
+}
+{% endschema %}
