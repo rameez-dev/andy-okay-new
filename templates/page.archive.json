@@ -1,15 +1,57 @@
 {
   "wrapper": "section#main_section.char-page",
   "sections": {
-    "page-archive-hero": {
-      "type": "page-archive-hero",
+    "0acc3ffe-f273-462e-b81f-7703fa8c4bc5": {
+      "type": "banner-with-text",
       "settings": {
-        "show": true,
-        "heading": "CHARITY PARTNERS",
-        "paragraph": "<p>We exist to bring stunning art to people’s homes while raising awareness about nonprofits and their world-changing work. We only partner up with proven and trust-worthy organisations. By focusing our community's efforts on a few selected causes, we can work together to make an even bigger impact for each one.<\/p>",
-        "image": "shopify:\/\/shop_images\/Skarmavbild_2021-04-30_kl._10.31.12.png",
-        "text-color": "#000000"
+        "image": "shopify:\/\/shop_images\/hero.jpg",
+        "heading": "Charity partners",
+        "color": "#ffffff",
+        "text_multi": 1
       }
+    },
+    "aa0398a0-6e25-4b88-adbd-4929068be591": {
+      "type": "main-page-new",
+      "settings": {
+        "button_label": "",
+        "button_link": "",
+        "section_order": 0
+      }
+    },
+    "eceee554-63ba-4ea7-9f2a-ca1681facbac": {
+      "type": "new-cards-section",
+      "blocks": {
+        "4fac0754-843a-4d80-972e-bb14e9162595": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image.png",
+            "heading": "World Wildlife Fund",
+            "content": "<p>✓ 24 connected artists<br\/>✓ 6.4 million people reached<br\/><br\/><a href=\"\/pages\/cause-3\" target=\"_blank\" title=\"Charity 3\">Find out more<\/a><\/p>"
+          }
+        },
+        "7ad47223-5a01-4f70-abad-ea9d8b32d621": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ptsduk_1.png",
+            "heading": "Post-traumatic Stress disorder UK",
+            "content": "<p>PTSD UK was founded in 2015 by Jacqui after her own experiences suffering with PTSD. The lack of understanding, provisions and information made Jacqui<br\/><br\/><br\/><a href=\"\/pages\/ptsd-uk\" target=\"_blank\" title=\"PTSD UK\">Find out more<\/a><\/p>"
+          }
+        },
+        "05b23037-11ef-491d-9df5-8a484057a75a": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Greenpeace_Logo_black.png",
+            "heading": "Greenpeace",
+            "content": "<p>Greenpeace is known for its direct actions and has been described as one of the most <strong>visible environmental organisations <\/strong>in the world.<\/p><p><br\/><br\/><a href=\"\/pages\/greenpeace\" target=\"_blank\" title=\"Greenpeace\">Find out more<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4fac0754-843a-4d80-972e-bb14e9162595",
+        "7ad47223-5a01-4f70-abad-ea9d8b32d621",
+        "05b23037-11ef-491d-9df5-8a484057a75a"
+      ],
+      "settings": {}
     },
     "page-archive-cards": {
       "type": "page-archive-cards",
@@ -225,6 +267,7 @@
         "592c2ca0-338b-45b3-b702-a178f562a571",
         "27d3447d-b724-4181-9753-e3492c3e7611"
       ],
+      "disabled": true,
       "settings": {
         "card-color": "#ededed",
         "contrast-color": "#03021c",
@@ -283,11 +326,26 @@
         "backgroud-color": "#ffffff",
         "text-color": "#000000"
       }
+    },
+    "691687d9-abb6-45aa-9629-86e15cf34574": {
+      "type": "cta-button",
+      "settings": {
+        "button_label": "Learn more",
+        "button_link": "shopify:\/\/pages\/impact",
+        "horizontal_alignment": "center",
+        "margin_left": 0,
+        "margin_right": 0,
+        "margin_top": 0,
+        "margin_bottom": 60
+      }
     }
   },
   "order": [
-    "page-archive-hero",
+    "0acc3ffe-f273-462e-b81f-7703fa8c4bc5",
+    "aa0398a0-6e25-4b88-adbd-4929068be591",
+    "eceee554-63ba-4ea7-9f2a-ca1681facbac",
     "page-archive-cards",
-    "page-archive-questions"
+    "page-archive-questions",
+    "691687d9-abb6-45aa-9629-86e15cf34574"
   ]
 }

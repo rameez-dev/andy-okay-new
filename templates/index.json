@@ -390,7 +390,9 @@
             "title": "",
             "grid_items_count": 16,
             "button_text": "View all >",
-            "button_text_color": "#000000"
+            "button_text_color": "#000000",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -398,7 +400,7 @@
         "16131224958a8baaef-0"
       ],
       "settings": {
-        "title": "LATEST AND GREATEST",
+        "title": "Latest And Greatest",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -486,7 +488,9 @@
             "title": "",
             "grid_items_count": 10,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -494,7 +498,7 @@
         "162537469203ba0fa9-0"
       ],
       "settings": {
-        "title": "OUR BEST SELLERS",
+        "title": "Our Best Sellers",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -515,7 +519,9 @@
             "title": "ALMOST GONE",
             "grid_items_count": 8,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -523,7 +529,7 @@
         "1643642736f42e4efd-0"
       ],
       "settings": {
-        "title": "AND LOST FOREVER",
+        "title": "And Lost Forever",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -554,7 +560,9 @@
             "title": "",
             "grid_items_count": 8,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -562,7 +570,7 @@
         "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0"
       ],
       "settings": {
-        "title": "HOT PICKS OF THE SEASON",
+        "title": "Hot Picks Of The Season",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -583,7 +591,9 @@
             "title": "",
             "grid_items_count": 16,
             "button_text": "View all >",
-            "button_text_color": "#0086bc"
+            "button_text_color": "#0086bc",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         },
         "b69874bf-7f21-4147-9f2b-374f087d0eff": {
@@ -594,7 +604,9 @@
             "title": "",
             "grid_items_count": 8,
             "button_text": "View all products",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -603,7 +615,7 @@
         "b69874bf-7f21-4147-9f2b-374f087d0eff"
       ],
       "settings": {
-        "title": "ABOVE AND BEYOND",
+        "title": "Above And Beyond",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -624,7 +636,9 @@
             "title": "",
             "grid_items_count": 8,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -632,7 +646,7 @@
         "16408572584cf4e97b-0"
       ],
       "settings": {
-        "title": "domestic and wild",
+        "title": "Domestic And Wild",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -653,7 +667,9 @@
             "title": "",
             "grid_items_count": 12,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -661,7 +677,7 @@
         "1616425487e7f8d53c-0"
       ],
       "settings": {
-        "title": "Reach your goals",
+        "title": "Reach Your Goals",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -682,7 +698,9 @@
             "title": "Pop Art",
             "grid_items_count": 16,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -690,7 +708,7 @@
         "161039065890033dbc-0"
       ],
       "settings": {
-        "title": "iconic imagery",
+        "title": "Iconic Imagery",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -732,7 +750,9 @@
             "title": "PHOTO ART",
             "grid_items_count": 16,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -740,7 +760,7 @@
         "18bd032c-7869-430d-8d86-b3c9c5e04384"
       ],
       "settings": {
-        "title": "FITS ANY ROOM",
+        "title": "Fits Any Room",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -861,7 +881,9 @@
             "title": "",
             "grid_items_count": 8,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -869,7 +891,7 @@
         "1640887620025213cd-0"
       ],
       "settings": {
-        "title": "beyond reality",
+        "title": "Beyond Reality",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -890,7 +912,9 @@
             "title": "just sold out",
             "grid_items_count": 16,
             "button_text": "",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": true,
+            "overlay_dot_color": "#e30414"
           }
         }
       },
@@ -898,7 +922,7 @@
         "1597932365863-0"
       ],
       "settings": {
-        "title": "gone forever",
+        "title": "Gone Forever",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
