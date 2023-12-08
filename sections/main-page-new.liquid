@@ -1,20 +1,4 @@
 <style>
-  .banner_image, .banner_image img {
-    width: 100%;
-    position: relative;
-    min-height: 250px;
-  }
-  .new_page_title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: 'DIN Next LT Pro Bold';
-    text-transform: uppercase;
-    font-size: {{ section.settings.text_multi |  times: 80 }}px;
-    color: {{ section.settings.color }};
-  }
   .cta-cont {
     display: flex;
     align-items: center;
@@ -61,10 +45,9 @@
   .Container .PageContent > ul li::before {
     content: '-';
   }
-  @media only screen and (max-width: 768px) {
-    .new_page_title {
-      font-size: {{ section.settings.text_multi |  times: 50 }}px;
-    }
+  .new-page-content {
+    display: flex;
+    flex-direction: column;
   }
   @media only screen and (min-width: 768px) {
     .Container .PageContent > *:not(:has(img)){
@@ -78,55 +61,42 @@
   }
 </style>
 
-<div class="banner_image">
-  <img src="{{ section.settings.image | img_url: 'master' }}">
-  <h1 class="new_page_title">{{ page.title }}</h1>
-</div>
-<div class="Container">
-  <div class="PageContent PageContent--narrow Rte">
-    {{ page.content }}
-  </div>
-  {%- if section.settings.button_label != blank -%}
-    <div class="cta-cont">
-      <a class="cta-button" href="{{ section.settings.button_link }}" >{{ section.settings.button_label | escape }}</a>
+{% if page.content != blank %}
+  <div class="Container">
+    <div class="PageContent PageContent--narrow Rte new-page-content">
+      {{ page.content }}
     </div>
-  {%- endif -%}
-</div>
+    {%- if section.settings.button_label != blank -%}
+      <div class="cta-cont">
+        <a class="cta-button" href="{{ section.settings.button_link }}" >{{ section.settings.button_label | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+{% endif %}
+
+<script>
+  $(document).ready(function(){
+    var elements = $('.new-page-content > *:not(meta, style)');
+    elements.each(function( index ) {
+      $(this).css('order', index);
+    });   
+  });
+</script>
 
 {% schema %}
 { 
   "name":"Main Page New",
   "settings": [
     {
-      "id": "image",
-      "type": "image_picker",
-      "label": "Header Image"  
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
     },
     {
-      "id": "color",
-      "type": "color",
-      "label": "Text Color",
-      "default": "#ffffff"  
-    },
-    {
-      "id": "text_multi",
-      "type": "range",
-      "label": "Title Size Factor",
-      "min": 0.5,
-      "max": 2,
-      "step": 0.1,
-      "default": 1
-    },
-    {
-        "type": "text",
-        "id": "button_label",
-        "label": "Button label"
-      },
-      {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button link"
-      }
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
   ],
 
   "presets": [
