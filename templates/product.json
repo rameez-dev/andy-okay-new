@@ -156,12 +156,12 @@
           "type": "story",
           "settings": {
             "product": "",
-            "subheading": "PAY WHAT YOU CAN",
+            "subheading": "GIVE WHAT YOU CAN",
             "subheading_color": "#9c9c9c",
             "title": "WE GIVE BACK, TOGETHER",
             "image": "shopify:\/\/shop_images\/wegiveback.jpg",
             "image_position": "left",
-            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never before seen.  To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customer a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $2 to $200 extra for their artwork, knowing that the more they chose to pay, the more positive impact it creates.<\/p>",
+            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never-before-seen. To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customer a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $1 to $200 extra for their limited edition artworks from award-winning artists, knowing that the more they chose to give, the more positive impact their new art creates.<\/p>",
             "link_text": "",
             "link_url": "",
             "urltext_color": "#e06db6",
@@ -177,7 +177,7 @@
             "title": "MEET ANDY",
             "image": "shopify:\/\/shop_images\/me_923858d1-3604-4d70-94f1-c9d3fdd2504f.jpg",
             "image_position": "right",
-            "content": "<p>Announced a ”World Hero” by WWF, Andy has over 20 years of experience creating art that tells important stories. <\/p><p>Working hand-in-hand with organisations like UN, Peta, Save Movement, WWF, Rainforest Trust and many more, Andy understands the needs of the communities being served and the power art has to raise awareness. <br\/><br\/>Art for Causes is the product born after 20 years of networking with amazing artists all around the globe, and important organisations of all sizes.  And a need to do more.<br\/><br\/><a href=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\" target=\"_blank\" title=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\"><strong>Click here for an interview with Andy<\/strong><\/a><br\/><em>15min read<\/em><\/p>",
+            "content": "<p>Announced a ”World Hero” by WWF, Andy has over 20 years of experience creating art that tells important stories. <\/p><p>Working hand-in-hand with organisations like UN, Non-Violence Project, Rainforest Trust, WWF, Share The Meal and many more, Andy understands the needs of the communities being served and the power art has to raise awareness. <br\/><br\/>Art for Causes is the product born after 20 years of networking with amazing artists all around the globe, and important organisations of all sizes. And a need to do more.<br\/><br\/><a href=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\" target=\"_blank\" title=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\"><strong>Click here for an interview with Andy<\/strong><\/a><br\/><em>15min read<\/em><\/p>",
             "link_text": "",
             "link_url": "",
             "urltext_color": "#3d85df",
@@ -327,7 +327,7 @@
         "input_border_color": "#ffffff",
         "subheading": "",
         "title": "NEWSLETTER",
-        "content": "<p>Sign up for the latest news, offers and styles.<\/p>"
+        "content": "<p>Join 78,000 club members on exclusive drops and offers. 100% free.<\/p>"
       }
     },
     "frame-choose-popup": {

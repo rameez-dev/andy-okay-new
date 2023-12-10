@@ -130,15 +130,15 @@
         "d0c3d900-0a1e-4acb-9012-c05d97e5db7f": {
           "type": "badges",
           "settings": {
-            "title": "71.341",
-            "subheading": "Sold for Charity"
+            "title": "161.341",
+            "subheading": "Collectors for Charity"
           }
         },
         "7d847131-15e2-49e3-b92e-c3130bd5fab1": {
           "type": "badges",
           "settings": {
             "title": "12",
-            "subheading": "Non Profit Partners"
+            "subheading": "Charity Partners"
           }
         }
       },
@@ -153,7 +153,7 @@
       "type": "text-with-link",
       "settings": {
         "heading": "Art for Earth lovers",
-        "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with important nonprofits, we made it happen...<\/p>",
+        "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with the world's most important nonprofits, we made it happen...<\/p>",
         "link-text": "FIND OUT MORE",
         "link": "shopify:\/\/pages\/impact",
         "background-color": "#ffffff",
@@ -380,6 +380,102 @@
         "subtitle": ""
       }
     },
+    "1625374692c4d0a8c9": {
+      "type": "featured-collections",
+      "blocks": {
+        "162537469203ba0fa9-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "top-10",
+            "title": "",
+            "grid_items_count": 10,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "162537469203ba0fa9-0"
+      ],
+      "settings": {
+        "title": "SHOP BEST SELLERS",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "16059880715e2bb83c": {
+      "type": "reviews",
+      "blocks": {
+        "828f4629-667e-4a80-b08b-7ec1965c8bfe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Buzzfeed_logo_PNG3_1b6b7af2-cb53-4703-9e85-58b1367b6a9d.png",
+            "title": "Will purchase more!",
+            "review": "“The art and the purpose behind it really makes people talk\"",
+            "name": ""
+          }
+        },
+        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Variety_logo_PNG1_adfe71e9-1629-48de-bc73-04a9428ec585.png",
+            "title": "I'm so glad I ordered",
+            "review": "\"Some of the best art in the world. Plain and simple.\"",
+            "name": ""
+          }
+        },
+        "674b6132-eac8-4557-82b1-d2f6fa605097": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wired-logo.png",
+            "title": "JUST PERFECT!",
+            "review": "“Art so good that you will actually wanna have friends over\"",
+            "name": ""
+          }
+        },
+        "40247eea-ce08-4c28-9a22-c2d488c4a8c9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/highsnob2.png",
+            "title": "Lovely piece of art",
+            "review": "“A triumph of epic art and causes\"",
+            "name": ""
+          }
+        },
+        "a63b2f0c-c31c-4616-9435-559a3510ec45": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GQstyle.png",
+            "title": "For Earth. Not profit.",
+            "review": "\"Art for Causes is the perfect matching of art and important purpose.\"",
+            "name": ""
+          }
+        }
+      },
+      "block_order": [
+        "828f4629-667e-4a80-b08b-7ec1965c8bfe",
+        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9",
+        "674b6132-eac8-4557-82b1-d2f6fa605097",
+        "40247eea-ce08-4c28-9a22-c2d488c4a8c9",
+        "a63b2f0c-c31c-4616-9435-559a3510ec45"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 3,
+        "title_color": "#313131",
+        "review_color": "#707070",
+        "name_color": "#ffffff",
+        "background_color": "#ffffff",
+        "heading": "100,000+ CUSTOMERS FOR A REASON...",
+        "button_text": ""
+      }
+    },
     "16131224958a8baaef": {
       "type": "featured-collections",
       "blocks": {
@@ -399,102 +495,6 @@
       ],
       "settings": {
         "title": "LATEST AND GREATEST",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
-      }
-    },
-    "16059880715e2bb83c": {
-      "type": "reviews",
-      "blocks": {
-        "828f4629-667e-4a80-b08b-7ec1965c8bfe": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Buzzfeed_logo_PNG3_1b6b7af2-cb53-4703-9e85-58b1367b6a9d.png",
-            "title": "Will purchase more!",
-            "review": "“No long review needed. The art itself and the purpose behind it does all the talking\"",
-            "name": ""
-          }
-        },
-        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Variety_logo_PNG1_adfe71e9-1629-48de-bc73-04a9428ec585.png",
-            "title": "I'm so glad I ordered",
-            "review": "\"Some of the best art in the world. Plain and simple.\"",
-            "name": ""
-          }
-        },
-        "674b6132-eac8-4557-82b1-d2f6fa605097": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Wired-logo.png",
-            "title": "JUST PERFECT!",
-            "review": "“Art so good that you will actually want to invite your friends over to your home to see it\"",
-            "name": ""
-          }
-        },
-        "40247eea-ce08-4c28-9a22-c2d488c4a8c9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/highsnob2.png",
-            "title": "Lovely piece of art",
-            "review": "“A triumph of epic art and causes\"",
-            "name": ""
-          }
-        },
-        "a63b2f0c-c31c-4616-9435-559a3510ec45": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/GQstyle.png",
-            "title": "For Earth. Not profit.",
-            "review": "\"Art for Causes is the perfect matching of beautiful art and important purpose.\"",
-            "name": ""
-          }
-        }
-      },
-      "block_order": [
-        "828f4629-667e-4a80-b08b-7ec1965c8bfe",
-        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9",
-        "674b6132-eac8-4557-82b1-d2f6fa605097",
-        "40247eea-ce08-4c28-9a22-c2d488c4a8c9",
-        "a63b2f0c-c31c-4616-9435-559a3510ec45"
-      ],
-      "settings": {
-        "autoplay": true,
-        "cycle_speed": 3,
-        "title_color": "#313131",
-        "review_color": "#707070",
-        "name_color": "#ffffff",
-        "background_color": "#ffffff",
-        "heading": "68,800+ customers and counting",
-        "button_text": ""
-      }
-    },
-    "1625374692c4d0a8c9": {
-      "type": "featured-collections",
-      "blocks": {
-        "162537469203ba0fa9-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "top-10",
-            "title": "",
-            "grid_items_count": 10,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "162537469203ba0fa9-0"
-      ],
-      "settings": {
-        "title": "OUR BEST SELLERS",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -537,11 +537,40 @@
     "16616061592e8072c4": {
       "type": "front-page-section",
       "settings": {
-        "image": "shopify:\/\/shop_images\/newdrop_blackfriday.jpg",
-        "title": "BLACK FRIDAY DROP",
-        "content": "<p>In a world where inspiration is key to progress, we’re bringing you something never-before-seen in the art space…<\/p>",
-        "button_label": "Purchase for purpose",
-        "button_link": "shopify:\/\/collections\/exclusive-black-friday-drop-mood-masterpieces"
+        "image": "shopify:\/\/shop_images\/ringo_starr_beatles_andyokay.jpg",
+        "title": "YOU SHOP – WE GIVE",
+        "content": "<p>Art is a fantastic way to bring attention to social issues that need addressing. This is how Art for Causes changes lives...<\/p>",
+        "button_label": "Learn more",
+        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives"
+      }
+    },
+    "1616425487e7f8d53c": {
+      "type": "featured-collections",
+      "blocks": {
+        "1616425487e7f8d53c-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "motivational-art",
+            "title": "",
+            "grid_items_count": 12,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1616425487e7f8d53c-0"
+      ],
+      "settings": {
+        "title": "Reach your goals",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
       }
     },
     "154b9c6e-9c0c-4aef-897e-159bd94c086a": {
@@ -561,6 +590,7 @@
       "block_order": [
         "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0"
       ],
+      "disabled": true,
       "settings": {
         "title": "HOT PICKS OF THE SEASON",
         "layout_mode": "carousel",
@@ -631,37 +661,9 @@
       "block_order": [
         "16408572584cf4e97b-0"
       ],
+      "disabled": true,
       "settings": {
         "title": "domestic and wild",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
-      }
-    },
-    "1616425487e7f8d53c": {
-      "type": "featured-collections",
-      "blocks": {
-        "1616425487e7f8d53c-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "motivational-art",
-            "title": "",
-            "grid_items_count": 12,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "1616425487e7f8d53c-0"
-      ],
-      "settings": {
-        "title": "Reach your goals",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -1024,7 +1026,7 @@
         "input_border_color": "#ffffff",
         "subheading": "",
         "title": "Newsletter",
-        "content": "<p>Join 45,000 club members for exclusive drops and offers. Free.<\/p>"
+        "content": "<p>Join 78,000 club members for exclusive drops and offers. 100% Free.<\/p>"
       }
     }
   },
@@ -1035,15 +1037,15 @@
     "1642537533f81e6dfa",
     "16377864870ab9146c",
     "160745450950754497",
-    "16131224958a8baaef",
-    "16059880715e2bb83c",
     "1625374692c4d0a8c9",
+    "16059880715e2bb83c",
+    "16131224958a8baaef",
     "1643642736f42e4efd",
     "16616061592e8072c4",
+    "1616425487e7f8d53c",
     "154b9c6e-9c0c-4aef-897e-159bd94c086a",
     "1616425219eaa2e028",
     "16408572584cf4e97b",
-    "1616425487e7f8d53c",
     "161039065890033dbc",
     "1629722279ac42c7cf",
     "1571758473108",
