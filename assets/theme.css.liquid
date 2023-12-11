@@ -11898,7 +11898,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 @media screen and (max-width: 640px) {
   .tags-section {
-    margin: 15px 0;
+    margin: 15px 0 20px;
     padding-bottom: 7px;
   }
   .search_preload .tags-section{
@@ -11958,8 +11958,9 @@ S .SidebarMenu .Drawer__Main::after {
 }
 /*Quick Look Section css*/
 .tags-section.quick-looks .SectionHeader__Heading {
-  font-family: "DIN Med";
+  font-family: 'DIN Next LT Pro Cond';
   font-weight: 500;
+  text-transform: uppercase;
   margin-top: 0px;
 }
 @media screen and (max-width: 640px) {
@@ -12041,8 +12042,7 @@ S .SidebarMenu .Drawer__Main::after {
   }
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
-  font-family: "DIN Med";
-  font-weight: 500;
+  font-family: "Adobe Caslon Pro";
   font-size: 14px;
   line-height: normal;
   color: #000;
@@ -12443,9 +12443,8 @@ S .SidebarMenu .Drawer__Main::after {
   margin-bottom: 5px;
   font-size: 50px;
   font-family: DIN Next LT Pro;
-  font-weight: bold;
-  letter-spacing: -2px;
   line-height: 42px;
+  font-weight: 800;
 }
 @media screen and (max-width: 640px) {
   .counter-home-sec .count-list li h3 {
@@ -12466,7 +12465,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .counter-home-sec .count-list li p {
   font-size: 18px;
-  font-family: 'DIN Med';
+  font-family: 'Adobe Caslon Pro';
   line-height: 18px;
   white-space: nowrap;
 }
@@ -12483,7 +12482,7 @@ S .SidebarMenu .Drawer__Main::after {
   }
 }
 .home-sep-sec {
-  padding: 40px 10px 20px;
+  padding: 40px 24px 20px;
   text-align: center;
 }
 .home-sep-sec article {
@@ -12502,16 +12501,16 @@ S .SidebarMenu .Drawer__Main::after {
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 20px;
-  font-weight: 300;
-  font-family: "DIN Next LT Pro Light";
+  font-family: "Adobe Caslon Pro";
+  color: #545454;
 }
 .home-sep-sec article .read_more_sep {
-  font-size: 10px;
-  font-family: 'DIN Med';
-  font-weight: 500;
+  font-size: 12px;
+  font-family: 'DIN Next LT Pro Bold';
   line-height: 11px;
   text-transform: uppercase;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .home-sep-sec article .read_more_sep:hover {
   text-decoration: none;
@@ -12897,6 +12896,7 @@ table tr td {
   font-style: italic;
   font-weight: 400;
   font-size: 22px;
+  margin-bottom: 5px;
 }
 .Section--spacingHeading .Container {
   display: flex;
@@ -12925,6 +12925,13 @@ table tr td {
   }
   .Section--spacingHeading .SectionHeader__SubHeading, .Section--spacingHeading .SectionHeader__SubHeading.featured-subheading {
     font-size: 17px;
+    margin-bottom: 0px;
+  }
+  .featured-heading {
+    line-height: 1.1;
+  }
+  .featured-heading span {
+    line-height: 1 !important;
   }
 }
 @media screen and (min-width: 641px) {
@@ -12945,10 +12952,12 @@ table tr td {
   font-style: italic;
   /*     font-family:"DIN Med"; */
   font-weight: 500;
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 640px) {
   .Section--spacingHeading .header_viewAll {
     font-size: 13px;
+    margin-bottom: 3px;
   }
 }
 .Section--spacingHeading .header_viewAll .arrow-right {
@@ -14555,4 +14564,7 @@ select.CurrencySelector__Select {
 }
 a:hover .overlay_dot { 
   display: none;
+}
+.Container.featured-new-header {
+  align-items: end;
 }
