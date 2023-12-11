@@ -47,7 +47,8 @@
             {{ section.blocks.first.settings.title | default: collection.title }}
           	
             {%- if section.settings.title != blank -%}
-              <span class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.title | escape }}</span>
+              <br>
+              <span class="SectionHeader__SubHeading Heading u-h6 featured-subheading">{{ section.settings.title | escape }}</span>
             {%- endif -%}
           </h2>
         </div>
