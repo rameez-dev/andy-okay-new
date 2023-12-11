@@ -6700,6 +6700,7 @@ select::-ms-expand {
 }
 .ProductItem__ImageWrapper {
   display: block;
+  position: relative;
 }
 .ProductItem__Image--alternate {
   position: absolute;
@@ -14529,4 +14530,20 @@ select.CurrencySelector__Select {
 }
 .new-trust-line strong{
   font-family: 'DIN Next LT Pro';
+}
+.overlay_dot {
+  position: absolute;
+  border-radius: 100px;
+  height: 4%;
+  aspect-ratio: 1;
+  z-index: 1;
+  top: 92%;
+  left: 85%;
+}
+.horizontal_dot {
+  top: 78%;
+  left: 98%;
+}
+a:hover .overlay_dot { 
+  display: none;
 }
