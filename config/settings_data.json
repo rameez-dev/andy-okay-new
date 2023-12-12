@@ -105,7 +105,7 @@
           "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
             "type": "announcement",
             "settings": {
-              "content": "<b>CYBER WEEK<\/b>   Buy 2, Get 1 FREE",
+              "content": "<b>SALE SEASON<\/b>   Buy 2, Get 1 FREE",
               "link": "shopify:\/\/collections\/all-art",
               "icon": "shopify:\/\/shop_images\/star_icon_27330cb7-9794-4199-9960-d5e76152edde.png"
             }
@@ -113,7 +113,7 @@
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
             "type": "announcement",
             "settings": {
-              "content": "<b>EXCELLENT<\/b>   +155,000 Collectors",
+              "content": "<b>EXCELLENT<\/b>   +161,000 Collectors",
               "link": "shopify:\/\/collections\/all-art",
               "icon": "shopify:\/\/shop_images\/Truststars_5_v3.png"
             }
@@ -432,7 +432,7 @@
             "type": "newsletter",
             "settings": {
               "title": "Members Club",
-              "content": "<p>Join 45,000 exclusive club members and get first notice on all new drops, epic offers and cool giveaways.<\/p>"
+              "content": "<p>Join 78,000 exclusive club members and get first notice on all new drops, epic offers and cool giveaways.<\/p>"
             }
           },
           "footer-0": {
@@ -738,7 +738,14 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "18423266570658624584": {
+        "type": "shopify:\/\/apps\/best-currency-converter\/blocks\/doubly\/267afa86-a419-4d5b-a61b-556038e7294d",
+        "disabled": true,
+        "settings": {}
+      }
+    }
   },
   "presets": {
     "Allure": {

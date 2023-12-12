@@ -3,9 +3,9 @@
     "number-with-background-image": {
       "type": "number-with-background-image",
       "settings": {
-        "number": "71341",
-        "text": "<p><strong>Artworks sold for charity<\/strong><\/p>",
-        "image": "shopify:\/\/shop_images\/1_4bdbcb17-69cc-4026-8c97-3049f9ab4f3c.jpg",
+        "number": "161341",
+        "text": "<p><strong>Artworks Collected for Charity<\/strong><\/p>",
+        "image": "shopify:\/\/shop_images\/impact_header_v2.jpg",
         "heading-color": "#ffffff",
         "text-color": "#ffffff",
         "show": true
@@ -20,15 +20,14 @@
         "show": true
       }
     },
-    "text-with-backgroundimage-one": {
-      "type": "text-with-backgroundimage-one",
+    "image-with-text": {
+      "type": "image-with-text",
       "settings": {
-        "heading": "Give to Charity by Purchasing Art",
-        "paragraph": "<p>Andy okay is rooted in the belief that we have a responsibility to protect and preserve the world we live in. You buy, and we'll give. Let's use the power of art to create change, one artwork at a time.<\/p>",
-        "image": "shopify:\/\/shop_images\/me_12c67a54-deed-4a71-b602-f35da9cdee20.jpg",
-        "button": "Shop to Give",
-        "link": "shopify:\/\/collections\/all-art",
-        "text-color": "#ffffff",
+        "heading": "How The Giving is Done",
+        "paragraph": "<p>We want to use the power of art to create change. Real change. As environmentalists and artists our mission is to guide you on your journey and empower you to do your best when it comes to the environment. You don't have to be a hardcore environmentalist to make a difference. It's the little things, like riding your bike to work, bringing your own grocery bag, and buying an item that gives profits to charity - they all add up. Especially when thousands of other people start doing them too.<\/p>",
+        "image": "shopify:\/\/shop_images\/EarthHug.gif",
+        "backgroud-color": "#eeeee9",
+        "text-color": "#0d2b2b",
         "show": true
       }
     },
@@ -38,25 +37,25 @@
         "af8c995d-56d8-4c7e-9f9e-5f0d4ce62263": {
           "type": "quote",
           "settings": {
-            "heading": "You buy an artwork",
-            "paragraph": "<p>Find the art you love and pay what you want for it. Every artwork on the site benefits an important organization.<strong>  <\/strong><\/p>",
-            "text-color": "#ffffff"
+            "heading": "Planet",
+            "paragraph": "<p>An important part of being in business to improve lives means taking good care of the place we all call home, and we’re committed to doing our part. <\/p>",
+            "text-color": "#000000"
           }
         },
         "8a2a7c1e-c0e1-4e88-82b4-c866cf5ca28a": {
           "type": "quote",
           "settings": {
-            "heading": "We send money",
-            "paragraph": "<p>The more you spend, the more we send. What you choose to give will support a nonprofit do their world-changing work.<\/p>",
-            "text-color": "#ffffff"
+            "heading": "People",
+            "paragraph": "<p>Andy okay is a community, too, and we strive to maintain a culture rooted in Diversity, Equity, Inclusion, and Anti-Racism. We support our employees and our partners to help create positive change. <\/p>",
+            "text-color": "#000000"
           }
         },
         "22ee3e41-a7a6-4c38-a42a-6055826980bd": {
           "type": "quote",
           "settings": {
-            "heading": "Together for better",
-            "paragraph": "<p>With the artists, we choose which projects to support, making sure the donations ends up in the right hands. <\/p>",
-            "text-color": "#ffffff"
+            "heading": "Product",
+            "paragraph": "<p>Find the art you love and pay what you want for it. Every artwork on the site benefits an important organization.  <\/p>",
+            "text-color": "#000000"
           }
         }
       },
@@ -66,18 +65,19 @@
         "22ee3e41-a7a6-4c38-a42a-6055826980bd"
       ],
       "settings": {
-        "backgroud-color": "#367c53",
+        "backgroud-color": "#ffffff",
         "show": true
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
       "settings": {
-        "heading": "Our Mission",
-        "paragraph": "<p>We want to use the power of art to create change. Real change. As environmentalists and artists our mission is to guide you on your journey and empower you to do your best when it comes to the environment. You don't have to be a hardcore environmentalist to make a difference. It's the little things, like riding your bike to work, bringing your own grocery bag, and buying an item that gives profits to charity - they all add up. Especially when thousands of other people start doing them too.<\/p>",
-        "image": "shopify:\/\/shop_images\/EarthHug.gif",
-        "backgroud-color": "#eeeee9",
-        "text-color": "#0d2b2b",
+        "heading": "",
+        "paragraph": "<h2>“If we don’t clean up our mess, we’ll be history. We must use all the tools at our disposal to secure a safer, more just future.”<\/h2><h3><\/h3>",
+        "image": "shopify:\/\/shop_images\/impact_header_v3.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
         "show": true
       }
     },
@@ -90,7 +90,7 @@
         "button": "charity of this month",
         "link": "shopify:\/\/pages\/cause-of-the-month",
         "text-color": "#ffffff",
-        "show": true
+        "show": false
       }
     },
     "logolist": {
@@ -134,15 +134,24 @@
         "show": true
       }
     },
-    "text-with-backgroundimage-three": {
-      "type": "text-with-backgroundimage-three",
+    "0427ff20-2132-4ba4-9f66-b896908b1ff1": {
+      "type": "simple-text-charity",
+      "blocks": {
+        "7d975ded-326f-4a81-b9a8-ba2e7ec67cad": {
+          "type": "charity",
+          "settings": {
+            "handle": "impact",
+            "show": true,
+            "text": "<p><em>Together, we can prioritize purpose over profit and protect this wondrous planet, our only home.<\/em><\/p>",
+            "backgroud-color": "#000000",
+            "text-color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "7d975ded-326f-4a81-b9a8-ba2e7ec67cad"
+      ],
       "settings": {
-        "heading": "Big Change Start Small",
-        "paragraph": "<p><strong>Art has the power to bring visual and emotional pleasure to people, let’s use this to at the same time benefit deserving charities everywhere. Every artwork sold benefits a cause. <\/strong><\/p>",
-        "image": "shopify:\/\/shop_images\/gr.jpg",
-        "button": "Shop to give",
-        "link": "shopify:\/\/collections\/all-art",
-        "text-color": "#ffffff",
         "show": true
       }
     },
@@ -173,12 +182,12 @@
   "order": [
     "number-with-background-image",
     "simple-text",
-    "text-with-backgroundimage-one",
-    "three-column",
     "image-with-text",
+    "three-column",
+    "text-with-backgroundimage-one",
     "text-with-backgroundimage-two",
     "logolist",
-    "text-with-backgroundimage-three",
+    "0427ff20-2132-4ba4-9f66-b896908b1ff1",
     "explore"
   ]
 }

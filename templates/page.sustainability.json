@@ -16,77 +16,10 @@
     },
     "a6c1ac63-b38c-4aab-adef-358232a10046": {
       "type": "main-page-new",
-      "blocks": {
-        "bafb909c-6b64-4e0d-acd8-94bf6279aa19": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2018",
-            "content": "Andy okay was founded"
-          }
-        },
-        "84132c18-c587-4b5e-b292-3d6898610683": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2019",
-            "content": "Andy okay"
-          }
-        },
-        "300022fd-99c7-4a97-b661-b5097d4548f1": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2020",
-            "content": "Andy"
-          }
-        },
-        "6d82ddba-a92c-4244-8979-4cdd8b86ca1a": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2021",
-            "content": "Andy"
-          }
-        },
-        "78c39c50-8a90-4040-8e61-1ece91396a88": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2022",
-            "content": "Andy"
-          }
-        },
-        "da88aec2-dde8-4844-abea-82873f684a75": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2023",
-            "content": "Andy"
-          }
-        },
-        "2496c64a-bfdf-49f5-a5f5-363c5f8da4f7": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2024",
-            "content": "Andy"
-          }
-        }
-      },
-      "block_order": [
-        "bafb909c-6b64-4e0d-acd8-94bf6279aa19",
-        "84132c18-c587-4b5e-b292-3d6898610683",
-        "300022fd-99c7-4a97-b661-b5097d4548f1",
-        "6d82ddba-a92c-4244-8979-4cdd8b86ca1a",
-        "78c39c50-8a90-4040-8e61-1ece91396a88",
-        "da88aec2-dde8-4844-abea-82873f684a75",
-        "2496c64a-bfdf-49f5-a5f5-363c5f8da4f7"
-      ],
       "settings": {
         "button_label": "PURCHASE FOR PURPOSE",
         "button_link": "shopify:\/\/collections\/all-art",
-        "section_order": 12
+        "section_order": 0
       }
     }
   },
