@@ -1,20 +1,46 @@
+<style>
+  .container-new {
+    max-width: 700px;
+    margin: auto;
+  }
+  @media only screen and (max-width: 730px) {
+    .container-new {
+      margin: 0px 15px;
+    }
+  }
+  .faq__title:after {
+    top: 16px;
+    right: 0;
+    content: "";
+    background: url({{ 'faq-arrow.png' | asset_url}}) no-repeat;
+    z-index: 500;
+    display: block;
+    position: absolute;
+    transition: transform 0.25s ease;
+    width:14px;
+    height:9px;
+    background-size:100% 100%;
+  }
+  .faq__group.is-expanded .faq__title:after {
+    transform: rotate(180deg);
+  }
+</style>
 <section data-section-type="faq" data-section-id="{{ section.id }}">
   {%- if section.settings.show == true -%}
     <article class="char-faq" style="background-color: {{section.settings.backgroud-color}}">
-      <div class="container">
-        <h2>{{section.settings.heading}}</h2>
-        
-        {% for block in section.blocks %}
-        <div class="faq__group faq--group-{{ forloop.index }}">
-          <div class="faq__title js-collapser-toggle" data-target=".faq--group-{{ forloop.index }}">
-            <h4 style="color: {{section.settings.text-color}}" >{{block.settings.title}}</h4>
+      <div class="container-new">
+          <h2>{{section.settings.heading}}</h2>
+          
+          {% for block in section.blocks %}
+          <div class="faq__group faq--group-{{ forloop.index }}">
+            <div class="faq__title js-collapser-toggle" data-target=".faq--group-{{ forloop.index }}">
+              <h4 style="color: {{section.settings.text-color}}" >{{block.settings.title}}</h4>
+            </div>
+            <div class="faq__content">
+              <p style="color: {{section.settings.text-color}}" >{{block.settings.answer}}</p>
+            </div>
           </div>
-          <div class="faq__content">
-            <p style="color: {{section.settings.text-color}}" >{{block.settings.answer}}</p>
-          </div>
-        </div>
-        {% endfor %}
-        
+          {% endfor %}
       </div>
     </article>
   {%- endif -%}
