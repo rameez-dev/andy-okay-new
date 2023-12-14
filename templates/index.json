@@ -130,15 +130,15 @@
         "d0c3d900-0a1e-4acb-9012-c05d97e5db7f": {
           "type": "badges",
           "settings": {
-            "title": "71.341",
-            "subheading": "Sold for Charity"
+            "title": "161.341",
+            "subheading": "Collectors for Charity"
           }
         },
         "7d847131-15e2-49e3-b92e-c3130bd5fab1": {
           "type": "badges",
           "settings": {
             "title": "12",
-            "subheading": "Non Profit Partners"
+            "subheading": "Charity Partners"
           }
         }
       },
@@ -153,60 +153,12 @@
       "type": "text-with-link",
       "settings": {
         "heading": "Art for Earth lovers",
-        "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with important nonprofits, we made it happen...<\/p>",
+        "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with the world's most important nonprofits, we made it happen...<\/p>",
         "link-text": "FIND OUT MORE",
         "link": "shopify:\/\/pages\/impact",
         "background-color": "#ffffff",
         "text-color": "#000000",
         "show": true
-      }
-    },
-    "16377864870ab9146c": {
-      "type": "text-with-background",
-      "blocks": {
-        "4898f2aa-9960-4346-b5d8-28a4bdf9b267": {
-          "type": "text",
-          "settings": {
-            "title_color": "#971414",
-            "background_color": "#181818",
-            "title": "This is first slide"
-          }
-        },
-        "09ce34a4-1007-4393-a0d7-207b21c36ff0": {
-          "type": "text",
-          "settings": {
-            "title_color": "#ffffff",
-            "background_color": "#ea2525",
-            "title": "This is second slide"
-          }
-        },
-        "2ba8f314-7a5a-47ef-9e80-1c61db9ddbbb": {
-          "type": "text",
-          "settings": {
-            "title_color": "#160202",
-            "background_color": "#296c7f",
-            "title": "This is third slide"
-          }
-        },
-        "9a71fc85-af64-4a38-87b2-72a0f5fd7e29": {
-          "type": "text",
-          "settings": {
-            "title_color": "#a61717",
-            "background_color": "#7c9e2f",
-            "title": "This is fourth slide"
-          }
-        }
-      },
-      "block_order": [
-        "4898f2aa-9960-4346-b5d8-28a4bdf9b267",
-        "09ce34a4-1007-4393-a0d7-207b21c36ff0",
-        "2ba8f314-7a5a-47ef-9e80-1c61db9ddbbb",
-        "9a71fc85-af64-4a38-87b2-72a0f5fd7e29"
-      ],
-      "disabled": true,
-      "settings": {
-        "autoplay": true,
-        "cycle_speed": 5
       }
     },
     "160745450950754497": {
@@ -380,104 +332,6 @@
         "subtitle": ""
       }
     },
-    "16131224958a8baaef": {
-      "type": "featured-collections",
-      "blocks": {
-        "16131224958a8baaef-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "just-released",
-            "title": "",
-            "grid_items_count": 16,
-            "button_text": "View all >",
-            "button_text_color": "#000000",
-            "show_overlay_dot": false,
-            "overlay_dot_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "16131224958a8baaef-0"
-      ],
-      "settings": {
-        "title": "Latest And Greatest",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
-      }
-    },
-    "16059880715e2bb83c": {
-      "type": "reviews",
-      "blocks": {
-        "828f4629-667e-4a80-b08b-7ec1965c8bfe": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Buzzfeed_logo_PNG3_1b6b7af2-cb53-4703-9e85-58b1367b6a9d.png",
-            "title": "Will purchase more!",
-            "review": "“No long review needed. The art itself and the purpose behind it does all the talking\"",
-            "name": ""
-          }
-        },
-        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Variety_logo_PNG1_adfe71e9-1629-48de-bc73-04a9428ec585.png",
-            "title": "I'm so glad I ordered",
-            "review": "\"Some of the best art in the world. Plain and simple.\"",
-            "name": ""
-          }
-        },
-        "674b6132-eac8-4557-82b1-d2f6fa605097": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Wired-logo.png",
-            "title": "JUST PERFECT!",
-            "review": "“Art so good that you will actually want to invite your friends over to your home to see it\"",
-            "name": ""
-          }
-        },
-        "40247eea-ce08-4c28-9a22-c2d488c4a8c9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/highsnob2.png",
-            "title": "Lovely piece of art",
-            "review": "“A triumph of epic art and causes\"",
-            "name": ""
-          }
-        },
-        "a63b2f0c-c31c-4616-9435-559a3510ec45": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/GQstyle.png",
-            "title": "For Earth. Not profit.",
-            "review": "\"Art for Causes is the perfect matching of beautiful art and important purpose.\"",
-            "name": ""
-          }
-        }
-      },
-      "block_order": [
-        "828f4629-667e-4a80-b08b-7ec1965c8bfe",
-        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9",
-        "674b6132-eac8-4557-82b1-d2f6fa605097",
-        "40247eea-ce08-4c28-9a22-c2d488c4a8c9",
-        "a63b2f0c-c31c-4616-9435-559a3510ec45"
-      ],
-      "settings": {
-        "autoplay": true,
-        "cycle_speed": 3,
-        "title_color": "#313131",
-        "review_color": "#707070",
-        "name_color": "#ffffff",
-        "background_color": "#ffffff",
-        "heading": "68,800+ customers and counting",
-        "button_text": ""
-      }
-    },
     "1625374692c4d0a8c9": {
       "type": "featured-collections",
       "blocks": {
@@ -498,7 +352,107 @@
         "162537469203ba0fa9-0"
       ],
       "settings": {
-        "title": "Our Best Sellers",
+        "title": "Grab one of our best sellers",
+        "subheading_color": "#8a8a8a",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "16059880715e2bb83c": {
+      "type": "reviews",
+      "blocks": {
+        "828f4629-667e-4a80-b08b-7ec1965c8bfe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Buzzfeed_logo_PNG3_1b6b7af2-cb53-4703-9e85-58b1367b6a9d.png",
+            "title": "Will purchase more!",
+            "review": "“The art and the purpose behind it really makes people talk\"",
+            "name": ""
+          }
+        },
+        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Variety_logo_PNG1_adfe71e9-1629-48de-bc73-04a9428ec585.png",
+            "title": "I'm so glad I ordered",
+            "review": "\"Some of the best art in the world. Plain and simple.\"",
+            "name": ""
+          }
+        },
+        "674b6132-eac8-4557-82b1-d2f6fa605097": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wired-logo.png",
+            "title": "JUST PERFECT!",
+            "review": "“Art so good that you will actually wanna have friends over\"",
+            "name": ""
+          }
+        },
+        "40247eea-ce08-4c28-9a22-c2d488c4a8c9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/highsnob2.png",
+            "title": "Lovely piece of art",
+            "review": "“A triumph of epic art and causes\"",
+            "name": ""
+          }
+        },
+        "a63b2f0c-c31c-4616-9435-559a3510ec45": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/GQstyle.png",
+            "title": "For Earth. Not profit.",
+            "review": "\"Art for Causes is the perfect matching of art and important purpose.\"",
+            "name": ""
+          }
+        }
+      },
+      "block_order": [
+        "828f4629-667e-4a80-b08b-7ec1965c8bfe",
+        "9c4b98e6-8e1b-4892-a92b-2c91f6deb9c9",
+        "674b6132-eac8-4557-82b1-d2f6fa605097",
+        "40247eea-ce08-4c28-9a22-c2d488c4a8c9",
+        "a63b2f0c-c31c-4616-9435-559a3510ec45"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 3,
+        "title_color": "#313131",
+        "review_color": "#707070",
+        "name_color": "#ffffff",
+        "background_color": "#ffffff",
+        "heading": "100,000+ CUSTOMERS FOR A REASON...",
+        "button_text": ""
+      }
+    },
+    "16131224958a8baaef": {
+      "type": "featured-collections",
+      "blocks": {
+        "16131224958a8baaef-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "just-released",
+            "title": "",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#000000",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16131224958a8baaef-0"
+      ],
+      "settings": {
+        "title": "The latest and greatest",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -529,7 +483,8 @@
         "1643642736f42e4efd-0"
       ],
       "settings": {
-        "title": "And Lost Forever",
+        "title": "Soon lost forever",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -543,11 +498,43 @@
     "16616061592e8072c4": {
       "type": "front-page-section",
       "settings": {
-        "image": "shopify:\/\/shop_images\/norris_yim_a_man_from_nirvana_share_the_meal.jpg",
-        "title": "NEW DROP!",
-        "content": "<p>The modern take on a real classic. 'A Man From Nirvana' by Norris Yim for Share The Meal live now.<\/p>",
-        "button_label": "Purchase for purpose",
-        "button_link": "shopify:\/\/products\/a-man-from-nirvana"
+        "image": "shopify:\/\/shop_images\/ringo_starr_beatles_andyokay.jpg",
+        "title": "YOU SHOP – WE GIVE",
+        "content": "<p>Art is a fantastic way to bring attention to social issues that need addressing. This is how Art for Causes changes lives...<\/p>",
+        "button_label": "Learn more",
+        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives"
+      }
+    },
+    "1616425487e7f8d53c": {
+      "type": "featured-collections",
+      "blocks": {
+        "1616425487e7f8d53c-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "motivational-art",
+            "title": "",
+            "grid_items_count": 12,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "1616425487e7f8d53c-0"
+      ],
+      "settings": {
+        "title": "Reach your goals",
+        "subheading_color": "#8a8a8a",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
       }
     },
     "154b9c6e-9c0c-4aef-897e-159bd94c086a": {
@@ -569,8 +556,10 @@
       "block_order": [
         "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0"
       ],
+      "disabled": true,
       "settings": {
-        "title": "Hot Picks Of The Season",
+        "title": "HOT PICKS OF THE SEASON",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -615,7 +604,8 @@
         "b69874bf-7f21-4147-9f2b-374f087d0eff"
       ],
       "settings": {
-        "title": "Above And Beyond",
+        "title": "Above and beyond",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -645,39 +635,10 @@
       "block_order": [
         "16408572584cf4e97b-0"
       ],
+      "disabled": true,
       "settings": {
-        "title": "Domestic And Wild",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
-      }
-    },
-    "1616425487e7f8d53c": {
-      "type": "featured-collections",
-      "blocks": {
-        "1616425487e7f8d53c-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "motivational-art",
-            "title": "",
-            "grid_items_count": 12,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff",
-            "show_overlay_dot": false,
-            "overlay_dot_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "1616425487e7f8d53c-0"
-      ],
-      "settings": {
-        "title": "Reach Your Goals",
+        "title": "domestic and wild",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -708,7 +669,8 @@
         "161039065890033dbc-0"
       ],
       "settings": {
-        "title": "Iconic Imagery",
+        "title": "Icons reimagined",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -718,6 +680,62 @@
         "is_sold_out_collection": false,
         "background_color": "#f0f0f0"
       }
+    },
+    "d6160c46-a0ba-4446-a017-6139cf5745eb": {
+      "type": "image-carousel",
+      "blocks": {
+        "500b0530-f08a-4e31-afb2-9e6a983a65e8": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/summer_dt_eea0cfdd-2778-49bf-83ce-5c09a5bdc49e.jpg",
+            "link": "shopify:\/\/collections\/summer-wall-art"
+          }
+        },
+        "23d426b1-1c6d-420b-abad-c1db636be838": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flowerhead_dt_a5aa3f46-7b0c-4f48-ad04-0baa47f1b91e.jpg",
+            "link": "shopify:\/\/collections\/flower-head-art"
+          }
+        },
+        "4f98a75e-e491-42e2-acd8-d9c79477614c": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trippy_dt_efc0334c-831c-4cfc-98a1-2c9ddc54c0d7.jpg",
+            "link": "shopify:\/\/collections\/psychedelic-and-trippy-wall-art"
+          }
+        },
+        "550b2d2c-e8ea-43b8-b8c8-4e8611279a3a": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/summer_mob.jpg",
+            "link": "shopify:\/\/collections\/summer-wall-art"
+          }
+        },
+        "0955f35e-9c63-4f71-851b-8ad868ecf673": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flowerhead_mob_11d3ebfa-065d-402b-b371-0fad5d36e86a.jpg",
+            "link": "shopify:\/\/collections\/flower-head-art"
+          }
+        },
+        "46c41a79-b0b1-4ac7-8970-41466d39b197": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trippy_mob.jpg",
+            "link": "shopify:\/\/collections\/psychedelic-and-trippy-wall-art"
+          }
+        }
+      },
+      "block_order": [
+        "500b0530-f08a-4e31-afb2-9e6a983a65e8",
+        "23d426b1-1c6d-420b-abad-c1db636be838",
+        "4f98a75e-e491-42e2-acd8-d9c79477614c",
+        "550b2d2c-e8ea-43b8-b8c8-4e8611279a3a",
+        "0955f35e-9c63-4f71-851b-8ad868ecf673",
+        "46c41a79-b0b1-4ac7-8970-41466d39b197"
+      ],
+      "settings": {}
     },
     "1629722279ac42c7cf": {
       "type": "blog-posts-new",
@@ -732,6 +750,7 @@
       "block_order": [
         "1629722279ac42c7cf-0"
       ],
+      "disabled": true,
       "settings": {
         "subheading": "The low-down on top trends, artist interviews and cool guides that make a difference.",
         "title": "The Gallerist",
@@ -760,7 +779,8 @@
         "18bd032c-7869-430d-8d86-b3c9c5e04384"
       ],
       "settings": {
-        "title": "Fits Any Room",
+        "title": "Fits any room",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -891,7 +911,8 @@
         "1640887620025213cd-0"
       ],
       "settings": {
-        "title": "Beyond Reality",
+        "title": "Travel beyond reality",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -922,7 +943,8 @@
         "1597932365863-0"
       ],
       "settings": {
-        "title": "Gone Forever",
+        "title": "Gone forever",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -1048,7 +1070,7 @@
         "input_border_color": "#ffffff",
         "subheading": "",
         "title": "Newsletter",
-        "content": "<p>Join 45,000 club members for exclusive drops and offers. Free.<\/p>"
+        "content": "<p>Join 78,000 club members for exclusive drops and offers. 100% Free.<\/p>"
       }
     }
   },
@@ -1057,18 +1079,18 @@
     "1629722231c92f1c0e",
     "1642540604407ce1ad",
     "1642537533f81e6dfa",
-    "16377864870ab9146c",
     "160745450950754497",
-    "16131224958a8baaef",
-    "16059880715e2bb83c",
     "1625374692c4d0a8c9",
+    "16059880715e2bb83c",
+    "16131224958a8baaef",
     "1643642736f42e4efd",
     "16616061592e8072c4",
+    "1616425487e7f8d53c",
     "154b9c6e-9c0c-4aef-897e-159bd94c086a",
     "1616425219eaa2e028",
     "16408572584cf4e97b",
-    "1616425487e7f8d53c",
     "161039065890033dbc",
+    "d6160c46-a0ba-4446-a017-6139cf5745eb",
     "1629722279ac42c7cf",
     "1571758473108",
     "160614414236913c9b",

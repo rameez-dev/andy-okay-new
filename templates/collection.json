@@ -1,13 +1,13 @@
 {
   "sections": {
-    "d136e51d-c695-44a5-8779-9163796ebb16": {
+    "fc56d4d3-fe78-4878-b030-3ffce31ae998": {
       "type": "collection-header",
       "settings": {}
     },
-    "aa221530-2d32-4372-ae70-8af3e23296fb": {
+    "77a6d818-84f3-4fa5-87bc-935fcb0d497b": {
       "type": "trustbadges",
       "blocks": {
-        "cf947e8f-c236-40e3-83b3-4fa448e3edc8": {
+        "a946d84a-fd20-48da-a380-ae004986e976": {
           "type": "badges",
           "settings": {
             "image": "shopify:\/\/shop_images\/certified.png",
@@ -15,7 +15,7 @@
             "subheading": "Certificate of <br> authenticity included"
           }
         },
-        "191a0ae6-de4e-467b-953b-a67b53a3815b": {
+        "3de34970-7a60-409a-a937-7fe7824d952a": {
           "type": "badges",
           "settings": {
             "image": "shopify:\/\/shop_images\/shake.png",
@@ -23,7 +23,7 @@
             "subheading": "Artists supported <br> from every purchase"
           }
         },
-        "6cc2a033-9983-4669-bd7a-9f4fd1dace02": {
+        "03a14af2-dc4c-4509-87ba-2852d0ebd42f": {
           "type": "badges",
           "settings": {
             "image": "shopify:\/\/shop_images\/shipping.png",
@@ -31,7 +31,7 @@
             "subheading": "99% of all orders arrives <br> in 3-5 business days"
           }
         },
-        "957a21ab-54fd-41c2-aedf-bb7da1b8b35f": {
+        "6c0a4b67-862b-461e-8ad9-77029f5ff68d": {
           "type": "badges",
           "settings": {
             "image": "shopify:\/\/shop_images\/earth.png",
@@ -41,10 +41,10 @@
         }
       },
       "block_order": [
-        "cf947e8f-c236-40e3-83b3-4fa448e3edc8",
-        "191a0ae6-de4e-467b-953b-a67b53a3815b",
-        "6cc2a033-9983-4669-bd7a-9f4fd1dace02",
-        "957a21ab-54fd-41c2-aedf-bb7da1b8b35f"
+        "a946d84a-fd20-48da-a380-ae004986e976",
+        "3de34970-7a60-409a-a937-7fe7824d952a",
+        "03a14af2-dc4c-4509-87ba-2852d0ebd42f",
+        "6c0a4b67-862b-461e-8ad9-77029f5ff68d"
       ],
       "settings": {}
     },
@@ -90,84 +90,94 @@
         "content": "<p>Add your own custom content to explain your processes...<\/p>"
       }
     },
-    "ce2a4a79-20b4-4e5c-8913-7802409eaf3b": {
+    "2773ddea-6ef1-4f9e-9526-02e5640b324a": {
       "type": "new-truspilot",
       "blocks": {
-        "5f121546-5c56-4f2b-9d66-1c1c6dc43843": {
+        "51356acc-2b02-4eb8-8d59-e99e51249d1a": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
             "heading": "Absolutely brilliant",
             "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "author": "<strong>Angela B,<\/strong> 2 hours ago"
           }
         },
-        "4b2b3c87-48b4-4674-8c9c-f3c190e710c9": {
+        "e20baecd-812e-4e20-bbaf-6a9c145ab3b3": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Stunning",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "I love it",
+            "content": "It’s a gift for my boyfriend’s birthday. I’m absolute in love with it! Wanna keep it for myself. Can’t wait to order more.",
+            "author": "<strong>Charlotte R,<\/strong> 6 hours ago"
           }
         },
-        "150f6da4-7ab1-41bf-a4d2-9ef8c0a0be04": {
+        "08408065-70a5-42a7-827e-629059ee9b02": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Brilliant",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "Highly recommend!!",
+            "content": "Absolute awesome print on top quality paper which doesn’t get ripples when putting in a frame!",
+            "author": "<strong>Brad P,<\/strong> 15 hours ago"
           }
         },
-        "e52894b4-fe9a-4231-a436-52bdcdaee5e9": {
+        "922675e6-5fa8-4b70-86cb-4e8f0887e93c": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Awesome",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "It resonated w me",
+            "content": "I knew I had to have it and I’m so happy. It inspires me and the beauty of the of the colors is perfect.",
+            "author": "<strong>Jacqueline L,<\/strong> Yesterday"
           }
         },
-        "5d2641bf-5439-41e8-862e-75e0e81f539a": {
+        "a36ba590-636d-4d66-83d7-ae827375e899": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Good",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "It’s beautiful",
+            "content": "Amazing pic and very nice print quality.",
+            "author": "<strong>Mélanie C,<\/strong> Yesterday"
           }
         },
-        "940b7571-ff74-452c-886d-a488ae551384": {
+        "af150284-ee25-4112-a8b4-f160c8467690": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Great",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "Exceptional!",
+            "content": "Great quality! Fast shipping!",
+            "author": "<strong>Jevgenija J,<\/strong> Yesterday"
+          }
+        },
+        "0201ad0a-c3f9-4562-be7d-a9751c6846d8": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Very happy",
+            "content": "Great picture, awesome quality, good delivery time. ",
+            "author": "<strong>Antonio P,<\/strong> 2 days ago"
           }
         }
       },
       "block_order": [
-        "5f121546-5c56-4f2b-9d66-1c1c6dc43843",
-        "4b2b3c87-48b4-4674-8c9c-f3c190e710c9",
-        "150f6da4-7ab1-41bf-a4d2-9ef8c0a0be04",
-        "e52894b4-fe9a-4231-a436-52bdcdaee5e9",
-        "5d2641bf-5439-41e8-862e-75e0e81f539a",
-        "940b7571-ff74-452c-886d-a488ae551384"
+        "51356acc-2b02-4eb8-8d59-e99e51249d1a",
+        "e20baecd-812e-4e20-bbaf-6a9c145ab3b3",
+        "08408065-70a5-42a7-827e-629059ee9b02",
+        "922675e6-5fa8-4b70-86cb-4e8f0887e93c",
+        "a36ba590-636d-4d66-83d7-ae827375e899",
+        "af150284-ee25-4112-a8b4-f160c8467690",
+        "0201ad0a-c3f9-4562-be7d-a9751c6846d8"
       ],
       "settings": {
         "heading": "EXCELLENT",
-        "subheading": "<strong>4.9<\/strong> \/ 5 from <strong>+2600 Reviews<\/strong>"
+        "subheading": "4.9 \/ 5 from +2600 Reviews"
       }
     }
   },
   "order": [
-    "d136e51d-c695-44a5-8779-9163796ebb16",
-    "aa221530-2d32-4372-ae70-8af3e23296fb",
+    "fc56d4d3-fe78-4878-b030-3ffce31ae998",
+    "77a6d818-84f3-4fa5-87bc-935fcb0d497b",
     "main",
     "recently-viewed-products",
     "collection-footer",
-    "ce2a4a79-20b4-4e5c-8913-7802409eaf3b"
+    "2773ddea-6ef1-4f9e-9526-02e5640b324a"
   ]
 }

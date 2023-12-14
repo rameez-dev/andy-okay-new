@@ -6,7 +6,7 @@
         "show_shipping_estimator": false,
         "shipping_estimator_default_country": "United States",
         "show_cart_reviews": false,
-        "review_numbers": "1928",
+        "review_numbers": "2412",
         "reviewer_name": "Angela B.",
         "review_title": "ABSOLUTELY BRILLIANT",
         "review_text": "I came across this site completely by accident but I'm so happy I did. I absolutely LOVE this print. Everyone who comes in my house comments on it. Delivery was fast and the print arrived in perfect condition.",
@@ -32,75 +32,85 @@
         "link": ""
       }
     },
-    "c1eb4c25-8a23-4cd8-9279-286a0d31e6b1": {
+    "b426a30d-7f5d-4d8c-b7f9-551e6af03440": {
       "type": "new-truspilot",
       "blocks": {
-        "ccc4681b-8e48-444c-a118-b2d1e4e80e13": {
+        "bd0be792-b6e4-47d0-ba59-cfa8f4249dde": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
             "heading": "Absolutely brilliant",
             "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "author": "<strong>Angela B,<\/strong> 2 hours ago"
           }
         },
-        "4ada744b-91d6-46b4-953f-174b7a77197d": {
+        "e4b518ad-b31e-4e30-bcf6-11373738a782": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Brilliant",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "I love it",
+            "content": "It’s a gift for my boyfriend’s birthday. I’m absolute in love with it. Wanna keep it for myself. Can’t wait to order more.",
+            "author": "<strong>Charlotte R,<\/strong> 6 hours ago"
           }
         },
-        "88da6063-cc24-474e-be09-74dae793b5bb": {
+        "d2fec947-af80-4b83-918a-0d3c2fcc8731": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Stunning",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "Highly recommend!",
+            "content": "Absolute awesome print on top quality paper which doesn’t get ripples when putting in a frame!",
+            "author": "<strong>Brad P,<\/strong> 15 hours ago"
           }
         },
-        "df80f15d-fede-4669-9ed2-61d1f3031172": {
+        "e06bd9d8-b9ad-4c93-883c-fbb6d446a312": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Great",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "It resonated w me",
+            "content": "I knew I had to have it and I’m so happy. It inspires me and the beauty of the of the colors is perfect.",
+            "author": "<strong>Jacqueline L,<\/strong> Yesterday"
           }
         },
-        "d6691dc2-fae9-48b2-9b2c-c7ca297c67c4": {
+        "b8de463a-fad6-48a0-8e0a-5cc25ecc9718": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Excellent",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "It’s beautiful",
+            "content": "Amazing pic and very nice print quality.",
+            "author": "<strong>Mélanie C,<\/strong> Yesterday"
           }
         },
-        "9677a26f-3e1d-45c7-838a-fbca01f16d44": {
+        "50e4c71e-b689-449e-b970-cb6facbd8a54": {
           "type": "review",
           "settings": {
             "header_text": "Verified",
-            "heading": "Awesome",
-            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
-            "author": "<strong>Angela B.,<\/strong> 2 hours ago"
+            "heading": "Exceptional!",
+            "content": "Great quality! Fast shipping!",
+            "author": "<strong>Jevgenija J,<\/strong> Yesterday"
+          }
+        },
+        "f4bc9ac6-a555-4e08-acc5-9bcd870873c9": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Very happy",
+            "content": "Great picture, awesome quality, good delivery time. ",
+            "author": "<strong>Antonio P,<\/strong> 2 days ago"
           }
         }
       },
       "block_order": [
-        "ccc4681b-8e48-444c-a118-b2d1e4e80e13",
-        "4ada744b-91d6-46b4-953f-174b7a77197d",
-        "88da6063-cc24-474e-be09-74dae793b5bb",
-        "df80f15d-fede-4669-9ed2-61d1f3031172",
-        "d6691dc2-fae9-48b2-9b2c-c7ca297c67c4",
-        "9677a26f-3e1d-45c7-838a-fbca01f16d44"
+        "bd0be792-b6e4-47d0-ba59-cfa8f4249dde",
+        "e4b518ad-b31e-4e30-bcf6-11373738a782",
+        "d2fec947-af80-4b83-918a-0d3c2fcc8731",
+        "e06bd9d8-b9ad-4c93-883c-fbb6d446a312",
+        "b8de463a-fad6-48a0-8e0a-5cc25ecc9718",
+        "50e4c71e-b689-449e-b970-cb6facbd8a54",
+        "f4bc9ac6-a555-4e08-acc5-9bcd870873c9"
       ],
       "settings": {
         "heading": "EXCELLENT",
-        "subheading": "<strong>4.9<\/strong> \/ 5 from <strong>+2600 Reviews<\/strong>"
+        "subheading": "4.9 \/ 5 from +2600 Reviews"
       }
     }
   },
@@ -108,6 +118,6 @@
     "main",
     "recently-viewed-products",
     "protection-price-detail-popup",
-    "c1eb4c25-8a23-4cd8-9279-286a0d31e6b1"
+    "b426a30d-7f5d-4d8c-b7f9-551e6af03440"
   ]
 }

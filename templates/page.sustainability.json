@@ -8,7 +8,7 @@
     "68c88ed7-329b-49c5-a5a1-9048e061b13c": {
       "type": "banner-with-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/hero_banner-resized-1.jpg",
+        "image": "shopify:\/\/shop_images\/andyokay_sustainability.jpg",
         "heading": "",
         "color": "#ffffff",
         "text_multi": 1
@@ -16,41 +16,10 @@
     },
     "a6c1ac63-b38c-4aab-adef-358232a10046": {
       "type": "main-page-new",
-      "blocks": {
-        "355923e0-cbc4-4c80-b9bf-8a8ab004f09b": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "Andy",
-            "content": "This is andy okay"
-          }
-        },
-        "0878d8b2-5d72-480f-a9bd-7f931a35c3e6": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "Andy",
-            "content": "New card"
-          }
-        },
-        "958c83ce-f158-42c4-9453-7203f1c2ff25": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "Andy",
-            "content": "New"
-          }
-        }
-      },
-      "block_order": [
-        "355923e0-cbc4-4c80-b9bf-8a8ab004f09b",
-        "0878d8b2-5d72-480f-a9bd-7f931a35c3e6",
-        "958c83ce-f158-42c4-9453-7203f1c2ff25"
-      ],
       "settings": {
         "button_label": "PURCHASE FOR PURPOSE",
         "button_link": "shopify:\/\/collections\/all-art",
-        "section_order": 1
+        "section_order": 0
       }
     }
   },

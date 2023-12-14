@@ -8,7 +8,7 @@
     "68c88ed7-329b-49c5-a5a1-9048e061b13c": {
       "type": "banner-with-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/hero_banner-resized-1.jpg",
+        "image": "shopify:\/\/shop_images\/about_andy.jpg",
         "heading": "",
         "color": "#ffffff",
         "text_multi": 1
@@ -17,76 +17,76 @@
     "a6c1ac63-b38c-4aab-adef-358232a10046": {
       "type": "main-page-new",
       "blocks": {
-        "bafb909c-6b64-4e0d-acd8-94bf6279aa19": {
+        "3ec6c22f-6190-4edb-ab56-29cf71681d19": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
+            "image": "shopify:\/\/shop_images\/aboutandy_1.jpg",
             "heading": "2018",
-            "content": "Andy okay was founded"
+            "content": "Andy is chosen as \"Elephant Ambassador\" by WWF"
           }
         },
-        "84132c18-c587-4b5e-b292-3d6898610683": {
+        "0fe1779b-50f7-4969-837e-033853d11909": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
+            "image": "shopify:\/\/shop_images\/aboutandy_2.jpg",
+            "heading": "2018",
+            "content": "Andy is announced a \"World Hero\" by WWF"
+          }
+        },
+        "16d58bd6-f561-494b-9235-a039e552cd86": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aboutandy_3.jpg",
             "heading": "2019",
-            "content": "Andy okay"
+            "content": "Andy was picked as one of 3 artists to create the official art for \"World Creativity Day\" by the United Nations"
           }
         },
-        "300022fd-99c7-4a97-b661-b5097d4548f1": {
+        "79298977-f147-4b73-aba2-e14c588f3a84": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
+            "image": "shopify:\/\/shop_images\/aboutandy_4.jpg",
+            "heading": "2019",
+            "content": "Approached by PETA to help create art and raise awareness about speciesism."
+          }
+        },
+        "66e00d57-62ad-450b-af27-b5ec339324ba": {
+          "type": "card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aboutandy_6.jpg",
             "heading": "2020",
-            "content": "Andy"
+            "content": "Approached by the worlds biggest vegan media, Plant Based News, to create key art sent out to over 70 million people."
           }
         },
-        "6d82ddba-a92c-4244-8979-4cdd8b86ca1a": {
+        "ad445586-ce10-4fb3-8583-3c35d062be33": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2021",
-            "content": "Andy"
+            "image": "shopify:\/\/shop_images\/aboutandy_5.jpg",
+            "heading": "2020",
+            "content": "Andy get signed to HMW Gallery, hanging next to icons like Warhol, Lichtenstein, Basquiat and Haring."
           }
         },
-        "78c39c50-8a90-4040-8e61-1ece91396a88": {
+        "6b8b3895-0365-440e-bf1b-72c4f8ab9085": {
           "type": "card",
           "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2022",
-            "content": "Andy"
-          }
-        },
-        "da88aec2-dde8-4844-abea-82873f684a75": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2023",
-            "content": "Andy"
-          }
-        },
-        "2496c64a-bfdf-49f5-a5f5-363c5f8da4f7": {
-          "type": "card",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/square.jpg",
-            "heading": "2024",
-            "content": "Andy"
+            "image": "shopify:\/\/shop_images\/aboutandy_7.jpg",
+            "heading": "2020",
+            "content": "Art for Causes is born, making the news all over the world and selling out the first drop featuring 10 artist in only 24h."
           }
         }
       },
       "block_order": [
-        "bafb909c-6b64-4e0d-acd8-94bf6279aa19",
-        "84132c18-c587-4b5e-b292-3d6898610683",
-        "300022fd-99c7-4a97-b661-b5097d4548f1",
-        "6d82ddba-a92c-4244-8979-4cdd8b86ca1a",
-        "78c39c50-8a90-4040-8e61-1ece91396a88",
-        "da88aec2-dde8-4844-abea-82873f684a75",
-        "2496c64a-bfdf-49f5-a5f5-363c5f8da4f7"
+        "3ec6c22f-6190-4edb-ab56-29cf71681d19",
+        "0fe1779b-50f7-4969-837e-033853d11909",
+        "16d58bd6-f561-494b-9235-a039e552cd86",
+        "79298977-f147-4b73-aba2-e14c588f3a84",
+        "66e00d57-62ad-450b-af27-b5ec339324ba",
+        "ad445586-ce10-4fb3-8583-3c35d062be33",
+        "6b8b3895-0365-440e-bf1b-72c4f8ab9085"
       ],
       "settings": {
         "button_label": "PURCHASE FOR PURPOSE",
         "button_link": "shopify:\/\/collections\/all-art",
-        "section_order": 12
+        "section_order": 10
       }
     }
   },
