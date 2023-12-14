@@ -1,0 +1,107 @@
+{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css' | stylesheet_tag }}
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
+
+{% if section.blocks.size >= 1 %}
+    <div class="image-carousel-cont carousel-{{ section.id }}">
+        {% assign desktop_blocks = section.blocks |  where: 'type', 'desktop_image' %}
+        {% assign mobile_blocks = section.blocks |  where: 'type', 'mobile_image' %}
+        {% if desktop_blocks.size >= 1 %}
+            <div class="image-carousel-desktop">
+                {% for item in desktop_blocks %}
+                    {% if item.settings.image %}
+                        <a href="{{ item.settings.link |  default: '#' }}" class="carousel-link">
+                            <img class="carousel-img" src="{{ item.settings.image | img_url: 'master' }}"> 
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if mobile_blocks.size >= 1 %}
+            <div class="image-carousel-mobile">
+                {% for item in mobile_blocks %}
+                    {% if item.settings.image %}
+                        <a href="{{ item.settings.link |  default: '#' }}" class="carousel-link">
+                            <img class="carousel-img" src="{{ item.settings.image | img_url: 'master' }}"> 
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+
+<script>
+  $(document).ready(function(){   
+    if ($(window).width() <= 768) {
+        $('.carousel-{{ section.id }} .image-carousel-mobile').slick({ 
+            dots: false,
+            infinite: true,
+            slidesToShow: 1,
+            centerMode: true,
+            adaptiveHeight: true,
+            prevArrow: $('.carousel-prev'),
+            nextArrow: $('.carousel-next')
+        });
+
+    }
+    else {
+        $('.carousel-{{ section.id }} .image-carousel-desktop').slick({
+            dots: false,
+            infinite: true,
+            slidesToShow: 1,
+            centerMode: true,
+            adaptiveHeight: true,
+            prevArrow: $('.carousel-prev'),
+            nextArrow: $('.carousel-next')
+        });
+    }
+  });
+</script>
+
+{% schema %}
+{ 
+    "name":"Image Carousel",
+    "settings": [
+
+    ],
+    "blocks": [
+    {
+        "type": "desktop_image",
+        "name": "Desktop image",
+        "settings": [
+        {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"  
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        }
+        ]
+    },
+    {
+        "type": "mobile_image",
+        "name": "Mobile image",
+        "settings": [
+        {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"  
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        }
+        ]
+    }
+    ],
+    "presets": [
+    {
+    "name": "Image Carousel"
+    }
+    ]
+}
+{% endschema %}
