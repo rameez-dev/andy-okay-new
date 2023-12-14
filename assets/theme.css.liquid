@@ -14789,3 +14789,29 @@ a:hover .overlay_dot {
     width: 250px;
   }
 }
+
+.image-carousel-cont {
+  width: 100%;
+  margin: 40px 0px;
+}
+.image-carousel-mobile {
+  display: none;
+}
+.carousel-link {
+  margin: 0px 10px;
+}
+.carousel-img {
+  width: 100%;
+  object-fit: contain;
+}
+@media only screen and (max-width:768px) {
+  .carousel-link {
+      margin: 0px 5px;
+  }
+  .image-carousel-desktop {
+      display: none;
+  }
+  .image-carousel-mobile {
+      display: block;
+  }
+}
