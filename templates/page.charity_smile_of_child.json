@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with charitable organizations all across the world to help them raise money with the power of art. We feature a different charity sitewide every month. By focusing our community&#x27;s efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "The Smile of the Child",
+        "paragraph": "<p>We are proud to present The Smile of the Child as our charity partner for the month of May. &quot;The Smile of the Child&quot; provides solutions to the daily vital needs of thousands of children navigating through difficult times with its values for Care, Dignity, Equality as its compass.<\/p>",
+        "image": "shopify:\/\/shop_images\/smile1.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "At a Glance",
+        "position": "row",
+        "paragraph": "<p><em>“We all know and talk about children in the streets that don’t smile. They don’t smile because they don’t have money, no toys, they don’t have any food and, some, don’t even have parents. So, start thinking and stop talking empty words, let’s all unite and give what we can to the poor ones: Albanian children, white and black, they are all just children and deserve to smile. This organization shall be called “The Smile of the Child”. So, let’s all help, united we can make it.”<br\/><br\/><\/em>November 1995. The voluntary organization “The Smile of the Child” is the vision of the 10-year old Andreas Yannopoulos who, shortly before losing his own battle for life, documented this dream of his, in his journal. <\/p>",
+        "image": "shopify:\/\/shop_images\/andreas.jpg",
+        "backgroud-color": "#ffffff",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "three-column": {
+      "type": "three-column",
+      "blocks": {
+        "ef3a49a9-5757-4292-bb4d-2b8f9383e534": {
+          "type": "quote",
+          "settings": {
+            "heading": "Nationwide",
+            "paragraph": "<p>Services for all children in Greece regardless of ethnicity and\/or religion and therapeutic actions for children victims of any form of violence.<\/p>",
+            "text-color": "#000000"
+          }
+        },
+        "7222ffde-2761-4eb6-8b44-30f50de3c761": {
+          "type": "quote",
+          "settings": {
+            "heading": "365 days a year",
+            "paragraph": "<p>Prevention activities for all children in Greece to address phenomena of violence and\/or child disappearances, as well as provide medical preventative examinations.<\/p>",
+            "text-color": "#000000"
+          }
+        },
+        "5674b3a9-d5fd-4563-b971-f43102f3d4b0": {
+          "type": "quote",
+          "settings": {
+            "heading": "24 hours a day",
+            "paragraph": "<p>Actions of Intervention for children victims of any form of violence, missing children, children with health problems, children living in poverty or threatened by poverty.<\/p>",
+            "text-color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "ef3a49a9-5757-4292-bb4d-2b8f9383e534",
+        "7222ffde-2761-4eb6-8b44-30f50de3c761",
+        "5674b3a9-d5fd-4563-b971-f43102f3d4b0"
+      ],
+      "settings": {
+        "backgroud-color": "#eeeee6",
+        "show": true,
+        "heading": "The mission",
+        "heading-color": "#000000"
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "The Smile of Every Child",
+        "paragraph": "<p>In 2021 “The Smile of the Child\" celebrates 25 years of continuous service in support of more than 1.700.000 children and their families. Andreas would be proud of the Ripple Effect of his vision, which still inspires thousands of children and adults.<\/p>",
+        "image": "shopify:\/\/shop_images\/smile2.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "dbd37ea3-9109-44a2-9e85-3f743daa012a": {
+      "type": "logolist",
+      "blocks": {
+        "0524fc05-3bdf-4b13-b32c-55b9dc7b4be7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_b02e3606-ae0b-46d5-b798-20adc77e008e.png"
+          }
+        },
+        "81ae1f54-eb45-4e1d-8c6d-b03e5ca4747e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andyokay_a_green.png"
+          }
+        }
+      },
+      "block_order": [
+        "0524fc05-3bdf-4b13-b32c-55b9dc7b4be7",
+        "81ae1f54-eb45-4e1d-8c6d-b03e5ca4747e"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Working together, for better.<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "\"If we all come together, we can make it.\"",
+        "paragraph": "<p>Andreas Yannopoulos<\/p>",
+        "image": "shopify:\/\/shop_images\/smile3.jpg",
+        "button": "Visit The Smile of the Child",
+        "link": "https:\/\/www.hamogelo.gr\/gr\/en\/",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "three-column",
+    "text-with-backgroundimage-two",
+    "dbd37ea3-9109-44a2-9e85-3f743daa012a",
+    "text-with-backgroundimage-three"
+  ]
+}
