@@ -12356,7 +12356,7 @@ S .SidebarMenu .Drawer__Main::after {
   }
 }
 .banner-section .banner-content {
-  max-width: 750px;
+  max-width: 550px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -12535,7 +12535,7 @@ S .SidebarMenu .Drawer__Main::after {
   padding: 100px 20px;
 }
 .section-details .section-details-holder {
-  max-width: 710px;
+  max-width: 550px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -12548,7 +12548,12 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .section-details .section-details-holder .simple-text {
   margin-bottom: 0px;
+  font-family: 'Adobe Caslon Pro'
 }
+.section-details .section-details-holder .simple-text h3{
+  font-style: italic;
+  font-size: 38px;
+} 
 .section-details .section-details-list {
   margin-top: 50px;
   list-style-type: none;
@@ -12664,6 +12669,7 @@ S .SidebarMenu .Drawer__Main::after {
 .mission-block-section .block-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .mission-block-section .block-content {
   display: flex;
@@ -12724,7 +12730,7 @@ S .SidebarMenu .Drawer__Main::after {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: 1150px;
+    max-width: 100%;
   }
 }
 .point-section .point-list .slick-list {
@@ -12746,7 +12752,6 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .point-section .point-list .list-items .items-holder {
   padding: 20px 10px;
-  max-width: 300px;
   margin: 0 auto;
 }
 .point-section .point-list .list-items .items-holder .item-heading {
@@ -14572,6 +14577,7 @@ a:hover .overlay_dot {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 60px;
 }
 .cta-button {
   background-color: #163bbc;
@@ -14582,4 +14588,204 @@ a:hover .overlay_dot {
   margin-top: 10px;
   font-size: 16px;
   border-radius: 4px;
+}
+
+.number-with-bg h2 {
+  font-family: 'Adobe Caslon Pro';
+}
+
+.number-with-bg .content-detail p {
+  font-style: italic;
+  font-size: 30px !important;
+}
+
+.updated-section h2 {
+  font-family: 'DIN Next LT Pro Bold';
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.updated-section h3 {
+  font-family: 'Adobe Caslon Pro';
+  font-size: 32px;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.updated-section h4 {
+  font-family: 'DIN Next LT Pro';
+  font-size: 26px;
+  line-height: 1.1;
+}
+.updated-section h5 {
+  font-family: 'Adobe Caslon Pro';
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.img-with-text h2 {
+  max-width: 50%;
+}
+.three-column-section h2 {
+  text-align: center;
+}
+.logolist-section h5 {
+  margin-bottom: 30px;
+}
+
+.img-with-text.with-img .content-holder {
+  text-align: left;
+  margin-left: 100px;
+  max-width: 500px;
+}
+.three-column-section .simple-text-content {
+  text-align: left;
+  margin: 0 50px;
+}
+
+.simple-text-content {
+  font-family: 'Adobe Caslon Pro';
+  font-size: 22px;
+  line-height: 1.6;
+}
+.three-column-footer {
+  display: none
+}
+.three-column-footer button svg{
+  margin-inline: 10px;
+  height: 12px;
+}
+
+.three-column-section:has(.point-list .list-items:first-child.slick-current) .three-column-footer .point-prev svg{
+  color: grey;
+}
+.three-column-section:has(.point-list .list-items:last-child.slick-current) .three-column-footer .point-next svg{
+  color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+  .number-with-bg .content-detail p {
+    font-size: 22px !important;
+  }
+  .img-with-text.with-img .content-holder {
+    margin-left: 0px;
+  }
+  .img-with-text h2 {
+    max-width: 60%;
+  }
+  .three-column-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .three-column-section .simple-text-content {
+    margin: 0 auto;
+  }
+}
+/* New main page css + Card Slider */
+.new-main-page.Container {
+  font-family: 'Adobe Caslon Pro';
+  line-height: 1.6;
+}
+.new-main-page.Container .PageContent h2 {
+  font-family: 'DIN Next LT Pro Bold' !important;
+  font-size: 32px !important;
+  text-transform: uppercase;
+  margin: 40px 0 0 !important;
+  line-height: 1;
+}
+.new-main-page.Container .PageContent h3 {
+  font-family: 'Adobe Caslon Pro' !important;
+  font-style: italic !important;
+  font-size: 24px !important;
+  margin: 5px 0 30px !important;
+  line-height: 1;
+}
+.new-main-page.Container .PageContent h4 {
+  font-family: 'DIN Next LT Pro Bold' !important;
+  font-size: 24px !important;
+  text-transform: uppercase;
+  margin: 0 !important;
+  line-height: 1;
+}
+.new-main-page.Container .PageContent > ul {
+  list-style: none;
+}
+.new-main-page.Container .PageContent > ul li::before {
+  content: '-';
+}
+.new-main-page .new-page-content {
+  display: flex;
+  flex-direction: column;
+}
+.card-img {
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: contain;
+  margin: 0 !important;
+}
+.cards-slideshow-item {
+  margin-right: 5px;
+}
+.card-heading {
+  font-family: 'DIN Next LT Pro Bold';
+  font-size: 20px;
+  margin-top: 10px;
+  line-height: 1;
+}
+.card-content {
+  font-family: 'Adobe Caslon Pro';
+  color: #5e5e5e;
+  padding-right: 10%;
+  line-height: 1.6;
+}
+.cards-carousel-header {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 24px;
+  margin-bottom: 10px;
+}
+.new-main-page .slick-control, .separate-card-slider .slick-control {
+  margin: 0px 10px;
+}
+.new-main-page .slick-control svg, .separate-card-slider .slick-control svg {
+  height: 10px;
+}
+.cards-slideshow-cont {
+  position: relative;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+.cards-slideshow-cont:has(.cards-carousel .cards-slideshow-item:first-child.slick-active) .cards-carousel-header .card-prev svg{
+  color: grey;
+}
+.cards-slideshow-cont:has(.cards-carousel .cards-slideshow-item:last-child.slick-active) .cards-carousel-header .card-next svg{
+  color: grey;
+}
+@media only screen and (min-width: 768px) {
+  .new-main-page.Container .PageContent > *:not(:has(img)){
+    margin-left: 150px !important;
+    margin-right: 150px !important;
+  }
+  .new-main-page.Container .PageContent > ul {
+    margin-left: 180px !important;
+  }
+  .new-main-page  .cards-carousel-header {
+    padding-right: 22%;
+  }
+  .cards-slideshow-cont {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .card-img {
+    height: 250px;
+    width: 250px;
+  }
+  .cards-slideshow-item {
+    width: 250px;
+  }
 }

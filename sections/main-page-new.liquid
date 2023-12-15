@@ -1,117 +1,17 @@
 <style>
-  .Container {
-    font-family: 'Adobe Caslon Pro';
-    line-height: 1.6;
-  }
-  .Container .PageContent h2 {
-    font-family: 'DIN Next LT Pro Bold' !important;
-    font-size: 32px !important;
-    text-transform: uppercase;
-    margin: 40px 0 0 !important;
-    line-height: 1;
-  }
-  .Container .PageContent h3 {
-    font-family: 'Adobe Caslon Pro' !important;
-    font-style: italic !important;
-    font-size: 24px !important;
-    margin: 5px 0 30px !important;
-    line-height: 1;
-  }
-  .Container .PageContent h4 {
-    font-family: 'DIN Next LT Pro Bold' !important;
-    font-size: 24px !important;
-    text-transform: uppercase;
-    margin: 0 !important;
-    line-height: 1;
-  }
-  .Container .PageContent > ul {
-    list-style: none;
-  }
-  .Container .PageContent > ul li::before {
-    content: '-';
-  }
-  .new-page-content {
-    display: flex;
-    flex-direction: column;
-  }
-  .card-img {
-    aspect-ratio: 1;
-    width: 100%;
-    object-fit: contain;
-    margin: 0 !important;
-  }
-  .cards-slideshow-item {
-    margin-right: 5px;
-  }
-  .card-heading {
-    font-family: 'DIN Next LT Pro Bold';
-    font-size: 20px;
-    margin-top: 5px;
-  }
-  .card-content {
-    font-family: 'Adobe Caslon Pro';
-    color: #5e5e5e;
-  }
-  .cards-carousel-header {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 24px;
-    margin-bottom: 10px;
-  }
-  .slick-control {
-    margin: 0px 10px;
-  }
-  .slick-control svg {
-    height: 10px;
-  }
   .cards-slideshow-cont {
-    position: relative;
-    width: 100vw;
-    left: calc(-50vw + 50%);
-    padding-left: 24px;
     order: {{ section.settings.section_order }} !important;
-    margin-bottom: 20px;
-  }
-  .cards-slideshow-cont:has(.cards-carousel .cards-slideshow-item:first-child.slick-active) .cards-carousel-header .card-prev svg{
-    color: grey;
-  }
-  .cards-slideshow-cont:has(.cards-carousel .cards-slideshow-item:last-child.slick-active) .cards-carousel-header .card-next svg{
-    color: grey;
-  }
-  @media only screen and (min-width: 768px) {
-    .Container .PageContent > *:not(:has(img)){
-      margin-left: 150px !important;
-      margin-right: 150px !important;
-    }
-    .Container .PageContent > ul {
-      margin-left: 180px !important;
-    }
-    .cards-carousel-header {
-      padding-right: 22%;
-    }
-    .cards-slideshow-cont {
-      padding-left: 50px;
-    }
-  }
-  @media only screen and (max-width: 330px) {
-    .card-img {
-      height: 250px;
-      width: 250px;
-    }
-    .cards-slideshow-item {
-      width: 250px;
-    }
   }
 </style>
 {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css' | stylesheet_tag }}
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
 
 {% if page.content != blank %}
-  <div class="Container">
+  <div class="new-main-page Container">
     <div class="PageContent PageContent--narrow Rte new-page-content">
       {{ page.content }}
       {% if section.blocks.size > 0 %}
-        <div class="cards-slideshow-cont">
+        <div class="cards-slideshow-cont slide-{{ section.id }}">
           {% if section.blocks.size > 1 %}
             <div class="cards-carousel-header">
               <button class="slick-prev card-prev slick-control">{% include 'icon' with 'select-arrow-left' %}</button>
@@ -145,12 +45,12 @@
       $(this).css('order', index+1);
     });
     
-    $('.cards-carousel').slick({
+    $('.slide-{{ section.id }} .cards-carousel').slick({
         dots: false,
         infinite: false,
         slidesToShow: 6.3,
-        prevArrow: $('.card-prev'),
-        nextArrow: $('.card-next'),
+        prevArrow: $('.slide-{{ section.id }} .card-prev'),
+        nextArrow: $('.slide-{{ section.id }} .card-next'),
         responsive: [
             {
               breakpoint: 2400,
