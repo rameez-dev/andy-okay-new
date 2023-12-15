@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#edece9",
+        "text-color": "#0d2b2b",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Greenpeace",
+        "paragraph": "<p>Greenpeace is known for its direct actions and has been described as one of the most <strong>visible environmental organisations<\/strong> in the world.<\/p>",
+        "image": "shopify:\/\/shop_images\/greenpeace7.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "What We're Doing",
+        "position": "row",
+        "paragraph": "<p><strong>We've been campaigning for a green and peaceful future for almost 50 years — and we're not stopping now. It's time to rise up like never before and fight for our climate and communities.<br\/><br\/><\/strong>We defend the natural world and promote peace by investigating, exposing, and confronting environmental abuse, championing environmentally responsible solutions, and advocating for the rights and well-being of all people.<br\/><br\/>We take action only where we and our supporters can make the biggest impact, where people’s lives are most affected, and where environmental risks are most dire.<\/p>",
+        "image": "shopify:\/\/shop_images\/greenpeace2.jpg",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "three-column": {
+      "type": "three-column",
+      "blocks": {
+        "043289d8-97f0-41c4-9d2c-60ee78e9d20d": {
+          "type": "quote",
+          "settings": {
+            "heading": "Protect the Oceans",
+            "paragraph": "<p>Planet Earth is mostly ocean. Water covers over 70% of the planet's surface. The seas harbour incredible wildlife, provide food for billions and help balance our climate. They are the source of all life on earth, and every day, they continue to nurture us. <br\/><br\/>We need to protect our oceans because without them life on Earth would not – and cannot – exist.<\/p>",
+            "text-color": "#0d2b2b"
+          }
+        },
+        "45445cf3-2b0f-40d7-81c2-721540a01007": {
+          "type": "quote",
+          "settings": {
+            "heading": "Climate Emergency",
+            "paragraph": "<p>We need to put people above the fossil fuel industry and truly act on climate. <\/p><p>We’re facing extreme weather events, catastrophic loss of wildlife and a crisis over future access to freshwater and food.<br\/><br\/>Catastrophic climate change can only be avoided if nations rapidly cut their greenhouse gas emissions, keep the fossils in the ground and change the current system for how we use the resources of our planet.<\/p>",
+            "text-color": "#0d2b2b"
+          }
+        },
+        "a4739306-8678-4281-aa7f-dc4293a6685f": {
+          "type": "quote",
+          "settings": {
+            "heading": "Protecting Forests",
+            "paragraph": "<p>Forests are crucial for the health and well-being of people, wildlife and our planet. Real forest is so much more than just trees. They’re home to roughly two-thirds of all land-dwelling plant and animal species, critical lifelines for communities big and small, and one of the last lines of defense against catastrophic climate change.<\/p>",
+            "text-color": "#0d2b2b"
+          }
+        }
+      },
+      "block_order": [
+        "043289d8-97f0-41c4-9d2c-60ee78e9d20d",
+        "45445cf3-2b0f-40d7-81c2-721540a01007",
+        "a4739306-8678-4281-aa7f-dc4293a6685f"
+      ],
+      "settings": {
+        "backgroud-color": "#edece9",
+        "show": true,
+        "heading": "Our campaigns",
+        "heading-color": "#000000"
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Mission",
+        "paragraph": "<p>Greenpeace is a global, independent campaigning organization that uses peaceful protest and creative communication to expose global environmental problems and promote solutions that are essential to a green and peaceful future.<\/p>",
+        "image": "shopify:\/\/shop_images\/greenpeace8.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "logolist": {
+      "type": "logolist",
+      "blocks": {
+        "b4a91704-a87d-4932-af45-2ed83fd8026a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Greenpeace_Logo_white.png"
+          }
+        },
+        "cbf22b5a-062c-495c-ab04-3f4c729d3485": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andylogo_white.png"
+          }
+        }
+      },
+      "block_order": [
+        "b4a91704-a87d-4932-af45-2ed83fd8026a",
+        "cbf22b5a-062c-495c-ab04-3f4c729d3485"
+      ],
+      "settings": {
+        "backgroud-color": "#0d2b2b",
+        "text": "<p>Together for better<\/p>",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Greenpeace works with thousands of volunteers who are on the inside track of their campaigns.",
+        "paragraph": "<p>Whether you’ve been an activist for decades or you’re just starting and want to learn how you can help, please take a moment and visit their site to learn more.<\/p>",
+        "image": "shopify:\/\/shop_images\/valley.jpg",
+        "button": "Take action",
+        "link": "https:\/\/www.greenpeace.org\/international\/",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "three-column",
+    "text-with-backgroundimage-two",
+    "logolist",
+    "text-with-backgroundimage-three"
+  ]
+}

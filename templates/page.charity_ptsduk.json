@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with charitable organizations all across the world to help them raise money with the power of art. We feature a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "PTSD UK",
+        "paragraph": "<p>We are proud to present PTSD UK as our charity partner for the month of February. PTSD UK is the only charity in the UK dedicated to raising awareness of post-traumatic stress disorder – no matter the trauma that caused it.<\/p>",
+        "image": "shopify:\/\/shop_images\/2_38f6bf05-805b-4da6-ba82-e00311f52712.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "About PTSD UK",
+        "position": "row",
+        "paragraph": "<p>PTSD UK was founded in 2015 by Jacqui after <a href=\"https:\/\/www.ptsduk.org\/about-ptsd-uk\/my-own-experience\/\">her own experiences suffering with PTSD<\/a>. The lack of understanding, provisions and information made Jacqui realise that help and education is needed for those struggling with PTSD – along with their friends and family.<\/p><p>PTSD UK is currently the only charity in the UK dedicated to raising awareness of post-traumatic stress disorder – no matter the trauma that caused it.<\/p><p>Evidence suggests that around 70% of people who suffer with PTSD in the UK do not receive any professional help at all, and many of those who are aware they have it are not getting the help and support they need.<\/p><p>Our charity aims to raise awareness of PTSD in three main areas – it’s causes, symptoms and the treatments available. These 3 areas are of vital importance to those suffering with the condition.<\/p>",
+        "image": "shopify:\/\/shop_images\/square.jpg",
+        "backgroud-color": "#ffffff",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Our mission is to provide support and information for anyone experiencing PTSD. We campaign to improve services, raise awareness and promote understanding of the condition and treatments available.",
+        "paragraph": "",
+        "image": "shopify:\/\/shop_images\/3_5a8b5e34-bddd-4f63-b850-ebfa079a8c3e.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "b46abcff-4f57-4fb3-a56d-147e60564491": {
+      "type": "logolist",
+      "blocks": {
+        "b7008518-4033-4246-9a60-927e4b377ef1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_adc0a597-fbfc-49c1-bbea-b1acd82d62b3.jpg"
+          }
+        },
+        "6c9deba0-cec4-4f05-a0c8-604114879775": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andyokay_a_green.png"
+          }
+        }
+      },
+      "block_order": [
+        "b7008518-4033-4246-9a60-927e4b377ef1",
+        "6c9deba0-cec4-4f05-a0c8-604114879775"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Working together, for better.<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "text-with-backgroundimage-two",
+    "b46abcff-4f57-4fb3-a56d-147e60564491"
+  ]
+}
