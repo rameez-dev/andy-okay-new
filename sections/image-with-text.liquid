@@ -1,20 +1,27 @@
+<style>
+  @media only screen and (min-width: 641px) {
+    .mission-block-section {
+      flex-direction: {{ section.settings.position }} !important;
+    }
+  }
+</style>
 {%- if section.settings.show == true -%}
-<div class="mission-block-section">
+<div class="{%- if section.settings.image != blank -%}with-img{% endif %} mission-block-section updated-section img-with-text">
   {%- if section.settings.image != blank -%}
   <div class="block-image">
     <img src="{{section.settings.image | img_url: 'master' }}" alt="">
   </div>
-  {%endif%}
+  {% endif %}
   <div class="block-content" style="background-color: {{section.settings.backgroud-color}}">
     <div class="content-holder image-text">
-      <h4 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4 content-heading" style="color: {{section.settings.text-color}}">{{section.settings.heading}}</h4>
-      <div class="SectionHeader__SubHeading Heading u-h6 content-detail" style="color: {{section.settings.text-color}}">
+      <h2 style="color: {{section.settings.text-color}}">{{section.settings.heading}}</h2>
+      <div class="simple-text-content" style="color: {{section.settings.text-color}}">
         {{section.settings.paragraph}}
       </div>
     </div>
   </div>
 </div>
-{%endif%}
+{% endif %}
 {% schema %}
   { 
     "name":"Image With Text",
@@ -23,6 +30,22 @@
         "id": "heading",
         "type": "text",
         "label": "Heading"   
+      },
+      {
+        "id": "position",
+        "type": "select",
+        "label": "Image Position",
+        "options": [
+        {
+          "value": "row",
+          "label": "Left"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "row-reverse"  
       },
       {
         "id": "paragraph",

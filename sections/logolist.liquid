@@ -1,7 +1,7 @@
 {%- if section.settings.show == true -%}
-<div class="section-details" style="background-color: {{section.settings.backgroud-color}}">
+<div class="section-details updated-section logolist-section" style="background-color: {{section.settings.backgroud-color}}">
   <div class="section-details-holder">
-    <h3 class="SectionHeader__Heading Heading u-h2 details-heading" style="color: {{section.settings.text-color}}">{{ section.settings.text}}</h3>
+    <h5 style="color: {{section.settings.text-color}}">{{ section.settings.text}}</h5>
   </div>
   <ul class="section-details-list">
     {% for block in section.blocks %}
