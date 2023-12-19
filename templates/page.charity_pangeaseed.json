@@ -46,29 +46,30 @@
         "show": true
       }
     },
-    "logolist": {
-      "type": "logolist-charity-new",
+    "15e284dd-a959-4f59-8a61-3cc551c37f6d": {
+      "type": "logolist",
       "blocks": {
-        "d34d7595-06be-4340-af96-26f97c70c23f": {
+        "b67603b0-622b-4c01-a077-afc965c7b1ff": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pangeaseed_d5106276-c653-4438-ad87-370560dd8d81.jpg",
-            "handle": ""
+            "image": "shopify:\/\/shop_images\/pangeaseed_d5106276-c653-4438-ad87-370560dd8d81.jpg"
           }
         },
-        "dde9aa50-e6bf-4ebc-a8ac-ba0d08afd20a": {
+        "ab2d1e1f-9c35-4278-bba4-84a79d8af5d1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/andyokay_a_green.png",
-            "handle": ""
+            "image": "shopify:\/\/shop_images\/andyokay_a_green.png"
           }
         }
       },
       "block_order": [
-        "d34d7595-06be-4340-af96-26f97c70c23f",
-        "dde9aa50-e6bf-4ebc-a8ac-ba0d08afd20a"
+        "b67603b0-622b-4c01-a077-afc965c7b1ff",
+        "ab2d1e1f-9c35-4278-bba4-84a79d8af5d1"
       ],
       "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Working together, for better<\/p>",
+        "text-color": "#000000",
         "show": true
       }
     },
@@ -90,7 +91,7 @@
     "text-with-backgroundimage-one",
     "image-with-text",
     "text-with-backgroundimage-two",
-    "logolist",
+    "15e284dd-a959-4f59-8a61-3cc551c37f6d",
     "text-with-backgroundimage-three"
   ]
 }
