@@ -112,7 +112,7 @@
       "settings": {
         "autoplay": true,
         "cycle_speed": 3,
-        "background_color": "#161616",
+        "background_color": "#000000",
         "heading": "",
         "heading_text_color": "#8a8a8a"
       }
@@ -131,7 +131,7 @@
           "type": "badges",
           "settings": {
             "title": "161.341",
-            "subheading": "Collectors for Charity"
+            "subheading": "Artworks sold for Charity"
           }
         },
         "7d847131-15e2-49e3-b92e-c3130bd5fab1": {
