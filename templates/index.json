@@ -499,10 +499,12 @@
       "type": "front-page-section",
       "settings": {
         "image": "shopify:\/\/shop_images\/ringo_starr_beatles_andyokay.jpg",
-        "title": "YOU SHOP – WE GIVE",
+        "title": "YOU SHOP AND WE GIVE <br> BACK TO THE EARTH",
         "content": "<p>Art is a fantastic way to bring attention to social issues that need addressing. This is how Art for Causes changes lives...<\/p>",
         "button_label": "Learn more",
-        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives"
+        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives",
+        "bg_color": "#000000",
+        "text_color": "#ffffff"
       }
     },
     "1616425487e7f8d53c": {
