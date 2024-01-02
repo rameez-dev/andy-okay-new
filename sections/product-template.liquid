@@ -127,6 +127,24 @@
 
         {%- assign image_count = image_count | plus: 1 -%}
       {%- endfor -%}
+
+      {% if section.settings.gallery_video != blank %}
+        {% assign video = section.settings.gallery_video %}
+        <div id="Image{{ video.id }}" class="Product__SlideItem Product__SlideItem--image Carousel__Cell" data-image-id="{{ video.id }}" data-image-position="{% increment image_position %}">
+          <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: video.aspect_ratio }}%; --aspect-ratio: {{ video.aspect_ratio }};">
+            {% if video.media_type == 'video' %}
+              {{ video | video_tag: autoplay: true, muted: true, controls: true, class: "Image--lazyLoad Image--fadeIn" }} 
+            {% endif %}
+
+            <span class="Image__Loader"></span>
+
+            <noscript>
+              <img src="{{ video.preview_image | img_url: '400x' }}" alt="{{ video.preview_image.alt | escape }}">
+            </noscript>
+          </div>
+        </div>
+        
+      {% endif %}
     {%- endcapture -%}
 
     <style>
@@ -207,7 +225,7 @@
         {%- endif -%}
 
         {%- capture slideshow_nav -%}
-          {%- if image_count > 1 -%}
+          {%- if image_count > 1 or section.settings.gallery_video != blank -%}
             {%- if section.settings.show_thumbnails -%}
               <div class="Product__SlideshowNav Product__SlideshowNav--thumbnails">
                 <div class="Product__SlideshowNavScroller">
@@ -240,6 +258,20 @@
                       </span>
                     {%- endif -%}
                   {%- endfor -%}
+                  {% if section.settings.gallery_video != blank %}
+                    {% assign video = section.settings.gallery_video %}
+                      {%- if section.settings.stack_images -%}
+                        <a href="#Image{{ video.id }}" data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio" style="--aspect-ratio: {{ video.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ video.preview_image | img_url: '70x' }}">
+                          <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                        </a>
+                      {%- else -%}
+                        <span data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio " style="--aspect-ratio: {{ video.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ video.preview_image | img_url: '70x' }}">
+                          <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                        </span>
+                      {%- endif -%}
+                  {% endif %}
                 </div>
               </div>
             {%- endif -%}
@@ -254,6 +286,10 @@
 
                     <a href="#Image{{ image.id }}" class="Product__SlideshowNavDot {% if forloop.first %}is-selected{% endif %}"></a>
                   {%- endfor -%}
+                  {% if section.settings.gallery_video != blank %}
+                    {% assign video = section.settings.gallery_video %}
+                    <a href="#Image{{ video.id }}" class="Product__SlideshowNavDot"></a>
+                  {% endif %}
                 </div>
               </div>
             {%- endif -%}
@@ -615,6 +651,11 @@ This is the root container for the zoom functionality. Must not be removed, as o
   "name": "Product page",
   "class": "shopify-section--bordered",
   "settings": [
+    {
+      "type" : "video",
+      "id" : "gallery_video",
+      "label" : "Gallery Video"
+    },
     {
       "type" : "color",
       "id" : "pwyw_btn_color",
