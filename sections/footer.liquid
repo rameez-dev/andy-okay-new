@@ -78,8 +78,8 @@
                       {%- endif -%}
 
                       <input type="hidden" name="contact[tags]" value="newsletter">
-                      <input type="email" name="contact[email]" class="Form__Input" style="border: 1px solid #000;" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required>
-                      <button type="submit" class="Form__Submit Button Button--primary">{{ 'footer.newsletter.submit' | t }}</button>
+                      <input type="email" name="contact[email]" class="Form__Input" style="border: 1px solid #000;" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required onclick="event.stopPropagation();">
+                      <button type="submit" class="Form__Submit Button Button--primary" onclick="event.stopPropagation();">{{ 'footer.newsletter.submit' | t }}</button>
                     {%- endif -%}
                   {%- endform -%}
                 </div>
