@@ -502,7 +502,9 @@
         "title": "YOU SHOP – WE GIVE",
         "content": "<p>Art is a fantastic way to bring attention to social issues that need addressing. This is how Art for Causes changes lives...<\/p>",
         "button_label": "Learn more",
-        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives"
+        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives",
+        "bg_color": "#000000",
+        "text_color": "#ffffff"
       }
     },
     "1616425219eaa2e028": {
