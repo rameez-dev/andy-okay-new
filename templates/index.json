@@ -131,14 +131,13 @@
           "type": "badges",
           "settings": {
             "title": "161.341",
-            "subheading": "Collectors for Charity"
+            "subheading": "Artworks sold for Charity"
           }
         },
         "7d847131-15e2-49e3-b92e-c3130bd5fab1": {
           "type": "badges",
           "settings": {
             "title": "12",
-            "subheading": "Charity Partners"
             "subheading": "Charity Partners"
           }
         }
@@ -154,7 +153,6 @@
       "type": "text-with-link",
       "settings": {
         "heading": "Art for Earth lovers",
-        "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with the world's most important nonprofits, we made it happen...<\/p>",
         "paragraph": "<p>Stunning, meaningful art with incredible quality. But affordable. An impossible ask... until now. By matching award-winning artists with the world's most important nonprofits, we made it happen...<\/p>",
         "link-text": "FIND OUT MORE",
         "link": "shopify:\/\/pages\/impact",
@@ -344,7 +342,9 @@
             "title": "",
             "grid_items_count": 10,
             "button_text": "View all >",
-            "button_text_color": "#000000"
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -352,7 +352,8 @@
         "162537469203ba0fa9-0"
       ],
       "settings": {
-        "title": "LATEST AND GREATEST",
+        "title": "Grab one of our best sellers",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -440,7 +441,9 @@
             "title": "",
             "grid_items_count": 16,
             "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "button_text_color": "#000000",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
@@ -448,7 +451,8 @@
         "16131224958a8baaef-0"
       ],
       "settings": {
-        "title": "OUR BEST SELLERS",
+        "title": "The latest and greatest",
+        "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
         "show_vendor": false,
@@ -494,40 +498,13 @@
     "16616061592e8072c4": {
       "type": "front-page-section",
       "settings": {
-        "image": "shopify:\/\/shop_images\/newdrop_blackfriday.jpg",
-        "title": "BLACK FRIDAY DROP",
-        "content": "<p>In a world where inspiration is key to progress, we’re bringing you something never-before-seen in the art space…<\/p>",
-        "button_label": "Purchase for purpose",
-        "button_link": "shopify:\/\/collections\/exclusive-black-friday-drop-mood-masterpieces"
-      }
-    },
-    "154b9c6e-9c0c-4aef-897e-159bd94c086a": {
-      "type": "featured-collections",
-      "blocks": {
-        "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "summer-wall-art",
-            "title": "",
-            "grid_items_count": 8,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "154b9c6e-9c0c-4aef-897e-159bd94c086a-16889784078b1ff309-0"
-      ],
-      "settings": {
-        "title": "HOT PICKS OF THE SEASON",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "1",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
+        "image": "shopify:\/\/shop_images\/ringo_starr_beatles_andyokay.jpg",
+        "title": "YOU SHOP – WE GIVE",
+        "content": "<p>Art is a fantastic way to bring attention to social issues that need addressing. This is how Art for Causes changes lives...<\/p>",
+        "button_label": "Learn more",
+        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives",
+        "bg_color": "#000000",
+        "text_color": "#ffffff"
       }
     },
     "1616425219eaa2e028": {
@@ -581,7 +558,6 @@
       "block_order": [
         "1616425487e7f8d53c-0"
       ],
-      "disabled": true,
       "settings": {
         "title": "Reach your goals",
         "subheading_color": "#8a8a8a",
@@ -595,33 +571,25 @@
         "background_color": "#f0f0f0"
       }
     },
-    "1616425487e7f8d53c": {
-      "type": "featured-collections",
+    "1629722279ac42c7cf": {
+      "type": "blog-posts-new",
       "blocks": {
-        "1616425487e7f8d53c-0": {
-          "type": "collection",
+        "1629722279ac42c7cf-0": {
+          "type": "blog",
           "settings": {
-            "collection": "motivational-art",
-            "title": "",
-            "grid_items_count": 12,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff"
+            "blog": "the-gallerist"
           }
         }
       },
       "block_order": [
-        "1616425487e7f8d53c-0"
+        "1629722279ac42c7cf-0"
       ],
       "settings": {
-        "title": "Reach your goals",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
+        "subheading": "The low-down on top trends, artist interviews and cool guides that make a difference.",
+        "title": "The Gallerist",
+        "button_link": "https:\/\/andyokay.com\/blogs\/okay-blog",
+        "button_text": "View All >",
+        "button_text_color": "#000000"
       }
     },
     "161039065890033dbc": {
@@ -957,11 +925,8 @@
     "16131224958a8baaef",
     "1643642736f42e4efd",
     "16616061592e8072c4",
-    "154b9c6e-9c0c-4aef-897e-159bd94c086a",
     "1616425219eaa2e028",
-    "16408572584cf4e97b",
     "1616425487e7f8d53c",
-    "161039065890033dbc",
     "1629722279ac42c7cf",
     "161039065890033dbc",
     "1571758473108",
