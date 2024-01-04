@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#edece9",
+        "text-color": "#0d2b2b",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Animal Love",
+        "paragraph": "<p>A non-profit, no-kill charitable organization, founded on the belief that all animals deserve respectful and loving treatment and must be protected by humans as well as by law.<\/p>",
+        "image": "shopify:\/\/shop_images\/animal1.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "What We Do",
+        "position": "row",
+        "paragraph": "<p>\"Whenever we come across animals who are abused, abandoned, sick or injured, we take action to prevent further suffering and give them a safe and loving home.  Homeless, injured or sick animals who find their way to our rescue center get proper medical attention and care, and become a part of our family. Our animal friends come from nearby and not so nearby areas, and live with us for the rest of their life.\"<\/p>",
+        "image": "shopify:\/\/shop_images\/animal2.jpg",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Our shelter",
+        "paragraph": "<p>At the rescue center, every animal gets routine personal attention that includes health and nutrition checks, mood observation and constant cleaning of their living areas. Dogs get two daily walks as well as one hour of ‘free time’ in an open area, cats get two hours of ‘free time’.  Other animals (geese, horses, hen, goats, sheep, ducks) have a large open area in which to move around.<\/p>",
+        "image": "shopify:\/\/shop_images\/animal3.jpg",
+        "button": "Read More",
+        "link": "https:\/\/animallove.cr\/residents\/",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "e4127f72-5d96-41e4-9f33-720d9177be94": {
+      "type": "logolist",
+      "blocks": {
+        "ccba50c0-ebca-43c1-b031-561207f4a8d1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andylogo_edf72b0c-51f5-4859-84a5-cdafea55cf97.png"
+          }
+        },
+        "c3ab1b37-fdaf-4fde-af3b-2595c0011a9d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/new-animal-love-logo.png"
+          }
+        }
+      },
+      "block_order": [
+        "ccba50c0-ebca-43c1-b031-561207f4a8d1",
+        "c3ab1b37-fdaf-4fde-af3b-2595c0011a9d"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Together, for better<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "text-with-backgroundimage-two",
+    "e4127f72-5d96-41e4-9f33-720d9177be94"
+  ]
+}

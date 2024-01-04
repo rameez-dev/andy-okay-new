@@ -36,6 +36,10 @@
     <div class="quick-view-button"><a class="quick-view" data-handle="{{ product.handle }}" href="javascript:void(0);">Quick View</a></div>
     {%- endcomment -%}
     <a href="{% if is_sold_out_collection == true %}javascript:void(0);{% else %}{{ product.url | within: collection }}{% endif %}" class="ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %} {% if is_sold_out_collection == true %}soldout-newsletter-popup-trigger{% endif %}">
+      {% if block.settings.show_overlay_dot %}
+        <div class="overlay_dot {% if product.tags contains 'Horizonal' %}horizontal_dot{% endif %}" style="background: {{ block.settings.overlay_dot_color }};"></div>
+      {% endif %}
+
       {%- if use_horizontal -%}
         {%- assign max_width = 125 -%}
       {%- else -%}

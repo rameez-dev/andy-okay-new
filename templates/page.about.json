@@ -17,13 +17,15 @@
         "text": "<p>We exist to help nonprofits do their world-changing work. Andy okay raises money to important causes by offering incredible limited edition art for a price YOU decide. What you give for your art will benefit an important organisation. <\/p>",
         "backgroud-color": "#1c1b1b",
         "text-color": "#ffffff",
-        "show": true
+        "show": true,
+        "height": 1
       }
     },
     "image-with-text": {
       "type": "image-with-text",
       "settings": {
         "heading": "How The Giving is Done",
+        "position": "row-reverse",
         "paragraph": "<p>We want to use the power of art to create change. Real change. As environmentalists and artists our mission is to guide you on your journey and empower you to do your best when it comes to the environment. You don't have to be a hardcore environmentalist to make a difference. It's the little things, like riding your bike to work, bringing your own grocery bag, and buying an item that gives profits to charity - they all add up. Especially when thousands of other people start doing them too.<\/p>",
         "image": "shopify:\/\/shop_images\/EarthHug.gif",
         "backgroud-color": "#eeeee9",
@@ -66,7 +68,9 @@
       ],
       "settings": {
         "backgroud-color": "#ffffff",
-        "show": true
+        "show": true,
+        "heading": "",
+        "heading-color": "#000000"
       }
     },
     "text-with-backgroundimage-one": {
@@ -82,7 +86,7 @@
       }
     },
     "text-with-backgroundimage-two": {
-      "type": "text-with-backgroundimage-two",
+      "type": "text-with-backgroundimage-one",
       "settings": {
         "heading": "1 Million To Charity by 2030",
         "paragraph": "<p>Our vision is to give 1 million to charity by 2030, which will help those organisations do their world-changing work. So far we've supported 12 important nonprofits and help them raise over $20.000.<\/p>",
@@ -134,6 +138,8 @@
         "show": true
       }
     },
+    "3af47476-bd24-4ed6-98ed-7fd689e4631b": {
+      "type": "simple-text",
     "0427ff20-2132-4ba4-9f66-b896908b1ff1": {
       "type": "simple-text-charity",
       "blocks": {
@@ -152,30 +158,11 @@
         "7d975ded-326f-4a81-b9a8-ba2e7ec67cad"
       ],
       "settings": {
-        "show": true
-      }
-    },
-    "explore": {
-      "type": "explore",
-      "blocks": {
-        "da34a809-dfd1-4110-979e-66da7c3adce2": {
-          "type": "quote",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scandygirl-5.jpg",
-            "heading": "",
-            "text-color": "#000000",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "da34a809-dfd1-4110-979e-66da7c3adce2"
-      ],
-      "settings": {
-        "backgroud-color": "",
-        "heading": "",
-        "text-color": "",
-        "show": false
+        "text": "<p><em>Together, we can prioritize purpose over profit and protect this wondrous planet, our only home.<\/em><\/p>",
+        "backgroud-color": "#000000",
+        "text-color": "#ffffff",
+        "show": true,
+        "height": 1.8
       }
     }
   },
@@ -184,10 +171,11 @@
     "simple-text",
     "image-with-text",
     "three-column",
+    "image-with-text",
+    "three-column",
     "text-with-backgroundimage-one",
     "text-with-backgroundimage-two",
     "logolist",
-    "0427ff20-2132-4ba4-9f66-b896908b1ff1",
-    "explore"
+    "3af47476-bd24-4ed6-98ed-7fd689e4631b"
   ]
 }

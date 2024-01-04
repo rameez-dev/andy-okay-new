@@ -1,0 +1,145 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#edece9",
+        "text-color": "#0d2b2b",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "The Rainforest Trust",
+        "paragraph": "<p>In 1988, three visionary conservationists had a bold plan: to purchase and protect threatened rainforests and save endangered wildlife through community engagement and local partnerships.<\/p>",
+        "image": "shopify:\/\/shop_images\/rainforest1.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "",
+        "position": "row",
+        "paragraph": "<p><strong>With every acre, The Rainforest Trust have grown in scale, scope and determination. They’ve already helped protect over 37 million acres around the world and have millions of acres in the pipeline, working toward the security of 50 million acres.<\/strong><\/p><p>But they don’t just see these acres as land for protection. They see these acres as home to countless species who rely on the habitats contained within. They see them as the backyards of thousands of people who rely on them for fresh water and food supplies. They see them as part of the fabric of this planet we live on.<\/p>",
+        "image": "shopify:\/\/shop_images\/rainforest2.jpg",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "three-column": {
+      "type": "three-column",
+      "blocks": {
+        "5a972e22-c88f-4c48-a8e5-5b9d0dad564a": {
+          "type": "quote",
+          "settings": {
+            "heading": "Saving Species",
+            "paragraph": "<p>Fighting to save species from extinction, Rainforest Trust strategically targets biodiversity hotspots that hold the greatest concentrations of endangered flora and fauna and preserves these lands through the creation of new protected areas. <br\/><br\/>With proper ongoing management, these nature reserves combat the major challenges that threaten endangered species by safeguarding vitally important habitat while preventing hunting and poaching.<\/p>",
+            "text-color": "#000000"
+          }
+        },
+        "3e6f8fd4-b280-4ab0-9b1e-87b37fda9a3e": {
+          "type": "quote",
+          "settings": {
+            "heading": "Protecting Our Planet",
+            "paragraph": "<p>Earth’s rainforests provide the world with freshwater and oxygen, and they also mitigate the effects of climate change. Despite this, less than half of the tropical rainforest biome remains as intact forested landscapes, and 70,000 more acres are lost each day.<\/p><p>To stop this devastation, Rainforest Trust is working diligently to establish new protected areas and safeguard the planet’s remaining tropical forests.<\/p>",
+            "text-color": "#000000"
+          }
+        },
+        "919f4072-9578-41bb-b78f-45c6cfb3e794": {
+          "type": "quote",
+          "settings": {
+            "heading": "Caring for Communities",
+            "paragraph": "<p>The long-term success of a protected area is not possible without the support of its surrounding community. Rainforest Trust embraces a bottom-up approach to conservation, empowering local partners and community members to spearhead the creation of each reserve and manage it effectively. <br\/><br\/>Additionally, Rainforest Trust’s protected areas often improve the lives of local people by providing jobs, education and health benefits while assisting indigenous communities gain legal recognition of their lands.<\/p>",
+            "text-color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "5a972e22-c88f-4c48-a8e5-5b9d0dad564a",
+        "3e6f8fd4-b280-4ab0-9b1e-87b37fda9a3e",
+        "919f4072-9578-41bb-b78f-45c6cfb3e794"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "show": true,
+        "heading": "How we do it",
+        "heading-color": "#000000"
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Our Approach",
+        "paragraph": "<p>Rainforest Trust purchases and protects the most threatened tropical forests, saving endangered wildlife through partnerships and community engagement. Through these highly effective partnerships, we can ensure sustainable results necessary for the long-term protection of tropical ecosystems and the wildlife they hold.<\/p>",
+        "image": "shopify:\/\/shop_images\/rainforest3.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "logolist": {
+      "type": "logolist",
+      "blocks": {
+        "198bc25f-9814-421e-bfbe-8b1c2d8d206b": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/RT-horizontal-logo-white.png"
+          }
+        },
+        "0d7902de-0634-4e70-b475-a449668d23ca": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andylogo_white.png"
+          }
+        }
+      },
+      "block_order": [
+        "198bc25f-9814-421e-bfbe-8b1c2d8d206b",
+        "0d7902de-0634-4e70-b475-a449668d23ca"
+      ],
+      "settings": {
+        "backgroud-color": "#0d2b2b",
+        "text": "<p>Together for better<\/p>",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "With your help, we can make a difference.",
+        "paragraph": "<p>Every action we take now to protect rainforest will have a lasting impact on the future by maintaining our planet’s critical ecosystems.<\/p>",
+        "image": "shopify:\/\/shop_images\/rainforest4.jpg",
+        "button": "Get Involved",
+        "link": "https:\/\/www.rainforesttrust.org\/",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "explore": {
+      "type": "explore-charity-new",
+      "settings": {
+        "show": false
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "three-column",
+    "text-with-backgroundimage-two",
+    "logolist",
+    "text-with-backgroundimage-three",
+    "explore"
+  ]
+}

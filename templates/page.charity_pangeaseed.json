@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with charitable organizations all across the world to help them raise money with the power of art. We feature a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "PangeaSeed",
+        "paragraph": "<p>We are proud to present PangeaSeed as our charity partner for the month of January. Pangeaseed is an international nonprofit organization acting at the intersection of culture and environmentalism to further the conservation of our oceans.<\/p>",
+        "image": "shopify:\/\/shop_images\/2_2af24f7b-233e-4f8e-8d1e-b02e1c3315fe.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "About Pangeaseed",
+        "position": "row",
+        "paragraph": "<p>PangeaSeed Foundation aims to unify and connect individuals around the world, opening a dialog to share ideas and develop a better global understanding of our connection with the oceans. Through education, awareness and action we are working together to solve this environmental crisis.<\/p><p>Through PangeaSeed Foundation, we strive to grow together to develop a better global understanding of the need to protect oceans and conserve its valuable resources. The “Seed” in our name, is also an acronym for 'Sustainability, Education, Ecology and Design', the four core pillars we stand by.<\/p>",
+        "image": "shopify:\/\/shop_images\/3_6f3ec7c3-7681-4582-9986-5be8f249829d.jpg",
+        "backgroud-color": "#edece9",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Pangeaseeds Mission",
+        "paragraph": "<p>To empower individuals and communities to create meaningful environmental change for oceans through Science, Education, and ARTivism (S.E.A.).<\/p>",
+        "image": "shopify:\/\/shop_images\/valley.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "15e284dd-a959-4f59-8a61-3cc551c37f6d": {
+      "type": "logolist",
+      "blocks": {
+        "b67603b0-622b-4c01-a077-afc965c7b1ff": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/pangeaseed_d5106276-c653-4438-ad87-370560dd8d81.jpg"
+          }
+        },
+        "ab2d1e1f-9c35-4278-bba4-84a79d8af5d1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andyokay_a_green.png"
+          }
+        }
+      },
+      "block_order": [
+        "b67603b0-622b-4c01-a077-afc965c7b1ff",
+        "ab2d1e1f-9c35-4278-bba4-84a79d8af5d1"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Working together, for better<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Join our mission to raise $30,000 to build 7 Emergency Tiny Homes in Oakland for our Houseless Community Members.",
+        "paragraph": "",
+        "image": "shopify:\/\/shop_images\/gr.jpg",
+        "button": "DONATE TO ABC",
+        "link": "",
+        "text-color": "#000000",
+        "show": false
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "text-with-backgroundimage-two",
+    "15e284dd-a959-4f59-8a61-3cc551c37f6d",
+    "text-with-backgroundimage-three"
+  ]
+}

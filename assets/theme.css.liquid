@@ -5751,23 +5751,23 @@ select::-ms-expand {
   }
 }
 .Section--spacingNarrow .ProductList--carousel.blog_list_carousel .Carousel__Cell {
-  width: 22.75% !important;
+  width: 32% !important;
   margin: 0px 9.5px;
   padding: 0px 2.5px;
 }
 @media (min-width: 600px) and (max-width: 767px) {
   .Section--spacingNarrow .ProductList--carousel.blog_list_carousel .Carousel__Cell {
-    width: 33% !important;
+    width: 50% !important;
   }
 }
 @media (min-width: 450px) and (max-width: 599px) {
   .Section--spacingNarrow .ProductList--carousel.blog_list_carousel .Carousel__Cell {
-    width: 50% !important;
+    width: 60% !important;
   }
 }
 @media (max-width: 449px) {
   .Section--spacingNarrow .ProductList--carousel.blog_list_carousel .Carousel__Cell {
-    width: 66% !important;
+    width: 90% !important;
     padding: 0px 2.5px;
   }
 }
@@ -6700,6 +6700,7 @@ select::-ms-expand {
 }
 .ProductItem__ImageWrapper {
   display: block;
+  position: relative;
 }
 .ProductItem__Image--alternate {
   position: absolute;
@@ -11897,7 +11898,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 @media screen and (max-width: 640px) {
   .tags-section {
-    margin: 15px 0;
+    margin: 15px 0 20px;
     padding-bottom: 7px;
   }
   .search_preload .tags-section{
@@ -11957,8 +11958,9 @@ S .SidebarMenu .Drawer__Main::after {
 }
 /*Quick Look Section css*/
 .tags-section.quick-looks .SectionHeader__Heading {
-  font-family: "DIN Med";
+  font-family: 'DIN Next LT Pro Cond';
   font-weight: 500;
+  text-transform: uppercase;
   margin-top: 0px;
 }
 @media screen and (max-width: 640px) {
@@ -12040,8 +12042,7 @@ S .SidebarMenu .Drawer__Main::after {
   }
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
-  font-family: "DIN Med";
-  font-weight: 500;
+  font-family: "Adobe Caslon Pro";
   font-size: 14px;
   line-height: normal;
   color: #000;
@@ -12355,7 +12356,7 @@ S .SidebarMenu .Drawer__Main::after {
   }
 }
 .banner-section .banner-content {
-  max-width: 750px;
+  max-width: 550px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -12442,9 +12443,8 @@ S .SidebarMenu .Drawer__Main::after {
   margin-bottom: 5px;
   font-size: 50px;
   font-family: DIN Next LT Pro;
-  font-weight: bold;
-  letter-spacing: -2px;
   line-height: 42px;
+  font-weight: 800;
 }
 @media screen and (max-width: 640px) {
   .counter-home-sec .count-list li h3 {
@@ -12465,7 +12465,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .counter-home-sec .count-list li p {
   font-size: 18px;
-  font-family: 'DIN Med';
+  font-family: 'Adobe Caslon Pro';
   line-height: 18px;
   white-space: nowrap;
 }
@@ -12482,7 +12482,7 @@ S .SidebarMenu .Drawer__Main::after {
   }
 }
 .home-sep-sec {
-  padding: 40px 10px 20px;
+  padding: 40px 24px 20px;
   text-align: center;
 }
 .home-sep-sec article {
@@ -12501,16 +12501,16 @@ S .SidebarMenu .Drawer__Main::after {
   font-size: 18px;
   line-height: 24px;
   margin-bottom: 20px;
-  font-weight: 300;
-  font-family: "DIN Next LT Pro Light";
+  font-family: "Adobe Caslon Pro";
+  color: #545454;
 }
 .home-sep-sec article .read_more_sep {
-  font-size: 10px;
-  font-family: 'DIN Med';
-  font-weight: 500;
+  font-size: 12px;
+  font-family: 'DIN Next LT Pro Bold';
   line-height: 11px;
   text-transform: uppercase;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .home-sep-sec article .read_more_sep:hover {
   text-decoration: none;
@@ -12535,7 +12535,7 @@ S .SidebarMenu .Drawer__Main::after {
   padding: 100px 20px;
 }
 .section-details .section-details-holder {
-  max-width: 710px;
+  max-width: 550px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -12548,7 +12548,12 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .section-details .section-details-holder .simple-text {
   margin-bottom: 0px;
+  font-family: 'Adobe Caslon Pro'
 }
+.section-details .section-details-holder .simple-text h3{
+  font-style: italic;
+  font-size: 38px;
+} 
 .section-details .section-details-list {
   margin-top: 50px;
   list-style-type: none;
@@ -12664,6 +12669,7 @@ S .SidebarMenu .Drawer__Main::after {
 .mission-block-section .block-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .mission-block-section .block-content {
   display: flex;
@@ -12724,7 +12730,7 @@ S .SidebarMenu .Drawer__Main::after {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: 1150px;
+    max-width: 100%;
   }
 }
 .point-section .point-list .slick-list {
@@ -12746,7 +12752,6 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .point-section .point-list .list-items .items-holder {
   padding: 20px 10px;
-  max-width: 300px;
   margin: 0 auto;
 }
 .point-section .point-list .list-items .items-holder .item-heading {
@@ -12888,6 +12893,16 @@ table tr td {
   font-family: 'DIN Next LT Pro Cond';
   font-weight: 500;
 }
+.Section--spacingHeading .SectionHeader__SubHeading.featured-subheading {
+  color: black;
+  margin: 0;
+  text-transform: none;
+  font-family: 'Adobe Caslon Pro';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
 .Section--spacingHeading .Container {
   display: flex;
   align-items: center;
@@ -12913,8 +12928,15 @@ table tr td {
   .Section--spacingHeading .u-h1, .Section--spacingHeading .Rte h1, .Rte .Section--spacingHeading h1 {
     font-size: 17px;
   }
-  .Section--spacingHeading .SectionHeader__SubHeading {
+  .Section--spacingHeading .SectionHeader__SubHeading, .Section--spacingHeading .SectionHeader__SubHeading.featured-subheading {
     font-size: 17px;
+    margin-bottom: 0px;
+  }
+  .featured-heading {
+    line-height: 1.1;
+  }
+  .featured-heading span {
+    line-height: 1 !important;
   }
 }
 @media screen and (min-width: 641px) {
@@ -12935,10 +12957,12 @@ table tr td {
   font-style: italic;
   /*     font-family:"DIN Med"; */
   font-weight: 500;
+  margin-bottom: 10px;
 }
 @media screen and (max-width: 640px) {
   .Section--spacingHeading .header_viewAll {
     font-size: 13px;
+    margin-bottom: 3px;
   }
 }
 .Section--spacingHeading .header_viewAll .arrow-right {
@@ -14077,6 +14101,8 @@ table tr td {
 .front-page-section-content-title {
   font-family: 'DIN NEXT LT PRO BOLD';
   font-size: 30px;
+  text-align: center;
+  line-height: 1;
 }
 .front-page-section-content-text {
   margin: 10px 0;
@@ -14101,11 +14127,11 @@ table tr td {
   }
   .front-page-section-image {
     width: 100%;
-    margin: 20px 0;
+    margin: 0px 0px 20px 0;
   }
   .front-page-section-content-container {
     width: 90%;
-    margin: 30px 0;
+    margin: 30px 0px 50px 0;
     padding: 0;
   }
   .front-page-section-content-title {
@@ -14529,4 +14555,265 @@ select.CurrencySelector__Select {
 }
 .new-trust-line strong{
   font-family: 'DIN Next LT Pro';
+}
+.overlay_dot {
+  position: absolute;
+  border-radius: 100px;
+  height: 4%;
+  aspect-ratio: 1;
+  z-index: 1;
+  top: 92%;
+  left: 85%;
+}
+.horizontal_dot {
+  top: 78%;
+  left: 98%;
+}
+a:hover .overlay_dot { 
+  display: none;
+}
+.Container.featured-new-header {
+  align-items: end;
+}
+.cta-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.cta-button {
+  background-color: #163bbc;
+  color: white;
+  padding: 6px 26px;
+  text-transform: uppercase;
+  font-family: DIN Next LT Pro Cond;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.number-with-bg h2 {
+  font-family: 'Adobe Caslon Pro';
+}
+
+.number-with-bg .content-detail p {
+  font-style: italic;
+  font-size: 30px !important;
+}
+
+.updated-section h2 {
+  font-family: 'DIN Next LT Pro Bold';
+  font-size: 32px;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.updated-section h3 {
+  font-family: 'Adobe Caslon Pro';
+  font-size: 32px;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.updated-section h4 {
+  font-family: 'DIN Next LT Pro';
+  font-size: 26px;
+  line-height: 1.1;
+}
+.updated-section h5 {
+  font-family: 'Adobe Caslon Pro';
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.img-with-text h2 {
+  max-width: 50%;
+}
+.three-column-section h2 {
+  text-align: center;
+}
+.logolist-section h5 {
+  margin-bottom: 30px;
+}
+
+.img-with-text.with-img .content-holder {
+  text-align: left;
+  margin-left: 100px;
+  max-width: 500px;
+}
+.three-column-section .simple-text-content {
+  text-align: left;
+  margin: 0 50px;
+}
+
+.simple-text-content {
+  font-family: 'Adobe Caslon Pro';
+  font-size: 22px;
+  line-height: 1.6;
+}
+.three-column-footer {
+  display: none
+}
+.three-column-footer button svg{
+  margin-inline: 10px;
+  height: 12px;
+}
+
+.three-column-section:has(.point-list .list-items:first-child.slick-current) .three-column-footer .point-prev svg{
+  color: grey;
+}
+.three-column-section:has(.point-list .list-items:last-child.slick-current) .three-column-footer .point-next svg{
+  color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+  .number-with-bg .content-detail p {
+    font-size: 22px !important;
+  }
+  .img-with-text.with-img .content-holder {
+    margin-left: 0px;
+  }
+  .img-with-text h2 {
+    max-width: 60%;
+  }
+  .three-column-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .three-column-section .simple-text-content {
+    margin: 0 auto;
+  }
+}
+/* New main page css + Card Slider */
+.new-main-page.Container {
+  font-family: 'Adobe Caslon Pro';
+  line-height: 1.6;
+}
+.new-main-page.Container .PageContent h2 {
+  font-family: 'DIN Next LT Pro Bold' !important;
+  font-size: 32px !important;
+  text-transform: uppercase;
+  margin: 40px 0 0 !important;
+  line-height: 1;
+}
+.new-main-page.Container .PageContent h3 {
+  font-family: 'Adobe Caslon Pro' !important;
+  font-style: italic !important;
+  font-size: 24px !important;
+  margin: 5px 0 30px !important;
+  line-height: 1;
+}
+.new-main-page.Container .PageContent h4 {
+  font-family: 'DIN Next LT Pro Bold' !important;
+  font-size: 24px !important;
+  text-transform: uppercase;
+  margin: 0 !important;
+  line-height: 1;
+}
+.new-main-page.Container .PageContent > ul {
+  list-style: none;
+}
+.new-main-page.Container .PageContent > ul li::before {
+  content: '-';
+}
+.new-main-page .new-page-content {
+  display: flex;
+  flex-direction: column;
+}
+.card-img {
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: contain;
+  margin: 0 !important;
+}
+.cards-slideshow-item {
+  margin-right: 5px;
+}
+.card-heading {
+  font-family: 'DIN Next LT Pro Bold';
+  font-size: 20px;
+  margin-top: 10px;
+  line-height: 1;
+}
+.card-content {
+  font-family: 'Adobe Caslon Pro';
+  color: #5e5e5e;
+  padding-right: 10%;
+  line-height: 1.6;
+}
+.cards-carousel-header {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 24px;
+  margin-bottom: 10px;
+}
+.new-main-page .slick-control, .separate-card-slider .slick-control {
+  margin: 0px 10px;
+}
+.new-main-page .slick-control svg, .separate-card-slider .slick-control svg {
+  height: 10px;
+}
+.cards-slideshow-cont {
+  position: relative;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+.cards-slideshow-cont:has(.cards-carousel .cards-slideshow-item:first-child.slick-active) .cards-carousel-header .card-prev svg{
+  color: grey;
+}
+.cards-slideshow-cont:has(.cards-carousel .cards-slideshow-item:last-child.slick-active) .cards-carousel-header .card-next svg{
+  color: grey;
+}
+@media only screen and (min-width: 768px) {
+  .new-main-page.Container .PageContent > *:not(:has(img)){
+    margin-left: 150px !important;
+    margin-right: 150px !important;
+  }
+  .new-main-page.Container .PageContent > ul {
+    margin-left: 180px !important;
+  }
+  .new-main-page  .cards-carousel-header {
+    padding-right: 22%;
+  }
+  .cards-slideshow-cont {
+    padding-left: 50px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .card-img {
+    height: 250px;
+    width: 250px;
+  }
+  .cards-slideshow-item {
+    width: 250px;
+  }
+}
+
+.image-carousel-cont {
+  width: 100%;
+  margin: 40px 0px;
+}
+.image-carousel-mobile {
+  display: none;
+}
+.carousel-link {
+  margin: 0px 10px;
+}
+.carousel-img {
+  width: 100%;
+  object-fit: contain;
+}
+@media only screen and (max-width:768px) {
+  .carousel-link {
+      margin: 0px 5px;
+  }
+  .image-carousel-desktop {
+      display: none;
+  }
+  .image-carousel-mobile {
+      display: block;
+  }
 }

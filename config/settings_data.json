@@ -121,7 +121,7 @@
           "a212f6ea-b83d-4f68-94ea-c4e2e0249693": {
             "type": "announcement",
             "settings": {
-              "content": "<b>FREE SHIPPING<\/b>   on all orders over <span class=\"cm\" data-money-convertible>$69<\/span>",
+              "content": "<b>FREE SHIPPING<\/b>   On all orders over <span class=\"cm\" data-money-convertible>$69<\/span>",
               "link": "",
               "icon": "shopify:\/\/shop_images\/shipping_bannericon3.png"
             }
@@ -229,8 +229,8 @@
           "61309181-9093-4a30-bb81-5ece40dca53f": {
             "type": "tag",
             "settings": {
-              "label": "Flower Heads",
-              "url": "shopify:\/\/collections\/flower-head-art",
+              "label": "Street art Prints",
+              "url": "shopify:\/\/collections\/street-art-prints",
               "filling_color": "#f0f0f0",
               "text_color": "#000000"
             }
@@ -738,7 +738,26 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [],
+    "blocks": {
+      "18423266570658624584": {
+        "type": "shopify:\/\/apps\/best-currency-converter\/blocks\/doubly\/267afa86-a419-4d5b-a61b-556038e7294d",
+        "disabled": true,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      }
+    }
   },
   "presets": {
     "Allure": {

@@ -1,5 +1,5 @@
 {%- if section.settings.show == true -%}
-  <div class="banner-section banner" style="background-image: url({{section.settings.image | img_url: 'master'}});">
+  <div class="banner-section banner number-with-bg" style="background-image: url({{section.settings.image | img_url: 'master'}});">
     <div class="banner-content">
       {% assign number = section.settings.number | times: 1 %}
       <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 content-heading" style="color: {{section.settings.heading-color}}"><span class="tree-count" data-treecount="0">{{number}}</span></h2>
@@ -24,7 +24,7 @@
 </script>
 {% schema %}
   { 
-    "name":"Number With Image",
+    "name":"Number With Bg Image",
     "settings": [
     {
       "id": "number",
@@ -63,7 +63,7 @@
   "presets": [
     {
       "category": "Text",
-      "name": "Number With Background Image"
+      "name": "Number With Bg Image"
     }
   ]
 }
