@@ -101,6 +101,12 @@
   }
 
   #section-{{ section.id }} .Form__Input {
+    {% assign contrast = section.settings.input_border_color | color_contrast: '#ffffff' %}
+    {%  if contrast > 2.5 %} 
+      color : #ffffff; 
+    {% else %}
+      color : #000000;
+    {% endif %}
     border-color: {{ section.settings.input_border_color }};
     background-color: {{ section.settings.input_border_color }};
     -webkit-border-top-left-radius: 3px;

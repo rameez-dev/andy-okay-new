@@ -2740,11 +2740,11 @@ select::-ms-expand {
   content: '';
   display: block;
 }
-.AspectRatio > img {
+.AspectRatio > img, .AspectRatio > video {
   max-height: 100%;
   max-width: 100%;
 }
-.template-index .ProductList.ProductList--carousel .AspectRatio > img {
+.template-index .ProductList.ProductList--carousel .AspectRatio > img, .template-index .ProductList.ProductList--carousel .AspectRatio > video {
   border-radius: 0px;
 }
 .AspectRatio--withFallback > img {
@@ -2754,7 +2754,7 @@ select::-ms-expand {
   height: 100%;
   width: 100%;
 }
-.no-js .AspectRatio > img {
+.no-js .AspectRatio > img, .no-js .AspectRatio > video {
   display: none !important;
 }
 @supports (--css: variables) {
@@ -2766,7 +2766,7 @@ select::-ms-expand {
   .AspectRatio::before {
     padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
-  .AspectRatio > img, .no-js .AspectRatio > noscript img {
+  .AspectRatio > img, .no-js .AspectRatio > noscript img, .AspectRatio > video, .no-js .AspectRatio > noscript video {
     position: absolute;
     top: 0;
     left: 0;

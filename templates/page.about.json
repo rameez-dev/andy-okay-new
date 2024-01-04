@@ -140,23 +140,6 @@
     },
     "3af47476-bd24-4ed6-98ed-7fd689e4631b": {
       "type": "simple-text",
-    "0427ff20-2132-4ba4-9f66-b896908b1ff1": {
-      "type": "simple-text-charity",
-      "blocks": {
-        "7d975ded-326f-4a81-b9a8-ba2e7ec67cad": {
-          "type": "charity",
-          "settings": {
-            "handle": "impact",
-            "show": true,
-            "text": "<p><em>Together, we can prioritize purpose over profit and protect this wondrous planet, our only home.<\/em><\/p>",
-            "backgroud-color": "#000000",
-            "text-color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "7d975ded-326f-4a81-b9a8-ba2e7ec67cad"
-      ],
       "settings": {
         "text": "<p><em>Together, we can prioritize purpose over profit and protect this wondrous planet, our only home.<\/em><\/p>",
         "backgroud-color": "#000000",
@@ -169,8 +152,6 @@
   "order": [
     "number-with-background-image",
     "simple-text",
-    "image-with-text",
-    "three-column",
     "image-with-text",
     "three-column",
     "text-with-backgroundimage-one",
