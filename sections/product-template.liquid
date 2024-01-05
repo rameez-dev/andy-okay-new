@@ -362,13 +362,21 @@
     <div class="productItem_head product_head_mb mb-bar mobile-b-desktop-h">
       {% unless template contains "coming-soon" %}
         {% if template == "product" %}
-          <div class="product_price_value">
-              {% if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price != 0 %}
-                <span id ="compare_at_price_style_mob" class="price_compareVal">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span>
-              {% endif %}
-              <span id="xs-currentVal_mob" class="price_currentVal">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
-          </div>
           {% include 'xs-stock-bar-default' %}
+
+          <div class="product_price_value">
+            {% if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price != 0 %}
+              <span class="price_compareVal">
+                <span id="compare_at_price_style_mob">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span>
+                REGULAR
+              </span>
+            {% endif %}
+            <span class="price_currentVal">
+              <span id="xs-currentVal_mob">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+              FOR CHARITY
+              <img class="price-question-mark" src="{{ 'question-mark.svg' |  asset_url }}" alt="i" id="price-detail-mob">
+            </span>
+          </div>
         {% else %}
           {% include 'xs-stock-bar' %}
         {% endif %}
