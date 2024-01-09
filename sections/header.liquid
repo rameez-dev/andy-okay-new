@@ -409,7 +409,7 @@ HEADER CONTENT
               {% if link.title == 'REVIEWS' %}
                 {% assign reviews-class = 'push-reviews-right' %}
                 {% assign currency-converter-class = 'push-currency-left' %}
-              {% elsif link.title == 'MEMBERS CLUB' %}
+              {% elsif link.title contains 'CLUB' %}
                 {% assign members-class = 'push-members-right' %}
               {% endif %}
               <li class="HorizontalList__Item {{reviews-class}} {{members-class}} {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>

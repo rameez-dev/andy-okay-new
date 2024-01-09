@@ -49,7 +49,7 @@
               <nav class="SidebarMenu__Nav SidebarMenu__Nav--primary" aria-label="{{ 'header.navigation.sidebar_title' | t }}">
                 {%- for link in main_menu.links -%}
                 {% assign members-color = '' %}
-                {% if link.title == 'MEMBERS CLUB' %}
+                {% if link.title contains 'CLUB' %}
                   {% assign members-color = 'members-club-color' %}
                 {% endif %}
                   <div class="Collapsible">
