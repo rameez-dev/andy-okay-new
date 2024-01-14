@@ -1,22 +1,39 @@
 <aside class="NewsletterPopup site__black--popup soldout-popup price-detail" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
-  <button class="NewsletterPopup__Close site__black--close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
-  {%- if section.settings.title != blank -%}
-    <h2 class="NewsletterPopup__Heading Heading u-h2">
-      {{section.settings.title}}
-    </h2>
-  {%- endif -%}
-  {%- if section.settings.content != blank -%}
-    <div class="NewsletterPopup__Content">
-      <p>{{section.settings.content}}</p>
-      {%- if section.settings.link_text != blank -%}
-        <a href="{{ section.settings.link }}" class="pop__content--link">{{ section.settings.link_text | escape }}</a>
-      {%- endif -%}
-    </div>
-  {%- endif -%}
+  <div class="popup_header">
+    <span class="popup_title">{{ section.settings.title }}</span>
+    <button class="popup_close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
+  </div>    
+
+  {% comment %} <button class="NewsletterPopup__Close site__black--close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button> {% endcomment %}
+  <div class="popup_content">    
+    {%- if section.settings.image != blank -%}
+      <div>
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Size Chart">
+      </div>
+    {%- endif -%}
+  
+   {% comment %}
+    {%- if section.settings.title != blank -%}
+      <h2 class="NewsletterPopup__Heading Heading u-h2">
+        {{section.settings.title}}
+      </h2>
+    {%- endif -%}
+    {% endcomment %}
+
+    {%- if section.settings.content != blank -%}
+      <div class="NewsletterPopup__Content">
+        <p>{{section.settings.content}}</p>
+        {%- if section.settings.link_text != blank -%}
+          <a href="{{ section.settings.link }}" class="pop__content--link">{{ section.settings.link_text | escape }}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
 </aside>
+
 <script>
   $(document).ready(function(){
-    $('.price-detail').click(function(){
+    $('.price-detail .popup_close').click(function(){
       $('.price-detail').removeClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "none";
     });
@@ -27,6 +44,11 @@
 {
   "name": "Price Pop Up",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Icon"
+    },
     {
       "type": "text",
       "id": "title",
@@ -48,6 +70,11 @@
       "id": "link",
       "type": "url",
       "label": "URL/Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Price Pop Up"
     }
   ]
 }

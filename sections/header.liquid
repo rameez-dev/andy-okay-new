@@ -409,7 +409,7 @@ HEADER CONTENT
               {% if link.title == 'REVIEWS' %}
                 {% assign reviews-class = 'push-reviews-right' %}
                 {% assign currency-converter-class = 'push-currency-left' %}
-              {% elsif link.title == 'MEMBERS CLUB' %}
+              {% elsif link.title contains 'CLUB' %}
                 {% assign members-class = 'push-members-right' %}
               {% endif %}
               <li class="HorizontalList__Item {{reviews-class}} {{members-class}} {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
@@ -547,15 +547,15 @@ HEADER CONTENT
       <a href="/cart"  id="target__mobile" class="Header__Icon cart_wrapper Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
         <span class="cart_amount">
           {% if cart.total_price != 0  %}
-            <span id="price_header">{{ cart.total_price | money_without_trailing_zeros }}</span>
             <b>
             <span id="cm_at_price_header">{{ cm_at_price_total | money_without_trailing_zeros }}</span>
             </b> 
+            <span id="price_header">{{ cart.total_price | money_without_trailing_zeros }}</span>
           {% else %}
-            <span id="price_header"></span>
             <b>
             <span id="cm_at_price_header"></span>
             </b> 
+            <span id="price_header"></span>
           {% endif %}
 
         </span>
@@ -630,15 +630,15 @@ HEADER CONTENT
         
         <span class="cart_amount">
           {% if cm_at_price_total != 0  %}
-            <span id="price_header_">{{ cart.total_price | money_without_trailing_zeros }}</span>
             <b>
             <span id="cm_at_price_header_">{{ cm_at_price_total  | money_without_trailing_zeros }}</span>
             </b> 
+            <span id="price_header_">{{ cart.total_price | money_without_trailing_zeros }}</span>
           {% else %}
-            <span id="price_header_"></span>
             <b>
             <span id="cm_at_price_header_"></span>
             </b> 
+            <span id="price_header_"></span>
           {% endif %}
         </span>
         <span class="cart_icon">
@@ -658,7 +658,7 @@ HEADER CONTENT
     margin-bottom: 15px;
  }
   .productItem_head.product_head_mb {
-    padding: 0px 15px;
+    padding: 0px 24px;
  }
   .productItem_head.product_head_mb .headDescription {
     font-size: 14.5px;
@@ -849,7 +849,7 @@ HEADER CONTENT
   }
   
   .Header__Icon span.cart_amount{
-  	color:#af182b;
+  	color:#2e34b9;
     font-size:13px;
     font-weight:bold;
     display:inline-block;
@@ -965,7 +965,7 @@ div#giftbox-root {
      @media screen and (max-width: 768px) {
       .Header__CartDot{
         right: 3px;
-        background-color: #39b975 !important;
+        /* background-color: #39b975 !important; */
       }
       :root {
         --use-sticky-header: 0;

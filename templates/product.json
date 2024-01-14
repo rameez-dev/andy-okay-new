@@ -327,8 +327,8 @@
         "button_background_color": "#a6967c",
         "input_border_color": "#ffffff",
         "subheading": "",
-        "title": "NEWSLETTER",
-        "content": "<p>Join 78,000 club members on exclusive drops and offers. 100% free.<\/p>"
+        "title": "THE GOOD CLUB",
+        "content": "<p>Join 78,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% free.<\/p>"
       }
     },
     "frame-choose-popup": {
@@ -405,6 +405,15 @@
       "settings": {
         "title": "Size Guide"
       }
+    },
+    "b9ca1c76-c277-4252-8da2-792273eac538": {
+      "type": "price-detail-popup",
+      "settings": {
+        "title": "HOW OUR PRICES ARE MADE POSSIBLE",
+        "content": "<p><em>It’s not a sale. <\/em>It’s a commitment to do more good.<em> <\/em> <br\/><br\/>We establish close collaborations with charitable organizations all across the world, to find strategic ways to help them spread awareness with the power of art.<br\/><br\/>With the organisation, we then reach out to the world’s most talented artists to figure out a way to make a limited edition art drop at a never-before-seen price, leaving room for people to make a donation with their purchase. <br\/><br\/>Our business model is kind of crazy (and a lot of work), but a huge win-win for all.<br\/><br\/>Especially for our planet.<br\/><br\/>By purchasing an artwork for a cause, you become a part of our good community. And the only thing YOU have to do, is keep spreading the word of the true value behind your art. <br\/><br\/>We truly believe it's the best art deal in the world. <br\/><br\/>Hopefully, you feel the same.<br\/><br\/>Want to know more? <a href=\"https:\/\/andyokay.com\/pages\/about-us\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/about-us\">Click here<\/a> <\/p>",
+        "link_text": "",
+        "link": ""
+      }
     }
   },
   "order": [
@@ -423,6 +432,7 @@
     "frame-choose-popup",
     "donation-choose-popup",
     "gallery-experience-choose-popup",
-    "size-chart-popup"
+    "size-chart-popup",
+    "b9ca1c76-c277-4252-8da2-792273eac538"
   ]
 }

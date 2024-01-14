@@ -77,16 +77,21 @@
       </hgroup>
       {% unless template contains "coming-soon" %}
 
+        {% include 'xs-stock-bar-default' %}
+
         <div class="product_price_value">
           {% if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price != 0 %}
-            <span id="compare_at_price_style" class="price_compareVal">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}
+            <span class="price_compareVal">
+              <span id="compare_at_price_style">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span>
+              REGULAR
             </span>
           {% endif %}
-          <span id="xs-currentVal" class="price_currentVal">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+          <span class="price_currentVal">
+            <span id="xs-currentVal">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span>
+            FOR CHARITY
+            <img class="price-question-mark" src="{{ 'question-mark.svg' |  asset_url }}" alt="i" id="price-detail-desktop">
           </span>
         </div>
-
-          {% include 'xs-stock-bar-default' %}
           
       {% endunless %}
 

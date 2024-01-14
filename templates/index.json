@@ -338,7 +338,7 @@
         "162537469203ba0fa9-0": {
           "type": "collection",
           "settings": {
-            "collection": "top-10",
+            "collection": "best-sellers",
             "title": "",
             "grid_items_count": 10,
             "button_text": "View all >",
@@ -585,8 +585,8 @@
         "1629722279ac42c7cf-0"
       ],
       "settings": {
-        "subheading": "The low-down on top trends, artist interviews and cool guides that make a difference.",
-        "title": "The Gallerist",
+        "subheading": "Read the good news, artist interviews and some really impactful guides that makes a difference.",
+        "title": "The Good News",
         "button_link": "https:\/\/andyokay.com\/blogs\/okay-blog",
         "button_text": "View All >",
         "button_text_color": "#000000"
@@ -909,8 +909,8 @@
         "button_background_color": "#ad9c81",
         "input_border_color": "#ffffff",
         "subheading": "",
-        "title": "Newsletter",
-        "content": "<p>Join 78,000 club members for exclusive drops and offers. 100% Free.<\/p>"
+        "title": "The Good Club",
+        "content": "<p>Join 78,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
       }
     }
   },
