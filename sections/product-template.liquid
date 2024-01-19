@@ -76,7 +76,7 @@
     {%- assign image_count = 0 -%}
 
     {%- capture slideshow_images -%}
-      {%- for image in product.images -%}
+      {%- for image in product.images limit : 3 -%}
         {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
           {%- continue -%}
         {%- endif -%}
@@ -142,9 +142,60 @@
               <img src="{{ video.preview_image | img_url: '400x' }}" alt="{{ video.preview_image.alt | escape }}">
             </noscript>
           </div>
-        </div>
-        
+        </div>     
       {% endif %}
+
+      {%- for image in product.images offset : 3 -%}
+        {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- if image.id == product.selected_or_first_available_variant.image.id -%}
+          {%- assign initial_image_index = image_count -%}
+          {%- assign initial_image_id = image.id -%}
+        {%- endif -%}
+
+        {%- include 'image-size', sizes: '200,400', image: image -%}
+
+        {%- assign is_video = false -%}
+
+        {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+          {%- assign is_video = true -%}
+        {%- endif -%}
+
+        <div id="Image{{ image.id }}" class="Product__SlideItem Product__SlideItem--{% if is_video %}video{% else %}image{% endif %} Carousel__Cell {% if initial_image_id == image.id %}is-selected{% endif %}"
+             {% if is_video %}data-action="open-modal" aria-controls="modal-video-{{ image.id }}"{% endif %}
+             {% unless is_video %}data-image-position-ignoring-video="{% increment image_position_without_video %}"{% endunless %}
+             data-image-position="{% increment image_position %}"
+             data-image-id="{{ image.id }}">
+          <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%; --aspect-ratio: {{ image.aspect_ratio }};">
+            {% assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+            <img class="Image--lazyLoad Image--fadeIn"
+                 {% if initial_image_id == image.id %}src="{{ image | img_url: '200x' }}"{% endif %}
+                 data-src="{{ image_url }}"
+                 data-widths="[{{ supported_sizes }}]"
+                 data-sizes="auto"
+                 data-expand="-100"
+                 alt="{{ image.alt | escape }}"
+                 data-max-width="{{ image.width }}"
+                 data-max-height="{{ image.height }}"
+                 data-original-src="{{ image | img_url: 'large' }}">
+
+            <span class="Image__Loader"></span>
+
+            {%- if is_video -%}
+              <button type="button" class="Video__PlayButton" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+            {%- endif -%}
+
+            <noscript>
+              <img src="{{ image | img_url: '400x' }}" alt="{{ image.alt | escape }}">
+            </noscript>
+          </div>
+        </div>
+
+        {%- assign image_count = image_count | plus: 1 -%}
+      {%- endfor -%}
     {%- endcapture -%}
 
     <style>
@@ -229,7 +280,7 @@
             {%- if section.settings.show_thumbnails -%}
               <div class="Product__SlideshowNav Product__SlideshowNav--thumbnails">
                 <div class="Product__SlideshowNavScroller">
-                  {%- for image in product.images -%}
+                  {%- for image in product.images limit: 3 -%}
                     {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
                       {%- continue -%}
                     {%- endif -%}
@@ -272,6 +323,35 @@
                         </span>
                       {%- endif -%}
                   {% endif %}
+                  {%- for image in product.images offset: 3 -%}
+                    {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+                      {%- continue -%}
+                    {%- endif -%}
+
+                    {%- assign is_video = false -%}
+
+                    {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+                      {%- assign is_video = true -%}
+                    {%- endif -%}
+
+                    {%- if section.settings.stack_images -%}
+                      <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                        <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
+
+                        {%- if is_video -%}
+                          <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                        {%- endif -%}
+                      </a>
+                    {%- else -%}
+                      <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                        <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
+
+                        {%- if is_video -%}
+                          <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                        {%- endif -%}
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
                 </div>
               </div>
             {%- endif -%}
