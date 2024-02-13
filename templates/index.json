@@ -497,15 +497,72 @@
     },
     "16616061592e8072c4": {
       "type": "front-page-section",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/ringo_starr_beatles_andyokay.jpg",
         "title": "YOU SHOP – WE GIVE",
-        "content": "<p>Art is a fantastic way to bring attention to social issues that need addressing. This is how Art for Causes changes lives...<\/p>",
+        "content": "<p>Art is a fantastic way to bring attention to important causes that need our attention. This is how Art for Causes changes lives...<\/p>",
         "button_label": "Learn more",
-        "button_link": "https:\/\/andyokay.com\/blogs\/the-gallerist\/using-art-to-make-a-difference-how-art-for-charity-is-changing-lives",
+        "button_link": "https:\/\/andyokay.com\/pages\/cause-of-the-month",
         "bg_color": "#000000",
         "text_color": "#ffffff"
       }
+    },
+    "image_carousel_6TtTf3": {
+      "type": "image-carousel",
+      "blocks": {
+        "mobile_image_bbRBVd": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aaronlarson_mob.jpg",
+            "link": "shopify:\/\/products\/offroad"
+          }
+        },
+        "desktop_image_TfMUQP": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/aaronlarson_desk.jpg",
+            "link": "shopify:\/\/products\/offroad"
+          }
+        },
+        "mobile_image_cgWgdQ": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/summer_mob.jpg",
+            "link": "shopify:\/\/collections\/summer-wall-art"
+          }
+        },
+        "desktop_image_LBRweq": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/summer_dt_eea0cfdd-2778-49bf-83ce-5c09a5bdc49e.jpg",
+            "link": "shopify:\/\/collections\/summer-wall-art"
+          }
+        },
+        "mobile_image_KQ3pz8": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flowerhead_mob_11d3ebfa-065d-402b-b371-0fad5d36e86a.jpg",
+            "link": "shopify:\/\/collections\/flower-head-art"
+          }
+        },
+        "desktop_image_GQygX4": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/flowerhead_dt_a5aa3f46-7b0c-4f48-ad04-0baa47f1b91e.jpg",
+            "link": "shopify:\/\/collections\/flower-head-art"
+          }
+        }
+      },
+      "block_order": [
+        "mobile_image_bbRBVd",
+        "desktop_image_TfMUQP",
+        "mobile_image_cgWgdQ",
+        "desktop_image_LBRweq",
+        "mobile_image_KQ3pz8",
+        "desktop_image_GQygX4"
+      ],
+      "settings": {}
     },
     "1616425219eaa2e028": {
       "type": "featured-collections",
@@ -925,6 +982,7 @@
     "16131224958a8baaef",
     "1643642736f42e4efd",
     "16616061592e8072c4",
+    "image_carousel_6TtTf3",
     "1616425219eaa2e028",
     "1616425487e7f8d53c",
     "1629722279ac42c7cf",
