@@ -157,12 +157,12 @@
           "type": "story",
           "settings": {
             "product": "",
-            "subheading": "GIVE WHAT YOU CAN",
+            "subheading": "WHY CHOOSE ART FOR CAUSES?",
             "subheading_color": "#9c9c9c",
             "title": "WE GIVE BACK, TOGETHER",
             "image": "shopify:\/\/shop_images\/wegiveback.jpg",
             "image_position": "left",
-            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never-before-seen. To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customer a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $1 to $200 extra for their limited edition artworks from award-winning artists, knowing that the more they chose to give, the more positive impact their new art creates.<\/p>",
+            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never-before-seen. To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customers own walls a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $1 to $200 extra for their limited edition artworks from award-winning artists, knowing that the more they chose to give, the more positive impact their new art creates.<\/p>",
             "link_text": "",
             "link_url": "",
             "urltext_color": "#e06db6",
@@ -328,7 +328,7 @@
         "input_border_color": "#ffffff",
         "subheading": "",
         "title": "THE GOOD CLUB",
-        "content": "<p>Join 78,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% free.<\/p>"
+        "content": "<p>Join 134,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% free.<\/p>"
       }
     },
     "frame-choose-popup": {

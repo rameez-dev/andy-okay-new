@@ -4,17 +4,17 @@
     "heading_color": "#000000",
     "text_color": "#000000",
     "text_light_color": "#636363",
-    "link_color": "#0086bc",
+    "link_color": "#2200cc",
     "background": "#ffffff",
     "light_background": "#000000",
     "product_on_sale_color": "#47b876",
     "button_background": "#000000",
     "header_background": "#ffffff",
     "header_heading_color": "#000000",
-    "header_light_color": "#a6967c",
+    "header_light_color": "#2200cc",
     "footer_background": "#f0f0f0",
     "footer_heading_color": "#313131",
-    "footer_text_color": "#313131",
+    "footer_text_color": "#636363",
     "navigation_background": "#ffffff",
     "navigation_text_color": "#000000",
     "newsletter_popup_background": "#f0f0f0",
@@ -106,7 +106,7 @@
           "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
             "type": "announcement",
             "settings": {
-              "content": "<b>SALE SEASON <\/b>   Buy 2, Get 1 FREE",
+              "content": "<b>SALE SEASON<\/b>   Buy 2, Get 1 Free",
               "link": "shopify:\/\/collections\/all-art",
               "icon": "shopify:\/\/shop_images\/star_icon_27330cb7-9794-4199-9960-d5e76152edde.png"
             }
@@ -114,7 +114,7 @@
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
             "type": "announcement",
             "settings": {
-              "content": "<b>EXCELLENT<\/b>   +161,000 Collectors",
+              "content": "<b>EXCELLENT<\/b>   +178,000 Collectors",
               "link": "shopify:\/\/collections\/all-art",
               "icon": "shopify:\/\/shop_images\/Truststars_5_v3.png"
             }
@@ -401,7 +401,7 @@
         "settings": {
           "use_sticky_header": true,
           "logo": "shopify:\/\/shop_images\/andyokay_long_black.png",
-          "mobile_logo": "shopify:\/\/shop_images\/andyokay_long_white.png",
+          "mobile_logo": "shopify:\/\/shop_images\/andyokay_white_32b7203c-437a-41ec-abdc-db8ae17ddb63.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 115,
           "navigation_menu": "main-menu",
@@ -433,7 +433,7 @@
             "type": "newsletter",
             "settings": {
               "title": "The Good Club",
-              "content": "<p>Join 78,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
+              "content": "<p>Join 134,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
             }
           },
           "footer-0": {

@@ -6,8 +6,8 @@
         "1ef45436-7520-4016-9268-345b70759769": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/andy_desktop.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/750_2.jpg",
+            "image": "shopify:\/\/shop_images\/andy_desktop_1600_7.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/750_2_x800_6.jpg",
             "apply_overlay": false,
             "content_position": "middleCenter",
             "subheading": "Limited art drops from award-winning artists to support important causes",
@@ -364,6 +364,38 @@
         "background_color": "#f0f0f0"
       }
     },
+    "16131224958a8baaef": {
+      "type": "featured-collections",
+      "blocks": {
+        "16131224958a8baaef-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "just-released",
+            "title": "",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#000000",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "16131224958a8baaef-0"
+      ],
+      "settings": {
+        "title": "The latest and greatest",
+        "subheading_color": "#8a8a8a",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
     "16059880715e2bb83c": {
       "type": "reviews",
       "blocks": {
@@ -431,38 +463,6 @@
         "button_text": ""
       }
     },
-    "16131224958a8baaef": {
-      "type": "featured-collections",
-      "blocks": {
-        "16131224958a8baaef-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "just-released",
-            "title": "",
-            "grid_items_count": 16,
-            "button_text": "View all >",
-            "button_text_color": "#000000",
-            "show_overlay_dot": false,
-            "overlay_dot_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "16131224958a8baaef-0"
-      ],
-      "settings": {
-        "title": "The latest and greatest",
-        "subheading_color": "#8a8a8a",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
-      }
-    },
     "1643642736f42e4efd": {
       "type": "featured-collections",
       "blocks": {
@@ -514,42 +514,42 @@
         "mobile_image_bbRBVd": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aaronlarson_mob.jpg",
-            "link": "shopify:\/\/products\/offroad"
+            "image": "shopify:\/\/shop_images\/jonas_mob.jpg",
+            "link": "shopify:\/\/collections\/jonas-loose-portfolio"
           }
         },
         "desktop_image_TfMUQP": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/aaronlarson_desk.jpg",
-            "link": "shopify:\/\/products\/offroad"
+            "image": "shopify:\/\/shop_images\/jonas_desktop.jpg",
+            "link": "shopify:\/\/collections\/jonas-loose-portfolio"
           }
         },
         "mobile_image_cgWgdQ": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/summer_mob.jpg",
+            "image": "shopify:\/\/shop_images\/summer_mob_9de1c9b5-c943-4e96-b087-15543b1ec6d1.jpg",
             "link": "shopify:\/\/collections\/summer-wall-art"
           }
         },
         "desktop_image_LBRweq": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/summer_dt_eea0cfdd-2778-49bf-83ce-5c09a5bdc49e.jpg",
+            "image": "shopify:\/\/shop_images\/summer_desktop.jpg",
             "link": "shopify:\/\/collections\/summer-wall-art"
           }
         },
         "mobile_image_KQ3pz8": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/flowerhead_mob_11d3ebfa-065d-402b-b371-0fad5d36e86a.jpg",
+            "image": "shopify:\/\/shop_images\/flowers_mob.jpg",
             "link": "shopify:\/\/collections\/flower-head-art"
           }
         },
         "desktop_image_GQygX4": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/flowerhead_dt_a5aa3f46-7b0c-4f48-ad04-0baa47f1b91e.jpg",
+            "image": "shopify:\/\/shop_images\/flowers_desktop.jpg",
             "link": "shopify:\/\/collections\/flower-head-art"
           }
         }
@@ -713,106 +713,6 @@
         "background_color": "#f0f0f0"
       }
     },
-    "160614414236913c9b": {
-      "type": "tags",
-      "blocks": {
-        "ee60afc2-b8f1-4e59-a424-5e67f69905d9": {
-          "type": "tag",
-          "settings": {
-            "label": "Motivational artworks",
-            "url": "shopify:\/\/collections\/motivational-art",
-            "filling_color": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
-        "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080": {
-          "type": "tag",
-          "settings": {
-            "label": "Flooko, Nick Flook",
-            "url": "shopify:\/\/collections\/nick-flook",
-            "filling_color": "#002366",
-            "text_color": "#ffffff"
-          }
-        },
-        "606c5e46-b137-4b08-9d2d-1e27294edfcc": {
-          "type": "tag",
-          "settings": {
-            "label": "Astronaut in flowers",
-            "url": "shopify:\/\/collections\/astronauts",
-            "filling_color": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
-        "6394b706-10e7-4319-a4a7-d71dcea5ba8d": {
-          "type": "tag",
-          "settings": {
-            "label": "Cool gaming pictures",
-            "url": "shopify:\/\/collections\/gaming",
-            "filling_color": "#ececec",
-            "text_color": "#000000"
-          }
-        },
-        "b1baecde-e153-437a-b414-1ea05e6e7ffb": {
-          "type": "tag",
-          "settings": {
-            "label": "Big moons",
-            "url": "shopify:\/\/collections\/moons",
-            "filling_color": "#ececec",
-            "text_color": "#1c1b1b"
-          }
-        },
-        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9": {
-          "type": "tag",
-          "settings": {
-            "label": "Hippie boho art",
-            "url": "shopify:\/\/collections\/hippie-wall-art",
-            "filling_color": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
-        "b811c0fb-9032-4f3f-b903-a3b8e1887243": {
-          "type": "tag",
-          "settings": {
-            "label": "Nicebleed",
-            "url": "shopify:\/\/collections\/nicebleed",
-            "filling_color": "#002366",
-            "text_color": "#ffffff"
-          }
-        },
-        "cc79b94f-db63-437b-8fda-fa5921ab93fd": {
-          "type": "tag",
-          "settings": {
-            "label": "Surf images",
-            "url": "shopify:\/\/collections\/coastal-wall-art",
-            "filling_color": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
-        "8859c39a-9d69-43ce-b677-20a87cac74a0": {
-          "type": "tag",
-          "settings": {
-            "label": "Vibrant pop art",
-            "url": "shopify:\/\/collections\/pop-art",
-            "filling_color": "#ececec",
-            "text_color": "#1c1b1b"
-          }
-        }
-      },
-      "block_order": [
-        "ee60afc2-b8f1-4e59-a424-5e67f69905d9",
-        "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080",
-        "606c5e46-b137-4b08-9d2d-1e27294edfcc",
-        "6394b706-10e7-4319-a4a7-d71dcea5ba8d",
-        "b1baecde-e153-437a-b414-1ea05e6e7ffb",
-        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9",
-        "b811c0fb-9032-4f3f-b903-a3b8e1887243",
-        "cc79b94f-db63-437b-8fda-fa5921ab93fd",
-        "8859c39a-9d69-43ce-b677-20a87cac74a0"
-      ],
-      "settings": {
-        "title": "TRENDING SEARCHES"
-      }
-    },
     "1640887620025213cd": {
       "type": "featured-collections",
       "blocks": {
@@ -876,6 +776,106 @@
         "grid_desktop_items_per_row": 4,
         "is_sold_out_collection": true,
         "background_color": "#f0f0f0"
+      }
+    },
+    "160614414236913c9b": {
+      "type": "tags",
+      "blocks": {
+        "ee60afc2-b8f1-4e59-a424-5e67f69905d9": {
+          "type": "tag",
+          "settings": {
+            "label": "Motivational artworks",
+            "url": "shopify:\/\/collections\/motivational-art",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "606c5e46-b137-4b08-9d2d-1e27294edfcc": {
+          "type": "tag",
+          "settings": {
+            "label": "Astronaut in flowers",
+            "url": "shopify:\/\/collections\/astronauts",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "8859c39a-9d69-43ce-b677-20a87cac74a0": {
+          "type": "tag",
+          "settings": {
+            "label": "Vibrant pop art",
+            "url": "shopify:\/\/collections\/pop-art",
+            "filling_color": "#ececec",
+            "text_color": "#1c1b1b"
+          }
+        },
+        "cc79b94f-db63-437b-8fda-fa5921ab93fd": {
+          "type": "tag",
+          "settings": {
+            "label": "Surf images",
+            "url": "shopify:\/\/collections\/coastal-wall-art",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "6394b706-10e7-4319-a4a7-d71dcea5ba8d": {
+          "type": "tag",
+          "settings": {
+            "label": "Cool gaming pictures",
+            "url": "shopify:\/\/collections\/gaming",
+            "filling_color": "#ececec",
+            "text_color": "#000000"
+          }
+        },
+        "b1baecde-e153-437a-b414-1ea05e6e7ffb": {
+          "type": "tag",
+          "settings": {
+            "label": "Big moons",
+            "url": "shopify:\/\/collections\/moons",
+            "filling_color": "#ececec",
+            "text_color": "#1c1b1b"
+          }
+        },
+        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9": {
+          "type": "tag",
+          "settings": {
+            "label": "Hippie boho art",
+            "url": "shopify:\/\/collections\/hippie-wall-art",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080": {
+          "type": "tag",
+          "settings": {
+            "label": "Vintage art",
+            "url": "shopify:\/\/collections\/vintage",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
+        "b811c0fb-9032-4f3f-b903-a3b8e1887243": {
+          "type": "tag",
+          "settings": {
+            "label": "Wall art for men",
+            "url": "shopify:\/\/collections\/wall-art-for-men",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "ee60afc2-b8f1-4e59-a424-5e67f69905d9",
+        "606c5e46-b137-4b08-9d2d-1e27294edfcc",
+        "8859c39a-9d69-43ce-b677-20a87cac74a0",
+        "cc79b94f-db63-437b-8fda-fa5921ab93fd",
+        "6394b706-10e7-4319-a4a7-d71dcea5ba8d",
+        "b1baecde-e153-437a-b414-1ea05e6e7ffb",
+        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9",
+        "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080",
+        "b811c0fb-9032-4f3f-b903-a3b8e1887243"
+      ],
+      "settings": {
+        "title": "STILL LOOKING? Spot what's trending..."
       }
     },
     "1608562192030793bb": {
@@ -967,7 +967,7 @@
         "input_border_color": "#ffffff",
         "subheading": "",
         "title": "The Good Club",
-        "content": "<p>Join 78,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
+        "content": "<p>Join 134,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
       }
     }
   },
@@ -978,8 +978,8 @@
     "1642537533f81e6dfa",
     "160745450950754497",
     "1625374692c4d0a8c9",
-    "16059880715e2bb83c",
     "16131224958a8baaef",
+    "16059880715e2bb83c",
     "1643642736f42e4efd",
     "16616061592e8072c4",
     "image_carousel_6TtTf3",
@@ -988,9 +988,9 @@
     "1629722279ac42c7cf",
     "161039065890033dbc",
     "1571758473108",
-    "160614414236913c9b",
     "1640887620025213cd",
     "1597932365863",
+    "160614414236913c9b",
     "1608562192030793bb",
     "1637503490a04c051a",
     "1562334343415"
