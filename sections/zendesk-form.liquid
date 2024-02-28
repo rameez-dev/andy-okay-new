@@ -1,0 +1,295 @@
+<div class="Container zendeskform">
+  <div class="PageContent PageContent--narrow custom-top-space">
+    <div class="Rte">
+        <p class="Alert Alert--success hide" id="success-{{ section.id }}"></p>
+        <div class="Form__Alert Alert Alert--error hide" id="error-{{ section.id }}">
+            <ul class="Alert__ErrorList">
+                <li class="Alert__ErrorItem">Some error occurred</li>
+            </ul>
+        </div>
+        <form id="zendesk_form-{{ section.id }}" onsubmit="zendesk_submit(event)">
+            <div class="Form__Item">
+                <label class="Form__FloatingLabel-custom">Your email address</label>
+                <input type="email" class="Form__Input" name="email" aria-label="{{ 'contact.form.email' | t }}" required {% if customer %}value="{{ customer.email }}"{% endif %}>
+            </div>
+
+            {%- for block in section.blocks -%}
+            {%- assign field_title = block.settings.title -%}
+
+            {%- if field_title == blank -%}
+                {%- capture field_title -%}Custom field {% increment custom_field %}{%- endcapture -%}
+            {%- endif -%}
+
+            {%- if block.type == 'text' -%}
+                <div class="Form__Item">
+                {%- if block.settings.use_long_text -%}
+                    {% if block.settings.label != blank %}
+                        <label class="Form__FloatingLabel-custom">{{ block.settings.label | escape }} 
+                            {% unless block.settings.is_required %}<span class="optional">(optional)</span>{% endunless %}
+                        </label>
+                    {% endif %}
+                    <textarea name="{{ field_title }}" cols="30" rows="10" class="Form__Textarea" aria-label="{{ block.settings.title | escape }}"  {% if block.settings.is_required %}required{% endif %} {% if block.settings.only_numbers %}oninput="this.value = this.value.replace(/[^0-9]/g, '');"{% endif %}></textarea>
+                {%- else -%}
+                    {% if block.settings.label != blank %}
+                        <label class="Form__FloatingLabel-custom">{{ block.settings.label | escape }} 
+                            {% unless block.settings.is_required %}<span class="optional">(optional)</span>{% endunless %}
+                        </label>
+                    {% endif %}
+                    <input type="text" class="Form__Input" name="{{ field_title }}" aria-label="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %} {% if block.settings.only_numbers %}oninput="this.value = this.value.replace(/[^0-9]/g, '');"{% endif %}>
+                {%- endif -%}
+                </div>
+            {%- elsif block.type == 'dropdown' -%}
+                {%- assign values = block.settings.values | split: ', ' -%}
+
+                {%- if values == empty -%}
+                {%- continue -%}
+                {%- endif -%}
+
+                <div class="Form__Item">
+                    {% if block.settings.label != blank %}
+                        <label class="Form__FloatingLabel-custom">{{ block.settings.label | escape }} 
+                            {% unless block.settings.is_required %}<span class="optional">(optional)</span>{% endunless %}
+                        </label>
+                    {% endif %}
+                    <div class="Form__Select Select Select--primary">
+                        {%- include 'icon' with 'select-arrow' -%}
+
+                        <select name="{{ field_title }}" title="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %}>
+                        <option value="">-</option>
+
+                        {%- for value in values -%}
+                            {%- assign trim_value = value | strip | split: "//" -%}
+                            {% assign item_title = trim_value | first %}
+                            {% assign item_value = trim_value | last %}
+
+                        <option {% if forloop.index == 1 %}selected{% endif %} value="{{ item_value | escape }}">{{ item_title | escape }}</option>
+                        {%- endfor -%}
+                        </select>
+                    </div>
+                </div>
+            {%- endif -%}
+            {%- endfor -%}
+
+            <div class="Form__Item">
+                <label class="Form__FloatingLabel-custom">Description</label>
+                <textarea name="body" cols="30" rows="10" class="Form__Textarea" aria-label="{{ 'contact.form.message' | t }}" required></textarea>
+            </div>
+
+            <div class="Form__Item">
+                <label class="Form__FloatingLabel-custom">Attachments (optional)</label>
+                <label for="attachment-{{ section.id }}" class="Form__Input attachments-input-label">Add a file</label>
+                <div class="attachment-input-cont">
+                    <div class="attachemt-input-layer"></div>
+                    <input id="attachment-{{ section.id }}" type="file" multiple="true" class="attachments-input" name="file" aria-label="file">
+                </div>
+            </div>
+
+            <button type="submit" id="zendesk-submit-{{ section.id }}" class="Form__Submit Button Button--primary Button--full">Submit</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var success = document.getElementById('success-{{ section.id }}');
+        var error = document.getElementById('error-{{ section.id }}');
+        var error_list = document.querySelector('#error-{{ section.id }} .Alert__ErrorList');
+
+        if(localStorage.getItem('zendesk-form-success')){
+            success.innerHTML = `${localStorage.getItem('zendesk-form-success')}`
+            success.classList.remove("hide")
+            setTimeout(() => {
+                success.classList.add("hide")
+            }, 5000);
+        }
+        else if(localStorage.getItem('zendesk-form-error')){
+            error_list.innerHTML = `<li class="Alert__ErrorItem">${localStorage.getItem('zendesk-form-error')}</li>`
+            error.classList.remove("hide")
+            setTimeout(() => {
+                error.classList.add("hide")
+            }, 5000);
+        }
+        localStorage.removeItem('zendesk-form-success');
+        localStorage.removeItem('zendesk-form-error');
+    }, false);
+
+    function zendesk_submit(event){   
+        event.preventDefault();
+        var btn = document.getElementById('zendesk-submit-{{ section.id }}');
+        var form = document.getElementById('zendesk_form-{{ section.id }}');
+        btn.innerHTML = 'Submitting...';
+
+        var formData = new FormData(form);
+        
+        var jsonData = {};
+        var form_files = [];
+        formData.forEach((value, key) => {
+            if (key == 'file' && value.size) {
+                form_files.push(value);
+            }
+            else if (key != 'file') {
+                jsonData[key] = value;
+            }
+        });
+        
+        var zendesk_data = {
+            "request": {
+                "requester": {"name": jsonData.email},
+                "subject": jsonData.body,
+                "comment": {"body": jsonData.body }
+            }
+        }
+
+        delete jsonData.email;
+        delete jsonData.body;
+
+        var custom_fields = []
+
+        for (const [key, value] of Object.entries(jsonData)) {
+           var obj = {};
+           obj[key] = value;
+           custom_fields.push(obj)
+        }
+        zendesk_data.request['custom_fields'] = custom_fields;
+        // console.log(zendesk_data)
+
+        if (form_files.length > 0) {
+            var upload_tokens = [];
+            var uploadPromises = form_files.map((file) => {
+                return file.arrayBuffer().then((arrayBuffer) => {
+                    const blob = new Blob([new Uint8Array(arrayBuffer)], {type: file.type });
+                    var headers = {'Content-Type': blob.type}
+                    return fetch(`https://andyokaysupport.zendesk.com/api/v2/uploads.json?filename=${file.name}`, {
+                        method: 'POST',
+                        body: blob,
+                        headers: headers,
+                    })
+                    .then(response => response.json())
+                    .then(data => {return data.upload.token})
+                    .catch(error => {console.error('Error:', error);return null;});
+                });             
+            });
+            Promise.all(uploadPromises)
+            .then(upload_tokens => {
+                zendesk_data.request.comment["uploads"] = upload_tokens.filter(token => token !== null);
+                send_zendesk_request(zendesk_data);
+            })
+            .catch(error => {
+                console.error('Error uploading files:', error);
+                btn.innerHTML = 'Submit';
+                localStorage.setItem('zendesk-form-error', 'Files could not be uploaded')
+                location.reload();
+            });
+        }
+        else {
+            send_zendesk_request(zendesk_data);
+        }
+    }
+
+    function send_zendesk_request(zendesk_data) {
+        console.log(zendesk_data)
+        var btn = document.getElementById('zendesk-submit-{{ section.id }}');
+        fetch('https://andyokaysupport.zendesk.com/api/v2/requests.json', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(zendesk_data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            btn.innerHTML = 'Submit';
+            localStorage.setItem('zendesk-form-success', 'Form Submitted Successfully')
+            location.reload();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            btn.innerHTML = 'Submit';
+            localStorage.setItem('zendesk-form-error', 'Some error occurred')
+            location.reload();
+        });
+    }
+</script>
+
+{% schema %}
+    {
+      "name": "Zendesk Form",
+      "settings": [],
+      "blocks": [
+        {
+          "type": "text",
+          "name": "Text field",
+          "settings": [
+            {
+              "type": "text",
+              "id": "label",
+              "label": "Label",
+              "default": "Custom field"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Name",
+              "default": "Custom field"
+            },
+            {
+              "type": "checkbox",
+              "id": "use_long_text",
+              "label": "Use long text",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "only_numbers",
+              "label": "Only numbers allowed",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "id": "is_required",
+              "label": "Field is required",
+              "default": false
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "Dropdown",
+          "settings": [
+            {
+              "type": "text",
+              "id": "label",
+              "label": "Label",
+              "default": "Custom field"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Name",
+              "default": "Custom field"
+            },
+            {
+              "type": "text",
+              "id": "values",
+              "label": "Values",
+              "info": "Separate each value by a comma.",
+              "default": "value 1, value 2, value 3"
+            },
+            {
+              "type": "checkbox",
+              "id": "is_required",
+              "label": "Field is required",
+              "default": false
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+            "name": "Zendesk Form"
+        }
+      ]
+    }
+    {% endschema %}

@@ -5,90 +5,92 @@
     </div>
   </header>
 
-  <div class="PageContent PageContent--narrow">
+  <div class="PageContent PageContent--narrow contact-page">
     <div class="Rte">
       {{- page.content -}}
 
-      {%- form 'contact', class: 'Form Form--spacingTight' -%}
-        {%- if form.posted_successfully? -%}
-          <p class="Alert Alert--success">{{ 'contact.form.successfully_sent' | t }}</p>
-        {%- endif -%}
-
-        {%- if form.errors -%}
-          <div class="Form__Alert Alert Alert--error">
-            <ul class="Alert__ErrorList">
-              {%- for field in form.errors -%}
-                {%- if field == 'form' -%}
-                  <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
-                {%- else -%}
-                  <li class="Alert__ErrorItem"><strong>{{ form.errors.translated_fields[field] }}</strong> {{ form.errors.messages[field] }}</li>
-                {%- endif -%}
-              {%- endfor -%}
-            </ul>
-          </div>
-        {%- endif -%}
-
-        <div class="Form__Group">
-          <div class="Form__Item">
-            <input type="text" class="Form__Input" name="contact[name]" aria-label="{{ 'contact.form.name' | t }}" placeholder="{{ 'contact.form.name' | t }}" required {% if customer %}value="{{ customer.name }}"{% endif %}>
-            <label class="Form__FloatingLabel">{{ 'contact.form.name' | t }}</label>
-          </div>
-
-          <div class="Form__Item">
-            <input type="email" class="Form__Input" name="contact[email]" aria-label="{{ 'contact.form.email' | t }}" placeholder="{{ 'contact.form.email' | t }}" required {% if customer %}value="{{ customer.email }}"{% endif %}>
-            <label class="Form__FloatingLabel">{{ 'contact.form.email' | t }}</label>
-          </div>
-        </div>
-
-        {%- for block in section.blocks -%}
-          {%- assign field_title = block.settings.title -%}
-
-          {%- if field_title == blank -%}
-            {%- capture field_title -%}Custom field {% increment custom_field %}{%- endcapture -%}
+      {% if section.settings.show_form %}
+        {%- form 'contact', class: 'Form Form--spacingTight' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="Alert Alert--success">{{ 'contact.form.successfully_sent' | t }}</p>
           {%- endif -%}
 
-          {%- if block.type == 'text' -%}
-            <div class="Form__Item">
-              {%- if block.settings.use_long_text -%}
-                <textarea name="contact[{{ field_title | escape }}]" cols="30" rows="10" class="Form__Textarea" aria-label="{{ block.settings.title | escape }}" placeholder="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %}></textarea>
-                <label class="Form__FloatingLabel">{{ block.settings.title | escape }}</label>
-              {%- else -%}
-                <input type="text" class="Form__Input" name="contact[{{ field_title | escape }}]" aria-label="{{ block.settings.title | escape }}" placeholder="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %}>
-                <label class="Form__FloatingLabel">{{ block.settings.title | escape }}</label>
-              {%- endif -%}
+          {%- if form.errors -%}
+            <div class="Form__Alert Alert Alert--error">
+              <ul class="Alert__ErrorList">
+                {%- for field in form.errors -%}
+                  {%- if field == 'form' -%}
+                    <li class="Alert__ErrorItem">{{ form.errors.messages[field] }}</li>
+                  {%- else -%}
+                    <li class="Alert__ErrorItem"><strong>{{ form.errors.translated_fields[field] }}</strong> {{ form.errors.messages[field] }}</li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
             </div>
-          {%- elsif block.type == 'dropdown' -%}
-            {%- assign values = block.settings.values | split: ',' -%}
+          {%- endif -%}
 
-            {%- if values == empty -%}
-              {%- continue -%}
+          <div class="Form__Group">
+            <div class="Form__Item">
+              <input type="text" class="Form__Input" name="contact[name]" aria-label="{{ 'contact.form.name' | t }}" placeholder="{{ 'contact.form.name' | t }}" required {% if customer %}value="{{ customer.name }}"{% endif %}>
+              <label class="Form__FloatingLabel">{{ 'contact.form.name' | t }}</label>
+            </div>
+
+            <div class="Form__Item">
+              <input type="email" class="Form__Input" name="contact[email]" aria-label="{{ 'contact.form.email' | t }}" placeholder="{{ 'contact.form.email' | t }}" required {% if customer %}value="{{ customer.email }}"{% endif %}>
+              <label class="Form__FloatingLabel">{{ 'contact.form.email' | t }}</label>
+            </div>
+          </div>
+
+          {%- for block in section.blocks -%}
+            {%- assign field_title = block.settings.title -%}
+
+            {%- if field_title == blank -%}
+              {%- capture field_title -%}Custom field {% increment custom_field %}{%- endcapture -%}
             {%- endif -%}
 
-            <div class="Form__Item">
-              <div class="Form__Select Select Select--primary">
-                {%- include 'icon' with 'select-arrow' -%}
-
-                <select name="contact[{{ field_title | escape }}]" title="{{ block.settings.title | escape }}" required>
-                  <option value="" disabled selected>{{ block.settings.title | escape }}</option>
-
-                  {%- for value in values -%}
-                    {%- assign trim_value = value | strip -%}
-
-                    <option value="{{ trim_value | escape }}">{{ trim_value | escape }}</option>
-                  {%- endfor -%}
-                </select>
+            {%- if block.type == 'text' -%}
+              <div class="Form__Item">
+                {%- if block.settings.use_long_text -%}
+                  <textarea name="contact[{{ field_title | escape }}]" cols="30" rows="10" class="Form__Textarea" aria-label="{{ block.settings.title | escape }}" placeholder="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %}></textarea>
+                  <label class="Form__FloatingLabel">{{ block.settings.title | escape }}</label>
+                {%- else -%}
+                  <input type="text" class="Form__Input" name="contact[{{ field_title | escape }}]" aria-label="{{ block.settings.title | escape }}" placeholder="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %}>
+                  <label class="Form__FloatingLabel">{{ block.settings.title | escape }}</label>
+                {%- endif -%}
               </div>
-            </div>
-          {%- endif -%}
-        {%- endfor -%}
+            {%- elsif block.type == 'dropdown' -%}
+              {%- assign values = block.settings.values | split: ',' -%}
 
-        <div class="Form__Item">
-          <textarea name="contact[body]" cols="30" rows="10" class="Form__Textarea" aria-label="{{ 'contact.form.message' | t }}" placeholder="{{ 'contact.form.message' | t }}" required></textarea>
-          <label class="Form__FloatingLabel">{{ 'contact.form.message' | t }}</label>
-        </div>
+              {%- if values == empty -%}
+                {%- continue -%}
+              {%- endif -%}
 
-        <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'contact.form.submit' | t }}</button>
-      {%- endform -%}
+              <div class="Form__Item">
+                <div class="Form__Select Select Select--primary">
+                  {%- include 'icon' with 'select-arrow' -%}
+
+                  <select name="contact[{{ field_title | escape }}]" title="{{ block.settings.title | escape }}" required>
+                    <option value="" disabled selected>{{ block.settings.title | escape }}</option>
+
+                    {%- for value in values -%}
+                      {%- assign trim_value = value | strip -%}
+
+                      <option value="{{ trim_value | escape }}">{{ trim_value | escape }}</option>
+                    {%- endfor -%}
+                  </select>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+
+          <div class="Form__Item">
+            <textarea name="contact[body]" cols="30" rows="10" class="Form__Textarea" aria-label="{{ 'contact.form.message' | t }}" placeholder="{{ 'contact.form.message' | t }}" required></textarea>
+            <label class="Form__FloatingLabel">{{ 'contact.form.message' | t }}</label>
+          </div>
+
+          <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'contact.form.submit' | t }}</button>
+        {%- endform -%}
+      {% endif %}
     </div>
   </div>
 </div>
@@ -96,7 +98,14 @@
 {% schema %}
 {
   "name": "Contact page",
-  "settings": [],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_form",
+      "label": "Show form",
+      "default": true
+    }
+  ],
   "blocks": [
     {
       "type": "text",
