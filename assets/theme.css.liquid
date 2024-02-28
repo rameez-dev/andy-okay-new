@@ -1680,7 +1680,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
 .flickity-viewport {
   overflow: hidden;
   position: relative;
-  height: auto;
+  height : auto;
 }
 .flickity-slider {
   position: absolute;
@@ -4361,6 +4361,7 @@ select::-ms-expand {
   font-weight: 300;
   font-family: "DIN Next LT Pro Light";
 }
+
 .PageHeader .SectionHeader__Heading, .PageHeader .SectionHeader__Description {
   margin-top: 0 !important;
 }
@@ -12011,22 +12012,24 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .tags-section.quick-looks .tags-section-holder .links-section {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  gap : 15px;
+  justify-content: space-evenly; 
   overflow-x: auto;
-  white-space: unset;
+  white-space: nowrap;
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list {
-  min-width: 100px;
-  max-width: 100px;
+ /* min-width: 100px;
+  max-width: 100px;  */  
   width: 100%;
   text-align: center;
 }
 @media screen and (max-width: 640px) {
   .tags-section.quick-looks .tags-section-holder .links-section .link-list {
-    min-width: 90px;
-    max-width: 90px;
-  }
+   /* min-width: 90px;
+    max-width: 90px; */
+    gap : 20px;
+  } 
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .prod__list-icon {
   width: 73px;
@@ -12055,10 +12058,15 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
   font-family: "Adobe Caslon Pro";
-  font-size: 14px;
+  font-size: 23px;
   line-height: normal;
   color: #000;
+  text-decoration : underline; 
   word-break: break-word;
+}
+
+.tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title:hover {
+  color : blue;
 }
 @media screen and (max-width: 640px) {
   .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
@@ -12426,7 +12434,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .counter-home-sec {
   padding: 40px 0px;
-  background: #f0f0f0;
+  background: #f5f2eb; 
 }
 @media screen and (max-width: 640px) {
   .counter-home-sec {
@@ -12454,10 +12462,15 @@ S .SidebarMenu .Drawer__Main::after {
 .counter-home-sec .count-list li h3 {
   margin-bottom: 5px;
   font-size: 50px;
-  font-family: DIN Next LT Pro;
+  font-family: Adobe Caslon;
   line-height: 42px;
-  font-weight: 800;
+  /*font-weight: 800; */
+} 
+
+.counter-home-sec .count-list li p {
+  font-family : Adobe Caslon !important;
 }
+
 @media screen and (max-width: 640px) {
   .counter-home-sec .count-list li h3 {
     font-size: 36px;
