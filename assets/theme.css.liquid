@@ -1697,6 +1697,18 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   -ms-user-select: none;
   user-select: none;
 }
+
+.Slideshow__carousel--custom .flickity-enabled.is-draggable .flickity-viewport {
+  height : 85px !important;
+}
+
+@media only screen and (min-width : 768px){
+
+.Slideshow-main_custom {
+     margin-top : -45px !important;
+  }
+}
+
 .flickity-enabled.is-draggable .flickity-viewport {
   cursor: -webkit-grab;
   cursor: grab;
@@ -5028,6 +5040,7 @@ select::-ms-expand {
   margin-top: 50px;
   text-align: center;
 }
+
 @media screen and (min-width: 641px) {
   .SectionHeader__Heading--emphasize {
     font-size: calc(var(--base-text-font-size) - var(--default-text-font-size) + 22px);
@@ -7067,6 +7080,7 @@ select::-ms-expand {
 .Slideshow__Carousel .Slideshow__Content {
   max-width: 750px;
 }
+
 .Slideshow__Carousel .Slideshow__Content.Slideshow__Content--middleCenter {
   bottom: auto;
   top: 50%;
@@ -11513,7 +11527,7 @@ S .SidebarMenu .Drawer__Main::after {
 @media screen and (max-width: 640px) {
   .Section--logos .Carousel__Cell {
     width: 30% !important;
-    margin: 0 -5px;
+    margin: 4px -5px;
     min-height: 60px;
   }
 }

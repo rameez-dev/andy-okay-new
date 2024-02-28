@@ -18,7 +18,8 @@
       <h2 class="SectionHeader__Heading Heading" style="color: {{ section.settings.heading_text_color }};">{{ section.settings.heading }}</h2>
     </div>
   </div>
-  <div class="Slideshow" style="margin-top: -15px;">
+  <div class="Slideshow-main_custom Slideshow" style="margin-top: -30px;">
+  <div class="Slideshow__carousel--custom">
   <div class="Slideshow__Carousel Carousel" data-flickity-config='{{ flickity_options }}'>
     {%- for block in section.blocks -%}
       <div id="Slide{{ block.id }}" class="Slideshow__Slide Carousel__Cell {% if forloop.first %}is-selected{% endif %}" {% if forloop.first %}style="visibility: visible"{% endif %} data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
@@ -29,6 +30,7 @@
         </div>
       </div>
     {%- endfor -%}
+  </div>
   </div>
   </div>
 </section>

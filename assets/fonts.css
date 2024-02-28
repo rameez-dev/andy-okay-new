@@ -282,3 +282,15 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Adobe Caslon Regular */
+
+@font-face {
+    font-family: 'Adobe Caslon';
+    src: url('ACaslon-Regular.woff2') format('woff2'),
+        url('ACaslon-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
