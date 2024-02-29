@@ -167,7 +167,6 @@
         "82d2cc96-d2b1-4349-b7f1-4c9223e6f176": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/astro.jpg",
             "title": "Astronauts",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
@@ -182,7 +181,6 @@
         "d5cdba60-5ac4-4c04-8388-b3a585d3c601": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/animals.jpg",
             "title": "Animals",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
@@ -197,7 +195,6 @@
         "d88674ca-5101-4547-8740-9abba5891fec": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/popart.jpg",
             "title": "Contemporary",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -212,7 +209,6 @@
         "7ffcaee8-eae3-48f3-b659-f208ba42991b": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/floral_4cf9c7fb-3ab1-445e-b1ce-979fdd5a93a7.jpg",
             "title": "Floral",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -227,7 +223,6 @@
         "bed987ba-3c0e-4332-8e01-973dcc21c67b": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/gaming.jpg",
             "title": "Gaming",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
@@ -242,7 +237,6 @@
         "7c219c9e-ef62-4df1-8c09-cb7211f1fb50": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/motivational_982f550f-ec00-43a1-a97c-4b99f8dd9f93.jpg",
             "title": "Motivational",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -257,7 +251,6 @@
         "3640fa5c-e34e-40dd-a9c3-7e2a5dbfa452": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/landscape.jpg",
             "title": "Nature",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
@@ -272,7 +265,6 @@
         "6af4f2c7-c3fc-4b20-9ae5-abfb137f1c78": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/photography.jpg",
             "title": "Photo Art",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -287,7 +279,6 @@
         "0961a735-eda2-4c2c-a7c4-0ea6437b5489": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/space.jpg",
             "title": "Space",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -302,7 +293,6 @@
         "d8eaad19-3aaa-4527-9d03-edb9cb337db2": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/surreal.jpg",
             "title": "Surreal Art",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
@@ -328,7 +318,7 @@
         "d8eaad19-3aaa-4527-9d03-edb9cb337db2"
       ],
       "settings": {
-        "title": "Shop by style",
+        "title": "",
         "subtitle": ""
       }
     },
