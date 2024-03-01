@@ -225,10 +225,35 @@ HEADER CONTENT
   .Collapsible__Button--Custom {
      display : none !important;
   }
+
+  .Header--Logo_Custom {
+     display : flex !important;
+}
+
+.Header__Logo--Custom {
+  display : flex;
+  flex-grow : 10;
+}
+
+.search-cart_icon__mobile--Custom {
+  display : flex !important;
+}
+
+.cart-search__Custom {
+  display : none !important;
+}
+
 }
 .hidden-phone__custom {
   display : inline-flex !important;
 }
+
+.Header--Logo_Custom {
+   display : none;
+   margin-top : auto;
+   margin-left  :10px; 
+}
+
 {% endstyle %}
 
 <header id="section-{{ section.id }}"
@@ -237,12 +262,49 @@ HEADER CONTENT
         data-section-type="header"
         data-section-settings='{{ section_settings }}'
         role="banner">
-  <div class="Header__Wrapper" style="display: none;"> 
-    <div class="Header__FlexItem Header__FlexItem--fill mobile-menu-icon">
+  <div class="Header__Wrapper" style="display: none;">
+  <div class="Header__Logo--Custom"><h1 class="Header--Logo_Custom"><a href="/" class="Header__LogoLink"><img class="Header__LogoImage Header__LogoImage--primary" src="//andyokay.com/cdn/shop/files/andyokay_long_black_140x.png?v=1661499587" srcset="//andyokay.com/cdn/shop/files/andyokay_long_black_140x.png?v=1661499587 1x, //andyokay.com/cdn/shop/files/andyokay_long_black_140x@2x.png?v=1661499587 2x" width="140" alt="Andy okay"><img class="Header__LogoImage Header__LogoImage--transparent" src="//andyokay.com/cdn/shop/files/andyokay_long_white_140x.png?v=1661499613" srcset="//andyokay.com/cdn/shop/files/andyokay_long_white_140x.png?v=1661499613 1x, //andyokay.com/cdn/shop/files/andyokay_long_white_140x@2x.png?v=1661499613 2x" width="140" alt="Andy okay"></a></h1></div>
+
+  <div class="Header__FlexItem Header__FlexItem--fill mobile-menu-icon">
+    <div class="search-cart_icon__mobile--Custom"> 
+      <div class="Header__FlexItem Header__FlexItem--fill mobile-cart-icon">
+          <a href="/cart"  id="target__mobile" class="Header__Icon cart_wrapper Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
+            <span class="cart_amount">
+              {% if cart.total_price != 0  %}
+                <b>
+                <span id="cm_at_price_header">{{ cm_at_price_total | money_without_trailing_zeros }}</span>
+                </b> 
+                <span id="price_header">{{ cart.total_price | money_without_trailing_zeros }}</span>
+              {% else %}
+                <b>
+                <span id="cm_at_price_header"></span>
+                </b> 
+                <span id="price_header"></span>
+              {% endif %}
+    
+            </span>
+            <span class="cart_icon">
+            
+            
+            <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
+            <span class="hidden-phone">{%- include 'icon' with 'cart-desktop' -%} </span>
+            </span>
+            
+          </a>
+    </div>
+    
+    <div class="Header__FlexItem Header__FlexItem--fill mobile-search-icon">
+    <a href="/search" class="Header__Icon head_mobile_serch Icon-Wrapper Icon-Wrapper--clickable search_line__height {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
+      {%- include 'icon' with 'search-desktop' -%}
+    </a>
+    </div>
+    
+    </div>
+
       <button class="Header__FlexItem--Custom Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless use_sidebar_menu %}hidden-desk{% endunless %}" aria-expanded="false" data-action="open-drawer" data-drawer-id="sidebar-menu" aria-label="{{ 'header.navigation.open_sidebar' | t }}">
         <span class="hidden-tablet-and-up mob_phone_icon">{%- include 'icon' with 'nav' -%}</span>
         <span class="hidden-phone">{%- include 'icon' with 'nav-desktop' -%}</span>
-        &nbsp;&nbsp;<span class="Collapsible__Button--Custom Collapsible__Button Heading u-h6" style="margin-top : 3px;">Menu</span>
+        &nbsp;&nbsp;<span class="Collapsible__Button--Custom Collapsible__Button Heading u-h6" style="margin-top : 4px;">Menu</span>
       </button>
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
@@ -563,6 +625,7 @@ HEADER CONTENT
   	{% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
   {% endif %}
 {% endfor %}
+<div class="cart-search__Custom">
  <div class="Header__FlexItem Header__FlexItem--fill mobile-cart-icon">
       <a href="/cart"  id="target__mobile" class="Header__Icon cart_wrapper Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
         <span class="cart_amount">
@@ -593,6 +656,7 @@ HEADER CONTENT
 <a href="/search" class="Header__Icon head_mobile_serch Icon-Wrapper Icon-Wrapper--clickable search_line__height {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
   {%- include 'icon' with 'search-desktop' -%}
 </a>
+</div>
 </div>
     <div class="Header__FlexItem Header__FlexItem--logo">
       {%- if template == 'index' -%}
