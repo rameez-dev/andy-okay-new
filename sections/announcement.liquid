@@ -1,13 +1,40 @@
+<script>
+$(document).ready(function () {
+    var user__country = localStorage.getItem('user__country');
+    var country_flag = localStorage.getItem('userCurrencyFlag');
+    var curerncy_country_name = localStorage.getItem('country_name_show');
+    var usercountryelement = document.getElementById('countryInTruststar');
+    var truststar_flag = document.getElementById('truststar-flag');
+
+    if (user__country)
+    { 
+      usercountryelement.innerHTML = ' to ' + user__country; 
+    }
+
+    if (truststar_flag && country_flag)
+    { 
+      if (user__country == curerncy_country_name)
+      truststar_flag.src = 'https://cdn.shopify.com/s/files/1/0082/5619/2602/files/' + country_flag + '.png'; 
+      else 
+      truststar_flag.src = '';
+    }
+
+});  
+</script>
 {% style %}
 
-.Section-AnnouncementBar--Custom {
-   background : #f5f2eb !important;
-   color : #464544 !important;
+#section-announcement {
+  color : #464544 !important;
+  background : #f5f2eb !important;
 }
 
 .AnnouncementBar .Header__CurrencySelector {
   float : left !important;
   display : flex !important;
+}
+
+.AnnouncementBar__Content--Custom {
+  font-family: 'Adobe Caslon Pro Regular' !important;
 }
 
 @media only screen and (max-width : 768px){
@@ -27,7 +54,6 @@
         <span>
           <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags" >
         </span>
-
         <select class="CurrencySelector__Select u-h8" title="{{ 'header.navigation.currency_selector' | t | escape }}">
           {%- capture codes -%}USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,BWP,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ILS,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK{%- endcapture -%}
           {%- assign supported_codes = settings.currency_conversion_supported_currencies | remove_first: shop.currency | upcase | split: ' ' | uniq -%}
@@ -44,7 +70,7 @@
       </div>
     </div>       
         <div class="AnnouncementBar__Wrapper" >
-          <p class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
+          <p class="AnnouncementBar__Content--Custom AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
             {% for block in section.blocks %}
               {%- if forloop.index == 1 -%} 
                 <span name="announcement-block-{{forloop.index}}">
@@ -54,7 +80,7 @@
                   {%- if block.settings.link -%}
                     <a href="{{ block.settings.link }}">{{ block.settings.content }}</a><br>
                   {%- else -%}
-                    <span>{{ block.settings.content }}</span><br>
+                    <span style="color : #454644 !important">{{ block.settings.content }}</span><br>
                   {%- endif -%}
                 </span>  
               {%- else -%}
@@ -70,10 +96,10 @@
                 </span>
               {%- endif -%}
             {% endfor %}
-          </p>
-        </div>
+        </p>
       </div>
-    </section>
+     </div>
+  </section>
 
 
     <style>
