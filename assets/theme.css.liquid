@@ -7819,6 +7819,21 @@ select::-ms-expand {
 .Header__Icon span {
   display: block;
 }
+
+.Header__FlexItem--Custom__cart {
+    flex-direction : row-reverse !important;
+    justify-content: end !important;
+    gap : 10px !important;
+}
+
+@media only screen and (max-width : 768px){
+  .Header__FlexItem--Custom__cart{
+    flex-direction: unset;
+    justify-content : unset;
+    gap : unset; 
+  }
+}
+
 .Header__Icon span.mob_phone_icon {
   border-radius: 100%;
   background: #fff;
@@ -7892,6 +7907,13 @@ select::-ms-expand {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+
+@media only screen and (max-width : 768px){
+  .Header__FlexItem--fill:last-child {
+     margin-top : 7px;
+  }
+}
+
 .Header__FlexItem--fill .mob_menu_list {
   font-family: "DIN Next LT Pro Bold";
   font-size: 15px;

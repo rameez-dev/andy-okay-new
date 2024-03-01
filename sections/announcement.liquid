@@ -6,11 +6,10 @@
 }
 
 {% endstyle %}
-
 {%- if section.settings.enable_bar -%}
   {%- unless section.settings.home_page_only and template != 'index' -%}
-    <section class="Section-AnnouncementBar--Custom" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
-      <div class="AnnouncementBar">
+    <section class="Section-AnnouncementBar--Custom" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">   
+      <div class="AnnouncementBar">      
         <div class="AnnouncementBar__Wrapper" >
           <p class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
             {% for block in section.blocks %}

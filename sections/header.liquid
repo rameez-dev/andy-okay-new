@@ -43,10 +43,12 @@ The theme currency converter is used in lot of different places so to simply the
   width="{{ section.settings.mobile_logo_max_width }}"
   alt="{{ section.settings.mobile_logo.alt | default: shop.name | escape }}"></a>
 </div>
+
+{% comment %}
 {%- if settings.currency_conversion_enabled -%}
-  {%- capture currency_conversion_select -%}
+  {%- capture currency_conversion_select -%}  
     <div class="Header__CurrencySelector Text--subdued Heading Link Link--primary u-h8 hidden-pocket hidden-lap">
-      <div class="Select Select--transparent">
+      <div class="Select Select--transparent">  
         <span>
           <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags" >
         </span>
@@ -63,12 +65,12 @@ The theme currency converter is used in lot of different places so to simply the
             {%- endif -%}
           {%- endfor -%}
         </select>
-        {% comment %} {%- include 'icon' with 'select-arrow' -%} {% endcomment %}
+         {%- include 'icon' with 'select-arrow' -%} 
       </div>
     </div>
   {%- endcapture -%}
 {%- endif -%}
-
+{% endcomment %}
 {%- comment -%}
 --------------------------------------------------------------------------------------------------------------------
 SEARCH FORM (implemented as a modal)
@@ -666,7 +668,7 @@ HEADER CONTENT
       {%- endif -%}
     </div>
 
-    <div class="Header__FlexItem Header__FlexItem--fill desktop-menu-option">
+    <div class="Header__FlexItem--Custom__cart Header__FlexItem Header__FlexItem--fill desktop-menu-option">
       {% comment %} {%- unless section.settings.show_icons or use_sidebar_menu -%}
         <nav class="Header__SecondaryNav hidden-phone">
           <ul class="HorizontalList HorizontalList--spacingLoose hidden-pocket hidden-lap">
@@ -912,7 +914,7 @@ HEADER CONTENT
   
   .Header__Icon.cart_wrapper{
   	 padding:5px 15px;
-     background: #e5e5e5;
+    /* background: #e5e5e5; */
      border-radius:5px;
      display:inline-flex;
      align-items:center;
@@ -1072,7 +1074,7 @@ div#giftbox-root {
           z-index: 999999999999;
           min-height:52px;
       }
-      .mobile-cart-icon, .mobile-allart-icon, .mobile-search-icon, .mobile-home-icon{display: block;}
+      .mobile-cart-icon, .mobile-allart-icon, .mobile-search-icon, .mobile-home-icon{display: block;margin-right : 14px;}
       .desktop-menu-option, .Header__Logo{display: none;}
 
       .Header__Icon{text-align: center;width: 100%;}
@@ -1093,7 +1095,7 @@ div#giftbox-root {
         
       	}
      }
-      .mobile-logo-main{display: block;
+      .mobile-logo-main{display: none;
     position: fixed; 
     top: 0;
     left: 7px;
