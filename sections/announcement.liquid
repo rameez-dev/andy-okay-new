@@ -5,15 +5,48 @@
    color : #464544 !important;
 }
 
+.AnnouncementBar .Header__CurrencySelector {
+  float : left !important;
+  display : flex !important;
+}
+
+@media only screen and (max-width : 768px){
+  .AnnouncementBar .Header__CurrencySelector {
+    display : none !important;
+  }
+}
+
 {% endstyle %}
 {%- if section.settings.enable_bar -%}
   {%- unless section.settings.home_page_only and template != 'index' -%}
-    <section class="Section-AnnouncementBar--Custom" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">   
-      <div class="AnnouncementBar">      
+    <section class="Section-AnnouncementBar--Custom" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">      
+    <div class="AnnouncementBar">   
+    
+    <div class="Header__CurrencySelector Text--subdued Heading Link Link--primary u-h8 hidden-pocket hidden-lap">
+      <div class="Select Select--transparent">  
+        <span>
+          <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags" >
+        </span>
+
+        <select class="CurrencySelector__Select u-h8" title="{{ 'header.navigation.currency_selector' | t | escape }}">
+          {%- capture codes -%}USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,BWP,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ILS,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK{%- endcapture -%}
+          {%- assign supported_codes = settings.currency_conversion_supported_currencies | remove_first: shop.currency | upcase | split: ' ' | uniq -%}
+
+          <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
+
+          {%- for code in supported_codes -%}
+            {%- if codes contains code -%}
+              <option value="{{ code }}">{{ code }}</option>
+            {%- endif -%}
+          {%- endfor -%}
+        </select>
+         {%- include 'icon' with 'select-arrow' -%} 
+      </div>
+    </div>       
         <div class="AnnouncementBar__Wrapper" >
           <p class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
             {% for block in section.blocks %}
-              {%- if forloop.index == 1 -%}
+              {%- if forloop.index == 1 -%} 
                 <span name="announcement-block-{{forloop.index}}">
                   {% if block.settings.icon != blank %}
                     <img class="announcement_icon" src="{{ block.settings.icon | image_url: height: 30 }}">
