@@ -2,6 +2,26 @@
   {%- unless section.settings.home_page_only and template != 'index' -%}
     <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
       <div class="AnnouncementBar">
+        {%- if settings.currency_conversion_enabled -%}
+          <div class="announcment-currency-cont">
+            <a class="new_currency_dropdown">
+              <span>
+                <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags" >
+              </span>
+              {% comment %} <span name="currency-name">
+              {{ shop.currency }}
+              </span> {% endcomment %}
+              &nbsp;{%- include 'icon' with 'select-arrow' -%}
+            </a>
+          </div>
+          <div class="MegaMenu Announcment_megamenu">
+              <div class="MegaMenu__Inner">
+                <div id="new-currency-container">
+                  <div class="new-currency-heading">Choose Your Country</div>
+                </div>
+              </div>
+            </div>
+        {% endif %}
         <div class="AnnouncementBar__Wrapper" >
           <p class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
             {% for block in section.blocks %}
