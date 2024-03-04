@@ -514,15 +514,15 @@
         "mobile_image_bbRBVd": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/jonas_mob.jpg",
-            "link": "shopify:\/\/collections\/jonas-loose-portfolio"
+            "image": "shopify:\/\/shop_images\/garden_carousel_mob.jpg",
+            "link": "shopify:\/\/collections\/nicebleed"
           }
         },
         "desktop_image_TfMUQP": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/jonas_desktop.jpg",
-            "link": "shopify:\/\/collections\/jonas-loose-portfolio"
+            "image": "shopify:\/\/shop_images\/garden_carousel_desk.jpg",
+            "link": "shopify:\/\/collections\/nicebleed"
           }
         },
         "mobile_image_cgWgdQ": {
