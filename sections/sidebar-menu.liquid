@@ -12,7 +12,7 @@
   .drawer-secondary-link-list {
     margin: 35px 15px 0px 15px;
     list-style: none;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
   }
 
@@ -27,6 +27,11 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
+  }
+  @media only screen and (min-width: 641px) {
+    .drawer-trustpilot-container{
+      margin-bottom: 100px;
+    }
   }
   .drawer-trustpilot-text{
     font-family: 'Adobe Caslon Pro';
@@ -54,7 +59,7 @@
                 {% endif %}
                   <div class="Collapsible">
                     {%- if link.links != blank -%}
-                      <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
+                      <button class="Collapsible__Button Heading u-h6 {% if link.title contains 'IMPACT' %} impact-link{% endif %}" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
                         {{- link.title | escape -}} <span class="Collapsible__Plus"></span>
                       </button>
 
@@ -96,8 +101,8 @@
               </nav>
               <ul class="drawer-secondary-link-list">
                 <li><a href="https://andyokay.com/pages/about-us">About Us</a></li>
-                <li><a href="https://andyokay.com/pages/faq">FAQs</a></li>
-                <li><a href="https://andyokay.com/pages/shipping-returns">Shipping & Returns</a></li>
+                <li><a href="https://andyokay.com/pages/faq">Customer Support</a></li>
+              {% comment %} <li><a href="https://andyokay.com/pages/shipping-returns">Shipping & Returns</a></li> {% endcomment %} 
                 <li><a href="https://andyokay.com/pages/contact">Contact Us</a></li>
               </ul>
             </div>
@@ -117,6 +122,11 @@
                     padding: 10px;
                     border-radius: 4px;
                     background-color: #f2f2f2;
+                  }
+                  @media only screen and (min-width: 901px) {
+                    button.new-currency-drawer{
+                      display: none;
+                    }
                   }
                   button.new-currency-drawer>span[name="currency-name"]{
                     color: black;

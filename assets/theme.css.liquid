@@ -1867,7 +1867,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   display: block;
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding: 12px 0;
   text-align: left;
   cursor: pointer;
   text-transform: uppercase;
@@ -2064,7 +2064,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   height: 100%;
 }
 .Drawer--fromLeft .Drawer__Container {
-  margin-top: 30px;
+  padding-top: 30px;
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -2139,7 +2139,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
-  height: calc(100% - 40px);
+  height: calc(100% - 64px);
   /* max-height: calc(100% - 50px); */
   /*   @supports (--css: variables) {
    height: calc(100% - var(--header-height));
@@ -7803,6 +7803,21 @@ select::-ms-expand {
 .Header__Icon span {
   display: block;
 }
+
+.Header__FlexItem--Custom__cart {
+    flex-direction : row-reverse !important;
+    justify-content: end !important;
+    gap : 10px !important;
+}
+
+@media only screen and (max-width : 768px){
+  .Header__FlexItem--Custom__cart{
+    flex-direction: unset;
+    justify-content : unset;
+    gap : unset; 
+  }
+}
+
 .Header__Icon span.mob_phone_icon {
   border-radius: 100%;
   background: #fff;
@@ -7876,6 +7891,13 @@ select::-ms-expand {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+
+@media only screen and (max-width : 768px){
+  .Header__FlexItem--fill:last-child {
+     margin-top : 7px;
+  }
+}
+
 .Header__FlexItem--fill .mob_menu_list {
   font-family: "DIN Next LT Pro Bold";
   font-size: 15px;
@@ -7959,14 +7981,19 @@ nav.Header__SecondaryNav.push-currency-left {
   color: #ad9c81 !important;
 }
 .members-club-color {
-  color: #ad9c81 !important;
+  color: black !important;
 }
 .almost_gone_color {
-  color: #af182b !important;
+ /* color: #af182b !important; */
+  display : none;
 }
+.impact-link {
+  color: #2200cc !important;
+}
+
 @media screen and (min-width: 641px) {
   .Header__Wrapper {
-    padding: 18px 30px;
+    padding: 10px 30px;
   }
   .Header__LogoImage {
     max-width: 100%;
@@ -8016,6 +8043,7 @@ nav.Header__SecondaryNav.push-currency-left {
     display: inline-block;
   }
   .Header__MainNav {
+    display: none;
     margin-right: 45px;
   }
   .Header--inline .Header__FlexItem:first-child .Header__CurrencySelector, .Header--logoLeft .Header__FlexItem:first-child .Header__CurrencySelector {
