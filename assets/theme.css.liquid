@@ -14897,3 +14897,68 @@ a:hover .overlay_dot {
   margin-left: 10px;
   margin-bottom: 3px;
 }
+
+li>a.new_currency_dropdown{
+  font-family: DIN Next,sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+}
+a.new_currency_dropdown>span>img{
+  transform: translateY(-1px);
+  vertical-align: bottom !important;
+}
+#new-currency-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.new-currency-container-item{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5, minmax(0, 1fr));;
+  gap: 10px;
+  padding: 10px 30px 25px;
+}
+.new-currency-region {
+  margin: 20px 30px 10px;
+  border-bottom: 1px solid #f4f4f4;
+  font-family: 'Adobe Caslon Pro';
+  line-height: 2;
+}
+.new-currency-heading{
+  font-size: 28px;
+  font-family: 'DIN Next LT Pro Cond';
+  text-align: center;
+  text-transform: uppercase;
+}
+a[name="new-currency-object"]>span{
+  margin-right: 10px;
+}
+a[name="new-currency-object"]>span>img{
+  transform: translateY(-4px);
+  vertical-align: bottom !important;
+}
+
+.announcment-currency-cont {
+  position: absolute;
+  padding: 13px 0px 13px 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#shopify-section-announcement {
+  z-index: 6;
+  position: relative;
+}
+.announcment-currency-cont:hover+.Announcment_megamenu, .Announcment_megamenu:hover {
+  opacity: 1;
+  visibility: visible
+}
+a[name="new-currency-object"] {
+  cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+  .announcment-currency-cont {
+    display: none;
+  }
+}
