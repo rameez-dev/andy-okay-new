@@ -11927,6 +11927,7 @@ S .SidebarMenu .Drawer__Main::after {
 @media screen and (max-width: 640px) {
   .tags-section .SectionHeader__Heading, .tags-section .links-section {
     padding-left: 24px;
+    padding-right: 24px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -11999,18 +12000,18 @@ S .SidebarMenu .Drawer__Main::after {
   justify-content: flex-start;
   overflow-x: auto;
   white-space: unset;
-}
-.tags-section.quick-looks .tags-section-holder .links-section .link-list {
-  min-width: 100px;
-  max-width: 100px;
-  width: 100%;
-  text-align: center;
+  gap: 40px;
 }
 @media screen and (max-width: 640px) {
-  .tags-section.quick-looks .tags-section-holder .links-section .link-list {
-    min-width: 90px;
-    max-width: 90px;
+  .tags-section.quick-looks .tags-section-holder .links-section {
+    gap: 20px;
   }
+}
+.tags-section.quick-looks .tags-section-holder .links-section .link-list {
+  /* min-width: 100px;
+  max-width: 100px; */
+  width: 100%;
+  text-align: center;
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .prod__list-icon {
   width: 73px;
@@ -12039,14 +12040,20 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
   font-family: "Adobe Caslon Pro";
-  font-size: 14px;
+  font-size: 26px;
   line-height: normal;
   color: #000;
   word-break: break-word;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  white-space: nowrap;
+}
+.tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title:hover {
+  color: #163bbc;
 }
 @media screen and (max-width: 640px) {
   .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
-    font-size: 12px;
+    font-size: 17px;
   }
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-btn {
