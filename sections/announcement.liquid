@@ -120,12 +120,37 @@
         animation();
         }
 
-        animation();
+        {% if section.blocks.size > 1 %}
+          animation();
+        {% endif %}
       });
     </script>
     
   {%- endunless -%}
 {%- endif -%}
+
+<script>
+  $(document).ready(function () {
+    var user__country = localStorage.getItem('user__country');
+    var country_flag = localStorage.getItem('userCurrencyFlag');
+    var curerncy_country_name = localStorage.getItem('country_name_show');
+    var usercountryelement = document.getElementById('announcement-ct');
+    var truststar_flag = document.getElementById('announcement-flag');
+
+    if (user__country)
+    { 
+      usercountryelement.prepend(' to ' + user__country); 
+    }
+
+    if (truststar_flag && country_flag)
+    { 
+      if (user__country == curerncy_country_name)
+      truststar_flag.src = 'https://cdn.shopify.com/s/files/1/0082/5619/2602/files/' + country_flag + '.png'; 
+      else 
+      truststar_flag.src = '';
+    }
+  });
+</script>
 
 {% schema %}
 {
