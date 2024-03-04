@@ -5,14 +5,12 @@
       "blocks": {
         "1598116779262": {
           "type": "separator",
-          "disabled": true,
           "settings": {
             "title": "Pay What You Can"
           }
         },
         "1598116822318": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "What is Pay What You Can?",
             "answer": "<p>Our unique Pay What You Can-model lets you choose your own price for your artwork, knowing that what you choose to give will help support an important cause. The artworks we curate are valued at up to 465USD, we chose to have a lower starting price so we can leave room for donations in our “Choose your donation” section. <\/p><p>It's a never before seen way to use the power of art to make the world a better place.<\/p>"
@@ -20,7 +18,6 @@
         },
         "1598159042172": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "Why do you have a “Choose your donation” section?",
             "answer": "<p>Andy okay started Art for Causes because we all are at different financial positions at different times in our lives, and are able to give different amounts. By having the “Choose your donation” section you can still get amazing art from independent artists and give what you can in a form of a donation to our charity partners. <br\/><br\/>Each donation is valued equally, and appreciated as much. Art for Causes is for you no matter what. Just give what you can. Because every dollar matters. <\/p>"
@@ -36,14 +33,12 @@
         },
         "fb2ea657-a519-4ea8-8550-536eafb97494": {
           "type": "separator",
-          "disabled": true,
           "settings": {
             "title": "Causes"
           }
         },
         "68d438df-82ad-48e1-8f7b-8a54625996b5": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "Who chooses the cause for the artwork?",
             "answer": "<p>Each year we officially partner up with a few charity organisation to help them spread awareness and raise donations through the power art. We work with both large organisations such as WWF and Rainforest Trust and smaller ones such as Artists Building Communities and Animal Love. <\/p><p>The artists can then choose which of our charity partners they want to link to their specific artwork. <\/p>"
@@ -51,7 +46,6 @@
         },
         "ec01fce0-f7f0-4c7f-97f2-b7a19ac2c08f": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "What is \"Charity of the month\"?",
             "answer": "<p>Each month we focus a little more attention on a specific charity partner we are working with, to spread awareness about their mission and vision.<\/p><p>This selected partner becomes the center of attention on many different levels. It features everything from engaging posts in our social channels to the pre-set cause for artists we are collaborating with during that month. <\/p>"
@@ -59,7 +53,6 @@
         },
         "1598116936168": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "Can I choose a different cause?",
             "answer": "<p>Yes, you can choose from any of our charity partners that we work with during the year. <\/p>"
@@ -67,22 +60,53 @@
         },
         "1598117109061": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "How do I know the money will reach the organisation?",
             "answer": "<p>We believe in full transparency and we have official partnerships with our charity organisations.  <br\/><br\/>Follow us on social media (<a href=\"https:\/\/www.instagram.com\/andy.okay\/\" title=\"https:\/\/www.instagram.com\/andy.okay\/\">IG<\/a> \/ <a href=\"https:\/\/www.facebook.com\/andyokayart\/\" title=\"https:\/\/www.facebook.com\/andyokayart\/\">FB<\/a>) where proof of donation will continuously be posted. <br\/><br\/>Of course, you're always welcome to contact us with any questions.<\/p>"
           }
         },
+        "07168397-88a1-45ba-a5fa-2301ac45e81c": {
+          "type": "separator",
+          "settings": {
+            "title": "Collaborations"
+          }
+        },
+        "cdbeac07-2663-4f0d-b8d6-5e441ceed45b": {
+          "type": "question",
+          "settings": {
+            "title": "I'm an artist",
+            "answer": "<p>We're always on the lookout for eyecatching art. Do you think your designs would suit our store? We welcome those of you who are as passionate about creating as you are about our planet for potential partnerships and collaborations.<br\/><br\/>Please send us an email with a link to your portfolio, instagram, or any other media you got. We'll be happy to take a look. <a href=\"\/pages\/collabs-press\" title=\"I'm an artist!\">Send us a message.<\/a><\/p>"
+          }
+        },
+        "4c47f8d8-3b14-495e-ade7-bb31ded3b706": {
+          "type": "question",
+          "settings": {
+            "title": "We're an organisation",
+            "answer": "<p>Andy Okay helped raise awareness and bring attention to important issues for organisations such as WWF, Rainforest Trust, UN, Give Back To Nature, Climate Save Movement and many others. We'd love to talk about what we can do together. <a href=\"\/pages\/contact\" title=\"Contact\">Contact us here. <\/a><\/p>"
+          }
+        },
+        "945eb0e5-6db0-4a34-aa94-f6b02f7c4abe": {
+          "type": "question",
+          "settings": {
+            "title": "I'm a blogger\/influencer",
+            "answer": "<p>We love to partner up with those of you who work as influencers in social media channels. <br\/><br\/>To create a good collaboration it&#x27;s important that your Instagram page is a good fit to our vision content wise. Art, nature, sustainability, styling or interior design etc.<\/p><p>If you believe that your content does match our products, feel free to <a href=\"\/pages\/contact\" title=\"Contact\">contact us.<\/a> We look forward to hearing from you!<\/p>"
+          }
+        },
+        "8616502b-e08d-4726-9eee-b773fbaca377": {
+          "type": "question",
+          "settings": {
+            "title": "Do you represent the press?",
+            "answer": "<p>Press representatives are welcome to contact us for press loans, press images and other PR-related materials. When using our images, we request that you refer to us.<br\/><br\/>Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us here. <\/a><\/p>"
+          }
+        },
         "1598117357604": {
           "type": "separator",
-          "disabled": true,
           "settings": {
             "title": "Limited Release"
           }
         },
         "1598117398474": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "Why do you release so few of each product?",
             "answer": "<p>Each artwork is officially licensed by an independent artist and linked to a specific cause. We want you to own something truly unique. Something special. All the artworks we take in are hand-picked and limited to the sizes and amounts shown our website. <\/p><p>The right to the artworks are still the artists.<\/p>"
@@ -90,7 +114,6 @@
         },
         "1598157318178": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "I really want an item, but it's sold out? Is there any way to get it?",
             "answer": "<p>We totally understand, but when an item is gone, it is gone. However you will get many more chances as  we release new art regularly. <br\/><br\/>Make sure you <a href=\"https:\/\/andyokay.com\/pages\/newsletter\" title=\"https:\/\/andyokay.com\/pages\/newsletter\">sign up to our Members Club<\/a> to get a first notice on every new drop. <\/p>"
@@ -98,7 +121,6 @@
         },
         "1598157484715": {
           "type": "question",
-          "disabled": true,
           "settings": {
             "title": "Will the products be numbered?",
             "answer": "<p>The artworks we have are not signed and numbered. You will receive a certificate of authenticity   with your order that shows that the artworks are officially licensed and linked to one of our charity partners. <\/p>"
@@ -113,114 +135,101 @@
         "1568893636264": {
           "type": "question",
           "settings": {
-            "title": "I didn't receive my order confirmation",
-            "answer": "<p>You will receive an order confirmation as soon as you have made your order. <\/p><p>If you have not received your order confirmation in your inbox please check your spam folder as some email providers automatically redirect emails if the sender is unknown to your contacts. <\/p><p>If you still cannot find the order confirmation, the email address added when making the order might have been misspelled, in this case please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> and we will update your email address and resend the order confirmation to you. <\/p><p><strong>My order page<br\/><\/strong>Through the order confirmation email you can access your order page at anytime. Here you can find your order summary, check your delivery and billing information, and also track your order once your package has been shipped.<\/p>"
+            "title": "How can I track my order?",
+            "answer": "<p>You will receive a notification when your order leaves our warehouse, usually within 24-48h. This email will include a tracking link so you can follow your art all the way to your home.  <\/p>"
           }
         },
         "1568894074474": {
           "type": "question",
           "settings": {
             "title": "Can I cancel or change my order?",
-            "answer": "<p>If you like to update or cancel your order please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> as soon as possible after you have made the order. You can use our contact form with the reason of contact set as “ I want to change or cancel my order”. This way we will know that this is a high priority request.<\/p><p>We can't guarantee that we will have enough time to cancel or change your order, as our fulfilment team pride themselves on getting products heading our customers' way quickly. Orders go to fulfilment within 12h and are packed and shipped to our outbound location within 24h. Once the package is packed we are unable to cancel or update the order even though it is not shipped out yet.<br\/><\/p><p><strong>Change, add or remove items <br\/><\/strong>If you like to change any of the items in your order please let us know the items you would like to remove and\/or add. We will do our best to update your order for you. If the order update can be made, you will receive an order update confirmation in a separate email. <\/p><p>If there are any differences in price you will either receive a refund for the difference or an invoice so you can make the payment for the difference. If you need to make a payment, you can do so directly through the order update confirmation email sent to you by pressing \"Pay Now\" or “Complete my purchase”. Once the payment has been received your order will automatically go through to fulfilment. <br\/><\/p><p><strong>Cancel order<br\/><\/strong>If you need to cancel your order please reach out to us as soon as possible. <\/p><p>We will try our best to cancel your order for you. If the order can be cancelled you will receive a refund confirmation in a separate email. Please note that it might take 2-5 business days before the funds are added back to your account. This depends on the payment method and your bank. <\/p><p>If the order cannot be cancelled we will notify you. In this case, if you still don’t want your item once you have received it you can contact us and make a return request. Please read more about our return policy under Returns.<\/p>"
+            "answer": "<p>We can't guarantee that we'll have enough time to cancel or change your order, as our fulfilment team pride themselves on getting products heading our customers' way quickly. But if you contact us as soon as possible we may be able to arrange it. Please send us an email.<\/p>"
           }
         },
         "page-faq-template-2": {
           "type": "question",
           "settings": {
-            "title": "Can you send me an invoice for my order?",
-            "answer": "<p>We can send you an invoice, if required, that you can use as an expense receipt if you have made your order for a company. We are not able to change any billing information on the invoice or add any VAT numbers. <\/p><p>We do not have a B2B sales set up at the moment, so any invoices sent can only be used as an expense receipt.<\/p><p>If you like an invoice for your order please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a>.<\/p>"
+            "title": "How long will it take to get my order?",
+            "answer": "<p>It depends on where you are. Most orders will take around 3-7 business days to arrive. Some deliveries to more remote areas can take a little bit longer. Shipment details will be sent to you as soon as your package has been shipped.<\/p><p>If you haven't received your art within 9 business days, feel free to use our <a href=\"https:\/\/www.andyokay.com\/pages\/track-my-order\" target=\"_blank\" title=\"Link to Andy okay's Track My Order service\">Track My Order<\/a>-service or contact us so we can investigate your shipment. Please make sure to contact us within 30 days of when your order was made at the latest, otherwise we can't make claims or investigate the shipment with the freight company. <\/p>"
           }
         },
-        "separator_cxdC46": {
-          "type": "separator",
-          "settings": {
-            "title": "Payments"
-          }
-        },
-        "1568893735278": {
+        "page-faq-template-6": {
           "type": "question",
           "settings": {
-            "title": "What payment methods do you accept?",
-            "answer": "<p>We accept most Credit cards, such as AMEX, Visa, MasterCard, Maestro etc. <\/p><p>You can also use Shop Pay, Apple Pay or Google Pay for a fast checkout. <\/p><p>We also accept payments through Paypal. <\/p><p>We do not accept Wire transfers, Invoice payments or Checks at this time.<\/p>"
-          }
-        },
-        "1568893765022": {
-          "type": "question",
-          "settings": {
-            "title": "What currency will my payment be made in?",
-            "answer": "<p>Your payment will be made in the currency set for the country you order from. <\/p><p>We accept most of the local currencies for the countries we ship to. <\/p><p>To a few European countries the payment will be made in EURO even though you might have a different currency in your country. If there are any currency exchange fees we normally make all the payments. In some case your own bank might charge you an additional fee.<\/p>"
+            "title": "Are frames included?",
+            "answer": "<p>Frames are not included. But we print everything in standard sizes so you can easily find the frames you like locally. <\/p><p>The Fine Art prints are printed in inches in the US and centimeters in the rest of the world. <\/p><p><\/p>"
           }
         },
         "page-faq-template-0": {
           "type": "separator",
           "settings": {
-            "title": "Shipments"
-          }
-        },
-        "question_W64inB": {
-          "type": "question",
-          "settings": {
-            "title": "Where do you ship from?",
-            "answer": "<p>Our Fine Art prints are printed, checked and shipped from our own facility in Sweden. Our professional production team has over 70 years of experience printing high quality art. This way we can make sure that everything from the paper choice, printing quality and packaging is just perfect each time.<\/p>"
-          }
-        },
-        "question_3PnCqq": {
-          "type": "question",
-          "settings": {
-            "title": "Where do you ship to?",
-            "answer": "<p>At the moment we ship to the US, Canada, Europe, Australia and New Zeeland. If you have any questions please reach out to us via our <a href=\"\/pages\/contact\" title=\"Contact\">contact form<\/a>.<\/p>"
-          }
-        },
-        "question_eFMqn6": {
-          "type": "question",
-          "settings": {
-            "title": "How will you ship my art?",
-            "answer": "<p><strong>Fine Art prints<br\/><\/strong>All Fine Art prints are rolled in silk paper and inserted in a black protective tube, fitted to the size of the Fine Art print. The tube is shipped in a cardboard box so we can ensure that all the artworks are received in a perfect condition each time. <br\/><\/p><p><strong>Frames<br\/><\/strong>If a frame is added it will be shipped in a flat cardboard box fitted to the size of the frame, with added corner protection.<\/p><p>The frames have a protective plastic wrap to avoid any water damages during transit and both sides of the acrylic glass will have a protective plastic film that needs to be removed before the artwork is assembled.<\/p><p>The Fine Art print will be added in the same packaging as the frame in a protective white folder that is laying on top of the frame.<\/p><p>We do not offer a framing service at the moment, but our frames have metal hinges on the backing that turn sideways for easy opening and closes.<br\/><\/p><p><strong>Mat boards<br\/><\/strong>The Mat boards are shipped in a protective plastic wrap to avoid any water damage during transit. <\/p><p>The Mat boards are normally added behind the frame when they are shipped together with a frame.<\/p>"
+            "title": "Shipping"
           }
         },
         "2a740657-94c5-4ec5-aa26-5dc4e6559d8f": {
           "type": "question",
           "settings": {
-            "title": "Will there be any shipping charges or customs fees?",
-            "answer": "<p>We offer free shipping on all order above 69 USD or equivalent in your currency but some countries' have import fees due to their Import VAT Laws.<\/p><p>Unfortunately this is not something we can control and the charges are made directly by the freight companies to the receipt and paid in as VAT to the state. <\/p><p>We can guarantee that there are <strong>no customs fees<\/strong> or import taxes on orders from Europe, the US, Australia, New Zealand and Turkey.<br\/><br\/>Customs fees may apply to orders from the UK if the order value exceeds £135.<br\/>Customs fees may apply to orders from Canada and Switzerland.<br\/><br\/>The fee may vary depending on order value, country limits, etc. You as a customer is responsible for these fees and they are charged directly by the shipping provider or your local tax office. If you have any questions please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a>.<\/p>"
-          }
-        },
-        "question_kny8Um": {
-          "type": "question",
-          "settings": {
-            "title": "When will I receive my order?",
-            "answer": "<p>Your order goes into production within 12 hours, and will be packed and shipped out in 1-2 business days. Most customers will have their artwork within 5-9 business days. Sometimes shipping to more remote destinations can take longer, up to 10 to 14 business days, but this is rarely the case.<\/p><p>All shipments are fully trackable, and a tracking link is provided to you in your shipping confirmation. <\/p><p>If you haven't received your art within 9 business days, feel free to use our <a href=\"\/pages\/contact\" title=\"Contact\">contact form<\/a> and reach out to our support team. Make sure to contact us within 30 calendar days of when your order was made, at the latest, otherwise we cannot make a claim or investigate the shipment with the freight company.<\/p>"
+            "title": "Where is the art shipped from?",
+            "answer": "<p>Our Fine Art prints are printed, checked and shipped from our own facility in Sweden. Our professional team has over 70 years of experience printing high quality art. This way we can make sure that everything from the paper choice, printing quality and packaging process is just perfect each time.  <\/p>"
           }
         },
         "page-faq-template-1": {
           "type": "question",
           "settings": {
-            "title": "I only received parts of my order",
-            "answer": "<p>If you have only received parts of your order, the rest most probably have been shipped out in a different packaging inorder for us to be able to delivery everything to you safely. In rare cases the freight companies might delivery the packages separately. <\/p><p>Please contact our support team and they will help you locate the rest of your order.<\/p>"
+            "title": "What are the shipping rates?",
+            "answer": "<p>We ship all over the world, and offer free shipping on all orders above $69. If your order value is below $69 we have a flat shipping rate of $5.99 to cover some of our shipping costs.<\/p>"
+          }
+        },
+        "1568893982781": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "Can I make changes to my order after payment?",
+            "answer": "<p>Unfortunately, we can&#x27;t make changes to an existing order, but if you contact us as soon as possible, we may be able to cancel the order before it leaves our stockroom. Then, after the order has been cancelled, you can go back in and place a new order with the correct items. This way, you can avoid being billed for two orders.<\/p>"
           }
         },
         "page-faq-template-3": {
           "type": "question",
           "settings": {
-            "title": "My shipment is marked as delivered but I can't locate it",
-            "answer": "<p>We work with largest and most trusted freight companies in the world so we can make sure you receive your package fast and secure. <\/p><p>If your order has been marked as delivered by the freight company but you are unable to locate it please follow the below steps: <\/p><ul><li>Check so that the delivery address given to us when making the order is correct.<\/li><li>If the address is correct check with family members or neighbours if possible, if someone else has collected the package for you.<\/li><li>In rare cases that shipping provider might mark the package as delivered but has an unforeseen delay and the package is delivered in the next 48 hours. Please wait a couple of days to see if you receive your package. <\/li><li>If you still can't find your package please make a \"missing package report \" on the tracking link that you have received for your shipment directly to the freight company. They will be able to follow up much faster if you report this directly to them so they can locate your package and advice you of the next steps. <\/li><li>If you followed all the steps but your package is still missing please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> and we will investigate this further. It's important to us that you receive your art and we will do everything we can to make sure you receive it.<\/li><\/ul>"
+            "title": "Will there be any custom fees?",
+            "answer": "<p>We can guarantee that there are no customs fees or import taxes on orders from Europe, the US, Australia, New Zealand and Turkey.<\/p><p>Customs fees may apply to orders from the UK if the order value exceeds £135. <\/p><p>Customs fees may apply to orders from Canada and Switzerland.<\/p><p>The fee may vary depending on order value, country limits, etc. You as a customer is responsible for these fees and they are charged directly by the shipping provider or your local tax office. If you have any questions send us an email. <\/p>"
           }
         },
         "50d2c05b-2be3-4aba-b2d0-77cf0e73daa2": {
           "type": "question",
           "settings": {
-            "title": "I need to update my shipping address",
-            "answer": "<p>To update the shipping address please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> as soon as possible. Send us your Order ID and the correct address so we can update this for you before your package is shipped out. <\/p><p>If the package is shipped out already and you have received your tracking link, we are unable to update the address information. In this case please contact our support team and they will go through the next steps.<\/p>"
+            "title": "What if I don't pick up my order?",
+            "answer": "<p>You have up to 14 days to collect your parcel from your pickup spot and you will be reminded two times within this period to pick up your parcel. <\/p><p>If you fail to pick up your parcel within this period, it will be returned to our fulfillment warehouse. You will need to speak to customer services regarding your refund. <\/p><p>Please notice that you will be charged for the delivery charges for your un-collected order, even if you reached the \"free shipping\" level.<\/p>"
+          }
+        },
+        "1568893721463": {
+          "type": "separator",
+          "settings": {
+            "title": "Payment"
+          }
+        },
+        "1568893735278": {
+          "type": "question",
+          "settings": {
+            "title": "Can I pay with card?",
+            "answer": "<p>Yes, you can pay with most credit cards, such as Visa, Mastercard, AMEX etc. <\/p>"
+          }
+        },
+        "1568893765022": {
+          "type": "question",
+          "settings": {
+            "title": "Can I pay with Paypal?",
+            "answer": "<p>Yes, it is possible to pay with paypal.<\/p>"
           }
         },
         "1568893803835": {
           "type": "question",
           "settings": {
-            "title": "Why has my shipment been returned to sender?",
-            "answer": "<p>If your package is marked as returned on the tracking link please contact us and we will check why your package has been returned and make sure you receive your order.<br\/><\/p><p><strong>Uncollected parcels<\/strong> <br\/>If the package is delivered to a pick up location you have 7-14 days to collect your parcel, depending on how the postal service works in your country. <\/p><p>You will receive a notification directly from the freight company and will be reminded two times within this period to pick up your parcel.<\/p><p>If you fail to pick up your parcel within this period, it will be returned to our fulfilment center. You will need to <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> inorder to have it resent or refunded. Please notice that you will be charged for any delivery charges for your uncollected order, even if you reached the \"free shipping\" limit.<\/p>"
+            "title": "Can I pay with invoice?",
+            "answer": "<p>No, unfortunately we can not offer invoice payment method.<\/p>"
           }
         },
-        "separator_qfcVVq": {
+        "1568893271937": {
           "type": "separator",
           "settings": {
             "title": "Returns"
@@ -230,55 +239,28 @@
           "type": "question",
           "settings": {
             "title": "Can I return my product?",
-            "answer": "<p>We want you to <strong>smile<\/strong> when you receive your art. If, for some reason, you are not happy with the purchase please contact us and we will fix it.<\/p><p>If you have simply changed your mind you can make a return on you order or parts of your order within 30 days. If 30 days have gone by since your package was delivered, unfortunately we can not offer you a refund or exchange. <\/p><p>To be eligible for a return, your item must be unused and in the same condition that you received it. All frames and mat boards need to have protective plastic cover still on them and the products must also be returned in the original packaging inorder for us to accept the return and be able to make full refund.<\/p><p>If you like to make a return please fill in the <a href=\"\/pages\/contact\" title=\"Contact\">contact form<\/a> with reason of contact set as \"I want to make a return”, and let us know which items you would like to return so we can open a return request for you. <\/p><p>We do not offer return shipping labels at this time. All returns need to made to our facility in Sweden.<\/p><p>You will be responsible for paying for your own shipping costs for returning your package. Shipping costs are non-refundable. If you receive a refund, the cost of shipping will be deducted from your refund.<\/p><p><strong>Return address: <br\/><\/strong>ANDY OKAY AB<br\/>CO\/ alfredssons.<br\/>Rinnavägen 17, <br\/>517 33 Bollebygd<br\/>Sweden <br\/><br\/>A few types of products are exempt from being refunded. <br\/><br\/>Non-refundable items: <br\/>- Gift cards <br\/>- Charity donations<br\/>- Shipping fees and\/or shipping protection <br\/><br\/>There are certain situations where no refund or only partial refunds are granted:<br\/>- Items with obvious signs of use <br\/>- Any item not in its original condition and is damaged for reasons not due to our error <br\/>- Any item that is returned more than 30 days after delivery<br\/>- Any items that have not shipped back in the original packaging <\/p><p><strong>Refunds (if applicable)<\/strong> <br\/>Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund. <\/p><p>If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment, within a certain amount of business days. <br\/><br\/><br\/><strong>Late or missing refunds (if applicable)<\/strong> <br\/>If you have received a refund confirmation but have not received your funds back yet, first check your bank account again. <\/p><p>Then contact your credit card company, it may take some time before your refund is officially posted. Next contact your bank. There is often some processing time before a refund is posted. <\/p><p>If you’ve done all of this and you still have not received your refund yet, please contact us.<br\/><br\/><br\/><strong>Exchanges (if applicable)<\/strong> <br\/>We only replace items if they are defective or damaged. If you need to exchange it for the same item please fill in the contact form with reason of contact set as \"My product arrived damaged \",  and we will help you with a reclamation claim. <br\/><br\/><br\/><strong>Gifts<\/strong> <br\/>If you received your art as a gift and you want to make a return, the refund will be made to whomever made the purchase.<br\/><br\/><br\/><strong>Shipping<\/strong> <br\/>To return your product, you should <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> before you ship your package to the return address that is stated on your shipped package. Once the return is made you need to send us a tracking link or shipping receipt for the return package in order for us to make the refund (if applicable) for you without any delays.<\/p><p>Shipping costs are non-refundable. If you receive a refund, the cost of shipping will be deducted from your refund. <\/p><p>If you are shipping an item over $75, you should consider using a trackable shipping service or purchasing shipping insurance. We don’t guarantee that we will receive your returned package.<\/p>"
+            "answer": "<p>We always aim to make sure our customers love our products, but if you do need to return an order, we’re happy to help. Just email us directly and we’ll take you through the process. You can read more about our return policy under Shipping & Returns<\/p>"
           }
         },
         "1568893307028": {
           "type": "question",
           "settings": {
             "title": "How do I exchange a product?",
-            "answer": "<p>We do not have an exchange policy at this time. <\/p><p>If you would like to exchange a received product for something different, it is processed like a regular return. <\/p><p>You will need to send the product you have received back to us, so you can receive a refund and then make a new order.<\/p><p>Please check above section for information about our return policy.<\/p>"
+            "answer": "<p>If you would like to exchange a received product for something different, it is processed like a regular return. You send us the item you don’t want and we will refund you. You can then proceed to place a new order on our website.<\/p>"
           }
         },
         "1568893425650": {
           "type": "question",
           "settings": {
             "title": "What should I do if a product is damaged or incorrect?",
-            "answer": "<p>It's important to us that you receive all your items in a great condition. We make constant quality controls to make sure that all items is to our high standard and have our approval. All of our Fine Art prints are either shipped out in a protective tube or in a protective white folder if shipped together with a frame to avoid any damages during shipment.<\/p><p>But if any of your items are damaged or defective in anyway when you receive your order we will make sure you receive new ones.<\/p><p>Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us<\/a> through the contact form and set reason of contact to \"My order arrived damaged\".<\/p><p>When sending the contact form please specify the below and attach all the photos required so our customer support team can help you as soon as possible: <\/p><ul><li>Order ID<\/li><li>Reason for claim <\/li><li>Item\/s affected<\/li><li>Photos of the item\/s clearly showing the damages or defects<\/li><li>Photos of the packaging showing any damages to the packaging<\/li><li>Photo of the packaging with the shipping label showing<\/li><\/ul><p>Once we have the required information we will open a reclamation claim for you and your new package will be shipped out within 2-3 business days. <\/p><p>Our support team will send you the tracking link for the new shipment as soon as your replacement package has been shipped out and follow up with further information regarding the damaged or defective items you have received.<\/p>"
+            "answer": "<p>In the event that you receive a defective or incorrect item, we want to make it right as soon as possible. Please email the following information to us:<br\/><br\/>- Order number <br\/>- Customer name <br\/>- Product name<br\/>- Photo of damaged or incorrect item. <br\/><br\/>Our customer service team will get back to you with a solution straight away.<\/p>"
           }
         },
-        "07168397-88a1-45ba-a5fa-2301ac45e81c": {
-          "type": "separator",
-          "settings": {
-            "title": "Collaborations"
-          }
-        },
-        "cdbeac07-2663-4f0d-b8d6-5e441ceed45b": {
+        "1568893510704": {
           "type": "question",
           "settings": {
-            "title": "I'm an artist",
-            "answer": "<p>We're always on the lookout for eye catching art. Do you think your designs would suit our store? We welcome those of you who are as passionate about creating as you are about our planet for potential partnerships and collaborations.<br\/><br\/>Please send us an email with a link to your portfolio, instagram, or any other media you got. We'll be happy to take a look. <a href=\"\/pages\/collabs-press\" title=\"I'm an artist!\">Send us a message.<\/a><\/p>"
-          }
-        },
-        "4c47f8d8-3b14-495e-ade7-bb31ded3b706": {
-          "type": "question",
-          "settings": {
-            "title": "We're an organisation",
-            "answer": "<p>Andy Okay helped raise awareness and bring attention to important issues for organisations such as WWF, Rainforest Trust, UN, Give Back To Nature, Climate Save Movement and many others. We'd love to talk about what we can do together. <a href=\"\/pages\/contact\" title=\"Contact\">Contact us here. <\/a><\/p>"
-          }
-        },
-        "945eb0e5-6db0-4a34-aa94-f6b02f7c4abe": {
-          "type": "question",
-          "settings": {
-            "title": "I'm a blogger\/influencer",
-            "answer": "<p>We love to partner up with those of you who work as influencers in social media channels. <br\/><br\/>To create a good collaboration it's important that your Instagram page is a good fit to our vision content wise. Art, nature, sustainability, styling or interior design etc.<\/p><p>If you believe that your content does match our products, feel free to <a href=\"\/pages\/contact\" title=\"Contact\">contact us.<\/a> We look forward to hearing from you!<\/p>"
-          }
-        },
-        "8616502b-e08d-4726-9eee-b773fbaca377": {
-          "type": "question",
-          "settings": {
-            "title": "Do you represent the press?",
-            "answer": "<p>Press representatives are welcome to contact us for press loans, press images and other PR-related materials. When using our images, we request that you refer to us.<br\/><br\/>Please <a href=\"\/pages\/contact\" title=\"Contact\">contact us here. <\/a><\/p>"
+            "title": "When will I recieve my refund?",
+            "answer": "<p>We make every effort to issue your refund as soon as possible, and at the latest within 14 days. Please note that we must have received your order return or a mailing receipt before we can issue a refund.<\/p>"
           }
         },
         "page-faq-template-7": {
@@ -290,8 +272,8 @@
         "page-faq-template-8": {
           "type": "question",
           "settings": {
-            "title": "Just contact us. We are happy to help!",
-            "answer": "<p>You can contact us through our <a href=\"\/pages\/contact\" title=\"Contact\">contact page<\/a> or just send us an email to <a href=\"mailto:support@andyokay.com\" title=\"mailto:support@andyokay.com\">support@andyokay.com<\/a>. We will be happy to assist you.<\/p>"
+            "title": "Just contact us. We're happy to help!",
+            "answer": "<p>Send us an email at <a href=\"mailto:support@andyokay.com\" title=\"mailto:support@andyokay.com\">support@andyokay.com<\/a> or contact us through our <a href=\"\/pages\/contact\" title=\"Contact\">contact page<\/a>! We will be happy to assist you.<\/p>"
           }
         }
       },
@@ -305,6 +287,11 @@
         "ec01fce0-f7f0-4c7f-97f2-b7a19ac2c08f",
         "1598116936168",
         "1598117109061",
+        "07168397-88a1-45ba-a5fa-2301ac45e81c",
+        "cdbeac07-2663-4f0d-b8d6-5e441ceed45b",
+        "4c47f8d8-3b14-495e-ade7-bb31ded3b706",
+        "945eb0e5-6db0-4a34-aa94-f6b02f7c4abe",
+        "8616502b-e08d-4726-9eee-b773fbaca377",
         "1598117357604",
         "1598117398474",
         "1598157318178",
@@ -313,28 +300,22 @@
         "1568893636264",
         "1568894074474",
         "page-faq-template-2",
-        "separator_cxdC46",
-        "1568893735278",
-        "1568893765022",
+        "page-faq-template-6",
         "page-faq-template-0",
-        "question_W64inB",
-        "question_3PnCqq",
-        "question_eFMqn6",
         "2a740657-94c5-4ec5-aa26-5dc4e6559d8f",
-        "question_kny8Um",
         "page-faq-template-1",
+        "1568893982781",
         "page-faq-template-3",
         "50d2c05b-2be3-4aba-b2d0-77cf0e73daa2",
+        "1568893721463",
+        "1568893735278",
+        "1568893765022",
         "1568893803835",
-        "separator_qfcVVq",
+        "1568893271937",
         "page-faq-template-5",
         "1568893307028",
         "1568893425650",
-        "07168397-88a1-45ba-a5fa-2301ac45e81c",
-        "cdbeac07-2663-4f0d-b8d6-5e441ceed45b",
-        "4c47f8d8-3b14-495e-ade7-bb31ded3b706",
-        "945eb0e5-6db0-4a34-aa94-f6b02f7c4abe",
-        "8616502b-e08d-4726-9eee-b773fbaca377",
+        "1568893510704",
         "page-faq-template-7",
         "page-faq-template-8"
       ],

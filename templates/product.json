@@ -46,7 +46,7 @@
           "type": "question",
           "settings": {
             "title": "How can you offer such affordable art?",
-            "answer": "<p>This price is only possible due to the incredible artists involved. Without their honourable participation, we wouldn't exist. <\/p><p>The artists we work with normally sell their art themselves or on other platforms for much more. We collaborate with them and have a limited run on one of their artworks that is linked to a specific cause, and is offered for a lower price to leave room for donations.<\/p>"
+            "answer": "<p>This price is only possible due to the incredible artists involved, who allows us to lower the price significantly for one of their artworks. Without their honorable participation, we wouldn't exist. <\/p><p><\/p>"
           }
         },
         "bb32f412-342a-4913-8519-a11af9c835ca": {
@@ -60,7 +60,7 @@
           "type": "question",
           "settings": {
             "title": "How much actually goes to the cause?",
-            "answer": "<p>We have different type of collaborations directly with the charity organisations we work with inorder to help them raise awareness and funds for their important projects. Our mission is to create a better world through the power of art.<\/p><p>For each artwork, you can choose to add a donation to a charity organisation of your choice. What you choose to donate will directly benefit the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
+            "answer": "<p>The artists we work with normally sell their art themselves or on other platforms for much more. We collaborate with them and have limited editions that are offered for a much lower price to leave room for donations.<br\/><br\/>For each artwork, what you choose to donate will directly benefit the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
           }
         },
         "682d1f0c-cc77-47e5-9d3a-9cd330ff39bf": {
@@ -74,7 +74,7 @@
           "type": "question",
           "settings": {
             "title": "I really want to try it. But first, do you have any guarantee?",
-            "answer": "<p>No worries. We offer 100% customer satisfaction. If by any chance you're not completely happy with your art or any part of your customer experience, neither are we. Just let us know and we will fix it!<\/p>"
+            "answer": "<p>No worries. We offer 100% customer satisfaction. If by any chance you're not completely happy with your art or any part of your customer experience, neither are we. Just let us know and we'll fix it!<\/p>"
           }
         }
       },
