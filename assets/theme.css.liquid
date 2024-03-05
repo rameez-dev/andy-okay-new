@@ -7536,12 +7536,20 @@ select::-ms-expand {
 .Footer__Title-wrapper .Collapsible__Plus {
   display: none;
 }
+.Footer__Content-wrapper, .Footer__Content-wrapper .Linklist__Item {
+  font-family: 'Adobe Caslon Pro';
+  color: #333333;
+  margin-bottom: 4px;
+}
+.Footer__Block.opened .Footer__Content-wrapper {
+  margin-top: 20px;
+}
 @media screen and (max-width: 640px) {
   .Footer__Title-wrapper {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #dcdcdc; */
     transition: color 0.2s ease-in-out;
     position: relative;
     padding: 20px 0;
@@ -7566,6 +7574,7 @@ select::-ms-expand {
   }
   .Footer__Block {
     margin-top: 0;
+    border-bottom: 1px solid #dcdcdc;
   }
   .Footer__Block.opened .Collapsible__Plus::before {
     -webkit-transform: translate(-50%, -50%) rotate(90deg);
@@ -7577,13 +7586,17 @@ select::-ms-expand {
     transform: translate(-50%, -50%) rotate(90deg);
   }
   .Footer__Block.opened .Footer__Content-wrapper {
-    margin-top: 30px;
+    margin-top: 0px;
     max-height: 1000px;
     opacity: 1;
+    margin-bottom: 30px;
   }
 }
 .Footer__Title {
   margin-bottom: 20px;
+  font-family: 'DIN Next LT Pro Bold';
+  text-transform: uppercase;
+  font-size: 16px;
 }
 .Footer__Social {
   margin-top: 5px;
@@ -7694,6 +7707,24 @@ select::-ms-expand {
     flex-basis: 240px;
   }
 }
+@media only screen and (max-width:640px) {
+  .Footer__Inner{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.Footer__Block--newsletter .Form__Input{
+  display: inline-block;
+  width: 78%
+}
+.Footer__Block--newsletter .Form__Submit {
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin-top: 0;
+  border-radius: 0;
+  padding: 8px 0px;
+}
 @media screen and (min-width: 1240px) {
   .Footer__Block--text {
     -ms-flex-preferred-size: 460px;
@@ -7701,9 +7732,15 @@ select::-ms-expand {
   }
   .Footer__Block--newsletter {
     -ms-flex-preferred-size: 375px;
-    flex-basis: 375px;
+    flex-basis: 520px;
   }
 }
+@media only screen and (max-width: 640px){
+  .Footer__Block--newsletter {
+    order: -1
+  }
+}
+
 .GiftCard {
   text-align: center;
 }
@@ -11966,6 +12003,9 @@ S .SidebarMenu .Drawer__Main::after {
     padding-right: 24px;
   }
 }
+.simple-tags-section.tags-section .links-section {
+  margin-top: 10px;
+}
 @media screen and (max-width: 640px) {
   .tags-section.quick-looks .quick-looks-popup .popup-body .SectionHeader__Heading.Heading.u-h1.first-heading.pop_first_heading, .tags-section.quick-looks .quick-looks-popup .popup-body .Rte h1.SectionHeader__Heading.Heading.first-heading.pop_first_heading, .Rte .tags-section.quick-looks .quick-looks-popup .popup-body h1.SectionHeader__Heading.Heading.first-heading.pop_first_heading {
     padding-left: 0px;
@@ -11984,10 +12024,13 @@ S .SidebarMenu .Drawer__Main::after {
     height: 0px;
   }
 }
-@media screen and (min-width: 641px) {
+/* @media screen and (min-width: 641px) {
   .links-holder {
     display: contents;
   }
+} */
+.links-holder {
+  display: contents;
 }
 /*Quick Look Section css*/
 .tags-section.quick-looks .SectionHeader__Heading {
@@ -12252,10 +12295,12 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .trustbadges-list.trustbadges-1 {
   padding: 30px 0px;
+  margin-bottom: 48px;
 }
 @media screen and (max-width: 640px) {
   .trustbadges-list.trustbadges-1 {
     padding: 0px 0px 30px;
+    margin-bottom: 0px;
   }
 }
 .trustbadges-list .trustbadges-list-items {
@@ -15002,4 +15047,35 @@ a[name="new-currency-object"] {
 
 .menu-hide {
   transform: translateY(-100%)
+}
+/* Copied from collection template to make same on home. Remove to stack items */
+#section-trustbadges .Container{
+  padding: 0px !important;
+  margin-bottom: 22px;
+}
+.trustbadges-list-items {
+  min-width: 210px;
+}
+@media only screen and (max-width: 640px){
+  .trustbadges-list-items {
+    min-width: 150px;
+    padding: 0px;
+  }  
+}
+.trustbadges-list {
+  display: flex !important;
+  padding: 30px 0px !important;
+  justify-content: flex-start !important;
+  overflow-x: auto !important;
+}
+.trustbadges-list::-webkit-scrollbar {
+  height: 0px !important;
+}
+.trustbadges-list.trustbadges-1 .trustbadges-list-items:not(:last-child):after {
+  display: block !important;
+}
+/* end */
+
+.footer_copyright_image {
+  height: 12px;
 }
