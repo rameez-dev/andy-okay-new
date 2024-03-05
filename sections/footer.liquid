@@ -12,7 +12,7 @@
     {%- if section.blocks.size > 0 -%}
       <div class="Footer__Inner">
         {%- for block in section.blocks -%}
-          <div class="Footer__Block toggle-accordian Footer__Block--{{ block.type }}" {{ block.shopify_attributes }}>
+        <div class="Footer__Block Footer__Block--{{ block.type }} {% if block.type == "newsletter" %} opened{% else %} toggle-accordian{% endif %}" {{ block.shopify_attributes }}>
             {%- case block.type -%}
               {%- when 'text' -%}
                 {%- if block.settings.title != blank -%}
@@ -58,7 +58,7 @@
                 {%- if block.settings.title != blank -%}
                   <div class="Footer__Title-wrapper">
                     <h2 class="Footer__Title Heading u-h6">{{ block.settings.title | escape }}</h2>
-                    <span class="Collapsible__Plus"></span>
+                    {% comment %} <span class="Collapsible__Plus"></span> {% endcomment %}
                   </div>
                 {%- endif -%}
 
@@ -91,7 +91,13 @@
 
     <div class="Footer__Aside">
       <div class="Footer__Copyright">
-        <a href="{{ shop.url }}" class="Footer__StoreName Heading u-h7 Link Link--secondary">© {{ shop.name }}</a>
+        <a href="{{ shop.url }}" class="Footer__StoreName Heading u-h7 Link Link--secondary">
+          {% if section.settings.footer_image != blank %}
+            <img class="footer_copyright_image" height="auto" width="auto" src="{{ section.settings.footer_image |  image_url: height: 100 }}">
+          {% else %}  
+            © {{ shop.name }}
+          {% endif %}
+        </a>
 
         {%- capture powered_by_link -%}{{ powered_by_link | replace: '<a', '<a class="Link Link--primary"' }}{%- endcapture -%}
         <p class="Footer__ThemeAuthor">{{ 'footer.general.credits_html' | t: powered_by_link: powered_by_link }}</p>
@@ -138,6 +144,11 @@
       "label": "Show payment methods",
       "info": "Payment method icons are automatically displayed based on your Shopify payment methods.",
       "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_image",
+      "label": "Copyright Image"
     }
   ],
   "blocks": [
