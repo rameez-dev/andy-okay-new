@@ -968,7 +968,7 @@ body {
 }
 .Icon-Wrapper--clickable::before {
   position: absolute;
-  content: '';
+  /* content: ''; */
   top: -8px;
   right: -12px;
   left: -12px;
@@ -1874,7 +1874,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   text-transform: uppercase;
   font-family: "DIN Next LT Pro Cond";
   color: #000;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 16px;
 }
 .Drawer__Main .Collapsible__Button {
@@ -1886,6 +1886,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   top: calc(50% - (11px / 2));
   width: 11px;
   height: 11px;
+  color: black;
 }
 .Collapsible__Plus::before, .Collapsible__Plus::after {
   position: absolute;
@@ -11918,6 +11919,9 @@ S .SidebarMenu .Drawer__Main::after {
   padding-bottom: 23px;
   padding-top: 4px;
 }
+.tags-section.quick-looks {
+  margin: 45px 0px;
+}
 .search_preload .tags-section {
   overflow: hidden;
   margin: 0px 0px 0px 41px;
@@ -12073,7 +12077,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
   font-family: "Adobe Caslon Pro";
-  font-size: 26px;
+  font-size: 18px;
   line-height: normal;
   color: #000;
   word-break: break-word;
@@ -12086,7 +12090,7 @@ S .SidebarMenu .Drawer__Main::after {
 }
 @media screen and (max-width: 640px) {
   .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-title {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 .tags-section.quick-looks .tags-section-holder .links-section .link-list .list-btn {
