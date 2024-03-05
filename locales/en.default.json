@@ -54,8 +54,8 @@
     },
     "newsletter": {
       "success": "Congratulations. You're in!",
-      "input": "Enter your email address",
-      "submit": "Join the Club"
+      "input": "Email",
+      "submit": "Join"
     }
   },
   "search": {

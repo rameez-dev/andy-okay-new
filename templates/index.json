@@ -875,26 +875,28 @@
         "b811c0fb-9032-4f3f-b903-a3b8e1887243"
       ],
       "settings": {
-        "title": "STILL LOOKING? Spot what's trending..."
+        "title": "STILL LOOKING?",
+        "subtitle": "Spot What's Trending...",
+        "subtitle_color": "#8a8a8a"
       }
     },
     "1608562192030793bb": {
       "type": "trustbadges",
       "blocks": {
-        "99b3def7-b1c4-4788-8c09-cbfad90a5987": {
-          "type": "badges",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/shipping.png",
-            "title": "FAST DELIVERY",
-            "subheading": "99% of all orders arrives fast <br> in 3-5 business days"
-          }
-        },
         "0a9f5d8b-9504-4b20-a0bf-0d2bda0202d6": {
           "type": "badges",
           "settings": {
             "image": "shopify:\/\/shop_images\/certified.png",
             "title": "CERTIFIED",
             "subheading": "Certificate of <br> authenticity included"
+          }
+        },
+        "99b3def7-b1c4-4788-8c09-cbfad90a5987": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shipping.png",
+            "title": "FAST DELIVERY",
+            "subheading": "99% of all orders arrives fast <br> in 3-5 business days"
           }
         },
         "770a2e03-d0ca-4315-b095-1995954480cd": {
@@ -915,8 +917,8 @@
         }
       },
       "block_order": [
-        "99b3def7-b1c4-4788-8c09-cbfad90a5987",
         "0a9f5d8b-9504-4b20-a0bf-0d2bda0202d6",
+        "99b3def7-b1c4-4788-8c09-cbfad90a5987",
         "770a2e03-d0ca-4315-b095-1995954480cd",
         "75714b74-f137-4c0f-8676-cd073f9b1efc"
       ],

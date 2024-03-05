@@ -417,16 +417,31 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "1596738154836": {
+            "type": "links",
+            "settings": {
+              "menu": "boring-stuff"
+            }
+          },
           "footer-1": {
             "type": "links",
             "settings": {
               "menu": "about-us"
             }
           },
-          "1596738154836": {
+          "footer-0": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "title": "Say Hi!",
+              "content": "<p>Our social channels are filled with more amazing art and thrilling competitions. Come say hi!<\/p>",
+              "show_social_media": true
+            }
+          },
+          "links_ngjfTh": {
             "type": "links",
             "settings": {
-              "menu": "boring-stuff"
+              "menu": "social"
             }
           },
           "1571857356747": {
@@ -435,24 +450,18 @@
               "title": "The Good Club",
               "content": "<p>Join 134,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
             }
-          },
-          "footer-0": {
-            "type": "text",
-            "settings": {
-              "title": "Say Hi!",
-              "content": "<p>Our social channels are filled with more amazing art and thrilling competitions. Come say hi!<\/p>",
-              "show_social_media": true
-            }
           }
         },
         "block_order": [
-          "footer-1",
           "1596738154836",
-          "1571857356747",
-          "footer-0"
+          "footer-1",
+          "footer-0",
+          "links_ngjfTh",
+          "1571857356747"
         ],
         "settings": {
-          "show_payment_methods": true
+          "show_payment_methods": false,
+          "footer_image": "shopify:\/\/shop_images\/andyokay_long_black.png"
         }
       },
       "page-archive-hero": {
