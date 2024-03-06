@@ -309,7 +309,7 @@ HEADER CONTENT
       <button class="Header__FlexItem--Custom Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless use_sidebar_menu %}hidden-desk{% endunless %}" aria-expanded="false" data-action="open-drawer" data-drawer-id="sidebar-menu" aria-label="{{ 'header.navigation.open_sidebar' | t }}">
         <span class="hidden-tablet-and-up mob_phone_icon">{%- include 'icon' with 'nav' -%}</span>
         <span class="hidden-phone">{%- include 'icon' with 'nav-desktop' -%}</span>
-        &nbsp;&nbsp;<span class="Collapsible__Button--Custom Collapsible__Button Heading u-h6" style="margin-top : 4px;">Menu</span>
+        &nbsp;&nbsp;<span class="Collapsible__Button--Custom Collapsible__Button Heading u-h6" style="margin-top : 6px;">Menu</span>
       </button>
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
@@ -1027,7 +1027,7 @@ div#giftbox-root {
       .shopify-section--header{
         /* position: fixed; */
         top: 0;
-        margin-bottom:0px !important;
+        margin-bottom: -2px !important;
         z-index: 9;
       }
       div#Search {
@@ -1080,7 +1080,7 @@ div#giftbox-root {
         
 .mobile-logo-main{
     top: 32px;
-    display: block;
+    /* display: block; */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -1222,29 +1222,26 @@ iframe#tidio-chat-iframe{bottom: 120px !important;}
 <script>
   document.documentElement.style.setProperty('--header-height', document.getElementById('shopify-section-header').offsetHeight + 'px');
 
+  var prev = 0;
+  var $window = $(window);
+  var nav = $('#navbar');
 
-var prev = 0;
-var $window = $(window);
-var nav = $('#navbar');
-
-var header_elem = document.getElementById('shopify-section-header');
-var announcement_height = document.getElementById('shopify-section-announcement').offsetHeight;
-
-header_elem.classList.add('menu-animated');
-
-$window.on('scroll', function(){
-  var scrollTop = $window.scrollTop();
-  nav.toggleClass('hidden', scrollTop > prev);
-  if(scrollTop > announcement_height && scrollTop > prev) {
-    header_elem.classList.add('menu-hide');
+  if($window.width() < 768) {
+    var header_elem = document.getElementById('shopify-section-header');
+    var announcement_height = document.getElementById('shopify-section-announcement').offsetHeight;
+    header_elem.classList.add('menu-animated');
+    $window.on('scroll', function(){
+      var scrollTop = $window.scrollTop();
+      // nav.toggleClass('hidden', scrollTop > prev);
+      if(scrollTop > announcement_height && scrollTop > prev) {
+        header_elem.classList.add('menu-hide');
+      }
+      else {
+        header_elem.classList.remove('menu-hide');
+      }
+      prev = scrollTop;
+    });
   }
-  else {
-    header_elem.classList.remove('menu-hide');
-  }
-  prev = scrollTop;
-});
-
-
 </script>
 
 {% schema %}

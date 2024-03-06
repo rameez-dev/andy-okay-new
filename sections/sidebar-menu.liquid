@@ -94,9 +94,9 @@
                       <a href="{{ link.url }}" class="Collapsible__Button  {{members-color}} Heading Link Link--primary u-h6">{{ link.title | escape }}</a>
                     {%- endif -%}
                   </div>
-                  {% if link.title == 'SHOP ART' %}
+                  {% comment %} {% if link.title == 'SHOP ART' %}
                     <div class="Collapsible"><a href="/collections/going-fast" class="Collapsible__Button  almost_gone_color Heading Link Link--primary u-h6">ALMOST GONE</a></div>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
                 {%- endfor -%}
               </nav>
               <ul class="drawer-secondary-link-list">
