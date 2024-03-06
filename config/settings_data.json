@@ -107,8 +107,7 @@
             "type": "announcement",
             "settings": {
               "content": "<b>SALE SEASON<\/b>   Buy 2, Get 1 Free",
-              "link": "shopify:\/\/collections\/all-art",
-              "icon": "shopify:\/\/shop_images\/star_icon_27330cb7-9794-4199-9960-d5e76152edde.png"
+              "link": "shopify:\/\/collections\/all-art"
             }
           },
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
@@ -116,15 +115,14 @@
             "settings": {
               "content": "<b>EXCELLENT<\/b>   +178,000 Collectors",
               "link": "shopify:\/\/collections\/all-art",
-              "icon": "shopify:\/\/shop_images\/Truststars_5_v3.png"
+              "icon": "shopify:\/\/shop_images\/Truststars_5_v4.png"
             }
           },
           "a212f6ea-b83d-4f68-94ea-c4e2e0249693": {
             "type": "announcement",
             "settings": {
-              "content": "<b>FREE SHIPPING<\/b>   On all orders over <span class=\"cm\" data-money-convertible>$69<\/span>",
-              "link": "",
-              "icon": "shopify:\/\/shop_images\/shipping_bannericon3.png"
+              "content": "Free Delivery over <span class=\"cm\" data-money-convertible>$69<\/span> <span id=\"announcement-ct\"><img class=\"announcement-flag\" src=\"\" id=\"announcement-flag\"><\/span>",
+              "link": ""
             }
           }
         },
@@ -136,8 +134,8 @@
         "settings": {
           "enable_bar": true,
           "home_page_only": false,
-          "background": "#000000",
-          "text_color": "#ffffff"
+          "background": "#f5f2eb",
+          "text_color": "#464544"
         }
       },
       "header": {

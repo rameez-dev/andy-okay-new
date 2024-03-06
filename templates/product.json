@@ -320,6 +320,7 @@
     },
     "newsletter": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "section_size": "small",
         "text_color": "#ffffff",
