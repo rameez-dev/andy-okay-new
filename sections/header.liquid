@@ -258,6 +258,14 @@ HEADER CONTENT
 
 {% endstyle %}
 
+{% assign cm_at_price_total = 0 %}
+{% for item in cart.items %}
+  {% if item.variant.compare_at_price > item.variant.price %}
+  	{% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
+  	{% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
+  {% endif %}
+{% endfor %}
+
 <header id="section-{{ section.id }}"
         class="Header Header--{{ section.settings.navigation_style }} {% if section.settings.navigation_style != 'inline' and section.settings.navigation_style != 'logoLeft' %}Header--initialized{% endif %} {% if use_transparent_header %}Header--transparent{% endif %} {% if section.settings.show_icons or section.settings.navigation_style == 'sidebar' %}Header--withIcons{% endif %}"
         data-section-id="{{ section.id }}"
@@ -583,13 +591,6 @@ HEADER CONTENT
     </a>
 </div>
     {% endcomment %}
-{% assign cm_at_price_total = 0 %}
-{% for item in cart.items %}
-  {% if item.variant.compare_at_price > item.variant.price %}
-  	{% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
-  	{% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
-  {% endif %}
-{% endfor %}
 <div class="cart-search__Custom">
  <div class="Header__FlexItem Header__FlexItem--fill mobile-cart-icon">
       <a href="/cart"  id="target__mobile" class="Header__Icon cart_wrapper Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
