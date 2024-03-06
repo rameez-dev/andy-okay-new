@@ -779,6 +779,25 @@ for size, we use it to display a size chart (if applicable)
 {%- assign white_frames = all_products['white-gallery-frame'] -%}
 {%- assign black_frames = all_products['black-gallery-frame'] -%}
 {%- assign oak_frames = all_products['oak-gallery-frame'] -%}
+
+{% for tag in product.tags %}
+  {% assign product_tag_first = tag | downcase | split: ':' | first %}
+  {% if product_tag_first == 'charity' %}
+    {% assign charity_org = tag | split: ':' | last | split: '-' | join: ' ' |  downcase |  replace: " ", "-"  %}
+  {% endif %}
+{% endfor %}
+
+{% assign has_charity = false %}
+{% for c_variant in charity_product.variants %}
+  {% assign charity_title = c_variant.title |  downcase |  replace: " ", "-"  %}
+  {% if charity_title == "non-violence" %}
+    {% assign charity_title = "non-violence-project" %}
+  {% endif %}
+  {% if charity_title == charity_org %} 
+    {% assign has_charity = true %}
+  {% endif %}
+{% endfor %}
+
 <script> 
   let black_variants = [], white_variants = [], oak_variants = [], mat_board_variants = [], frames_all_variants = {};
   frames_all_variants['0'] = { 'price': 0, 'compare_at_price': 0 };
@@ -1295,7 +1314,11 @@ for size, we use it to display a size chart (if applicable)
           <div class="acc__panel">
             {% for c_variant in charity_product.variants %}
             <div class="custom-radio">
-              <input {% if forloop.index==1 %} checked {% endif %} required class="required" id="select_organization"
+              {% assign charity_title = c_variant.title |  downcase |  replace: " ", "-"  %}
+              {% if charity_title == "non-violence" %}
+                {% assign charity_title = "non-violence-project" %}
+              {% endif %}
+              <input {% if has_charity %}{% if charity_title == charity_org %} checked {% endif %}{% else %}{% if forloop.index==1 %} checked {% endif %}{% endif %} required class="required" id="select_organization"
                 data-title="{{c_variant.title}}" type="radio" name="donation" value="{{c_variant.id}}"
                 data-gtm-form-interact-field-id="1" />
               <span"donation_container_text">{{c_variant.title}}</span>
