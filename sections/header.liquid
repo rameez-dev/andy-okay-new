@@ -44,7 +44,6 @@ The theme currency converter is used in lot of different places so to simply the
   alt="{{ section.settings.mobile_logo.alt | default: shop.name | escape }}"></a>
 </div>
 
-{% comment %}
 {%- if settings.currency_conversion_enabled -%}
   {%- capture currency_conversion_select -%}  
     <div class="Header__CurrencySelector Text--subdued Heading Link Link--primary u-h8 hidden-pocket hidden-lap">
@@ -65,12 +64,11 @@ The theme currency converter is used in lot of different places so to simply the
             {%- endif -%}
           {%- endfor -%}
         </select>
-         {%- include 'icon' with 'select-arrow' -%} 
+         {% comment %} {%- include 'icon' with 'select-arrow' -%}  {% endcomment %}
       </div>
     </div>
   {%- endcapture -%}
 {%- endif -%}
-{% endcomment %}
 {%- comment -%}
 --------------------------------------------------------------------------------------------------------------------
 SEARCH FORM (implemented as a modal)
