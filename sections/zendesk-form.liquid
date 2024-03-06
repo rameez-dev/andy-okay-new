@@ -9,6 +9,11 @@
         </div>
         <form id="zendesk_form-{{ section.id }}" onsubmit="zendesk_submit(event)">
             <div class="Form__Item">
+                <label class="Form__FloatingLabel-custom">Your name</label>
+                <input type="text" class="Form__Input" name="name" aria-label="name" required>
+            </div>
+
+            <div class="Form__Item">
                 <label class="Form__FloatingLabel-custom">Your email address</label>
                 <input type="email" class="Form__Input" name="email" aria-label="{{ 'contact.form.email' | t }}" required {% if customer %}value="{{ customer.email }}"{% endif %}>
             </div>
@@ -132,10 +137,10 @@
                 jsonData[key] = value;
             }
         });
-        
-        var zendesk_data = {
+
+        zendesk_data = {
             "request": {
-                "requester": {"name": jsonData.email},
+                "requester": {"name": jsonData.name, "email": jsonData.email},
                 "subject": jsonData.body,
                 "comment": {"body": jsonData.body }
             }
