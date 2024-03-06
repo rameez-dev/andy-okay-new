@@ -23,33 +23,33 @@
             </div>
         {% endif %}
         <div class="AnnouncementBar__Wrapper" >
-          <p class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
+          <div class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
             {% for block in section.blocks %}
               {%- if forloop.index == 1 -%}
-                <span name="announcement-block-{{forloop.index}}">
+                <div name="announcement-block-{{forloop.index}}" class="announcement-block">
                   {% if block.settings.icon != blank %}
                     <img class="announcement_icon" src="{{ block.settings.icon | image_url: height: 30 }}">
                   {% endif %}
                   {%- if block.settings.link -%}
-                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a><br>
+                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a>
                   {%- else -%}
-                    <span>{{ block.settings.content }}</span><br>
+                    <span>{{ block.settings.content }}</span>
                   {%- endif -%}
-                </span>  
+                </div>  
               {%- else -%}
-                <span style="display: none;" name="announcement-block-{{forloop.index}}">
+                <div style="display: none;" name="announcement-block-{{forloop.index}}" class="announcement-block">
                   {% if block.settings.icon != blank %}
                     <img class="announcement_icon" src="{{ block.settings.icon | image_url: height: 30 }}">
                   {% endif %}
                   {%- if block.settings.link -%}
-                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a><br>
+                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a>
                   {%- else -%}
-                    <span>{{ block.settings.content }}</span><br>
+                    <span>{{ block.settings.content }}</span>
                   {%- endif -%}
-                </span>
+                </div>
               {%- endif -%}
             {% endfor %}
-          </p>
+          </div>
         </div>
       </div>
     </section>
@@ -113,9 +113,9 @@
         }
 
         async function animation(){
-          let x = $("#announcement-cont").children("span");
+          let x = $("#announcement-cont").children(".announcement-block");
           for (var i=0; i<x.length;i++ ){  
-            x[i].style.display = "inline-block";
+            x[i].style.display = "flex";
             x[i].classList.add("come_infromtop");
             await timeout(1000);
             x[i].classList.remove("come_infromtop"); 
@@ -126,7 +126,7 @@
             x[i].style.display = "none";
           }
           for (var i=x.length-2; i>=0; --i ){  
-            x[i].style.display = "inline-block";
+            x[i].style.display = "flex";
             x[i].classList.add("come_infrombottom");
             await timeout(1000);
             x[i].classList.remove("come_infrombottom"); 
