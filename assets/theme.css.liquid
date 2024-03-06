@@ -14596,22 +14596,28 @@ select.CurrencySelector__Select {
 .AnnouncementBar__Content b {
   font-family: 'DIN Next LT Pro';
 }
-.AnnouncementBar__Content a, .AnnouncementBar__Content b, .AnnouncementBar__Content span {
+/* .AnnouncementBar__Content a, .AnnouncementBar__Content b, .AnnouncementBar__Content span {
   display: inline-block;
   line-height: 20px;
-}
+} */
 /* .AnnouncementBar__Content span:not(:has(img)) > a, .AnnouncementBar__Content span:not(:has(img)) > span:not(.cm) {
   transform: translateY(4px);
 } */
-.AnnouncementBar__Content > span {
+/* .AnnouncementBar__Content > span {
   height: 20px;
+} */
+.announcement-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 .announcement_icon {
   display: inline-block;
-  height: 20px; 
+  height: 20px;
   margin-right: 10px;
-  margin-bottom: 2px;
-  vertical-align: bottom !important;
+  margin-bottom: 3px; 
+  /* vertical-align: bottom !important; */
 }
 
 .info-with-icon:not(#first-truststar){
@@ -14978,7 +14984,10 @@ a:hover .overlay_dot {
   display: inline-block;
   height: 12px;
   margin-left: 10px;
-  margin-bottom: 6px;
+  vertical-align: bottom;
+  margin-bottom: 3px;
+  /* margin-left: 10px;
+  margin-bottom: 5px; */
 }
 
 li>a.new_currency_dropdown{
