@@ -693,6 +693,7 @@
                           data-action="open-drawer"
                           data-drawer-id="collection-filter-drawer"
                           aria-label="{{ 'collection.filter.show_filter' | t }}">
+                          <img src="{{ 'filter.png' |  asset_url }}" class="filter-icon">
                     {{ 'collection.filter.title' | t }} {% if current_tags %}<span class="Text--subdued">({{ current_tags.size }})</span>{% endif %}
                   </button>
                   <div class="dropdown_flow hidden-phone">
