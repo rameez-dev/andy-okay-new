@@ -70,7 +70,7 @@ for size, we use it to display a size chart (if applicable)
       display: block !important;
     }
     #custom_color_offer_ending {
-      color: #800220;
+      color: #813422;
     } 
    
     .noTopmargin{
@@ -1513,6 +1513,14 @@ ADD TO CART BUTTON
         </div>
       </div>
     </button>
+    <div class="separate-text-free-shipping extented_info leftAligned_imp">
+      <div id="first-truststar" class="info-with-icon">
+        <div class="green_dot"></div>
+        <p><strong>Free Shipping</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span>
+          <img class="truststar-flag" src="" id="truststar-flag" >
+        </p>
+      </div>
+    </div>
   </div>
 
 {%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
@@ -1520,20 +1528,40 @@ ADD TO CART BUTTON
 {%- endif -%}
 
 {% comment %} Extended Info {% endcomment %}
-<div class="extented_info leftAligned_imp" >
-  <div id="first-truststar" class="info-with-icon Block_imp">
+<div class="extented_info leftAligned_imp checkmarked-blocks" >
+  {% comment %} <div id="first-truststar" style="display: none;" class="info-with-icon">
     <p><img class="icon_img" src="{{ 'FreeShippingabove.svg' |  asset_url }}">
       <strong>Free Delivery</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span>
       <img class="truststar-flag" src="" id="truststar-flag" >
     </p>
+  </div> {% endcomment %}
+  <div class="info-with-icon Block_imp">
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      <strong>Buy 2 Get 1 Free</strong><span  id="custom_color_offer_ending"> [Limited Run]</span>
+    </p>
   </div>
   <div class="info-with-icon Block_imp">
-    <p><img class="icon_img" src="{{ 'buy2get1free.svg' |  asset_url }}">
-      <strong>Buy 2 Get 1 Free</strong><span  id="custom_color_offer_ending"> [Limited Run]</span></p>
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      Certificate of authenticity included
+    </p>
   </div>
   <div class="info-with-icon Block_imp">
-    <p><img class="icon_img" src="{{ '100Satisfaction.svg' |  asset_url }}">
-      <strong>100% Satisfaction</strong> or 100% Refund</p>
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      Delivery within a week | Super easy returns
+    </p>
+  </div>
+  <div class="info-with-icon Block_imp">
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      Secure payment
+      <img class="icon_img_payment" src="{{ 'paypal_black.png' |  asset_img_url }}">
+      <img class="icon_img_payment" src="{{ 'amex_black.png' |  asset_img_url }}">
+      <img class="icon_img_payment" src="{{ 'visa_black.png' |  asset_img_url }}">
+      <img class="icon_img_payment" src="{{ 'mastercard_black.png' |  asset_img_url }}">
+    </p>
   </div>
   {%- comment -%} <ul class="infoExt-list">
     <li>

@@ -13881,6 +13881,9 @@ table tr td {
   text-align: center;
   margin: 8px 0 30px 0;
   color: #7d7d7d;
+  background-color: #e4e4e4;
+  border-radius: 3px;
+  padding: 6px 0px;
 }
 .extented_info .info-with-icon {
   display: flex;
@@ -14008,11 +14011,6 @@ table tr td {
   .prod-info-text-contents {
     flex-direction: row;
     justify-content: center;
-  }
-  .extented_info {
-    background-color: #e4e4e4;
-    border-radius: 3px;
-    padding: 6px 0px;
   }
 }
 .prod-info-column strong {
@@ -14622,12 +14620,12 @@ select.CurrencySelector__Select {
 .info-with-icon:not(#first-truststar){
   margin: 3px 0px;
 }
-@media only screen and (max-width: 639px) {
+/* @media only screen and (max-width: 639px) {
   .info-with-icon:not(#first-truststar){
     margin: 5px 0px;
     padding: 14px 0px;
   }
-}
+} */
 .truststar-flag {
   display: inline-block;
   height: 10px;
@@ -14641,21 +14639,28 @@ select.CurrencySelector__Select {
   height: 18px;
   margin: 2px 10px 2px 0px;
 }
+.icon_img_payment {
+  height: 16px;
+  width: auto;
+  margin-left: 8px;
+  vertical-align: middle;
+}
 
 .info-with-icon:not(.bottomFixed-truststar){
   background-color: #e4e4e4;
   border-radius: 3px;
 }
-.extented_info .info-with-icon:not(.bottomFixed-truststar) p{
+.extented_info .info-with-icon p{
   font-family: 'DIN Next LT Pro Light';
-  color: black;
+  color: #333333;
 }
-.extented_info .info-with-icon:not(.bottomFixed-truststar) p strong{
-  font-family: 'DIN Next LT Pro';
+.extented_info .info-with-icon p strong{
+  font-family: 'DIN Next LT Pro Medium';
+  font-weight: 500;
 }
 .info-with-icon:not(.bottomFixed-truststar) .icon_img {
   height: 18px;
-  margin: 2px 10px 2px 15px;
+  margin: 2px 6px 2px 8px;
 }
 
 .new-trust-line {
@@ -15098,4 +15103,26 @@ a[name="new-currency-object"] {
   display: inline-block;
   height: 15px;
   margin-right: 8px;
+}
+
+.green_dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background: #60ca5f;
+  border-radius: 10px;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.separate-text-free-shipping.extented_info {
+  background: transparent;
+  margin: 0;
+}
+.separate-text-free-shipping.extented_info .info-with-icon{
+  align-items: center;
+  background: transparent;
+}
+.separate-text-free-shipping:has(.bottomFixed-truststar) {
+  width: 88%;
+  margin: auto;
 }
