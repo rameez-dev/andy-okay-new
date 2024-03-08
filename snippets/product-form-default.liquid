@@ -1578,6 +1578,10 @@ ADD TO CART BUTTON
     </li>
   </ul> {%- endcomment -%}
 </div>
+
+<div class="help-container">
+  <span id="zendesk-popup-control" class="help-text">Need help?</span>
+</div>
 {% comment %} Extended Info {% endcomment %}
 
 {%- endform -%}
@@ -2413,6 +2417,11 @@ THE EXACT SAME ATTRIBUTES.
 
     $('#price-detail-desktop, #price-detail-mob').click(function(){
       $('.price-detail').addClass('visible');
+      document.getElementById("cart-popup-overlay").style.display = "block";
+    });
+
+    $('#zendesk-popup-control').click(function(){
+      $('.zendesk-popup').addClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "block";
     });
 
