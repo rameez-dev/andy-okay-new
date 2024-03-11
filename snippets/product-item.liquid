@@ -1,3 +1,11 @@
+{% style %}
+
+.xs-stock-info_main .xs-stock-info {
+   justify-content : center !important;
+}
+
+{% endstyle %}
+
 {% assign has_charity = false %}
 {% assign charity_org = '' %}
   
@@ -282,7 +290,8 @@
 		{% endunless %}  
         {% endfor %}
         {% unless is_sold_out_collection %}
-        <div style="display: none;" class="xs-stock-bar hide-on-pdp" data-xs-grid-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}' data-xs-stock-left="{{ xs_total_left }}" data-xs-variant-left="{{ xs_variant_left }}" data-inv='{{ product.variants.first.inventory_management }}'>
+        {% comment %}
+          <div style="display: none;" class="xs-stock-bar hide-on-pdp" data-xs-grid-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}' data-xs-stock-left="{{ xs_total_left }}" data-xs-variant-left="{{ xs_variant_left }}" data-inv='{{ product.variants.first.inventory_management }}'>
           <div class="xs-stock-progress" data-xs-stock-progress>
             <span class="xs-stock-spinner" data-xs-stock-spinner ></span>
           </div> 
@@ -292,6 +301,12 @@
             <span class="xs-stock-text-total-custom" style="color: #000000;" data-xs-stock-text-total-custom></span>
           </div>
         </div>
+        {% endcomment %}  
+     <div class="xs-stock-info_main">   
+    <div class="xs-stock-info"> 
+       <div class="xs-stock-label">Limited Release</div>
+	       </div>
+         </div>
         {% endunless %}
       </div>
     {%- endif -%}
