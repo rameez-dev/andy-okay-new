@@ -164,6 +164,20 @@
     "160745450950754497": {
       "type": "quick-looks",
       "blocks": {
+        "item_4BpFWU": {
+          "type": "item",
+          "settings": {
+            "title": "All Art",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/all-art",
+            "left": true
+          }
+        },
         "82d2cc96-d2b1-4349-b7f1-4c9223e6f176": {
           "type": "item",
           "settings": {
@@ -306,6 +320,7 @@
         }
       },
       "block_order": [
+        "item_4BpFWU",
         "82d2cc96-d2b1-4349-b7f1-4c9223e6f176",
         "d5cdba60-5ac4-4c04-8388-b3a585d3c601",
         "d88674ca-5101-4547-8740-9abba5891fec",
@@ -504,15 +519,15 @@
         "mobile_image_bbRBVd": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/garden_carousel_mob.jpg",
-            "link": "shopify:\/\/collections\/nicebleed"
+            "image": "shopify:\/\/shop_images\/image_carousel_mob1.jpg",
+            "link": "shopify:\/\/products\/catch-a-wave"
           }
         },
         "desktop_image_TfMUQP": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/garden_carousel_desk.jpg",
-            "link": "shopify:\/\/collections\/nicebleed"
+            "image": "shopify:\/\/shop_images\/image_carousel_desk1.jpg",
+            "link": "shopify:\/\/products\/catch-a-wave"
           }
         },
         "mobile_image_cgWgdQ": {
