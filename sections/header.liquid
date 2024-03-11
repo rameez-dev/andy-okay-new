@@ -1226,22 +1226,24 @@ iframe#tidio-chat-iframe{bottom: 120px !important;}
   var $window = $(window);
   var nav = $('#navbar');
 
-  if($window.width() < 768) {
-    var header_elem = document.getElementById('shopify-section-header');
-    var announcement_height = document.getElementById('shopify-section-announcement').offsetHeight;
-    header_elem.classList.add('menu-animated');
-    $window.on('scroll', function(){
-      var scrollTop = $window.scrollTop();
-      // nav.toggleClass('hidden', scrollTop > prev);
-      if(scrollTop > announcement_height && scrollTop > prev) {
-        header_elem.classList.add('menu-hide');
-      }
-      else {
-        header_elem.classList.remove('menu-hide');
-      }
-      prev = scrollTop;
-    });
-  }
+  //Un-comment to turn on menu hides when scrolling down animation
+
+  // if($window.width() < 768) {
+  //   var header_elem = document.getElementById('shopify-section-header');
+  //   var announcement_height = document.getElementById('shopify-section-announcement').offsetHeight;
+  //   header_elem.classList.add('menu-animated');
+  //   $window.on('scroll', function(){
+  //     var scrollTop = $window.scrollTop();
+  //     // nav.toggleClass('hidden', scrollTop > prev);
+  //     if(scrollTop > announcement_height && scrollTop > prev) {
+  //       header_elem.classList.add('menu-hide');
+  //     }
+  //     else {
+  //       header_elem.classList.remove('menu-hide');
+  //     }
+  //     prev = scrollTop;
+  //   });
+  // }
 </script>
 
 {% schema %}
