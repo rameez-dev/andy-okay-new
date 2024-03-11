@@ -1823,48 +1823,48 @@ THE EXACT SAME ATTRIBUTES.
         $(".Header__CartDot").addClass('is-visible');
         var target = '#target__';
         var animation = '.cart-animation';
-        $(animation).css({ 'display': 'block' });
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          target = '#target__mobile';
-        }
+        // $(animation).css({ 'display': 'block' });
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        //   target = '#target__mobile';
+        // }
         var cart = $(target);
         var imgtodrag = $(animation);
-        if (imgtodrag) {
-          var imgclone = imgtodrag.clone()
-            .offset({
-              top: imgtodrag.offset().top,
-              left: imgtodrag.offset().left
-            })
-            .css({
-              'opacity': '1',
-              'position': 'absolute',
-              'z-index': '100'
-            })
-            .appendTo($('body'))
-            .animate({
-              'top': cart.offset().top + 10,
-              'left': cart.offset().left + 10
-            }, 1000, 'easeInOutExpo');
+        // if (imgtodrag) {
+        //   var imgclone = imgtodrag.clone()
+        //     .offset({
+        //       top: imgtodrag.offset().top,
+        //       left: imgtodrag.offset().left
+        //     })
+        //     .css({
+        //       'opacity': '1',
+        //       'position': 'absolute',
+        //       'z-index': '100'
+        //     })
+        //     .appendTo($('body'))
+        //     .animate({
+        //       'top': cart.offset().top + 10,
+        //       'left': cart.offset().left + 10
+        //     }, 1000, 'easeInOutExpo');
 
-          setTimeout(function () {
-            cart.effect("shake", {
-              times: 2
-            }, 200);
-          }, 1500);
+        //   setTimeout(function () {
+        //     cart.effect("shake", {
+        //       times: 2
+        //     }, 200);
+        //   }, 1500);
 
-          imgclone.animate({
-            'width': 0,
-            'height': 0
-          }, function () {
-            $(this).detach()
-          });
-        }
-        setTimeout(function () {
-          $(animation).css({ 'display': 'none' });
-        }, 1500);
+        //   imgclone.animate({
+        //     'width': 0,
+        //     'height': 0
+        //   }, function () {
+        //     $(this).detach()
+        //   });
+        // }
+        // setTimeout(function () {
+        //   $(animation).css({ 'display': 'none' });
+        // }, 1500);
       });
       payBtn.addClass('success_btn');
-      payBtnText.text(' ');
+      // payBtnText.text(' ');
       //from here all calculations for pricing in cart label
       var price_header_ = $("#price_header_").html().replace(/\<span(.|\s)*?\<\/span\>/, '');
       if (newCurrency == 'SEK' || newCurrency == 'NOK')
