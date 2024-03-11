@@ -1,4 +1,15 @@
 <style>
+  .tags-section.quick-looks {
+    margin: 20px 0px;
+  }
+  .tags-section.quick-looks .links-section::-webkit-scrollbar {
+    height: 0px;
+  }
+  @media only screen and (min-width: 1007px) {
+    .tags-section.quick-looks {
+      display: none;
+    }
+  }
   .filter-heading{ 
   font-family: 'DIN Next LT Pro Bold';
   color: black;
@@ -65,6 +76,7 @@
   }
   #section-trustbadges .Container{
     padding: 0px !important;
+    margin-bottom: 0px;
   }
   .trustbadges-list-items {
     min-width: 210px;
