@@ -48,6 +48,182 @@
       ],
       "settings": {}
     },
+    "quick_looks_7AcVhJ": {
+      "type": "quick-looks",
+      "blocks": {
+        "item_FNcNVi": {
+          "type": "item",
+          "settings": {
+            "title": "All Art",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/all-art",
+            "left": true
+          }
+        },
+        "item_HqLkKX": {
+          "type": "item",
+          "settings": {
+            "title": "Astronauts",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/astronauts",
+            "left": true
+          }
+        },
+        "item_VP74nH": {
+          "type": "item",
+          "settings": {
+            "title": "Animals",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/animals",
+            "left": true
+          }
+        },
+        "item_pfKTtT": {
+          "type": "item",
+          "settings": {
+            "title": "Contemporary",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/pop-art",
+            "left": true
+          }
+        },
+        "item_Vf9mAz": {
+          "type": "item",
+          "settings": {
+            "title": "Floral",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/floral",
+            "left": true
+          }
+        },
+        "item_zUAnFY": {
+          "type": "item",
+          "settings": {
+            "title": "Gaming",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/gaming",
+            "left": true
+          }
+        },
+        "item_Cm3p3K": {
+          "type": "item",
+          "settings": {
+            "title": "Motivational",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/motivational-art",
+            "left": true
+          }
+        },
+        "item_fjr3aJ": {
+          "type": "item",
+          "settings": {
+            "title": "Nature",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/nature",
+            "left": true
+          }
+        },
+        "item_CyUpcy": {
+          "type": "item",
+          "settings": {
+            "title": "Photo Art",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/photography",
+            "left": true
+          }
+        },
+        "item_DahDaq": {
+          "type": "item",
+          "settings": {
+            "title": "Space",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/space",
+            "left": true
+          }
+        },
+        "item_Nxaiex": {
+          "type": "item",
+          "settings": {
+            "title": "Surreal Art",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/surreal",
+            "left": true
+          }
+        }
+      },
+      "block_order": [
+        "item_FNcNVi",
+        "item_HqLkKX",
+        "item_VP74nH",
+        "item_pfKTtT",
+        "item_Vf9mAz",
+        "item_zUAnFY",
+        "item_Cm3p3K",
+        "item_fjr3aJ",
+        "item_CyUpcy",
+        "item_DahDaq",
+        "item_Nxaiex"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": ""
+      }
+    },
     "main": {
       "type": "collection-template",
       "settings": {
@@ -175,6 +351,7 @@
   "order": [
     "fc56d4d3-fe78-4878-b030-3ffce31ae998",
     "77a6d818-84f3-4fa5-87bc-935fcb0d497b",
+    "quick_looks_7AcVhJ",
     "main",
     "recently-viewed-products",
     "collection-footer",
