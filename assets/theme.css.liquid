@@ -2830,6 +2830,14 @@ select::-ms-expand {
   color: #000;
   font-size: 14px;
 }
+.MegaMenu__Item .Linklist__Item {
+  margin-bottom: 0px;
+}
+.MegaMenu__Item .Linklist__Item a.Link{
+  font-family: Adobe Caslon Pro;
+  letter-spacing: 0px;
+}
+
 .Linklist__Item:last-child {
   margin-bottom: 0 !important;
 }
@@ -7996,9 +8004,10 @@ select::-ms-expand {
   fill: #000;
 }
 .head_menu > li > a {
-  font-family: 'DIN Next LT Pro Bold' !important;
-  font-weight: bold !important;
+  font-family: 'DIN Next LT Pro Cond' !important;
+  font-weight: normal !important;
   font-size: 16px !important;
+  letter-spacing: 0px !important;
 }
 .head_menu li a {
   font-family: 'DIN Next LT Pro';
@@ -8016,14 +8025,14 @@ nav.Header__SecondaryNav.push-currency-left {
 }
 .head_menu li.HorizontalList__Item.push-reviews-right {
   position: absolute;
-  right: 23%;
+  right: 12%;
   top: 14px;
 }
 .head_menu li.HorizontalList__Item.push-members-right {
   position: absolute;
-  right: 14%;
+  right: 18%;
   top: 14px;
-  color: #ad9c81 !important;
+  color: #aa9d82 !important;
 }
 .members-club-color {
   color: black !important;
@@ -8033,6 +8042,9 @@ nav.Header__SecondaryNav.push-currency-left {
 }
 .impact-link {
   color: #2200cc !important;
+}
+.last-chance-class {
+  color: #9b0000 !important;
 }
 
 @media screen and (min-width: 641px) {
@@ -8087,7 +8099,7 @@ nav.Header__SecondaryNav.push-currency-left {
     display: none;
   }
   .Header__MainNav {
-    display: none;
+    /* display: none; */
     margin-right: 45px;
   }
   .Header--inline .Header__FlexItem:first-child .Header__CurrencySelector, .Header--logoLeft .Header__FlexItem:first-child .Header__CurrencySelector {
@@ -8303,7 +8315,6 @@ nav.Header__SecondaryNav.push-currency-left {
  */
 .MegaMenu {
   position: absolute;
-  padding: 20px 0;
   width: 100%;
   left: 0;
   top: 100%;
@@ -8333,27 +8344,30 @@ nav.Header__SecondaryNav.push-currency-left {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: flex-start;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  max-width: 1450px;
   margin: 0 auto;
-  padding: 0 10px;
+  min-height: 330px;
   /* each menu has 40px margin, but header has 50px, so we normalize it here */
 }
 .MegaMenu__Inner .header-content {
-  border-left: #262626 solid 1px;
-  margin-top: 25px;
-  max-width: 300px;
+  /* border-left: #262626 solid 1px; */
+  margin: 40px auto;
+  max-width: 400px;
   min-height: 170px;
 }
 .MegaMenu__Inner .header-content .content {
-  padding-left: 60px;
+  padding-left: 20px;
   margin-top: 15px;
-  margin-right: 30px;
+  margin-right: 40px;
+  font-family: Adobe Caslon Pro;
+  font-style: italic;
+  line-height: 1.4;
+  font-size: 15px;
 }
 .MegaMenu--spacingEvenly .MegaMenu__Inner {
   -ms-flex-pack: distribute;
@@ -8375,16 +8389,20 @@ nav.Header__SecondaryNav.push-currency-left {
   }
 }
 .MegaMenu__Item {
-  margin: 20px 40px;
+  margin: 60px 50px;
   -ms-flex-negative: 1;
   flex-shrink: 1;
 }
+.MegaMenu__Item.MegaMenu_Images {
+  margin: 0px;
+  margin-left: auto;
+}
 .MegaMenu__Item:first-child {
-  margin-left: 200px;
+  margin-left: 50px;
 }
-.MegaMenu__Item:nth-child(2) {
+/* .MegaMenu__Item:nth-child(2) {
   margin-left: 23px;
-}
+} */
 .MegaMenu__Item--fit {
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -8397,23 +8415,42 @@ nav.Header__SecondaryNav.push-currency-left {
   display: inline-block;
   vertical-align: top;
   width: 100%;
+  height: 100%;
+  position: relative;
 }
 .MegaMenu__Push--shrink {
   width: 50%;
 }
-.MegaMenu__Push--shrink:first-child {
+/* .MegaMenu__Push--shrink:first-child {
   padding-right: 15px;
 }
 .MegaMenu__Push--shrink:last-child {
   padding-left: 15px;
-}
+} */
 .MegaMenu__PushImageWrapper {
-  margin: 8px auto 20px auto;
+  margin: 0px auto 0px auto;
   max-width: 100%;
   overflow: hidden;
+  height: 100%;
+}
+.MegaMenu__PushImageWrapper img{
+  object-fit: cover;
 }
 .MegaMenu__PushHeading {
-  margin-bottom: 6px;
+  position: absolute;
+  left: 10px;
+  bottom: 12px;
+  color: white !important;
+  font-family: DIN Next LT Pro Cond;
+  font-weight: normal;
+  letter-spacing: 0px;
+  font-size: 16px;
+}
+.MegaMenu__PushLink {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
 }
 @media (-moz-touch-enabled: 0), (hover: hover) {
   .MegaMenu__Push img {
