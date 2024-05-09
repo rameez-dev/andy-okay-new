@@ -1,7 +1,7 @@
 {%- if section.settings.show == true -%}
-<div class="section-details" style="background-color: {{section.settings.backgroud-color}}">
+<div class="section-details updated-section simple-text-section" style="background-color: {{section.settings.backgroud-color}}; padding-block: {{ section.settings.height | times: 60 }}px">
   <div class="section-details-holder">
-    <h3 class="SectionHeader__Heading Heading u-h2 details-heading simple-text" style="color: {{section.settings.text-color}}">{{section.settings.text}}</h3>
+    <div class="simple-text-content" style="color: {{section.settings.text-color}}">{{section.settings.text}}</div>
   </div>
 </div>
 {%endif%}
@@ -34,6 +34,15 @@
         "id": "show",
         "label": "Show",
         "default": false
+      },
+      {
+        "type": "range",
+        "id": "height",
+        "label": "Height",
+        "default": 1,
+        "step": 0.1,
+        "min": 0.5,
+        "max": 2
       }
     ],
 

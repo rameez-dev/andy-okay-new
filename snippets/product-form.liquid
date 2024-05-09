@@ -2,7 +2,7 @@
 Those are the option names for which we automatically detect swatch. For the color, we use them to display a swatch, while
 for size, we use it to display a size chart (if applicable)
 {%- endcomment -%}
- 
+  
 <style>
   .cart-animation {
     width: 25px;
@@ -613,7 +613,7 @@ for size, we use it to display a size chart (if applicable)
 
     <div class="xs-pwyw">
       <div class="xs-p-text">
-        <span class="cart_chose_price_text">Slide to choose price<i class="question_mark--icon" id="price-detail">?</i></span>
+        <span class="cart_chose_price_text">Slide to choose price<i class="question_mark--icon">?</i></span>
         <div id="cart-popup-overlay">
         </div>
         <div class="price_value">
@@ -780,7 +780,7 @@ for size, we use it to display a size chart (if applicable)
           }
         }
 
-        $('#price-detail').click(function(){
+        $('#price-detail-desktop, #price-detail-mob').click(function(){
           $('.price-detail').addClass('visible');
           document.getElementById("cart-popup-overlay").style.display = "block";
         });
@@ -820,7 +820,16 @@ for size, we use it to display a size chart (if applicable)
           
           var a = 'amount_no_decimals';
           var amount = "{"+"{"+a+"}}";
-          var moneyFormats = { "USD": "$" + amount, "EUR": "€" + amount, "GBP": "£" + amount, "CAD": "$" + amount, "SEK": amount + " kr", "DKK": "kr " + amount, "NOK": "kr " + amount , "AUD": "$" + amount };
+          var moneyFormats = { 
+            "USD": "$" + amount, 
+            "EUR": "€" + amount, 
+            "GBP": "£" + amount, 
+            "CAD": "$" + amount, 
+            "SEK": amount + " kr", 
+            "DKK": amount + " kr", 
+            "NOK": amount + " kr", 
+            "AUD": "$" + amount 
+          };
           var xs_format = moneyFormats[newCurrency] || '{{ amount }}';
           //conversion of currency end
           let iprice = xVariantPrice;

@@ -1,0 +1,245 @@
+{{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css' | stylesheet_tag }}
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
+<style>
+    .new-trustpilot-cont {
+        display: flex;
+    }
+    .details-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 80px 100px;
+        background-color: black;
+        color: white;
+        width: 400px;
+    }
+    .details-heading {
+        font-family: 'DIN Next LT Pro Cond';
+        font-size: 26px;
+    }
+    .details-img {
+        width: 150px;
+        margin-bottom: 5px;
+        max-width: 150px;
+    }
+    .details-subheading {
+        font-family: 'DIN Next LT Pro Light';
+        font-weight: 300;
+        font-size: 15px;
+    }
+    .details-subheading strong {
+        font-family: 'DIN Next LT Pro';
+    }
+    .review-super-cont {
+        display: flex;
+        width: calc(100% - 400px);
+        align-items: center;
+        background-color: black;
+        color: white;
+        position: relative;
+        padding-right: 100px;
+    }
+    .reviews-cont {
+        display: flex;
+        width: calc(100% - 28px - 28px);
+        background-color: black;
+        color: white;
+    }
+    .review-card {
+        padding: 20px;
+    }
+    .review-card * {
+        margin-bottom: 8px;
+    }
+    .review-card-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .review-card-header-img {
+        width: 100px;
+    }
+    .review-card-header-icon {
+        width: 18px;
+    }
+    .review-card-header-text {
+        font-family: 'DIN Next LT Pro Light';
+        font-weight: 300;
+        font-size: 12px;
+    }
+    .review-card-header-text strong{
+        font-family: 'DIN Next LT Pro';
+    }
+    .review-card-heading {
+        font-family: 'DIN Next LT Pro Medium';
+        font-size: 18px;
+    }
+    .review-card-content {
+        font-family: 'DIN Next LT Pro Light';
+        font-size: 14px;
+    }
+    .review-card-author {
+        font-family: 'DIN Next LT Pro Light';
+        color: #919191;
+        font-size: 12px;
+    }
+    .review-card-author strong{
+        font-family: 'DIN Next LT Pro Medium';
+    }
+    .review-prev, .review-next {
+        border: 1px solid #919191;
+        border-radius: 100px;
+        padding: 8px;
+        display: flex;
+    }
+    .review-prev svg, .review-next svg{
+        width: 10px;
+        height: 10px;
+        color: #919191;
+    }
+    /* .review-prev:has(+ .reviews-cont .slick-track [aria-hidden="false"]:first-of-type) {
+        visibility: hidden;
+    } */
+    @media only screen and (max-width: 768px) {
+        .new-trustpilot-cont {
+            flex-direction: column;
+        }
+        .details-cont {
+            color: black;
+            background-color: white;
+            padding: 10px 0px 40px;
+            width: auto;
+        }
+        .review-super-cont {
+            width: 100%;
+            padding: 30px 20px;
+        }
+    }
+</style>
+<div class="new-trustpilot-cont">
+    <div class="details-cont">
+        <span class="details-heading">{{ section.settings.heading }}</span>
+        <img class="details-img" src="{{ 'Truststars_5.png' |  asset_url}}">
+        <span class="details-subheading">{{ section.settings.subheading }}</span>
+    </div>
+    <div class="review-super-cont">
+        <button type="button" class="slick-prev review-prev">{% include 'icon' with 'select-arrow-left' %}</button>
+        <div class="reviews-cont">
+            {% for block in section.blocks %}
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <img class="review-card-header-img" src="{{ 'Truststars_5.png' |  asset_url}}">
+                        <img class="review-card-header-icon" src="{{ 'Verified_Badge.png' | asset_url }}">
+                        <span class="review-card-header-text">{{ block.settings.header_text }}</span>
+                    </div>
+                    <div class="review-card-heading">{{ block.settings.heading }}</div>
+                    <div class="review-card-content">{{ block.settings.content }}</div>
+                    <div class="review-card-author">{{ block.settings.author }}</div>
+                </div>
+            {% endfor %}
+        </div>
+        <button type="button" class="slick-next review-next">{% include 'icon' with 'select-arrow-right' %}</button>
+    </div>
+</div>
+
+<script>
+    $('.reviews-cont').slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        dots: false,
+        infinite: true,
+        focusOnSelect: true,
+        prevArrow: $('.review-prev'),
+        nextArrow: $('.review-next'),
+        responsive: [
+            {
+            breakpoint: 1900,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+            }
+            },
+            {
+            breakpoint: 1500,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+            }
+            },
+            {
+            breakpoint: 1220,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+            },
+            {
+            breakpoint: 950,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            }
+        ]
+    }); 
+</script>
+
+{% schema %}
+{
+    "name": "New Trustpilot Section",
+    "settings": [
+    {
+        "type": "inline_richtext",
+        "id": "heading",
+        "label": "Heading",
+        "default": "EXCELLENT"
+    },
+    {
+        "type": "inline_richtext",
+        "id": "subheading",
+        "label": "Sub-Heading",
+        "default": "4.9 / 5 from +2600 Reviews"
+    }
+    ],
+    "blocks": [
+    {
+        "name": "Review",
+        "type": "review",
+        "settings":[
+            {
+                "type": "inline_richtext",
+                "id": "header_text",
+                "label": "Header Text",
+                "default": "Verified"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Absolutely brilliant"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "content",
+                "label": "Content",
+                "default": "I came across this site completely by accident but i'm so happy i did. I LOVE this print."
+            },
+            {
+                "type": "inline_richtext",
+                "id": "author",
+                "label": "Author",
+                "default": "<strong>Angela B.,</strong> 2 hours ago"
+            }
+        ]   
+    }
+    ],
+    "presets": [
+    {
+      "name": "New Trustpilot Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -349,11 +349,7 @@
     "size-chart-popup": {
       "type": "size-chart-popup",
       "settings": {
-        "image": "shopify:\/\/shop_images\/sizeguide-v2.jpg",
-        "title": "",
-        "content": "",
-        "link_text": "",
-        "link": ""
+        "title": ""
       }
     }
   },

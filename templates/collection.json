@@ -1,16 +1,240 @@
 {
   "sections": {
+    "fc56d4d3-fe78-4878-b030-3ffce31ae998": {
+      "type": "collection-header",
+      "settings": {}
+    },
+    "77a6d818-84f3-4fa5-87bc-935fcb0d497b": {
+      "type": "trustbadges",
+      "blocks": {
+        "a946d84a-fd20-48da-a380-ae004986e976": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/certified.png",
+            "title": "CERTIFIED",
+            "subheading": "Certificate of <br> authenticity included"
+          }
+        },
+        "3de34970-7a60-409a-a937-7fe7824d952a": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shake.png",
+            "title": "ARTISTS SUPPORTED",
+            "subheading": "Artists supported <br> from every purchase"
+          }
+        },
+        "03a14af2-dc4c-4509-87ba-2852d0ebd42f": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shipping.png",
+            "title": "FAST DELIVERY",
+            "subheading": "99% of all orders arrives <br> in 3-5 business days"
+          }
+        },
+        "6c0a4b67-862b-461e-8ad9-77029f5ff68d": {
+          "type": "badges",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/earth.png",
+            "title": "EARTH CONSCIOUS",
+            "subheading": "Each artwork supports <br> a specific charity"
+          }
+        }
+      },
+      "block_order": [
+        "a946d84a-fd20-48da-a380-ae004986e976",
+        "3de34970-7a60-409a-a937-7fe7824d952a",
+        "03a14af2-dc4c-4509-87ba-2852d0ebd42f",
+        "6c0a4b67-862b-461e-8ad9-77029f5ff68d"
+      ],
+      "settings": {}
+    },
+    "quick_looks_iqEi3B": {
+      "type": "quick-looks",
+      "blocks": {
+        "item_e4fYTc": {
+          "type": "item",
+          "settings": {
+            "title": "All Art",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/all-art",
+            "left": true
+          }
+        },
+        "item_zH38hm": {
+          "type": "item",
+          "settings": {
+            "title": "Astronauts",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/astronauts",
+            "left": true
+          }
+        },
+        "item_YBAhtQ": {
+          "type": "item",
+          "settings": {
+            "title": "Animals",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/animals",
+            "left": true
+          }
+        },
+        "item_Wdrjft": {
+          "type": "item",
+          "settings": {
+            "title": "Contemporary",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/pop-art",
+            "left": true
+          }
+        },
+        "item_BCtMDi": {
+          "type": "item",
+          "settings": {
+            "title": "Floral",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/floral",
+            "left": true
+          }
+        },
+        "item_7hEeQh": {
+          "type": "item",
+          "settings": {
+            "title": "Gaming",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/gaming",
+            "left": true
+          }
+        },
+        "item_tVRQUm": {
+          "type": "item",
+          "settings": {
+            "title": "Motivational",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/motivational-art",
+            "left": true
+          }
+        },
+        "item_gPjyxV": {
+          "type": "item",
+          "settings": {
+            "title": "Nature",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/nature",
+            "left": true
+          }
+        },
+        "item_MUT8D4": {
+          "type": "item",
+          "settings": {
+            "title": "Photo Art",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/photography",
+            "left": true
+          }
+        },
+        "item_GFkbmC": {
+          "type": "item",
+          "settings": {
+            "title": "Space",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/space",
+            "left": true
+          }
+        },
+        "item_37LH8n": {
+          "type": "item",
+          "settings": {
+            "title": "Surreal Art",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/surreal",
+            "left": true
+          }
+        }
+      },
+      "block_order": [
+        "item_e4fYTc",
+        "item_zH38hm",
+        "item_YBAhtQ",
+        "item_Wdrjft",
+        "item_BCtMDi",
+        "item_7hEeQh",
+        "item_tVRQUm",
+        "item_gPjyxV",
+        "item_MUT8D4",
+        "item_GFkbmC",
+        "item_37LH8n"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": ""
+      }
+    },
     "main": {
       "type": "collection-template",
       "settings": {
-        "show_collection_info": true,
+        "show_collection_info": false,
         "show_collection_image": true,
         "apply_overlay": false,
         "show_color_swatch": false,
         "show_vendor": false,
         "collection_image_size": "small",
         "show_sort_by": false,
-        "show_layout_switch": true,
+        "show_layout_switch": false,
         "show_orientation_filter": true,
         "toolbar_position": "top",
         "filter_position": "sidebar",
@@ -41,11 +265,96 @@
         "title": "Our story",
         "content": "<p>Add your own custom content to explain your processes...<\/p>"
       }
+    },
+    "2773ddea-6ef1-4f9e-9526-02e5640b324a": {
+      "type": "new-truspilot",
+      "blocks": {
+        "51356acc-2b02-4eb8-8d59-e99e51249d1a": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Absolutely brilliant",
+            "content": "I came across this site completely by accident but i'm so happy i did. I LOVE this print.",
+            "author": "<strong>Angela B,<\/strong> 2 hours ago"
+          }
+        },
+        "e20baecd-812e-4e20-bbaf-6a9c145ab3b3": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "I love it",
+            "content": "It’s a gift for my boyfriend’s birthday. I’m absolute in love with it! Wanna keep it for myself. Can’t wait to order more.",
+            "author": "<strong>Charlotte R,<\/strong> 6 hours ago"
+          }
+        },
+        "08408065-70a5-42a7-827e-629059ee9b02": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Highly recommend!!",
+            "content": "Absolute awesome print on top quality paper which doesn’t get ripples when putting in a frame!",
+            "author": "<strong>Brad P,<\/strong> 15 hours ago"
+          }
+        },
+        "922675e6-5fa8-4b70-86cb-4e8f0887e93c": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "It resonated w me",
+            "content": "I knew I had to have it and I’m so happy. It inspires me and the beauty of the of the colors is perfect.",
+            "author": "<strong>Jacqueline L,<\/strong> Yesterday"
+          }
+        },
+        "a36ba590-636d-4d66-83d7-ae827375e899": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "It’s beautiful",
+            "content": "Amazing pic and very nice print quality.",
+            "author": "<strong>Mélanie C,<\/strong> Yesterday"
+          }
+        },
+        "af150284-ee25-4112-a8b4-f160c8467690": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Exceptional!",
+            "content": "Great quality! Fast shipping!",
+            "author": "<strong>Jevgenija J,<\/strong> Yesterday"
+          }
+        },
+        "0201ad0a-c3f9-4562-be7d-a9751c6846d8": {
+          "type": "review",
+          "settings": {
+            "header_text": "Verified",
+            "heading": "Very happy",
+            "content": "Great picture, awesome quality, good delivery time. ",
+            "author": "<strong>Antonio P,<\/strong> 2 days ago"
+          }
+        }
+      },
+      "block_order": [
+        "51356acc-2b02-4eb8-8d59-e99e51249d1a",
+        "e20baecd-812e-4e20-bbaf-6a9c145ab3b3",
+        "08408065-70a5-42a7-827e-629059ee9b02",
+        "922675e6-5fa8-4b70-86cb-4e8f0887e93c",
+        "a36ba590-636d-4d66-83d7-ae827375e899",
+        "af150284-ee25-4112-a8b4-f160c8467690",
+        "0201ad0a-c3f9-4562-be7d-a9751c6846d8"
+      ],
+      "settings": {
+        "heading": "EXCELLENT",
+        "subheading": "4.9 \/ 5 from +2600 Reviews"
+      }
     }
   },
   "order": [
+    "fc56d4d3-fe78-4878-b030-3ffce31ae998",
+    "77a6d818-84f3-4fa5-87bc-935fcb0d497b",
+    "quick_looks_iqEi3B",
     "main",
     "recently-viewed-products",
-    "collection-footer"
+    "collection-footer",
+    "2773ddea-6ef1-4f9e-9526-02e5640b324a"
   ]
 }

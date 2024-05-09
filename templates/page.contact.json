@@ -15,10 +15,42 @@
       "block_order": [
         "page-contact-template-0"
       ],
+      "settings": {
+        "show_form": false
+      }
+    },
+    "zendesk_form_qDdq8D": {
+      "type": "zendesk-form",
+      "blocks": {
+        "dropdown_wzRKzD": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Reason for contact",
+            "title": "17047106351634",
+            "values": "What is the status of my order?\/\/track_my_order, I need to update my delivery address\/\/wrong_shipping_address, I want to update or cancel my order\/\/update_or_cancel_order, My item\/s arrived damaged\/\/reclamation, I want to make a return\/\/return, I want to collaborate\/\/collaborations, I have another question\/\/customer_question",
+            "is_required": false
+          }
+        },
+        "text_7cJrVC": {
+          "type": "text",
+          "settings": {
+            "label": "Order #",
+            "title": "17243859693586",
+            "use_long_text": false,
+            "only_numbers": true,
+            "is_required": false
+          }
+        }
+      },
+      "block_order": [
+        "dropdown_wzRKzD",
+        "text_7cJrVC"
+      ],
       "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "zendesk_form_qDdq8D"
   ]
 }

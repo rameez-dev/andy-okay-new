@@ -12,7 +12,7 @@
   .drawer-secondary-link-list {
     margin: 35px 15px 0px 15px;
     list-style: none;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
   }
 
@@ -27,6 +27,11 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
+  }
+  @media only screen and (min-width: 641px) {
+    .drawer-trustpilot-container{
+      margin-bottom: 100px;
+    }
   }
   .drawer-trustpilot-text{
     font-family: 'Adobe Caslon Pro';
@@ -49,12 +54,12 @@
               <nav class="SidebarMenu__Nav SidebarMenu__Nav--primary" aria-label="{{ 'header.navigation.sidebar_title' | t }}">
                 {%- for link in main_menu.links -%}
                 {% assign members-color = '' %}
-                {% if link.title == 'MEMBERS CLUB' %}
+                {% if link.title contains 'CLUB' %}
                   {% assign members-color = 'members-club-color' %}
                 {% endif %}
                   <div class="Collapsible">
                     {%- if link.links != blank -%}
-                      <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
+                      <button class="Collapsible__Button Heading u-h6 {% if link.title contains 'IMPACT' %} impact-link{% endif %}" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
                         {{- link.title | escape -}} <span class="Collapsible__Plus"></span>
                       </button>
 
@@ -89,15 +94,15 @@
                       <a href="{{ link.url }}" class="Collapsible__Button  {{members-color}} Heading Link Link--primary u-h6">{{ link.title | escape }}</a>
                     {%- endif -%}
                   </div>
-                  {% if link.title == 'SHOP ART' %}
+                  {% comment %} {% if link.title == 'SHOP ART' %}
                     <div class="Collapsible"><a href="/collections/going-fast" class="Collapsible__Button  almost_gone_color Heading Link Link--primary u-h6">ALMOST GONE</a></div>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
                 {%- endfor -%}
               </nav>
               <ul class="drawer-secondary-link-list">
                 <li><a href="https://andyokay.com/pages/about-us">About Us</a></li>
-                <li><a href="https://andyokay.com/pages/faq">FAQs</a></li>
-                <li><a href="https://andyokay.com/pages/shipping-returns">Shipping & Returns</a></li>
+                <li><a href="https://andyokay.com/pages/faq">Customer Support</a></li>
+              {% comment %} <li><a href="https://andyokay.com/pages/shipping-returns">Shipping & Returns</a></li> {% endcomment %} 
                 <li><a href="https://andyokay.com/pages/contact">Contact Us</a></li>
               </ul>
             </div>
@@ -117,6 +122,11 @@
                     padding: 10px;
                     border-radius: 4px;
                     background-color: #f2f2f2;
+                  }
+                  @media only screen and (min-width: 901px) {
+                    button.new-currency-drawer{
+                      display: none;
+                    }
                   }
                   button.new-currency-drawer>span[name="currency-name"]{
                     color: black;
@@ -172,7 +182,7 @@
           </div>
           <div class="drawer-trustpilot-container">
             <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
-            <p class="drawer-trustpilot-text">65,000+ artworks sold for charity</p>
+            <p class="drawer-trustpilot-text">165,000+ artworks sold for charity</p>
           </div>
           
 

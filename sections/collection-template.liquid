@@ -1,4 +1,15 @@
 <style>
+  .tags-section.quick-looks {
+    margin: 20px 0px;
+  }
+  .tags-section.quick-looks .links-section::-webkit-scrollbar {
+    height: 0px;
+  }
+  @media only screen and (min-width: 1007px) {
+    .tags-section.quick-looks {
+      display: none;
+    }
+  }
   .filter-heading{ 
   font-family: 'DIN Next LT Pro Bold';
   color: black;
@@ -58,6 +69,35 @@
   }
   .mobile-drawer-resettext{
     display: inline-block;font-size: 12px;text-decoration: underline;margin-top: 10px;position: relative;
+  }
+  #section-trustbadges {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  #section-trustbadges .Container{
+    padding: 0px !important;
+    margin-bottom: 0px;
+  }
+  .trustbadges-list-items {
+    min-width: 210px;
+  }
+  @media only screen and (max-width: 640px){
+    .trustbadges-list-items {
+      min-width: 150px;
+      padding: 0px;
+    }  
+  }
+  .trustbadges-list {
+    display: flex !important;
+    padding: 30px 0px !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+  }
+  .trustbadges-list::-webkit-scrollbar {
+    height: 0px !important;
+  }
+  .trustbadges-list.trustbadges-1 .trustbadges-list-items:not(:last-child):after {
+    display: block !important;
   }
 </style>
 
@@ -392,6 +432,7 @@
   
     {%- for product in collection.products -%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
       {%- if product.tags contains "Horizonal"-%}
         {% assign horizontal_counter = horizontal_counter | plus: 1 %}      
       {%- elsif product.tags contains "Vertical"-%}
@@ -412,6 +453,7 @@
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
               {%- include 'product-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
             </div>
@@ -427,6 +469,7 @@
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
           {%- if product.tags contains "Vertical"-%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
@@ -445,6 +488,7 @@
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
           {%- for product in collection.products -%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
 {% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
           {%- if product.tags contains "Horizonal"-%}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
@@ -661,6 +705,7 @@
                           data-action="open-drawer"
                           data-drawer-id="collection-filter-drawer"
                           aria-label="{{ 'collection.filter.show_filter' | t }}">
+                          <img src="{{ 'filter.png' |  asset_url }}" class="filter-icon">
                     {{ 'collection.filter.title' | t }} {% if current_tags %}<span class="Text--subdued">({{ current_tags.size }})</span>{% endif %}
                   </button>
                   <div class="dropdown_flow hidden-phone">

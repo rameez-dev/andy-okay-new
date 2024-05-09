@@ -2234,6 +2234,7 @@ video {
 
 .char-page h2 {
   text-align: center;
+  font-family: "DIN Next LT Pro Bold";
 }
 
 .char-page h1,
@@ -2368,6 +2369,7 @@ video {
   padding: 0;
   visibility: hidden;
   transition: opacity 250ms ease;
+  font-family: 'Adobe Caslon Pro';
 }
 
 .faq__content p {
@@ -2398,9 +2400,12 @@ video {
   padding: 5px 25px 0 0;
   cursor: pointer;
   position: relative;
+  font-family: "DIN Next LT Pro Bold";
+  text-transform: uppercase;
 }
 
-.faq__title:after {
+
+/* .faq__title:after {
   top: 0;
   right: 0;
   content: "+";
@@ -2415,6 +2420,12 @@ video {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #000;
 }
+
+
+.faq__group.is-expanded .faq__title:after {
+-webkit-text-fill-color: #000;
+transform: rotate(45deg);
+} */
 
 .faq__title h4 {
   margin: 0;
@@ -2451,11 +2462,6 @@ video {
 
 .faq__title span:after {
   transform: rotate(90deg);
-}
-
-.faq__group.is-expanded .faq__title:after {
-  -webkit-text-fill-color: #000;
-  transform: rotate(45deg);
 }
 
 .char-page .char-cta button {

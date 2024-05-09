@@ -1,31 +1,31 @@
 {
-    "sections": {
-      "main": {
-        "type": "cart-template",
-        "settings": {
-          "show_shipping_estimator": false,
-          "shipping_estimator_default_country": "United States",
-          "show_cart_reviews": true,
-          "review_numbers": "1928",
-          "reviewer_name": "Angela B.",
-          "review_title": "ABSOLUTELY BRILLIANT",
-          "review_text": "I came across this site completely by accident but I'm so happy I did. I absolutely LOVE this print. Everyone who comes in my house comments on it. Delivery was fast and the print arrived in perfect condition.",
-          "image": "shopify:\/\/shop_images\/E1lxMeISp_mid.jpg"
-        }
-      },
-      "recently-viewed-products": {
-        "type": "recently-viewed-products",
-        "settings": {
-          "show_section": true,
-          "title": "You might also like:",
-          "show_product_info": true,
-          "show_vendor": false,
-          "show_color_swatch": false
-        }
+  "sections": {
+    "main": {
+      "type": "cart-template",
+      "settings": {
+        "show_shipping_estimator": false,
+        "shipping_estimator_default_country": "United States",
+        "show_cart_reviews": true,
+        "review_numbers": "1928",
+        "reviewer_name": "Angela B.",
+        "review_title": "ABSOLUTELY BRILLIANT",
+        "review_text": "I came across this site completely by accident but I'm so happy I did. I absolutely LOVE this print. Everyone who comes in my house comments on it. Delivery was fast and the print arrived in perfect condition.",
+        "image": "shopify:\/\/shop_images\/E1lxMeISp_mid.jpg"
       }
     },
-    "order": [
-      "main",
-      "recently-viewed-products"
-    ]
-  }
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "show_section": true,
+        "title": "You might also like:",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recently-viewed-products"
+  ]
+}

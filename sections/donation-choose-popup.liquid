@@ -1,5 +1,11 @@
 <aside class="NewsletterPopup site__black--popup soldout-popup donation-choose" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
-    <button class="NewsletterPopup__Close site__black--close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
+  <div class="popup_header">
+    <span class="popup_title">About your donation</span>
+    <button class="popup_close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
+  </div>    
+
+  {% comment %} <button class="NewsletterPopup__Close site__black--close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button> {% endcomment %}
+  <div class="popup_content">    
     {%- if section.settings.image != blank -%}
       <div>
         <img src="{{ section.settings.image | img_url: 'master' }}" alt="Size Chart">
@@ -22,12 +28,12 @@
         {%- endif -%}
       </div>
     {%- endif -%}
-
-  </aside>
+  </div>
+</aside>
   
   <script>
     $(document).ready(function(){
-    $('.donation-choose').click(function(){
+    $('.donation-choose .popup_close').click(function(){
       $('.donation-choose').removeClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "none";
     });

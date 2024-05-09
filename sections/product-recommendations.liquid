@@ -77,6 +77,7 @@
               {%- endfor -%}
             {%- else -%}
               {%- for product in recommendations.products -%}
+{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
               {% if product.type=='giftbox_ghost_product' or product.title == 'Charity Donation' %}{%continue%}{%endif%}
                 <div class="Carousel__Cell">
                   {% include 'product-item', product: product, show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_labels: true %}

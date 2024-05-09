@@ -15,6 +15,14 @@
   .cont-shopping {
     text-decoration: underline;
   }
+  .PageContent {
+    margin-bottom: 35px !important;
+  }
+  @media only screen and (max-width: 768px) {
+    .shopify-section:has(~ .shopify-section .new-trustpilot-cont) .EmptyState {
+      margin-bottom: 60px;
+    }
+  }
 </style>
 
 <style>
@@ -609,13 +617,13 @@
               {%- endif -%}
               <span id="money-with-protection" style="display: none;">
                 <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #af182b;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}
+                  <span style="color: #2e34b9;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}
                   </span>
                 </p>
               </span>
               <span id="money-without-protection">
                 <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #af182b;">{{ cart.total_price | money_without_trailing_zeros }}
+                  <span style="color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}
                   </span>
                 </p>
               </span>

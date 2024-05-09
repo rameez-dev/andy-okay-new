@@ -1,0 +1,81 @@
+<style>
+    .cta-cont.cta-{{ section.id }} {
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px !important;
+        margin-right: {{ section.settings.margin_right }}px;
+        margin-left: {{ section.settings.margin_left }}px;
+        justify-content: {{ section.settings.horizontal_alignment }} !important;
+    }
+</style>
+{%- if section.settings.button_label != blank -%}
+<div class="cta-cont cta-{{ section.id }}">
+    <a class="cta-button" href="{{ section.settings.button_link }}" >{{ section.settings.button_label | escape }}</a>
+</div>
+{%- endif -%}
+
+{% schema %}
+{ 
+    "name":"CTA Button",
+    "settings": [
+    {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+    },
+    {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+    },
+    {
+        "type": "select",
+        "id": "horizontal_alignment",
+        "label": "Horizontal alignment",
+        "options": [
+            {
+            "value": "left",
+            "label": "Left"
+            },
+            {
+            "value": "center",
+            "label": "Center"
+            },
+            {
+            "value": "right",
+            "label": "Right"
+            }
+        ],
+        "default": "center"
+    },
+    {
+        "type": "number",
+        "id": "margin_left",
+        "label": "Margin Left",
+        "default": 0
+    },
+    {
+        "type": "number",
+        "id": "margin_right",
+        "label": "Margin Right",
+        "default": 0
+    },
+    {
+        "type": "number",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "default": 0
+    },
+    {
+        "type": "number",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "default": 0
+    }
+    ],
+    "presets": [
+    {
+    "name": "CTA Button"
+    }
+    ]
+}
+{% endschema %}

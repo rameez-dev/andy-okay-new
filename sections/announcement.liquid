@@ -2,28 +2,54 @@
   {%- unless section.settings.home_page_only and template != 'index' -%}
     <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
       <div class="AnnouncementBar">
+        {%- if settings.currency_conversion_enabled -%}
+          <div class="announcment-currency-cont">
+            <a class="new_currency_dropdown">
+              <span>
+                <img src="https://cdn.shopify.com/s/files/1/0082/5619/2602/files/{{ shop.currency }}.png" id="flags" >
+              </span>
+              {% comment %} <span name="currency-name">
+              {{ shop.currency }}
+              </span> {% endcomment %}
+              &nbsp;{%- include 'icon' with 'select-arrow' -%}
+            </a>
+          </div>
+          <div class="MegaMenu Announcment_megamenu">
+              <div class="MegaMenu__Inner">
+                <div id="new-currency-container">
+                  <div class="new-currency-heading">Choose Your Country</div>
+                </div>
+              </div>
+            </div>
+        {% endif %}
         <div class="AnnouncementBar__Wrapper" >
-          <p class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 1.2em;overflow-y: hidden;">
+          <div class="AnnouncementBar__Content Heading" id="announcement-cont" style="height: 20px;overflow-y: hidden;">
             {% for block in section.blocks %}
               {%- if forloop.index == 1 -%}
-                <span name="announcement-block-{{forloop.index}}">
+                <div name="announcement-block-{{forloop.index}}" class="announcement-block">
+                  {% if block.settings.icon != blank %}
+                    <img class="announcement_icon" src="{{ block.settings.icon | image_url: height: 30 }}">
+                  {% endif %}
                   {%- if block.settings.link -%}
-                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a><br>
+                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a>
                   {%- else -%}
-                    {{ block.settings.content }}<br>
+                    <span>{{ block.settings.content }}</span>
                   {%- endif -%}
-                </span>  
+                </div>  
               {%- else -%}
-                <span style="display: none;" name="announcement-block-{{forloop.index}}">
+                <div style="display: none;" name="announcement-block-{{forloop.index}}" class="announcement-block">
+                  {% if block.settings.icon != blank %}
+                    <img class="announcement_icon" src="{{ block.settings.icon | image_url: height: 30 }}">
+                  {% endif %}
                   {%- if block.settings.link -%}
-                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a><br>
+                    <a href="{{ block.settings.link }}">{{ block.settings.content }}</a>
                   {%- else -%}
-                    {{ block.settings.content }}<br>
+                    <span>{{ block.settings.content }}</span>
                   {%- endif -%}
-                </span>
+                </div>
               {%- endif -%}
             {% endfor %}
-          </p>
+          </div>
         </div>
       </div>
     </section>
@@ -87,9 +113,9 @@
         }
 
         async function animation(){
-          let x = $("#announcement-cont").children("span");
+          let x = $("#announcement-cont").children(".announcement-block");
           for (var i=0; i<x.length;i++ ){  
-            x[i].style.display = "inline-block";
+            x[i].style.display = "flex";
             x[i].classList.add("come_infromtop");
             await timeout(1000);
             x[i].classList.remove("come_infromtop"); 
@@ -100,7 +126,7 @@
             x[i].style.display = "none";
           }
           for (var i=x.length-2; i>=0; --i ){  
-            x[i].style.display = "inline-block";
+            x[i].style.display = "flex";
             x[i].classList.add("come_infrombottom");
             await timeout(1000);
             x[i].classList.remove("come_infrombottom"); 
@@ -114,12 +140,37 @@
         animation();
         }
 
-        animation();
+        {% if section.blocks.size > 1 %}
+          animation();
+        {% endif %}
       });
     </script>
     
   {%- endunless -%}
 {%- endif -%}
+
+<script>
+  $(document).ready(function () {
+    var user__country = localStorage.getItem('user__country');
+    var country_flag = localStorage.getItem('userCurrencyFlag');
+    var curerncy_country_name = localStorage.getItem('country_name_show');
+    var usercountryelement = document.getElementById('announcement-ct');
+    var truststar_flag = document.getElementById('announcement-flag');
+
+    if (user__country)
+    { 
+      usercountryelement.prepend(' to ' + user__country); 
+    }
+
+    if (truststar_flag && country_flag)
+    { 
+      if (user__country == curerncy_country_name)
+      truststar_flag.src = 'https://cdn.shopify.com/s/files/1/0082/5619/2602/files/' + country_flag + '.png'; 
+      else 
+      truststar_flag.src = '';
+    }
+  });
+</script>
 
 {% schema %}
 {
@@ -165,6 +216,11 @@
           "type": "url",
           "id": "link",
           "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         }
       ]   
     }

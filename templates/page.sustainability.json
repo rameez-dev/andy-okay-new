@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "68c88ed7-329b-49c5-a5a1-9048e061b13c": {
+      "type": "banner-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/andyokay_sustainability.jpg",
+        "heading": "",
+        "color": "#ffffff",
+        "text_multi": 1
+      }
+    },
+    "a6c1ac63-b38c-4aab-adef-358232a10046": {
+      "type": "main-page-new",
+      "settings": {
+        "button_label": "PURCHASE FOR PURPOSE",
+        "button_link": "shopify:\/\/collections\/all-art",
+        "section_order": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "68c88ed7-329b-49c5-a5a1-9048e061b13c",
+    "a6c1ac63-b38c-4aab-adef-358232a10046"
+  ]
+}

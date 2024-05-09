@@ -1,17 +1,15 @@
 {%- comment -%}
 Those are the option names for which we automatically detect swatch. For the color, we use them to display a swatch,
-while
+while 
 for size, we use it to display a size chart (if applicable)
 {%- endcomment -%}  
-<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" rel="stylesheet" />
-<link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style>
   .hide-on-pdp{
     display: none !important;
   }
   .info-with-icon strong{
-    color: #434343;
+    /* color: #434343; */
   } 
 </style>
 <style>
@@ -70,7 +68,7 @@ for size, we use it to display a size chart (if applicable)
       display: block !important;
     }
     #custom_color_offer_ending {
-      color: #800220;
+      color: #813422;
     } 
    
     .noTopmargin{
@@ -125,12 +123,19 @@ for size, we use it to display a size chart (if applicable)
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: #959595;
     font-family: 'Adobe Caslon Pro';
     text-underline-offset: 5px;
     margin-bottom: 5px;
     font-size: 15px;
+  }
+
+  .about-your-donation .question-icon {
+    display: inline-block;
+    height: 15px;
+    margin-left: 8px;
+    opacity: 0.3;
   }
 
   @media screen and (max-width: 767px) {
@@ -497,6 +502,7 @@ for size, we use it to display a size chart (if applicable)
   .reset-compare-price {
     color: #b5b5b5;
     text-decoration: line-through;
+    white-space: nowrap;
   }
 </style>
 
@@ -596,10 +602,6 @@ for size, we use it to display a size chart (if applicable)
     height: 12px;
   }
 
-  .NewsletterPopup.site__black--popup {
-    border-radius: 0px;
-  }
-
   .NewsletterPopup.site__black--popup .NewsletterPopup__Content {
     padding: 30px 20px;
   }
@@ -613,9 +615,7 @@ for size, we use it to display a size chart (if applicable)
     margin: 10px 10px 8px 5px;
   }
   .mat_board_input_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
   }
   .passe-text-icon-container{
     width: 75%;
@@ -630,37 +630,24 @@ for size, we use it to display a size chart (if applicable)
     display: flex;
     align-items: center;
     position: relative;
-    top: 2px;
-  }
-  .passe-toptext-icon-container-noframe{
-    top: 3px;
   }
   .passe-gallery-experience-icon {
-    height: 18px;
-    width: 18px;
-    padding: 3px;
-    background: #dcdcdc;
-    border-radius: 100%;
-    border: unset;
-    color: #707070;
-    font-size: 10px;
-    font-weight: 500;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    font-style: normal;
-    overflow: hidden;
-  }
-  .passe-gallery-experience-icon-small {
     height: 14px;
-    width: 14px;
-    padding: 2px;
-    font-size: 8px;
+    display: inline-block;
+    cursor: pointer;
   }
+  .passe-text-icon-container-faded .passe-gallery-experience-icon {
+    opacity: 0.5;
+  }
+  /* opacity changes the img */
+  /* .passe-gallery-experience-icon-small {
+    opacity: 1;
+  } */
   .passe-toptext-title{
-    padding: 0 10px;
+    padding: 0 10px; 
     color: #707070;
     font-family: 'Adobe Caslon Pro';
+    margin-top: 3px;
   }
   .passe-bottomtext{
     margin-top: 3px;
@@ -677,10 +664,14 @@ for size, we use it to display a size chart (if applicable)
     top: 3px;
     color: #707070;
     opacity: 0.3;
+    line-height: 1;
+  }
+  #reset-passe-money {
+    white-space: nowrap;
   }
   input[name='gallery-no-frame']:after {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     position: relative;
     background-color: #fff;
     content: '';
@@ -690,16 +681,15 @@ for size, we use it to display a size chart (if applicable)
     opacity: 0.3;
   }
 
-  @media only screen and (min-width: 480px) {
-    input[name='gallery-no-frame']:after {
-      width: 16px;
-      height: 16px;
+  @media only screen and (max-width: 768px) {
+    .passecontainer {
+      margin-top: 8px;
     }
-    .passe-toptext-icon-container{
-      top: 4px;
+    .passe-toptext-title{
+      font-size: 14px;
     }
-    .passe-toptext-icon-container-noframe{
-      top: 4px;
+    .passe-gallery-experience-icon {
+      height: 12px;
     }
   }
   input[name='gallery-frame']:after {
@@ -736,7 +726,7 @@ for size, we use it to display a size chart (if applicable)
   }
   @media only screen and (max-width: 480px)   {
     input[name="gallery-frame"]:checked:after {
-        bottom: 22px;
+        bottom: 21px;
       }
   }
   .Disabled{
@@ -756,7 +746,7 @@ for size, we use it to display a size chart (if applicable)
 </script>
 
 {% assign has_max_price = false %}
-{% assign isFrame = true %}
+{% assign isFrame = false %} 
 {% for tag in product.tags %}
 {% if tag contains "xs_max" %}
 {% assign has_max_price = true %}
@@ -787,6 +777,25 @@ for size, we use it to display a size chart (if applicable)
 {%- assign white_frames = all_products['white-gallery-frame'] -%}
 {%- assign black_frames = all_products['black-gallery-frame'] -%}
 {%- assign oak_frames = all_products['oak-gallery-frame'] -%}
+
+{% for tag in product.tags %}
+  {% assign product_tag_first = tag | downcase | split: ':' | first %}
+  {% if product_tag_first == 'charity' %}
+    {% assign charity_org = tag | split: ':' | last | split: '-' | join: ' ' |  downcase |  replace: " ", "-"  %}
+  {% endif %}
+{% endfor %}
+
+{% assign has_charity = false %}
+{% for c_variant in charity_product.variants %}
+  {% assign charity_title = c_variant.title |  downcase |  replace: " ", "-"  %}
+  {% if charity_title == "non-violence" %}
+    {% assign charity_title = "non-violence-project" %}
+  {% endif %}
+  {% if charity_title == charity_org %} 
+    {% assign has_charity = true %}
+  {% endif %}
+{% endfor %}
+
 <script> 
   let black_variants = [], white_variants = [], oak_variants = [], mat_board_variants = [], frames_all_variants = {};
   frames_all_variants['0'] = { 'price': 0, 'compare_at_price': 0 };
@@ -806,7 +815,7 @@ for size, we use it to display a size chart (if applicable)
 {%- for oak_item in oak_frames.variants -%}
   <script>
     oak_variants.push({ 'id': '{{oak_item.id}}', 'title': '{{oak_item.title}}', 'price': '{{oak_item.price | money_without_trailing_zeros}}', 'compare_at_price': '{{oak_item.compare_at_price | money_without_trailing_zeros}}' });
-    frames_all_variants['{{oak_item.id}}'] = {{ oak_item | json }} ;
+    frames_all_variants['{{oak_item.id}}'] = {{ oak_item | json }};
   </script>
 {%- endfor -%}
 {%- for mat_item in mat_board_product.variants -%}
@@ -835,7 +844,7 @@ for size, we use it to display a size chart (if applicable)
   {% comment %} product options {% endcomment %}
   {%- for option in product.options_with_values -%}
       {%- assign downcase_option = option.name | downcase -%}
-      {%- capture popover_id -%}popover-{{ product.id }}-{{ section.id }}-{{ option.name | handle }}{%- endcapture -%}
+      {%- capture popover_id -%}popover-{{ product.id }}-product-template-{{ option.name | handle }}{%- endcapture -%}
 
     <div class="ProductForm__Option {% if show_option_label %}ProductForm__Option--labelled{% endif %}">
       {%- if show_option_label -%}
@@ -865,11 +874,11 @@ for size, we use it to display a size chart (if applicable)
             {%- assign color_swatch_name = value | handle | append: '.png' -%}
             {%- assign color_swatch_image = images[color_swatch_name] -%}
 
-            <input id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+            <input id="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
               class="ColorSwatch__Radio" type="radio" name="option-{{ forloop.parentloop.index0 }}"
               value="{{ value | escape }}" {% if value==option.selected_value %}checked="checked" {% endif %}
               data-option-position="{{ option.position }}">
-            <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+            <label for="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
               class="ColorSwatch ColorSwatch--large {% if downcase_value == 'white' %}ColorSwatch--white{% endif %}"
               data-tooltip="{{ value | escape }}"
               style="background-color: {{ value | replace: ' ', '' | downcase }}; {% if color_swatch_image != blank %}background-image: url({{ color_swatch_image | img_url: '64x64' }}){% endif %}">
@@ -902,11 +911,11 @@ for size, we use it to display a size chart (if applicable)
                 {% endif %}
               {% endfor %}
               {% assign variant_values = value | split: ' ' %}
-              <input id="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+              <input id="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
                 class="dp-product-section-size-selector-input" type="radio" name="option-{{ forloop.parentloop.index0 }}"
                 value="{{ value | escape }}" {% if value==option.selected_value %}checked="checked" {% endif %}
                 data-option-position="{{ option.position }}">
-              <label for="option-{{ section.id }}-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
+              <label for="option-product-template-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}"
                 class="dp-product-section-size-selector {% if value == option.selected_value %} currently-selected-size-display {% endif %}">
                {%- assign show = '' -%}
                {%- assign show_grade = '' -%}
@@ -945,8 +954,8 @@ for size, we use it to display a size chart (if applicable)
                 </div>
                 <div class="dp-product-section-size-selector-price">
                   {% if size_fixed_price %}
-                  <div><span class="reset-money"  with_no_frame="{{ size_fixed_price }}" with_black_frame="{{ black_frame_price  }}">{{size_fixed_price | money_without_trailing_zeros}}</span></div>  
-                  <div><span class="reset-compare-price"  with_no_frame="{{ size_fixed_compare_at_price }}" with_black_frame="{{ black_frame_compare_at_price }}">{{size_fixed_compare_at_price | money_without_trailing_zeros}}</span></div>  
+                    <div><span class="reset-compare-price"  with_no_frame="{{ size_fixed_compare_at_price }}" with_black_frame="{{ black_frame_compare_at_price }}">{{size_fixed_compare_at_price | money_without_trailing_zeros}}</span></div>  
+                    <div><span class="reset-money"  with_no_frame="{{ size_fixed_price }}" with_black_frame="{{ black_frame_price  }}">{{size_fixed_price | money_without_trailing_zeros}}</span></div>  
                   {% endif %}
                 </div>
                 <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down"
@@ -1221,9 +1230,22 @@ for size, we use it to display a size chart (if applicable)
                     {%- endif -%}
                 {%- endfor -%}
             </div>
+            <style>
+              .dp-product-section-swatch-selector-unavailable {
+                font-family:'Adobe Caslon Pro';
+                text-align: right;
+                font-size:13px;
+                display:flex;
+                color: #707070;
+              /*   width: 25%; */
+              }
+            </style>
             <div class="dp-product-section-swatch-selector-price" style="display: none;">
-                <span id="reset-frame-money" class="reset-money" ><span class="money"></span></span>
-                <span id="reset-compare-price" class="reset-compare-price" ><span class="money"></span></span>
+              <span id="reset-compare-price" class="reset-compare-price" ><span class="money"></span></span>
+              <span id="reset-frame-money" class="reset-money" ><span class="money"></span></span>
+            </div>
+            <div class="dp-product-section-swatch-selector-unavailable" id="reset-frame-unavailable" style="display: none;">
+              <span class="frame-unavailable">Frame Not Available</span>
             </div>
         </div>
       </div>
@@ -1232,20 +1254,23 @@ for size, we use it to display a size chart (if applicable)
         {% if selected_variant.option1 == mat_board_product_variant.option1 %}
           {% assign mat_board_product_id = mat_board_product_variant.id %}
           {% assign mat_board_product_price = mat_board_product_variant.price %}
+          {% assign mat_board_product_price_compare_at = mat_board_product_variant.compare_at_price %}
           {% break %}
         {% endif %}
       {% endfor %}
       <div class="passehidden" id="passe-container" data-orientation="horizontal">
         <div class="passecontainer">
           <div id="mat_board_product_container" class=" passe-text-icon-container passe-text-icon-container-faded">
-            <div class="mat_board_input_container">
+            <div class="mat_board_input_container"> 
               <input type="checkbox" id="mat_board_input" name="gallery-no-frame" value="{{mat_board_product_id}}" price="{{mat_board_product_price}}" disabled >
             </div>
             <div id="mat_board_toptext_icon_container" class="passe-toptext-icon-container passe-toptext-icon-container-noframe">
-                <span class="passe-toptext-title"> Add a Gallery Mat Board</span><i class="passe-gallery-experience-icon passe-gallery-experience-icon-small" id="gallery-experience-choose"><i>i</i></i>
+                <span class="passe-toptext-title"> Add a Gallery Mat Board</span><img class="passe-gallery-experience-icon passe-gallery-experience-icon-small" id="gallery-experience-choose" src="{{ 'question-mark.svg' |  asset_url }}" alt="i">
             </div>
           </div>
           <div class="passe-money">
+            <span id="reset-passe-money-compare" class="reset-compare-price">{{ mat_board_product_price_compare_at |
+              money_without_trailing_zeros }}</span>
             <span id="reset-passe-money" >{{ mat_board_product_price |
               money_without_trailing_zeros }}</span>
           </div>
@@ -1287,7 +1312,11 @@ for size, we use it to display a size chart (if applicable)
           <div class="acc__panel">
             {% for c_variant in charity_product.variants %}
             <div class="custom-radio">
-              <input {% if forloop.index==1 %} checked {% endif %} required class="required" id="select_organization"
+              {% assign charity_title = c_variant.title |  downcase |  replace: " ", "-"  %}
+              {% if charity_title == "non-violence" %}
+                {% assign charity_title = "non-violence-project" %}
+              {% endif %}
+              <input {% if has_charity %}{% if charity_title == charity_org %} checked {% endif %}{% else %}{% if forloop.index==1 %} checked {% endif %}{% endif %} required class="required" id="select_organization"
                 data-title="{{c_variant.title}}" type="radio" name="donation" value="{{c_variant.id}}"
                 data-gtm-form-interact-field-id="1" />
               <span"donation_container_text">{{c_variant.title}}</span>
@@ -1324,7 +1353,7 @@ for size, we use it to display a size chart (if applicable)
               {% endfor %}
             </div>
           </div>
-          <span id="donation-choose" class="about-your-donation">About your donation</span>
+          <span id="donation-choose" class="about-your-donation">About your donation <img class="question-icon" src="{{ 'question-mark.svg' |  asset_url }}" alt="i"></span>
         </div>
       </div>
     </div>
@@ -1401,10 +1430,12 @@ ADD TO CART BUTTON
       height: 82px;
       position: fixed;
       left: 0px;
-      bottom: 62px;
+      bottom: 0px;
       text-align: center;
       background-color: white;
-      z-index: 10;
+      z-index: 9;
+      visibility: visible;
+      transform: translateY(0%);
     }
     .bottomFixed-child{
       margin: 0;
@@ -1415,28 +1446,28 @@ ADD TO CART BUTTON
     }
     #first-truststar.bottomFixed-truststar{
       position: fixed;
-      bottom: 72px;
-      z-index: 15;
+      bottom: 5px;
+      z-index: 9;
     }
-    .CLS-placeholder{
+    /* .CLS-placeholder{
       margin-top: 30px;
       height: 48px;
       position: relative;
-    }
-    .CLS-truststar-placeholder{
+    } */
+    /* .CLS-truststar-placeholder{
       height: 24px;
       position: relative;
+      margin-top: 12px;
     }
     #cartbutton--reload, #first-truststar{
       position: absolute;
       width: 100%;
-    }
+    } */
     #bottom-fixer{
       margin-top: 0px;
     }
   </style>
 
-<div class="CLS-placeholder">
   <div class="Button--primary--default" id="cartbutton--reload">
     {% comment %}
     <button type="button" id="xs-add-to-cart-btn"
@@ -1470,38 +1501,65 @@ ADD TO CART BUTTON
       {{- 'product.form.sold_out' | t -}}
       {%- endif -%}
       <div class="cart-button-price-wrap">
-        <div class="actual-price">
-          <span id="xs-currentVal_button" class="price_currentVal" ><span class="money">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span></span>
-        </div>
         <div class="actual-price-discount" >
           {% if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price != 0 %}
             <span id ="compare_at_price_style_button" class="price_compareVal" ><span class="money">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span></span>
-        {% endif %}
+          {% endif %}
+        </div>
+        <div class="actual-price">
+          <span id="xs-currentVal_button" class="price_currentVal" ><span class="money">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span></span>
         </div>
       </div>
     </button>
+    <div class="separate-text-free-shipping extented_info leftAligned_imp">
+      <div id="first-truststar" class="info-with-icon">
+        <div class="green_dot"></div>
+        <p><strong>Free Shipping</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span>
+          <img class="truststar-flag" src="" id="truststar-flag" >
+        </p>
+      </div>
+    </div>
   </div>
-</div>
 
 {%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
 {{ form | payment_button }}
 {%- endif -%}
 
 {% comment %} Extended Info {% endcomment %}
-<div class="extented_info leftAligned_imp noTopmargin" >
-  <div class="CLS-truststar-placeholder">
-    <div id="first-truststar" class="info-with-icon Block_imp">
-      <p>{%- include 'icon' with 'trust-shield-new' -%}
-        <strong>Free Delivery</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span></p>
-    </div>
+<div class="extented_info leftAligned_imp checkmarked-blocks" >
+  {% comment %} <div id="first-truststar" style="display: none;" class="info-with-icon">
+    <p><img class="icon_img" src="{{ 'FreeShippingabove.svg' |  asset_url }}">
+      <strong>Free Delivery</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span>
+      <img class="truststar-flag" src="" id="truststar-flag" >
+    </p>
+  </div> {% endcomment %}
+  <div class="info-with-icon Block_imp">
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      <strong>Buy 2 Get 1 Free</strong><span  id="custom_color_offer_ending"> [Limited Run]</span>
+    </p>
   </div>
   <div class="info-with-icon Block_imp">
-    <p> {%- include 'icon' with 'trust-shield-new' -%}
-      <strong>Buy 2 Get 1 Free</strong><span  id="custom_color_offer_ending"> [Limited Run]</span></p>
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      Certificate of authenticity included
+    </p>
   </div>
   <div class="info-with-icon Block_imp">
-    <p>{%- include 'icon' with 'trust-shield-new' -%}
-      <strong>100% Satisfaction</strong> or 100% Refund</p>
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      Delivery within a week | Super easy returns
+    </p>
+  </div>
+  <div class="info-with-icon Block_imp">
+    <p>
+      <img class="icon_img" src="{{ 'checkmark.png' |  asset_url }}">
+      Secure payment
+      <img class="icon_img_payment" src="{{ 'paypal_black.png' |  asset_img_url }}">
+      <img class="icon_img_payment" src="{{ 'amex_black.png' |  asset_img_url }}">
+      <img class="icon_img_payment" src="{{ 'visa_black.png' |  asset_img_url }}">
+      <img class="icon_img_payment" src="{{ 'mastercard_black.png' |  asset_img_url }}">
+    </p>
   </div>
   {%- comment -%} <ul class="infoExt-list">
     <li>
@@ -1518,17 +1576,21 @@ ADD TO CART BUTTON
     </li>
   </ul> {%- endcomment -%}
 </div>
+
+<div class="help-container">
+  <span id="zendesk-popup-control" class="help-text">Need help?</span>
+</div>
 {% comment %} Extended Info {% endcomment %}
 
 {%- endform -%}
 
 <div class="headQuote-content pdp-custom-stars">
+  <div class="new-trust-line">
+    <strong>Excellent</strong>&nbsp;&nbsp; 4.9 out of 5
+  </div>
    <div class="heading__stars">
     <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
    </div>
-  <div class="product_rev_text">
-    4,9/5
-  </div>
 </div>
 
 {%- if size_chart_page != empty -%}
@@ -1730,10 +1792,22 @@ THE EXACT SAME ATTRIBUTES.
 <script>
   $(document).ready(function () {
     var user__country = localStorage.getItem('user__country');
+    var country_flag = localStorage.getItem('userCurrencyFlag');
+    var curerncy_country_name = localStorage.getItem('country_name_show');
     var usercountryelement = document.getElementById('countryInTruststar');
+    var truststar_flag = document.getElementById('truststar-flag');
+
     if (user__country)
     { 
       usercountryelement.innerHTML = ' to ' + user__country; 
+    }
+
+    if (truststar_flag && country_flag)
+    { 
+      if (user__country == curerncy_country_name)
+      truststar_flag.src = 'https://cdn.shopify.com/s/files/1/0082/5619/2602/files/' + country_flag + '.png'; 
+      else 
+      truststar_flag.src = '';
     }
 
     //var cm_at_final_discount = 0;
@@ -1747,62 +1821,68 @@ THE EXACT SAME ATTRIBUTES.
         $(".Header__CartDot").addClass('is-visible');
         var target = '#target__';
         var animation = '.cart-animation';
-        $(animation).css({ 'display': 'block' });
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          target = '#target__mobile';
-        }
+        // $(animation).css({ 'display': 'block' });
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        //   target = '#target__mobile';
+        // }
         var cart = $(target);
         var imgtodrag = $(animation);
-        if (imgtodrag) {
-          var imgclone = imgtodrag.clone()
-            .offset({
-              top: imgtodrag.offset().top,
-              left: imgtodrag.offset().left
-            })
-            .css({
-              'opacity': '1',
-              'position': 'absolute',
-              'z-index': '100'
-            })
-            .appendTo($('body'))
-            .animate({
-              'top': cart.offset().top + 10,
-              'left': cart.offset().left + 10
-            }, 1000, 'easeInOutExpo');
+        // if (imgtodrag) {
+        //   var imgclone = imgtodrag.clone()
+        //     .offset({
+        //       top: imgtodrag.offset().top,
+        //       left: imgtodrag.offset().left
+        //     })
+        //     .css({
+        //       'opacity': '1',
+        //       'position': 'absolute',
+        //       'z-index': '100'
+        //     })
+        //     .appendTo($('body'))
+        //     .animate({
+        //       'top': cart.offset().top + 10,
+        //       'left': cart.offset().left + 10
+        //     }, 1000, 'easeInOutExpo');
 
-          setTimeout(function () {
-            cart.effect("shake", {
-              times: 2
-            }, 200);
-          }, 1500);
+        //   setTimeout(function () {
+        //     cart.effect("shake", {
+        //       times: 2
+        //     }, 200);
+        //   }, 1500);
 
-          imgclone.animate({
-            'width': 0,
-            'height': 0
-          }, function () {
-            $(this).detach()
-          });
-        }
-        setTimeout(function () {
-          $(animation).css({ 'display': 'none' });
-        }, 1500);
+        //   imgclone.animate({
+        //     'width': 0,
+        //     'height': 0
+        //   }, function () {
+        //     $(this).detach()
+        //   });
+        // }
+        // setTimeout(function () {
+        //   $(animation).css({ 'display': 'none' });
+        // }, 1500);
       });
       payBtn.addClass('success_btn');
-      payBtnText.text(' ');
+      // payBtnText.text(' ');
       //from here all calculations for pricing in cart label
       var price_header_ = $("#price_header_").html().replace(/\<span(.|\s)*?\<\/span\>/, '');
-      price_header_ = Number(price_header_.replace(/[^0-9\.-]+/g, ""));
+      if (newCurrency == 'SEK' || newCurrency == 'NOK')
+        price_header_ = Number(price_header_.replace(/[^0-9-]+/g, ""));
+      else
+        price_header_ = Number(price_header_.replace(/[^0-9\.-]+/g, ""));
       if (isNaN(price_header_)) price_header_ = 0;
 
       var cm_at_price_header_ = $("#cm_at_price_header_").html().replace(/\<span(.|\s)*?\<\/span\>/, '');
-      cm_at_price_header_ = Number(cm_at_price_header_.replace(/[^0-9\.-]+/g, ""));
+      if (newCurrency == 'SEK' || newCurrency == 'NOK')
+        cm_at_price_header_ = Number(cm_at_price_header_.replace(/[^0-9-]+/g, ""));
+      else
+        cm_at_price_header_ = Number(cm_at_price_header_.replace(/[^0-9\.-]+/g, ""));
       if (isNaN(cm_at_price_header_)) cm_at_price_header_ = 0;
 
       var updated_price_header_ = price_header_ + Number(actual_variant_price.replace(/[^0-9\.-]+/g, "")) + price;
       var updated_cm_at_price_header_ = cm_at_price_header_ + Number(cm_at_price.replace(/[^0-9\.-]+/g, ""));
 
       var currency_symbol = cm_at_price.replace(/[\d\., ]/g, '');
-      if (newCurrency == 'SEK') {
+      if (newCurrency == 'SEK' || newCurrency == 'NOK') {
         updated_price_header_ = Math.round(updated_price_header_) + ' ' + currency_symbol;
         updated_cm_at_price_header_ = Math.round(updated_cm_at_price_header_) + ' ' + currency_symbol;
 
@@ -1890,7 +1970,16 @@ THE EXACT SAME ATTRIBUTES.
     maxPrice = maxPrice * 100;
     var a = 'amount_no_decimals';
     var amount = "{" + "{" + a + "}}";
-    var moneyFormats = { "USD": "$" + amount, "EUR": "€" + amount, "GBP": "£" + amount, "CAD": "$" + amount, "SEK": amount + " kr", "AUD": "$" + amount };
+    var moneyFormats = { 
+      "USD": "$" + amount, 
+      "EUR": "€" + amount, 
+      "GBP": "£" + amount, 
+      "CAD": "$" + amount, 
+      "SEK": amount + " kr", 
+      "DKK": amount + " kr", 
+      "NOK": amount + " kr", 
+      "AUD": "$" + amount 
+    };
     var xs_format = moneyFormats[newCurrency] || '{{ amount }}';
     var selectedframe = false; 
     if( $("label[for='black-frame']").hasClass("currently-selected-swatch-display") ||
@@ -1938,13 +2027,13 @@ THE EXACT SAME ATTRIBUTES.
         {{- 'product.form.sold_out' | t -}}
         {%- endif -%}
         <div class="cart-button-price-wrap">
-          <div class="actual-price">
-            <span id="xs-currentVal_button-2" class="price_currentVal" ><span class="money">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span></span>
-          </div>
           <div class="actual-price-discount" >
             {% if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price != 0 %}
               <span id ="compare_at_price_style_button-2" class="price_compareVal" ><span class="money">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span></span>
             {% endif %}
+          </div>
+          <div class="actual-price">
+            <span id="xs-currentVal_button-2" class="price_currentVal" ><span class="money">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span></span>
           </div>
         </div>`;
         $(".ProductForm__AddToCart").html(buttonstyle);
@@ -1956,6 +2045,18 @@ THE EXACT SAME ATTRIBUTES.
         $("#xs-currentVal_button-2").html(price);
         $("#compare_at_price_style_button-2").html(cm_at_price);
 
+        var $wind = $(window);
+        if ( ($wind.scrollTop() >= (250)) && (screen.width < 640) ) {
+          $('#cartbutton--reload').addClass('bottomFixed');
+          $('#bottom-fixer').addClass('bottomFixed-child');
+          $('#first-truststar').addClass('bottomFixed-truststar');
+        }
+        else{
+          $('#cartbutton--reload').removeClass('bottomFixed');
+          $('#bottom-fixer').removeClass('bottomFixed-child');
+          $('#first-truststar').removeClass('bottomFixed-truststar');
+        }
+
       }
 
     button_update(textaddtocart, actual_variant_price, cm_at_price );
@@ -1963,7 +2064,7 @@ THE EXACT SAME ATTRIBUTES.
     $window = $(window);
 
     $window.scroll(function() {
-        if ( ($window.scrollTop() >= (distance+120)) && (screen.width < 640) ) {
+        if ( ($window.scrollTop() >= (250)) && (screen.width < 640) ) {
             $('#cartbutton--reload').addClass('bottomFixed');
             $('#bottom-fixer').addClass('bottomFixed-child');
             $('#first-truststar').addClass('bottomFixed-truststar');
@@ -2047,24 +2148,20 @@ THE EXACT SAME ATTRIBUTES.
       $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
       $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ) {
         selectedframe = true;
-        $("#reset-passe-money").css("color", "#00934a");
+        $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
       }
-      console.log(selectedframe);
       xVariantPrice = xVariants[xid].price;
       xVariantCompare_at_price = xVariants[xid].compare_at_price;
       let selected_frame_id = $('input[name="frame"]:checked').val();
-      console.log('frame id : '+selected_frame_id);
       let selected_frame_price = 0;
       let selected_frame_compare_at_price = 0;
-      if (selected_frame_id != 0 && selected_frame_id){
+      if (selected_frame_id != 0){
         selected_frame_price = frames_all_variants[selected_frame_id].price;
         selected_frame_compare_at_price = frames_all_variants[selected_frame_id].compare_at_price;
       } 
-
-      
-      selected_frame_price = Math.round(Currency.convert(selected_frame_price, 'USD', newCurrency));
-      selected_frame_compare_at_price = Math.round(Currency.convert(selected_frame_compare_at_price, 'USD', newCurrency));
+      // selected_frame_price = Math.round(Currency.convert(selected_frame_price, 'USD', newCurrency));
+      // selected_frame_compare_at_price = Math.round(Currency.convert(selected_frame_compare_at_price, 'USD', newCurrency));
       if(selected_frame_price > 0 ) {
         $('.dp-product-section-swatch-selector-price').css('display','block');
       } else {
@@ -2092,8 +2189,6 @@ THE EXACT SAME ATTRIBUTES.
       else{
         textaddtocart = 'ADD ART TO CART';
       } 
-  
-      console.log(textaddtocart);
       if ( variant.available){
         $(".ProductForm__AddToCart").append("<div class='cart-animation' style='display:none'><span id='animation_digit'></span></div>");
         $(".ProductForm__AddToCart span").addClass('add-to-cart__text');
@@ -2133,7 +2228,6 @@ THE EXACT SAME ATTRIBUTES.
             } });
         
           if ($("#mat_board_input").is(':checked')) {
-            console.log('mat board is checked ...');
               formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
           }
         }
@@ -2161,11 +2255,11 @@ THE EXACT SAME ATTRIBUTES.
                 url: reqUrl,
                 success: function (e) {
                   let charityData = {
-                    'items': [{
+                    'items': [{ 
                       'id': e.variant_id,
                       'quantity': 1
                     }]
-                  };
+                  }; 
                   fetch(window.Shopify.routes.root + 'cart/add.js', {
                     method: 'POST',
                     headers: {
@@ -2316,6 +2410,16 @@ THE EXACT SAME ATTRIBUTES.
 
     $('#gallery-experience-choose').click(function () {
       $('.gallery-experience-choose').addClass('visible');
+      document.getElementById("cart-popup-overlay").style.display = "block";
+    });
+
+    $('#price-detail-desktop, #price-detail-mob').click(function(){
+      $('.price-detail').addClass('visible');
+      document.getElementById("cart-popup-overlay").style.display = "block";
+    });
+
+    $('#zendesk-popup-control').click(function(){
+      $('.zendesk-popup').addClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "block";
     });
 

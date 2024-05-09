@@ -11,6 +11,7 @@
     "main": {
       "type": "product-template",
       "settings": {
+        "gallery_video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4",
         "pwyw_btn_color": "#313131",
         "show_share_buttons": false,
         "show_vendor": false,
@@ -45,7 +46,7 @@
           "type": "question",
           "settings": {
             "title": "How can you offer such affordable art?",
-            "answer": "<p>This price is only possible due to the incredible artists involved, who allows us to lower the price significantly for one of their artworks. Without their honorable participation, we wouldn't exist. <\/p><p><\/p>"
+            "answer": "<p>This price is only possible due to the incredible artists involved. Without their honourable participation, we wouldn't exist. <\/p><p>The artists we work with normally sell their art themselves or on other platforms for much more. We collaborate with them and have a limited run on one of their artworks that is linked to a specific cause, and is offered for a lower price to leave room for donations.<\/p>"
           }
         },
         "bb32f412-342a-4913-8519-a11af9c835ca": {
@@ -59,7 +60,7 @@
           "type": "question",
           "settings": {
             "title": "How much actually goes to the cause?",
-            "answer": "<p>We donate a third of our profit to non-profit organisations. For each artwork what you choose to donate will go directly to the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
+            "answer": "<p>We have different type of collaborations directly with the charity organisations we work with inorder to help them raise awareness and funds for their important projects. Our mission is to create a better world through the power of art.<\/p><p>For each artwork, you can choose to add a donation to a charity organisation of your choice. What you choose to donate will directly benefit the charity organisation you have chosen. <\/p><p>So anything extra you can give will have a huge impact.<\/p>"
           }
         },
         "682d1f0c-cc77-47e5-9d3a-9cd330ff39bf": {
@@ -73,7 +74,7 @@
           "type": "question",
           "settings": {
             "title": "I really want to try it. But first, do you have any guarantee?",
-            "answer": "<p>No worries. We offer 100% customer satisfaction, or your money back. If by any chance you're not completely happy with any part of your customer experience, neither are we. Just let us know and we'll fix it!<\/p>"
+            "answer": "<p>No worries. We offer 100% customer satisfaction. If by any chance you're not completely happy with your art or any part of your customer experience, neither are we. Just let us know and we will fix it!<\/p>"
           }
         }
       },
@@ -97,7 +98,14 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "BUY 2 GET 1 FREE",
+        "subheading": "BUNDLE WITH A BESTSELLER",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
     },
     "trustbadges-v2": {
       "type": "trustbadges-v2",
@@ -149,12 +157,12 @@
           "type": "story",
           "settings": {
             "product": "",
-            "subheading": "PAY WHAT YOU CAN",
+            "subheading": "WHY CHOOSE ART FOR CAUSES?",
             "subheading_color": "#9c9c9c",
             "title": "WE GIVE BACK, TOGETHER",
             "image": "shopify:\/\/shop_images\/wegiveback.jpg",
             "image_position": "left",
-            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never before seen.  To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customer a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $2 to $200 extra for their artwork, knowing that the more they chose to pay, the more positive impact it creates.<\/p>",
+            "content": "<p><em>“Merging good causes and epic art into something truly meaningful on your wall” <\/em><em><strong>- Variety<\/strong><\/em><\/p><p>The idea was to create an art gallery never-before-seen. To make exclusive high-quality gallery art affordable for everyone, and at the same time make the customers own walls a part of a better future. <\/p><p>Today, art and earth lovers all around the globe are giving anything from $1 to $200 extra for their limited edition artworks from award-winning artists, knowing that the more they chose to give, the more positive impact their new art creates.<\/p>",
             "link_text": "",
             "link_url": "",
             "urltext_color": "#e06db6",
@@ -170,7 +178,7 @@
             "title": "MEET ANDY",
             "image": "shopify:\/\/shop_images\/me_923858d1-3604-4d70-94f1-c9d3fdd2504f.jpg",
             "image_position": "right",
-            "content": "<p>Announced a ”World Hero” by WWF, Andy has over 20 years of experience creating art that tells important stories. <\/p><p>Working hand-in-hand with organisations like UN, Peta, Save Movement, WWF, Rainforest Trust and many more, Andy understands the needs of the communities being served and the power art has to raise awareness. <br\/><br\/>Art for Causes is the product born after 20 years of networking with amazing artists all around the globe, and important organisations of all sizes.  And a need to do more.<br\/><br\/><a href=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\" target=\"_blank\" title=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\"><strong>Click here for an interview with Andy<\/strong><\/a><br\/><em>15min read<\/em><\/p>",
+            "content": "<p>Announced a ”World Hero” by WWF, Andy has over 20 years of experience creating art that tells important stories. <\/p><p>Working hand-in-hand with organisations like UN, Non-Violence Project, Rainforest Trust, WWF, Share The Meal and many more, Andy understands the needs of the communities being served and the power art has to raise awareness. <br\/><br\/>Art for Causes is the product born after 20 years of networking with amazing artists all around the globe, and important organisations of all sizes. And a need to do more.<br\/><br\/><a href=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\" target=\"_blank\" title=\"https:\/\/mymodernmet.com\/andreas-haggkvist-surreal-animal-art\/\"><strong>Click here for an interview with Andy<\/strong><\/a><br\/><em>15min read<\/em><\/p>",
             "link_text": "",
             "link_url": "",
             "urltext_color": "#3d85df",
@@ -312,6 +320,7 @@
     },
     "newsletter": {
       "type": "newsletter",
+      "disabled": true,
       "settings": {
         "section_size": "small",
         "text_color": "#ffffff",
@@ -319,8 +328,8 @@
         "button_background_color": "#a6967c",
         "input_border_color": "#ffffff",
         "subheading": "",
-        "title": "NEWSLETTER",
-        "content": "<p>Sign up for the latest news, offers and styles.<\/p>"
+        "title": "THE GOOD CLUB",
+        "content": "<p>Join 134,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% free.<\/p>"
       }
     },
     "frame-choose-popup": {
@@ -328,7 +337,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/details-popup.jpg",
         "title": "Handmade gallery frames for the perfect presentation",
-        "content": "<p>Level up your favourite Andy okay art collection with our premium wooden frames. Available in black, white and a beautiful natural oak. <br\/><br\/>Each frame is handcrafted with perfection and comes with easy hanging hardware so your artwork is ready to hang as soon as it arrives.<\/p>",
+        "content": "<p>Our high quality frames are available in black, white and beautiful light oak. The glass consists of a high quality acrylic glass that is light and shatter-free for a safe home!<br\/><br\/>Best of all? Our frames works both ways! You can hang them vertically and horizontally.<br\/><br\/>Frame width: 12 mm<br\/>Depth: 22 mm<br\/>Material: Pine Wood \/ Solid Oak<br\/><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for full product description.<\/p>",
         "link_text": "",
         "link": ""
       }
@@ -337,7 +346,7 @@
       "type": "donation-choose-popup",
       "settings": {
         "title": "Popup",
-        "content": "<p><strong>Give to yourself and give back.<\/strong><br\/><br\/>Our mission is to support charity and artists while providing stunning art to customers at great prices. <br\/><br\/>Through unique collaborations we can release limited edition art at incredible prices, leaving room for a personal donation to a charity of your choice.<br\/><br\/>And the best part? <br\/><br\/>These limited edition drops help to bring important environmental stories into homes and workspaces all around the world creating critical dialogue and inspiring positive action.<br\/><br\/>Together, with the power of art, we can help save our planet.<\/p>",
+        "content": "<p><strong>Give to yourself and give back<\/strong><br\/><br\/>Our mission is to support charity and artists while providing stunning art to customers at the world's most affordable price. <br\/><br\/>Through unique collaborations we can release limited edition art at never-before-seen prices, leaving room for a personal donation to a charity of your choice.<br\/><br\/>And the best part? <br\/><br\/>These limited edition drops help to bring important environmental stories into homes and workspaces all around the world creating critical dialogue and inspiring positive action.<br\/><br\/><a href=\"https:\/\/andyokay.com\/pages\/cause-of-the-month\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/cause-of-the-month\">Click here<\/a> for learn more about our charity partners.<\/p>",
         "link_text": "",
         "link": ""
       }
@@ -347,19 +356,85 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/passe.jpg",
         "title": "Popup",
-        "content": "<p><strong>Mat Boards \/ Passe Partout<br\/><\/strong><br\/>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further. A mat board that runs around the edge of the art makes it stand out and come into focus. <br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world. <br\/><br\/>In addition to giving your art extra depth, you also avoid the artwork coming into contact with the glass, which protects it against ageing.<\/p>",
+        "content": "<p>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further.<br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world.<br\/><br\/><em>Sizes<\/em>:<br\/><strong>Medium<\/strong> (12x16\" \/ 30x40cm) - Mat width: 1.0\" \/ 2.5cm<br\/><strong>Large<\/strong>(20x28\" \/ 50x70cm) - Matwidth: 1.2\" \/ 3.0cm<br\/><strong>X-Large<\/strong>(28x40\" \/ 70x100cm) - Matwidth: 1.4\" \/ 3.5cm<br\/><br\/><em>Note: The mat board is placed on top of the Fine Art print and covers a little bit of the artwork.<br\/><\/em><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for full product description.<\/p>",
         "link_text": "",
         "link": ""
       }
     },
     "size-chart-popup": {
       "type": "size-chart-popup",
+      "blocks": {
+        "2a8d544a-9777-42bb-bf41-b2e34ae121bc": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/medium-portrait-mount_693a8a0b-5b66-4618-abb1-42d0bdb44a4d.jpg",
+            "heading": "MEDIUM",
+            "content": "Image size - 12x16” | 30x40cm"
+          }
+        },
+        "21c804c0-2d80-4544-a04f-bc7acacfb230": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/large-portrait-mount_80cf7616-d98b-40d7-89f0-82c2019271dc.jpg",
+            "heading": "LARGE",
+            "content": "Image size - 20x28” | 50x70cm"
+          }
+        },
+        "863d8b30-7b11-4e05-8e8d-bea9fce9ad27": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/xl-portrait-mount_2eabd6da-a0c7-4178-becf-ff14554c80c1.jpg",
+            "heading": "EXTRA LARGE",
+            "content": "Image size - 28x40” | 70x100cm"
+          }
+        },
+        "cf548a47-7f16-4e6b-ac38-350eefc4fe0a": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/giant-portrait-mount_b55f236c-a451-4cdc-b587-8114338dd682.jpg",
+            "heading": "GIANT",
+            "content": "Image size - 40x55” | 100x140cm"
+          }
+        }
+      },
+      "block_order": [
+        "2a8d544a-9777-42bb-bf41-b2e34ae121bc",
+        "21c804c0-2d80-4544-a04f-bc7acacfb230",
+        "863d8b30-7b11-4e05-8e8d-bea9fce9ad27",
+        "cf548a47-7f16-4e6b-ac38-350eefc4fe0a"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/sizeguide-v2.jpg",
-        "title": "",
-        "content": "",
+        "title": "Size Guide"
+      }
+    },
+    "b9ca1c76-c277-4252-8da2-792273eac538": {
+      "type": "price-detail-popup",
+      "settings": {
+        "title": "HOW OUR PRICES ARE MADE POSSIBLE",
+        "content": "<p><em>It’s not a sale. <\/em>It’s a commitment to do more good.<em> <\/em> <br\/><br\/>We establish close collaborations with charitable organisations all across the world, to find strategic ways to help them spread awareness with the power of art.<br\/><br\/>With the organisation, we then reach out to the world’s most talented artists to figure out a way to make a limited edition art drop at a never-before-seen price, leaving room for people to make a donation with their purchase. <br\/><br\/>Our business model is kind of crazy (and a lot of work), but a huge win-win for all.<br\/><br\/>Especially for our planet.<br\/><br\/>By purchasing an artwork for a cause, you become a part of our good community. A 100% free membership where the only thing YOU have to do, is keep spreading the word of the true value behind your art. <br\/><br\/>We truly believe it's the best art deal in the world. <br\/><br\/>Hopefully, you feel the same.<br\/><br\/>Want to know more? <a href=\"https:\/\/andyokay.com\/pages\/about-us\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/about-us\">Click here<\/a> <\/p>",
         "link_text": "",
         "link": ""
+      }
+    },
+    "zendesk_form_popup_KctWEg": {
+      "type": "zendesk-form-popup",
+      "blocks": {
+        "dropdown_fFzgU9": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Reason for contact",
+            "title": "17047106351634",
+            "values": "What is the status of my order?\/\/track_my_order, I need to update my delivery address\/\/wrong_shipping_address, I want to update or cancel my order\/\/update_or_cancel_order, My item\/s arrived damaged\/\/reclamation, I want to make a return\/\/return, I want to collaborate\/\/collaborations, I have another question\/\/customer_question",
+            "is_required": false
+          }
+        }
+      },
+      "block_order": [
+        "dropdown_fFzgU9"
+      ],
+      "settings": {
+        "title": "Contact",
+        "content": "<p>Please fill in the form below with any questions you might have about your order, our products or exciting collaborations. We'll get back to you within 24 hours, but usually much faster.<\/p><p><br\/>Of course, you can always drop us an email at:<br\/><a href=\"mailto:support@andyokay.com\" target=\"_blank\">support@andyokay.com<\/a><\/p><p><br\/>You can also find a lot of the information you might be looking for in our <a href=\"https:\/\/andyokay.com\/pages\/faq\">FAQs<\/a>.<\/p>"
       }
     }
   },
@@ -379,6 +454,8 @@
     "frame-choose-popup",
     "donation-choose-popup",
     "gallery-experience-choose-popup",
-    "size-chart-popup"
+    "size-chart-popup",
+    "b9ca1c76-c277-4252-8da2-792273eac538",
+    "zendesk_form_popup_KctWEg"
   ]
 }

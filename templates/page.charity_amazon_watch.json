@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#edece9",
+        "text-color": "#0d2b2b",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Amazon Watch",
+        "paragraph": "<p>Amazon Watch was founded in 1996 to protect the rainforest and advance the rights of Indigenous peoples in the Amazon Basin. We partner with Indigenous and environmental organisations in campaigns for human rights, corporate accountability, and the preservation of the Amazon's ecological systems.<\/p>",
+        "image": "shopify:\/\/shop_images\/amazon_1000.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "The Mission",
+        "position": "row",
+        "paragraph": "<p>We envision a world where the collective rights of Indigenous peoples and the rights of nature are respected and where healthy forests, biodiversity, and the global climate are fully protected by governments, corporations and civil society.<\/p>",
+        "image": "shopify:\/\/shop_images\/toucan_500.jpg",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "three-column": {
+      "type": "three-column",
+      "blocks": {
+        "24519abe-688d-4d72-aea4-f91826edac06": {
+          "type": "quote",
+          "settings": {
+            "heading": "Stop Amazon Destruction",
+            "paragraph": "<p>The Amazon is the world's largest terrestrial carbon sink and plays a critical role in regulating the global climate. Yet this global treasure is at great risk – already more than 20% has been deforested.<br\/><br\/>Amazon Watch protects millions of acres of rainforest every year by partnering with Indigenous peoples – the best stewards of the forest – to directly challenge the corporate and government powers that threaten the Amazon and our climate.<\/p>",
+            "text-color": "#0d2b2b"
+          }
+        },
+        "9a9b7793-25cc-486c-b287-aa7c5681c08d": {
+          "type": "quote",
+          "settings": {
+            "heading": "Advance Indigenous Solutions",
+            "paragraph": "<p>The knowledge, cultures, and traditional practices of our Indigenous partners contribute greatly to sustainable and equitable stewardship of the Amazon and all of Mother Earth. <br\/><br\/>Amazon Watch promotes these Indigenous-led solutions, such as green development and autonomous solar power, and expands capacity for Indigenous leaders, especially women, to maintain their autonomy and sovereignty for the stewardship of their ancestral territories.<\/p>",
+            "text-color": "#0d2b2b"
+          }
+        },
+        "7de5a2f8-cd35-42f1-ac8d-e8f2933edbf7": {
+          "type": "quote",
+          "settings": {
+            "heading": "Support Climate Justice",
+            "paragraph": "<p>Addressing climate change and environmental destruction must also redress past harm, bring bad actors to justice, support activists who put their lives on the line, and build solidarity. <br\/><br\/>Amazon Watch holds governments and corporations accountable, defends Earth Defenders against threats and attacks, holds open the doors of the international stage for our Indigenous partners, supports bonds of solidarity between Indigenous peoples, and channels outside support for our Indigenous partners.<\/p>",
+            "text-color": "#0d2b2b"
+          }
+        }
+      },
+      "block_order": [
+        "24519abe-688d-4d72-aea4-f91826edac06",
+        "9a9b7793-25cc-486c-b287-aa7c5681c08d",
+        "7de5a2f8-cd35-42f1-ac8d-e8f2933edbf7"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "show": true,
+        "heading": "Main Priorities:",
+        "heading-color": "#000000"
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Get Involved",
+        "paragraph": "<p>The Amazon rainforest is in crisis. It has been for some time. Each of us can take action. We may be the last generation that has a chance to protect this precious gem of our world's cultural and ecological heritage – an irreplaceable source of life and inspiration. Supporting Amazon Watch is a critical way to protect the rainforest, defend Indigenous rights, and address climate change.<\/p>",
+        "image": "shopify:\/\/shop_images\/defenders2_1000.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "logolist": {
+      "type": "logolist",
+      "blocks": {
+        "bbd7fbee-dec7-4aee-9212-cf96b183541a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Skarmavbild_2021-08-24_kl._14.18.47.png"
+          }
+        },
+        "d3d04afd-19af-48b6-87b9-5e56aa73c644": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andy_okay.png"
+          }
+        }
+      },
+      "block_order": [
+        "bbd7fbee-dec7-4aee-9212-cf96b183541a",
+        "d3d04afd-19af-48b6-87b9-5e56aa73c644"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Together for better<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "We can make a difference",
+        "paragraph": "<p>Every action we take now to protect rainforest will have a lasting impact on the future by maintaining our planet’s critical ecosystems.<\/p>",
+        "image": "shopify:\/\/shop_images\/rainforest4.jpg",
+        "button": "TAKE action",
+        "link": "https:\/\/amazonwatch.org\/",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "three-column",
+    "text-with-backgroundimage-two",
+    "logolist",
+    "text-with-backgroundimage-three"
+  ]
+}

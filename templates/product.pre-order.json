@@ -34,7 +34,6 @@
         "enable_read_more": true
       }
     },
-    
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {}

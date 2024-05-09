@@ -13,23 +13,25 @@
 }
 {%- endcapture -%}
 <section class="Section Section--logos" id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow" style="background-color: {{ section.settings.background_color }};">
-  <div class="Container heading-container">
-    <div class="SectionHeader__Heading_Container section_mid_head">
-      <h2 class="SectionHeader__Heading Heading" style="color: {{ section.settings.heading_text_color }};">{{ section.settings.heading }}</h2>
-    </div>
-  </div>
-  <div class="Slideshow" style="margin-top: -15px;">
-  <div class="Slideshow__Carousel Carousel" data-flickity-config='{{ flickity_options }}'>
-    {%- for block in section.blocks -%}
-      <div id="Slide{{ block.id }}" class="Slideshow__Slide Carousel__Cell {% if forloop.first %}is-selected{% endif %}" {% if forloop.first %}style="visibility: visible"{% endif %} data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-        <div class="Container seeting-slider">
-          <img class="Slideshow__Image Image--lazyLoad"
-          data-src="{{ block.settings.image | img_url: '150x' }}"
-          alt="{{ block.settings.image.alt | escape }}" >
-        </div>
+  {% if section.settings.heading != blank %}
+    <div class="Container heading-container">
+      <div class="SectionHeader__Heading_Container section_mid_head">
+        <h2 class="SectionHeader__Heading Heading" style="color: {{ section.settings.heading_text_color }};">{{ section.settings.heading }}</h2>
       </div>
-    {%- endfor -%}
-  </div>
+    </div>
+  {% endif %}  
+  <div class="Slideshow">
+    <div class="Slideshow__Carousel Carousel" data-flickity-config='{{ flickity_options }}'>
+      {%- for block in section.blocks -%}
+        <div id="Slide{{ block.id }}" class="Slideshow__Slide Carousel__Cell {% if forloop.first %}is-selected{% endif %}" {% if forloop.first %}style="visibility: visible"{% endif %} data-slide-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          <div class="Container seeting-slider custom-slider-container">
+            <img class="Slideshow__Image Image--lazyLoad"
+            data-src="{{ block.settings.image | img_url: '150x' }}"
+            alt="{{ block.settings.image.alt | escape }}" >
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
   </div>
 </section>
 
@@ -42,7 +44,7 @@
 
 {% schema %}
 {
-  "name": "Logo List",
+  "name": "Logo List Home",
   "class": "shopify-section--slideshow",
   "settings": [
     {
@@ -96,7 +98,7 @@
   "presets": [
     {
       "category": "Custom",
-      "name": "Logo List",
+      "name": "Logo List Home",
       "settings": {}
     }
   ]

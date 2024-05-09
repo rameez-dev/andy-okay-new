@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "1469563a-70c4-4db8-a2fc-2e9ada669b70": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with charitable organizations all across the world to help them raise money with the power of art. We feature a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#297e6b",
+        "text-color": "#ffffff",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "World Wildlife Fund",
+        "paragraph": "<p>We are proud to present WWF as our charity partner for the month of March. WWF has teams of experts working in almost 100 countries to put nature on the path to recovery for the benefit of people and wildlife. <\/p>",
+        "image": "shopify:\/\/shop_images\/bear.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "Global Goals",
+        "position": "row",
+        "paragraph": "<p>All around the world, people are waking up to the deepening crisis of nature loss. A growing realization that nature is our life-support system. And that nobody will be spared from the impacts of its loss. <\/p><p> Here at WWF, we are working to sustain the natural world for the benefit of people and wildlife.  <\/p><p> Working alongside many others, we are encouraging people to support a new and positive direction for our world – one where both people and nature thrive. <\/p><p> And we are calling on world leaders to commit to a <a href=\"https:\/\/explore.panda.org\/newdeal\">New Deal for Nature and People<\/a> as comprehensive as the global climate deal – halting nature loss and putting it on the path to recovery by 2030, as well as supporting global action on climate change and sustainable development, through three science-based targets:<\/p>",
+        "image": "shopify:\/\/shop_images\/earth2.jpg",
+        "backgroud-color": "#ffffff",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "three-column": {
+      "type": "three-column",
+      "blocks": {
+        "80d4d6c2-6e0a-4176-af4b-9a58b83e1cb4": {
+          "type": "quote",
+          "settings": {
+            "heading": "Zero loss of natural habitats",
+            "paragraph": "<p>WWF<strong> <\/strong>is working for 30 percent of all land, seas, and freshwater to become protected areas or community conserved areas – with a further 20 percent managed sustainably. We also aim to restore 350 million hectares of forest and our most valued rivers.<\/p>",
+            "text-color": "#0e0e0e"
+          }
+        },
+        "0af7019b-e02e-4524-919b-c4e3fcb771cc": {
+          "type": "quote",
+          "settings": {
+            "heading": "Zero extinction of species",
+            "paragraph": "<p>We are striving to halt species extinction caused by human activity, with wildlife populations stable or increasing. To achieve this, we need to end illegal over-exploitation and trade, sustainably use legally taken wildlife and wildlife products, reduce conflicts between people and wildlife, minimize incidental capture, and reduce the threat to wildlife caused by invasive species.<\/p>",
+            "text-color": "#0e0e0e"
+          }
+        },
+        "5be27a8a-5f69-4a18-896b-0d802bab8b44": {
+          "type": "quote",
+          "settings": {
+            "heading": "Halve footprint of consumption and production.",
+            "paragraph": "<p>We need action on many fronts, including 50 per cent of agriculture and aquaculture production to be sustainably managed, and a doubling in sustainably managed fisheries. Food loss and waste must be halved, pollution stopped, and the global footprint of our diets halved. We also need to see a halving of greenhouse gas emissions from 2010 levels.<\/p>",
+            "text-color": "#0e0e0e"
+          }
+        }
+      },
+      "block_order": [
+        "80d4d6c2-6e0a-4176-af4b-9a58b83e1cb4",
+        "0af7019b-e02e-4524-919b-c4e3fcb771cc",
+        "5be27a8a-5f69-4a18-896b-0d802bab8b44"
+      ],
+      "settings": {
+        "backgroud-color": "#eeeee6",
+        "show": true,
+        "heading": "Global Goals",
+        "heading-color": "#000000"
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Nature loss and people",
+        "paragraph": "<p>Our goals can only be achieved in partnership with, and in the interests of, individuals and communities around the world. People must be front and centre in this process, with everyone entitled to live in a healthy environment and to have their human rights respected. Find out more about our work by clicking the link below.<\/p><p> <\/p>",
+        "image": "shopify:\/\/shop_images\/earth.jpg",
+        "button": "WWF Goals",
+        "link": "https:\/\/wwf.panda.org\/discover\/about_wwf\/our_goals\/",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    },
+    "9ab78149-95fb-4a4c-9dc5-20547705920e": {
+      "type": "logolist",
+      "blocks": {
+        "4504e8f0-3a05-4484-bf6e-b3ae23f3f119": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/wwf.png"
+          }
+        },
+        "257b19cb-f6ff-4b68-97d7-995efc2b795d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andyokay_a_green.png"
+          }
+        }
+      },
+      "block_order": [
+        "4504e8f0-3a05-4484-bf6e-b3ae23f3f119",
+        "257b19cb-f6ff-4b68-97d7-995efc2b795d"
+      ],
+      "settings": {
+        "backgroud-color": "#ffffff",
+        "text": "<p>Working together, for better.<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Working to sustain the natural world for the benefit of people and nature",
+        "paragraph": "",
+        "image": "shopify:\/\/shop_images\/valley.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "1469563a-70c4-4db8-a2fc-2e9ada669b70",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "three-column",
+    "text-with-backgroundimage-two",
+    "9ab78149-95fb-4a4c-9dc5-20547705920e",
+    "text-with-backgroundimage-three"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "simple-text": {
+      "type": "simple-text",
+      "settings": {
+        "text": "<p>We work with charitable organizations all across the world to help them raise money with the power of art. We feature a different charity sitewide every month. By focusing our community's efforts on one cause at a time, we can work together to make an even bigger impact for each one.<\/p>",
+        "backgroud-color": "#297e6b",
+        "text-color": "#fafaff",
+        "show": true,
+        "height": 1
+      }
+    },
+    "text-with-backgroundimage-one": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Artists Building Communities",
+        "paragraph": "<p>We are proud to present Artists Building Communities as our charity partner for the month of April. ABC is a collective of volunteer artists, activists, change makers, and formerly unhoused folks whose mission is to house as many of their neighbors as they possibly can.<\/p>",
+        "image": "shopify:\/\/shop_images\/Builder003_toned.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#fafaff",
+        "show": true
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "heading": "Campaign Goal",
+        "position": "row",
+        "paragraph": "<p><strong>Artists Building Communities (ABC) is building tiny homes in Oakland’s homeless encampments to provide emergency shelter to the unhoused population. <br\/><br\/><\/strong>Using community sourced donations and volunteer labor, ABC has built 7 emergency tiny homes for $3,000 each in 2020.<br\/><br\/>Andy okay is helping ABC in their mission to raise $30,000 in donations through their current <a href=\"https:\/\/www.gofundme.com\/f\/HouseOakland\"><span style=\"text-decoration:underline\">GoFundMe<\/span><\/a> campaign to build 7 more tiny homes in the Oakland community. <\/p>",
+        "image": "shopify:\/\/shop_images\/Builders005.jpg",
+        "backgroud-color": "#edece9",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-two": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Together possible",
+        "paragraph": "<p>&quot;We think ALL of Oakland’s most vulnerable communities deserve shelter. Not later but NOW. We can do this using the ‘Housing First’ strategy inspired by the <a href=\"https:\/\/www.ktvu.com\/news\/millions-spent-on-fixing-bay-area-homeless-crisis-but-where-does-the-money-go\"><span style=\"text-decoration:underline\">successful movement in Utah<\/span><\/a> that housed 100% of their houseless population in less than a year. We hope to inspire the city of Oakland to adopt this mindset.” <\/p><p><strong>ABC Co-founder, Annmarie Bustamente<\/strong><\/p>",
+        "image": "shopify:\/\/shop_images\/yellow.jpg",
+        "button": "",
+        "link": "",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "53ad6dc5-f6a4-4146-918d-b0cfc990b36c": {
+      "type": "logolist",
+      "blocks": {
+        "ed503822-5bb4-4c24-9bf4-f8d4a73d78a4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ABCLogo.png"
+          }
+        },
+        "0ec083a4-70f1-468f-9b24-945a65332352": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/andyokay_a_green.png"
+          }
+        }
+      },
+      "block_order": [
+        "ed503822-5bb4-4c24-9bf4-f8d4a73d78a4",
+        "0ec083a4-70f1-468f-9b24-945a65332352"
+      ],
+      "settings": {
+        "backgroud-color": "#FFFFFF",
+        "text": "<p>Working together, for better.<\/p>",
+        "text-color": "#000000",
+        "show": true
+      }
+    },
+    "text-with-backgroundimage-three": {
+      "type": "text-with-backgroundimage-one",
+      "settings": {
+        "heading": "Join our mission to raise $30,000 to build 7 Emergency Tiny Homes in Oakland for our Houseless Community Members.",
+        "paragraph": "",
+        "image": "shopify:\/\/shop_images\/gr.jpg",
+        "button": "Donate to ABC",
+        "link": "https:\/\/www.gofundme.com\/f\/HouseOakland",
+        "text-color": "#ffffff",
+        "show": true
+      }
+    }
+  },
+  "order": [
+    "simple-text",
+    "text-with-backgroundimage-one",
+    "image-with-text",
+    "text-with-backgroundimage-two",
+    "53ad6dc5-f6a4-4146-918d-b0cfc990b36c",
+    "text-with-backgroundimage-three"
+  ]
+}
