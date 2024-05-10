@@ -1,0 +1,841 @@
+{
+  "current": {
+    "stock_bar_color": "#a6967c",
+    "heading_color": "#000000",
+    "text_color": "#000000",
+    "text_light_color": "#636363",
+    "link_color": "#2200cc",
+    "background": "#ffffff",
+    "light_background": "#000000",
+    "product_on_sale_color": "#47b876",
+    "button_background": "#000000",
+    "header_background": "#ffffff",
+    "header_heading_color": "#000000",
+    "header_light_color": "#2200cc",
+    "footer_background": "#f0f0f0",
+    "footer_heading_color": "#313131",
+    "footer_text_color": "#636363",
+    "navigation_background": "#ffffff",
+    "navigation_text_color": "#000000",
+    "newsletter_popup_background": "#f0f0f0",
+    "newsletter_popup_text_color": "#000000",
+    "secondary_elements_background": "#000000",
+    "heading_font": "din_next_n5",
+    "heading_size": "large",
+    "uppercase_heading": false,
+    "text_font": "din_next_n4",
+    "base_text_font_size": 16,
+    "currency_conversion_enabled": true,
+    "currency_conversion_supported_currencies": "USD CAD EUR GBP SEK AUD NOK DKK NZD",
+    "show_image_zooming": false,
+    "search_mode": "product",
+    "product_show_secondary_image": true,
+    "product_info_alignment": "left",
+    "product_list_horizontal_spacing": "extra_small",
+    "product_list_vertical_spacing": "extra_small",
+    "cart_type": "page",
+    "cart_enable_notes": false,
+    "cart_show_free_shipping_threshold": true,
+    "cart_free_shipping_threshold": "69",
+    "share_image": "shopify:\/\/shop_images\/share2_b7354900-8f13-47be-804e-bfa93bcfc360.jpg",
+    "social_facebook": "https:\/\/www.facebook.com\/andyokayart\/",
+    "social_twitter": "https:\/\/twitter.com\/okay_andy",
+    "social_pinterest": "https:\/\/www.pinterest.se\/andyokayart\/",
+    "social_instagram": "https:\/\/instagram.com\/andy.okay",
+    "favicon": "shopify:\/\/shop_images\/a_logo.png",
+    "checkout_header_image": "shopify:\/\/shop_images\/chackout_background.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/andyokay_2019_v1.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_color": "#ececec",
+    "checkout_accent_color": "#1c1b1b",
+    "checkout_button_color": "#1c1b1b",
+    "checkout_error_color": "#e32c2b",
+    "section_vertical_spacing": "md",
+    "secondary_background": "#ffffff",
+    "success_color": "#307a07",
+    "error_color": "#cb2b2b",
+    "header_text_color": "#1c1c1c",
+    "modal_background": "#ffffff",
+    "modal_text_color": "#1c1c1c",
+    "primary_button_background": "#1c1c1c",
+    "primary_button_text_color": "#ffffff",
+    "product_rating_color": "#1c1c1c",
+    "heading_letter_spacing": 18,
+    "text_font_size_desktop": 14,
+    "button_letter_spacing": 18,
+    "sections": {
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "show_popup": false,
+          "show_only_on_index": false,
+          "show_only_for_visitors": true,
+          "show_only_once": true,
+          "title": "GET EXCLUSIVE DROPS",
+          "content": "<p>Join the club. Besides discounts and early access, members gets a chance to claim exclusive artworks at the end of each month. <\/p>",
+          "show_newsletter": true,
+          "apparition_delay": 15
+        }
+      },
+      "soldout_popup": {
+        "type": "soldout_popup",
+        "settings": {
+          "title": "This item has already sold out.",
+          "content": "Our artworks sell out fast, sometimes within a few days. Join our <b>Members Club<\/b> and get a one day head start on all new drops!",
+          "show_newsletter": true
+        }
+      },
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "settings": {
+          "primary_menu": "main-menu",
+          "secondary_menu": "footer",
+          "show_social_media": false
+        }
+      },
+      "sidebar-menu-currency": {
+        "type": "sidebar-menu-currency",
+        "settings": {}
+      },
+      "announcement": {
+        "type": "announcement",
+        "blocks": {
+          "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
+            "type": "announcement",
+            "settings": {
+              "content": "<b>SALE SEASON<\/b>   Buy 2, Get 1 Free",
+              "link": "shopify:\/\/collections\/all-art"
+            }
+          },
+          "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
+            "type": "announcement",
+            "settings": {
+              "content": "<b>EXCELLENT<\/b>   +178,000 Collectors",
+              "link": "shopify:\/\/collections\/all-art",
+              "icon": "shopify:\/\/shop_images\/Truststars_5_v4.png"
+            }
+          },
+          "a212f6ea-b83d-4f68-94ea-c4e2e0249693": {
+            "type": "announcement",
+            "settings": {
+              "content": "Free Delivery over <span class=\"cm\" data-money-convertible>$69<\/span> <span id=\"announcement-ct\"><img class=\"announcement-flag\" src=\"\" id=\"announcement-flag\"><\/span>",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4",
+          "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed",
+          "a212f6ea-b83d-4f68-94ea-c4e2e0249693"
+        ],
+        "settings": {
+          "enable_bar": true,
+          "home_page_only": false,
+          "background": "#f5f2eb",
+          "text_color": "#464544"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "2edd9bb1-28bd-4301-a2df-3e35640c214c": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "SHOP ART",
+              "push_1_heading": "",
+              "push_1_subheading": "",
+              "push_1_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/bestsellers_push.jpg",
+              "push_2_heading": "Trouble Choosing?",
+              "push_2_subheading": "Our best selling limited edition art right now",
+              "push_2_url": "shopify:\/\/collections\/best-selling",
+              "message_show": true,
+              "message_content": "<p>Give what you can for stunning art and support world-changing nonprofits.<\/p>"
+            }
+          },
+          "3e618a5b-0c4f-4daf-b2ac-c0c42e1d84d1": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "IMPACT",
+              "push_1_image": "shopify:\/\/shop_images\/impact.jpg",
+              "push_1_heading": "Why we are here",
+              "push_1_subheading": "We’re on a mission to donate 1 million by 2030. This is why...",
+              "push_1_url": "shopify:\/\/pages\/impact",
+              "push_2_heading": "Cause of the month",
+              "push_2_subheading": "Each month we partner with a charitable organization across the world.",
+              "push_2_url": "",
+              "message_show": true,
+              "message_content": "<p>We work with charitable organizations all across the world to help them raise money with the power of art.<\/p>"
+            }
+          },
+          "dce0454f-d07f-49f4-b859-3432c08a41fa": {
+            "type": "tag",
+            "settings": {
+              "label": "Art Gifts for Men",
+              "url": "shopify:\/\/collections\/wall-art-for-men",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "ce251a55-b73b-44a0-87b4-d20679785433": {
+            "type": "tag",
+            "settings": {
+              "label": "Best Sellers",
+              "url": "shopify:\/\/collections\/best-selling",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "d612c144-ad5a-4751-a7d4-43675388db4e": {
+            "type": "tag",
+            "settings": {
+              "label": "Almost Gone",
+              "url": "shopify:\/\/collections\/going-fast",
+              "filling_color": "#f0f0f0",
+              "text_color": "#e32c2b"
+            }
+          },
+          "b14268af-7f6f-444c-a8d1-be8c9bbf1650": {
+            "type": "tag",
+            "settings": {
+              "label": "Flower Heads",
+              "url": "shopify:\/\/collections\/flower-head-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "77e5677d-eb8b-4fda-8558-df3eff8d7c3b": {
+            "type": "tag",
+            "settings": {
+              "label": "Romantic Wall Art",
+              "url": "shopify:\/\/collections\/romantic-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f": {
+            "type": "tag",
+            "settings": {
+              "label": "Edgy Art",
+              "url": "shopify:\/\/collections\/edgy-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "61309181-9093-4a30-bb81-5ece40dca53f": {
+            "type": "tag",
+            "settings": {
+              "label": "Street art Prints",
+              "url": "shopify:\/\/collections\/street-art-prints",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "2ee3fa3e-cdde-4996-b838-89c55daeedcc": {
+            "type": "tag",
+            "settings": {
+              "label": "Trippy Posters",
+              "url": "shopify:\/\/collections\/psychedelic-and-trippy-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "72ee603f-74e1-4108-a78f-5a0bec91d813": {
+            "type": "tag",
+            "settings": {
+              "label": "Girl Power Art",
+              "url": "shopify:\/\/collections\/girly-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "a7732417-a1eb-439b-9b52-8d3339030991": {
+            "type": "tag",
+            "settings": {
+              "label": "Futuristic Art",
+              "url": "shopify:\/\/collections\/futuristic-wall-art",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "38e9d528-6d24-454c-983e-18ed3ff9a870": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "TOP SEARCHES",
+              "url": "shopify:\/\/collections\/astronauts",
+              "banner": "shopify:\/\/shop_images\/astronauts_toppicks.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "d3d62a1e-e3bf-47f1-bb52-85de7a27ce09": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/collections\/romantic-wall-art",
+              "banner": "shopify:\/\/shop_images\/Top_Searches_romantic.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "93c5122a-0c5b-4970-8cb7-bbf5ce7a0d58": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/collections\/nature",
+              "banner": "shopify:\/\/shop_images\/toppicks_nature.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "e04d50cd-22c9-4b95-b2f2-053a3a0fb6e0": {
+            "type": "top_search_banner",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/collections\/surreal",
+              "banner": "shopify:\/\/shop_images\/Top_Searches_surreal.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "3e799ddc-4abe-41a0-8467-cf061eeb65a9": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "OUR CURATED PICKS",
+              "url": "shopify:\/\/products\/do-epic-shit",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_des.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "be778fcd-ab54-4a5a-945d-db8a991a7f64": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/lazy-sunday",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_lzs.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "495e710f-62cd-4c69-bcbf-6fa57595eed0": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/lovepard-1",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_lovepard.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "055b420d-0a6a-42d0-9689-bd840170beae": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/babys-in-bloom",
+              "banner": "shopify:\/\/shop_images\/babysinbloom.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "4288066e-e0ba-4ef7-9167-b3afb3aebf22": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/eternal-grace",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_eternalgrace.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "9942fdcf-5a56-426a-8c1e-da8d25a6521c": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/youre-my-universe",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_ymu.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "8ace4052-267b-45d6-a614-ff611bf0aa01": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/roots",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_roots.jpg",
+              "text_color": "#ffffff"
+            }
+          },
+          "ae57186e-275c-41af-a84b-18d78faa0d70": {
+            "type": "top_ourPicks",
+            "settings": {
+              "label": "",
+              "url": "shopify:\/\/products\/bloom",
+              "banner": "shopify:\/\/shop_images\/curatedpicks_bloom.jpg",
+              "text_color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "2edd9bb1-28bd-4301-a2df-3e35640c214c",
+          "3e618a5b-0c4f-4daf-b2ac-c0c42e1d84d1",
+          "dce0454f-d07f-49f4-b859-3432c08a41fa",
+          "ce251a55-b73b-44a0-87b4-d20679785433",
+          "d612c144-ad5a-4751-a7d4-43675388db4e",
+          "b14268af-7f6f-444c-a8d1-be8c9bbf1650",
+          "77e5677d-eb8b-4fda-8558-df3eff8d7c3b",
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f",
+          "61309181-9093-4a30-bb81-5ece40dca53f",
+          "2ee3fa3e-cdde-4996-b838-89c55daeedcc",
+          "72ee603f-74e1-4108-a78f-5a0bec91d813",
+          "a7732417-a1eb-439b-9b52-8d3339030991",
+          "38e9d528-6d24-454c-983e-18ed3ff9a870",
+          "d3d62a1e-e3bf-47f1-bb52-85de7a27ce09",
+          "93c5122a-0c5b-4970-8cb7-bbf5ce7a0d58",
+          "e04d50cd-22c9-4b95-b2f2-053a3a0fb6e0",
+          "3e799ddc-4abe-41a0-8467-cf061eeb65a9",
+          "be778fcd-ab54-4a5a-945d-db8a991a7f64",
+          "495e710f-62cd-4c69-bcbf-6fa57595eed0",
+          "055b420d-0a6a-42d0-9689-bd840170beae",
+          "4288066e-e0ba-4ef7-9167-b3afb3aebf22",
+          "9942fdcf-5a56-426a-8c1e-da8d25a6521c",
+          "8ace4052-267b-45d6-a614-ff611bf0aa01",
+          "ae57186e-275c-41af-a84b-18d78faa0d70"
+        ],
+        "settings": {
+          "use_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/andyokay_long_black.png",
+          "mobile_logo": "shopify:\/\/shop_images\/andyokay_white_32b7203c-437a-41ec-abdc-db8ae17ddb63.png",
+          "logo_max_width": 140,
+          "mobile_logo_max_width": 115,
+          "navigation_menu": "main-menu",
+          "navigation_style": "inline",
+          "show_icons": true,
+          "enable_transparent_header": true,
+          "enable_transparent_header_collection": true,
+          "show_transparent_header_border": false,
+          "transparent_text_color": "#f0f0f0",
+          "transparent_logo": "shopify:\/\/shop_images\/andyokay_long_white.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1596738154836": {
+            "type": "links",
+            "settings": {
+              "menu": "boring-stuff"
+            }
+          },
+          "footer-1": {
+            "type": "links",
+            "settings": {
+              "menu": "about-us"
+            }
+          },
+          "footer-0": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "title": "Say Hi!",
+              "content": "<p>Our social channels are filled with more amazing art and thrilling competitions. Come say hi!<\/p>",
+              "show_social_media": true
+            }
+          },
+          "links_ngjfTh": {
+            "type": "links",
+            "settings": {
+              "menu": "social"
+            }
+          },
+          "1571857356747": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Members Club",
+              "content": "<p>Join 189,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1596738154836",
+          "footer-1",
+          "footer-0",
+          "links_ngjfTh",
+          "1571857356747"
+        ],
+        "settings": {
+          "show_payment_methods": false,
+          "footer_image": "shopify:\/\/shop_images\/andyokay_long_black.png"
+        }
+      },
+      "page-archive-hero": {
+        "type": "page-archive-hero",
+        "settings": {
+          "show": true,
+          "heading": "CHARITY PARTNERS",
+          "paragraph": "<p>We exist to bring stunning art to people’s homes while raising awareness about nonprofits and their world-changing work. We only partner up with proven and trust-worthy organisations. By focusing our community's efforts on a few selected causes, we can work together to make an even bigger impact for each one.<\/p>",
+          "image": "shopify:\/\/shop_images\/Skarmavbild_2021-04-30_kl._10.31.12.png",
+          "text-color": "#000000"
+        }
+      },
+      "page-archive-cards": {
+        "type": "page-archive-cards",
+        "blocks": {
+          "20711839-e96b-4811-bd6e-fece2c67458e": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "March",
+              "show-employees": false,
+              "year": "",
+              "month": "WWF",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/World-Wide-Fund-for-Nature-Logo.png",
+              "artists": "✓ 24 Connected",
+              "show-artists": true,
+              "reached": "✓  6.4 million people reached",
+              "show-reached": true,
+              "raised": "✓ 700.000 Total Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "",
+              "show-carbon": false,
+              "trees": "",
+              "show-trees": false,
+              "page-url": "https:\/\/andyokay.com\/pages\/cause-3"
+            }
+          },
+          "ab988618-edf6-4676-a004-2bd20aff025a": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "February",
+              "show-employees": false,
+              "year": "2021",
+              "month": "PTSD UK",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/logo_b522cec2-e477-4658-8ca0-9bd97050e6da.png",
+              "artists": "✓ 16 Connected",
+              "show-artists": true,
+              "reached": "✓ 3.9 million people reached",
+              "show-reached": true,
+              "raised": "✓ 400.000 Total Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "-388",
+              "show-carbon": false,
+              "trees": "8,000",
+              "show-trees": false,
+              "page-url": "shopify:\/\/pages\/ptsd-uk"
+            }
+          },
+          "697fcc7e-daed-49b7-94f0-1e058d55720a": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "June",
+              "show-employees": false,
+              "year": "",
+              "month": "Greenpeace",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/g1.png",
+              "artists": "✓ 20 Connected",
+              "show-artists": true,
+              "reached": "✓ 9.8 million people reached",
+              "show-reached": true,
+              "raised": "✓ 700.000 Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "",
+              "show-carbon": false,
+              "trees": "",
+              "show-trees": false,
+              "page-url": "shopify:\/\/pages\/greenpeace"
+            }
+          },
+          "721b8f22-fbfc-405c-bd37-acf776b7bc29": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "January",
+              "show-employees": false,
+              "year": "2021",
+              "month": "Pangeaseed",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/logo_black_d12a842b-f8fe-4eb0-83b4-20810788a07f.png",
+              "artists": "✓ 16 Connected",
+              "show-artists": true,
+              "reached": "✓ 3.8 million people reached",
+              "show-reached": true,
+              "raised": "✓ 700.000 Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "-893",
+              "show-carbon": false,
+              "trees": "9,863",
+              "show-trees": false,
+              "page-url": "https:\/\/andyokay.com\/pages\/cause-2"
+            }
+          },
+          "4c66a67d-5e34-4bce-8a69-e8bd57bb49e5": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "October",
+              "show-employees": false,
+              "year": "",
+              "month": "Animal Love Rescue",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/new-animal-love-logo.png",
+              "artists": "✓ 14 Connected",
+              "show-artists": true,
+              "reached": "✓ 5.3 million people reached",
+              "show-reached": true,
+              "raised": "✓ 540.000 Total Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "",
+              "show-carbon": false,
+              "trees": "",
+              "show-trees": false,
+              "page-url": "shopify:\/\/pages\/animal-love"
+            }
+          },
+          "eabb9fa8-ec60-4fcd-a364-b013bd5a20cd": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "September",
+              "show-employees": false,
+              "year": "",
+              "month": "Amazon Watch",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/amazonwatch_logo_2b502f94-1372-455e-861c-bd93d4f3fe9c.png",
+              "artists": "✓ 22 Connected",
+              "show-artists": true,
+              "reached": "✓ 7 million people reached",
+              "show-reached": true,
+              "raised": "✓ 600.000 Total Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "",
+              "show-carbon": false,
+              "trees": "",
+              "show-trees": false,
+              "page-url": "https:\/\/andyokay.com\/pages\/amazon-watch"
+            }
+          },
+          "592c2ca0-338b-45b3-b702-a178f562a571": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "May",
+              "show-employees": false,
+              "year": "",
+              "month": "The Smile of the Child",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/smile_3731c678-6d35-4aaa-a654-3c509036d139.png",
+              "artists": "✓ 20 Connected",
+              "show-artists": true,
+              "reached": "✓ 6.4 million people reached",
+              "show-reached": true,
+              "raised": "✓ 420.000 Total Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "Click to learn more",
+              "show-carbon": false,
+              "trees": "Click to learn more",
+              "show-trees": false,
+              "page-url": "https:\/\/www.andyokay.com\/pages\/the-smile-of-the-child"
+            }
+          },
+          "27d3447d-b724-4181-9753-e3492c3e7611": {
+            "type": "image",
+            "settings": {
+              "show": true,
+              "employees": "April",
+              "show-employees": false,
+              "year": "2021",
+              "month": "Artists Building Communities",
+              "show-month": true,
+              "image": "shopify:\/\/shop_images\/ABCLogob2.png",
+              "artists": "✓ 22 Connected",
+              "show-artists": true,
+              "reached": "✓ 5 million people reached",
+              "show-reached": true,
+              "raised": "✓ 500.000 Total Engagements",
+              "show-raised": true,
+              "operations": "→ Click to read more",
+              "show-operations": true,
+              "carbon": "",
+              "show-carbon": false,
+              "trees": "3 Houses Built",
+              "show-trees": false,
+              "page-url": "https:\/\/andyokay.com\/pages\/cause-1"
+            }
+          }
+        },
+        "block_order": [
+          "20711839-e96b-4811-bd6e-fece2c67458e",
+          "ab988618-edf6-4676-a004-2bd20aff025a",
+          "697fcc7e-daed-49b7-94f0-1e058d55720a",
+          "721b8f22-fbfc-405c-bd37-acf776b7bc29",
+          "4c66a67d-5e34-4bce-8a69-e8bd57bb49e5",
+          "eabb9fa8-ec60-4fcd-a364-b013bd5a20cd",
+          "592c2ca0-338b-45b3-b702-a178f562a571",
+          "27d3447d-b724-4181-9753-e3492c3e7611"
+        ],
+        "settings": {
+          "card-color": "#ededed",
+          "contrast-color": "#03021c",
+          "show": true
+        }
+      },
+      "page-archive-questions": {
+        "type": "page-archive-questions",
+        "blocks": {
+          "6c53858b-cc54-4f1a-8279-a1e165a7b107": {
+            "type": "question",
+            "settings": {
+              "title": "What is Charity of the Month?",
+              "answer": "<p>Each month we focus a little more attention on a specific nonprofit organisation we are working with, to spread awareness about their mission and vision.<br\/><br\/>By dividing our partners into separate months, and share their beliefs with our community for a longer period of time, will help get their message out in a much more efficient way. <\/p>"
+            }
+          },
+          "a76a4d48-4b17-48ab-bfac-20a92cdcded9": {
+            "type": "question",
+            "settings": {
+              "title": "Why should we work with Andy okay?",
+              "answer": "<p>Donations + awareness. One reason is of course the third of the profit from the sold artworks. As we have a “Pay What You Can”-model it is difficult to predict the final amount each collaboration will raise. But looking on previous collaborations a third of the profit generally equals around $100 per artwork. Which of course means times 15-25, depending on the final number of collaborating artists that specific month.<\/p><p>The second part is the reach and engagement. Each and every artist signs up to share the collaboration in their own channels at the release of their art. This means 15-25 of the world’s leading artists are raising awareness about your cause. <\/p><p>Each nonprofit organization partnering up with us also receives a dedicated page on andyokay.com, with 60.000+ visitors each month. <\/p>"
+            }
+          },
+          "98b743b8-17af-4bf3-9832-f7fb5ada1ca0": {
+            "type": "question",
+            "settings": {
+              "title": "Who will we reach?",
+              "answer": "<p>What worked so good 5 years ago, sadly doesn’t work as well anymore. Today we have two seconds to grab people’s attention. That’s why using art to share a message is so powerful, since it makes people stop, and really embrace the information.  <br\/><br\/>We open up a whole new audience for our collaborating partners to talk about their important causes to people that care about our planet, but don’t actively seek out the information themself. <\/p><p>We reach as many females as males, all over the world, spanning from 18 years all the way up to 65+ years. (Almost) everybody loves beautiful art.<\/p>"
+            }
+          },
+          "903ee7d4-a1a5-4793-a44e-607d90f79f7e": {
+            "type": "question",
+            "settings": {
+              "title": "What does this cost?",
+              "answer": "<p>Absolutely nothing. We exist to assist important organizations, not take away anything from their already tight budget. That’s why we offer this without asking for anything back. We are here to help.<\/p><p>Of course we would really appreciate if the organization of the month mentioned Andy okay in any of their own channels during some point while the collaboration is live. But it’s really not something we demand or even expect. <\/p>"
+            }
+          },
+          "25d45e6c-1e55-4d85-9332-a74774842a94": {
+            "type": "question",
+            "settings": {
+              "title": "How do I become a charity partner?",
+              "answer": "<p>Get in touch at naslin@andyokay.com <\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "6c53858b-cc54-4f1a-8279-a1e165a7b107",
+          "a76a4d48-4b17-48ab-bfac-20a92cdcded9",
+          "98b743b8-17af-4bf3-9832-f7fb5ada1ca0",
+          "903ee7d4-a1a5-4793-a44e-607d90f79f7e",
+          "25d45e6c-1e55-4d85-9332-a74774842a94"
+        ],
+        "settings": {
+          "show": true,
+          "heading": "FAQs",
+          "backgroud-color": "#ffffff",
+          "text-color": "#000000"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "18423266570658624584": {
+        "type": "shopify:\/\/apps\/best-currency-converter\/blocks\/doubly\/267afa86-a419-4d5b-a61b-556038e7294d",
+        "disabled": true,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Allure": {
+      "section_vertical_spacing": "md",
+      "heading_color": "#1c1c1c",
+      "text_color": "#1c1c1c",
+      "background": "#efefef",
+      "secondary_background": "#ffffff",
+      "success_color": "#307a07",
+      "error_color": "#cb2b2b",
+      "header_background": "#ffffff",
+      "header_text_color": "#1c1c1c",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#1c1c1c",
+      "modal_background": "#ffffff",
+      "modal_text_color": "#1c1c1c",
+      "primary_button_background": "#1c1c1c",
+      "primary_button_text_color": "#ffffff",
+      "product_rating_color": "#1c1c1c",
+      "heading_font": "univers_next_n4",
+      "heading_letter_spacing": 18,
+      "text_font": "univers_next_n4",
+      "text_font_size_desktop": 14,
+      "button_letter_spacing": 18
+    },
+    "Couture": {
+      "section_vertical_spacing": "md",
+      "heading_color": "#5c5c5c",
+      "text_color": "#5c5c5c",
+      "background": "#ffffff",
+      "secondary_background": "#ffffff",
+      "success_color": "#307a07",
+      "error_color": "#cb2b2b",
+      "header_background": "#ffffff",
+      "header_text_color": "#303030",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#303030",
+      "modal_background": "#ffffff",
+      "modal_text_color": "#303030",
+      "primary_button_background": "#5c5c5c",
+      "primary_button_text_color": "#ffffff",
+      "product_rating_color": "#1c1c1c",
+      "heading_font": "futura_n4",
+      "heading_letter_spacing": 18,
+      "text_font": "century_gothic_n4",
+      "text_font_size_desktop": 14,
+      "button_letter_spacing": 18
+    },
+    "Vogue": {
+      "section_vertical_spacing": "xs",
+      "heading_color": "#303030",
+      "text_color": "#303030",
+      "background": "#ffffff",
+      "secondary_background": "#ffffff",
+      "success_color": "#307a07",
+      "error_color": "#cb2b2b",
+      "header_background": "#ffffff",
+      "header_text_color": "#303030",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#303030",
+      "modal_background": "#ffffff",
+      "modal_text_color": "#303030",
+      "primary_button_background": "#f5db8b",
+      "primary_button_text_color": "#303030",
+      "product_rating_color": "#1c1c1c",
+      "heading_font": "din_neuzeit_grotesk_n3",
+      "heading_letter_spacing": 18,
+      "text_font": "futura_n4",
+      "text_font_size_desktop": 14,
+      "button_letter_spacing": 18
+    }
+  }
+}
