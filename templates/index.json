@@ -6,8 +6,8 @@
         "1ef45436-7520-4016-9268-345b70759769": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/andy_desktop_1600_7.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/750_2_x800_6.jpg",
+            "image": "shopify:\/\/shop_images\/andyokay_car_desk_db211ad3-3d6b-4eff-b5e0-b866e3abf920.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/andyokay_car_mob_e5876566-97fd-4757-a91a-56343c784bd9.jpg",
             "apply_overlay": false,
             "content_position": "middleCenter",
             "subheading": "Limited art drops from award-winning artists to support important causes",
@@ -521,28 +521,28 @@
         "mobile_image_bbRBVd": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_carousel_mob1.jpg",
-            "link": "shopify:\/\/products\/catch-a-wave"
+            "image": "shopify:\/\/shop_images\/frankmoth_carousel_mob.jpg",
+            "link": "shopify:\/\/products\/all-the-springs-she-remembered"
           }
         },
         "desktop_image_TfMUQP": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_carousel_desk1.jpg",
-            "link": "shopify:\/\/products\/catch-a-wave"
+            "image": "shopify:\/\/shop_images\/frankmoth_carousel_desktop.jpg",
+            "link": "shopify:\/\/products\/all-the-springs-she-remembered"
           }
         },
         "mobile_image_cgWgdQ": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/summer_mob_9de1c9b5-c943-4e96-b087-15543b1ec6d1.jpg",
+            "image": "shopify:\/\/shop_images\/summer_vibes_carousel_mob.jpg",
             "link": "shopify:\/\/collections\/summer-wall-art"
           }
         },
         "desktop_image_LBRweq": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/summer_desktop.jpg",
+            "image": "shopify:\/\/shop_images\/summer_vibes_carousel_desktop.jpg",
             "link": "shopify:\/\/collections\/summer-wall-art"
           }
         },
@@ -556,7 +556,7 @@
         "desktop_image_GQygX4": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/flowers_desktop.jpg",
+            "image": "shopify:\/\/shop_images\/flowerheads_carousel_desktop.jpg",
             "link": "shopify:\/\/collections\/flower-head-art"
           }
         }
