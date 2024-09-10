@@ -215,10 +215,16 @@ HEADER CONTENT
 {% style %}
 
 .Header__FlexItem--Custom {
-  display : flex !important ;
+  /* display : flex !important ; */
   justify-content : center;
   align-items : center;
   gap : 2px;
+}
+
+@media only screen and (max-width : 1239px) { 
+  .Header__FlexItem--Custom {
+    display : flex !important ;
+  }
 }
 
 @media only screen and (max-width : 768px) {
@@ -270,7 +276,7 @@ HEADER CONTENT
         data-section-type="header"
         data-section-settings='{{ section_settings }}'
         role="banner">
-  <div class="Header__Wrapper" style="display: none;">
+  <div class="Header__Wrapper">
     <div class="Header__Logo--Custom">
       <h1 class="Header--Logo_Custom">
         <a href="/" class="Header__LogoLink">
@@ -365,7 +371,7 @@ HEADER CONTENT
 
                     {%- assign should_space_evenly = false -%}
 
-                    {%- if push_image_count == 0 and link.links.size <= 3 -%}
+                    {% comment %} {%- if push_image_count == 0 and link.links.size <= 3 -%}
                       {%- assign should_space_evenly = true -%}
                     {%- endif -%}
 
@@ -375,19 +381,23 @@ HEADER CONTENT
 
                     {%- if push_image_count == 2 and link.links.size == 1 -%}
                       {%- assign should_space_evenly = true -%}
-                    {%- endif -%}
+                    {%- endif -%} {% endcomment %}
 
                     <div class="MegaMenu {% if push_image_count != 0 and link.links.size == 0 %}MegaMenu--spacingCenter{% elsif should_space_evenly %}MegaMenu--spacingEvenly{% endif %} {% if push_image_count == 0 and link.links.size > 4 %}MegaMenu--grid{% endif %}" aria-hidden="true" {{ block.shopify_attributes }}>
                       <div class="MegaMenu__Inner">
                         {%- for sub_link in link.links -%}
                           <div class="MegaMenu__Item MegaMenu__Item--fit">
-                            <a href="{{ sub_link.url }}" class="MegaMenu__Title Heading Text--subdued u-h7">{{ sub_link.title | title }}</a>
+                        <a href="{{ sub_link.url }}" class="MegaMenu__Title Heading Text--subdued u-h7" {%- if sub_link.links != blank -%}style="display:none"{% endif %}>{{ sub_link.title | title }}</a>
 
                             {%- if sub_link.links != blank -%}
                               <ul class="Linklist">
                                 {%- for sub_sub_link in sub_link.links -%}
+                                  {% assign additional_class = '' %}
+                                  {% if sub_sub_link.title contains 'Last Chance' %}
+                                    {% assign additional_class = 'last-chance-class' %}
+                                  {% endif %}
                                   <li class="Linklist__Item">
-                                    <a href="{{ sub_sub_link.url }}" class="Link Link--secondary">{{ sub_sub_link.title | escape }}</a>
+                                    <a href="{{ sub_sub_link.url }}" class="Link Link--secondary {{ additional_class }}">{{ sub_sub_link.title | escape }}</a>
                                   </li>
                                 {%- endfor -%}
                               </ul>
@@ -404,7 +414,7 @@ HEADER CONTENT
                         {%endif%}
 
                         {%- if push_image_count > 0 -%}
-                          <div class="MegaMenu__Item" style="{% if push_image_count == 1 %}width: 370px; min-width: 250px;{% else %}width: 660px; min-width: 425px;{% endif %}">
+                          <div class="MegaMenu__Item MegaMenu_Images" style="{% if push_image_count == 1 %}width: 330px;{% else %}width: 660px;{% endif %}height: 330px;">
                           
                             {%- if block.settings.push_1_image -%}
                               <div class="MegaMenu__Push {% if push_image_count == 2 %}MegaMenu__Push--shrink{% endif %}">
@@ -495,15 +505,16 @@ HEADER CONTENT
                   </div>
                 {%- endif -%}
               {%- endcapture -%}
-              {% assign reviews-class = '' %}
-              {% assign members-class = '' %}
+              {% assign additional-class = '' %}
               {% if link.title == 'REVIEWS' %}
-                {% assign reviews-class = 'push-reviews-right' %}
+                {% assign additional-class = 'push-reviews-right' %}
                 {% assign currency-converter-class = 'push-currency-left' %}
               {% elsif link.title contains 'CLUB' %}
-                {% assign members-class = 'push-members-right' %}
+                {% assign additional-class = 'push-members-right' %}
+              {% elsif link.title contains 'IMPACT' %}
+                {% assign additional-class = 'impact-link' %}
               {% endif %}
-              <li class="HorizontalList__Item {{reviews-class}} {{members-class}} {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
+              <li class="HorizontalList__Item {{ additional-class }} {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
                 <a href="{{ link.url }}">
                   {{- link.title | escape -}}
 
@@ -1033,6 +1044,7 @@ div#giftbox-root {
           min-height:52px;
       }
       .mobile-cart-icon, .mobile-allart-icon, .mobile-search-icon, .mobile-home-icon{display: block;margin-right : 14px;}
+      .mobile-search-icon {width: 18px;}
       .desktop-menu-option, .Header__Logo{display: none;}
 
       .Header__Icon{text-align: center;width: 100%;}

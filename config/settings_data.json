@@ -145,12 +145,13 @@
             "type": "mega_menu",
             "settings": {
               "navigation_mega_menu": "SHOP ART",
-              "push_1_heading": "",
+              "push_1_image": "shopify:\/\/shop_images\/RyanMiller_MoreAmorPorFavor_07.jpg",
+              "push_1_heading": "LATEST & GREATEST",
               "push_1_subheading": "",
-              "push_1_url": "",
-              "push_2_image": "shopify:\/\/shop_images\/bestsellers_push.jpg",
-              "push_2_heading": "Trouble Choosing?",
-              "push_2_subheading": "Our best selling limited edition art right now",
+              "push_1_url": "shopify:\/\/collections\/just-released",
+              "push_2_image": "shopify:\/\/shop_images\/JasonRatliff_SuperShadow_Andyokay_02.jpg",
+              "push_2_heading": "BROWSE OUR BEST SELLERS",
+              "push_2_subheading": "",
               "push_2_url": "shopify:\/\/collections\/best-selling",
               "message_show": true,
               "message_content": "<p>Give what you can for stunning art and support world-changing nonprofits.<\/p>"
@@ -161,14 +162,29 @@
             "settings": {
               "navigation_mega_menu": "IMPACT",
               "push_1_image": "shopify:\/\/shop_images\/impact.jpg",
-              "push_1_heading": "Why we are here",
-              "push_1_subheading": "We’re on a mission to donate 1 million by 2030. This is why...",
+              "push_1_heading": "OUR IMPACT",
+              "push_1_subheading": "",
               "push_1_url": "shopify:\/\/pages\/impact",
-              "push_2_heading": "Cause of the month",
-              "push_2_subheading": "Each month we partner with a charitable organization across the world.",
-              "push_2_url": "",
+              "push_2_image": "shopify:\/\/shop_images\/aboutandy_2.jpg",
+              "push_2_heading": "OUR CHARITY PARTNERS",
+              "push_2_subheading": "",
+              "push_2_url": "https:\/\/andyokay.com\/pages\/cause-of-the-month",
               "message_show": true,
-              "message_content": "<p>We work with charitable organizations all across the world to help them raise money with the power of art.<\/p>"
+              "message_content": ""
+            }
+          },
+          "mega_menu_nWK6D3": {
+            "type": "mega_menu",
+            "settings": {
+              "navigation_mega_menu": "ABOUT US",
+              "push_1_heading": "",
+              "push_1_subheading": "",
+              "push_1_url": "",
+              "push_2_heading": "",
+              "push_2_subheading": "",
+              "push_2_url": "",
+              "message_show": false,
+              "message_content": ""
             }
           },
           "dce0454f-d07f-49f4-b859-3432c08a41fa": {
@@ -176,6 +192,15 @@
             "settings": {
               "label": "Art Gifts for Men",
               "url": "shopify:\/\/collections\/wall-art-for-men",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f": {
+            "type": "tag",
+            "settings": {
+              "label": "UFO",
+              "url": "shopify:\/\/products\/extraterrestrial-espionage",
               "filling_color": "#f0f0f0",
               "text_color": "#000000"
             }
@@ -212,15 +237,6 @@
             "settings": {
               "label": "Romantic Wall Art",
               "url": "shopify:\/\/collections\/romantic-wall-art",
-              "filling_color": "#f0f0f0",
-              "text_color": "#000000"
-            }
-          },
-          "148a7dda-459c-4f7a-83e5-878db3b8a66f": {
-            "type": "tag",
-            "settings": {
-              "label": "Edgy Art",
-              "url": "shopify:\/\/collections\/edgy-art",
               "filling_color": "#f0f0f0",
               "text_color": "#000000"
             }
@@ -373,12 +389,13 @@
         "block_order": [
           "2edd9bb1-28bd-4301-a2df-3e35640c214c",
           "3e618a5b-0c4f-4daf-b2ac-c0c42e1d84d1",
+          "mega_menu_nWK6D3",
           "dce0454f-d07f-49f4-b859-3432c08a41fa",
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f",
           "ce251a55-b73b-44a0-87b4-d20679785433",
           "d612c144-ad5a-4751-a7d4-43675388db4e",
           "b14268af-7f6f-444c-a8d1-be8c9bbf1650",
           "77e5677d-eb8b-4fda-8558-df3eff8d7c3b",
-          "148a7dda-459c-4f7a-83e5-878db3b8a66f",
           "61309181-9093-4a30-bb81-5ece40dca53f",
           "2ee3fa3e-cdde-4996-b838-89c55daeedcc",
           "72ee603f-74e1-4108-a78f-5a0bec91d813",
@@ -402,7 +419,7 @@
           "mobile_logo": "shopify:\/\/shop_images\/andyokay_white_32b7203c-437a-41ec-abdc-db8ae17ddb63.png",
           "logo_max_width": 140,
           "mobile_logo_max_width": 115,
-          "navigation_menu": "main-menu",
+          "navigation_menu": "main-menu-desktop",
           "navigation_style": "inline",
           "show_icons": true,
           "enable_transparent_header": true,
@@ -445,8 +462,8 @@
           "1571857356747": {
             "type": "newsletter",
             "settings": {
-              "title": "The Good Club",
-              "content": "<p>Join 134,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
+              "title": "Members Club",
+              "content": "<p>Join 189,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
             }
           }
         },

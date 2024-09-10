@@ -74,12 +74,13 @@
     </svg>
 
   {%- when 'search-desktop' -%}
-    <svg class="{{ icon_class }}" role="presentation" viewBox="0 0 21 21">
+    <img src="{{ 'new_search_icon.png' | asset_url }}"  class="{{ icon_class }}" height="auto" width="21px" alt="search">
+    {% comment %} <svg class="{{ icon_class }}" role="presentation" viewBox="0 0 21 21">
       <g transform="translate(1 1)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square">
         <path d="M18 18l-5.7096-5.7096"></path>
         <circle cx="7.2" cy="7.2" r="7.2"></circle>
       </g>
-    </svg>
+    </svg> {% endcomment %}
 
   {%- when 'nav' -%}
     <svg class="{{ icon_class }}" role="presentation" viewBox="0 0 20 14">
