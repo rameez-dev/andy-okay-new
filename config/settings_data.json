@@ -196,6 +196,15 @@
               "text_color": "#000000"
             }
           },
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f": {
+            "type": "tag",
+            "settings": {
+              "label": "UFO",
+              "url": "shopify:\/\/products\/extraterrestrial-espionage",
+              "filling_color": "#f0f0f0",
+              "text_color": "#000000"
+            }
+          },
           "ce251a55-b73b-44a0-87b4-d20679785433": {
             "type": "tag",
             "settings": {
@@ -228,15 +237,6 @@
             "settings": {
               "label": "Romantic Wall Art",
               "url": "shopify:\/\/collections\/romantic-wall-art",
-              "filling_color": "#f0f0f0",
-              "text_color": "#000000"
-            }
-          },
-          "148a7dda-459c-4f7a-83e5-878db3b8a66f": {
-            "type": "tag",
-            "settings": {
-              "label": "Edgy Art",
-              "url": "shopify:\/\/collections\/edgy-art",
               "filling_color": "#f0f0f0",
               "text_color": "#000000"
             }
@@ -391,11 +391,11 @@
           "3e618a5b-0c4f-4daf-b2ac-c0c42e1d84d1",
           "mega_menu_nWK6D3",
           "dce0454f-d07f-49f4-b859-3432c08a41fa",
+          "148a7dda-459c-4f7a-83e5-878db3b8a66f",
           "ce251a55-b73b-44a0-87b4-d20679785433",
           "d612c144-ad5a-4751-a7d4-43675388db4e",
           "b14268af-7f6f-444c-a8d1-be8c9bbf1650",
           "77e5677d-eb8b-4fda-8558-df3eff8d7c3b",
-          "148a7dda-459c-4f7a-83e5-878db3b8a66f",
           "61309181-9093-4a30-bb81-5ece40dca53f",
           "2ee3fa3e-cdde-4996-b838-89c55daeedcc",
           "72ee603f-74e1-4108-a78f-5a0bec91d813",
