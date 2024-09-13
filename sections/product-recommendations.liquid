@@ -77,18 +77,17 @@
               {%- endfor -%}
             {%- else -%}
               {%- for product in recommendations.products -%}
-{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
-              {% if product.type=='giftbox_ghost_product' or product.title == 'Charity Donation' %}{%continue%}{%endif%}
-                <div class="Carousel__Cell">
-                  {% include 'product-item', product: product, show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_labels: true %}
-                </div>
-              {%- else -%}
-                {%- comment -%}Hide the section if there is no recommendations to show{%- endcomment -%}
-                <style>
-                  #shopify-section-{{ section.id }} {
-                    display: none;
-                  }
-                </style>
+                {% comment %} {% if product.type == 'giftbox_ghost_product' 
+                  or product.title == 'Charity Donation' 
+                  or product.title contains 'Mat Board' 
+                  or product.title contains 'Navidium'
+                  or product.title contains 'Frame' %}{%continue%}
+                {% endif %} {% endcomment %}
+                {% unless product.tags contains 'hiddenFromRecom' or product.title == 'Charity Donation' %}
+                   <div class="Carousel__Cell">
+                    {% include 'product-item', product: product, show_product_info: section.settings.show_product_info, show_vendor: section.settings.show_vendor, show_labels: true %}
+                  </div>
+                {% endunless %}              
               {%- endfor -%}
             {%- endif -%}
           </div>
