@@ -6319,7 +6319,7 @@ select::-ms-expand {
   text-align: right;
 }
 .Cart--expanded .Cart__Recap, .Cart--expanded .Cart__Recap .Cart__Checkout {
-  margin-top: 16px;
+  margin-top: 16px; 
   display: inline-block;
 }
 .Cart--expanded .Cart__Checkout {
@@ -6328,6 +6328,9 @@ select::-ms-expand {
 @media screen and (max-width: 640px) {
   .CartItem__Info ~ .CartItem__Actions, .CartItem__Info ~ .CartItem__LinePriceList {
     display: none;
+  }
+  .Cart--expanded .Cart__Recap {
+      margin-top : unset;
   }
 }
 @media screen and (min-width: 641px) {
