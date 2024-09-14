@@ -426,14 +426,14 @@
 
             .nvd-mini-mob {
               border-top: 1px solid #d9d9d9;
-              padding: 0 30px;
+             /* padding: 0 30px; */
             }
             .nvd-cont-mob {
               padding: 10px 20px;
               margin: 20px auto;
               position: relative;
-              background-color: #f7f8f8;
-              border-radius: 20px;
+              background-color: #f2efeb;
+             /* border-radius: 20px; */
               box-shadow: 2.5px 2.5px 2.5px lightgrey;
             }
             .nvd-mob-heading {
@@ -493,6 +493,20 @@
               color: #898989;
               font-size: 14px;
               font-weight: 300;
+            }
+
+            @media only screen and (max-width : 641px) {
+              .nvd-new-desc {
+                color : black;
+                line-height : 1.5;
+              }
+
+              .nvd-check {
+                border : 1px solid black;
+              }
+              .shipping-protection-price .no-price {
+                color : black;
+              }
             }
             .img .navidium-shipping-icon{
               height: 30px;
@@ -591,7 +605,7 @@
               <input type="checkbox" class="nvd-check" id="shippingProtectionCheckBox" onclick="getShippingProtection('{{protection_product.variants[0].id}}','{{protection_product.variants[0].price}}')" data-protected-variant="{{protection_product.variants[0].id}}" {% if protection_product_is_selected == true %} checked {% endif %}>
 
               <div class="in-caslon nvd-new-desc">
-                Covers loss & damages on your whole order for 12 months.
+                Most customers chooses to covers loss & damages on thier whole order for 12 months.
               </div>
             </div>
           </div>
