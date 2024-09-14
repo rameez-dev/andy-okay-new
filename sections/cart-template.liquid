@@ -218,7 +218,7 @@
           {%- if settings.cart_show_free_shipping_threshold -%}
             {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
 
-            <p class="SectionHeader__Description Text--subdued colored_background in-caslon">
+            <p class="Text--subdued__custom SectionHeader__Description Text--subdued colored_background in-caslon">
               {%- if cart.total_price >= threshold_in_cents -%}
                 {{- 'cart.general.free_shipping' | t -}}
               {%- else -%}
@@ -426,14 +426,14 @@
 
             .nvd-mini-mob {
               border-top: 1px solid #d9d9d9;
-              padding: 0 30px;
+             /* padding: 0 30px; */
             }
             .nvd-cont-mob {
               padding: 10px 20px;
               margin: 20px auto;
               position: relative;
-              background-color: #f7f8f8;
-              border-radius: 20px;
+              background-color: #f2efeb;
+             /* border-radius: 20px; */
               box-shadow: 2.5px 2.5px 2.5px lightgrey;
             }
             .nvd-mob-heading {
@@ -494,11 +494,108 @@
               font-size: 14px;
               font-weight: 300;
             }
+
+            @media only screen and (max-width : 641px) {
+              .nvd-new-desc {
+                color : black;
+                line-height : 1.5;
+              }
+
+              .nvd-check {
+                border : 1px solid black;
+              }
+              .shipping-protection-price .no-price {
+                color : black;
+              }
+            }
             .img .navidium-shipping-icon{
               height: 30px;
             }
-          </style>
+              /* Cart--Tagline Start */
+            .trust-tags__cart {
+              display : flex;
+              justify-content: center;
+              align-items: center;
+              gap: 7px;
+            }
+            .trust-tags__cart .trust-tag {
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                    padding-left : 20px;
+                    padding-right: 20px;
+                    font-size: 14px;
+                    padding-top : 5px;
+                    padding-bottom : 5px;
+                    font-family: 'Adobe Caslon Pro';
+                  }
+                  .trust-tag img{
+                    height : 20px !important;
+                  }
 
+                  @media only screen and (max-width : 641px) {
+                     .trust-tags__cart {
+                      display: flex;
+                      justify-content: space-between;                      
+                     }
+                    .trust-tags__cart .trust-tag {
+                      padding-left : 16px;
+                      padding-right: 16px;
+                      gap: 7px;
+                      font-size: 11px;
+                    }
+                    .trust-tag img{
+                    height : 16px !important;
+                  }
+
+                  }
+                  @media only screen and (max-width : 400px) {
+                    .trust-tags__cart .trust-tag {
+                      padding-left : 10px;
+                      padding-right: 10px;
+                    }
+                  }
+                 /* Cart Tagline Styling End */ 
+
+                /* Text Above Extra Protection in cart styling */
+                .texton-extraprotection__cart {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-family: Adobe Caslon Pro;  
+              font-size : 14px;
+            }
+            .texton-extraprotection__cart .text__cart {
+                margin : 10px auto;
+              }
+            .texton-extraprotection__cart a{
+              color : blue;
+              text-decoration: underline !important;
+            }
+            @media only screen and (max-width : 641px) {
+              .texton-extraprotection__cart {
+                border-top : 1px solid #d9d9d9;
+              }
+              .texton-extraprotection__cart .text__cart {
+                margin : 5px auto;
+              }
+            }
+              /* Text Above Extra Protection in cart styling */
+           @media only screen and (max-width : 640px){   
+           .Text--subdued__custom {
+            color : black;
+            font-size : 13px;
+           }  
+          } 
+
+          .text-before_continue-shopping {
+            font-family: 'Adobe Caslon Pro';
+            }
+          </style>
+               <div class="texton-extraprotection__cart">
+                <span class="text__cart">
+                       Need some high quality frames? <a href="https://andyokay.com/collections/frames">Add them here</a>
+                </span>
+          </div>
           <div class="nvd-mini-mob">
             <div class="nvd-cont-mob">
               <div class="nvd-inline nvd-icon-style">
@@ -518,11 +615,10 @@
               <input type="checkbox" class="nvd-check" id="shippingProtectionCheckBox" onclick="getShippingProtection('{{protection_product.variants[0].id}}','{{protection_product.variants[0].price}}')" data-protected-variant="{{protection_product.variants[0].id}}" {% if protection_product_is_selected == true %} checked {% endif %}>
 
               <div class="in-caslon nvd-new-desc">
-                Covers loss & damages on your whole order for 12 months.
+                Most customers chooses to covers loss & damages on their whole order for 12 months.
               </div>
             </div>
           </div>
-          
           <div class="nvd-mini">
             <div class="appearance-right-previw" id="nvd-widget-cart">
               <div class="d-flexCstm-span">
@@ -599,7 +695,7 @@
                   {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
                 {% endif %}
               {% endfor %} {% endcomment %}
-              {% assign var_total_saving = 0 %}
+              {% assign var_total_saving = 0 %}  
               {% for item in cart.items %}
                 {% if item.variant.compare_at_price > item.variant.price %}
                   {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
@@ -639,15 +735,27 @@
                 <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary thinner leftMargin Button--full">{{ 'cart.general.checkout' | t }}
                 </button>
                 <br><br>
-
               </div>
-
               <div class="mobile-b-desktop-h align-center">
                 <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary thinner Button--full">{{ 'cart.general.checkout' | t }}
                 </button>
-                <a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
+                <span class="text-before_continue-shopping">or&nbsp;&nbsp;</span><a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
                 <br><br>
               </div>
+              <div class="trust-tags__cart"> 
+                    <span class="trust-tag">
+                      <img class="icon_checkmark--cart" src="{{ 'checkmark.png' |  asset_url }}">
+                      Delivery in a week
+                    </span>
+                    <span class="trust-tag">
+                      <img class="icon_checkmark--cart" src="{{ 'checkmark.png' |  asset_url }}">
+                          Easy returns
+                    </span>
+                    <span class="trust-tag">
+                      <img class="icon_checkmark--cart" src="{{ 'checkmark.png' |  asset_url }}">
+                          Secure payments
+                    </span>
+               </div>
               {%- if section.settings.show_cart_reviews == true -%}
                 <div class="cart-review-container">
                   <h2 class="rating-heading align-center">{{section.settings.review_numbers}}
