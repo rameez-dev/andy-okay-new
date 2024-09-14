@@ -218,7 +218,7 @@
           {%- if settings.cart_show_free_shipping_threshold -%}
             {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
 
-            <p class="SectionHeader__Description Text--subdued colored_background in-caslon">
+            <p class="Text--subdued__custom SectionHeader__Description Text--subdued colored_background in-caslon">
               {%- if cart.total_price >= threshold_in_cents -%}
                 {{- 'cart.general.free_shipping' | t -}}
               {%- else -%}
@@ -580,6 +580,12 @@
               }
             }
               /* Text Above Extra Protection in cart styling */
+           @media only screen and (max-width : 640px){   
+           .Text--subdued__custom {
+            color : black;
+            font-size : 13px;
+           }  
+          } 
           </style>
                <div class="texton-extraprotection__cart">
                 <span class="text__cart">
