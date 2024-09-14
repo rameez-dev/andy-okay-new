@@ -219,6 +219,7 @@
             {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
 
             <p class="Text--subdued__custom SectionHeader__Description Text--subdued colored_background in-caslon">
+            <p class="Text--subdued__custom SectionHeader__Description Text--subdued colored_background in-caslon">
               {%- if cart.total_price >= threshold_in_cents -%}
                 {{- 'cart.general.free_shipping' | t -}}
               {%- else -%}
@@ -427,11 +428,14 @@
             .nvd-mini-mob {
               border-top: 1px solid #d9d9d9;
              /* padding: 0 30px; */
+             /* padding: 0 30px; */
             }
             .nvd-cont-mob {
               padding: 10px 20px;
               margin: 20px auto;
               position: relative;
+              background-color: #f2efeb;
+             /* border-radius: 20px; */
               background-color: #f2efeb;
              /* border-radius: 20px; */
               box-shadow: 2.5px 2.5px 2.5px lightgrey;
@@ -493,6 +497,20 @@
               color: #898989;
               font-size: 14px;
               font-weight: 300;
+            }
+
+            @media only screen and (max-width : 641px) {
+              .nvd-new-desc {
+                color : black;
+                line-height : 1.5;
+              }
+
+              .nvd-check {
+                border : 1px solid black;
+              }
+              .shipping-protection-price .no-price {
+                color : black;
+              }
             }
 
             @media only screen and (max-width : 641px) {
@@ -580,6 +598,16 @@
               }
             }
               /* Text Above Extra Protection in cart styling */
+           @media only screen and (max-width : 640px){   
+           .Text--subdued__custom {
+            color : black;
+            font-size : 13px;
+           }  
+          } 
+
+          .text-before_continue-shopping {
+            font-family: 'Adobe Caslon Pro';
+            }
            @media only screen and (max-width : 640px){   
            .Text--subdued__custom {
             color : black;
@@ -739,6 +767,7 @@
               <div class="mobile-b-desktop-h align-center">
                 <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary thinner Button--full">{{ 'cart.general.checkout' | t }}
                 </button>
+                <span class="text-before_continue-shopping">or&nbsp;&nbsp;</span><a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
                 <span class="text-before_continue-shopping">or&nbsp;&nbsp;</span><a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
                 <br><br>
               </div>
