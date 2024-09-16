@@ -433,8 +433,8 @@
               margin: 20px auto;
               position: relative;
               background-color: #f2efeb;
-             /* border-radius: 20px; */
-              box-shadow: 2.5px 2.5px 2.5px lightgrey;
+             /* border-radius: 20px; */ 
+              /* box-shadow: 2.5px 2.5px 2.5px lightgrey; */
             }
             .nvd-mob-heading {
               font-family: 'DIN Next LT Pro Cond';
@@ -745,15 +745,15 @@
               <div class="trust-tags__cart"> 
                     <span class="trust-tag">
                       <img class="icon_checkmark--cart" src="{{ 'checkmark.png' |  asset_url }}">
-                      Delivery in a week
+                      <span>Delivery in a week</span>
                     </span>
                     <span class="trust-tag">
                       <img class="icon_checkmark--cart" src="{{ 'checkmark.png' |  asset_url }}">
-                          Easy returns
+                       <span>Easy returns</span> 
                     </span>
                     <span class="trust-tag">
                       <img class="icon_checkmark--cart" src="{{ 'checkmark.png' |  asset_url }}">
-                          Secure payments
+                       <span>Secure payments</span>   
                     </span>
                </div>
               {%- if section.settings.show_cart_reviews == true -%}
