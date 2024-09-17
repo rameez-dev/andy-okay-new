@@ -519,8 +519,11 @@
               gap: 7px;
             }
             .trust-tags__cart .trust-tag {
+                    display : flex;
+                    justify-content: center;
                     background-color: #f9f9f9;
                     border-radius: 5px;
+                    gap: 5px;
                     padding-left : 20px;
                     padding-right: 20px;
                     font-size: 14px;
@@ -529,7 +532,7 @@
                     font-family: 'Adobe Caslon Pro';
                   }
                   .trust-tag img{
-                    height : 20px !important;
+                    height : 19px !important; 
                   }
 
                   @media only screen and (max-width : 641px) {
@@ -537,10 +540,17 @@
                       display: flex;
                       justify-content: space-between;                      
                      }
+
+                     .trust-tags__cart .trust-tag span {
+                     text-align: left;
+                     margin-left: 6px;
+                     line-height : 1;
+                 }
                     .trust-tags__cart .trust-tag {
                       padding-left : 16px;
                       padding-right: 16px;
                       gap: 7px;
+                      align-items: center;
                       font-size: 11px;
                     }
                     .trust-tag img{
