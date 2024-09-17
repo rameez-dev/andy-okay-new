@@ -59,8 +59,8 @@
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
           //commented some code as frames are not active, GIANT size need fix when enable this code back for frames
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
-            $("#reset-frame-money").text(black_variants[0].price);
-            $("#reset-compare-price").text(black_variants[0].compare_at_price);
+            $("#reset-frame-money").text((black_variants[0].price).replace(/[^0-9\.]+/g, ""));
+            $("#reset-compare-price").text((black_variants[0].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[0].id);
             $('#white-frame').val(white_variants[0].id);
             $('#black-frame').val(black_variants[0].id); 
@@ -68,8 +68,8 @@
             
             $("#mat_board_input").attr('value', mat_board_variants[0].id);
             $("#mat_board_input").attr('price', mat_board_variants[0].price);
-            $("#reset-passe-money").text(mat_board_variants[0].price);
-            $("#reset-passe-money-compare").text(mat_board_variants[0].compare_at_price);
+            $("#reset-passe-money").text(convertedPrice((mat_board_variants[0].price).replace(/[^0-9\.]+/g, "")));
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[0].compare_at_price).replace(/[^0-9\.]+/g, "")));
 
           }
         } else if (variant.option1 == 'LARGE 20x28" 50x70cm') {
@@ -79,8 +79,8 @@
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
           
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
-            $("#reset-frame-money").text(black_variants[1].price);
-            $("#reset-compare-price").text(black_variants[1].compare_at_price);
+            $("#reset-frame-money").text((black_variants[1].price).replace(/[^0-9\.]+/g, ""));
+            $("#reset-compare-price").text((black_variants[1].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[1].id);
             $('#white-frame').val(white_variants[1].id);
             $('#black-frame').val(black_variants[1].id);
@@ -88,8 +88,8 @@
             
             $("#mat_board_input").attr('value', mat_board_variants[1].id);
             $("#mat_board_input").attr('price', mat_board_variants[1].price);
-            $("#reset-passe-money").text(mat_board_variants[1].price);
-            $("#reset-passe-money-compare").text(mat_board_variants[1].compare_at_price);
+            $("#reset-passe-money").text(convertedPrice((mat_board_variants[1].price).replace(/[^0-9\.]+/g, "")));
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[1].compare_at_price).replace(/[^0-9\.]+/g, "")));
           }
 
         } else if (variant.option1 == 'X-Large 28x40" 70x100cm') {
@@ -99,8 +99,8 @@
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
 
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
-            $("#reset-frame-money").text(black_variants[2].price);
-            $("#reset-compare-price").text(black_variants[2].compare_at_price);
+            $("#reset-frame-money").text((black_variants[2].price).replace(/[^0-9\.]+/g, ""));
+            $("#reset-compare-price").text((black_variants[2].compare_at_price).replace(/[^0-9\.]+/g, ""));
             //$('input[name="frame"]:checked').val(black_variants[2].id);
             $('#white-frame').val(white_variants[2].id);
             $('#black-frame').val(black_variants[2].id);
@@ -108,8 +108,8 @@
             
             $("#mat_board_input").attr('value', mat_board_variants[2].id);
             $("#mat_board_input").attr('price', mat_board_variants[2].price);
-            $("#reset-passe-money").text(mat_board_variants[2].price);
-            $("#reset-passe-money-compare").text(mat_board_variants[2].compare_at_price);
+            $("#reset-passe-money").text(convertedPrice((mat_board_variants[2].price).replace(/[^0-9\.]+/g, "")));
+            $("#reset-passe-money-compare").text(convertedPrice((mat_board_variants[2].compare_at_price).replace(/[^0-9\.]+/g, "")));
 
           }
         }  else if (variant.option1 == 'GIANT 40x55" 100x140cm') {

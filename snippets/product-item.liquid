@@ -128,18 +128,14 @@
           <h2 class="ProductItem__Title Heading">
             <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
           </h2>
-    <style>
-      .text-before__price {
-        color : black;
-      }
-    </style>      
+          
           {%- if product.template_suffix != 'coming-soon' -%}
             {% unless is_sold_out_collection %}
             <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %}">
               <span class="divider-line">|</span>
               {%- if product.compare_at_price > product.price -%}
-                <span class="ProductItem__Price Price Price--compareAt Text--subdued" >{{ product.compare_at_price | money_without_trailing_zeros }}&nbsp;Regular</span> <br>
-                <span class="ProductItem__Price Price Price--highlight Text--subdued">{{ product.price | money_without_trailing_zeros }}&nbsp;<span class="text-before__price">for Charity</span></span>
+                <span class="ProductItem__Price Price Price--compareAt Text--subdued" >{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+                <span class="ProductItem__Price Price Price--highlight Text--subdued">{{ product.price | money_without_trailing_zeros }}</span>
               {%- elsif product.price_varies -%}
                 {%- capture formatted_min_price -%}<span >{{ product.price_min | money_without_trailing_zeros }}</span>{%- endcapture -%}
                 {%- capture formatted_max_price -%}<span >{{ product.price_max | money_without_trailing_zeros }}</span>{%- endcapture -%}
