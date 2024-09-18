@@ -134,7 +134,7 @@
         "settings": {
           "enable_bar": true,
           "home_page_only": false,
-          "background": "#f5f2eb",
+          "background": "#fff5e7",
           "text_color": "#464544"
         }
       },
