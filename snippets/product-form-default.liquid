@@ -1127,7 +1127,7 @@ for size, we use it to display a size chart (if applicable)
                     </svg>
                     </label>
                 </div>
-  {%- comment -%}                
+                    {%- comment -%}                
                     <div class="dp-product-section-swatch-selector-price">
                         <span class="reset-money"></span>   
                     </div> {%- endcomment -%}
@@ -1278,7 +1278,40 @@ for size, we use it to display a size chart (if applicable)
       </div>
       {% comment %} Gallery Mat Board {% endcomment %}     
     </div>
-  {%- comment -%} Frames as a separate product {%- endcomment -%}
+    {%- comment -%} Frames as a separate product {%- endcomment -%}
+    {%- comment -%} matboard for frames starts here {%- endcomment -%}
+  {% elsif isFrame == true %}
+    <div class="ProductForm__Option ProductForm__Option--labelled">
+      {% comment %} Gallery Mat Board{% endcomment %}
+      {% for mat_board_product_variant in mat_board_product.variants %}
+        {% if selected_variant.option1 == mat_board_product_variant.option1 %}
+          {% assign mat_board_product_id = mat_board_product_variant.id %}
+          {% assign mat_board_product_price = mat_board_product_variant.price %}
+          {% assign mat_board_product_price_compare_at = mat_board_product_variant.compare_at_price %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      <div class="passehidden" id="passe-container" data-orientation="horizontal">
+        <div class="passecontainer">
+          <div id="mat_board_product_container" class=" passe-text-icon-container passe-text-icon-container-faded">
+            <div class="mat_board_input_container"> 
+              <input type="checkbox" id="mat_board_input" name="gallery-no-frame" value="{{mat_board_product_id}}" price="{{mat_board_product_price}}" disabled >
+            </div>
+            <div id="mat_board_toptext_icon_container" class="passe-toptext-icon-container passe-toptext-icon-container-noframe">
+                <span class="passe-toptext-title"> Add a Gallery Mat Board</span><img class="passe-gallery-experience-icon passe-gallery-experience-icon-small" id="gallery-experience-choose" src="{{ 'question-mark.svg' |  asset_url }}" alt="i">
+            </div>
+          </div>
+          <div class="passe-money">
+            <span id="reset-passe-money-compare" class="reset-compare-price">{{ mat_board_product_price_compare_at |
+              money_without_trailing_zeros }}</span>
+            <span id="reset-passe-money" >{{ mat_board_product_price |
+              money_without_trailing_zeros }}</span>
+          </div>
+        </div>
+      </div>
+      {% comment %} Gallery Mat Board {% endcomment %}     
+    </div>
+    {%- comment -%} matboard for frames ends here {%- endcomment -%}
   {% endif %}
   {% comment %}
   ---------------------------------------------------
@@ -2249,6 +2282,7 @@ THE EXACT SAME ATTRIBUTES.
         $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
       }
+      console.log('herere');
       xVariantPrice = xVariants[xid].price;
       xVariantCompare_at_price = xVariants[xid].compare_at_price;
       let selected_frame_id = $('input[name="frame"]:checked').val();
@@ -2578,3 +2612,10 @@ THE EXACT SAME ATTRIBUTES.
     }
 
 </script>
+
+{% if isFrame == true %}
+  <script>
+    console.log('you are in frames template');
+    activate_mat_board();
+  </script>
+ {% endif %}
