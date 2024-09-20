@@ -796,6 +796,12 @@ for size, we use it to display a size chart (if applicable)
   {% endif %}
 {% endfor %}
 
+{% if isFrame == true %}
+<script>const isFrame = true;</script>
+{% else %}
+<script>const isFrame = false;</script>
+{% endif %}
+
 <script> 
   let black_variants = [], white_variants = [], oak_variants = [], mat_board_variants = [], frames_all_variants = {};
   frames_all_variants['0'] = { 'price': 0, 'compare_at_price': 0 };
@@ -2282,13 +2288,17 @@ THE EXACT SAME ATTRIBUTES.
         $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
       }
+      if(isFrame) {
+        $("#reset-passe-money").css("color", "#af182b");
+        $(".passe-money").css("opacity", "1");
+      }
       console.log('herere');
       xVariantPrice = xVariants[xid].price;
       xVariantCompare_at_price = xVariants[xid].compare_at_price;
       let selected_frame_id = $('input[name="frame"]:checked').val();
       let selected_frame_price = 0;
       let selected_frame_compare_at_price = 0;
-      if (selected_frame_id != 0){
+      if (selected_frame_id != 0 && (typeof selected_frame_id !== "undefined")){
         selected_frame_price = frames_all_variants[selected_frame_id].price;
         selected_frame_compare_at_price = frames_all_variants[selected_frame_id].compare_at_price;
       } 
@@ -2359,6 +2369,11 @@ THE EXACT SAME ATTRIBUTES.
               /*_compare_at_price: frame_cm_at_price_to_pass*/
             } });
         
+          if ($("#mat_board_input").is(':checked')) {
+              formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
+          }
+        }
+        else if (typeof isFrame !== "undefined" && isFrame) {
           if ($("#mat_board_input").is(':checked')) {
               formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
           }
@@ -2449,6 +2464,11 @@ THE EXACT SAME ATTRIBUTES.
           });
         if ($("#mat_board_input").is(':checked')) {
           console('mat board is checked ...');
+            formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
+        }
+      }
+      else if (typeof isFrame !== "undefined" && isFrame) {
+        if ($("#mat_board_input").is(':checked')) {
             formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
         }
       }
@@ -2615,7 +2635,41 @@ THE EXACT SAME ATTRIBUTES.
 
 {% if isFrame == true %}
   <script>
-    console.log('you are in frames template');
+    $(`section.Product`).on("variant:changed", function(e) {
+      var variant = event.detail.variant;
+      var previousVariant = event.detail.previousVariant;
+      
+      if (variant.option1 != previousVariant.option1) {
+        if (variant.option1 == 'MEDIUM 12x16" 30x40cm') {
+          if (! variant.option2) {  
+            $("#mat_board_input").attr('value', mat_board_variants[0].id);
+            $("#mat_board_input").attr('price', mat_board_variants[0].price);
+            $("#reset-passe-money").text(mat_board_variants[0].price);
+            $("#reset-passe-money-compare").text(mat_board_variants[0].compare_at_price);
+
+          }
+        } else if (variant.option1 == 'LARGE 20x28" 50x70cm') {
+          $("label[for='option-product-template-0-1']").addClass('currently-selected-size-display');
+          if (! variant.option2) {
+            $("#mat_board_input").attr('value', mat_board_variants[1].id);
+            $("#mat_board_input").attr('price', mat_board_variants[1].price);
+            $("#reset-passe-money").text(mat_board_variants[1].price);
+            $("#reset-passe-money-compare").text(mat_board_variants[1].compare_at_price);
+          }
+
+        } else if (variant.option1 == 'X-Large 28x40" 70x100cm') {
+          if (! variant.option2) {
+            $("#mat_board_input").attr('value', mat_board_variants[2].id);
+            $("#mat_board_input").attr('price', mat_board_variants[2].price);
+            $("#reset-passe-money").text(mat_board_variants[2].price);
+            $("#reset-passe-money-compare").text(mat_board_variants[2].compare_at_price);
+
+          }
+        } 
+      }
+    });
     activate_mat_board();
+    $("#reset-passe-money").css("color", "#af182b");
+    $(".passe-money").css("opacity", "1");
   </script>
  {% endif %}
