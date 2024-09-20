@@ -10,6 +10,31 @@
     },
     "main": {
       "type": "product-template",
+      "blocks": {
+        "ubx_video_RkhV7c": {
+          "type": "ubx_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/shopapp_e7e45b82-80f1-4d9e-8cee-48e772b0cc77.mp4"
+          }
+        },
+        "ubx_video_HiCRWy": {
+          "type": "ubx_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/shopapp.mp4"
+          }
+        },
+        "ubx_video_REDCmJ": {
+          "type": "ubx_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "ubx_video_RkhV7c",
+        "ubx_video_HiCRWy",
+        "ubx_video_REDCmJ"
+      ],
       "settings": {
         "gallery_video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4",
         "pwyw_btn_color": "#313131",
@@ -36,7 +61,10 @@
         "tab_page_2_handle": "shipping",
         "reviews_enabled": false,
         "featured_image_size": "normal",
-        "enable_read_more": true
+        "enable_read_more": true,
+        "ubx_title": "IN THE WILD",
+        "ubx_subtitle": "Real Customer Experience",
+        "ubx_content": "<p>Curious about quality? No worries! Checkout these authentic unboxing videos from real customers. You'll find +4000 more like these <a href=\"\/pages\/about-us\" title=\"About Andy okay\">here<\/a><\/p>"
       }
     },
     "product-info": {
