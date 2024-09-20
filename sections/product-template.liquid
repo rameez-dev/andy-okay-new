@@ -969,6 +969,24 @@ This is the root container for the zoom functionality. Must not be removed, as o
       "id": "enable_read_more",
       "label": "Enable Read more",
       "default": false
+    },
+    {
+      "type": "text",
+      "id": "ubx_title",
+      "label": "UBX Headline",
+      "default": "Popup"
+    },
+    {
+      "type": "text",
+      "id": "ubx_subtitle",
+      "label": "UBX Subheading",
+      "default": "Real Customer Experience"
+    },
+    {
+      "type": "richtext",
+      "id": "ubx_content",
+      "label": "UBX Popup Content",
+      "default": "<p>You can use this popup to display some useful information to your customers.</p>"
     }
   ],
   "blocks": [
@@ -1170,6 +1188,17 @@ This is the root container for the zoom functionality. Must not be removed, as o
           "id": "label_6",
           "type": "text",
           "label": "Label"
+        }
+      ]
+    },
+    {
+      "name": "UBX video",
+      "type": "ubx_video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
         }
       ]
     }

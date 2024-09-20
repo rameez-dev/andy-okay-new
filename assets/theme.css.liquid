@@ -9431,22 +9431,34 @@ body.story-popup-visible::after {
     display: none;
   }
 }
+.ubx-popup .flickity-page-dots .dot {
+  margin: 0px 2px;
+  width: 8px;
+  height: 8px;
+  margin-bottom: 1px
+}
+.ubx-popup .flickity-page-dots .dot.is-selected {
+  width: 10px;
+  height: 10px;
+  margin-bottom: 0px;
+}
 @media (max-width: 767px) {
   /* .Product__Slideshow .flickity-viewport {
     min-height: 61vh;
   } */
-  .Product__Slideshow .flickity-page-dots .dot {
+  .Product__Slideshow .flickity-page-dots .dot, .ubx-popup .flickity-page-dots .dot {
     margin: 0px 2px;
     width: 6px;
     height: 6px;
     margin-bottom: 1px
   }
-  .Product__Slideshow .flickity-page-dots .dot.is-selected {
+  .Product__Slideshow .flickity-page-dots .dot.is-selected, .ubx-popup .flickity-page-dots .dot.is-selected {
     width: 8px;
     height: 8px;
     margin-bottom: 0px;
   }
 }
+
 /* @media (max-width: 380px) {
   .Product__Slideshow .flickity-viewport {
     min-height: 62vh;
@@ -13299,11 +13311,11 @@ table tr td {
 /* .Product__Gallery .flickity-page-dots {
   margin: -60px 0px -12.5px 0px;
 } */
-.Product__Gallery .flickity-page-dots .dot {
+.Product__Gallery .flickity-page-dots .dot, .ubx-popup .flickity-page-dots .dot {
   background: #d0d0d0;
   border: grey;
 }
-.Product__Gallery .flickity-page-dots .dot.is-selected {
+.Product__Gallery .flickity-page-dots .dot.is-selected, .ubx-popup .flickity-page-dots .dot.is-selected {
   background: #163bbc;
   /* iphone 6, 6s, 7, 8 */
 }
@@ -15219,4 +15231,84 @@ a[name="new-currency-object"] {
   .banner-section-link {
     font-size: 16px;
   }
+}
+
+.ubx-action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.ubx-action-headline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ubx-heading {
+  font-family: 'DIN Next LT Pro Cond';
+  font-weight: 500;
+}
+
+.ubx-subheading {
+  font-family: "Adobe Caslon Pro";
+  font-style: italic
+}
+
+.ubx-action-videos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.ubx-action-item {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ubx-play-icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ubx-play-icon img {
+  width: 45%; 
+}
+
+.ubx-video-container {
+  padding-left: 35px;
+  padding-bottom: 40px;
+}
+.ubx-popup .flickity-page-dots {
+  padding-right: 35px
+}
+.ubx-popup .popup_content {
+  padding-inline: 35px;
+}
+
+.ubx-video-item {
+  width: 80%;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+.ubx-video-item video{
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1.8;
+}
+.ubx-popup .NewsletterPopup__Content a {
+  color: #163bbc;
 }

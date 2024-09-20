@@ -1360,6 +1360,104 @@ for size, we use it to display a size chart (if applicable)
   </div>
   {% comment %} Charity Slider {% endcomment %}
 
+  {% assign ubx_video_present = false %}
+
+  {% for blk  in section.blocks %}
+    {% if blk.type == "ubx_video" %}
+      {% assign ubx_video_present = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if ubx_video_present %}
+    <div class="ubx-action-container">
+      <div class="ubx-action-headline">
+        <div class="ubx-heading">{{ section.settings.ubx_title }}</div>
+        <div class="ubx-subheading">|&nbsp; {{ section.settings.ubx_subtitle }}</div>
+      </div>
+      <div class="ubx-action-videos">
+        {% assign ubx_index = 0 %}
+        {% for blk in section.blocks %}
+          {% if blk.type == "ubx_video" %}
+            {% assign ubx_index = ubx_index | plus: 1 %}
+            <div class="ubx-action-item" data-index="{{ ubx_index }}">
+              {{ blk.settings.video.preview_image | image_url: width: 200 | image_tag }}
+              <div class="ubx-play-icon">
+                <img src="{{ 'play-icon.png' |  asset_url }}" alt="play icon" width="100" height="100">
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <aside class="NewsletterPopup site__black--popup soldout-popup ubx-popup" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
+      <div class="popup_header">
+        <span class="popup_title">{{ section.settings.ubx_title }}</span>
+        <div class="popup_close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</div>
+      </div>     
+      <div class="popup_content">  
+        {%- if section.settings.ubx_content != blank -%}
+          <div class="NewsletterPopup__Content">
+            <p>{{section.settings.ubx_content}}</p>
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="ubx-video-container">
+        {% assign ubx_index = 0 %}
+        {% for blk in section.blocks %}
+          {% if blk.type == "ubx_video" %}
+            {% assign ubx_index = ubx_index | plus: 1 %}
+            <div class="ubx-video-item" data-index="{{ ubx_index }}">
+              {{ blk.settings.video | video_tag: autoplay: false, loop: true, muted: true, controls: false }}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>     
+    </aside>
+        
+    <script>
+      $(document).ready(function(){
+        var ubx_flkty = $(".ubx-video-container").flickity({
+          "prevNextButtons": false,
+          "pageDots": true,
+          "cellAlign": 'left',
+          "contain": true
+        });
+
+        $('.ubx-popup .popup_close').click(function(){
+          $('.ubx-popup').removeClass('visible');
+          document.getElementById("cart-popup-overlay").style.display = "none";
+        });
+
+        $('.ubx-action-item').click(function () {
+          let index = parseInt($(this).attr("data-index"));
+          $('.ubx-popup').addClass('visible');
+          document.getElementById("cart-popup-overlay").style.display = "block";
+          $(".ubx-video-container").flickity( 'select', index - 1 );
+          let video_element = $(`.ubx-video-item[data-index="${index}"] video`);
+          video_element.click();
+        });
+
+        $('.ubx-video-item video').click(function(){
+          let video_element = $(this).get(0);
+          $('.ubx-video-item video').not(video_element).each(function() {
+            $(this).get(0).pause();
+            $(this).get(0).load();
+          });
+          if(!video_element.paused) {
+            video_element.pause();
+            video_element.load()
+          }
+          else {
+            video_element.play();
+          }
+
+        });
+      });
+    </script>
+  {% endif %}
+
   <div class="no-js ProductForm__Option">
     <div class="Select Select--primary">
       {%- include 'icon' with 'select-arrow' -%}
