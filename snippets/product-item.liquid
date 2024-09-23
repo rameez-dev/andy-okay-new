@@ -3,7 +3,12 @@
   
 {% assign has_artist = false %}
 {% assign artist_name = '' %}
+{% assign limited_edition_tag = true %}
+
 {% for tag in product.tags %}
+  {% if tag == 'hideLimitedEd' %}
+    {% assign limited_edition_tag = false %}
+  {% endif %}
   {% assign product_tag_first = tag | downcase | split: ':' | first %}
   {% if product_tag_first == 'charity' %}
     {% assign has_charity = true %}
@@ -102,7 +107,9 @@
     {%- if show_product_info -%}
       <div class="ProductItem__Info {% unless use_horizontal %}ProductItem__Info--{{ settings.product_info_alignment }}{% endunless %} make-center">
         {% unless is_sold_out_collection %}
-          <img class="limited-release-img" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">
+          {% if limited_edition_tag %}
+            <img class="limited-release-img" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">    
+          {% endif %}  
         {% comment %} <div style="display: none;" class="xs-stock-bar hide-on-pdp" data-xs-grid-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}' data-xs-stock-left="{{ xs_total_left }}" data-xs-variant-left="{{ xs_variant_left }}" data-inv='{{ product.variants.first.inventory_management }}'>
           <div class="xs-stock-progress" data-xs-stock-progress>
             <span class="xs-stock-spinner" data-xs-stock-spinner ></span>
@@ -133,7 +140,7 @@
         color : black;
       }
       .ProductItem__price--custom {
-        color : #b3b3b3 !important;
+        color : #808080 !important;
       }
     </style>      
           {%- if product.template_suffix != 'coming-soon' -%}
