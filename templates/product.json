@@ -11,16 +11,16 @@
     "main": {
       "type": "product-template",
       "blocks": {
-        "ubx_video_RkhV7c": {
-          "type": "ubx_video",
-          "settings": {
-            "video": "shopify:\/\/files\/videos\/Snapinsta.app_video_An-3hkkPyIp99JBrpgYCS761-WzIr2N9m7zZGb0WfHNzg_oXEyg9VdNu2-gZQQyzL3AcZGe4vqh5ps6V5avLlBM.mp4"
-          }
-        },
         "ubx_video_HiCRWy": {
           "type": "ubx_video",
           "settings": {
             "video": "shopify:\/\/files\/videos\/Untamed Signed and Framed 70x100cm fine art printCollaboration with Andy okay x The Non-Violence Project Foundation.With every purchase, you can contribute to The Non-Violence Project Foundation, helping them provide our youth and individua.mp4"
+          }
+        },
+        "ubx_video_UaY6Mj": {
+          "type": "ubx_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Thank you everyone for your support thus far!With every purchase of this piece through @andy.okay you’ve made a contribution to the Non-Violence Project Foundation as they strive to provide youth with the tools to stop the cycle of violen.mp4"
           }
         },
         "ubx_video_REDCmJ": {
@@ -29,18 +29,18 @@
             "video": "shopify:\/\/files\/videos\/We received a framed print from our Andy Okay X The Non-Violence Project Foundationrecently and we’ve displayed it in our studio window -)With every purchase of these limited edition prints, you can contribute to the Non-ViolenceProject F.mp4"
           }
         },
-        "ubx_video_UaY6Mj": {
+        "ubx_video_RkhV7c": {
           "type": "ubx_video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/Thank you everyone for your support thus far!With every purchase of this piece through @andy.okay you’ve made a contribution to the Non-Violence Project Foundation as they strive to provide youth with the tools to stop the cycle of violen.mp4"
+            "video": "shopify:\/\/files\/videos\/Snapinsta.app_video_An-3hkkPyIp99JBrpgYCS761-WzIr2N9m7zZGb0WfHNzg_oXEyg9VdNu2-gZQQyzL3AcZGe4vqh5ps6V5avLlBM.mp4"
           }
         }
       },
       "block_order": [
-        "ubx_video_RkhV7c",
         "ubx_video_HiCRWy",
+        "ubx_video_UaY6Mj",
         "ubx_video_REDCmJ",
-        "ubx_video_UaY6Mj"
+        "ubx_video_RkhV7c"
       ],
       "settings": {
         "gallery_video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4",
@@ -70,8 +70,8 @@
         "featured_image_size": "normal",
         "enable_read_more": true,
         "ubx_title": "IN THE WILD",
-        "ubx_subtitle": "Real Customer Experience",
-        "ubx_content": "<p>Curious about quality? No worries! Checkout these authentic unboxing videos from real customers. You'll find +4000 more like these <a href=\"https:\/\/andyokay.com\/pages\/reviews\" title=\"https:\/\/andyokay.com\/pages\/reviews\">here<\/a><\/p>"
+        "ubx_subtitle": "Real Customer Experiences",
+        "ubx_content": "<p>Curious about quality? No worries! Check out these authentic unboxing videos from real customers. Browse +3800 more honest reviews <a href=\"https:\/\/andyokay.com\/pages\/reviews\" title=\"https:\/\/andyokay.com\/pages\/reviews\">here.<\/a><\/p>"
       }
     },
     "product-info": {
@@ -391,7 +391,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/passe.jpg",
         "title": "Popup",
-        "content": "<p>Make your artwork complete by adding a mat board, and elevate the look and feel of your artwork even further.<br\/><br\/>It is an absolutely stunning method of framing your piece, and the preferred choice of most galleries and artists all around the world.<br\/><br\/><em>Sizes<\/em>:<br\/><strong>Medium<\/strong> (12x16\" \/ 30x40cm) - Mat width: 1.0\" \/ 2.5cm<br\/><strong>Large<\/strong>(20x28\" \/ 50x70cm) - Matwidth: 1.2\" \/ 3.0cm<br\/><strong>X-Large<\/strong>(28x40\" \/ 70x100cm) - Matwidth: 1.4\" \/ 3.5cm<br\/><br\/><em>Note: The mat board is placed on top of the Fine Art print and covers a little bit of the artwork.<br\/><\/em><br\/>Click <a href=\"\/collections\/frames\" title=\"Frames\">here<\/a> for full product description.<\/p>",
+        "content": "<p><strong>TAKE YOUR ART TO THE NEXT LEVEL<br\/><br\/><\/strong>Make your artwork complete by adding a mat board (aka passepartout) and elevate the look and feel of your art even further. <\/p><p>It's an absolutely stunning method of framing your piece. <\/p><p>Our high quality mat board comes in a custom cut thin design, the preferred choice for galleries and artists all around the world.<br\/><br\/><em>Sizes<\/em>:<br\/><strong>Medium<\/strong> (12x16\" \/ 30x40cm) - Mat width: 1.0\" \/ 2.5cm<br\/><strong>Large<\/strong> (20x28\" \/ 50x70cm) - Mat width: 1.2\" \/ 3.0cm<br\/><strong>X-Large<\/strong> (28x40\" \/ 70x100cm) - Mat width: 1.6\" \/ 4.0cm<br\/><br\/><em>Material<\/em>:<br\/>Age-Resistant, 100% FSC® certified paper. Acid-free.<br\/><br\/><em>Note: The mat board is placed on top of the Fine Art print and covers a little bit of the artwork.<\/em><\/p>",
         "link_text": "",
         "link": ""
       }

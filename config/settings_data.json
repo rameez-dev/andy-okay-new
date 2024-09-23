@@ -106,14 +106,14 @@
           "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
             "type": "announcement",
             "settings": {
-              "content": "<b>SALE SEASON<\/b>   Buy 2, Get 1 Free",
+              "content": "<b>SALE SEASON<\/b>  Unlock 2 FREE Artworks",
               "link": "shopify:\/\/collections\/all-art"
             }
           },
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
             "type": "announcement",
             "settings": {
-              "content": "<b>EXCELLENT<\/b>   +178,000 Collectors",
+              "content": "<b>EXCELLENT<\/b>   +202,000 Collectors",
               "link": "shopify:\/\/collections\/all-art",
               "icon": "shopify:\/\/shop_images\/Truststars_5_v4.png"
             }
@@ -463,7 +463,7 @@
             "type": "newsletter",
             "settings": {
               "title": "Members Club",
-              "content": "<p>Join 189,000 art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
+              "content": "<p>Join 200,000 Art & Earth lovers to get first notice on all new drops, good news and great offers. 100% Free.<\/p>"
             }
           }
         },

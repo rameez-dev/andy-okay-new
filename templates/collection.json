@@ -55,7 +55,7 @@
           "type": "item",
           "settings": {
             "title": "All Art",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -69,7 +69,7 @@
           "type": "item",
           "settings": {
             "title": "Astronauts",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -83,7 +83,7 @@
           "type": "item",
           "settings": {
             "title": "Animals",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -97,7 +97,7 @@
           "type": "item",
           "settings": {
             "title": "Contemporary",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -111,7 +111,7 @@
           "type": "item",
           "settings": {
             "title": "Floral",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -125,7 +125,7 @@
           "type": "item",
           "settings": {
             "title": "Gaming",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -139,7 +139,7 @@
           "type": "item",
           "settings": {
             "title": "Motivational",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -153,7 +153,7 @@
           "type": "item",
           "settings": {
             "title": "Nature",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -167,7 +167,7 @@
           "type": "item",
           "settings": {
             "title": "Photo Art",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -181,7 +181,7 @@
           "type": "item",
           "settings": {
             "title": "Space",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -195,7 +195,7 @@
           "type": "item",
           "settings": {
             "title": "Surreal Art",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -344,7 +344,7 @@
       ],
       "settings": {
         "heading": "EXCELLENT",
-        "subheading": "4.9 \/ 5 from +2600 Reviews"
+        "subheading": "4.9 \/ 5 from +3800 Reviews"
       }
     }
   },
