@@ -14,26 +14,33 @@
         "ubx_video_RkhV7c": {
           "type": "ubx_video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/shopapp_e7e45b82-80f1-4d9e-8cee-48e772b0cc77.mp4"
+            "video": "shopify:\/\/files\/videos\/Snapinsta.app_video_An-3hkkPyIp99JBrpgYCS761-WzIr2N9m7zZGb0WfHNzg_oXEyg9VdNu2-gZQQyzL3AcZGe4vqh5ps6V5avLlBM.mp4"
           }
         },
         "ubx_video_HiCRWy": {
           "type": "ubx_video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/shopapp.mp4"
+            "video": "shopify:\/\/files\/videos\/Untamed Signed and Framed 70x100cm fine art printCollaboration with Andy okay x The Non-Violence Project Foundation.With every purchase, you can contribute to The Non-Violence Project Foundation, helping them provide our youth and individua.mp4"
           }
         },
         "ubx_video_REDCmJ": {
           "type": "ubx_video",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4"
+            "video": "shopify:\/\/files\/videos\/We received a framed print from our Andy Okay X The Non-Violence Project Foundationrecently and we’ve displayed it in our studio window -)With every purchase of these limited edition prints, you can contribute to the Non-ViolenceProject F.mp4"
+          }
+        },
+        "ubx_video_UaY6Mj": {
+          "type": "ubx_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Thank you everyone for your support thus far!With every purchase of this piece through @andy.okay you’ve made a contribution to the Non-Violence Project Foundation as they strive to provide youth with the tools to stop the cycle of violen.mp4"
           }
         }
       },
       "block_order": [
         "ubx_video_RkhV7c",
         "ubx_video_HiCRWy",
-        "ubx_video_REDCmJ"
+        "ubx_video_REDCmJ",
+        "ubx_video_UaY6Mj"
       ],
       "settings": {
         "gallery_video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4",
@@ -64,7 +71,7 @@
         "enable_read_more": true,
         "ubx_title": "IN THE WILD",
         "ubx_subtitle": "Real Customer Experience",
-        "ubx_content": "<p>Curious about quality? No worries! Checkout these authentic unboxing videos from real customers. You'll find +4000 more like these <a href=\"\/pages\/about-us\" title=\"About Andy okay\">here<\/a><\/p>"
+        "ubx_content": "<p>Curious about quality? No worries! Checkout these authentic unboxing videos from real customers. You'll find +4000 more like these <a href=\"https:\/\/andyokay.com\/pages\/reviews\" title=\"https:\/\/andyokay.com\/pages\/reviews\">here<\/a><\/p>"
       }
     },
     "product-info": {
