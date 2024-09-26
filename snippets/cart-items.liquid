@@ -53,20 +53,10 @@
       text-align: center;line-height: 0.8;
     }
 </style>
-{% comment %}
-  <script>
-     window.location.href = "https://andyokay.com/products/white-gallery-mat-board?variant=43328449249517";
-     window.location.replace("https://andyokay.com/collections/frames");
-
-     function redirect() {
-            window.location.href = "https://andyokay.com/collections/frames";
-        }
-</script>
-    {% endcomment %}
         <div class="CartItem__Info">
           <h2 class="CartItem__Title Heading dinMediumCaps">
-          <a href="{% unless is_pwyw %}  {%if item.variant.metafields.secomapp.freegifts%}{{ item.product.url }}{%else%}{{  line_item.url | within: collections.all }}{%endif%}{% else %}{{ pwyw_url }}{% endunless %}">{{ line_item.product.title }}</a>
-            </h2>
+            <a href="{% unless is_pwyw %}  {%if item.variant.metafields.secomapp.freegifts%}{{ item.product.url }}{%else%}{{ line_item.url | within: collections.all }}{%endif%}{% else %}{{ pwyw_url }}{% endunless %}">{{ line_item.product.title }}</a>
+          </h2>
 
           <div class="CartItem__Meta Heading Text--subdued">
             {%- unless line_item.product.has_only_default_variant -%}
