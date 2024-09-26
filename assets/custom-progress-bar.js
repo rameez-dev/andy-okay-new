@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressLine = document.querySelector('.line .progress');
     const progressContainer = document.getElementById('progress-container');
     const progressDescription = document.getElementById('progress-description-text');
+    const askAboutDiscount = document.getElementById('ask-about-discount');
     
     // Maximum cart count to complete the progress
     const maxCartItems = 5; // This is arbitrary, adjust as needed.
@@ -20,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateProgressBar(cartCount) {
         console.log('this is update progress bar function');
         let step = Math.min(cartCount, maxCartItems); // Don't exceed the max steps
-        const stepProgress = [0, 20, 40, 60, 80, 100]; // Adjust progress percentages
+        const stepProgress = [0, 15, 38, 64, 87, 100]; // Adjust progress percentages
         
         // Update circle background colors
         circles.forEach((circle, index) => {
             if (index < step) {
                 circle.classList.add('blue'); // Completed steps
                 if (circle.classList.contains('special')) {
-                    circle.innerHTML = "<span>&#10003;</span>"; // Change +1 or +2 to tick
+                    circle.innerHTML = '<span style="font-size: 15px;font-weight: 400">&#10003;</span>'; // Change +1 or +2 to tick
                 }
             } else {
                 circle.classList.remove('blue'); // Uncompleted steps
@@ -41,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         progressLine.style.width = stepProgress[step] + '%';
         // Update the description text based on the current step
         progressDescription.textContent = stepDescriptions[step];
+        askAboutDiscount.classList.remove('hide');
+        askAboutDiscount.classList.add('show');
+        
         if (cartCount > 0){
             progressContainer.classList.remove('hide');
             progressContainer.classList.add('show');
@@ -52,17 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    function fetchDiscountCollection(handle, page = 1, limit = 250, allProducts = []) {
+    function fetchDiscountCollection(handle, page = 1, limit = 250, allProductIds = []) {
+        const cacheKey = `discountCollection_${handle}`;
+        const cacheExpiryKey = `discountCollectionExpiry_${handle}`;
+
+            // Get cached data and expiry time from localStorage
+        const cachedCollection = localStorage.getItem(cacheKey);
+        const expiryTime = localStorage.getItem(cacheExpiryKey);
+        const currentTime = new Date().getTime();
+
+        // Check if the cache is valid and hasn't expired (1 hour)
+        if (cachedCollection && expiryTime && currentTime < expiryTime) {
+            //console.log('Using cached collection data', cachedCollection);
+            return Promise.resolve(JSON.parse(cachedCollection));
+        }
         // Fetch products with pagination, up to 250 per page (maximum allowed by Shopify)
         return fetch(`/collections/${handle}/products.json?page=${page}&limit=${limit}`)
             .then(response => response.json())
             .then(data => {
                 // Concatenate the fetched products with the existing products
-                allProducts = allProducts.concat(data.products);
+                allProductIds = allProductIds.concat(data.products.map(product => product.id));
     
                 // If the number of fetched products is less than the limit, we've fetched all products
                 if (data.products.length < limit) {
-                    return allProducts.map(product => product.id); // Return array of product IDs
+                    // Cache the final product list
+                    localStorage.setItem(cacheKey, JSON.stringify(allProductIds));
+                    localStorage.setItem(cacheExpiryKey, currentTime + 3600 * 1000); // Cache expires in 1 hour
+                    //console.log('returning after caching ......', cacheKey);
+                    return allProductIds; // Return array of product IDs
                 } else {
                     // Otherwise, fetch the next page
                     return fetchDiscountCollection(handle, page + 1, limit, allProducts);
@@ -94,15 +115,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function checkCartForDiscounts() {
         // Replace 'discount-collection-handle' with your actual collection handle
         const collectionHandle = 'surreal';
+        //const collectionHandle = window.discountedCollectionHandle;
 
-        Promise.all([fetchDiscountCollection(collectionHandle), fetchCart()])
-            .then(([discountCollectionProductIds, cart]) => {
-                const eligibleCount = countEligibleProducts(cart, discountCollectionProductIds);
+        if (collectionHandle) {
+            console.log('collection handle is ....', collectionHandle);
+            Promise.all([fetchDiscountCollection(collectionHandle), fetchCart()])
+                .then(([discountCollectionProductIds, cart]) => {
+                    const eligibleCount = countEligibleProducts(cart, discountCollectionProductIds);
 
-                console.log(`Total eligible items in cart: ${eligibleCount}`);
-                updateProgressBar(eligibleCount);
-            })
-            .catch(error => console.error('Error in checking cart for discounts:', error));
+                    console.log(`Total eligible items in cart: ${eligibleCount}`);
+                    updateProgressBar(eligibleCount);
+                })
+                .catch(error => console.error('Error in checking cart for discounts:', error));
+        } else {
+            console.log("No collection handle provided.");
+        }
     }
 
   // Call this function on cart update
@@ -124,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $('#ask-about-discount').click(function () {
     $('.discount-info-popup').addClass('visible');
-    document.getElementById("cart-popup-overlay").style.display = "block";
+    //document.getElementById("cart-popup-overlay").style.display = "block";
   });
   $('.discount-info-popup .popup_close').click(function(){
     $('.discount-info-popup').removeClass('visible');

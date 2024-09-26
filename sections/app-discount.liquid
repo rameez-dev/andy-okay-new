@@ -1,7 +1,5 @@
 <!-- Link the custom CSS file -->
 <link rel="stylesheet" href="{{ 'custom-progress-bar.css' | asset_url }}">
-<!-- Link the custom JS file -->
-<script src="{{ 'custom-progress-bar.js' | asset_url }}" defer></script>
 
 {% comment %} pop-up modal {% endcomment %}
 <aside
@@ -10,7 +8,9 @@
   data-section-type="newsletter-popup"
   aria-hidden="true">
   <div class="popup_header">
-    <span class="popup_title">Discount</span>
+    {%- if section.settings.title != blank -%}
+      <span class="popup_title">{{ section.settings.title }}</span>
+    {%- endif -%}
     <button
       class="popup_close"
       data-action="close-popup"
@@ -41,7 +41,7 @@
     <p id="progress-description-text"></p>
     <img
       id="ask-about-discount"
-      class="question-icon"
+      class="question-icon hide"
       src="{{ 'question-mark.svg' |  asset_url }}"
       alt="i" />
   </div>
@@ -68,6 +68,11 @@
     "name": "App Discount",
     "settings": [
       {
+        "type": "collection",
+        "id": "discounted_collection",
+        "label": "Select Discounted Collection"
+      },
+      {
         "type": "image_picker",
         "id": "image",
         "label": "Icon"
@@ -76,15 +81,14 @@
         "type": "text",
         "id": "title",
         "label": "Heading",
-        "default": "Popup"
+        "default": "Discount App Popup"
       },
       {
         "type": "richtext",
         "id": "content",
         "label": "Text",
-        "default": "<p>You ccan use this popup to display some useful information to your customers.</p>"
-      },
-      {
+        "default": "<p><em>It’s not a sale. <\/em>It’s a commitment to do more good.<em> <\/em> <br\/><br\/>We establish close collaborations with charitable organisations all across the world, to find strategic ways to help them spread awareness with the power of art.<br\/><br\/>With the organisation, we then reach out to the world’s most talented artists to figure out a way to make a limited edition art drop at a never-before-seen price, leaving room for people to make a donation with their purchase. <br\/><br\/>Our business model is kind of crazy (and a lot of work), but a huge win-win for all.<br\/><br\/>Especially for our planet.<br\/><br\/>By purchasing an artwork for a cause, you become a part of our good community. A 100% free membership where the only thing YOU have to do, is keep spreading the word of the true value behind your art. <br\/><br\/>We truly believe it's the best art deal in the world. <br\/><br\/>Hopefully, you feel the same.<br\/><br\/>Want to know more? <a href=\"https:\/\/andyokay.com\/pages\/about-us\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/about-us\">Click here<\/a> <\/p>"
+      }, {
         "id": "link_text",
         "type": "text",
         "label": "Link Text"
@@ -96,3 +100,16 @@
     ]
   }
 {% endschema %}
+
+{% if section.settings.discounted_collection != blank %}
+  <script>
+    console.log('collection not blank ########')
+  </script>
+  {% assign collection_handle = section.settings.discounted_collection %}
+  <script>
+    window.discountedCollectionHandle = "{{ collection_handle }}";
+  </script>
+{% endif %}
+
+<!-- Link the custom JS file -->
+<script src="{{ 'custom-progress-bar.js' | asset_url }}" defer></script>

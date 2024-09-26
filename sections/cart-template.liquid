@@ -1,16 +1,18 @@
+<!-- Link the custom CSS file -->
+<link rel="stylesheet" href="{{ 'custom-progress-bar-for-cart.css' | asset_url }}">
 <style>
-  .Button--primary { 
+  .Button--primary {
     border-color: #163bbc !important;
   }
-  .Button--primary:before { 
+  .Button--primary:before {
     background-color: #163bbc !important;
   }
   .thinner {
     padding: 10px 28px !important;
-    margin: 10px 0px !important;
+    margin: 10px 0 !important;
   }
-  .leftMargin{
-     margin-left: 10px !important;
+  .leftMargin {
+    margin-left: 10px !important;
   }
   .cont-shopping {
     text-decoration: underline;
@@ -48,7 +50,7 @@
   }
 </style>
 <style>
-  .dispIn{
+  .dispIn {
     display: inline-block;
   }
   @media screen and (max-width: 640px) {
@@ -59,30 +61,30 @@
       text-align: left;
       line-height: 1.5;
     }
-    .desk-reviewer{
+    .desk-reviewer {
       display: none;
     }
-    .mob-reviewer{
+    .mob-reviewer {
       display: inline-block;
       padding: 40px 20px;
-    } 
+    }
   }
-  @media screen and (min-width: 641px){
-    .desk-reviewer{
+  @media screen and (min-width: 641px) {
+    .desk-reviewer {
       display: block;
     }
-    .mob-reviewer{
+    .mob-reviewer {
       display: none;
-    } 
+    }
   }
 </style>
 <script>
   // function to add protection to cart
   const addProtection = async (variantId, quantity = 1, reload = false) => {
     const id = parseInt(variantId);
-
+  
     let cartData;
-
+  
     var request = {
       method: 'POST',
       headers: {
@@ -93,27 +95,27 @@
         {id: id, quantity: quantity}
       )
     };
-
+  
     cartData = await fetch(window.Shopify.routes.root + 'cart/add.js', request);
     let cartJson = await cartData.json();
     if (cartJson.id) {
       console.log('%c Protection added successfully', 'color: white; background-color: green');
-
-// updateLiveCart(null);
+  
+  // updateLiveCart(null);
     }console.dir(cartJson);
-
-// localStorage.setItem('nvd_opted_out', false);
-// localStorage.setItem('cart_protection', variantId);
-// checkWidgetView();
-// if (reload == true) {
-// location.reload();
-// } else {
-// return cartJson;
-// }
+  
+  // localStorage.setItem('nvd_opted_out', false);
+  // localStorage.setItem('cart_protection', variantId);
+  // checkWidgetView();
+  // if (reload == true) {
+  // location.reload();
+  // } else {
+  // return cartJson;
+  // }
   };
-
-
-// function to remove protection
+  
+  
+  // function to remove protection
   const removeProtection = async (variantId, reload = false) => {
     var request = {
       method: 'POST',
@@ -125,24 +127,24 @@
         {id: String(variantId), quantity: 0}
       )
     };
-
+  
     cartData = await fetch(window.Shopify.routes.root + 'cart/change.js', request);
     let cartJson = await cartData.json();
-
-// localStorage.setItem('nvd_opted_out', true);
-// localStorage.removeItem('cart_protection');
+  
+  // localStorage.setItem('nvd_opted_out', true);
+  // localStorage.removeItem('cart_protection');
     if (cartJson.token) {
       console.log('%c Protection removed successfully', 'color: white; background-color: red');
-
-// updateLiveCart(cartJson);
+  
+  // updateLiveCart(cartJson);
     }
-
-// checkWidgetView();
-// if (reload == true) {
-// location.reload();
-// } else {
-// return cartJson;
-// }
+  
+  // checkWidgetView();
+  // if (reload == true) {
+  // location.reload();
+  // } else {
+  // return cartJson;
+  // }
   };
 </script>
 
@@ -159,12 +161,15 @@
 {% assign protection_product = all_products['navidium-shipping-protection'] %}
 {% assign protection_product_is_selected = false %}
 {%- for item in cart.items -%}
-  {% if item.id ==  protection_product.variants[0].id %}
+  {% if item.id == protection_product.variants[0].id %}
     {% assign protection_product_is_selected = true %}
   {% endif %}
 {%- endfor -%}
 
-<section data-section-id="{{ section.id }}" data-section-type="cart" data-section-settings='{{ section_settings }}'>
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="cart"
+  data-section-settings='{{ section_settings }}'>
   {%- if cart.item_count == 0 or cart.item_count == 1 and protection_product_is_selected == true -%}
     {% if protection_product_is_selected == true %}
       <script>
@@ -174,8 +179,7 @@
     {% endif %}
     <div class="EmptyState">
       <div class="Container">
-        <h1 class="EmptyState__Title Heading u-h5">{{ 'cart.general.empty' | t }}
-        </h1>
+        <h1 class="EmptyState__Title Heading u-h5">{{ 'cart.general.empty' | t }}</h1>
 
         {%- if settings.cart_show_free_shipping_threshold -%}
           {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
@@ -187,12 +191,10 @@
           {%- capture save_more -%}
             <span data-money-convertible>$5.99</span>
           {%- endcapture -%}
-          <p class="Text--subdued ">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount, save_more:save_more -}}
-          </p>
+          <p class="Text--subdued ">{{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount, save_more: save_more -}}</p>
         {%- endif -%}
 
-        <a href="/collections/all-art" class="EmptyState__Action Button Button--primary">{{ 'cart.general.empty_button' | t }}
-        </a>
+        <a href="/collections/all-art" class="EmptyState__Action Button Button--primary">{{ 'cart.general.empty_button' | t }}</a>
       </div>
     </div>
   {%- else -%}
@@ -211,8 +213,7 @@
     <div class="Container">
       <header class="PageHeader">
         <div class="SectionHeader SectionHeader--center">
-          <h1 class="SectionHeader__Heading Heading u-h1 letter_spacing">{{ 'cart.general.title' | t }}
-          </h1>
+          <h1 class="SectionHeader__Heading Heading u-h1 letter_spacing">{{ 'cart.general.title' | t }}</h1>
           <p id="cart_urgency_text" class="in-caslon">Due to high demand, your art will only be held for 24h before we have to make it available again
           </p>
           {%- if settings.cart_show_free_shipping_threshold -%}
@@ -229,33 +230,107 @@
                 {%- capture save_more -%}
                   <span data-money-convertible>$5.99</span>
                 {%- endcapture -%}
-                {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount, save_more:save_more -}}
+                {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount, save_more: save_more -}}
               {%- endif -%}
             </p>
+
+            {%- if template == 'cart' -%}
+              {% comment %} pop-up modal {% endcomment %}
+              <aside
+                class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
+                data-section-id="{{ section.id }}"
+                data-section-type="newsletter-popup"
+                aria-hidden="true">
+                <div class="popup_header">
+                  {%- if section.settings.title != blank -%}
+                    <span class="popup_title">{{ section.settings.title }}</span>
+                  {%- endif -%}
+                  <button
+                    class="popup_close"
+                    data-action="close-popup"
+                    aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
+                </div>
+
+                <div class="popup_content">
+                  {%- if section.settings.pop-image != blank -%}
+                    <div>
+                      <img src="{{ section.settings.pop-image | img_url: 'master' }}" alt="Size Chart">
+                    </div>
+                  {%- endif -%}
+
+                  {%- if section.settings.content != blank -%}
+                    <div class="NewsletterPopup__Content">
+                      <p>{{ section.settings.content }}</p>
+                      {%- if section.settings.link_text != blank -%}
+                        <a href="{{ section.settings.link }}" class="pop__content--link">{{ section.settings.link_text | escape }}</a>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </aside>
+              {% comment %} main progress bar {% endcomment %}
+              <div class="progress-bar-main">
+                <div class="progress-description">
+                  <p id="progress-description-text"></p>
+                  <img
+                    id="ask-about-discount"
+                    class="question-icon hide"
+                    src="{{ 'question-mark.svg' |  asset_url }}"
+                    alt="i" />
+                </div>
+                <div id="progress-container" class="progress-container hide">
+                  <div class="line">
+                    <div class="progress"></div>
+                  </div>
+                  <div class="circle blue">
+                    <span class="circle_inner_text">&#10003;</span>
+                  </div>
+                  <div class="circle">
+                    <span class="circle_inner_text">&#10003;</span>
+                  </div>
+                  <div class="circle special">+1</div>
+                  <div class="circle">
+                    <span class="circle_inner_text">&#10003;</span>
+                  </div>
+                  <div class="circle special">+2</div>
+                </div>
+              </div>
+            {%- endif -%}
+
           {%- endif -%}
         </div>
       </header>
 
       <div class="PageContent">
-        <form action="/cart" method="POST" class="Cart Cart--expanded" novalidate>
-          <input type="hidden" name="attributes[collection_mobile_items_per_row]" value="">
-          <input type="hidden" name="attributes[collection_desktop_items_per_row]" value="">
+        <form
+          action="/cart"
+          method="POST"
+          class="Cart Cart--expanded"
+          novalidate>
+          <input
+            type="hidden"
+            name="attributes[collection_mobile_items_per_row]"
+            value="">
+          <input
+            type="hidden"
+            name="attributes[collection_desktop_items_per_row]"
+            value="">
           {% assign cm_at_final_discount = 0 %}
-          {% include 'cart-items', protection_product_id : protection_product.variants[0].id %}
+          {% include 'cart-items'
+            , protection_product_id: protection_product.variants[0].id %}
 
           <div class="shipping-taxes-notice-container">
             {%- capture shipping_and_taxes_notice -%}
               {{ 'cart.general.shipping_and_taxes_notice' | t }}
             {%- endcapture -%}
             {%- if shipping_and_taxes_notice != blank -%}
-              <p class="Cart__Taxes Text--subdued in-caslon">{{ shipping_and_taxes_notice }}
-              </p>
+              <p class="Cart__Taxes Text--subdued in-caslon">{{ shipping_and_taxes_notice }}</p>
             {%- endif -%}
           </div>
 
-          {% comment %}
-            Extra Protection Module
-          {% endcomment %}
+          {% comment %} 
+                                                                                                                                    Extra Protection Module 
+                                                                                                              {% endcomment %}
           <style>
             .nvd-mini {
               text-align: left;
@@ -494,7 +569,7 @@
               font-size: 14px;
               font-weight: 300;
             }
-            .img .navidium-shipping-icon{
+            .img .navidium-shipping-icon {
               height: 30px;
             }
           </style>
@@ -502,27 +577,38 @@
           <div class="nvd-mini-mob">
             <div class="nvd-cont-mob">
               <div class="nvd-inline nvd-icon-style">
-                <img class="navidium-shipping-icon" width="auto" height="auto" src="//cdn.shopify.com/s/files/1/0082/5619/2602/files/shippingprotection_1.png" alt="Navidium icon">
+                <img
+                  class="navidium-shipping-icon"
+                  width="auto"
+                  height="auto"
+                  src="//cdn.shopify.com/s/files/1/0082/5619/2602/files/shippingprotection_1.png"
+                  alt="Navidium icon">
               </div>
 
               <div class="nvd-inline">
                 <div class="nvd-mob-heading">Extra Protection</div>
                 <div class="shipping-protection-price">
-                  <span class="yes-price">{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                  </span>
-                  <span class="no-price" style="display: none;">{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                  </span>
+                  <span class="yes-price">{{ protection_product.variants[0].price | money_without_trailing_zeros }}</span>
+                  <span class="no-price" style="display: none;">{{ protection_product.variants[0].price | money_without_trailing_zeros }}</span>
                 </div>
               </div>
 
-              <input type="checkbox" class="nvd-check" id="shippingProtectionCheckBox" onclick="getShippingProtection('{{protection_product.variants[0].id}}','{{protection_product.variants[0].price}}')" data-protected-variant="{{protection_product.variants[0].id}}" {% if protection_product_is_selected == true %} checked {% endif %}>
+              <input
+                type="checkbox"
+                class="nvd-check"
+                id="shippingProtectionCheckBox"
+                onclick="getShippingProtection('{{protection_product.variants[0].id}}','{{protection_product.variants[0].price}}')"
+                data-protected-variant="{{protection_product.variants[0].id}}"
+                {% if protection_product_is_selected == true %}
+                checked
+                {% endif %}>
 
               <div class="in-caslon nvd-new-desc">
                 Covers loss & damages on your whole order for 12 months.
               </div>
             </div>
           </div>
-          
+
           <div class="nvd-mini">
             <div class="appearance-right-previw" id="nvd-widget-cart">
               <div class="d-flexCstm-span">
@@ -530,53 +616,67 @@
                   <div class="flex-shrink-0Cstm">
                     <div class="form-checkCstm form-switchCstm">
                       <div class="img">
-                        <img class="navidium-shipping-icon" width="auto" height="auto" src="//cdn.shopify.com/s/files/1/0082/5619/2602/files/shippingprotection_1.png" alt="Navidium icon">
+                        <img
+                          class="navidium-shipping-icon"
+                          width="auto"
+                          height="auto"
+                          src="//cdn.shopify.com/s/files/1/0082/5619/2602/files/shippingprotection_1.png"
+                          alt="Navidium icon">
                       </div>
                     </div>
                   </div>
                   <div class="flex-grow-1Cstm ms-3Cstm">
                     <div class="text-with-question-mark-icon">
                       <h4 class="nvd-mob-heading">Extra Protection</h4>
-                      {%- comment -%} <span>
-                        <i id="protection-price-detail" class="protection-price-detail">?</i>
-                      </span> {%- endcomment -%}
+                    {%- comment -%} <span>
+                                                                                                                                                                                                                                                                          <i id="protection-price-detail" class="protection-price-detail">?</i>
+                                                                                                                                                                                                                                                  </span> {%- endcomment -%}
                     </div>
                     {%- comment -%} <p>From Damage, Loss &amp; Theft
-                    </p> {%- endcomment -%}
+                                                                                                                                                                                                                                                </p> {%- endcomment -%}
                     <p class="nvd-selected">Covers loss & damages on your whole order for 12 months.</p>
-                    {%- comment -%} <div class="shipping-protection-price">
-                      <span class="yes-price" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                      </span>
-                      <span class="no-price" style="display: none;" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                      </span>
-                    </div> {%- endcomment -%}
+                  {%- comment -%} <div class="shipping-protection-price">
+                                                                                                                                                                                                                                                  <span class="yes-price" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
+                                                                                                                                                                                                                                                  </span>
+                                                                                                                                                                                                                                                  <span class="no-price" style="display: none;" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
+                                                                                                                                                                                                                                                  </span>
+                                                                                                                                                                                                                          </div> {%- endcomment -%}
                   </div>
                 </div>
               </div>
               <div style="text-align: center;">
-                <input type="checkbox" class="nvd-check-desk" id="shippingProtectionCheckBox2" onclick="getShippingProtection2('{{protection_product.variants[0].id}}','{{protection_product.variants[0].price}}')" data-protected-variant="{{protection_product.variants[0].id}}" {% if protection_product_is_selected == true %} checked {% endif %}>
+                <input
+                  type="checkbox"
+                  class="nvd-check-desk"
+                  id="shippingProtectionCheckBox2"
+                  onclick="getShippingProtection2('{{protection_product.variants[0].id}}','{{protection_product.variants[0].price}}')"
+                  data-protected-variant="{{protection_product.variants[0].id}}"
+                  {% if protection_product_is_selected == true %}
+                  checked
+                  {% endif %}>
                 <br>
                 <span class="CartItem__Remove Link Link--underline Link--underlineShort">I want this</span>
               </div>
               <div class="shipping-protection-price">
-                <span class="yes-price">{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                </span>
-                <span class="no-price" style="display: none;">{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                </span>
+                <span class="yes-price">{{ protection_product.variants[0].price | money_without_trailing_zeros }}</span>
+                <span class="no-price" style="display: none;">{{ protection_product.variants[0].price | money_without_trailing_zeros }}</span>
               </div>
             </div>
           </div>
-          {%- comment -%}
-            Extra Protection Module
-          {%- endcomment -%}
+          {%- comment -%} 
+                                                                                                                                    Extra Protection Module 
+                                                                                                              {%- endcomment -%}
 
           <footer class="Cart__Footer">
             {%- if settings.cart_enable_notes -%}
               <div class="Cart__NoteContainer">
-                <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}
-                </span>
-                <textarea class="Cart__Note Form__Textarea" name="note" id="cart-note" rows="4" placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}
-                </textarea>
+                <span class="Cart__NoteButton">{{ 'cart.general.add_note' | t }}</span>
+                <textarea
+                  class="Cart__Note Form__Textarea"
+                  name="note"
+                  id="cart-note"
+                  rows="4"
+                  placeholder="{{ 'cart.general.note_placeholder' | t }}">{{ cart.note }}</textarea>
               </div>
             {%- endif -%}
 
@@ -585,85 +685,90 @@
                 {%- for discount_application in cart.cart_level_discount_applications -%}
                   <p class="Cart__Discount Heading u-h6">{{ 'cart.general.discount' | t }}
                     ({{ discount_application.title }}
-                    ): -<span>{{ discount_application.total_allocated_amount | money_without_trailing_zeros }}
-                    </span>
+                    ): -<span>{{ discount_application.total_allocated_amount | money_without_trailing_zeros }}</span>
                   </p>
                 {%- endfor -%}
-              {%- endif -%}
-                            
+            {%- endif -%}
+
               {% comment %} {% assign cm_at_price_total = 0 %}
-              {% assign var_total_saving = 0 %}
-              {% for item in cart.items %}
-                {% if item.variant.compare_at_price > item.variant.price %}
-                  {% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
-                  {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
-                {% endif %}
-              {% endfor %} {% endcomment %}
+                                                                                                                                                                                              {% assign var_total_saving = 0 %}
+                                                                                                                                                                                              {% for item in cart.items %}
+                                                                                                                                                                                                {% if item.variant.compare_at_price > item.variant.price %}
+                                                                                                                                                                                                  {% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
+                                                                                                                                                                                                  {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
+                                                                                                                                                                                                {% endif %}
+                                                                                                                                                                        {% endfor %} {% endcomment %}
               {% assign var_total_saving = 0 %}
               {% for item in cart.items %}
                 {% if item.variant.compare_at_price > item.variant.price %}
                   {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
                   {% assign var_total_saving = saving | plus: var_total_saving %}
-                {% endif %} 
+                {% endif %}
               {% endfor %}
               {%- if var_total_saving > 0 -%}
                 <p class="Cart__Discount Heading u-h6 cart-tag-design">
-                  <img class="reviews_verified_icon" src="{{ 'cart-tag.png' | asset_url }}" >
+                  <img class="reviews_verified_icon" src="{{ 'cart-tag.png' | asset_url }}">
                   You save:
-                  <span style="margin-left: 5px;">{{var_total_saving | money_without_trailing_zeros}}
-                  </span>
+                  <span style="margin-left: 5px;">{{ var_total_saving | money_without_trailing_zeros }}</span>
                 </p>
- 
+
               {%- endif -%}
               <span id="money-with-protection" style="display: none;">
                 <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #2e34b9;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}
-                  </span>
+                  <span style="color: #2e34b9;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}</span>
                 </p>
               </span>
               <span id="money-without-protection">
                 <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}
-                  </span>
+                  <span style="color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}</span>
                 </p>
               </span>
               {% comment %}  as checkout currency will be same now
-              <div class="currency-exchange-notice-container">
-                <p class="currency-exchange-notice-text">
-                  All orders are processed in USD. While the content of your order is displayed in
-                  <span id="selected_currency"></span>, you will checkout using USD at the most current exchange rate.
-                </p>
-              </div> {% endcomment %}
+                                                                                                                                                                                              <div class="currency-exchange-notice-container">
+                                                                                                                                                                                                <p class="currency-exchange-notice-text">
+                                                                                                                                                                                                  All orders are processed in USD. While the content of your order is displayed in
+                                                                                                                                                                                                  <span id="selected_currency"></span>, you will checkout using USD at the most current exchange rate.
+                                                                                                                                                                                                </p>
+                                                                                                                                                                        </div> {% endcomment %}
               <div class="desktop-b-mobile-h">
                 <a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
-                <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary thinner leftMargin Button--full">{{ 'cart.general.checkout' | t }}
-                </button>
+                <button
+                  type="submit"
+                  name="checkout"
+                  class="Cart__Checkout Button Button--primary thinner leftMargin Button--full">{{ 'cart.general.checkout' | t }}</button>
                 <br><br>
 
               </div>
 
               <div class="mobile-b-desktop-h align-center">
-                <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary thinner Button--full">{{ 'cart.general.checkout' | t }}
-                </button>
+                <button
+                  type="submit"
+                  name="checkout"
+                  class="Cart__Checkout Button Button--primary thinner Button--full">{{ 'cart.general.checkout' | t }}</button>
                 <a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
                 <br><br>
               </div>
               {%- if section.settings.show_cart_reviews == true -%}
                 <div class="cart-review-container">
-                  <h2 class="rating-heading align-center">{{section.settings.review_numbers}}
+                  <h2 class="rating-heading align-center">{{ section.settings.review_numbers }}
                     REVIEWS</h2>
                   <div class="headQuote-content">
                     <div class="heading__stars review_stars align-center">
-                      <img class="trustscore-img" src="{{ 'singlestar.png' | asset_img_url: '20x20' }}" alt="">
+                      <img
+                        class="trustscore-img"
+                        src="{{ 'singlestar.png' | asset_img_url: '20x20' }}"
+                        alt="">
                       <p class="trustscore-style">Trustscore</p>
-                      <img class="trustscore-img" src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
+                      <img
+                        class="trustscore-img"
+                        src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}"
+                        alt="">
                     </div>
                   </div>
                   <div class="cart-review">
                     <div class="heading-container desk-reviewer">
-                      <h3>{{section.settings.reviewer_name}}
-                      </h3>
-                      <p class="review-verified"><img class="reviews_verified_icon" src="{{ 'verified.png' | asset_url }}"/>Verified Buyer</p>
+                      <h3>{{ section.settings.reviewer_name }}</h3>
+                      <p class="review-verified"><img class="reviews_verified_icon" src="{{ 'verified.png' | asset_url }}" />Verified Buyer</p>
                     </div>
                     <div class="centerAlign">
                       <div class="headQuote-content" class="centerAlign">
@@ -675,19 +780,20 @@
                           <i data-panel="dist" class="fa star fa-star"></i>
                         </div>
                       </div>
-                      <h2 class="review-title">{{section.settings.review_title}}
-                      </h2>
+                      <h2 class="review-title">{{ section.settings.review_title }}</h2>
                       <p class="review-detail in-caslon review-text-new">
-                        {{section.settings.review_text}}
+                        {{ section.settings.review_text }}
                       </p>
                     </div>
                     <div class="centerAlign">
                       <div class="dispIn">
-                        <img src="{{section.settings.image | img_url: 'master' }}" alt="" class="dispIn">
+                        <img
+                          src="{{section.settings.image | img_url: 'master' }}"
+                          alt=""
+                          class="dispIn">
                         <div class="heading-container mob-reviewer">
-                          <h3>{{section.settings.reviewer_name}}
-                          </h3>
-                          <p class="review-verified"><img class="reviews_verified_icon" src="{{ 'verified.png' | asset_url }}"/>Verified Buyer</p>
+                          <h3>{{ section.settings.reviewer_name }}</h3>
+                          <p class="review-verified"><img class="reviews_verified_icon" src="{{ 'verified.png' | asset_url }}" />Verified Buyer</p>
                         </div>
                       </div>
                     </div>
@@ -701,16 +807,17 @@
         {%- if section.settings.show_shipping_estimator -%}
           <div class="Section Section--spacingExtraLarge">
             <div class="Panel">
-              <h2 class="Panel__Title Heading u-h2">{{ 'cart.shipping_estimator.title' | t }}
-              </h2>
+              <h2 class="Panel__Title Heading u-h2">{{ 'cart.shipping_estimator.title' | t }}</h2>
 
               <div class="Panel__Content">
                 <div class="ShippingEstimator">
                   <div class="ShippingEstimator__Form">
                     <div class="ShippingEstimator__Country Form__Select Select Select--primary">
                       {%- include 'icon' with 'select-arrow' -%}
-                      <select name="country" title="{{ 'cart.shipping_estimator.country' | t }}" data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">{{ all_country_option_tags }}
-                      </select>
+                      <select
+                        name="country"
+                        title="{{ 'cart.shipping_estimator.country' | t }}"
+                        data-default="{% if customer %}{{ customer.default_address.country }}{% elsif section.settings.shipping_estimator_default_country != '' %}{{ section.settings.shipping_estimator_default_country }}{% endif %}">{{ all_country_option_tags }}</select>
                     </div>
 
                     <div class="ShippingEstimator__Province Form__Select Select Select--primary" style="display: none">
@@ -718,10 +825,13 @@
                       <select name="province" title="{{ 'cart.shipping_estimator.province' | t }}"></select>
                     </div>
 
-                    <input type="text" class="ShippingEstimator__Zip Form__Input" name="zip" placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
+                    <input
+                      type="text"
+                      class="ShippingEstimator__Zip Form__Input"
+                      name="zip"
+                      placeholder="{{ 'cart.shipping_estimator.zip_code' | t }}">
 
-                    <button type="button" class="ShippingEstimator__Submit Button Button--primary">{{ 'cart.shipping_estimator.estimate' | t }}
-                    </button>
+                    <button type="button" class="ShippingEstimator__Submit Button Button--primary">{{ 'cart.shipping_estimator.estimate' | t }}</button>
                   </div>
 
                   <div class="ShippingEstimator__Error Alert Alert--error" style="display: none"></div>
@@ -783,9 +893,35 @@
         "label": "Review Text",
         "default": "Review Text"
       }, {
-        "id": "image",
+        "id": "pop-image",
         "type": "image_picker",
         "label": "Image"
+      }, {
+        "type": "collection",
+        "id": "discounted_collection",
+        "label": "Select Discounted Collection"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Icon"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Discount App Popup"
+      }, {
+        "type": "richtext",
+        "id": "content",
+        "label": "Text",
+        "default": "<p><em>It’s not a sale. <\/em>It’s a commitment to do more good.<em> <\/em> <br\/><br\/>We establish close collaborations with charitable organisations all across the world, to find strategic ways to help them spread awareness with the power of art.<br\/><br\/>With the organisation, we then reach out to the world’s most talented artists to figure out a way to make a limited edition art drop at a never-before-seen price, leaving room for people to make a donation with their purchase. <br\/><br\/>Our business model is kind of crazy (and a lot of work), but a huge win-win for all.<br\/><br\/>Especially for our planet.<br\/><br\/>By purchasing an artwork for a cause, you become a part of our good community. A 100% free membership where the only thing YOU have to do, is keep spreading the word of the true value behind your art. <br\/><br\/>We truly believe it's the best art deal in the world. <br\/><br\/>Hopefully, you feel the same.<br\/><br\/>Want to know more? <a href=\"https:\/\/andyokay.com\/pages\/about-us\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/about-us\">Click here<\/a> <\/p>"
+      }, {
+        "id": "link_text",
+        "type": "text",
+        "label": "Link Text"
+      }, {
+        "id": "link",
+        "type": "url",
+        "label": "URL/Link"
       }
     ]
   }
@@ -809,13 +945,13 @@
     }
     $("#selected_currency").text(selected_currency);
   });*/
-
+  
   $('#protection-price-detail').click(function() {
     $('.protection-price-detail').addClass('visible');
     document.getElementById("cart-popup-overlay").style.display = "block";
   });
-
-
+  
+  
   const getShippingProtection = async (variantId, price) => {
     let checked = document.querySelector('#shippingProtectionCheckBox').checked;
     if (!checked) {
@@ -862,3 +998,16 @@
     }
   };
 </script>
+
+{% if section.settings.discounted_collection != blank %}
+  <script>
+    console.log('collection not blank ########')
+  </script>
+  {% assign collection_handle = section.settings.discounted_collection %}
+  <script>
+    window.discountedCollectionHandle = "{{ collection_handle }}";
+  </script>
+{% endif %}
+
+<!-- Link the custom JS file -->
+<script src="{{ 'custom-progress-bar.js' | asset_url }}" defer></script>

@@ -2,10 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f5ede4;
+    background-color: #f2efeb;
     flex-direction: column;
     height: 55px;
     row-gap: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5px;
+    max-width: 530px;
+
     /* padding: 20px 0; */
   }
   .progress-description {
