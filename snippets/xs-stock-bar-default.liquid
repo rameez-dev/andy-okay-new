@@ -1,11 +1,11 @@
 <link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
-<img class="limited-release-img-pdp limited-separate-block" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">
-    <div style="display: none;" class="xs-stock-bar" data-xs-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}'>
+{% comment %}<img class="limited-release-img-pdp limited-separate-block" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">{% endcomment %}
+<div style="display: none;" class="xs-stock-bar" data-xs-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}'>
   <div class="xs-stock-info"> 
-    <img class="limited-release-img-pdp" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">
-    {% comment %} <div class="xs-stock-label">Limited Release</div> {% endcomment %}
-    {% comment %} 
-    <div class="xs-stock-label--silver"></div>
+    <div class="xs-stock-label">Limited Release. Edition of 150</div>
+   {% comment %} <img class="limited-release-img-pdp" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">
+            <div class="xs-stock-label">Limited Release</div>
+    <div class="xs-stock-label--silver"></div> 
   <div class="xs-stock-silver_text"> ATELIER EXCLUSIVE </div>
     </div>
     {% endcomment %}
@@ -51,7 +51,7 @@
 
 
 <script>
-
+           
   $(function() {
     const productSelect = $("select[name=id]");
     const variantsInfo = $("[data-xs-variants]");
@@ -81,6 +81,7 @@
           $("label[for='option-product-template-0-1']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-2']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
+          $ ('.xs-stock-label').text('Limited Release. Edition of 150');
           //commented some code as frames are not active, GIANT size need fix when enable this code back for frames
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             $("#reset-frame-money").text(black_variants[0].price);
@@ -102,7 +103,7 @@
           $("label[for='option-product-template-0-0']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-2']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
-          
+          $ ('.xs-stock-label').text('Limited Release. Edition of 250');
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             $("#reset-frame-money").text(black_variants[1].price);
             $("#reset-compare-price").text(black_variants[1].compare_at_price);
@@ -122,7 +123,7 @@
           $("label[for='option-product-template-0-0']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-1']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-3']").removeClass('currently-selected-size-display');
-
+          $ ('.xs-stock-label').text('Limited Release. Edition of 100');
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             $("#reset-frame-money").text(black_variants[2].price);
             $("#reset-compare-price").text(black_variants[2].compare_at_price);
@@ -142,7 +143,7 @@
           $("label[for='option-product-template-0-0']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-1']").removeClass('currently-selected-size-display');
           $("label[for='option-product-template-0-2']").removeClass('currently-selected-size-display');
-
+          $ ('.xs-stock-label').text('Limited Release. Edition of 75');
           if (! variant.option2 && $('input[name="frame"]:checked').val()) {
             $("#noframe").prop('checked', true);
             //$('input[name="frame"]:checked').val(black_variants[2].id);
