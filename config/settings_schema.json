@@ -586,5 +586,29 @@
         "info": "32 x 32px .png recommended"
       }
     ]
+  },
+  {
+    "name": "Discount App Settings",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "discounted_collection",
+        "label": "Select Discounted Collection"
+      },
+      {
+        "type": "text",
+        "id": "discount_popup_title",
+        "label": "Discount PopUp Title",
+        "default": "Discount App Popupppp"
+      },
+      {
+        "type": "richtext",
+        "id": "discount_popup_content",
+        "label": "Discount PopUp Content",
+        "default": "<p><em>It’s not a saleeeeee. <\/em>It’s a commitment to do more good.<em> <\/em> <br\/><br\/>We establish close collaborations with charitable organisations all across the world, to find strategic ways to help them spread awareness with the power of art.<br\/><br\/>With the organisation, we then reach out to the world’s most talented artists to figure out a way to make a limited edition art drop at a never-before-seen price, leaving room for people to make a donation with their purchase. <br\/><br\/>Our business model is kind of crazy (and a lot of work), but a huge win-win for all.<br\/><br\/>Especially for our planet.<br\/><br\/>By purchasing an artwork for a cause, you become a part of our good community. A 100% free membership where the only thing YOU have to do, is keep spreading the word of the true value behind your art. <br\/><br\/>We truly believe it's the best art deal in the world. <br\/><br\/>Hopefully, you feel the same.<br\/><br\/>Want to know more? <a href=\"https:\/\/andyokay.com\/pages\/about-us\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/about-us\">Click here<\/a> <\/p>"
+      }
+      
+    ]
   }
+
 ]

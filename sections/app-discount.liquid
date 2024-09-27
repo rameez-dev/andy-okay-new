@@ -1,68 +1,70 @@
 <!-- Link the custom CSS file -->
 <link rel="stylesheet" href="{{ 'custom-progress-bar.css' | asset_url }}">
 
-{% comment %} pop-up modal {% endcomment %}
-<aside
-  class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
-  data-section-id="{{ section.id }}"
-  data-section-type="newsletter-popup"
-  aria-hidden="true">
-  <div class="popup_header">
-    {%- if section.settings.title != blank -%}
-      <span class="popup_title">{{ section.settings.title }}</span>
-    {%- endif -%}
-    <button
-      class="popup_close"
-      data-action="close-popup"
-      aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
-  </div>
-
-  <div class="popup_content">
-    {%- if section.settings.image != blank -%}
-      <div>
-        <img src="{{ section.settings.image | img_url: 'master' }}" alt="Size Chart">
+{% render 'app-discount-snippet' %}
+{% comment %} pop-up modal 
+    <aside
+      class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
+      data-section-id="{{ section.id }}"
+      data-section-type="newsletter-popup"
+      aria-hidden="true">
+      <div class="popup_header">
+        {%- if settings.discount_popup_title != blank -%}
+          <span class="popup_title">{{ settings.discount_popup_title }}</span>
+        {%- endif -%}
+        <button
+          class="popup_close"
+          data-action="close-popup"
+          aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
       </div>
-    {%- endif -%}
 
-    {%- if section.settings.content != blank -%}
-      <div class="NewsletterPopup__Content">
-        <p>{{ section.settings.content }}</p>
-        {%- if section.settings.link_text != blank -%}
-          <a href="{{ section.settings.link }}" class="pop__content--link">{{ section.settings.link_text | escape }}</a>
+      <div class="popup_content">
+        {%- if section.settings.image != blank -%}
+          <div>
+            <img src="{{ section.settings.image | img_url: 'master' }}" alt="Size Chart">
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.content != blank -%}
+          <div class="NewsletterPopup__Content">
+            <p>{{ section.settings.content }}</p>
+            {%- if section.settings.link_text != blank -%}
+              <a href="{{ section.settings.link }}" class="pop__content--link">{{ section.settings.link_text | escape }}</a>
+            {%- endif -%}
+          </div>
         {%- endif -%}
       </div>
-    {%- endif -%}
-  </div>
-</aside>
+    </aside>
+{% endcomment %}
 
-{% comment %} main progress bar {% endcomment %}
-<div class="progress-bar-main">
-  <div class="progress-description">
-    <p id="progress-description-text"></p>
-    <img
-      id="ask-about-discount"
-      class="question-icon hide"
-      src="{{ 'question-mark.svg' |  asset_url }}"
-      alt="i" />
-  </div>
-  <div id="progress-container" class="progress-container hide">
-    <div class="line">
-      <div class="progress"></div>
+{% comment %} main progress bar 
+    <div class="progress-bar-main">
+      <div class="progress-description">
+        <p id="progress-description-text"></p>
+        <img
+          id="ask-about-discount"
+          class="question-icon hide"
+          src="{{ 'question-mark.svg' |  asset_url }}"
+          alt="i" />
+      </div>
+      <div id="progress-container" class="progress-container hide">
+        <div class="line">
+          <div class="progress"></div>
+        </div>
+        <div class="circle blue">
+          <span class="circle_inner_text">&#10003;</span>
+        </div>
+        <div class="circle">
+          <span class="circle_inner_text">&#10003;</span>
+        </div>
+        <div class="circle special">+1</div>
+        <div class="circle">
+          <span class="circle_inner_text">&#10003;</span>
+        </div>
+        <div class="circle special">+2</div>
+      </div>
     </div>
-    <div class="circle blue">
-      <span class="circle_inner_text">&#10003;</span>
-    </div>
-    <div class="circle">
-      <span class="circle_inner_text">&#10003;</span>
-    </div>
-    <div class="circle special">+1</div>
-    <div class="circle">
-      <span class="circle_inner_text">&#10003;</span>
-    </div>
-    <div class="circle special">+2</div>
-  </div>
-</div>
-
+{% endcomment %}
 {% schema %}
   {
     "name": "App Discount",

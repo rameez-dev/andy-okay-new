@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (index < step) {
                 circle.classList.add('blue'); // Completed steps
                 if (circle.classList.contains('special')) {
-                    circle.innerHTML = '<span style="font-size: 15px;font-weight: 400">&#10003;</span>'; // Change +1 or +2 to tick
+                    circle.innerHTML = '<span style="font-size: 12px;font-weight: 400">&#10003;</span>'; // Change +1 or +2 to tick
                 }
             } else {
                 circle.classList.remove('blue'); // Uncompleted steps
