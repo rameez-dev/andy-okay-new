@@ -29,6 +29,7 @@
   .progress-description img {
     height: 12px;
     width: 12px;
+    margin-top: -5px;
     cursor: pointer;
   }
 

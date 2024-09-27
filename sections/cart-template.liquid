@@ -329,8 +329,8 @@
           </div>
 
           {% comment %} 
-                                                                                                                                    Extra Protection Module 
-                                                                                                              {% endcomment %}
+                                                                                                                                                Extra Protection Module 
+                                                                                                                        {% endcomment %}
           <style>
             .nvd-mini {
               text-align: left;
@@ -629,18 +629,18 @@
                     <div class="text-with-question-mark-icon">
                       <h4 class="nvd-mob-heading">Extra Protection</h4>
                     {%- comment -%} <span>
-                                                                                                                                                                                                                                                                          <i id="protection-price-detail" class="protection-price-detail">?</i>
-                                                                                                                                                                                                                                                  </span> {%- endcomment -%}
+                                                                                                                                                                                                                                                                                                <i id="protection-price-detail" class="protection-price-detail">?</i>
+                                                                                                                                                                                                                                                                      </span> {%- endcomment -%}
                     </div>
                     {%- comment -%} <p>From Damage, Loss &amp; Theft
-                                                                                                                                                                                                                                                </p> {%- endcomment -%}
+                                                                                                                                                                                                                                                                    </p> {%- endcomment -%}
                     <p class="nvd-selected">Covers loss & damages on your whole order for 12 months.</p>
                   {%- comment -%} <div class="shipping-protection-price">
-                                                                                                                                                                                                                                                  <span class="yes-price" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                                                                                                                                                                                                                                                  </span>
-                                                                                                                                                                                                                                                  <span class="no-price" style="display: none;" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                                                                                                                                                                                                                                                  </span>
-                                                                                                                                                                                                                          </div> {%- endcomment -%}
+                                                                                                                                                                                                                                                                      <span class="yes-price" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
+                                                                                                                                                                                                                                                                      </span>
+                                                                                                                                                                                                                                                                      <span class="no-price" style="display: none;" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
+                                                                                                                                                                                                                                                                      </span>
+                                                                                                                                                                                                                                            </div> {%- endcomment -%}
                   </div>
                 </div>
               </div>
@@ -664,8 +664,8 @@
             </div>
           </div>
           {%- comment -%} 
-                                                                                                                                    Extra Protection Module 
-                                                                                                              {%- endcomment -%}
+                                                                                                                                                Extra Protection Module 
+                                                                                                                        {%- endcomment -%}
 
           <footer class="Cart__Footer">
             {%- if settings.cart_enable_notes -%}
@@ -691,13 +691,13 @@
             {%- endif -%}
 
               {% comment %} {% assign cm_at_price_total = 0 %}
-                                                                                                                                                                                              {% assign var_total_saving = 0 %}
-                                                                                                                                                                                              {% for item in cart.items %}
-                                                                                                                                                                                                {% if item.variant.compare_at_price > item.variant.price %}
-                                                                                                                                                                                                  {% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
-                                                                                                                                                                                                  {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
-                                                                                                                                                                                                {% endif %}
-                                                                                                                                                                        {% endfor %} {% endcomment %}
+                                                                                                                                                                                                              {% assign var_total_saving = 0 %}
+                                                                                                                                                                                                              {% for item in cart.items %}
+                                                                                                                                                                                                                {% if item.variant.compare_at_price > item.variant.price %}
+                                                                                                                                                                                                                  {% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
+                                                                                                                                                                                                                  {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
+                                                                                                                                                                                                                {% endif %}
+                                                                                                                                                                                      {% endfor %} {% endcomment %}
               {% assign var_total_saving = 0 %}
               {% for item in cart.items %}
                 {% if item.variant.compare_at_price > item.variant.price %}
@@ -724,12 +724,12 @@
                 </p>
               </span>
               {% comment %}  as checkout currency will be same now
-                                                                                                                                                                                              <div class="currency-exchange-notice-container">
-                                                                                                                                                                                                <p class="currency-exchange-notice-text">
-                                                                                                                                                                                                  All orders are processed in USD. While the content of your order is displayed in
-                                                                                                                                                                                                  <span id="selected_currency"></span>, you will checkout using USD at the most current exchange rate.
-                                                                                                                                                                                                </p>
-                                                                                                                                                                        </div> {% endcomment %}
+                                                                                                                                                                                                              <div class="currency-exchange-notice-container">
+                                                                                                                                                                                                                <p class="currency-exchange-notice-text">
+                                                                                                                                                                                                                  All orders are processed in USD. While the content of your order is displayed in
+                                                                                                                                                                                                                  <span id="selected_currency"></span>, you will checkout using USD at the most current exchange rate.
+                                                                                                                                                                                                                </p>
+                                                                                                                                                                                      </div> {% endcomment %}
               <div class="desktop-b-mobile-h">
                 <a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
                 <button
@@ -1000,9 +1000,6 @@
 </script>
 
 {% if section.settings.discounted_collection != blank %}
-  <script>
-    console.log('collection not blank ########')
-  </script>
   {% assign collection_handle = section.settings.discounted_collection %}
   <script>
     window.discountedCollectionHandle = "{{ collection_handle }}";
