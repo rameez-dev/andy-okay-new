@@ -102,9 +102,6 @@
 {% endschema %}
 
 {% if section.settings.discounted_collection != blank %}
-  <script>
-    console.log('collection not blank ########')
-  </script>
   {% assign collection_handle = section.settings.discounted_collection %}
   <script>
     window.discountedCollectionHandle = "{{ collection_handle }}";

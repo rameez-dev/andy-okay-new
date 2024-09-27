@@ -114,11 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkCartForDiscounts() {
         // Replace 'discount-collection-handle' with your actual collection handle
-        const collectionHandle = 'surreal';
-        //const collectionHandle = window.discountedCollectionHandle;
+        const collectionHandle = window.discountedCollectionHandle;
 
         if (collectionHandle) {
-            console.log('collection handle is ....', collectionHandle);
             Promise.all([fetchDiscountCollection(collectionHandle), fetchCart()])
                 .then(([discountCollectionProductIds, cart]) => {
                     const eligibleCount = countEligibleProducts(cart, discountCollectionProductIds);
@@ -127,8 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     updateProgressBar(eligibleCount);
                 })
                 .catch(error => console.error('Error in checking cart for discounts:', error));
-        } else {
-            console.log("No collection handle provided.");
         }
     }
 
