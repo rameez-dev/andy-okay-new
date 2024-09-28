@@ -1,14 +1,4 @@
-.progress-bar-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5ede4;
-    flex-direction: column;
-    height: 55px;
-    row-gap: 2px;
-    /* padding: 20px 0; */
-  }
-  .progress-description {
+.progress-description {
     display: flex;
     align-items: center;
     justify-content: center;

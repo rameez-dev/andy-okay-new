@@ -395,16 +395,16 @@
       <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     {% endif %}
     {%- comment -%} this is for quickview
-                          {{ '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' | stylesheet_tag }}
-                          {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
-                          {{ 'quickview.scss.css' | asset_url | stylesheet_tag }}
-                          {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
-                          {{ 'quickview.js' | asset_url | script_tag }}
-                          <script>
-                           {% capture content %}{% include 'quickview' %}{% endcapture %}
-                           var content = {{ content | json }};
-                          </script>
-                  {%- endcomment -%}
+                                            {{ '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' | stylesheet_tag }}
+                                            {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
+                                            {{ 'quickview.scss.css' | asset_url | stylesheet_tag }}
+                                            {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' | script_tag }}
+                                            {{ 'quickview.js' | asset_url | script_tag }}
+                                            <script>
+                                             {% capture content %}{% include 'quickview' %}{% endcapture %}
+                                             var content = {{ content | json }};
+                                            </script>
+                              {%- endcomment -%}
 
 
     {% unless template == 'product' %}
@@ -443,7 +443,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     {%- comment -%}<a class="PageSkipLink u-visually-hidden" href="#main">{{ 'header.navigation.skip_to_content' | t }}</a>
-                    {%- endcomment -%}
+                                {%- endcomment -%}
     <span class="LoadingBar"></span>
     <div class="PageOverlay"></div>
     <div class="PageTransition"></div>
@@ -461,8 +461,8 @@
       {% unless template == 'page.giveaway' %}
         {% section 'announcement' %}
       {% endunless %}
-      {%- if template != 'cart' -%}
-        {% section 'app-discount' %}
+      {%- if settings.show_discount_app and template != 'cart' -%}
+        {% render 'app-discount-snippet' %}
       {%- endif -%}
       {% section 'header' %}
 

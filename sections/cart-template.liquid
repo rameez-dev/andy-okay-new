@@ -1,5 +1,3 @@
-<!-- Link the custom CSS file -->
-<link rel="stylesheet" href="{{ 'custom-progress-bar-for-cart.css' | asset_url }}">
 <style>
   .Button--primary {
     border-color: #163bbc !important;
@@ -233,68 +231,10 @@
                 {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount, save_more: save_more -}}
               {%- endif -%}
             </p>
-
-            {%- if template == 'cart' -%}
-              {% comment %} pop-up modal {% endcomment %}
-              <aside
-                class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
-                data-section-id="{{ section.id }}"
-                data-section-type="newsletter-popup"
-                aria-hidden="true">
-                <div class="popup_header">
-                  {%- if section.settings.title != blank -%}
-                    <span class="popup_title">{{ section.settings.title }}</span>
-                  {%- endif -%}
-                  <button
-                    class="popup_close"
-                    data-action="close-popup"
-                    aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
-                </div>
-
-                <div class="popup_content">
-                  {%- if section.settings.pop-image != blank -%}
-                    <div>
-                      <img src="{{ section.settings.pop-image | img_url: 'master' }}" alt="Size Chart">
-                    </div>
-                  {%- endif -%}
-
-                  {%- if section.settings.content != blank -%}
-                    <div class="NewsletterPopup__Content">
-                      <p>{{ section.settings.content }}</p>
-                      {%- if section.settings.link_text != blank -%}
-                        <a href="{{ section.settings.link }}" class="pop__content--link">{{ section.settings.link_text | escape }}</a>
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                </div>
-              </aside>
-              {% comment %} main progress bar {% endcomment %}
-              <div class="progress-bar-main">
-                <div class="progress-description">
-                  <p id="progress-description-text"></p>
-                  <img
-                    id="ask-about-discount"
-                    class="question-icon hide"
-                    src="{{ 'question-mark.svg' |  asset_url }}"
-                    alt="i" />
-                </div>
-                <div id="progress-container" class="progress-container hide">
-                  <div class="line">
-                    <div class="progress"></div>
-                  </div>
-                  <div class="circle blue">
-                    <span class="circle_inner_text">&#10003;</span>
-                  </div>
-                  <div class="circle">
-                    <span class="circle_inner_text">&#10003;</span>
-                  </div>
-                  <div class="circle special">+1</div>
-                  <div class="circle">
-                    <span class="circle_inner_text">&#10003;</span>
-                  </div>
-                  <div class="circle special">+2</div>
-                </div>
-              </div>
+            {% comment %} discount app snippet {% endcomment %}
+            {%- if settings.show_discount_app and template == 'cart' -%}
+              {% render 'app-discount-snippet'
+                , type: 'cart' %}
             {%- endif -%}
 
           {%- endif -%}
@@ -329,8 +269,8 @@
           </div>
 
           {% comment %} 
-                                                                                                                                                            Extra Protection Module 
-                                                                                                                                  {% endcomment %}
+                                                                                                                                                                                                                                    Extra Protection Module 
+                                                                                                                                                                                              {% endcomment %}
           <style>
             .nvd-mini {
               text-align: left;
@@ -629,18 +569,18 @@
                     <div class="text-with-question-mark-icon">
                       <h4 class="nvd-mob-heading">Extra Protection</h4>
                     {%- comment -%} <span>
-                                                                                                                                                                                                                                                                                                                      <i id="protection-price-detail" class="protection-price-detail">?</i>
-                                                                                                                                                                                                                                                                                          </span> {%- endcomment -%}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                          <i id="protection-price-detail" class="protection-price-detail">?</i>
+                                                                                                                                                                                                                                                                                                                                                                                                                  </span> {%- endcomment -%}
                     </div>
                     {%- comment -%} <p>From Damage, Loss &amp; Theft
-                                                                                                                                                                                                                                                                                        </p> {%- endcomment -%}
+                                                                                                                                                                                                                                                                                                                                                                                                                </p> {%- endcomment -%}
                     <p class="nvd-selected">Covers loss & damages on your whole order for 12 months.</p>
                   {%- comment -%} <div class="shipping-protection-price">
-                                                                                                                                                                                                                                                                                          <span class="yes-price" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                                                                                                                                                                                                                                                                                          </span>
-                                                                                                                                                                                                                                                                                          <span class="no-price" style="display: none;" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
-                                                                                                                                                                                                                                                                                          </span>
-                                                                                                                                                                                                                                                              </div> {%- endcomment -%}
+                                                                                                                                                                                                                                                                                                                                                                                                                  <span class="yes-price" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
+                                                                                                                                                                                                                                                                                                                                                                                                                  </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                  <span class="no-price" style="display: none;" data-money-convertible>{{protection_product.variants[0].price | money_without_trailing_zeros}}
+                                                                                                                                                                                                                                                                                                                                                                                                                  </span>
+                                                                                                                                                                                                                                                                                                                                                                          </div> {%- endcomment -%}
                   </div>
                 </div>
               </div>
@@ -664,8 +604,8 @@
             </div>
           </div>
           {%- comment -%} 
-                                                                                                                                                            Extra Protection Module 
-                                                                                                                                  {%- endcomment -%}
+                                                                                                                                                                                                                                    Extra Protection Module 
+                                                                                                                                                                                              {%- endcomment -%}
 
           <footer class="Cart__Footer">
             {%- if settings.cart_enable_notes -%}
@@ -691,13 +631,13 @@
             {%- endif -%}
 
               {% comment %} {% assign cm_at_price_total = 0 %}
-                                                                                                                                                                                                                              {% assign var_total_saving = 0 %}
-                                                                                                                                                                                                                              {% for item in cart.items %}
-                                                                                                                                                                                                                                {% if item.variant.compare_at_price > item.variant.price %}
-                                                                                                                                                                                                                                  {% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
-                                                                                                                                                                                                                                  {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
-                                                                                                                                                                                                                                {% endif %}
-                                                                                                                                                                                                    {% endfor %} {% endcomment %}
+                                                                                                                                                                                                                                                                                                                              {% assign var_total_saving = 0 %}
+                                                                                                                                                                                                                                                                                                                              {% for item in cart.items %}
+                                                                                                                                                                                                                                                                                                                                {% if item.variant.compare_at_price > item.variant.price %}
+                                                                                                                                                                                                                                                                                                                                  {% assign var_cm_at_price = item.variant.compare_at_price | times: item.quantity %}
+                                                                                                                                                                                                                                                                                                                                  {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
+                                                                                                                                                                                                                                                                                                                                {% endif %}
+                                                                                                                                                                                                                                                                                        {% endfor %} {% endcomment %}
               {% assign var_total_saving = 0 %}
               {% for item in cart.items %}
                 {% if item.variant.compare_at_price > item.variant.price %}
@@ -724,12 +664,12 @@
                 </p>
               </span>
               {% comment %}  as checkout currency will be same now
-                                                                                                                                                                                                                              <div class="currency-exchange-notice-container">
-                                                                                                                                                                                                                                <p class="currency-exchange-notice-text">
-                                                                                                                                                                                                                                  All orders are processed in USD. While the content of your order is displayed in
-                                                                                                                                                                                                                                  <span id="selected_currency"></span>, you will checkout using USD at the most current exchange rate.
-                                                                                                                                                                                                                                </p>
-                                                                                                                                                                                                    </div> {% endcomment %}
+                                                                                                                                                                                                                                                                                                                              <div class="currency-exchange-notice-container">
+                                                                                                                                                                                                                                                                                                                                <p class="currency-exchange-notice-text">
+                                                                                                                                                                                                                                                                                                                                  All orders are processed in USD. While the content of your order is displayed in
+                                                                                                                                                                                                                                                                                                                                  <span id="selected_currency"></span>, you will checkout using USD at the most current exchange rate.
+                                                                                                                                                                                                                                                                                                                                </p>
+                                                                                                                                                                                                                                                                                        </div> {% endcomment %}
               <div class="desktop-b-mobile-h">
                 <a href="https://www.andyokay.com/collections/all-art" class="in-caslon cont-shopping">Continue Shopping</a>
                 <button
@@ -972,13 +912,3 @@
     }
   };
 </script>
-
-{% if section.settings.discounted_collection != blank %}
-  {% assign collection_handle = section.settings.discounted_collection %}
-  <script>
-    window.discountedCollectionHandle = "{{ collection_handle }}";
-  </script>
-{% endif %}
-
-<!-- Link the custom JS file -->
-<script src="{{ 'custom-progress-bar.js' | asset_url }}" defer></script>
