@@ -418,6 +418,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       {% unless template == 'page.giveaway' %}
         {% section 'announcement' %}
       {% endunless %}
+      {%- if settings.show_discount_app and template != 'cart' -%}
+        {% render 'app-discount-snippet' %}
+      {%- endif -%}
       {% section 'header' %}
 
       <main id="main" role="main">

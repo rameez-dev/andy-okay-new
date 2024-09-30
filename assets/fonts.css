@@ -282,3 +282,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'circular';
+    src: url('CircularStd-Medium.woff') format("woff");
+    font-weight: normal;
+    font-style: normal;
+}

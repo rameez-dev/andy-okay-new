@@ -1,0 +1,96 @@
+<!-- Link the custom CSS file -->
+<link rel="stylesheet" href="{{ 'custom-progress-bar.css' | asset_url }}">
+
+{% if type == 'cart' %}
+  <style>
+    .progress-bar-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2efeb;
+      flex-direction: column;
+      height: 55px;
+      row-gap: 4px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -5px;
+      max-width: 530px;
+    }
+  </style>
+{% else %}
+  <style>
+    .progress-bar-main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5ede4;
+      flex-direction: column;
+      height: 55px;
+      row-gap: 4px;
+    }
+  </style>
+{% endif %}
+{% comment %} pop-up modal {% endcomment %}
+<aside
+  class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
+  data-section-id="{{ section.id }}"
+  data-section-type="newsletter-popup"
+  aria-hidden="true">
+  <div class="popup_header">
+    {%- if settings.discount_popup_title != blank -%}
+      <span class="popup_title">{{ settings.discount_popup_title }}</span>
+    {%- endif -%}
+    <button
+      class="popup_close"
+      data-action="close-popup"
+      aria-label="{{ 'general.popup.close' | t }}">{% render 'icon' with 'close' %}</button>
+  </div>
+
+  <div class="popup_content">
+
+
+    {%- if settings.discount_popup_content != blank -%}
+      <div class="NewsletterPopup__Content">
+        <p>{{ settings.discount_popup_content }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</aside>
+
+{% comment %} main progress bar {% endcomment %}
+<div class="progress-bar-main">
+  <div class="progress-description">
+    <p id="progress-description-text"></p>
+    <img
+      id="ask-about-discount"
+      class="question-icon hide"
+      src="{{ 'question-mark.svg' |  asset_url }}"
+      alt="i" />
+  </div>
+  <div id="progress-container" class="progress-container hide">
+    <div class="line">
+      <div class="progress"></div>
+    </div>
+    <div class="circle blue">
+      <span class="circle_inner_text">&#10003;</span>
+    </div>
+    <div class="circle">
+      <span class="circle_inner_text">&#10003;</span>
+    </div>
+    <div class="circle special">+1</div>
+    <div class="circle">
+      <span class="circle_inner_text">&#10003;</span>
+    </div>
+    <div class="circle special">+2</div>
+  </div>
+</div>
+
+{% if settings.discounted_collection != blank %}
+  {% assign collection_handle = settings.discounted_collection %}
+  <script>
+      window.discountedCollectionHandle = "{{ collection_handle }}";
+  </script>
+{% endif %}
+
+<!-- Link the custom JS file -->
+<script src="{{ 'custom-progress-bar.js' | asset_url }}" defer></script>
