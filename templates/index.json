@@ -518,6 +518,34 @@
     "image_carousel_6TtTf3": {
       "type": "image-carousel",
       "blocks": {
+        "mobile_image_cgWgdQ": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forest_mob.jpg",
+            "link": "shopify:\/\/products\/neowise-risen"
+          }
+        },
+        "desktop_image_LBRweq": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forest_desk.jpg",
+            "link": "shopify:\/\/products\/neowise-risen"
+          }
+        },
+        "mobile_image_KQ3pz8": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fall_mob.jpg",
+            "link": "shopify:\/\/collections\/floral"
+          }
+        },
+        "desktop_image_GQygX4": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fall_desk.jpg",
+            "link": "shopify:\/\/collections\/floral"
+          }
+        },
         "mobile_image_bbRBVd": {
           "type": "mobile_image",
           "settings": {
@@ -531,43 +559,15 @@
             "image": "shopify:\/\/shop_images\/frankmoth_carousel_desktop.jpg",
             "link": "shopify:\/\/products\/all-the-springs-she-remembered"
           }
-        },
-        "mobile_image_cgWgdQ": {
-          "type": "mobile_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/summer_vibes_carousel_mob.jpg",
-            "link": "shopify:\/\/collections\/summer-wall-art"
-          }
-        },
-        "desktop_image_LBRweq": {
-          "type": "desktop_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/summer_vibes_carousel_desktop.jpg",
-            "link": "shopify:\/\/collections\/summer-wall-art"
-          }
-        },
-        "mobile_image_KQ3pz8": {
-          "type": "mobile_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/flowers_mob.jpg",
-            "link": "shopify:\/\/collections\/flower-head-art"
-          }
-        },
-        "desktop_image_GQygX4": {
-          "type": "desktop_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/flowerheads_carousel_desktop.jpg",
-            "link": "shopify:\/\/collections\/flower-head-art"
-          }
         }
       },
       "block_order": [
-        "mobile_image_bbRBVd",
-        "desktop_image_TfMUQP",
         "mobile_image_cgWgdQ",
         "desktop_image_LBRweq",
         "mobile_image_KQ3pz8",
-        "desktop_image_GQygX4"
+        "desktop_image_GQygX4",
+        "mobile_image_bbRBVd",
+        "desktop_image_TfMUQP"
       ],
       "settings": {}
     },
