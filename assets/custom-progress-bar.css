@@ -30,8 +30,8 @@
 }
 
 .circle {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background-color: #b3aca1;
   /* Default grey background */
@@ -53,13 +53,13 @@
   background-color: #245743;
   color: white;
   font-family: 'circular';
-  font-size: 10px;
+  font-size: 7px;
   font-weight: bold;
 }
 
 .circle_inner_text {
   font-family: 'circular';
-  font-size: 12px;
+  font-size: 7px;
   color: white;
 }
 

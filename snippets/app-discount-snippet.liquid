@@ -20,13 +20,20 @@
 {% else %}
   <style>
     .progress-bar-main {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 5;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f5ede4;
+      background-color: #f5f2eb;
       flex-direction: column;
       height: 55px;
       row-gap: 4px;
+    }
+    .progress-bar-main ~ .shopify-section--header {
+      top: 55px;
     }
   </style>
 {% endif %}
