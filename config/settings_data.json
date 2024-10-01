@@ -135,8 +135,8 @@
         "settings": {
           "enable_bar": true,
           "home_page_only": false,
-          "background": "#f5f2eb",
-          "text_color": "#464544"
+          "background": "#021945",
+          "text_color": "#ffffff"
         }
       },
       "header": {
