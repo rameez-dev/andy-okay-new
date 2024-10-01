@@ -1448,7 +1448,7 @@ for size, we use it to display a size chart (if applicable)
           {% if blk.type == "ubx_video" %}
             {% assign ubx_index = ubx_index | plus: 1 %}
             <div class="ubx-video-item" data-index="{{ ubx_index }}">
-              {{ blk.settings.video | video_tag: autoplay: false, loop: true, muted: true, controls: false }}
+              {{ blk.settings.video | video_tag: autoplay: false, loop: true, muted: true, controls: false, image_size: '600x' }}
             </div>
           {% endif %}
         {% endfor %}

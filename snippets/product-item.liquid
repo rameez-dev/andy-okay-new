@@ -107,8 +107,10 @@
     {%- if show_product_info -%}
       <div class="ProductItem__Info {% unless use_horizontal %}ProductItem__Info--{{ settings.product_info_alignment }}{% endunless %} make-center">
         {% unless is_sold_out_collection %}
-          {% if limited_edition_tag %}
-            <img class="limited-release-img" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">    
+          {% if product.tags contains "atelier" %}
+            <div class="limited-release-label atelier-label limited-label-product-item"><span>Atelier Exclusive</span></div>   
+          {% elsif limited_edition_tag %}
+            <img class="limited-release-img" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release"> 
           {% endif %}  
         {% comment %} <div style="display: none;" class="xs-stock-bar hide-on-pdp" data-xs-grid-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}' data-xs-stock-left="{{ xs_total_left }}" data-xs-variant-left="{{ xs_variant_left }}" data-inv='{{ product.variants.first.inventory_management }}'>
           <div class="xs-stock-progress" data-xs-stock-progress>

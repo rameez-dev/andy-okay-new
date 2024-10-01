@@ -387,6 +387,51 @@ a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,
 twq('config','od66f');
 </script>
 <!-- End Twitter conversion tracking base code -->
+
+<style>
+  .limited-release-label {
+    background: {{ settings.stock_bar_color }};
+    color: #FFF;
+    font-family:"DIN Next LT Pro Cond";
+    text-transform:uppercase;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 19.8px;
+    min-width: 115px;
+    max-width: fit-content;
+    padding-inline: 14px;
+  }
+  .limited-release-label > span {
+    font-size: 14.375px;
+    letter-spacing: 0.46px;
+    margin-top: 3px;
+  }
+  .limited-release-label.atelier-label {
+    --side-color: rgba(185 185 185);
+    --mid-color: rgba(237 237 237);
+    background: linear-gradient(20deg, var(--side-color) 0%, var(--mid-color) 50%, var(--side-color) 100%);
+    color: black;
+  }
+  .limited-release-label.limited-label-product-item {
+    display: flex;
+    margin-inline: auto;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 17.21px;
+    container-type: inline-size;
+    min-width: unset;
+    max-width: unset;
+    padding-inline: unset;
+  }
+  .limited-release-label.limited-label-product-item > span {
+    font-size: 12.5cqi;
+    letter-spacing: 0.4cqi;
+    margin-top: 2.6cqi;
+  }
+</style>
     
 </head>
 
@@ -418,6 +463,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       {% unless template == 'page.giveaway' %}
         {% section 'announcement' %}
       {% endunless %}
+      {%- if settings.show_discount_app and template != 'cart' -%}
+        {% render 'app-discount-snippet' %}
+      {%- endif -%}
       {% section 'header' %}
 
       <main id="main" role="main">

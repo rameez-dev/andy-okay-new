@@ -232,6 +232,12 @@
                 {{- 'cart.general.free_shipping_remaining_html' | t: remaining_amount: remaining_amount, save_more:save_more -}}
               {%- endif -%}
             </p>
+            {% comment %} discount app snippet {% endcomment %}
+            {%- if settings.show_discount_app and template == 'cart' -%}
+              {% render 'app-discount-snippet'
+                , type: 'cart' %}
+            {%- endif -%}
+
           {%- endif -%}
         </div>
       </header>

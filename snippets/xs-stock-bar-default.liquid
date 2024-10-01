@@ -1,8 +1,18 @@
 <link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
-<img class="limited-release-img-pdp limited-separate-block" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">
+{% if product.tags contains "atelier" %}
+  <div class="limited-release-label atelier-label limited-separate-block"><span>Atelier Exclusive</span></div>
+{% else %}
+  <div class="limited-release-label limited-separate-block"><span>Limited Release<span class="limited-release-ext">{{ product.selected_or_first_available_variant.metafields.custom.limited_release_additional_text }}</span></span></div>
+{% endif %}
+{% comment %} <img class="limited-release-img-pdp limited-separate-block" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release"> {% endcomment %}
 <div style="display: none;" class="xs-stock-bar" data-xs-stock-bar data-xs-stock-json='{{ product.metafields.xs_stock_bar.max_stock }}'>
   <div class="xs-stock-info"> 
-    <img class="limited-release-img-pdp" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release">
+    {% if product.tags contains "atelier" %}
+      <div class="limited-release-label atelier-label"><span>Atelier Exclusive</span></div>
+    {% else %}
+      <div class="limited-release-label"><span>Limited Release<span class="limited-release-ext">{{ product.selected_or_first_available_variant.metafields.custom.limited_release_additional_text }}</span></span></div>
+    {% endif %}
+    {% comment %} <img class="limited-release-img-pdp" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release"> {% endcomment %}
     {% comment %} <div class="xs-stock-label">Limited Release</div> {% endcomment %}
     <div class="xs-stock-text">Only
       <span data-xs-stock-left></span>
@@ -25,6 +35,16 @@
   </div>
 </div>
 
+<script>
+  const limited_release_data = {
+        {% for vr in product.variants %}
+          {% if vr.metafields.custom.limited_release_additional_text != blank %}
+            "{{ vr.id }}" : "{{ vr.metafields.custom.limited_release_additional_text }}"
+            {% unless forloop.last %},{% endunless %}
+          {% endif %}
+        {% endfor %}
+      }
+</script>
 
 <script>
 
@@ -44,7 +64,14 @@
     $(`section.Product`).on("variant:changed", function(e) {
       var variant = event.detail.variant;
       var previousVariant = event.detail.previousVariant;
+      let limited_text = '';
+      
       if (variant.option1 != previousVariant.option1) {
+        if(limited_release_data.hasOwnProperty(variant.id)) {
+          limited_text = limited_release_data[variant.id]
+        }
+        $('.limited-release-ext').text(limited_text)
+        
         $('#reset-frame-unavailable').hide();
         $('label[for="white-frame"]').css('display', 'flex');
         $('label[for="black-frame"').css('display', 'flex');
