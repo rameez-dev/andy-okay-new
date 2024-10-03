@@ -106,13 +106,6 @@
       "announcement": {
         "type": "announcement",
         "blocks": {
-          "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4": {
-            "type": "announcement",
-            "settings": {
-              "content": "<b>SALE SEASON<\/b>  Unlock 2 FREE Artworks",
-              "link": "shopify:\/\/collections\/all-art"
-            }
-          },
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed": {
             "type": "announcement",
             "settings": {
@@ -130,7 +123,6 @@
           }
         },
         "block_order": [
-          "cee93fb3-87d0-42f6-9a5c-4a07bc3835c4",
           "20f9ea3a-e27a-4764-9f3a-853aaa3f71ed",
           "a212f6ea-b83d-4f68-94ea-c4e2e0249693"
         ],
