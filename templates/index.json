@@ -359,7 +359,7 @@
         "162537469203ba0fa9-0"
       ],
       "settings": {
-        "title": "Grab one of our best sellers",
+        "title": "Grab yours before it's gone",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -518,20 +518,6 @@
     "image_carousel_6TtTf3": {
       "type": "image-carousel",
       "blocks": {
-        "mobile_image_cgWgdQ": {
-          "type": "mobile_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/forest_mob.jpg",
-            "link": "shopify:\/\/products\/neowise-risen"
-          }
-        },
-        "desktop_image_LBRweq": {
-          "type": "desktop_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/forest_desk.jpg",
-            "link": "shopify:\/\/products\/neowise-risen"
-          }
-        },
         "mobile_image_KQ3pz8": {
           "type": "mobile_image",
           "settings": {
@@ -544,6 +530,20 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/fall_desk.jpg",
             "link": "shopify:\/\/collections\/floral"
+          }
+        },
+        "mobile_image_cgWgdQ": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forest_mob.jpg",
+            "link": "shopify:\/\/products\/neowise-risen"
+          }
+        },
+        "desktop_image_LBRweq": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/forest_desk.jpg",
+            "link": "shopify:\/\/products\/neowise-risen"
           }
         },
         "mobile_image_bbRBVd": {
@@ -562,10 +562,10 @@
         }
       },
       "block_order": [
-        "mobile_image_cgWgdQ",
-        "desktop_image_LBRweq",
         "mobile_image_KQ3pz8",
         "desktop_image_GQygX4",
+        "mobile_image_cgWgdQ",
+        "desktop_image_LBRweq",
         "mobile_image_bbRBVd",
         "desktop_image_TfMUQP"
       ],
@@ -623,7 +623,7 @@
         "1616425487e7f8d53c-0"
       ],
       "settings": {
-        "title": "Reach your goals",
+        "title": "Boost your mood",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -708,7 +708,7 @@
         "18bd032c-7869-430d-8d86-b3c9c5e04384"
       ],
       "settings": {
-        "title": "Fits any room",
+        "title": "Perfectly fits any room",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
