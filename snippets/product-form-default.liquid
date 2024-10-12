@@ -563,7 +563,8 @@ for size, we use it to display a size chart (if applicable)
     width: 18px;
     height: 18px;
     position: relative;
-    background-color: #fff;
+  /*  background-color: #fff; */
+    background-color: #2200cc;
     content: '';
     display: inline-block;
     border: 1px solid black;
@@ -573,13 +574,15 @@ for size, we use it to display a size chart (if applicable)
   input[name="gallery-frame"]:checked:after {
     width: 12px;
     height: 12px;
+    border: unset;
     position: relative;
-    background-color: black;
+    /* background-color: black; */
+    background-color: #2200cc;
     content: '';
     display: inline-block;
     visibility: visible;
-    bottom: 22px;
-    left: 3px;
+    /* bottom: 22px; */
+    /* left: 3px; */
     cursor: pointer;
   }
 </style>
@@ -616,12 +619,13 @@ for size, we use it to display a size chart (if applicable)
   }
   .mat_board_input_container{
     display: block;
+    font-size: 0px;
   }
   .passe-text-icon-container{
     width: 75%;
     height: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
   }
   .passe-text-icon-container-faded{
     opacity: 0.3;
@@ -647,7 +651,8 @@ for size, we use it to display a size chart (if applicable)
     padding: 0 10px; 
     color: #707070;
     font-family: 'Adobe Caslon Pro';
-    /* margin-top: 3px; */
+    line-height: 1;
+    margin-top: 3px;
   }
   .passe-bottomtext{
     margin-top: 3px;
@@ -706,7 +711,8 @@ for size, we use it to display a size chart (if applicable)
     width: 16px;
     height: 16px;
     position: relative;
-    background-color: #fff;
+   /* background-color: #fff; */
+    background-color: #2200cc;
     content: '';
     display: inline-block;
     border: 1px solid black;
@@ -716,19 +722,22 @@ for size, we use it to display a size chart (if applicable)
     width: 12px;
     height: 12px;
     position: relative;
-    background-color: black;
-    content: '';
+    border: unset;
+   /* background-color: black; */
+    background-color: #2200cc;
+    /* content: ''; */
+    content: unset;
     display: inline-block;
     visibility: visible;
-    bottom: 21px;
-    left: 2px;
+    /* bottom: 21px; */
+    /* left: 2px; */
     cursor: pointer;
   }
-  @media only screen and (max-width: 480px)   {
+  /* @media only screen and (max-width: 480px)   {
     input[name="gallery-frame"]:checked:after {
         bottom: 21px;
       }
-  }
+  } */
   .Disabled{
     pointer-events: none;
     cursor: not-allowed;
