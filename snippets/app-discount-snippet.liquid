@@ -38,6 +38,7 @@
   </style>
 {% endif %}
 {% comment %} pop-up modal {% endcomment %}
+{% if  'soldout_popup' == false %} 
 <aside
   class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
   data-section-id="{{ section.id }}"
@@ -63,7 +64,7 @@
     {%- endif -%}
   </div>
 </aside>
-
+  {% endif %}
 {% comment %} main progress bar {% endcomment %}
 <div class="progress-bar-main">
   <div class="progress-description">
