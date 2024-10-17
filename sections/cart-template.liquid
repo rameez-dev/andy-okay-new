@@ -691,8 +691,16 @@
                 </textarea>
               </div>
             {%- endif -%}
-
-            <div class="Cart__Recap">
+{% style %}
+.cart--three_lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+{% endstyle %}
+            <div class="Cart__Recap">  
+              <div class="cart--three_lines">  
               {%- if cart.cart_level_discount_applications != blank -%}
                 {%- for discount_application in cart.cart_level_discount_applications -%}
                   <p class="Cart__Discount Heading u-h6">{{ 'cart.general.discount' | t }}
@@ -701,8 +709,7 @@
                     </span>
                   </p>
                 {%- endfor -%}
-              {%- endif -%}
-                            
+              {%- endif -%}    
               {% comment %} {% assign cm_at_price_total = 0 %}
               {% assign var_total_saving = 0 %}
               {% for item in cart.items %}
@@ -711,34 +718,44 @@
                   {% assign cm_at_price_total = var_cm_at_price | plus: cm_at_price_total %}
                 {% endif %}
               {% endfor %} {% endcomment %}
-              {% assign var_total_saving = 0 %}  
+              {% assign var_total_saving = 0 %}   
               {% for item in cart.items %}
                 {% if item.variant.compare_at_price > item.variant.price %}
                   {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
                   {% assign var_total_saving = saving | plus: var_total_saving %}
                 {% endif %} 
               {% endfor %}
+              <p class="cart-total_price-spacing">
+                   Value:
+                <span>  {{ cart.total_price | money_without_trailing_zeros }} </span>
+                </p> 
               {%- if var_total_saving > 0 -%}
                 <p class="Cart__Discount Heading u-h6 cart-tag-design">
                   <img class="reviews_verified_icon" src="{{ 'cart-tag.png' | asset_url }}" >
                   You save:
-                  <span style="margin-left: 5px;">{{var_total_saving | money_without_trailing_zeros}}
+                  <span  style="margin-left: 0px;">{{var_total_saving | money_without_trailing_zeros}}
                   </span>
                 </p>
- 
               {%- endif -%}
+              {%- if cart.total_price >= threshold_in_cents -%}
+              <p class="cart-free_shipping-spacing">
+                   Shipping:
+                <span>Free</span>
+                </p> 
+              {% endif %}
               <span id="money-with-protection" style="display: none;">
                 <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
                   <span style="color: #2e34b9;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}
-                  </span>
+                  </span> 
                 </p>
               </span>
               <span id="money-without-protection">
                 <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}
+                  <span style="margin-right:10px;color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}
                   </span>
                 </p>
               </span>
+              </div>
               {% comment %}  as checkout currency will be same now
               <div class="currency-exchange-notice-container">
                 <p class="currency-exchange-notice-text">
