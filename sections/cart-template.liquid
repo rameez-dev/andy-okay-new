@@ -693,6 +693,7 @@
             {%- endif -%}
 
             <div class="Cart__Recap">
+              <div class="cart--three_lines">  
               {%- if cart.cart_level_discount_applications != blank -%}
                 {%- for discount_application in cart.cart_level_discount_applications -%}
                   <p class="Cart__Discount Heading u-h6">{{ 'cart.general.discount' | t }}
@@ -718,27 +719,36 @@
                   {% assign var_total_saving = saving | plus: var_total_saving %}
                 {% endif %} 
               {% endfor %}
+              <p class="cart-total_price-spacing">
+                <span>Value:</span>
+                <span>{{ cart.total_price | plus: var_total_saving | money_without_trailing_zeros }}</span>
+              </p> 
               {%- if var_total_saving > 0 -%}
                 <p class="Cart__Discount Heading u-h6 cart-tag-design">
-                  <img class="reviews_verified_icon" src="{{ 'cart-tag.png' | asset_url }}" >
-                  You save:
-                  <span style="margin-left: 5px;">{{var_total_saving | money_without_trailing_zeros}}
-                  </span>
+                  <span><img class="reviews_verified_icon" src="{{ 'cart-tag.png' | asset_url }}"> You save:</span>
+                  <span style="margin-left: 0px;">{{var_total_saving | money_without_trailing_zeros}}</span>
                 </p>
  
               {%- endif -%}
+              {%- if cart.total_price >= threshold_in_cents -%}
+                <p class="cart-free_shipping-spacing">
+                  <span>Shipping:</span>
+                  <span>Free</span>
+                </p> 
+              {% endif %}
               <span id="money-with-protection" style="display: none;">
-                <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #2e34b9;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}
-                  </span>
+                <p class="Cart__Total Heading u-h6 cart-total-spacing">
+                  <span>{{ 'cart.general.total' | t }}:</span>
+                  <span style="color: #2e34b9;">{{ cart.total_price | plus: protection_product.variants[0].price | money_without_trailing_zeros }}</span>
                 </p>
               </span>
-              <span id="money-without-protection">
-                <p class="Cart__Total Heading u-h6 cart-total-spacing">{{ 'cart.general.total' | t }}:
-                  <span style="color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}
-                  </span>
+              <span id="money-without-protection" style="display: contents;">
+                <p class="Cart__Total Heading u-h6 cart-total-spacing">
+                  <span>{{ 'cart.general.total' | t }}:</span>
+                  <span style="margin-right:10px;color: #2e34b9;">{{ cart.total_price | money_without_trailing_zeros }}</span>
                 </p>
               </span>
+              </div>
               {% comment %}  as checkout currency will be same now
               <div class="currency-exchange-notice-container">
                 <p class="currency-exchange-notice-text">
@@ -945,7 +955,7 @@
     if (!checked) {
       console.log('unchecking and removing protection');
       await removeProtection(variantId);
-      $('#money-without-protection').css('display', 'block');
+      $('#money-without-protection').css('display', 'contents');
       $('#money-with-protection').css('display', 'none');
       $('.yes-price').css('display', 'none');
       $('.no-price').css('display', 'block');
@@ -955,7 +965,7 @@
       console.log('checked and adding protection');
       await addProtection(parseInt(variantId), 1);
       $('#money-without-protection').css('display', 'none');
-      $('#money-with-protection').css('display', 'block');
+      $('#money-with-protection').css('display', 'contents');
       $('.yes-price').css('display', 'block');
       $('.no-price').css('display', 'none');
       $('.yes-no-text').text('Yes');
@@ -968,7 +978,7 @@
     if (!checked2) {
       console.log('unchecking and removing protection');
       await removeProtection(variantId);
-      $('#money-without-protection').css('display', 'block');
+      $('#money-without-protection').css('display', 'contents');
       $('#money-with-protection').css('display', 'none');
       $('.yes-price').css('display', 'none');
       $('.no-price').css('display', 'block');
@@ -978,7 +988,7 @@
       console.log('checked and adding protection');
       await addProtection(parseInt(variantId), 1);
       $('#money-without-protection').css('display', 'none');
-      $('#money-with-protection').css('display', 'block');
+      $('#money-with-protection').css('display', 'contents');
       $('.yes-price').css('display', 'block');
       $('.no-price').css('display', 'none');
       $('.yes-no-text').text('Yes');
