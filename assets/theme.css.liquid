@@ -13481,7 +13481,7 @@ table tr td {
 .reviews_verified_icon {
   height: 15px;
   width: 15px;
-  margin: 3px 3px;
+  margin-right: 15px;
 }
 .fake-instagram {
   text-align: center;
@@ -14461,18 +14461,52 @@ table tr td {
 .xs-stock-bar {
   display: none;
 }
+
+.cart--three_lines {
+  font-family: Adobe Caslon Pro;
+  font-size: 15px;
+  display: table;
+  margin-left: auto;
+}
+.cart-total_price-spacing {
+  display: table-row;
+}
+/* .cart-total_price-spacing span {
+  margin-left: 46px !important;
+} */
 .cart-tag-design {
+  font-family: Adobe Caslon Pro;
   background-color: #edf7fe;
-  display: inline-flex;
-  padding: 6px 9px;
+  display: table-row;
   border-radius: 2px;
-  justify-content: center;
-  align-items: center;
 }
+.cart-free_shipping-spacing {
+  display: table-row;
+}
+/* .cart-free_shipping-spacing span {
+  margin-left: 40px !important;
+} */
 .cart-total-spacing {
-  margin-top: -6px;
-  margin-bottom: 10px !important;
+  font-family: Adobe Caslon Pro;
+  display: table-row;  
 }
+.cart-total_price-spacing span, 
+.cart-tag-design span, 
+.cart-free_shipping-spacing span, 
+.cart-total-spacing span {
+  display: table-cell;
+  padding: 5px 5px;
+  text-align: left;
+}
+.cart-total_price-spacing span:first-of-type, 
+.cart-tag-design span:first-of-type, 
+.cart-free_shipping-spacing span:first-of-type, 
+.cart-total-spacing span:first-of-type {
+  padding: 5px 40px 5px 15px;
+  text-align: right;
+}
+
+
 select.CurrencySelector__Select {
   padding: 0px 15px;
 }
