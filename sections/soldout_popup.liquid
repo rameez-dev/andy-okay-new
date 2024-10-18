@@ -1,4 +1,4 @@
-<aside class="NewsletterPopup soldout-popup" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
+<aside class="NewsletterPopup soldout-popup actual-soldout-popup" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
   <div class="popup_header">
     <span class="popup_title">Sold Out</span>
     <button class="popup_close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
@@ -33,8 +33,8 @@
 
 <script>
   $(document).ready(function(){
-    $('.NewsletterPopup.soldout-popup .popup_close').click(function(){
-      $('.NewsletterPopup.soldout-popup').removeClass('visible');
+    $('.NewsletterPopup.actual-soldout-popup .popup_close').click(function(){
+      $('.NewsletterPopup.actual-soldout-popup').removeClass('visible');
       $('body').removeClass('soldout-popup-visible');
     });
   });
