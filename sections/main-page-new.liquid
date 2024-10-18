@@ -6,7 +6,62 @@
 {{ 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css' | stylesheet_tag }}
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> 
 
+{% style %}
+
+.new-b2bpage-container .b2bpage-content {
+  margin: -40px auto !important;
+}
+
+.contact-us_b2b {
+  font-family: "Adobe Caslon Pro" !important;
+  color: #5e5e5e !important;
+}
+
+.new-b2bpage-container .cards-slideshow-cont {
+  background-color : #f5efe2;
+}
+
+{% endstyle %}
+
 {% if page.content != blank %}
+  {% if page.title == 'B2B' %}
+  <div class="new-b2bpage-container new-main-page Container">
+    <div class="b2bpage-content PageContent PageContent--narrow Rte new-page-content">
+      {{ page.content }}
+      {% if section.blocks.size > 0 %}
+        <div class="cards-slideshow-cont slide-{{ section.id }}">
+          {% if section.blocks.size > 1 %}
+          <h2>
+              {{ section.settings.text_abovecard }}
+            </h2>
+            <p>
+              {{ section.settings.subhead-abovecard }}
+            </p>         
+            <div class="cards-carousel-header">
+              <button class="slick-prev card-prev slick-control">{% include 'icon' with 'select-arrow-left' %}</button>
+              <button class="slick-next card-next slick-control">{% include 'icon' with 'select-arrow-right' %}</button>
+            </div>
+          {% endif %}
+          <div class="cards-carousel">
+            {% for block in section.blocks %}
+              <div class="cards-slideshow-item">
+                <img class="card-img" src="{{ block.settings.image |  image_url: width: 500 }}">
+                <div class="card-heading">{{ block.settings.heading }}</div>
+                <div class="card-content">{{ block.settings.content }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+          {% endif %} 
+
+    </div>
+    {%- if section.settings.button_label != blank -%}
+      <div id="cta-cont_b2b" class="cta-cont">
+        <a class="cta-button" href="{{ section.settings.button_link }}" >{{ section.settings.button_label | escape }}</a>
+      </div>
+    {%- endif -%} 
+  </div> 
+  {% else %}
   <div class="new-main-page Container">
     <div class="PageContent PageContent--narrow Rte new-page-content">
       {{ page.content }}
@@ -36,6 +91,7 @@
       </div>
     {%- endif -%}
   </div>
+  {% endif %}
 {% endif %}
 
 <script>
@@ -95,6 +151,16 @@
       "type": "text",
       "id": "button_label",
       "label": "Button label"
+    },
+    {
+      "type": "text",
+      "id": "text_abovecard",
+      "label": "Heading Above Card"
+    },
+    {
+      "type": "text",
+      "id": "subhead-abovecard",
+      "label": "Subheading"
     },
     {
       "type": "url",
