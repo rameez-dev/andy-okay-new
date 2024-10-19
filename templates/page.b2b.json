@@ -84,15 +84,37 @@
         "6b8b3895-0365-440e-bf1b-72c4f8ab9085"
       ],
       "settings": {
-        "button_label": "PURCHASE FOR PURPOSE",
-        "button_link": "shopify:\/\/collections\/all-art",
-        "section_order": 10
+        "button_label": "",
+        "text_abovecard": "Successful Customer Stories",
+        "subhead-abovecard": "Are you an interior designer, architect or real estate developer? At Andy Okay, we believe in the transformative power of art to elevate spaces into vibrant, inspiring environments.",
+        "card_background": "#f5efe2",
+        "button_link": "",
+        "section_order": 7
       }
+    },
+    "zendesk_form_b2b_kfdVGH": {
+      "type": "zendesk-form-b2b",
+      "blocks": {
+        "dropdown_rQT7e3": {
+          "type": "dropdown",
+          "settings": {
+            "label": "Reason for contact",
+            "title": "17047106351634",
+            "values": "B2B inquiry\/\/b2b, I want to collaborate\/\/collaborations, I have another question\/\/customer_question",
+            "is_required": false
+          }
+        }
+      },
+      "block_order": [
+        "dropdown_rQT7e3"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
     "68c88ed7-329b-49c5-a5a1-9048e061b13c",
-    "a6c1ac63-b38c-4aab-adef-358232a10046"
+    "a6c1ac63-b38c-4aab-adef-358232a10046",
+    "zendesk_form_b2b_kfdVGH"
   ]
 }
