@@ -14906,6 +14906,9 @@ a:hover .overlay_dot {
   margin: 40px 0 0 !important;
   line-height: 1;
 }
+.new-main-page.Container .PageContent h2:first-child {
+  margin-top: 0px !important
+}
 .new-main-page.Container .PageContent h3 {
   font-family: 'Adobe Caslon Pro' !important;
   font-style: italic !important;
@@ -14956,6 +14959,26 @@ a:hover .overlay_dot {
   justify-content: flex-end;
   padding-right: 24px;
   margin-bottom: 10px;
+  padding-top: 10px;
+}
+.new-main-page.Container .PageContent .cards-carousel-details.cards-carousel-heading {
+  margin-block: 40px 10px !important;
+}
+.new-main-page.Container .PageContent .cards-carousel-details.cards-carousel-subheading {
+  margin-block: 10px !important;  
+}
+.new-main-page.Container .PageContent .cards-carousel-details {
+  max-width: 680px;
+  padding-inline: 0px 24px !important
+}
+@media only screen and (min-width: 768px) {
+  .new-main-page.Container .PageContent .cards-carousel-details {
+    margin-inline: auto !important;
+    transform: translateX(-25px);
+  }
+  .new-main-page:not(.no-narrow-margin).Container .PageContent .cards-carousel-details {
+    padding-inline: 150px !important;
+  }
 }
 .new-main-page .slick-control, .separate-card-slider .slick-control {
   margin: 0px 10px;
@@ -14977,7 +15000,7 @@ a:hover .overlay_dot {
   color: grey;
 }
 @media only screen and (min-width: 768px) {
-  .new-main-page.Container .PageContent > *:not(:has(img)){
+  .new-main-page.Container:not(.no-narrow-margin) .PageContent > *:not(:has(img)){
     margin-left: 150px !important;
     margin-right: 150px !important;
   }
