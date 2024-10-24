@@ -75,10 +75,10 @@
             {%- endif -%}
             {%- endfor -%}
 
-            {% comment %} <div class="Form__Item">
+            <div class="Form__Item">
                 <label class="Form__FloatingLabel-custom">Description</label>
                 <textarea name="body" cols="30" rows="10" class="Form__Textarea" aria-label="{{ 'contact.form.message' | t }}" required></textarea>
-            </div> {% endcomment %}
+            </div>
 
             {% comment %} <div class="Form__Item">
                 <label class="Form__FloatingLabel-custom">Attachments (optional)</label>
@@ -140,6 +140,7 @@
 
         zendesk_data = {
             "request": {
+                "ticket_form_id": 22149890870418,
                 "requester": {"name": jsonData.name, "email": jsonData.email},
                 "subject": jsonData.body,
                 "comment": {"body": jsonData.body }
