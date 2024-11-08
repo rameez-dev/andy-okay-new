@@ -36,7 +36,7 @@
     "cart_type": "page",
     "cart_enable_notes": false,
     "cart_show_free_shipping_threshold": true,
-    "cart_free_shipping_threshold": "79",
+    "cart_free_shipping_threshold": "69",
     "share_image": "shopify:\/\/shop_images\/share2_b7354900-8f13-47be-804e-bfa93bcfc360.jpg",
     "social_facebook": "https:\/\/www.facebook.com\/andyokayart\/",
     "social_twitter": "https:\/\/twitter.com\/okay_andy",
@@ -117,7 +117,7 @@
           "a212f6ea-b83d-4f68-94ea-c4e2e0249693": {
             "type": "announcement",
             "settings": {
-              "content": "Free Delivery over <span class=\"cm\" data-money-convertible>$79<\/span> <span id=\"announcement-ct\"><img class=\"announcement-flag\" src=\"\" id=\"announcement-flag\"><\/span>",
+              "content": "Free Delivery over <span class=\"cm\" data-money-convertible>$69<\/span> <span id=\"announcement-ct\"><img class=\"announcement-flag\" src=\"\" id=\"announcement-flag\"><\/span>",
               "link": ""
             }
           }
