@@ -1657,23 +1657,23 @@ ADD TO CART BUTTON
         </div>
       </div>
     </button>
-    {% assign shipping_value_format = '$96' %}
+    {% assign shipping_value_format = '$89' %}
     {% if cart.currency.iso_code == 'SEK' %}
-      {% assign shipping_value_format = '746 kr' %}
+      {% assign shipping_value_format = '950 kr' %}
     {% elsif cart.currency.iso_code == 'NOK' %}
-      {% assign shipping_value_format = 'kr 759' %}
+      {% assign shipping_value_format = 'kr 990' %}
     {% elsif cart.currency.iso_code == 'DKK' %}
-      {% assign shipping_value_format = '746 kr' %}
+      {% assign shipping_value_format = '650 kr' %}
     {% elsif cart.currency.iso_code == 'EURO' %}
-      {% assign shipping_value_format = '€64' %}
+      {% assign shipping_value_format = '€89' %}
     {% elsif cart.currency.iso_code == 'GBP' %}
-      {% assign shipping_value_format = '£69' %}
+      {% assign shipping_value_format = '£79' %}
     {% elsif cart.currency.iso_code == 'CAD' %}
-      {% assign shipping_value_format = '$96' %}
+      {% assign shipping_value_format = '$130' %}
     {% elsif cart.currency.iso_code == 'AUD' %}
-      {% assign shipping_value_format = '$96' %}
+      {% assign shipping_value_format = '$130' %}
     {% elsif cart.currency.iso_code == 'NZD' %}
-      {% assign shipping_value_format = '$96' %}
+      {% assign shipping_value_format = '$150' %}
     {% endif %}
     <div class="separate-text-free-shipping extented_info leftAligned_imp">
       <div id="first-truststar" class="info-with-icon">
