@@ -1657,10 +1657,28 @@ ADD TO CART BUTTON
         </div>
       </div>
     </button>
+    {% assign shipping_value_format = '$96' %}
+    {% if cart.currency.iso_code == 'SEK' %}
+      {% assign shipping_value_format = '746 kr' %}
+    {% elsif cart.currency.iso_code == 'NOK' %}
+      {% assign shipping_value_format = 'kr 759' %}
+    {% elsif cart.currency.iso_code == 'DKK' %}
+      {% assign shipping_value_format = '746 kr' %}
+    {% elsif cart.currency.iso_code == 'EURO' %}
+      {% assign shipping_value_format = '€64' %}
+    {% elsif cart.currency.iso_code == 'GBP' %}
+      {% assign shipping_value_format = '£69' %}
+    {% elsif cart.currency.iso_code == 'CAD' %}
+      {% assign shipping_value_format = '$96' %}
+    {% elsif cart.currency.iso_code == 'AUD' %}
+      {% assign shipping_value_format = '$96' %}
+    {% elsif cart.currency.iso_code == 'NZD' %}
+      {% assign shipping_value_format = '$96' %}
+    {% endif %}
     <div class="separate-text-free-shipping extented_info leftAligned_imp">
       <div id="first-truststar" class="info-with-icon">
         <div class="green_dot"></div>
-        <p><strong>Free Shipping</strong> over <span data-money-convertible>$69</span> <span id="countryInTruststar"> </span>
+        <p><strong>Free Shipping</strong> over {{shipping_value_format}}<span id="countryInTruststar"> </span>
           <img class="truststar-flag" src="" id="truststar-flag" >
         </p>
       </div>
