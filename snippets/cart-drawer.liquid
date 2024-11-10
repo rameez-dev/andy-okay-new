@@ -7,6 +7,26 @@
 }
 {%- endcapture -%}
 
+{% if cart.currency.iso_code == 'SEK' %}
+  {% assign shipping_value = 950 %}
+{% elsif cart.currency.iso_code == 'NOK' %}
+  {% assign shipping_value = 990 %}
+{% elsif cart.currency.iso_code == 'DKK' %}
+  {% assign shipping_value = 650 %}
+{% elsif cart.currency.iso_code == 'EUR' %}
+  {% assign shipping_value = 89 %}
+{% elsif cart.currency.iso_code == 'GBP' %}
+  {% assign shipping_value = 79 %}
+{% elsif cart.currency.iso_code == 'CAD' %}
+  {% assign shipping_value = 130 %}
+{% elsif cart.currency.iso_code == 'AUD' %}
+  {% assign shipping_value = 130 %}
+{% elsif cart.currency.iso_code == 'NZD' %}
+  {% assign shipping_value = 150 %}
+{% elsif cart.currency.iso_code == 'USD' %}
+  {% assign shipping_value = 89 %}
+{% endif %}
+
 <div id="sidebar-cart" class="Drawer Drawer--fromRight" aria-hidden="true" data-section-id="cart" data-section-type="cart" data-section-settings='{{ section_settings }}'>
   <div class="Drawer__Header Drawer__Header--bordered Drawer__Container">
       <span class="Drawer__Title Heading u-h4">{{ 'cart.general.title' | t }}</span>
@@ -19,7 +39,7 @@
   <form class="Cart Drawer__Content" action="/cart" method="POST" novalidate>
     <div class="Drawer__Main" data-scrollable>
       {%- if settings.cart_show_free_shipping_threshold -%}
-        {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+        {%- assign threshold_in_cents = shipping_value | times: 100-%}
 
         <div class="Cart__ShippingNotice Text--subdued">
           <div class="Drawer__Container">
