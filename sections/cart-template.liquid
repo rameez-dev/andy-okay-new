@@ -156,6 +156,27 @@
   }
 {%- endcapture -%}
 
+{% if cart.currency.iso_code == 'SEK' %}
+  {% assign shipping_value = 950 %}
+{% elsif cart.currency.iso_code == 'NOK' %}
+  {% assign shipping_value = 990 %}
+{% elsif cart.currency.iso_code == 'DKK' %}
+  {% assign shipping_value = 650 %}
+{% elsif cart.currency.iso_code == 'EUR' %}
+  {% assign shipping_value = 89 %}
+{% elsif cart.currency.iso_code == 'GBP' %}
+  {% assign shipping_value = 79 %}
+{% elsif cart.currency.iso_code == 'CAD' %}
+  {% assign shipping_value = 130 %}
+{% elsif cart.currency.iso_code == 'AUD' %}
+  {% assign shipping_value = 130 %}
+{% elsif cart.currency.iso_code == 'NZD' %}
+  {% assign shipping_value = 150 %}
+{% elsif cart.currency.iso_code == 'USD' %}
+  {% assign shipping_value = 89 %}
+{% endif %}
+
+
 {% assign protection_product = all_products['navidium-shipping-protection'] %}
 {% assign protection_product_is_selected = false %}
 {%- for item in cart.items -%}
@@ -178,7 +199,7 @@
         </h1>
 
         {%- if settings.cart_show_free_shipping_threshold -%}
-          {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+          {%- assign threshold_in_cents = shipping_value | times: 100-%}
           {%- capture remaining_amount -%}
             <span>{{ cart.total_price | minus: threshold_in_cents | abs | money_without_trailing_zeros }}
             </span>
@@ -216,7 +237,7 @@
           <p id="cart_urgency_text" class="in-caslon">Due to high demand, your art will only be held for 24h before we have to make it available again
           </p>
           {%- if settings.cart_show_free_shipping_threshold -%}
-            {%- assign threshold_in_cents = settings.cart_free_shipping_threshold | times: 100 -%}
+            {%- assign threshold_in_cents = shipping_value | times: 100-%}
 
             <p class="Text--subdued__custom SectionHeader__Description Text--subdued colored_background in-caslon">
               {%- if cart.total_price >= threshold_in_cents -%}

@@ -268,7 +268,7 @@
       "save_note": "Save",
       "note_placeholder": "How can we help you?",
       "free_shipping": "You get free shipping!",
-      "free_shipping_remaining_html": "Only <span data-money-convertible>{{remaining_amount}}<\/span> more for free shipping",
+      "free_shipping_remaining_html": "Only {{remaining_amount}}<\/span> more for free shipping",
       "shipping_and_taxes_notice": "",
       "discount": "You save",
       "total": "Total",

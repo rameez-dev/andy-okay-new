@@ -152,10 +152,12 @@
 <script>
   $(document).ready(function () {
     var user__country = localStorage.getItem('user__country');
+    var user__currency = localStorage.getItem('currency');
     var country_flag = localStorage.getItem('userCurrencyFlag');
     var curerncy_country_name = localStorage.getItem('country_name_show');
     var usercountryelement = document.getElementById('announcement-ct');
     var truststar_flag = document.getElementById('announcement-flag');
+    var shipping_value = document.getElementById('shipping-value');
 
     if (user__country)
     { 
@@ -169,6 +171,27 @@
       else 
       truststar_flag.src = '';
     }
+    
+    if (user__currency == 'SEK') {
+      shipping_value.prepend('950 kr'); 
+    } else if (user__currency == 'NOK') {
+      shipping_value.prepend('kr 990'); 
+    } else if (user__currency == 'DKK') {
+      shipping_value.prepend('650 kr'); 
+    } else if (user__currency == 'EUR') {
+      shipping_value.prepend('€89'); 
+    } else if (user__currency == 'GBP') {
+      shipping_value.prepend('£79'); 
+    } else if (user__currency == 'CAD') {
+      shipping_value.prepend('$130'); 
+    } else if (user__currency == 'AUD') {
+      shipping_value.prepend('$130'); 
+    } else if (user__currency == 'NZD') {
+      shipping_value.prepend('$150'); 
+    } else {
+      shipping_value.prepend('$89'); 
+    }
+
   });
 </script>
 
