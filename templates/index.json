@@ -945,7 +945,7 @@
           "type": "badges",
           "settings": {
             "image": "shopify:\/\/shop_images\/truck2.png",
-            "title": "Free Shipping on All Orders Above $89"
+            "title": "Free Shipping on All Orders Above <span class=\"shipping-value\"><\/span>"
           }
         },
         "a1c7db9b-4886-42fe-bef2-3c8416b55a2b": {
