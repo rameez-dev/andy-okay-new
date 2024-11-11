@@ -2154,8 +2154,11 @@ THE EXACT SAME ATTRIBUTES.
     var textaddtocart = 'ADD ART TO CART';
     var actual_variant_price = (Shopify.formatMoney(xVariantPrice, xs_format)).replace(/\.00$/, '');
 
+    
+    if (xid) {
     var cm_at_price = (Shopify.formatMoney(xVariantCompare_at_price, xs_format)).replace(/\.00$/, '');
     var cm_at_price_to_pass = (Shopify.formatMoney(xVariants[xid].compare_at_price, "{{ shop.money_format }}")).replace(/\.00$/, '');
+    }
     
     if(selectedframe  && charitypriceamount > 0){
       textaddtocart = 'ADD ART & FRAME + DONATION TO CART';
@@ -2174,7 +2177,7 @@ THE EXACT SAME ATTRIBUTES.
     }
   
     function button_update(text, price, cm_price) {
-        var buttonstyle = `{%- if selected_variant.available -%}
+        var buttonstyle = `
         <div class = "left__text">
         <span class="add-to-cart__text smallerText text-vertical-center" id="text_changer">{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{%
           else %}`+ text + `{% endif %}</span>
@@ -2190,10 +2193,8 @@ THE EXACT SAME ATTRIBUTES.
         {% endif %}
         
         {%- endif -%}
-        {%- else -%}
-        {{- 'product.form.sold_out' | t -}}
-        {%- endif -%}
-        <div class="cart-button-price-wrap">
+        ${ (text == "Sold out") ? "" :
+        `<div class="cart-button-price-wrap">
           <div class="actual-price-discount" >
             {% if product.selected_or_first_available_variant.compare_at_price != null and product.selected_or_first_available_variant.compare_at_price != 0 %}
               <span id ="compare_at_price_style_button-2" class="price_compareVal" ><span class="money">{{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}</span></span>
@@ -2202,7 +2203,7 @@ THE EXACT SAME ATTRIBUTES.
           <div class="actual-price">
             <span id="xs-currentVal_button-2" class="price_currentVal" ><span class="money">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span></span>
           </div>
-        </div>`;
+        </div>` }`;
         $(".ProductForm__AddToCart").html(buttonstyle);
         $(".ProductForm__AddToCart").attr('id', 'bottom-fixer');
         var price = $("#xs-currentVal").text();
@@ -2226,7 +2227,11 @@ THE EXACT SAME ATTRIBUTES.
 
       }
 
+      {%- if selected_variant.available -%}
     button_update(textaddtocart, actual_variant_price, cm_at_price );
+    {% else %}
+    button_update("Sold out", actual_variant_price, cm_at_price );
+    {% endif %}
     var distance = $('.ProductForm__AddToCart').offset().top,
     $window = $(window);
 
@@ -2277,8 +2282,13 @@ THE EXACT SAME ATTRIBUTES.
           }
           var price = $("#xs-currentVal").text();
           var cm_at_price = $("#compare_at_price_style").text();
+          
 
+          {%- if selected_variant.available -%}
           button_update(textaddtocart, price, cm_at_price);
+          {% else %}
+          button_update("Sold out", price, cm_at_price);
+          {% endif %}
           
           return;
         }
@@ -2376,6 +2386,9 @@ THE EXACT SAME ATTRIBUTES.
         $("#xs-currentVal_button-2").html((Shopify.formatMoney(xVariantPrice + selected_frame_price, xs_format)).replace(/\.00$/, ''));
         $("#compare_at_price_style_button-2").html((Shopify.formatMoney(xVariantCompare_at_price + selected_frame_compare_at_price, xs_format)).replace(/\.00$/, ''));
         xspw.show();
+      }
+      else {
+        button_update("Sold out", actual_variant_price, cm_at_price );
       }
 
       /* add to cart action called */
