@@ -408,7 +408,7 @@
       },
       "order_summary": {
         "title": "Order summary",
-        "expand_order_summary": "Click to check your order summary"
+        "expand_order_summary": "Order summary \/ Apply discount code"
       }
     }
   },
