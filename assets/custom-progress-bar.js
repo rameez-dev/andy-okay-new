@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return allProductIds; // Return array of product IDs
                 } else {
                     // Otherwise, fetch the next page
-                    return fetchDiscountCollection(handle, page + 1, limit, allProducts);
+                    return fetchDiscountCollection(handle, page + 1, limit, allProductIds);
                 }
             })
             .catch(error => console.error('Error fetching discount collection:', error));
