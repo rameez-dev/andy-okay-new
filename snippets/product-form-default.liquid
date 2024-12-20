@@ -2066,6 +2066,10 @@ THE EXACT SAME ATTRIBUTES.
         $('.delivery-message-text').hide();
         $('.geotargetlygeocontent1629294920005').hide();
         $('#add-to-cart-link').addClass('success').html('✓ Added to the cart! <a href="/cart"> View cart</a><br>');
+        document.dispatchEvent(new CustomEvent('theme:loading:end'));
+        document.querySelector('section.Product').dispatchEvent(new CustomEvent('product:customadded', {
+          bubbles: true
+        }));
       }, 2000);
     }
 
@@ -2395,6 +2399,7 @@ THE EXACT SAME ATTRIBUTES.
       let payBtn = $(".ProductForm__AddToCart"),
         payBtnText = $(".add-to-cart__text");
       payBtn.on('click', function (t) {
+        document.dispatchEvent(new CustomEvent('theme:loading:start'));
         payBtnText = $(".add-to-cart__text");
         var previousText = payBtnText.text();
         t.preventDefault();
@@ -2488,6 +2493,7 @@ THE EXACT SAME ATTRIBUTES.
       payBtnText = $(".add-to-cart__text");
 
     payBtn.on('click', function (t) {
+      document.dispatchEvent(new CustomEvent('theme:loading:start'));
       payBtnText = $(".add-to-cart__text");
       var previousText = payBtnText.text();
       t.preventDefault();

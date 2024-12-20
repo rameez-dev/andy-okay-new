@@ -36,6 +36,14 @@
       </button>
   </div>
 
+  <input type="hidden" class="cart_total_amount" data-value="{{ cart.total_price }}" value="{{ cart.total_price | money_without_trailing_zeros }}">
+  {% assign total_cmp = 0 %}
+  {% for item in cart.items %}
+    {% assign current_item_compare = item.variant.compare_at_price | times: item.quantity %}
+    {% assign total_cmp = total_cmp | plus: current_item_compare %}
+  {% endfor %}
+  <input type="hidden" class="cart_total_compare_amount" data-value="{{ total_cmp }}" value="{{ total_cmp | money_without_trailing_zeros }}">
+
   <form class="Cart Drawer__Content" action="/cart" method="POST" novalidate>
     <div class="Drawer__Main" data-scrollable>
       {%- if settings.cart_show_free_shipping_threshold -%}
