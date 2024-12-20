@@ -33,7 +33,8 @@
   "showPriceInButton": {{ section.settings.show_price_in_button | json }},
   "enableImageZoom": {{ section.settings.enable_image_zoom | json }},
   "showPaymentButton": {{ section.settings.show_payment_button | json }},
-  "useAjaxCart": {% if settings.cart_type == 'drawer' %}true{% else %}false{% endif %}
+  {% comment %} "useAjaxCart": {% if settings.cart_type == 'drawer' %}true{% else %}false{% endif %} {% endcomment %}
+  "useAjaxCart": false
 }
 {%- endcapture -%}
 

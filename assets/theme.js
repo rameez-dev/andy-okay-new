@@ -4292,6 +4292,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_attachListeners',
       value: function _attachListeners() {
         this._onProductAddedListener = this._onProductAdded.bind(this);
+        this._onProductCustomAddedListener = this._customRerender.bind(this);
 
         this.delegateElement.on('change', '#cart-note', this._updateCartNote.bind(this));
 
@@ -4308,6 +4309,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
 
         document.addEventListener('product:added', this._onProductAddedListener);
+        document.addEventListener('product:customadded', this._onProductCustomAddedListener);
       }
     }, {
       key: '_updateCartNote',
@@ -4402,6 +4404,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _this31.sidebarDrawer.open();
         });
       }
+    }, 
+    {
+      key: '_customRerender',
+      value: function _customRerender(event) {
+        var _this31 = this;
+
+        this._rerenderCart(null, false).then(function () {
+          _this31.sidebarDrawer.open();
+        });
+      }
     }, {
       key: '_onDrawerClosed',
       value: function _onDrawerClosed() {
@@ -4419,24 +4431,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     }, {
       key: '_rerenderCart',
-      value: function _rerenderCart(elementToAnimate) {
+      value: function _rerenderCart(elementToAnimate, not_custom = true) {
         var _this32 = this;
 
         // The only thing that we do in JavaScript is checking that if there are no items, we remove the dot in the header
         var cartDot = __WEBPACK_IMPORTED_MODULE_1__helper_Dom__["default"].nodeListToArray(document.querySelectorAll('.Header__CartDot')),
             cartQuantity = __WEBPACK_IMPORTED_MODULE_1__helper_Dom__["default"].nodeListToArray(document.querySelectorAll('.Header__CartCount'));
 
-        cartDot.forEach(function (item) {
-          if (_this32.itemCount === 0) {
-            item.classList.remove('is-visible'); // IE 11 and lower does not support second attribute of toggle :(
-          } else {
-            item.classList.add('is-visible');
-          }
-        });
-
-        cartQuantity.forEach(function (item) {
-          item.textContent = _this32.itemCount;
-        });
+        if(not_custom) {
+          cartDot.forEach(function (item) {
+            if (_this32.itemCount === 0) {
+              item.classList.remove('is-visible'); // IE 11 and lower does not support second attribute of toggle :(
+            } else {
+              item.classList.add('is-visible');
+            }
+            item.innerHTML = _this32.itemCount;
+          });
+  
+          cartQuantity.forEach(function (item) {
+            item.textContent = _this32.itemCount;
+          });
+        }
 
         // Note: appending a timestamp is necessary as the polyfill on IE11 and lower does not support the "cache" property
         return fetch('/cart?view=' + (this.options['drawer'] ? 'drawer' : 'ajax') + '&timestamp=' + Date.now(), {
@@ -4457,7 +4472,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               timelineLite.to(_this32.element.querySelector('.Drawer__Footer'), 0.5, { y: '100%', transition: 'none', ease: Cubic.easeInOut }, 0);
             }
           } else {
-            content.text().then(function (html) {
+            content.text().then(function (html) {   
               _this32._replaceContent(html);
             });
           }
@@ -4477,6 +4492,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var cartNodeParent = this.element.querySelector('.Cart').parentNode;
 
         if (this.options['drawer']) {
+          let cart_total_amount = tempElement.querySelector('.cart_total_amount') || null;
+          let cart_total_compare_amount = tempElement.querySelector('.cart_total_compare_amount') || null;
+          if(cart_total_amount && cart_total_amount.value) {
+            if(parseInt(cart_total_amount.getAttribute("data-value")) > 0) {
+              document.querySelector("#price_header").innerHTML = cart_total_amount.value;
+              document.querySelector("#price_header_").innerHTML = cart_total_amount.value;
+            }
+            else {
+              document.querySelector("#price_header").innerHTML = '';
+              document.querySelector("#price_header_").innerHTML = '';
+            }
+          }
+          if(cart_total_compare_amount && cart_total_compare_amount.value) {
+            if(parseInt(cart_total_compare_amount.getAttribute("data-value")) > 0) {
+              document.querySelector("#cm_at_price_header").innerHTML = cart_total_compare_amount.value;
+              document.querySelector("#cm_at_price_header_").innerHTML = cart_total_compare_amount.value;
+            }
+            else {
+              document.querySelector("#cm_at_price_header").innerHTML = '';
+              document.querySelector("#cm_at_price_header_").innerHTML = '';
+            }
+          }
           var currentScrollPosition = this.element.querySelector('.Drawer__Main').scrollTop;
           cartNodeParent.replaceChild(tempElement.querySelector('.Cart'), this.element.querySelector('.Cart'));
           this.element.querySelector('.Drawer__Main').scrollTop = currentScrollPosition;
