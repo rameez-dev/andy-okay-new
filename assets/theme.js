@@ -4517,6 +4517,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var currentScrollPosition = this.element.querySelector('.Drawer__Main').scrollTop;
           cartNodeParent.replaceChild(tempElement.querySelector('.Cart'), this.element.querySelector('.Cart'));
           this.element.querySelector('.Drawer__Main').scrollTop = currentScrollPosition;
+          let scriptElement = this.element.querySelector('.Drawer__Main #app-discount-action');
+          if (scriptElement) {
+            eval(scriptElement.textContent);
+          }
         } else {
           // For dedicated page we replace the whole section if there is no more product
           if (this.itemCount === 0) {

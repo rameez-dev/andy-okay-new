@@ -472,8 +472,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {% section 'announcement' %}
       {% endunless %}
       {%- if settings.show_discount_app and template != 'cart' -%}
-        {% render 'app-discount-snippet' %}
+        {% render 'app-discount-snippet', type: 'header' %}
       {%- endif -%}
+      {% render 'app-discount-popup' %}
       {% section 'header' %}
 
       <main id="main" role="main">
