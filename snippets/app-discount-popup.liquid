@@ -1,0 +1,35 @@
+{% comment %} pop-up modal {% endcomment %}
+<aside
+  class="NewsletterPopup site__black--popup soldout-popup discount-info-popup"
+  data-section-id="{{ section.id }}"
+  data-section-type="newsletter-popup"
+  aria-hidden="true">
+  <div class="popup_header">
+    {%- if settings.discount_popup_title != blank -%}
+      <span class="popup_title">{{ settings.discount_popup_title }}</span>
+    {%- endif -%}
+    <button
+      class="popup_close"
+      data-action="close-popup"
+      aria-label="{{ 'general.popup.close' | t }}">{% render 'icon' with 'close' %}</button>
+  </div>
+
+  <div class="popup_content">
+
+
+    {%- if settings.discount_popup_content != blank -%}
+      <div class="NewsletterPopup__Content">
+        <p>{{ settings.discount_popup_content }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    $('.discount-info-popup .popup_close').click(function(){
+        $('.discount-info-popup').removeClass('visible');
+        document.getElementById("cart-popup-overlay").style.display = "none";
+    });
+})
+</script>
