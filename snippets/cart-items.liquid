@@ -128,7 +128,7 @@
                 <div class="QuantitySelector">
                   {%- assign quantity_minus_one = line_item.quantity | minus: 1 -%}
           {%unless line_item.variant.metafields.secomapp.freegifts%}
-                  <a class="QuantitySelector__Button smallerQuantityBox Link Link--primary" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_minus_one }}" href="/cart/change?quantity={{ quantity_minus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_minus_one }}" data-line-id="{{ line_item.key }}" data-action="update-item-quantity">
+                  <a class="QuantitySelector__Button smallerQuantityBox Link Link--primary" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_minus_one }}" href="/cart/change?quantity={{ quantity_minus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_minus_one }}" data-line-id="{{ line_item.key }}" {% if for_drawer %}data-action="update-item-quantity"{% endif %}>
                     {%- include 'icon' with 'minus' -%}
                   </a>
                   {%endunless%}
@@ -137,14 +137,14 @@
 
                   {%- assign quantity_plus_one = line_item.quantity | plus: 1 -%}
           {%unless line_item.variant.metafields.secomapp.freegifts%}
-                  <a class="QuantitySelector__Button smallerQuantityBox Link Link--primary" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_plus_one }}" href="/cart/change?quantity={{ quantity_plus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_plus_one }}" data-line-id="{{ line_item.key }}" data-action="update-item-quantity">
+                  <a class="QuantitySelector__Button smallerQuantityBox Link Link--primary" title="{{ 'cart.items.set_quantity' | t: new_quantity: quantity_plus_one }}" href="/cart/change?quantity={{ quantity_plus_one }}&id={{ line_item.key }}" data-quantity="{{ quantity_plus_one }}" data-line-id="{{ line_item.key }}" {% if for_drawer %}data-action="update-item-quantity"{% endif %}>
                     {%- include 'icon' with 'plus' -%}
                   </a>
                   {%endunless%}
                 </div>
               </div>
 
-              <a href="/cart/change?quantity=0&id={{ line_item.key }}" class="CartItem__Remove Link Link--underline Link--underlineShort" data-quantity="0" data-line-id="{{ line_item.key }}" data-action="remove-item">{{ 'cart.items.remove' | t }}</a>
+              <a href="/cart/change?quantity=0&id={{ line_item.key }}" class="CartItem__Remove Link Link--underline Link--underlineShort" data-quantity="0" data-line-id="{{ line_item.key }}" {% if for_drawer %}data-action="remove-item"{% endif %}>{{ 'cart.items.remove' | t }}</a>
             </div>
           {%- endcapture -%}
 

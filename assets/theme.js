@@ -4267,7 +4267,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       if (this.options['drawer']) {
         this.sidebarDrawer = new __WEBPACK_IMPORTED_MODULE_0__components_Drawer__["default"](this.element, {
-          onClose: this._onDrawerClosed.bind(this)
+          onClose: this._onDrawerClosed.bind(this),
+          onOpen: this._onDrawerOpen.bind(this)
         });
       }
 
@@ -4430,6 +4431,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
        */
 
     }, {
+      key: '_onDrawerOpen',
+      value: function _onDrawerOpen() {
+        $('.drawer_upsell_carousel').slick('setPosition');
+      }
+    }, {
       key: '_rerenderCart',
       value: function _rerenderCart(elementToAnimate, not_custom = true) {
         var _this32 = this;
@@ -4517,9 +4523,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var currentScrollPosition = this.element.querySelector('.Drawer__Main').scrollTop;
           cartNodeParent.replaceChild(tempElement.querySelector('.Cart'), this.element.querySelector('.Cart'));
           this.element.querySelector('.Drawer__Main').scrollTop = currentScrollPosition;
-          let scriptElement = this.element.querySelector('.Drawer__Main #app-discount-action');
-          if (scriptElement) {
-            eval(scriptElement.textContent);
+          let discountScriptElement = this.element.querySelector('.Drawer__Main #app-discount-action');
+          let upsellScriptElement = this.element.querySelector('.Drawer__Main #drawer_upsell_script');
+          if (discountScriptElement) {
+            eval(discountScriptElement.textContent);
+          }
+          if (upsellScriptElement) {
+            eval(upsellScriptElement.textContent);
           }
         } else {
           // For dedicated page we replace the whole section if there is no more product

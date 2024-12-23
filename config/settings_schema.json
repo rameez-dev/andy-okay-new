@@ -498,6 +498,29 @@
         "label": "Free shipping minimum amount",
         "info": "Only write a number, no letters",
         "default": "50"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_link",
+        "label": "Empty Cart Link"
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_title",
+        "label": "Cart Upsell Heading",
+        "default": "TRENDING RIGHT NOW"
+      },
+      {
+        "type": "text",
+        "id": "cart_upsell_subtitle",
+        "label": "Cart Upsell Subheading",
+        "default": "These are selling out fast"
+      },
+      {
+        "type": "product_list",
+        "id": "cart_upsell_list",
+        "label": "Cart Upsell Products",
+        "limit": 6
       }
     ]
   },

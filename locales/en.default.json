@@ -261,7 +261,7 @@
   "cart": {
     "general": {
       "title": "YOUR CART",
-      "empty": "Your cart is empty",
+      "empty": "Your cart is currently empty",
       "empty_button": "Shop our products",
       "add_note": "Add Order Note",
       "edit_note": "Edit Order Note",
