@@ -54,90 +54,52 @@
         "item_e4fYTc": {
           "type": "item",
           "settings": {
-            "title": "All Art",
+            "image": "shopify:\/\/shop_images\/BestSellers.jpg",
+            "title": "Best Sellers",
             "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
             "popup_description_color": "#fafaff",
             "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/all-art",
+            "popup_btn_url": "shopify:\/\/collections\/best-sellers",
             "left": true
           }
         },
         "item_zH38hm": {
           "type": "item",
           "settings": {
-            "title": "Astronauts",
+            "image": "shopify:\/\/shop_images\/NewRelease_v2.jpg",
+            "title": "New Release",
             "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
             "popup_description_color": "#fafaff",
             "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/astronauts",
+            "popup_btn_url": "shopify:\/\/collections\/just-released",
             "left": true
           }
         },
-        "item_YBAhtQ": {
+        "item_FDWeF9": {
           "type": "item",
           "settings": {
-            "title": "Animals",
-            "popup_background_color": "#000000",
+            "image": "shopify:\/\/shop_images\/TrendingNow.jpg",
+            "title": "Trending Now",
+            "popup_background_color": "#000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
             "popup_description_color": "#fafaff",
             "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/animals",
-            "left": true
-          }
-        },
-        "item_Wdrjft": {
-          "type": "item",
-          "settings": {
-            "title": "Contemporary",
-            "popup_background_color": "#000000",
-            "popup_title": "",
-            "popup_title_color": "#fafaff",
-            "popup_text": "",
-            "popup_description_color": "#fafaff",
-            "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/pop-art",
-            "left": true
-          }
-        },
-        "item_BCtMDi": {
-          "type": "item",
-          "settings": {
-            "title": "Floral",
-            "popup_background_color": "#000000",
-            "popup_title": "",
-            "popup_title_color": "#fafaff",
-            "popup_text": "",
-            "popup_description_color": "#fafaff",
-            "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/floral",
-            "left": true
-          }
-        },
-        "item_7hEeQh": {
-          "type": "item",
-          "settings": {
-            "title": "Gaming",
-            "popup_background_color": "#000000",
-            "popup_title": "",
-            "popup_title_color": "#fafaff",
-            "popup_text": "",
-            "popup_description_color": "#fafaff",
-            "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/gaming",
+            "popup_btn_url": "shopify:\/\/collections\/top-10",
             "left": true
           }
         },
         "item_tVRQUm": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Motivational_dd58b74a-907e-42aa-a5c1-4a1042024b0f.jpg",
             "title": "Motivational",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -149,10 +111,41 @@
             "left": true
           }
         },
+        "item_Wdrjft": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Collage.jpg",
+            "title": "Collage",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/vintage",
+            "left": true
+          }
+        },
+        "item_7hEeQh": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/StreetArt.jpg",
+            "title": "Pop Art",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/pop-art",
+            "left": true
+          }
+        },
         "item_gPjyxV": {
           "type": "item",
           "settings": {
-            "title": "Nature",
+            "image": "shopify:\/\/shop_images\/Landscapes.jpg",
+            "title": "Landscapes",
             "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
@@ -163,37 +156,25 @@
             "left": true
           }
         },
-        "item_MUT8D4": {
+        "item_YBAhtQ": {
           "type": "item",
           "settings": {
-            "title": "Photo Art",
+            "image": "shopify:\/\/shop_images\/Animals_64d9b0fe-cd97-4ac8-811c-01e4f23de636.jpg",
+            "title": "Animals",
             "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
             "popup_description_color": "#fafaff",
             "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/photography",
-            "left": true
-          }
-        },
-        "item_GFkbmC": {
-          "type": "item",
-          "settings": {
-            "title": "Space",
-            "popup_background_color": "#000000",
-            "popup_title": "",
-            "popup_title_color": "#fafaff",
-            "popup_text": "",
-            "popup_description_color": "#fafaff",
-            "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/space",
+            "popup_btn_url": "shopify:\/\/collections\/animals",
             "left": true
           }
         },
         "item_37LH8n": {
           "type": "item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Surreal_7684fa80-1ff2-42e5-a188-eda238535503.jpg",
             "title": "Surreal Art",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -204,20 +185,50 @@
             "popup_btn_url": "shopify:\/\/collections\/surreal",
             "left": true
           }
+        },
+        "item_BCtMDi": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Flowers.jpg",
+            "title": "Flowers",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/floral",
+            "left": true
+          }
+        },
+        "item_GFkbmC": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Space_e23ec4eb-9bd4-4a64-94c4-d7e2dc7c32df.jpg",
+            "title": "Space",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/space",
+            "left": true
+          }
         }
       },
       "block_order": [
         "item_e4fYTc",
         "item_zH38hm",
-        "item_YBAhtQ",
-        "item_Wdrjft",
-        "item_BCtMDi",
-        "item_7hEeQh",
+        "item_FDWeF9",
         "item_tVRQUm",
+        "item_Wdrjft",
+        "item_7hEeQh",
         "item_gPjyxV",
-        "item_MUT8D4",
-        "item_GFkbmC",
-        "item_37LH8n"
+        "item_YBAhtQ",
+        "item_37LH8n",
+        "item_BCtMDi",
+        "item_GFkbmC"
       ],
       "settings": {
         "title": "",
