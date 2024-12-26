@@ -12167,7 +12167,12 @@ S .SidebarMenu .Drawer__Main::after {
   padding-top: 4px;
 }
 .tags-section.quick-looks {
-  margin: 45px 0px;
+  margin: 30px 0px 27px;
+}
+@media screen and (max-width: 640px) { 
+  .tags-section.quick-looks {
+    margin: 30px 0px 45px;
+  }
 }
 .search_preload .tags-section {
   overflow: hidden;
@@ -12292,6 +12297,9 @@ S .SidebarMenu .Drawer__Main::after {
   white-space: unset;
   gap: 40px;
 }
+.tags-section.quick-looks .tags-section-holder .links-section::-webkit-scrollbar {
+  height: 0px;
+}
 @media screen and (max-width: 640px) {
   .tags-section.quick-looks .tags-section-holder .links-section {
     gap: 20px;
@@ -12334,7 +12342,7 @@ S .SidebarMenu .Drawer__Main::after {
   line-height: normal;
   color: #000;
   word-break: break-word;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-underline-offset: 5px;
   white-space: nowrap;
 }
