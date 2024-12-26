@@ -1401,6 +1401,10 @@ for size, we use it to display a size chart (if applicable)
       <div class="ubx-action-headline">
         <div class="ubx-heading">{{ section.settings.ubx_title }}</div>
         <div class="ubx-subheading">|&nbsp; {{ section.settings.ubx_subtitle }}</div>
+        <div class="ubx-arrows">
+          <div class="ubx_arrow_left ubx_arrow">{% include 'icon' with 'select-arrow-left' %}</div>
+          <div class="ubx_arrow_right ubx_arrow">{% include 'icon' with 'select-arrow-right' %}</div>
+        </div>
       </div>
       <div class="ubx-action-videos">
         {% assign ubx_index = 0 %}
@@ -1410,7 +1414,8 @@ for size, we use it to display a size chart (if applicable)
             <div class="ubx-action-item" data-index="{{ ubx_index }}">
               {{ blk.settings.video.preview_image | image_url: width: 200 | image_tag }}
               <div class="ubx-play-icon">
-                <img src="{{ 'play-icon.png' |  asset_url }}" alt="play icon" width="100" height="100">
+                {% include 'icon' with 'play-2' %}
+                {% comment %} <img src="{{ 'play-icon.png' |  asset_url }}" alt="play icon" width="100" height="100"> {% endcomment %}
               </div>
             </div>
           {% endif %}
@@ -1430,6 +1435,10 @@ for size, we use it to display a size chart (if applicable)
           </div>
         {%- endif -%}
       </div>
+      <div class="ubx-arrows">
+          <div class="ubx_video_arrow_left ubx_arrow">{% include 'icon' with 'select-arrow-left' %}</div>
+          <div class="ubx_video_arrow_right ubx_arrow">{% include 'icon' with 'select-arrow-right' %}</div>
+      </div>
       <div class="ubx-video-container">
         {% assign ubx_index = 0 %}
         {% for blk in section.blocks %}
@@ -1445,11 +1454,57 @@ for size, we use it to display a size chart (if applicable)
         
     <script>
       $(document).ready(function(){
+        $('.ubx-action-videos').slick({
+          dots: false,
+          infinite: false,
+          slidesToShow: 3.3,
+          prevArrow: $('.ubx_arrow_left'),
+          nextArrow: $('.ubx_arrow_right'),
+          responsive: [
+            {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 4
+            }
+            }
+          ]
+        });
+
         var ubx_flkty = $(".ubx-video-container").flickity({
           "prevNextButtons": false,
           "pageDots": true,
           "cellAlign": 'left',
-          "contain": true
+          "contain": true,
+          on: {
+            ready: function() {
+              console.log('Flickity is ready');
+            },
+            change: function( index ) {
+              console.log( 'Slide changed to' + index );
+            }
+          }
+        });
+
+        $(".ubx_video_arrow_left").on( 'click', function() {
+          ubx_flkty.flickity('previous');
+          // var flkty = ubx_flkty.data('flickity');
+          // if(flkty.selectedIndex == 0 ) {
+          //   $(".ubx_video_arrow_left").attr("aria-disabled", true);
+          // }
+          // else {
+          //   $(".ubx_video_arrow_left").attr("aria-disabled", false);
+          // }
+          // if(flkty.selectedIndex == (flkty.cells.length - 1) ) {
+          //   $(".ubx_video_arrow_right").attr("aria-disabled", true);
+          // }
+          // else {
+          //   $(".ubx_video_arrow_right").attr("aria-disabled", false);
+          // }
+        });
+
+
+        $(".ubx_video_arrow_right").on( 'click', function() {
+          ubx_flkty.flickity('next');
         });
 
         $('.ubx-popup .popup_close').click(function(){
