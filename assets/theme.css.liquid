@@ -9622,6 +9622,9 @@ body.story-popup-visible::after {
   max-width: 500px;
   margin: 0 auto;
 }
+.Product__Info {
+  overflow: hidden;
+}
 .Product__Info--noGallery {
   padding-top: 24px;
 }
@@ -14601,6 +14604,11 @@ table tr td {
   justify-content: center;
   gap: 18px;
 }
+@media only screen and (max-width: 800px) {
+  .pdp-custom-stars {
+    margin-bottom: 35px;
+  }
+}
 .pdp-custom-stars .product_rev_text {
   margin-left: 0px;
   text-align: center;
@@ -15393,7 +15401,7 @@ a[name="new-currency-object"] {
 }
 
 .help-container {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .help-text {
@@ -15445,7 +15453,8 @@ a[name="new-currency-object"] {
 .ubx-action-container {
   display: flex;
   flex-direction: column;
-  gap: 10px
+  gap: 10px;
+  padding-block: 15px 20px;
 }
 
 .ubx-action-headline {
@@ -15464,21 +15473,27 @@ a[name="new-currency-object"] {
   font-style: italic
 }
 
-.ubx-action-videos {
+/* .ubx-action-videos {
   display: flex;
   align-items: center;
   gap: 10px;
+} */
+
+.ubx-action-videos:not(.slick-initialized) {
+  display: none;
 }
 
+.ubx-action-videos .slick-list {
+  overflow: visible;
+}
 
 .ubx-action-item {
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
+  /* width: 40px;
+  height: 40px; */
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
-  display: flex;
-  align-items: center;
+  margin-right: 8px;
 }
 
 .ubx-play-icon {
@@ -15487,7 +15502,8 @@ a[name="new-currency-object"] {
   height: 100%;
   top: 0;
   left: 0;
-  display: flex;
+  /* display: flex; */
+  display: none;
   align-items: center;
   justify-content: center;
   /* background: rgba(0, 0, 0, 0.2); */
@@ -15495,6 +15511,9 @@ a[name="new-currency-object"] {
 
 .ubx-play-icon img {
   width: 45%; 
+}
+.ubx-play-icon svg {
+  width: 30%; 
 }
 
 .ubx-video-container {
@@ -15506,6 +15525,7 @@ a[name="new-currency-object"] {
 }
 .ubx-popup .popup_content {
   padding-inline: 35px;
+  padding-bottom: 5%;
 }
 
 .ubx-video-item {
@@ -15522,6 +15542,27 @@ a[name="new-currency-object"] {
 }
 .ubx-popup .NewsletterPopup__Content a {
   color: #163bbc;
+}
+
+.ubx-arrows {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin-left: auto;
+}
+.ubx-arrows svg {
+  height: 10px;
+  margin-left: 20px;
+}
+.ubx_arrow[aria-disabled="true"] svg {
+  color: gray;
+}
+
+.ubx-popup .ubx-arrows {
+  padding: 0px 35px 12px;
+}
+.ubx-popup .ubx-arrows svg {
+  height: 8px;
 }
 
 .in-caslon {
