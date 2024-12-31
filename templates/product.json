@@ -34,13 +34,20 @@
           "settings": {
             "video": "shopify:\/\/files\/videos\/Snapinsta.app_video_An-3hkkPyIp99JBrpgYCS761-WzIr2N9m7zZGb0WfHNzg_oXEyg9VdNu2-gZQQyzL3AcZGe4vqh5ps6V5avLlBM.mp4"
           }
+        },
+        "ubx_video_wyCYMG": {
+          "type": "ubx_video",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/andy_new_video.mp4"
+          }
         }
       },
       "block_order": [
         "ubx_video_HiCRWy",
         "ubx_video_UaY6Mj",
         "ubx_video_REDCmJ",
-        "ubx_video_RkhV7c"
+        "ubx_video_RkhV7c",
+        "ubx_video_wyCYMG"
       ],
       "settings": {
         "gallery_video": "shopify:\/\/files\/videos\/AndyOkay_Branding3_Oct_1x1_D2.mp4",
