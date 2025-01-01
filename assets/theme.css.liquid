@@ -1877,6 +1877,15 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   font-size: 16px;
   line-height: 16px;
 }
+.Collapsible__Button svg {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  color: black;
+}
+.Collapsible__Button svg.Icon--select-arrow-right path {
+  stroke-width: 1.2px;
+}
 .Drawer__Main .Collapsible__Button {
   color: #fff;
 }
@@ -1917,11 +1926,11 @@ body:not(.is-tabbing) .flickity-enabled:focus {
 .Collapsible__Button[aria-expanded="true"] .Collapsible__Plus::before {
   opacity: 0;
 }
-.Collapsible .Collapsible {
+.Collapsible:not(:has(.Collapsible__Slider)) .Collapsible {
   margin-left: 16px;
   border: none;
 }
-.Collapsible .Collapsible .Collapsible__Button {
+.Collapsible:not(:has(.Collapsible__Slider)) .Collapsible .Collapsible__Button {
   padding: 13px 0;
 }
 .Collapsible__Inner {
@@ -1946,6 +1955,72 @@ body:not(.is-tabbing) .flickity-enabled:focus {
 .Collapsible .Linklist--bordered {
   margin-top: 16px;
   margin-bottom: 4px;
+}
+.Collapsible__Slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  transition: 0.2s linear;
+  background: white;
+  z-index: 1;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  overflow: auto;
+}
+.Collapsible__Slider[aria-hidden="false"] {
+  transform: translateX(0px);
+}
+.Collapsible__Slider::-webkit-scrollbar {
+  width: 0px;
+}
+.Collapsible__Slider-header {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background: white;
+}
+.Slider-Header, .Slider-Item {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-100%);
+}
+.Slider-Header:has(.Collapsible__Slider-header[aria-hidden="false"]),
+.Slider-Item:has(.Collapsible__Slider-header[aria-hidden="false"]) {
+  transform: translateX(0px);
+}
+.Collapsible__Slider-centralizer {
+  width: 16px;
+}
+.Collapsible__Slider-padding {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-bottom: 30px;
+  z-index: 1;
+  background: white;
+}
+.Collapsible__Slider-title {
+  font-family: DIN Next LT Pro Cond;
+  font-size: 17px;
+  line-height: 1;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+.Collapsible__Slider-arrow svg {
+  color: #000;
+  height: 17px;
+  width: 17px;
+}
+.Collapsible__Slider-arrow svg.Icon--select-arrow-left path {
+  stroke-width: 1.2px;
 }
 @media screen and (min-width: 641px) {
   /* When this class is applied to a collapsible, it will display as a collapsible on mobile but not on larger screen, where it will
@@ -2064,6 +2139,7 @@ body:not(.is-tabbing) .flickity-enabled:focus {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  position: relative;
 }
 .Drawer--fromLeft .Drawer__Container {
   padding-top: 30px;
@@ -2110,6 +2186,12 @@ body:not(.is-tabbing) .flickity-enabled:focus {
 @media (max-width: 640px) {
   .Drawer__Close {
     right: 30px;
+  }
+  .Slider-submenu .Drawer__Close {
+    right: 20px;
+  }
+  .currencyDrawer .Drawer__Close {
+    right: 20px;
   }
 }
 .Drawer__Close svg {
@@ -8185,13 +8267,37 @@ nav.Header__SecondaryNav.push-currency-left {
   color: black !important;
 }
 .almost_gone_color {
- color: #af182b !important;
+ color: #942434 !important;
 }
 .impact-link {
-  color: #2200cc !important;
+  color: #001bcf !important;
 }
 .last-chance-class {
   color: #9b0000 !important;
+}
+.sidebar-reviews-counter {
+  display: inline-block;
+  font-size: 9px;
+  color: #001bcf;
+  vertical-align: top;
+  font-family: DIN Next LT Pro;
+  margin-left: 2px;
+}
+
+.sidebar-menu-cards-cont {
+  padding: 20px 0px 20px 20px;
+}
+.sidebar-menu-card-item {
+  display: block;
+  padding-right: 10px;
+  position: relative;
+}
+.side-menu-item-headline {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  font-family: DIN Next LT Pro Cond;
+  font-size: 17px;
 }
 
 @media screen and (min-width: 641px) {
@@ -11209,8 +11315,8 @@ body.story-popup-visible::after {
 .SidebarMenu .Collapsible, .SidebarMenu .Linklist {
   /*   border-color: $navigation-border-color; */
 }
-.SidebarMenu__Nav .Collapsible:first-child {
-  border-top: none;
+.SidebarMenu__Nav .Collapsible:first-of-type:not(.seconday_menu_first_level) {
+  border-top: 1px solid #e5e5e5;
 }
 /* We need to do that to add extra padding for scroll, as Safari on Mac and iOS has some issue with directly adding a padding-bottom */
 S .SidebarMenu .Drawer__Main::after {
@@ -11218,20 +11324,35 @@ S .SidebarMenu .Drawer__Main::after {
   content: '';
   /* height: 35px; */
 }
-.SidebarMenu__Nav--secondary {
-  margin-top: 28px;
+.Drawer__Main nav.SidebarMenu__Nav--secondary .Collapsible .Collapsible__Button {
+  font-family: 'Adobe Caslon Pro';
+  /* color: #595959; */
+  font-size: 15px;
+  text-transform: none;
+}
+.Drawer__Main nav.SidebarMenu__Nav--secondary .Collapsible.seconday_menu_first_level>.Collapsible__Button {
+  color: #595959;
 }
 .SidebarMenu .Collapsible {
   border-top: 0px none;
   margin-left: 0px;
 }
 .Drawer__Main .SidebarMenu__Nav > .Collapsible > .Collapsible__Button {
-  font-family: "DIN Next LT Pro Bold";
-  font-size: 20px;
+  font-family: "DIN Next LT Pro Cond";
+  font-size: 17px;
   padding: 20px 0px 20px 20px;
+  line-height: 1;
+  height: 56px;
 }
 .Drawer__Main .SidebarMenu__Nav > .Collapsible > .Collapsible__Button > .Collapsible__Plus {
   right: 30px;
+}
+.Drawer__Main .SidebarMenu__Nav .Collapsible__Slider .Collapsible > .Collapsible__Button {
+  font-family: "DIN Next LT Pro Cond";
+  font-size: 17px;
+  padding: 20px 0px 20px 20px;
+  line-height: 1;
+  height: 56px;
 }
 .Drawer__Main .SidebarMenu__Nav > .Collapsible > .Collapsible__Inner > .Collapsible__Content > .Collapsible > .Text--subdued {
   text-align: left;
@@ -11267,7 +11388,7 @@ S .SidebarMenu .Drawer__Main::after {
   -ms-flex-pack: center;
   justify-content: flex-start;
   width: 100%;
-  min-height: 10px;
+  /* min-height: 10px; */
   -webkit-box-shadow: 0 1px rgba(var(--navigation-text-color)) inset;
   box-shadow: none;
   color: rgba(var(--navigation-text-color));
@@ -15598,4 +15719,9 @@ a[name="new-currency-object"] {
 }
 .smallerText{
   font-size: 16px;
+}
+
+.sidebar-grayedout {
+  flex: 1;
+  background-color: #f5f5f5;
 }
