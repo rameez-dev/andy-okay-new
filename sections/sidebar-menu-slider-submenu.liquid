@@ -1,5 +1,6 @@
 {%- assign main_menu_handle = section.settings.primary_menu | default: 'main-menu' -%}
 {%- assign main_menu = linklists[main_menu_handle] -%}
+{%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
 <style>  
   #flags-mobile {
     height: 13px; 
@@ -25,7 +26,7 @@
   }
   .drawer-trustpilot-container{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 70px;
   }
   @media only screen and (min-width: 641px) {
@@ -37,11 +38,68 @@
     font-family: 'Adobe Caslon Pro';
     color: black;
     padding: 10px;
+    font-size: 14px;
   }
 </style>
 
-<section id="sidebar-menu" class="SidebarMenu Drawer Drawer--small Drawer--fromLeft" aria-hidden="true" data-section-id="{{ section.id }}" data-section-type="sidebar-menu">
+<section id="sidebar-menu" class="Slider-submenu SidebarMenu Drawer Drawer--small Drawer--fromLeft" aria-hidden="true" data-section-id="{{ section.id }}" data-section-type="sidebar-menu">
   <header class="Drawer__Header" data-drawer-animated-left>
+    <div class="Slider-Header">
+      {%- for link in main_menu.links -%}
+        {%- if link.links != blank -%}
+          <div class="Slider-Item">
+            <div class="Collapsible__Slider-header" data-header-id="link_{{ forloop.index0 }}">
+              <div class="Collapsible__Slider-arrow" data-action="slider-close-collapsible">
+                {% render 'icon' with 'select-arrow-left' %}
+              </div>
+              <div class="Collapsible__Slider-title">{{- link.title | escape -}}</div>
+              <div class="Collapsible__Slider-centralizer"></div>
+            </div>
+            {%- for sub_link in link.links -%}
+              {%- if sub_link.links != blank -%}
+                <div class="Slider-Item">
+                  <div class="Collapsible__Slider-header" data-header-id="link_{{ forloop.parentloop.index0  }}_{{ forloop.index0 }}">
+                    <div class="Collapsible__Slider-arrow" data-action="slider-close-collapsible">
+                      {% render 'icon' with 'select-arrow-left' %}
+                    </div>
+                    <div class="Collapsible__Slider-title">{{- sub_link.title | escape -}}</div>
+                    <div class="Collapsible__Slider-centralizer"></div>
+                  </div>
+                </div>
+              {%- endif -%}
+            {% endfor %}
+          </div>
+          {%- endif -%}
+      {% endfor %}
+    </div>
+    <div class="Slider-Header">
+      {%- for link in secondary_menu.links -%}
+        {%- if link.links != blank -%}
+          <div class="Slider-Item">
+            <div class="Collapsible__Slider-header" data-header-id="secondary_link_{{ forloop.index0 }}">
+              <div class="Collapsible__Slider-arrow" data-action="slider-close-collapsible">
+                {% render 'icon' with 'select-arrow-left' %}
+              </div>
+              <div class="Collapsible__Slider-title">{{- link.title | escape -}}</div>
+              <div class="Collapsible__Slider-centralizer"></div>
+            </div>
+            {%- for sub_link in link.links -%}
+              {%- if sub_link.links != blank -%}
+                <div class="Slider-Item">
+                  <div class="Collapsible__Slider-header" data-header-id="secondary_link_{{ forloop.parentloop.index0  }}_{{ forloop.index0 }}">
+                    <div class="Collapsible__Slider-arrow" data-action="slider-close-collapsible">
+                      {% render 'icon' with 'select-arrow-left' %}
+                    </div>
+                    <div class="Collapsible__Slider-title">{{- sub_link.title | escape -}}</div>
+                    <div class="Collapsible__Slider-centralizer"></div>
+                  </div>
+                </div>
+              {%- endif -%}
+            {% endfor %}
+          </div>
+          {%- endif -%}
+      {% endfor %}
+    </div>
     <button class="Drawer__Close Icon-Wrapper--clickable" data-action="close-drawer" data-drawer-id="sidebar-menu" aria-label="{{ 'header.navigation.close_sidebar' | t }}">
       {%- include 'icon' with 'close' -%}
     </button>
@@ -53,24 +111,72 @@
         <div>
           <nav class="SidebarMenu__Nav SidebarMenu__Nav--primary" aria-label="{{ 'header.navigation.sidebar_title' | t }}">
             {%- for link in main_menu.links -%}
-            {% assign members-color = '' %}
+            {% assign link_color = '' %}
             {% if link.title contains 'CLUB' %}
-              {% assign members-color = 'members-club-color' %}
+              {% assign link_color = 'members-club-color' %}
+            {% elsif link.title == 'IMPACT' %}
+              {% assign link_color = 'impact-link' %}
+            {% elsif link.title == 'ALMOST GONE' %}
+              {% assign link_color = 'almost_gone_color' %}
             {% endif %}
               <div class="Collapsible">
                 {%- if link.links != blank -%}
-                  <button class="Collapsible__Button Heading u-h6 {% if link.title contains 'IMPACT' %} impact-link{% endif %}" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
+                  <button class="Collapsible__Button Heading u-h6 {{ link_color }}" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
                     {{- link.title | escape -}} {% render 'icon' with 'select-arrow-right' %}
-                    {% comment %} <span class="Collapsible__Plus"></span> {% endcomment %}
+                    <!-- <span class="Collapsible__Plus"></span> -->
                   </button>
 
-                  <div class="Collapsible__Inner">
+                  <div class="Collapsible__Slider" aria-hidden="true" data-header-id="link_{{ forloop.index0 }}" data-position="first_level">
+                    {%- for sub_link in link.links -%}
+                      {% assign link_color = '' %}
+                      {% if sub_link.title contains 'CLUB' %}
+                        {% assign link_color = 'members-club-color' %}
+                      {% elsif sub_link.title == 'IMPACT' %}
+                        {% assign link_color = 'impact-link' %}
+                      {% elsif sub_link.title == 'ALMOST GONE' %}
+                        {% assign link_color = 'almost_gone_color' %}
+                      {% endif %}
+                      <div class="Collapsible">
+                        {%- if sub_link.links != blank -%}
+                          <button class="Collapsible__Button Heading u-h6 {{ link_color }}" data-action="toggle-collapsible" aria-expanded="false">
+                            {{- sub_link.title | escape -}} {% render 'icon' with 'select-arrow-right' %}
+                          </button>
+
+                          <div class="Collapsible__Slider" aria-hidden="true" data-header-id="link_{{ forloop.parentloop.index0  }}_{{ forloop.index0 }}">
+                            {%- for grandchild_link in sub_link.links -%}
+                              {% assign link_color = '' %}
+                              {% if grandchild_link.title contains 'CLUB' %}
+                                {% assign link_color = 'members-club-color' %}
+                              {% elsif grandchild_link.title == 'IMPACT' %}
+                                {% assign link_color = 'impact-link' %}
+                              {% elsif grandchild_link.title == 'ALMOST GONE' %}
+                                {% assign link_color = 'almost_gone_color' %}
+                              {% endif %}
+                              <div class="Collapsible">
+                                <a href="{{ grandchild_link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6 {{ link_color }}">
+                                  {{ grandchild_link.title | escape }}
+                                </a>
+                              </div>
+                            {% endfor %}
+                            <div class="Collapsible__Slider-padding"></div>
+                          </div>
+                        {%- else -%}
+                          <a href="{{ sub_link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6 {{ link_color }}">
+                            {{ sub_link.title | escape }}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    {% endfor %}
+                    <div class="Collapsible__Slider-padding"></div>
+                  </div>
+
+                  {% comment %} <div class="Collapsible__Inner">
                     <div class="Collapsible__Content collapsible-content-main">
                       {%- for sub_link in link.links -%}
                         <div class="Collapsible">
                           {%- if sub_link.links != blank -%}
                             <button class="Collapsible__Button Heading Text--subdued Link--primary u-h7" data-action="toggle-collapsible" {% if sub_link.links != blank %}aria-expanded="true"{% endif %}>
-                              {{- sub_link.title | escape -}} {%- comment -%} <span class="Collapsible__Plus"></span>{%- endcomment -%} 
+                              {{- sub_link.title | escape -}} <!-- <span class="Collapsible__Plus"></span> -->
                             </button>
 
                             <div class="Collapsible__Inner" style="overflow: visible; height: auto;">
@@ -92,9 +198,9 @@
                         </div>
                       {%- endfor -%}
                     </div>
-                  </div>
+                  </div> {% endcomment %}
                 {%- else -%}
-                  <a href="{{ link.url }}" class="Collapsible__Button  {{members-color}} Heading Link Link--primary u-h6">
+                  <a href="{{ link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6 {{ link_color }}">
                     {{ link.title | escape }}
                     {% if link.title contains 'REVIEWS' %}
                       {% assign looxstats = shop.metafields.loox["global_stats"] | split: ',' %}
@@ -119,10 +225,10 @@
               <div class="sidebar-menu-cards-carousel">
                 {% for blk in section.blocks %}
                   {% if blk.type == "card" and blk.settings.image != blank %}
-                    <div class="sidebar-menu-card-item">
+                    <a class="sidebar-menu-card-item" href="{{ blk.settings.url | default: '#' }}">
                       <img src="{{ blk.settings.image |  image_url: width: 500 }}" width="100%" height="auto">
                       <div class="side-menu-item-headline">{{ blk.settings.headline }}</div>
-                    </div>
+                    </a>
                   {% endif %}              
                 {% endfor %}
               </div>
@@ -146,11 +252,51 @@
         </div>
 
         <div class="sidebar-grayedout">
-          <ul class="drawer-secondary-link-list">
-            <li><a href="https://andyokay.com/pages/about-us">About Us</a></li>
-            <li><a href="https://andyokay.com/pages/faq">Customer Support</a></li>
-            <li><a href="https://andyokay.com/pages/contact">Contact Us</a></li>
-          </ul>
+          <nav class="SidebarMenu__Nav SidebarMenu__Nav--secondary">
+            {%- for link in secondary_menu.links -%}
+              <div class="Collapsible seconday_menu_first_level">
+                {%- if link.links != blank -%}
+                  <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" {% if link.links != blank %}aria-expanded="false"{% endif %}>
+                    {{- link.title | escape -}} {% render 'icon' with 'select-arrow-right' %}
+                    <!-- <span class="Collapsible__Plus"></span> -->
+                  </button>
+
+                  <div class="Collapsible__Slider" aria-hidden="true" data-header-id="secondary_link_{{ forloop.index0 }}" data-position="first_level">
+                    {%- for sub_link in link.links -%}
+                      <div class="Collapsible">
+                        {%- if sub_link.links != blank -%}
+                          <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                            {{- sub_link.title | escape -}} {% render 'icon' with 'select-arrow-right' %}
+                          </button>
+
+                          <div class="Collapsible__Slider" aria-hidden="true" data-header-id="secondary_link_{{ forloop.parentloop.index0  }}_{{ forloop.index0 }}">
+                            {%- for grandchild_link in sub_link.links -%}
+                              <div class="Collapsible">
+                                <a href="{{ grandchild_link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6">
+                                  {{ grandchild_link.title | escape }}
+                                </a>
+                              </div>
+                            {% endfor %}
+                            <div class="Collapsible__Slider-padding"></div>
+                          </div>
+                        {%- else -%}
+                          <a href="{{ sub_link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6">
+                            {{ sub_link.title | escape }}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    {% endfor %}
+                    <div class="Collapsible__Slider-padding"></div>
+                  </div>
+                {%- else -%}
+                  <a href="{{ link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6">
+                    {{ link.title | escape }}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </nav>
+
           <div class="drawer-trustpilot-container">
             <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
             <p class="drawer-trustpilot-text">+202,000 Artworks sold for charity</p>
@@ -163,7 +309,6 @@
           {%- endcapture -%}
         {%- endif -%}
 
-        {%- assign secondary_menu = linklists[section.settings.secondary_menu] -%}
         {%- comment -%} // client asked to hide below section
         <nav class="SidebarMenu__Nav SidebarMenu__Nav--secondary">
           <ul class="Linklist Linklist--spacingLoose">
@@ -335,6 +480,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
         }
       ]
     }

@@ -1412,6 +1412,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.isOpen = true;
 
+        if($('.sidebar-menu-cards-carousel').length)
+        $('.sidebar-menu-cards-carousel').slick('setPosition');
+
         this.onOpen(); // Call the callback to allow other code to hook their logic
 
         return false;
@@ -3282,6 +3285,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_attachListeners',
       value: function _attachListeners() {
         this.domDelegate.on('click', '[data-action="toggle-collapsible"]', this._toggleCollapsible.bind(this));
+        this.domDelegate.on('click', '[data-action="slider-close-collapsible"]', this._closeCustomCollapsible.bind(this));
       }
 
       /**
@@ -3323,15 +3327,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_open',
       value: function _open(collapsible) {
         var toggleButton = collapsible.querySelector('.Collapsible__Button'),
-            collapsibleInner = collapsible.querySelector('.Collapsible__Inner');
+            collapsibleInner = collapsible.querySelector('.Collapsible__Inner'),
+            collapsibleSlider = collapsible.querySelector('.Collapsible__Slider');
 
-        if (!collapsibleInner || toggleButton.getAttribute('aria-expanded') === 'true') {
+        if ((!collapsibleInner && !collapsibleSlider) || toggleButton.getAttribute('aria-expanded') === 'true') {
           return; // It's already open
         }
 
         toggleButton.setAttribute('aria-expanded', 'true');
-        collapsibleInner.style.overflow = 'visible';
-        __WEBPACK_IMPORTED_MODULE_0__helper_Animation__["default"].slideDown(collapsibleInner);
+        if (collapsibleInner) {
+          collapsibleInner.style.overflow = 'visible';
+          __WEBPACK_IMPORTED_MODULE_0__helper_Animation__["default"].slideDown(collapsibleInner);
+        }
+        if (collapsibleSlider) {
+          collapsibleSlider.setAttribute('aria-hidden', 'false');
+          
+          let drawer = collapsibleSlider.closest('.Drawer');
+          if(!drawer) return;
+          
+          let header_id = collapsibleSlider.getAttribute('data-header-id');
+          if(!header_id) return;
+
+          let sliderHeader = drawer.querySelector(`.Slider-Header .Collapsible__Slider-header[data-header-id="${header_id}"]`);
+          if(!sliderHeader) return;
+
+          sliderHeader.setAttribute('aria-hidden', 'false');
+          let drawerMain = drawer.querySelector('.Drawer__Main');
+          if(!drawerMain) return;
+
+          drawerMain.removeAttribute('data-scrollable');
+        }
       }
 
       /**
@@ -3342,15 +3367,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: '_close',
       value: function _close(collapsible) {
         var toggleButton = collapsible.querySelector('.Collapsible__Button'),
-            collapsibleInner = collapsible.querySelector('.Collapsible__Inner');
+            collapsibleInner = collapsible.querySelector('.Collapsible__Inner'),
+            collapsibleSlider = collapsible.querySelector('.Collapsible__Slider');
 
-        if (!collapsibleInner || toggleButton.getAttribute('aria-expanded') === 'false') {
+        if ((!collapsibleInner && !collapsibleSlider) || toggleButton.getAttribute('aria-expanded') === 'false') {
           return; // It's already closed
         }
 
         toggleButton.setAttribute('aria-expanded', 'false');
-        collapsibleInner.style.overflow = 'hidden';
-        __WEBPACK_IMPORTED_MODULE_0__helper_Animation__["default"].slideUp(collapsibleInner);
+        if (collapsibleInner) {
+          collapsibleInner.style.overflow = 'hidden';
+          __WEBPACK_IMPORTED_MODULE_0__helper_Animation__["default"].slideUp(collapsibleInner);
+        }
+        if (collapsibleSlider) {
+          collapsibleSlider.setAttribute('aria-hidden', 'true');
+        }
+      }
+    }, {
+      key: '_closeCustomCollapsible',
+      value: function _closeCustomCollapsible(event, target) {
+        let drawer = target.closest('.Drawer');
+        var sliderHeader = target.closest('.Collapsible__Slider-header');
+        if(!drawer || !sliderHeader) return;
+
+        let header_id = sliderHeader.getAttribute('data-header-id');
+        if(!header_id) return;
+
+        let collapsibleSlider = drawer.querySelector(`.Collapsible__Slider[data-header-id="${header_id}"]`);
+        if(!collapsibleSlider) return;
+
+        var collapsible = collapsibleSlider.closest('.Collapsible');
+        var collapsibleButton = collapsible.querySelector('[data-action="toggle-collapsible"]');
+        var parentCollapsible = collapsible.closest('.Collapsible');
+
+        this._close(parentCollapsible, collapsibleButton);
+        sliderHeader.setAttribute('aria-hidden', 'true');
+
+        let drawerMain = drawer.querySelector('.Drawer__Main');
+        if(!drawerMain) return;
+
+        if(collapsibleSlider.getAttribute('data-position') == "first_level")
+        drawerMain.setAttribute('data-scrollable', '');
       }
     }]);
 

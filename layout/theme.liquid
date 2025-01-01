@@ -352,11 +352,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- better-home-screen-icons-head-end -->
   <script src='https://appdevelopergroup.co/apps/smartbadge/js/smartbadge.js?shop=andy-okay.myshopify.com' type='text/javascript' defer></script>
   <meta name="p:domain_verify" content="e1fb25c4e56e09186ee89f3bf741f707"/>
-  {% if template == 'product' %}
-    {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
-
-   <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>    
-  {% endif %}
+  
+  {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>    
+  
     {%- comment -%} this is for quickview
   {{ '//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' | stylesheet_tag }}
   {{ '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' | stylesheet_tag }}
@@ -460,7 +459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     {% section 'popup' %}
     {% section 'soldout_popup' %}
-    {% section 'sidebar-menu' %}
+    {% section 'sidebar-menu-slider-submenu' %}
     {% section 'sidebar-menu-currency' %}
 
     {%- if template != 'cart' -%}
