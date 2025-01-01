@@ -101,6 +101,34 @@
       },
       "sidebar-menu": {
         "type": "sidebar-menu",
+        "blocks": {
+          "card_CDJFKm": {
+            "type": "card",
+            "settings": {
+              "headline": "TOP SELLERS",
+              "image": "shopify:\/\/shop_images\/The_Last_Drive_Vintage_Car_Mercedes_Benz_In_Flovers_04.jpg"
+            }
+          },
+          "card_rHKKYt": {
+            "type": "card",
+            "settings": {
+              "headline": "NEW IN",
+              "image": "shopify:\/\/shop_images\/FrankMoth_AllTheSpringsSheRemembered_Andyokay_03.jpg"
+            }
+          },
+          "card_E8WfaH": {
+            "type": "card",
+            "settings": {
+              "headline": "ALL PRODUCTS",
+              "image": "shopify:\/\/shop_images\/IbaiAcevedo_NewTheory_Andyokay_06.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "card_CDJFKm",
+          "card_rHKKYt",
+          "card_E8WfaH"
+        ],
         "settings": {
           "primary_menu": "main-menu",
           "secondary_menu": "footer",
@@ -763,6 +791,45 @@
           "heading": "FAQs",
           "backgroud-color": "#ffffff",
           "text-color": "#000000"
+        }
+      },
+      "sidebar-menu-slider-submenu": {
+        "type": "sidebar-menu-slider-submenu",
+        "blocks": {
+          "card_gDFbMQ": {
+            "type": "card",
+            "settings": {
+              "headline": "TOP TRENDING",
+              "image": "shopify:\/\/shop_images\/BestSellers_5a548733-579c-4719-9f45-d2992cca1a99.jpg",
+              "url": "shopify:\/\/collections\/top-10"
+            }
+          },
+          "card_aqUNJa": {
+            "type": "card",
+            "settings": {
+              "headline": "NEW IN",
+              "image": "shopify:\/\/shop_images\/NewIn.jpg",
+              "url": "shopify:\/\/collections\/just-released"
+            }
+          },
+          "card_mDyhH9": {
+            "type": "card",
+            "settings": {
+              "headline": "BEST SELLERS",
+              "image": "shopify:\/\/shop_images\/TopTrending.jpg",
+              "url": "shopify:\/\/collections\/best-sellers"
+            }
+          }
+        },
+        "block_order": [
+          "card_gDFbMQ",
+          "card_aqUNJa",
+          "card_mDyhH9"
+        ],
+        "settings": {
+          "primary_menu": "new-main-menu-mobile",
+          "secondary_menu": "new-secondary-menu-mobile",
+          "show_social_media": false
         }
       }
     },
