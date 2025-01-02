@@ -39,11 +39,12 @@
     "cart_free_shipping_threshold": "69",
     "empty_cart_link": "shopify:\/\/collections\/all-art",
     "cart_upsell_list": [
-      "bloom-6",
-      "alone",
-      "deepness",
-      "fire",
-      "imagine"
+      "figureoutable",
+      "be-cool-or-leave",
+      "cool-people-live-here",
+      "you-got-this",
+      "find-your-heart",
+      "offline"
     ],
     "share_image": "shopify:\/\/shop_images\/share2_b7354900-8f13-47be-804e-bfa93bcfc360.jpg",
     "social_facebook": "https:\/\/www.facebook.com\/andyokayart\/",
@@ -95,7 +96,7 @@
         "type": "soldout_popup",
         "settings": {
           "title": "This item has already sold out.",
-          "content": "Our artworks sell out fast, sometimes within a few days. Join our <b>Members Club<\/b> and get a one day head start on all new drops!",
+          "content": "Our artworks sell out fast, sometimes within a few days. Join our <strong>Members Club<\/strong> and get a one day head start on all new drops!",
           "show_newsletter": true
         }
       },
