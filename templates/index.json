@@ -201,7 +201,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/TrendingNow.jpg",
             "title": "Trending Now",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -529,54 +529,54 @@
     "image_carousel_6TtTf3": {
       "type": "image-carousel",
       "blocks": {
-        "mobile_image_KQ3pz8": {
-          "type": "mobile_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/fall_mob.jpg",
-            "link": "shopify:\/\/collections\/floral"
-          }
-        },
-        "desktop_image_GQygX4": {
-          "type": "desktop_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/fall_desk.jpg",
-            "link": "shopify:\/\/collections\/floral"
-          }
-        },
         "mobile_image_cgWgdQ": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/forest_mob.jpg",
-            "link": "shopify:\/\/products\/neowise-risen"
+            "image": "shopify:\/\/shop_images\/valentines_mob.jpg",
+            "link": "shopify:\/\/collections\/exclusive-valentines-drop"
           }
         },
         "desktop_image_LBRweq": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/forest_desk.jpg",
-            "link": "shopify:\/\/products\/neowise-risen"
+            "image": "shopify:\/\/shop_images\/valentines_desk.jpg",
+            "link": "shopify:\/\/collections\/exclusive-valentines-drop"
+          }
+        },
+        "mobile_image_KQ3pz8": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_carousel_mob1_a64ef4aa-ab67-455d-bcbd-dfa168d531d7.jpg",
+            "link": "shopify:\/\/collections\/motivational-art"
+          }
+        },
+        "desktop_image_GQygX4": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_carousel_web1.jpg",
+            "link": "shopify:\/\/collections\/motivational-art"
           }
         },
         "mobile_image_bbRBVd": {
           "type": "mobile_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/frankmoth_carousel_mob.jpg",
-            "link": "shopify:\/\/products\/all-the-springs-she-remembered"
+            "image": "shopify:\/\/shop_images\/image_carousel_mob2.jpg",
+            "link": "shopify:\/\/products\/cool-people-live-here"
           }
         },
         "desktop_image_TfMUQP": {
           "type": "desktop_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/frankmoth_carousel_desktop.jpg",
-            "link": "shopify:\/\/products\/all-the-springs-she-remembered"
+            "image": "shopify:\/\/shop_images\/image_carousel_web2.jpg",
+            "link": "shopify:\/\/products\/cool-people-live-here"
           }
         }
       },
       "block_order": [
-        "mobile_image_KQ3pz8",
-        "desktop_image_GQygX4",
         "mobile_image_cgWgdQ",
         "desktop_image_LBRweq",
+        "mobile_image_KQ3pz8",
+        "desktop_image_GQygX4",
         "mobile_image_bbRBVd",
         "desktop_image_TfMUQP"
       ],
@@ -799,6 +799,15 @@
     "160614414236913c9b": {
       "type": "tags",
       "blocks": {
+        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9": {
+          "type": "tag",
+          "settings": {
+            "label": "Love Valentines Art",
+            "url": "shopify:\/\/collections\/exclusive-valentines-drop",
+            "filling_color": "#f0f0f0",
+            "text_color": "#000000"
+          }
+        },
         "ee60afc2-b8f1-4e59-a424-5e67f69905d9": {
           "type": "tag",
           "settings": {
@@ -853,15 +862,6 @@
             "text_color": "#1c1b1b"
           }
         },
-        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9": {
-          "type": "tag",
-          "settings": {
-            "label": "Hippie boho art",
-            "url": "shopify:\/\/collections\/hippie-wall-art",
-            "filling_color": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
         "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080": {
           "type": "tag",
           "settings": {
@@ -882,13 +882,13 @@
         }
       },
       "block_order": [
+        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9",
         "ee60afc2-b8f1-4e59-a424-5e67f69905d9",
         "606c5e46-b137-4b08-9d2d-1e27294edfcc",
         "8859c39a-9d69-43ce-b677-20a87cac74a0",
         "cc79b94f-db63-437b-8fda-fa5921ab93fd",
         "6394b706-10e7-4319-a4a7-d71dcea5ba8d",
         "b1baecde-e153-437a-b414-1ea05e6e7ffb",
-        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9",
         "80d1d4cf-3cbe-4ba7-9dd0-a466b6381080",
         "b811c0fb-9032-4f3f-b903-a3b8e1887243"
       ],
