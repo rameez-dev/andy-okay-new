@@ -17,8 +17,16 @@
   {% endfor %}
 {% endif %}
 
-{% if product.tags contains "Mat Boards" %}
+{% comment %} {% if product.tags contains "Mat Boards" %}
   <script>window.location.replace("https://andyokay.com/collections/frames");</script>
+{% endif %} {% endcomment %}
+
+{% if product.tags contains "Mat Boards" %}
+  <style>
+    .passecontainer{
+      display: none !important;
+    }
+  </style>
 {% endif %}
 
 {%- capture section_settings -%}
