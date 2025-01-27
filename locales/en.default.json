@@ -407,7 +407,7 @@
         "address1_label": "Street address, Apartment, Suite, etc."
       },
       "order_summary": {
-        "title": "Order summary",
+        "title": "Order Summary \/ Discount Code ",
         "expand_order_summary": "Order summary \/ Apply discount code"
       }
     }
