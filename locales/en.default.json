@@ -404,7 +404,7 @@
         "phone_tooltip": "Most providers prefers to use SMS to send out delivery notifications",
         "optional_address2_label": "Additional address information (optional)",
         "address2_label": "Additonal address information",
-        "address1_label": "Street address, Apartment, Suite, etc."
+        "address1_label": "Street address, street number, apartment\/house number"
       },
       "order_summary": {
         "title": "Order Summary \/ Discount Code ",
