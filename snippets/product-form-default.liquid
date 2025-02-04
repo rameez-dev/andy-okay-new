@@ -887,9 +887,9 @@ for size, we use it to display a size chart (if applicable)
           <div class="dp-product-section-size-main" data-orientation="horizontal">
             <div class="dp-product-section-head dp-product-section-head-custom">
               <span class="label">Choose size</span>
-              <div class="dp-size-tab-list">
-                  <div class="dp-size-list-item inches selected">in</div>
-                  <div class="dp-size-list-item centimeters">cm</div>
+              <div class="dp-size-tab-list" style="visibility: hidden;">
+                  <div class="dp-size-list-item inches">in</div>
+                  <div class="dp-size-list-item centimeters selected">cm</div>
               </div>
               <div class="size-chart-main">
                 <img class="size-chart-img" src="{{ 'ruler.png' | asset_url }}" >
@@ -1954,6 +1954,14 @@ THE EXACT SAME ATTRIBUTES.
     $('.inches-detail').css('display','none');
     $('.centimeters-detail').css('display','block');
   });
+
+  let localization_country = "{{ localization.country.name }}";
+  let local_storage_country = localStorage.getItem('user__country');
+
+  if(localization_country == "United States" || local_storage_country == "United States") {
+    $('.inches').click();
+    $('.dp-size-tab-list').css('visibility','visible');
+  }
 
   $(window).click((e) => {
     // close dropdown when clicking outside
