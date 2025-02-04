@@ -247,6 +247,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'NO':'NO', //norway
         'AU':'AUD', //australia
         'USA':'USD', //usa
+        'US':'USD', //usa
         'BE':'belgium', //belgium
         'NL':'netherlands', //netherlands
         'DE':'germany', //germany
@@ -289,7 +290,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     	  let country_name = data.country_name;
         localStorage.setItem('user__country', country_name);
         let userCountry = data.country_code;
-        localStorage.setItem('user_country_code', country_name);
+        localStorage.setItem('user_country_code', userCountry);
         let userCurrency = currencyfiltered_object[userCountry];
         let userCurrencyFlag = countryCurrencyFlag[userCountry];
   

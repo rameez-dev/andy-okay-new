@@ -1624,6 +1624,12 @@ ADD TO CART BUTTON
       transform: translate(-50%, -75%);
       width: 90%;
     }
+    #cartbutton--reload.bottomFixed:has(.uk-only){
+      height: 105px;
+    }
+    #cartbutton--reload.bottomFixed:has(.uk-only) .bottomFixed-child{
+      transform: translate(-50%, -98%);
+    }
     #first-truststar.bottomFixed-truststar{
       position: fixed;
       bottom: 5px;
@@ -1711,9 +1717,10 @@ ADD TO CART BUTTON
     {% endif %}
     <div class="separate-text-free-shipping extented_info leftAligned_imp">
       <div id="first-truststar" class="info-with-icon">
-        <div class="green_dot"></div>
-        <p><strong>Free Shipping</strong> over {{shipping_value_format}}<span id="countryInTruststar"> </span>
+        {% comment %} <div class="green_dot"></div> {% endcomment %}
+        <p>
           <img class="truststar-flag" src="" id="truststar-flag" >
+          <strong>Free Shipping</strong> over {{shipping_value_format}}<span id="countryInTruststar"> </span>
         </p>
       </div>
     </div>
@@ -1998,22 +2005,31 @@ THE EXACT SAME ATTRIBUTES.
 <script>
   $(document).ready(function () {
     var user__country = localStorage.getItem('user__country');
-    var country_flag = localStorage.getItem('userCurrencyFlag');
     var curerncy_country_name = localStorage.getItem('country_name_show');
     var usercountryelement = document.getElementById('countryInTruststar');
     var truststar_flag = document.getElementById('truststar-flag');
 
+    let country_code = localStorage.getItem('user_country_code');
+    let country_flag = ''
+
+    if (country_code && countryCurrencyFlag.hasOwnProperty(country_code)) {
+      country_flag = countryCurrencyFlag[country_code]
+    }
+
     if (user__country)
     { 
-      usercountryelement.innerHTML = ' to ' + user__country; 
+      usercountryelement.innerHTML = ' for ' + user__country; 
+    }
+
+    if (user__country == "United Kingdom") {
+      var container = document.getElementById('first-truststar');
+      var new_elemet = `<p class="uk-only"><img class="green_checkmark" src="{{ 'check_green.png' | asset_url }}"><strong>Shop with confidence</strong> - All UK-import fees are taken care of</p>`
+      container.insertAdjacentHTML('beforeend', new_elemet);
     }
 
     if (truststar_flag && country_flag)
     { 
-      if (user__country == curerncy_country_name)
       truststar_flag.src = 'https://cdn.shopify.com/s/files/1/0082/5619/2602/files/' + country_flag + '.png'; 
-      else 
-      truststar_flag.src = '';
     }
 
     //var cm_at_final_discount = 0;
