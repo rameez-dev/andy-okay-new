@@ -14,6 +14,9 @@
       "type": "main-page-new",
       "settings": {
         "button_label": "",
+        "text_abovecard": "",
+        "subhead-abovecard": "",
+        "card_background": "",
         "button_link": "",
         "section_order": 0
       }
@@ -364,14 +367,14 @@
           "type": "question",
           "settings": {
             "title": "What is Charity of the Month?",
-            "answer": "<p>Each month we focus a little more attention on a specific charity organisation we are working with, to spread awareness about their mission and vision.<br\/><br\/>By dividing our partners into separate months, and share their beliefs with our community for a longer period of time, will help get their message out in a much more efficient way. <\/p>"
+            "answer": "<p>Each month we focus a little more attention on a specific charity organization we are working with, to spread awareness about their mission and vision.<br\/><br\/>By dividing our partners into separate months, and share their beliefs with our community for a longer period of time, will help get their message out in a much more efficient way. <\/p>"
           }
         },
         "a76a4d48-4b17-48ab-bfac-20a92cdcded9": {
           "type": "question",
           "settings": {
             "title": "Why should we work with Andy okay?",
-            "answer": "<p>Donations + awareness. One reason is that we work longterm with our charity organisations to collect donations for their different projects. As we have a “Pay What You Can”-model it is difficult to predict the final amount each collaboration will raise. We offer the artworks we have for a lower price leaving room for our customers to make a donation to one of our charity partners. At the end of each Fiscal Year we will go through the donations and submit the donations directly to you. <\/p><p>The second part is the reach and engagement. Each and every artist we collaborate with signs up to share the collaboration in their own channels at the release of their art. We also share the collaborations in our own SM channels and through newsletters, reaching over 10 million people per month. <\/p><p>Each charity organisation partnering up with us also receives a dedicated page on andyokay.com, with 400.000+ visitors each month. <\/p>"
+            "answer": "<p>Donations + awareness. One reason is that we work longterm with our charity organizations to collect donations for their different projects. As we have a “Pay What You Can”-model it is difficult to predict the final amount each collaboration will raise. We offer the artworks we have for a lower price leaving room for our customers to make a donation to one of our charity partners. At the end of each Fiscal Year we will go through the donations and submit the donations directly to you. <\/p><p>The second part is the reach and engagement. Each and every artist we collaborate with signs up to share the collaboration in their own channels at the release of their art. We also share the collaborations in our own SM channels and through newsletters, reaching over 10 million people per month. <\/p><p>Each charity organization partnering up with us also receives a dedicated page on andyokay.com, with 1000.000+ visitors each month. <\/p>"
           }
         },
         "98b743b8-17af-4bf3-9832-f7fb5ada1ca0": {
@@ -385,7 +388,7 @@
           "type": "question",
           "settings": {
             "title": "What does this cost?",
-            "answer": "<p>Absolutely nothing. We exist to assist important organisations, not take away anything from their already tight budget. That’s why we offer this without asking for anything back. We are here to help.<\/p><p>Of course we would really appreciate if the organisation of the month mentioned Andy okay in any of their own channels during some point while the collaboration is live. But it’s really not something we demand or even expect. <\/p>"
+            "answer": "<p>Absolutely nothing. We exist to assist important organizations, not take away anything from their already tight budget. That’s why we offer this without asking for anything back. We are here to help.<\/p><p>Of course we would really appreciate if the organization of the month mentioned Andy okay in any of their own channels during some point while the collaboration is live. But it’s really not something we demand or even expect. <\/p>"
           }
         },
         "25d45e6c-1e55-4d85-9332-a74774842a94": {

@@ -14,7 +14,7 @@
     "simple-text": {
       "type": "simple-text",
       "settings": {
-        "text": "<p>We exist to help nonprofits do their world-changing work. Andy okay raises money to important causes by offering incredible limited edition art for a price YOU decide. What you give for your art will benefit an important organisation. <\/p>",
+        "text": "<p>We exist to help charity organizations do their world-changing work. Andy okay raises money to important causes by offering incredible limited edition art for a price YOU decide. What you give for your art will benefit an important organization. <\/p>",
         "backgroud-color": "#1c1b1b",
         "text-color": "#ffffff",
         "show": true,
