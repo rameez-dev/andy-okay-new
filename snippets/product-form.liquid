@@ -960,7 +960,7 @@ for size, we use it to display a size chart (if applicable)
             let price = parseInt(slider.slider("value"));
             price = price/100;
             let after_currency_convert = Math.round(Currency.convert(price, $('.CurrencySelector__Select').val(), 'USD'))
-            let reqUrl = `https://custom-pricing-app-remix-6f3ca2abcf26.herokuapp.com/pay/${xs_product_id}/${productSelect.val()}/${ after_currency_convert * 100 }`;
+            let reqUrl = `https://charity-pricing-app-050225-8ae3d1147c28.herokuapp.com/pay/${xs_product_id}/${productSelect.val()}/${ after_currency_convert * 100 }`;
             console.log(reqUrl);
             $.ajax({
               url: reqUrl,
@@ -1086,7 +1086,7 @@ for size, we use it to display a size chart (if applicable)
           let price = parseInt(slider.slider("value"));
           price = price/100;
           let after_currency_convert = Math.round(Currency.convert(price, $('.CurrencySelector__Select').val(), 'USD'));
-          let reqUrl = `https://custom-pricing-app-remix-6f3ca2abcf26.herokuapp.com/pay/${xs_product_id}/${productSelect.val()}/${ after_currency_convert * 100 }`;
+          let reqUrl = `https://charity-pricing-app-050225-8ae3d1147c28.herokuapp.com/pay/${xs_product_id}/${productSelect.val()}/${ after_currency_convert * 100 }`;
           console.log(reqUrl);
           $.ajax({
             url: reqUrl,
