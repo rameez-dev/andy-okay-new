@@ -80,6 +80,7 @@
         $('label[for="white-frame"]').css('display', 'flex');
         $('label[for="black-frame"').css('display', 'flex');
         $('label[for="oak-frame"').css('display', 'flex');
+        $('label[for="dark-oak-frame"').css('display', 'flex');
         $('.dp-product-section-swatch-selector-price').css('display','block');
         if( $("#noframe").prop('checked'))
           $("label[for='noframe']").addClass('currently-selected-swatch-display');
@@ -96,6 +97,8 @@
             $('#white-frame').val(white_variants[0].id);
             $('#black-frame').val(black_variants[0].id); 
             $('#oak-frame').val(oak_variants[0].id);
+            if(dark_oak_variants.length)
+            $('#dark-oak-frame').val(dark_oak_variants[0].id);
             
             
             $("#mat_board_input").attr('value', mat_board_variants[0].id);
@@ -117,6 +120,8 @@
             $('#white-frame').val(white_variants[1].id);
             $('#black-frame').val(black_variants[1].id);
             $('#oak-frame').val(oak_variants[1].id);
+            if(dark_oak_variants.length)
+            $('#dark-oak-frame').val(dark_oak_variants[1].id);
             
             $("#mat_board_input").attr('value', mat_board_variants[1].id);
             $("#mat_board_input").attr('price', mat_board_variants[1].price);
@@ -137,6 +142,8 @@
             $('#white-frame').val(white_variants[2].id);
             $('#black-frame').val(black_variants[2].id);
             $('#oak-frame').val(oak_variants[2].id);
+            if(dark_oak_variants.length)
+            $('#dark-oak-frame').val(dark_oak_variants[2].id);
             
             $("#mat_board_input").attr('value', mat_board_variants[2].id);
             $("#mat_board_input").attr('price', mat_board_variants[2].price);
@@ -158,6 +165,7 @@
             $("label[for='black-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='white-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='oak-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='dark-oak-frame']").removeClass('currently-selected-swatch-display');
 
             $('#mat_board_product_container').addClass('passe-text-icon-container-faded');
             $("#mat_board_input").prop('checked', false);
@@ -169,6 +177,7 @@
             $('label[for="white-frame"]').hide();
             $('label[for="black-frame"').hide();
             $('label[for="oak-frame"').hide();
+            $('label[for="dark-oak-frame"').hide();
           }
         }
       }

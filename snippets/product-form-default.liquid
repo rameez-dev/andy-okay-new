@@ -765,6 +765,7 @@ for size, we use it to display a size chart (if applicable)
 {%- assign white_frames = all_products['white-gallery-frame'] -%}
 {%- assign black_frames = all_products['black-gallery-frame'] -%}
 {%- assign oak_frames = all_products['oak-gallery-frame'] -%}
+{%- assign dark_oak_frames = all_products['dark-oak-gallery-frame'] -%}
 
 {% for tag in product.tags %}
   {% assign product_tag_first = tag | downcase | split: ':' | first %}
@@ -791,7 +792,7 @@ for size, we use it to display a size chart (if applicable)
 {% endif %}
 
 <script> 
-  let black_variants = [], white_variants = [], oak_variants = [], mat_board_variants = [], frames_all_variants = {};
+  let black_variants = [], white_variants = [], oak_variants = [], dark_oak_variants = [], mat_board_variants = [], frames_all_variants = {};
   frames_all_variants['0'] = { 'price': 0, 'compare_at_price': 0 };
 </script>
 {%- for black_item in black_frames.variants -%}
@@ -810,6 +811,12 @@ for size, we use it to display a size chart (if applicable)
   <script>
     oak_variants.push({ 'id': '{{oak_item.id}}', 'title': '{{oak_item.title}}', 'price': '{{oak_item.price | money_without_trailing_zeros}}', 'compare_at_price': '{{oak_item.compare_at_price | money_without_trailing_zeros}}' });
     frames_all_variants['{{oak_item.id}}'] = {{ oak_item | json }};
+  </script>
+{%- endfor -%}
+{%- for dark_oak_item in dark_oak_frames.variants -%}
+  <script>
+    dark_oak_variants.push({ 'id': '{{dark_oak_item.id}}', 'title': '{{dark_oak_item.title}}', 'price': '{{dark_oak_item.price | money_without_trailing_zeros}}', 'compare_at_price': '{{dark_oak_item.compare_at_price | money_without_trailing_zeros}}' });
+    frames_all_variants['{{dark_oak_item.id}}'] = {{ dark_oak_item | json }};
   </script>
 {%- endfor -%}
 {%- for mat_item in mat_board_product.variants -%}
@@ -1199,7 +1206,7 @@ for size, we use it to display a size chart (if applicable)
                             <input id="oak-frame" class="dp-product-section-swatch-selector-input" type="radio" name="frame" title="oak" value="{{oak_frame.id}}">
                             <label for="oak-frame" class="dp-product-section-swatch-selector ">
                                 <div class="dp-product-section-swatch-value-combine-selector">
-                                <div style="background-color: #d1af84;" class=" svelte-u7o1iy"></div>
+                                <div style="background-image: url({{ 'LightOak_icon.png' | asset_url }});" class=" svelte-u7o1iy"></div>
                                 </div>
                                 {%- comment -%}client asked to hide frames dimensions
                                 <div class="dp-product-section-swatch-size-selector-dimensions">
@@ -1223,6 +1230,38 @@ for size, we use it to display a size chart (if applicable)
                     {% endcomment %}
                     {%- endif -%}
                 {%- endfor -%}
+
+                {%- for dark_oak_frame in dark_oak_frames.variants -%}
+                  {%- if dark_oak_frame.title == selected_variant.title  -%}
+                  {% assign variant_measures = dark_oak_frame.title | split: ' ' %}
+                  <div class="dp-frame-swatch-main">
+                          <input id="dark-oak-frame" class="dp-product-section-swatch-selector-input" type="radio" name="frame" title="dark_oak" value="{{dark_oak_frame.id}}">
+                          <label for="dark-oak-frame" class="dp-product-section-swatch-selector ">
+                              <div class="dp-product-section-swatch-value-combine-selector">
+                              <div style="background-image: url({{ 'DarkOak_icon.png' | asset_url }});" class=" svelte-u7o1iy"></div>
+                              </div>
+                              {%- comment -%}client asked to hide frames dimensions
+                              <div class="dp-product-section-swatch-size-selector-dimensions">
+                              <span id="reset-frame-size">{{variant_measures[1]}} / {{variant_measures.last}}</span>
+                              </div>{%- endcomment -%}
+                              
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 498.98 284.49">
+                              <defs></defs>
+                              <path fill="#231f20" d="M80.93 271.76A35 35 0 0 1 140.68 247l189.74 189.75L520.16 247a35 35 0 1 1 49.5 49.5L355.17 511a35 35 0 0 1-49.5 0L91.18 296.5a34.89 34.89 0 0 1-10.25-24.74z" transform="translate(-80.93 -236.76)"></path>
+                              </svg>
+                          </label>
+                  </div>
+                  {% comment %}
+                      <div class="dp-product-section-swatch-selector-price">
+                          {%- if oak_frame.compare_at_price > 0 -%}
+                              <span id="reset-compare-price" class="reset-compare-price" ><span class="money">{{ oak_frame.compare_at_price | money_without_trailing_zeros }}</span></span>
+                          {%- endif -%}
+                          <span id="reset-frame-money" class="reset-money" ><span class="money">{{ oak_frame.price | money_without_trailing_zeros }}</span></span>
+                          
+                      </div>
+                  {% endcomment %}
+                  {%- endif -%}
+              {%- endfor -%}
             </div>
             <style>
               .dp-product-section-swatch-selector-unavailable {
@@ -2210,7 +2249,8 @@ THE EXACT SAME ATTRIBUTES.
     var selectedframe = false; 
     if( $("label[for='black-frame']").hasClass("currently-selected-swatch-display") ||
     $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
-    $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ) {
+    $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ||
+    $("label[for='dark-oak-frame']").hasClass("currently-selected-swatch-display") ) {
       selectedframe = true;
     }
     var textaddtocart = 'ADD ART TO CART';
@@ -2324,7 +2364,8 @@ THE EXACT SAME ATTRIBUTES.
           var selectedframe = false;
           if( $("label[for='black-frame']").hasClass("currently-selected-swatch-display") ||
           $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
-          $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ) {
+          $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ||
+          $("label[for='dark-oak-frame']").hasClass("currently-selected-swatch-display") ) {
             selectedframe = true;
           }
           if(selectedframe && charitypriceamount > 0){
@@ -2388,7 +2429,8 @@ THE EXACT SAME ATTRIBUTES.
       $(".passe-money").css("opacity", "0.3");
       if( $("label[for='black-frame']").hasClass("currently-selected-swatch-display") ||
       $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
-      $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ) {
+      $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ||
+      $("label[for='dark-oak-frame']").hasClass("currently-selected-swatch-display")) {
         selectedframe = true;
         $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
@@ -2700,6 +2742,7 @@ THE EXACT SAME ATTRIBUTES.
             $("label[for='black-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='white-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='oak-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='dark-oak-frame']").removeClass('currently-selected-swatch-display');
 
             $('#mat_board_product_container').addClass('passe-text-icon-container-faded');
             $("#mat_board_input").prop('checked', false);
@@ -2715,6 +2758,7 @@ THE EXACT SAME ATTRIBUTES.
             
             $("label[for='white-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='oak-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='dark-oak-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='noframe']").removeClass('currently-selected-swatch-display');
             activate_mat_board()
           }
@@ -2723,14 +2767,25 @@ THE EXACT SAME ATTRIBUTES.
             $(".dp-product-section-head-frame-value").text('White Gallery');
             $("label[for='black-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='oak-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='dark-oak-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='noframe']").removeClass('currently-selected-swatch-display');
             activate_mat_board()
           }
           else if (event.target.title == 'oak'){
             $("label[for='oak-frame']").addClass('currently-selected-swatch-display');
-            $(".dp-product-section-head-frame-value").text('Oak Gallery');
+            $(".dp-product-section-head-frame-value").text('Light Oak Gallery');
             $("label[for='white-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='black-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='dark-oak-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='noframe']").removeClass('currently-selected-swatch-display');
+            activate_mat_board();
+          }
+          else if (event.target.title == 'dark_oak'){
+            $("label[for='dark-oak-frame']").addClass('currently-selected-swatch-display');
+            $(".dp-product-section-head-frame-value").text('Dark Oak Gallery');
+            $("label[for='white-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='black-frame']").removeClass('currently-selected-swatch-display');
+            $("label[for='oak-frame']").removeClass('currently-selected-swatch-display');
             $("label[for='noframe']").removeClass('currently-selected-swatch-display');
             activate_mat_board();
           }
