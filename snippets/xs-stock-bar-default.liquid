@@ -1,6 +1,8 @@
 <link href="//fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet">
 {% if product.tags contains "atelier" %}
   <div class="limited-release-label atelier-label limited-separate-block"><span>Atelier Exclusive</span></div>
+{% elsif product.tags contains "essentials" %}
+  <div class="limited-release-label essentials-label limited-separate-block"><span>Essentials</span></div>
 {% else %}
   <div class="limited-release-label limited-separate-block"><span>Limited Release<span class="limited-release-ext">{{ product.selected_or_first_available_variant.metafields.custom.limited_release_additional_text }}</span></span></div>
 {% endif %}
@@ -9,6 +11,8 @@
   <div class="xs-stock-info"> 
     {% if product.tags contains "atelier" %}
       <div class="limited-release-label atelier-label"><span>Atelier Exclusive</span></div>
+    {% elsif product.tags contains "essentials" %}
+      <div class="limited-release-label essentials-label"><span>Essentials</span></div>
     {% else %}
       <div class="limited-release-label"><span>Limited Release<span class="limited-release-ext">{{ product.selected_or_first_available_variant.metafields.custom.limited_release_additional_text }}</span></span></div>
     {% endif %}
