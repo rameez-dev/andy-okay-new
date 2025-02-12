@@ -403,6 +403,7 @@ twq('config','od66f');
     min-width: 115px;
     max-width: fit-content;
     padding-inline: 14px;
+    cursor: pointer;
   }
   .limited-release-label > span {
     font-size: 14.375px;
@@ -489,6 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         {% render 'app-discount-snippet', type: 'header' %}
       {%- endif -%}
       {% render 'app-discount-popup' %}
+      {% render 'tag-popup' %}
       {% section 'header' %}
 
       <main id="main" role="main">

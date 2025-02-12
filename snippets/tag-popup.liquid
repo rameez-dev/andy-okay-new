@@ -1,0 +1,61 @@
+{% comment %} pop-up modal {% endcomment %}
+<aside
+  class="NewsletterPopup site__black--popup soldout-popup tag-popup"
+  data-section-id="{{ section.id }}"
+  data-section-type="newsletter-popup"
+  aria-hidden="true">
+  <div class="popup_header">
+    {%- if settings.tag_popup_title != blank -%}
+      <span class="popup_title">{{ settings.tag_popup_title }}</span>
+    {%- endif -%}
+    <button
+      class="popup_close"
+      data-action="close-popup"
+      aria-label="{{ 'general.popup.close' | t }}">{% render 'icon' with 'close' %}</button>
+  </div>
+
+  <div class="popup_content">
+
+
+    {%- if settings.tag_popup_content != blank -%}
+      <div class="NewsletterPopup__Content">
+        <p>{{ settings.tag_popup_content }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    $('.tag-popup .popup_close').click(function(){
+        $('.tag-popup').removeClass('visible');
+        let overlay = document.getElementById("cart-popup-overlay");
+        if (overlay) {
+          overlay.style.display = "none";
+        }
+        else {
+          $('body').removeClass('soldout-popup-visible');
+        }
+    });
+    $('.limited-release-label').click(function () {
+        $('.tag-popup').addClass('visible');
+        let overlay = document.getElementById("cart-popup-overlay");
+        if (overlay) {
+          overlay.style.display = "block";
+        }
+        else {
+          $('body').addClass('soldout-popup-visible');
+        }
+    });
+    $('.limited-release-img').click(function () {
+        $('.tag-popup').addClass('visible');
+        let overlay = document.getElementById("cart-popup-overlay");
+        if (overlay) {
+          overlay.style.display = "block";
+        }
+        else {
+          $('body').addClass('soldout-popup-visible');
+        }
+    });
+})
+</script>
