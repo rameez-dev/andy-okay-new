@@ -415,6 +415,12 @@ twq('config','od66f');
     background: linear-gradient(20deg, var(--side-color) 0%, var(--mid-color) 50%, var(--side-color) 100%);
     color: black;
   }
+  .limited-release-label.essentials-label {
+    background: white;
+    color: black;
+    border: 1px solid #e5e5e5;
+    min-width: 95px;
+  }
   .limited-release-label.limited-label-product-item {
     display: flex;
     margin-inline: auto;
@@ -426,10 +432,18 @@ twq('config','od66f');
     max-width: unset;
     padding-inline: unset;
   }
+  .limited-release-label.limited-label-product-item.essentials-label {
+    width: 80px;
+  }
   .limited-release-label.limited-label-product-item > span {
     font-size: 12.5cqi;
     letter-spacing: 0.4cqi;
-    margin-top: 2.6cqi;
+    margin-top: 3.2cqi;
+  }
+  .limited-release-label.limited-label-product-item.essentials-label > span {
+    font-size: 15.625cqi;
+    letter-spacing: 0.5cqi;
+    margin-top: 4.2cqi;
   }
 </style>
 

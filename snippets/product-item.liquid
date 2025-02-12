@@ -108,7 +108,9 @@
       <div class="ProductItem__Info {% unless use_horizontal %}ProductItem__Info--{{ settings.product_info_alignment }}{% endunless %} make-center">
         {% unless is_sold_out_collection %}
           {% if product.tags contains "atelier" %}
-            <div class="limited-release-label atelier-label limited-label-product-item"><span>Atelier Exclusive</span></div>   
+            <div class="limited-release-label atelier-label limited-label-product-item"><span>Atelier Exclusive</span></div>
+          {% elsif product.tags contains "essentials" %}
+            <div class="limited-release-label essentials-label limited-label-product-item"><span>Essentials</span></div>   
           {% elsif limited_edition_tag %}
             <img class="limited-release-img" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release"> 
           {% endif %}  
