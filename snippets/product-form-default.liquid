@@ -96,6 +96,10 @@ for size, we use it to display a size chart (if applicable)
     padding: 20px 0px;
     margin-top: 25px;
   }
+  #donation-drop-down-menu .xs-p-wrap:has(.ui-slider-handle) {
+    background: linear-gradient(to right, #163bbc 50%, #bababa 50%);
+    background-clip: content-box;
+  }
 
   .about-your-donation {
     display: flex;
@@ -153,13 +157,13 @@ for size, we use it to display a size chart (if applicable)
   #xs-price-range {
     width: 100%;
     /*             position: absolute; */
-    top: 50%;
+    top: 0;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    -o-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
     border: 0;
     height: 6px;
     background: #bababa;
@@ -181,7 +185,7 @@ for size, we use it to display a size chart (if applicable)
     outline: none;
     cursor: pointer;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-25%, -50%);
     box-shadow: 0px 3px 3px -2px #585858;
     border: 0px solid #eee;
     display: flex;
@@ -204,10 +208,10 @@ for size, we use it to display a size chart (if applicable)
   #xs-price-range .ui-slider-handle:hover,
   #xs-price-range .ui-slider-handle:focus {
     -webkit-transform: scale(1.1);
-    -moz-transform: translateY(-50%) scale(1.1);
-    -o-transform: translateY(-50%) scale(1.1);
-    -ms-transform: translateY(-50%) scale(1.1);
-    transform: translateY(-50%) scale(1.1);
+    -moz-transform: translate(-25%, -50%) scale(1.1);
+    -o-transform: translate(-25%, -50%) scale(1.1);
+    -ms-transform: translate(-25%, -50%) scale(1.1);
+    transform: translate(-25%, -50%) scale(1.1);
   }
 
   #xs-price-range .ui-slider-range {
@@ -492,7 +496,6 @@ for size, we use it to display a size chart (if applicable)
 
   #donation-drop-down-menu {
     display: block;
-    padding-top: 10px;
   }
 
   [type="radio"]:checked,
@@ -508,7 +511,7 @@ for size, we use it to display a size chart (if applicable)
     height: 13px;
     position: relative;
     background-color: #fff;
-    content: '';
+    /* content: ''; */
     display: inline-block;
     visibility: visible;
     border: 1px solid #a0a0a0;
@@ -522,7 +525,7 @@ for size, we use it to display a size chart (if applicable)
     top: 2px;
     position: relative;
     background-color: #163bbc;
-    content: '';
+    /* content: ''; */
     display: inline-block;
     border: 1px solid #163bbc;
   }
@@ -1353,9 +1356,13 @@ for size, we use it to display a size chart (if applicable)
   {% endcomment %}
   <div class="ProductForm__Option {% if show_option_label %}ProductForm__Option--labelled{% endif %} charity-organisations-container">
     <div class="dp-product-section-head">
-      <span class="label">Choose your Donation</span>
+      <span class="label">
+        Choose Donation
+        <span class="dp-product-donation-name">WWF</span>
+      </span>
       <div id="cart-popup-overlay">
       </div>
+      <div class="donation_info">Donation Info</div>
     </div>
     <div class="product__cart--form dp-donation-main-dropdown">
       <div class="xs-pwyw">
@@ -1363,7 +1370,7 @@ for size, we use it to display a size chart (if applicable)
           <div id="selected_organization">
             <span></span>
           </div>
-          <div class="donation-price-icon-container">
+          {% comment %} <div class="donation-price-icon-container">
             <span id="xs-charity-price" data-money-convertible>${{ '0' }}</span>
             <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down"
               viewBox="0 0 498.98 284.49">
@@ -1372,12 +1379,12 @@ for size, we use it to display a size chart (if applicable)
                 d="M80.93 271.76A35 35 0 0 1 140.68 247l189.74 189.75L520.16 247a35 35 0 1 1 49.5 49.5L355.17 511a35 35 0 0 1-49.5 0L91.18 296.5a34.89 34.89 0 0 1-10.25-24.74z"
                 transform="translate(-80.93 -236.76)"></path>
             </svg>
-          </div>
+          </div> {% endcomment %}
         </div>
         <div id="donation-drop-down-menu">
           <div class="acc__panel">
             {% for c_variant in charity_product.variants %}
-            <div class="custom-radio">
+            <label class="custom-radio">
               {% assign charity_title = c_variant.title |  downcase |  replace: " ", "-"  %}
               {% if charity_title == "non-violence" %}
                 {% assign charity_title = "non-violence-project" %}
@@ -1385,8 +1392,8 @@ for size, we use it to display a size chart (if applicable)
               <input {% if has_charity %}{% if charity_title == charity_org %} checked {% endif %}{% else %}{% if forloop.index==1 %} checked {% endif %}{% endif %} required class="required" id="select_organization"
                 data-title="{{c_variant.title}}" type="radio" name="donation" value="{{c_variant.id}}"
                 data-gtm-form-interact-field-id="1" />
-              <span"donation_container_text">{{c_variant.title}}</span>
-            </div>
+              <span class="donation_container_text">{{c_variant.title}}</span>
+            </label>
             {% endfor %}
           </div>
           <div class="xs-p-wrap">
@@ -1417,6 +1424,21 @@ for size, we use it to display a size chart (if applicable)
               {% endif %}
               {% endif %}
               {% endfor %}
+            </div>
+          </div>
+          <div class="donation-container-footer">
+            <div class="donation-custom-amount-container">
+              <input type="number" min="0" placeholder="Or enter custom amount here..." class="donation-custom-amount" onkeyup="if(event.keyCode == 190) {return;} this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="donation-price-icon-container">
+              <span id="xs-charity-price" data-money-convertible>${{ '0' }}</span>
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down"
+                viewBox="0 0 498.98 284.49">
+                <defs></defs>
+                <path fill="#231f20"
+                  d="M80.93 271.76A35 35 0 0 1 140.68 247l189.74 189.75L520.16 247a35 35 0 1 1 49.5 49.5L355.17 511a35 35 0 0 1-49.5 0L91.18 296.5a34.89 34.89 0 0 1-10.25-24.74z"
+                  transform="translate(-80.93 -236.76)"></path>
+              </svg>
             </div>
           </div>
           <span id="donation-choose" class="about-your-donation">About your donation <img class="question-icon" src="{{ 'question-mark.svg' |  asset_url }}" alt="i"></span>
@@ -2358,6 +2380,7 @@ THE EXACT SAME ATTRIBUTES.
         step: 100,
         value: iprice,
         slide: function (e, ui) {
+          $('.donation-custom-amount').val('');
           $("#xs-charity-price").html((Shopify.formatMoney(ui.value, xs_format)).replace(/\.00$/, ''));
           changeMarksState(ui.value);
           charitypriceamount = ui.value;
@@ -2397,6 +2420,49 @@ THE EXACT SAME ATTRIBUTES.
         }
       });
       xspw.show();
+
+      $('.donation-custom-amount').on("input", function() {
+        let formatted_value = 0;
+        if($(this).val()) { 
+          formatted_value = parseFloat((Math.round(parseFloat($(this).val())/ 1) * 1).toFixed(2)) * 100;
+          $(this).val(formatted_value/ 100);
+        }
+        slider.slider("value", 0);
+
+        $("#xs-charity-price").html((Shopify.formatMoney(formatted_value, xs_format)).replace(/\.00$/, ''));
+        charitypriceamount = formatted_value;
+        var selectedframe = false;
+        if( $("label[for='black-frame']").hasClass("currently-selected-swatch-display") ||
+        $("label[for='white-frame']").hasClass("currently-selected-swatch-display") ||
+        $("label[for='oak-frame']").hasClass("currently-selected-swatch-display") ||
+        $("label[for='dark-oak-frame']").hasClass("currently-selected-swatch-display") ) {
+          selectedframe = true;
+        }
+        if(selectedframe && charitypriceamount > 0){
+          textaddtocart = 'ADD ART & FRAME + DONATION TO CART';
+        }
+        else if(charitypriceamount > 0){
+          textaddtocart = 'ADD ART + DONATION TO CART';
+        }
+        else if(selectedframe){
+          textaddtocart = 'ADD ART & FRAME TO CART';
+        }
+        else if(isFrame){
+          textaddtocart = 'ADD TO CART';
+        }
+        else{
+          textaddtocart = 'ADD ART TO CART';
+        }
+        var price = $("#xs-currentVal").text();
+        var cm_at_price = $("#compare_at_price_style").text();
+        
+
+        {%- if selected_variant.available -%}
+        button_update(textaddtocart, price, cm_at_price);
+        {% else %}
+        button_update("Sold out", price, cm_at_price);
+        {% endif %}
+      })
 
       var minimum_price = iprice / 100;
       var maximum_price = maxPrice;
@@ -2541,8 +2607,11 @@ THE EXACT SAME ATTRIBUTES.
           body: JSON.stringify(formData)
         })
           .then(response => {
-              let price = parseInt(slider.slider("value"));
-              price = price / 100;
+            let price = parseInt($('.donation-custom-amount').val());
+              if(!price) {
+                price = parseInt(slider.slider("value"));
+                price = price / 100;
+              }
               let after_currency_convert = Math.round(Currency.convert(price, $('.CurrencySelector__Select').val(), 'USD'));
               let organization = document.querySelector('input[name="donation"]:checked');
 
@@ -2636,8 +2705,11 @@ THE EXACT SAME ATTRIBUTES.
         body: JSON.stringify(formData)
       })
         .then(response => {
-          let price = parseInt(slider.slider("value"));
-          price = price / 100;
+          let price = parseInt($('.donation-custom-amount').val());
+          if(!price) {
+            price = parseInt(slider.slider("value"));
+            price = price / 100;
+          }
           let after_currency_convert = Math.round(Currency.convert(price, $('.CurrencySelector__Select').val(), 'USD'));
           let organization = document.querySelector('input[name="donation"]:checked');
 
@@ -2691,12 +2763,14 @@ THE EXACT SAME ATTRIBUTES.
     let org = document.querySelector('input[name="donation"]:checked');
     let value = $(org).attr('data-title');
     $("#selected_organization span").text(value);
+    $(".dp-product-donation-name").text(value);
 
 
     $('input[type=radio][name="donation"]').change(function () {
       let org = document.querySelector('input[name="donation"]:checked');
       let value = $(org).attr('data-title');
       $("#selected_organization span").text(value);
+      $(".dp-product-donation-name").text(value);
 
     });
 
@@ -2710,7 +2784,7 @@ THE EXACT SAME ATTRIBUTES.
       document.getElementById("cart-popup-overlay").style.display = "block";
     });
 
-    $('#donation-choose').click(function () {
+    $('.donation_info').click(function () {
       $('.donation-choose').addClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "block";
     });
