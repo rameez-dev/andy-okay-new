@@ -1,0 +1,1160 @@
+{%- capture section_settings -%}
+{
+  "enableHistoryState": true,
+  "templateSuffix": {{ product.template_suffix | json }},
+  "showInventoryQuantity": {{ section.settings.show_inventory_quantity | json }},
+  "showSku": {{ section.settings.show_sku | json }},
+  "stackProductImages": {{ section.settings.stack_images | json }},
+  "showThumbnails": {{ section.settings.show_thumbnails | json }},
+  "inventoryQuantityThreshold": {{ section.settings.inventory_quantity_threshold }},
+  "showPriceInButton": {{ section.settings.show_price_in_button | json }},
+  "enableImageZoom": {{ section.settings.enable_image_zoom | json }},
+  "showPaymentButton": {{ section.settings.show_payment_button | json }},
+  {% comment %} "useAjaxCart": {% if settings.cart_type == 'drawer' %}true{% else %}false{% endif %} {% endcomment %}
+  "useAjaxCart": false
+}
+{%- endcapture -%}
+
+<style>
+  #xs-price-range .ui-slider-handle {
+    position: relative;
+    border-radius: 100%;
+    background: {{ section.settings.pwyw_btn_color }};
+    border: 0;
+    height: 40px;
+    width: 40px;
+    outline: none;
+    cursor: pointer;
+    top: 50%;
+    transform: translate(-25%, -50%);
+    box-shadow: 0px 3px 3px -2px #585858;
+    border: 0px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .original_art_exclusive_info_item_title:after {
+    background: url({{ 'faq-arrow.png' | asset_url}}) no-repeat;
+  }
+</style>
+
+<link rel="stylesheet" href="{{ 'PDP.css' | asset_url }}">
+
+<div class="product_section_bg {% if template == 'product' or template == 'product.original_art' %} product_section_bg--default {% endif %} ">
+  <section class="Product prod_margin Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
+    <div class="Product__Wrapper">
+      {%- capture action_list_items -%}
+        {%- if section.settings.enable_image_zoom -%}
+          <div class="Product__ActionItem hidden-lap-and-up">
+            <button class="RoundButton RoundButton--small RoundButton--flat" data-action="open-product-zoom">{% include 'icon' with 'plus' %}</button>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_share_buttons -%}
+          <div class="Product__ActionItem hidden-lap-and-up">
+            <button class="RoundButton RoundButton--small RoundButton--flat" data-action="toggle-social-share" data-animate-bottom aria-expanded="false">
+              <span class="RoundButton__PrimaryState">{% include 'icon' with 'share' %}</span>
+              <span class="RoundButton__SecondaryState">{% include 'icon' with 'close' %}</span>
+            </button>
+
+            {%- assign share_url = shop.url | append: product.url -%}
+            {%- assign twitter_text = product.title -%}
+            {%- assign pinterest_description = product.description | strip_html | truncatewords: 15 | url_param_escape -%}
+            {%- assign pinterest_image = product.featured_image | img_url: 'large' | prepend: 'https:' -%}
+
+            <div class="Product__ShareList" aria-hidden="true">
+              <a class="Product__ShareItem" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener">{%- include 'icon' with 'facebook' -%} Facebook</a>
+              <a class="Product__ShareItem" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener">{%- include 'icon' with 'pinterest' -%} Pinterest</a>
+              <a class="Product__ShareItem" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener">{%- include 'icon' with 'twitter' -%} Twitter</a>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
+      PRODUCT GALLERY
+      --------------------------------------------------------------------------------------------------------------------
+      {%- endcomment -%}
+
+      {%- assign initial_image_id = product.featured_image.id -%}
+      {%- assign initial_image_index = 0 -%}
+      {%- assign image_count = 0 -%}
+
+      {%- capture slideshow_images -%}
+        {%- for image in product.images limit : 3 -%}
+          {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+            {%- continue -%}
+          {%- endif -%}
+
+          {%- if image.id == product.selected_or_first_available_variant.image.id -%}
+            {%- assign initial_image_index = image_count -%}
+            {%- assign initial_image_id = image.id -%}
+          {%- endif -%}
+
+          {%- include 'image-size', sizes: '200,400', image: image -%}
+
+          {%- assign is_video = false -%}
+
+          {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+            {%- assign is_video = true -%}
+          {%- endif -%}
+
+          <div id="Image{{ image.id }}" class="Product__SlideItem Product__SlideItem--{% if is_video %}video{% else %}image{% endif %} Carousel__Cell {% if initial_image_id == image.id %}is-selected{% endif %}"
+              {% if is_video %}data-action="open-modal" aria-controls="modal-video-{{ image.id }}"{% endif %}
+              {% unless is_video %}data-image-position-ignoring-video="{% increment image_position_without_video %}"{% endunless %}
+              data-image-position="{% increment image_position %}"
+              data-image-id="{{ image.id }}">
+            <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%; --aspect-ratio: {{ image.aspect_ratio }};">
+              {% assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+              <img class="Image--lazyLoad Image--fadeIn"
+                  {% if initial_image_id == image.id %}src="{{ image | img_url: '200x' }}"{% endif %}
+                  data-src="{{ image_url }}"
+                  data-widths="[{{ supported_sizes }}]"
+                  data-sizes="auto"
+                  data-expand="-100"
+                  alt="{{ image.alt | escape }}"
+                  data-max-width="{{ image.width }}"
+                  data-max-height="{{ image.height }}"
+                  data-original-src="{{ image | img_url: 'large' }}">
+
+              <span class="Image__Loader"></span>
+
+              {%- if is_video -%}
+                <button type="button" class="Video__PlayButton" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+              {%- endif -%}
+
+              <noscript>
+                <img src="{{ image | img_url: '400x' }}" alt="{{ image.alt | escape }}">
+              </noscript>
+            </div>
+          </div>
+
+          {%- assign image_count = image_count | plus: 1 -%}
+        {%- endfor -%}
+
+        {% if section.settings.gallery_video != blank %}
+          {% assign video = section.settings.gallery_video %}
+          <div id="Image{{ video.id }}" class="Product__SlideItem Product__SlideItem--image Carousel__Cell" data-image-id="{{ video.id }}" data-image-position="{% increment image_position %}">
+            <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: video.aspect_ratio }}%; --aspect-ratio: {{ video.aspect_ratio }};">
+              {% if video.media_type == 'video' %}
+                {{ video | video_tag: autoplay: true, muted: true, controls: true, class: "Image--lazyLoad Image--fadeIn" }} 
+              {% endif %}
+
+              <span class="Image__Loader"></span>
+
+              <noscript>
+                <img src="{{ video.preview_image | img_url: '400x' }}" alt="{{ video.preview_image.alt | escape }}">
+              </noscript>
+            </div>
+          </div>     
+        {% endif %}
+
+        {%- for image in product.images offset : 3 -%}
+          {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+            {%- continue -%}
+          {%- endif -%}
+
+          {%- if image.id == product.selected_or_first_available_variant.image.id -%}
+            {%- assign initial_image_index = image_count -%}
+            {%- assign initial_image_id = image.id -%}
+          {%- endif -%}
+
+          {%- include 'image-size', sizes: '200,400', image: image -%}
+
+          {%- assign is_video = false -%}
+
+          {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+            {%- assign is_video = true -%}
+          {%- endif -%}
+
+          <div id="Image{{ image.id }}" class="Product__SlideItem Product__SlideItem--{% if is_video %}video{% else %}image{% endif %} Carousel__Cell {% if initial_image_id == image.id %}is-selected{% endif %}"
+              {% if is_video %}data-action="open-modal" aria-controls="modal-video-{{ image.id }}"{% endif %}
+              {% unless is_video %}data-image-position-ignoring-video="{% increment image_position_without_video %}"{% endunless %}
+              data-image-position="{% increment image_position %}"
+              data-image-id="{{ image.id }}">
+            <div class="AspectRatio AspectRatio--withFallback" style="padding-bottom: {{ 100.0 | divided_by: image.aspect_ratio }}%; --aspect-ratio: {{ image.aspect_ratio }};">
+              {% assign image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+
+              <img class="Image--lazyLoad Image--fadeIn"
+                  {% if initial_image_id == image.id %}src="{{ image | img_url: '200x' }}"{% endif %}
+                  data-src="{{ image_url }}"
+                  data-widths="[{{ supported_sizes }}]"
+                  data-sizes="auto"
+                  data-expand="-100"
+                  alt="{{ image.alt | escape }}"
+                  data-max-width="{{ image.width }}"
+                  data-max-height="{{ image.height }}"
+                  data-original-src="{{ image | img_url: 'large' }}">
+
+              <span class="Image__Loader"></span>
+
+              {%- if is_video -%}
+                <button type="button" class="Video__PlayButton" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+              {%- endif -%}
+
+              <noscript>
+                <img src="{{ image | img_url: '400x' }}" alt="{{ image.alt | escape }}">
+              </noscript>
+            </div>
+          </div>
+
+          {%- assign image_count = image_count | plus: 1 -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      
+      {%- if product.images.size > 0 -%}
+        <div class="Product__Gallery {% if section.settings.stack_images %}Product__Gallery--stack{% endif %} {% if section.settings.show_thumbnails and image_count > 1 %}Product__Gallery--withThumbnails{% else %}Product__Gallery--withDots{% endif %}">
+          <span id="ProductGallery" class="Anchor"></span>
+
+          {%- if action_list_items != blank -%}
+            <div class="Product__ActionList hidden-lap-and-up">
+            {{ action_list_items }}
+            </div>
+          {%- endif -%}
+
+          {%- capture slideshow_nav -%}
+            {%- if image_count > 1 or section.settings.gallery_video != blank -%}
+              {%- if section.settings.show_thumbnails -%}
+                <div class="Product__SlideshowNav Product__SlideshowNav--thumbnails">
+                  <div class="Product__SlideshowNavScroller">
+                    {%- for image in product.images limit: 3 -%}
+                      {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+                        {%- continue -%}
+                      {%- endif -%}
+
+                      {%- assign is_video = false -%}
+
+                      {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+                        {%- assign is_video = true -%}
+                      {%- endif -%}
+
+                      {%- if section.settings.stack_images -%}
+                        <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
+
+                          {%- if is_video -%}
+                            <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                          {%- endif -%}
+                        </a>
+                      {%- else -%}
+                        <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
+
+                          {%- if is_video -%}
+                            <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                          {%- endif -%}
+                        </span>
+                      {%- endif -%}
+                    {%- endfor -%}
+
+                    {% if section.settings.gallery_video != blank %}
+                      {% assign video = section.settings.gallery_video %}
+                      {%- if section.settings.stack_images -%}
+                        <a href="#Image{{ video.id }}" data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio" style="--aspect-ratio: {{ video.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ video.preview_image | img_url: '70x' }}">
+                          <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                        </a>
+                      {%- else -%}
+                        <span data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio " style="--aspect-ratio: {{ video.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ video.preview_image | img_url: '70x' }}">
+                          <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                        </span>
+                      {%- endif -%}
+                    {% endif %}
+
+                    {%- for image in product.images offset: 3 -%}
+                      {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+                        {%- continue -%}
+                      {%- endif -%}
+
+                      {%- assign is_video = false -%}
+
+                      {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+                        {%- assign is_video = true -%}
+                      {%- endif -%}
+
+                      {%- if section.settings.stack_images -%}
+                        <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
+
+                          {%- if is_video -%}
+                            <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                          {%- endif -%}
+                        </a>
+                      {%- else -%}
+                        <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                          <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
+
+                          {%- if is_video -%}
+                            <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
+                          {%- endif -%}
+                        </span>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- endif -%}
+
+              {%- if section.settings.stack_images -%}
+                <div class="Product__SlideshowNav Product__SlideshowNav--dots">
+                  <div class="Product__SlideshowNavScroller">
+                    {%- for image in product.images -%}
+                      {%- if image.alt == 'featured' or image.alt == 'featured mobile' -%}
+                        {%- continue -%}
+                      {%- endif -%}
+
+                      <a href="#Image{{ image.id }}" class="Product__SlideshowNavDot {% if forloop.first %}is-selected{% endif %}"></a>
+                    {%- endfor -%}
+                    {% if section.settings.gallery_video != blank %}
+                      {% assign video = section.settings.gallery_video %}
+                      <a href="#Image{{ video.id }}" class="Product__SlideshowNavDot"></a>
+                    {% endif %}
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- if section.settings.stack_images -%}
+            {{- slideshow_nav -}}
+          {%- endif -%}
+
+          {%- capture flickity_options -%}
+          {
+            "prevNextButtons": false,
+            "pageDots": {% if image_count > 1 %}true{% else %}false{% endif %},
+            "adaptiveHeight": true,
+            "watchCSS": true,
+            "dragThreshold": 8,
+            "initialIndex": {{ initial_image_index }},
+            "arrowShape": {"x0": 20, "x1": 60, "y1": 40, "x2": 60, "y2": 35, "x3": 25}
+          }
+          {%- endcapture -%}
+
+          <div class="Product__Slideshow {% if section.settings.enable_image_zoom %}Product__Slideshow--zoomable{% endif %} Carousel" data-flickity-config='{{ flickity_options }}'>
+            {{ slideshow_images }}
+          </div>
+
+          {%- unless section.settings.stack_images -%}
+            {{- slideshow_nav -}}
+          {%- endunless -%}
+        </div>
+      {%- endif -%}
+
+      <div class="Product__InfoWrapper">
+        <div class="Product__Info {% if image_count == 0 %}Product__Info--noGallery{% endif %}">
+          <div class="Container original_art_info_container">
+            {%- render 'product-meta-original-art', show_description: true -%}
+            {%- render 'product-form-original-art' -%}
+            <div class="sca-fg-cat-list" style="display:none;" name="secomapp-fg-data-{{ product.id }}"> </div>
+          </div>
+        </div>
+
+        {%- if action_list_items != blank -%}
+          <div class="Product__ActionList hidden-pocket">
+            {{ action_list_items }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% if product.metafields.custom.original_art_data != blank %}
+  {% assign original_art = product.metafields.custom.original_art_data.value %}
+  {% assign behind_this_artwork = original_art.behind_this_artwork %}
+  {% assign about_the_charity = original_art.about_the_charity %}
+  {% assign buyers_protection = original_art.buyers_protection %}
+  {% assign shipping_information = original_art.shipping_information %}
+  {% assign payment_and_return_policies = original_art.payment_and_return_policies %}
+  {% comment %} {% assign truncate_number = 161 %}
+  {% assign ellipsis = '' %} {% endcomment %}
+  <script id="_original_art_exclusive_info">
+    {
+      "behind_this_artwork": "{{ behind_this_artwork | remove: "[read_more]" }}",
+      "about_the_charity": "{{ about_the_charity | remove: "[read_more]" }}",
+      "buyers_protection": "{{ buyers_protection | remove: "[read_more]" }}",
+      "shipping_information": "{{ shipping_information | remove: "[read_more]" }}",
+      "payment_and_return_policies": "{{ payment_and_return_policies | remove: "[read_more]" }}"
+    }
+  </script>
+
+  <div class="original_art_exclusive_info">
+    <div class="original_art_exclusive_info_item original_art_item_1">
+      <div class="original_art_exclusive_info_item_title js-collapser-toggle" data-target=".original_art_item_1">
+        <img class="original_art_exclusive_info_item_icon" src="{{ '1_BehindTheArtworkverify.png' | asset_url }}" width="60px" height="auto">
+        <span>BEHIND THIS ARTWORK</span>
+      </div>
+      <div class="original_art_exclusive_info_item_content" data-content="behind_this_artwork">
+        {% capture data %}
+          {{ behind_this_artwork }}
+        {% endcapture %}
+        {% if data contains "[read_more]" %}
+          {{ behind_this_artwork | split: "[read_more]" | first | append: '<span class="original_art_read_more">Read More</span>' }}
+        {% else %}
+          {{ behind_this_artwork | remove: "[read_more]" }}
+        {% endif %}
+        {% comment %} {{ behind_this_artwork | truncate: truncate_number, ellipsis }}
+        <span class="original_art_read_more">Read More</span> {% endcomment %}
+      </div>
+    </div>
+    <div class="original_art_exclusive_info_item original_art_item_2">
+      <div class="original_art_exclusive_info_item_title js-collapser-toggle" data-target=".original_art_item_2">
+        <img class="original_art_exclusive_info_item_icon" src="{{ '2_AboutTheCharity.png' | asset_url }}" width="60px" height="auto">
+        <span>ABOUT THE CHARITY</span>
+      </div>
+      <div class="original_art_exclusive_info_item_content" data-content="about_the_charity">
+        {% capture data %}
+          {{ about_the_charity }}
+        {% endcapture %}
+        {% if data contains "[read_more]" %}
+          {{ about_the_charity | split: "[read_more]" | first | append: '<span class="original_art_read_more">Read More</span>' }}
+        {% else %}
+          {{ about_the_charity | remove: "[read_more]" }}
+        {% endif %}
+        {% comment %} {{ about_the_charity | truncate: truncate_number, ellipsis }}
+        <span class="original_art_read_more">Read More</span> {% endcomment %}
+      </div>
+    </div>
+    <div class="original_art_exclusive_info_item original_art_item_3">
+      <div class="original_art_exclusive_info_item_title js-collapser-toggle" data-target=".original_art_item_3">
+        <img class="original_art_exclusive_info_item_icon" src="{{ '3_BuyersProtection.png' | asset_url }}" width="60px" height="auto">
+        <span>BUYERS PROTECTION</span>
+      </div>
+      <div class="original_art_exclusive_info_item_content" data-content="buyers_protection">
+        {% capture data %}
+          {{ buyers_protection }}
+        {% endcapture %}
+        {% if data contains "[read_more]" %}
+          {{ buyers_protection | split: "[read_more]" | first | append: '<span class="original_art_read_more">Read More</span>' }}
+        {% else %}
+          {{ buyers_protection | remove: "[read_more]" }}
+        {% endif %}
+        {% comment %} {{ buyers_protection | truncate: truncate_number, ellipsis }}
+        <span class="original_art_read_more">Read More</span> {% endcomment %}
+      </div>
+    </div>
+    <div class="original_art_exclusive_info_item original_art_item_4">
+      <div class="original_art_exclusive_info_item_title js-collapser-toggle" data-target=".original_art_item_4">
+        <img class="original_art_exclusive_info_item_icon" src="{{ '4_ShippingInfo.png' | asset_url }}" width="60px" height="auto">
+        <span>SHIPPING INFORMATION</span>
+      </div>
+      <div class="original_art_exclusive_info_item_content" data-content="shipping_information">
+        {% capture data %}
+          {{ shipping_information }}
+        {% endcapture %}
+        {% if data contains "[read_more]" %}
+          {{ shipping_information | split: "[read_more]" | first | append: '<span class="original_art_read_more">Read More</span>' }}
+        {% else %}
+          {{ shipping_information | remove: "[read_more]" }}
+        {% endif %}
+        {% comment %} {{ shipping_information | truncate: truncate_number, ellipsis }}
+        <span class="original_art_read_more">Read More</span> {% endcomment %}
+      </div>
+    </div>
+    <div class="original_art_exclusive_info_item original_art_item_5">
+      <div class="original_art_exclusive_info_item_title js-collapser-toggle" data-target=".original_art_item_5">
+        <img class="original_art_exclusive_info_item_icon" src="{{ '5_Payment.png' | asset_url }}" width="60px" height="auto">
+        <span>PAYMENT AND RETURN POLICIES</span>
+      </div>
+      <div class="original_art_exclusive_info_item_content" data-content="payment_and_return_policies">
+        {% capture data %}
+          {{ payment_and_return_policies }}
+        {% endcapture %}
+        {% if data contains "[read_more]" %}
+          {{ payment_and_return_policies | split: "[read_more]" | first | append: '<span class="original_art_read_more">Read More</span>' }}
+        {% else %}
+          {{ payment_and_return_policies | remove: "[read_more]" }}
+        {% endif %}
+        {% comment %} {{ payment_and_return_policies | truncate: truncate_number, ellipsis }}
+        <span class="original_art_read_more">Read More</span> {% endcomment %}
+      </div>
+    </div>
+  </div>
+  <script>
+    let data = document.querySelector("#_original_art_exclusive_info");
+    data = JSON.parse(data.textContent);
+    $('.original_art_read_more').click(function() {
+      $(this).addClass('hide');
+      let content_container = $(this).closest('.original_art_exclusive_info_item_content');
+      content_container.text(data[content_container.attr('data-content')]);
+    });
+  </script>
+{% endif %}
+
+<div class="get_in_touch_section">
+  <div class="get_in_touch_headline">Want to sell an original work with Andy okay?</div>
+  <div class="get_in_touch_cta">
+    Get in touch
+    {% render 'icon' with 'select-arrow-right' %}
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.get_in_touch_cta').click(function(){
+      $('.zendesk-popup-3').addClass('visible');
+      document.getElementById("cart-popup-overlay").style.display = "block";
+    });
+  })
+</script>
+
+<div class="pdp-custom-stars scaled-separate-section">
+  <div class="new-trust-line">
+    <strong>Excellent</strong>&nbsp;&nbsp; 4.9 out of 5
+  </div>
+   <div class="heading__stars">
+    <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
+   </div>
+</div>
+
+
+<script>
+  // Accordion functionality
+    
+  const Collapser = {
+    config: {
+      expandClass: "is-expanded",
+      targetExpandClass: "target-expanded",
+      targetClass: "is-open",
+    },
+  
+    expand: function (target, parent) {
+      $(parent)
+        .find("." + Collapser.config.expandClass)
+        .removeClass(Collapser.config.expandClass);
+      $(parent)
+        .find("." + Collapser.config.targetClass)
+        .removeClass(Collapser.config.targetClass);
+      $(target).addClass(Collapser.config.expandClass);
+    },
+  
+    collapse: function (target, parent) {
+      $(target).removeClass(Collapser.config.expandClass);
+    },
+  
+    init: function (className) {
+      $(className).on("click", function (e) {
+        e.preventDefault();
+        const target = $(this).attr("data-target"),
+          parent = $(this).parent();
+  
+        if ($(target).hasClass(Collapser.config.expandClass)) {
+          Collapser.collapse(target, parent);
+        } else {
+          Collapser.expand(target, parent);
+        }
+      });
+    },
+  };
+  
+  Collapser.init(".js-collapser-toggle");
+</script>
+
+{%- for image in product.images -%}
+  {%- if image.alt == 'featured' -%}
+    {%- assign desk_featured_image = image -%}
+  {%- endif -%}
+
+  {%- if image.alt == 'featured mobile' -%}
+    {%- assign mobile_featured_image = image -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if desk_featured_image or mobile_featured_image -%}
+  {%- assign mobile_featured_image = mobile_featured_image | default: desk_featured_image -%}
+  {%- assign desk_featured_image = desk_featured_image | default: mobile_featured_image -%}
+
+  <div class="Product__FeatureImageWrapper" style="background: url({{ desk_featured_image | img_url: '1x1', format: 'jpg' }})">
+    <div class="Product__FeatureImage Product__FeatureImage--{{ section.settings.featured_image_size }} Image--lazyLoad Image--zoomOut hide-no-js" data-expand="-25" data-bgset="{{ mobile_featured_image | img_url: 'x850' }} [(max-width: 640px)] | {{ desk_featured_image | img_url: '1500x' }}"></div>
+
+    <noscript>
+      <div class="Product__FeatureImage Product__FeatureImage--{{ section.settings.featured_image_size }}" style="background-image: url({{ desk_featured_image | img_url: '1500x' }})"></div>
+    </noscript>
+  </div>
+
+  <style>
+    #shopify-section-{{ section.id }} + .shopify-section--bordered {
+      border-top: 0;
+    }
+  </style>
+{%- else -%}
+  <style>
+    /* Very ugly haha */
+
+    @media screen and (max-width: 640px) {
+      #shopify-section-{{ section.id }} + .shopify-section--bordered {
+        border-top: 0;
+      }
+
+      #shopify-section-{{ section.id }} + .shopify-section--bordered > .Section {
+        padding-top: 0;
+      }
+    }
+  </style>
+{%- endif -%}
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+MODALS
+
+If we have some videos, we implement them as modal
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- for image in product.images -%}
+  {%- if image.alt contains 'youtube.com/embed' or image.alt contains 'player.vimeo.com' -%}
+    <div id="modal-video-{{ image.id }}" class="Modal Modal--fullScreen Modal--videoContent" aria-hidden="true" role="dialog" data-scrollable>
+      <div class="Modal__Content">
+        <div class="Container Container--narrow">
+          <div class="VideoWrapper">
+            {% if image.alt contains 'youtube.com/embed' %}
+              <iframe class="Image--lazyLoad" data-src="{{ image.alt }}?autoplay=1&showinfo=0&controls=1&rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+            {% else %}
+              <iframe class="Image--lazyLoad" data-src="{{ image.alt }}?autoplay=1&portrait=0&byline=0&color={{ settings.accent_color | remove_first: '#' }}" frameborder="0"></iframe>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <button class="Modal__Close Modal__Close--outside" data-animate-bottom data-action="close-modal">{% include 'icon' with 'close' %}</button>
+    </div>
+  {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%}
+--------------------------------------------------------------------------------------------------------------------
+PHOTO SWIPE
+
+This is the root container for the zoom functionality. Must not be removed, as order element is important.
+--------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+{%- if section.settings.enable_image_zoom -%}
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides. Do not remove as content is dynamically added -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Main UI bar -->
+      <div class="pswp__ui pswp__ui--hidden">
+        <button class="pswp__button pswp__button--prev RoundButton" data-animate-left title="{{ 'product.slideshow.previous' | t }}">{% include 'icon' with 'arrow-left' %}</button>
+        <button class="pswp__button pswp__button--close RoundButton RoundButton--large" data-animate-bottom title="{{ 'product.slideshow.close' | t }}">{% include 'icon' with 'close' %}</button>
+        <button class="pswp__button pswp__button--next RoundButton" data-animate-right title="{{ 'product.slideshow.next' | t }}">{% include 'icon' with 'arrow-right' %}</button>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% if section.settings.enable_read_more %}
+<script>
+  $(document).ready(function(){
+    $('.desc-readmore-btn').click(function(){
+      $('.ProductMeta__Description').removeClass('fadeIn-readmore');
+    });
+  });
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product page",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type" : "video",
+      "id" : "gallery_video",
+      "label" : "Gallery Video"
+    },
+    {
+      "type" : "color",
+      "id" : "pwyw_btn_color",
+      "label" : "PayWhatYouWant Button Color",
+      "default" : "#f0b3a8"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show social sharing buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sku",
+      "label": "Show SKU",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "description_below_add_to_cart",
+      "label": "Description below add to cart",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_review_section",
+      "label": "Show review section",
+      "default": true
+    },
+    {
+      "id": "product_review",
+      "type": "text",
+      "label": "Product review",
+      "default": "Ordered on Sunday and arrived on Tuesday. Great quality print. Looks crisp as even in the biggest size. Absolutely fizzin!"
+    },
+    {
+      "id": "product_review_by",
+      "type": "text",
+      "label": "Product review by",
+      "default": " Harry G."
+    },
+    {
+      "type": "select",
+      "id": "selector_mode",
+      "label": "Selector type",
+      "options": [
+        {
+          "value": "block",
+          "label": "Block"
+        },
+        {
+          "value": "dropdown",
+          "label": "Dropdown"
+        }
+      ],
+      "default": "dropdown"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_color_swatch",
+      "label": "Show color swatch",
+      "default": false,
+      "info": "Some colors appear white? [Learn more](http://support.maestrooo.com/article/80-product-uploading-custom-color-for-color-swatch)."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_color_carousel",
+      "label": "Show color carousel",
+      "info": "A pop-up selector with variant images for choosing colors. Only enables when color swatch is disabled.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_inventory_quantity",
+      "label": "Show inventory quantity",
+      "info": "Make sure that your inventory is tracked. [Learn more](https://help.shopify.com/manual/products/inventory#set-up-inventory-tracking).",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "inventory_quantity_threshold",
+      "label": "Inventory quantity threshold",
+      "info": "Only show inventory quantity if below threshold. Choose 0 to always show.",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price_in_button",
+      "label": "Show price in add to cart button",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_button",
+      "label": "Show dynamic checkout button",
+      "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Product images"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "fill",
+          "label": "Fill screen"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "checkbox",
+      "id": "stack_images",
+      "label": "Stack images on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails",
+      "label": "Show thumbnails on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "Enable zoom",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Tabs"
+    },
+    {
+      "type": "page",
+      "id": "tab_page_1_handle",
+      "label": "First page"
+    },
+    {
+      "type": "page",
+      "id": "tab_page_2_handle",
+      "label": "Second page"
+    },
+    {
+      "type": "paragraph",
+      "content": "The theme also allows you to add specific tabs for a given product only. [Learn more about this feature](http://support.maestrooo.com/article/83-product-adding-different-tabs-per-product)."
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "paragraph",
+      "content": "You need to install [Shopify's free Product Reviews](https://apps.shopify.com/product-reviews) app before enabling this option."
+    },
+    {
+      "type": "checkbox",
+      "id": "reviews_enabled",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Featured image"
+    },
+    {
+      "type": "paragraph",
+      "content": "You can highlight an image after product tabs by adding the ALT tag \"featured\" to a given image. [Learn more](http://support.maestrooo.com/article/152-product-highlight-a-featured-image)."
+    },
+    {
+      "type": "select",
+      "id": "featured_image_size",
+      "label": "Section size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_read_more",
+      "label": "Enable Read more",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "ubx_title",
+      "label": "UBX Headline",
+      "default": "Popup"
+    },
+    {
+      "type": "text",
+      "id": "ubx_subtitle",
+      "label": "UBX Subheading",
+      "default": "Real Customer Experience"
+    },
+    {
+      "type": "richtext",
+      "id": "ubx_content",
+      "label": "UBX Popup Content",
+      "default": "<p>You can use this popup to display some useful information to your customers.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product-marks",
+      "name": "Product marks",
+      "settings": [
+        {
+          "id": "product_handle",
+          "type": "text",
+          "label": "Product handle"
+        },
+        {
+          "type": "header",
+          "content": "Mark 1"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_mark_1",
+          "label": "Show Mark",
+          "default": false
+        },
+        {
+          "id": "label_1",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "amount_1",
+          "type": "text",
+          "label": "Amount"
+        },
+        {
+          "type": "header",
+          "content": "Mark 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_mark_2",
+          "label": "Show Mark",
+          "default": false
+        },
+        {
+          "id": "label_2",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "amount_2",
+          "type": "text",
+          "label": "Amount"
+        },
+        {
+          "type": "header",
+          "content": "Mark 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_mark_3",
+          "label": "Show Mark",
+          "default": false
+        },
+        {
+          "id": "label_3",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "amount_3",
+          "type": "text",
+          "label": "Amount"
+        }
+      ]
+    },
+    {
+      "name" : "Story",
+      "type" : "story",
+      "settings" : [
+        {
+          "type" : "product",
+          "id" : "product",
+          "label" : "Product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text",
+          "default": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1200 x 1200px .png recommended"
+        }
+      ]
+    },
+    {
+      "type" : "donation",
+      "name" : "Donation Selector",
+      "settings": [
+        {
+          "id": "product_handle",
+          "type": "text",
+          "label": "Product handle"
+        },
+        {
+          "type": "header",
+          "content": "Donation 1"
+        },
+        {
+          "type": "checkbox",
+          "id": "donation_1",
+          "label": "Show Donation",
+          "default": false
+        },
+        {
+          "id": "label_1",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Donation 2"
+        },
+        {
+          "type": "checkbox",
+          "id": "donation_2",
+          "label": "Show Donation",
+          "default": false
+        },
+        {
+          "id": "label_2",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Donation 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "donation_3",
+          "label": "Show Donation",
+          "default": false
+        },
+        {
+          "id": "label_3",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Donation 4"
+        },
+        {
+          "type": "checkbox",
+          "id": "donation_4",
+          "label": "Show Donation",
+          "default": false
+        },
+        {
+          "id": "label_4",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Donation 5"
+        },
+        {
+          "type": "checkbox",
+          "id": "donation_5",
+          "label": "Show Donation",
+          "default": false
+        },
+        {
+          "id": "label_5",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "type": "header",
+          "content": "Donation 6"
+        },
+        {
+          "type": "checkbox",
+          "id": "donation_6",
+          "label": "Show Donation",
+          "default": false
+        },
+        {
+          "id": "label_6",
+          "type": "text",
+          "label": "Label"
+        }
+      ]
+    },
+    {
+      "name": "UBX video",
+      "type": "ubx_video",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+
+
+{% if product.metafields.loox.num_reviews %}
+<script id="looxSchemaJson" type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Product",
+	"@id": {{ canonical_url | json }},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "{{ product.metafields.loox.avg_rating }}",
+		"reviewCount": "{{ product.metafields.loox.num_reviews }}"
+	},
+	"name": {{ product.title | json }}
+}
+</script>
+{% endif %}
+ 

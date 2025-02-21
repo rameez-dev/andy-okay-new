@@ -1,4 +1,4 @@
-<aside class="NewsletterPopup site__black--popup soldout-popup zendesk-popup zendesk-popup-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
+<aside class="NewsletterPopup site__black--popup soldout-popup zendesk-popup-2 zendesk-popup-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" aria-hidden="true">
     <div class="popup_header">
         <span class="popup_title">{{ section.settings.title }}</span>
         <button class="popup_close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% include 'icon' with 'close' %}</button>
@@ -90,18 +90,18 @@
                         {%- endfor -%}
 
                         <div class="Form__Item">
-                            <label class="Form__FloatingLabel-custom">Description</label>
+                            <label class="Form__FloatingLabel-custom">Any additional notes</label>
                             <textarea name="body" cols="30" rows="10" class="Form__Textarea" aria-label="{{ 'contact.form.message' | t }}" required></textarea>
                         </div>
 
-                        <div class="Form__Item">
+                        {% comment %} <div class="Form__Item">
                             <label class="Form__FloatingLabel-custom">Attachments (optional)</label>
                             <label for="attachment-{{ section.id }}" class="Form__Input attachments-input-label">Add a file</label>
                             <div class="attachment-input-cont">
                                 <div class="attachemt-input-layer"></div>
                                 <input id="attachment-{{ section.id }}" type="file" multiple="true" class="attachments-input" name="file" aria-label="file">
                             </div>
-                        </div>
+                        </div> {% endcomment %}
 
                         <button type="submit" id="zendesk-submit-{{ section.id }}" class="Form__Submit Button Button--primary Button--full">Submit</button>
                     </form>
@@ -114,7 +114,7 @@
 <script>
     $(document).ready(function(){
         $('.zendesk-popup-{{ section.id }} .popup_close').click(function(){
-            $('.zendesk-popup').removeClass('visible');
+            $('.zendesk-popup-{{ section.id }}').removeClass('visible');
             document.getElementById("cart-popup-overlay").style.display = "none";
         });
     });
@@ -143,6 +143,7 @@
 
         zendesk_data = {
             "request": {
+                "ticket_form_id": 25050567186194,
                 "requester": {"name": jsonData.name, "email": jsonData.email},
                 "subject": jsonData.body,
                 "comment": {"body": jsonData.body }
@@ -238,7 +239,7 @@
 
 {% schema %}
 {
-    "name": "Ask a specialist",
+    "name": "Make an offer",
     "settings": [
     {
         "type": "text",
@@ -324,7 +325,7 @@
     ],
     "presets": [
     {
-        "name": "Ask a specialist"
+        "name": "Make an offer"
     }
     ]
 }
