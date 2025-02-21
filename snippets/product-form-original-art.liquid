@@ -1,0 +1,76 @@
+<div class="ProductFormSection">
+  <div class="original_art_cta hidden_cta">
+    <div class="Button--primary--default original_art_atc">
+      <button class="Button Button--full">
+        <div class="original_art_atc_text text-vertical-center">
+          MAKE AN OFFER
+        </div>
+      </button>
+    </div>
+    {% if product.metafields.custom.original_art_data != blank %}
+      <div class="original_art_atc_subtitle">
+        {{ product.metafields.custom.original_art_data.value.cta_subtitle }}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="original_art_help_container">
+    <span id="zendesk-popup-control" class="original_art_help_text">Have a question? Ask a specialist
+      {% render 'icon' with 'select-arrow-right' %}
+    </span>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#zendesk-popup-control').click(function(){
+        $('.zendesk-popup').addClass('visible');
+        document.getElementById("cart-popup-overlay").style.display = "block";
+      });
+      $('.original_art_atc').click(function(){
+        $('.zendesk-popup-2').addClass('visible');
+        document.getElementById("cart-popup-overlay").style.display = "block";
+      });
+
+      if (screen.width < 640) {
+        $window = $(window);
+        $window.scroll(function() {
+            if ($window.scrollTop() >= 250) {
+              $('.original_art_cta').removeClass('hidden_cta');
+            }
+            else{
+              $('.original_art_cta').addClass('hidden_cta');
+            }
+        });
+      }
+    })
+  </script>
+
+  {%- assign selected_variant = product.selected_or_first_available_variant -%}
+  <script type="application/json" data-product-json>
+    {
+      "product": {{ product | json }},
+      "selected_variant_id": {{ selected_variant.id }}
+      {%- if section.settings.show_inventory_quantity -%}
+        ,"inventories": {
+          {%- for variant in product.variants -%}
+            {%- assign inventory_message = '' -%}
+  
+            {%- if section.settings.inventory_quantity_threshold == 0 -%}
+              {%- capture inventory_message -%}{{- 'product.form.inventory_quantity_count' | t: count: variant.inventory_quantity -}}{%- endcapture -%}
+            {%- else -%}
+              {%- capture inventory_message -%}{{- 'product.form.low_inventory_quantity_count' | t: count: variant.inventory_quantity -}}{%- endcapture -%}
+            {%- endif -%}
+  
+            "{{ variant.id }}": {
+              "inventory_management": {{ variant.inventory_management | json }},
+              "inventory_policy": {{ variant.inventory_policy | json }},
+              "inventory_quantity": {{ variant.inventory_quantity | json }},
+              "inventory_message": {{ inventory_message | json }}
+            }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        }
+      {%- endif -%}
+    }
+  </script>
+</div>
+

@@ -1,0 +1,143 @@
+<div class="ProductMeta">
+  {%- if section.settings.show_vendor and product.vendor != blank -%}
+    <h2 class="ProductMeta__Vendor Heading u-h6">
+      {%- assign vendor_handle = product.vendor | handle -%}
+      {%- assign collection_for_vendor = collections[vendor_handle] -%}
+
+      {%- unless collection_for_vendor.empty? -%}
+        <a href="{{ collection_for_vendor.url }}">{{ product.vendor }}
+        </a>
+      {%- else -%}
+        {{- product.vendor -}}
+      {%- endunless -%}
+    </h2>
+  {%- endif -%}
+
+  <div class="productItem_head">
+    <hgroup class="productTitle-head">
+      <h1 class="ProductMeta__Title ProductMeta__Title--default Heading u-h2">
+          {{- product.title -}}
+      </h1>
+    </hgroup>
+
+    {% if product.metafields.custom.original_art_data != blank %}
+      {% assign original_art = product.metafields.custom.original_art_data.value %}
+      <div class="original_art_meta">
+        <div class="original_art_meta_heading">{{ original_art.title }}</div>
+        <div class="original_art_meta_subheading">{{ original_art.subtitle }}</div>
+      </div>
+
+      <div class="original_art_info_item">
+        <img class="original_art_info_icon" src="{{ '1_Type.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Type</div>
+          <div class="original_art_info_subheading">{{ original_art.type }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_info_item">
+        <img class="original_art_info_icon" src="{{ '2_Method.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Method</div>
+          <div class="original_art_info_subheading">{{ original_art.method }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_info_item">
+        <img class="original_art_info_icon" src="{{ '3_Size.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Size</div>
+          <div class="original_art_info_subheading">{{ original_art.size }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_info_item">
+        <img class="original_art_info_icon" src="{{ '4_Signature.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Signature</div>
+          <div class="original_art_info_subheading">{{ original_art.signature }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_info_item">
+        <img class="original_art_info_icon" src="{{ '5_Certificate.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Authenticity</div>
+          <div class="original_art_info_subheading">{{ original_art.authenticity }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_info_item original_art_charity">
+        <img class="original_art_info_icon" src="{{ '6_Charity.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Linked to charity</div>
+          <div class="original_art_info_subheading">{{ original_art.linked_to_charity }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_value_info">
+        <img class="original_art_info_icon" src="{{ '7_Value.png' | asset_url }}" width="22px" height="auto">
+        <div class="original_art_info_content">
+          <div class="original_art_info_heading">Estimated value</div>
+          <div class="original_art_info_subheading">{{ original_art.estimated_value }}</div>
+        </div>
+      </div>
+
+      <div class="original_art_artist">
+        <img src="{{ original_art.artist.value.picture | image_url: width: 100 }}" class="original_art_artist_picture" height="55px" width="55px">
+        <div class="original_art_artist_content">
+          <div class="original_art_artist_name">
+            {% if original_art.artist.value.url != blank %}
+              <a href="{{ original_art.artist.value.url }}">{{ original_art.artist.value.name }}</a>
+            {% else %}
+              {{ original_art.artist.value.name }}
+            {% endif %}
+          </div>
+          <div class="original_art_artist_details">{{ original_art.artist.value.details }}</div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div id="secomapp-fg-image-{{ product.id }}" style="display: none;">
+      {{ "icon-freegift.png" | asset_url | img_tag: "", "sca-fg-img-collect" }}
+    </div>
+  </div>
+
+  {%- if section.settings.show_sku and product.selected_or_first_available_variant.sku != blank -%}
+    <p class="ProductMeta__Sku Heading Text--subdued u-h6">{{ 'product.form.sku' | t }}
+      :
+      <span class="ProductMeta__SkuNumber">{{ product.selected_or_first_available_variant.sku }}
+      </span>
+    </p>
+  {%- endif -%}
+
+
+  {%- if show_description and section.settings.description_below_add_to_cart == false -%}
+    <div class="ProductMeta__Description">
+      <div class="Rte">
+        {{ product.description }}
+      </div>
+
+      {%- if section.settings.show_share_buttons -%}
+        <div class="ProductMeta__ShareButtons hidden-pocket">
+          <span class="ProductMeta__ShareTitle Heading Text--subdued u-h7">{{ 'product.form.share' | t }}
+          </span>
+
+          {%- assign share_url = shop.url | append: product.url -%}
+          {%- assign twitter_text = product.title -%}
+          {%- assign pinterest_description = product.description | strip_html | truncatewords: 15 | url_param_escape -%}
+          {%- assign pinterest_image = product.featured_image | img_url: 'large' | prepend: 'https:' -%}
+
+          <div class="ProductMeta__ShareList Text--subdued">
+            <a class="ProductMeta__ShareItem" href="https://www.facebook.com/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" aria-label="Facebook">{%- include 'icon' with 'facebook' -%}
+            </a>
+            <a class="ProductMeta__ShareItem" href="https://twitter.com/share?{% if twitter_text != blank %}text={{twitter_text}}&{% endif %}url={{ share_url }}" target="_blank" rel="noopener" aria-label="Twitter">{%- include 'icon' with 'twitter' -%}
+            </a>
+            <a class="ProductMeta__ShareItem" href="https://pinterest.com/pin/create/button/?url={{ share_url }}{% if pinterest_image != blank %}&media={{ pinterest_image }}{% endif %}&description={{ pinterest_description }}" target="_blank" rel="noopener" aria-label="Pinterest">{%- include 'icon' with 'pinterest' -%}
+            </a>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>
