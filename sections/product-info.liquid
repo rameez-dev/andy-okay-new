@@ -199,7 +199,7 @@
     </div>
   {% endcapture %}
 
-{% if template == "product" %}
+{% if template == "product" or template == 'product.original_art' %}
   {%- assign first_page = pages[section.settings.tab_page_1_handle] -%}
   {%- assign second_page = pages[section.settings.tab_page_2_handle] -%}
 
@@ -405,7 +405,7 @@
   Collapser.init(".js-collapser-toggle");
   </script>
 
-  {% if template == 'product' %}
+  {% if template == 'product' or template == 'product.original_art' %}
   <script>
     $('.prod-info-tabs').slick({
       slidesToShow: 3,

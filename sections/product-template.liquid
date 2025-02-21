@@ -1,5 +1,5 @@
 
-{% if template == 'product' %}
+{% if template == 'product' or template == 'product.original_art' %}
   {% assign has_charity = false %}
   {% assign charity_org = '' %} 
 
@@ -46,7 +46,7 @@
 }
 {%- endcapture -%}
 
-<div class="product_section_bg {% if template == 'product' %} product_section_bg--default {% endif %} ">
+<div class="product_section_bg {% if template == 'product' or template == 'product.original_art' %} product_section_bg--default {% endif %} ">
 <section class="Product prod_margin Product--{{ section.settings.image_size }}" data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
   <div class="Product__Wrapper">
     {%- capture action_list_items -%}
@@ -224,7 +224,7 @@
   <div class="CLS-producthead-placeholder">
     <div class="productItem_head product_head_mb mobile-b-desktop-h CLS-producthead">
       <div style="position:relative;">
-        {% if template == 'product' %}
+        {% if template == 'product' or template == 'product.original_art' %}
         {% assign looxstats = shop.metafields.loox["global_stats"] | split: ',' %}
           <div class="headQuote-content headQuote--default">
             <a href="#looxReviews">
@@ -240,14 +240,14 @@
           </div>
   
         {% endif %}
-    	  <h1 class="ProductMeta__Title Heading u-h2 {% if template == 'product' %} ProductMeta__Title--default {% endif %}">
-          {%- if template == 'product' -%}
+    	  <h1 class="ProductMeta__Title Heading u-h2 {% if template == 'product' or template == 'product.original_art' %} ProductMeta__Title--default {% endif %}">
+          {%- if template == 'product' or template == 'product.original_art' -%}
             {{- product.title -}}
           {%- else -%}
             <a href="{{ product.url }}">{{ product.title }}</a>
           {%- endif -%}
         </h1>
-        {% if template == 'product' and charity_org != '' and  artist_name != '' %}
+        {% if charity_org != '' and  artist_name != '' and template == 'product' or template == 'product.original_art' %}
           <span class="sub-heading-rel-charity"><span class="artist-name-text">{{artist_name}}</span> <span class="artist-x-charity"> x </span><span class="charity-name-text">{{charity_org}}</span></span>
         {% endif %}
 
@@ -255,7 +255,7 @@
           {{ "icon-freegift.png" | asset_url | img_tag: "", "sca-fg-img-collect" }} 
         </div>
     	</div>
-      {% unless template == 'product' %}
+      {% unless template == 'product' or template == 'product.original_art' %}
         {%- if section.settings.show_review_section -%}
            <p class="headDescription">
             "{{ section.settings.product_review }}"
@@ -420,7 +420,7 @@
       PRODUCT TABS
       --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
-      {% unless template  == "product" %}
+      {% unless template == "product" or template == 'product.original_art' %}
         {%- include 'product-tabs' -%}
       {% endunless %}
 
@@ -453,7 +453,7 @@
     {%- endcapture -%}
     <div class="productItem_head product_head_mb mb-bar mobile-b-desktop-h">
       {% unless template contains "coming-soon" %}
-        {% if template == "product" %}
+        {% if template == "product" or template == 'product.original_art' %}
           {% include 'xs-stock-bar-default' %}
 
           <div class="product_price_value">
@@ -477,7 +477,7 @@
     <div class="Product__InfoWrapper">
       <div class="Product__Info {% if image_count == 0 %}Product__Info--noGallery{% endif %}">
         <div class="Container">
-          {% if template == "product" %}
+          {% if template == "product" or template == 'product.original_art' %}
             {%- include 'product-meta-default', show_description: true -%}
           {% else %}
             {%- include 'product-meta', show_description: true -%}
@@ -485,7 +485,7 @@
 
           
           {%- if product.template_suffix != 'coming-soon' -%}
-            {% if template == "product" %}
+            {% if template == "product" or template == 'product.original_art' %}
               {%- include 'product-form-default' -%}
             {% else %}
               {%- include 'product-form' -%}
@@ -493,7 +493,7 @@
           <div class="sca-fg-cat-list" style="display:none;" name="secomapp-fg-data-{{ product.id }}"> </div>
           {%- endif -%}
 
-          {% unless template == "product" %}
+          {% unless template == "product" or template == 'product.original_art' %}
           {%- if section.settings.description_below_add_to_cart -%}
             <div class="ProductMeta__Description {% if section.settings.enable_read_more %}fadeIn-readmore{% endif %}">
               <div class="Rte">
@@ -558,7 +558,7 @@ New Tabs Added
 ---------------------------------------
 {%- endcomment -%}
 
-{% comment %} {% if template == "product" %}
+{% comment %} {% if template == "product" or template == 'product.original_art' %}
   {%- assign first_page = pages[section.settings.tab_page_1_handle] -%}
   {%- assign second_page = pages[section.settings.tab_page_2_handle] -%}
 
@@ -1237,7 +1237,7 @@ This is the root container for the zoom functionality. Must not be removed, as o
 </script>
 {% endif %}
 
-{% comment %} {% if template == 'product' %}
+{% comment %} {% if template == 'product' or template == 'product.original_art' %}
   <script>
     $('.prod-info-tabs').slick({
       slidesToShow: 3,
