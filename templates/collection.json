@@ -86,7 +86,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/TrendingNow.jpg",
             "title": "Trending Now",
-            "popup_background_color": "#000",
+            "popup_background_color": "#000000",
             "popup_title": "",
             "popup_title_color": "#fafaff",
             "popup_text": "",
@@ -355,7 +355,7 @@
       ],
       "settings": {
         "heading": "EXCELLENT",
-        "subheading": "4.9 \/ 5 from +3800 Reviews"
+        "subheading": "4.9 \/ 5 from +5500 Reviews"
       }
     }
   },
