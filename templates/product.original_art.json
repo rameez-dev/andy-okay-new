@@ -204,7 +204,7 @@
           "type": "story",
           "settings": {
             "product": "",
-            "subheading": "WHY CHOOSE ART FOR CAUSES?",
+            "subheading": "Why choose Art for Causes?",
             "subheading_color": "#9c9c9c",
             "title": "WE GIVE BACK, TOGETHER",
             "image": "shopify:\/\/shop_images\/wegiveback.jpg",
@@ -220,7 +220,7 @@
           "type": "story",
           "settings": {
             "product": "",
-            "subheading": "our founder",
+            "subheading": "Our founder",
             "subheading_color": "#7d7d7d",
             "title": "MEET ANDY",
             "image": "shopify:\/\/shop_images\/me_923858d1-3604-4d70-94f1-c9d3fdd2504f.jpg",
@@ -395,9 +395,35 @@
     },
     "zendesk_form_popup_2_p9tXef": {
       "type": "zendesk-form-popup-2",
+      "blocks": {
+        "text_7H8nhy": {
+          "type": "text",
+          "settings": {
+            "label": "Your country of residence",
+            "title": "25050303641618",
+            "use_long_text": false,
+            "only_numbers": false,
+            "is_required": true
+          }
+        },
+        "text_AERVtx": {
+          "type": "text",
+          "settings": {
+            "label": "Your offer (in local currency)",
+            "title": "25050361526162",
+            "use_long_text": false,
+            "only_numbers": false,
+            "is_required": true
+          }
+        }
+      },
+      "block_order": [
+        "text_7H8nhy",
+        "text_AERVtx"
+      ],
       "settings": {
         "title": "Make an offer",
-        "content": "<p>Please fill in the form below with any questions you might have about your order, our products or exciting collaborations. We'll get back to you within 24 hours, but usually much faster.<\/p><p><br\/>Of course, you can always drop us an email at:<br\/><a href=\"mailto:support@andyokay.com\" target=\"_blank\">support@andyokay.com<\/a><\/p><p><br\/>You can also find a lot of the information you might be looking for in our <a href=\"https:\/\/andyokay.com\/pages\/faq\">FAQs<\/a>.<\/p>"
+        "content": "<p>Please fill in the form below with details about your offer. We'll share it with the artist and get back to you within 7 days if accepted.<br\/><br\/>Need help? Check our FAQ at the bottom of the listing page or email us at <a href=\"mailto:support@andyokay.com\" target=\"_blank\">support@andyokay.com<\/a><\/p>"
       }
     }
   },
