@@ -2028,7 +2028,9 @@ THE EXACT SAME ATTRIBUTES.
   let localization_country = "{{ localization.country.name }}";
   let local_storage_country = localStorage.getItem('user__country');
 
-  if(localization_country == "United States" || local_storage_country == "United States") {
+  if(localization_country == "United States" || local_storage_country == "United States" ||
+    localization_country == "Canada" || local_storage_country == "Canada"
+  ) {
     $('.inches').click();
     $('.dp-size-tab-list').css('visibility','visible');
   }
