@@ -12564,7 +12564,7 @@ S .SidebarMenu .Drawer__Main::after {
 .trustbadges-2 {
   padding-top: 10px;
   padding-bottom: 10px;
-  min-height: 100px;
+  /* min-height: 100px; */
   flex-direction: row;
 }
 @media only screen and (max-width: 1000px){
@@ -12575,10 +12575,11 @@ S .SidebarMenu .Drawer__Main::after {
 .trustbadges-2 .trustbadges-list {
   align-items: center;
   align-content: center;
-  min-height: 80px;
+  /* min-height: 80px; */
   justify-content: flex-start !important;
   overflow-x: auto !important;
   display: flex !important;
+  padding-block: 10px !important;
 }
 .trustbadges-2 .trustbadges-list::-webkit-scrollbar {
   height: 0px !important;
@@ -12589,13 +12590,15 @@ S .SidebarMenu .Drawer__Main::after {
   flex-direction: row;
   align-content: center;
   align-items: center;
+  justify-content: center;
   padding: 0;
   min-width: fit-content;
-  padding-inline-end: 20px;
+  padding-inline: 20px;
+  margin: 0;
 }
-.trustbadges-2 .trustbadges-list .trustbadges-list-items {
+/* .trustbadges-2 .trustbadges-list .trustbadges-list-items {
   padding-left: 30px;
-}
+} */
 @media screen and (max-width: 640px) {
   .trustbadges-2 .trustbadges-list .trustbadges-list-items{
     padding-left: 20px;
@@ -12603,11 +12606,11 @@ S .SidebarMenu .Drawer__Main::after {
 }
 .trustbadges-2 .trustbadges-list .trustbadges-list-items:after {
   content: "";
-  background: #2a2b2f;
-  height: 65px;
+  background: #595959;
+  height: 45px;
   width: 1px;
   position: absolute;
-  top: -5px;
+  /* top: -5px; */
   right: 0px;
 }
 /* @media screen and (max-width: 640px) {
@@ -12624,6 +12627,7 @@ S .SidebarMenu .Drawer__Main::after {
   height: 47.5px;
   display: inline-block;
   margin-right: 10px;
+  margin-block: 0;
 }
 .trustbadges-2 .trustbadges-list .trustbadges-list-items .image-holder img {
   max-width: 47.5px;
