@@ -701,12 +701,12 @@
       "sidebar-menu-slider-submenu": {
         "type": "sidebar-menu-slider-submenu",
         "blocks": {
-          "card_jF8LbR": {
+          "card_3wRW9B": {
             "type": "card",
             "settings": {
-              "headline": "LOVE DROP",
-              "image": "shopify:\/\/shop_images\/mobmenu_valentines_a0591206-f153-4fef-8adb-067c1a8c05a1.jpg",
-              "url": "shopify:\/\/collections\/exclusive-valentines-drop"
+              "headline": "NEW IN",
+              "image": "shopify:\/\/shop_images\/New_mobmenu_e83d9bfc-a633-4e53-8376-135f761157c2.jpg",
+              "url": "shopify:\/\/collections\/just-released"
             }
           },
           "card_jTgUtU": {
@@ -715,14 +715,6 @@
               "headline": "TRENDING NOW",
               "image": "shopify:\/\/shop_images\/BestSellers3.jpg",
               "url": "shopify:\/\/collections\/top-10"
-            }
-          },
-          "card_3wRW9B": {
-            "type": "card",
-            "settings": {
-              "headline": "NEW IN",
-              "image": "shopify:\/\/shop_images\/NewIn3.jpg",
-              "url": "shopify:\/\/collections\/just-released"
             }
           },
           "card_RDtNYJ": {
@@ -735,9 +727,8 @@
           }
         },
         "block_order": [
-          "card_jF8LbR",
-          "card_jTgUtU",
           "card_3wRW9B",
+          "card_jTgUtU",
           "card_RDtNYJ"
         ],
         "settings": {
