@@ -6952,6 +6952,13 @@ select::-ms-expand {
 .ProductItem__ImageWrapper {
   display: block;
   position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .ProductItem__ImageWrapper {
+    border-radius: 5px;
+  }
 }
 .ProductItem__Image--alternate {
   position: absolute;
@@ -9498,6 +9505,151 @@ body.story-popup-visible::after {
 .Product__SlideshowNav {
   display: none;
 }
+.Product__SlideshowNavImage img {
+  object-fit: cover;
+}
+.Product__SlideshowNavScroller {
+  font-size: 0px;
+}
+
+/* Thumbnails override */
+/* with this we see thumbnails on mobile. comment this all to remove thumbnails from mobile and back to dots */
+@media screen and (min-width: 250px) {
+  .Product__SlideshowNav--dots {
+    display: block;
+  }
+  .Product__SlideshowNav--dots .Product__SlideshowNavScroller {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @supports (--css: variables) {
+    .Product__SlideshowNav--dots .Product__SlideshowNavScroller {
+      top: calc(50% + calc((var(--header-height) / 2)));
+    }
+  }
+  .Product__SlideshowNavDot {
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .Product__SlideshowNavDot:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  .Product__SlideshowNavDot.is-selected {
+    border-color: var(--heading-color);
+    background: var(--heading-color);
+    /* Thumbnails */
+  }
+  .Product__SlideshowNavImage {
+    display: block;
+    border: 1px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  .Product__SlideshowNavImage:not(:last-child) {
+    margin-bottom: 18px;
+  }
+  .Product__SlideshowNavImage.is-selected {
+    /* border-color: var(--heading-color); */
+    border-color: #001bcf;
+  }
+  .Product__SlideshowNavPlay {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+  }
+  .Product__SlideshowNavPlay svg {
+    /* width: 30px;
+    height: 30px; */
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  }
+  .Product__SlideshowNavImage--video:hover svg {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    /* When the gallery is stack we have various adjusments to do */
+  }
+  .Product__Gallery--stack .Product__SlideshowNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+  }
+  .Product__Gallery--stack .Product__SlideshowNav--dots {
+    left: -30px;
+  }
+  .Product__Gallery--stack .Product__SlideshowNav--thumbnails {
+    position: -webkit-sticky;
+    position: sticky;
+    padding: 50px 0;
+    top: var(--header-base-height);
+    margin-bottom: -50px;
+    width: 70px;
+  }
+  @supports (--css: variables) {
+    .Product__Gallery--stack .Product__SlideshowNav--thumbnails {
+      top: var(--header-height);
+    }
+  }
+  .Product__Gallery--withThumbnails .Product__SlideshowNav--dots {
+    display: none;
+  }
+  .Product__Gallery--withThumbnails .Product__SlideshowNav--thumbnails {
+    display: block;
+  }
+  .Product__Gallery--stack.Product__Gallery--withThumbnails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .Product__Gallery--stack.Product__Gallery--withThumbnails .Product__Slideshow, .Product__Gallery--stack.Product__Gallery--withThumbnails .Product__SlideshowNav {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+  .Product__Gallery--stack.Product__Gallery--withThumbnails .Product__SlideshowNav {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+  }
+  .Product__Gallery:not(.Product__Gallery--stack).Product__Gallery--withThumbnails .Product__SlideshowNav {
+    text-align: center;
+    margin-top: 5px;
+  }
+  .Product__Gallery:not(.Product__Gallery--stack).Product__Gallery--withThumbnails .Product__SlideshowNavImage {
+    display: inline-block;
+    width: 7.5%;
+    margin-inline: 0.3%;
+    margin-block: 0px;
+    vertical-align: middle;
+    border-radius: 15%;
+    overflow: hidden;
+  }
+  .Product__Gallery:not(.Product__Gallery--stack).Product__Gallery--withThumbnails .flickity-page-dots {
+    display: none;
+  }
+}
+/* end thumbnails override */
+
 @media screen and (min-width: 641px) {
   .Product__Gallery {
     margin-bottom: 65px;
@@ -9564,7 +9716,8 @@ body.story-popup-visible::after {
     margin-bottom: 18px;
   }
   .Product__SlideshowNavImage.is-selected {
-    border-color: var(--heading-color);
+    /* border-color: var(--heading-color); */
+    border-color: #001bcf;
   }
   .Product__SlideshowNavPlay {
     position: absolute;
@@ -9577,8 +9730,10 @@ body.story-popup-visible::after {
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
   }
   .Product__SlideshowNavPlay svg {
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
+    width: 100%;
+    height: 100%;
     -webkit-transition: -webkit-transform 0.2s ease-in-out;
     transition: -webkit-transform 0.2s ease-in-out;
     transition: transform 0.2s ease-in-out;
@@ -9691,9 +9846,12 @@ body.story-popup-visible::after {
   }
   .Product__Gallery:not(.Product__Gallery--stack).Product__Gallery--withThumbnails .Product__SlideshowNavImage {
     display: inline-block;
-    width: 70px;
-    margin: 10px;
+    width: 7.5%;
+    margin-inline: 0.5%;
+    margin-block: 0px;
     vertical-align: middle;
+    border-radius: 15%;
+    overflow: hidden;
   }
   .Product__Gallery:not(.Product__Gallery--stack).Product__Gallery--withThumbnails .flickity-page-dots {
     display: none;
@@ -10281,7 +10439,7 @@ body.story-popup-visible::after {
 }
 @media (max-width: 767px) {
   .ProductForm {
-    margin-top: 25px;
+    margin-top: 15px;
   }
 }
 .ProductForm--default {
