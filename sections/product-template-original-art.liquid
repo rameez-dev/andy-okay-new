@@ -231,7 +231,10 @@
                       {%- endif -%}
 
                       {%- if section.settings.stack_images -%}
-                        <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                        <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" 
+                          {% comment %} style="--aspect-ratio: {{ image.aspect_ratio }}" {% endcomment %}
+                          style="--aspect-ratio: 0.86"
+                        >
                           <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
 
                           {%- if is_video -%}
@@ -239,7 +242,10 @@
                           {%- endif -%}
                         </a>
                       {%- else -%}
-                        <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                        <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" 
+                          {% comment %} style="--aspect-ratio: {{ image.aspect_ratio }}" {% endcomment %}
+                          style="--aspect-ratio: 0.86"
+                        >
                           <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
 
                           {%- if is_video -%}
@@ -252,12 +258,18 @@
                     {% if section.settings.gallery_video != blank %}
                       {% assign video = section.settings.gallery_video %}
                       {%- if section.settings.stack_images -%}
-                        <a href="#Image{{ video.id }}" data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio" style="--aspect-ratio: {{ video.aspect_ratio }}">
+                        <a href="#Image{{ video.id }}" data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio" 
+                          {% comment %} style="--aspect-ratio: {{ video.aspect_ratio }}" {% endcomment %}
+                          style="--aspect-ratio: 0.86"
+                        >
                           <img class="lazyload Image--lazyLoad" src="{{ video.preview_image | img_url: '70x' }}">
                           <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
                         </a>
                       {%- else -%}
-                        <span data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio " style="--aspect-ratio: {{ video.aspect_ratio }}">
+                        <span data-image-id="{{ video.id }}" class="Product__SlideshowNavImage AspectRatio " 
+                          {% comment %} style="--aspect-ratio: {{ video.aspect_ratio }}" {% endcomment %}
+                          style="--aspect-ratio: 0.86"
+                        >
                           <img class="lazyload Image--lazyLoad" src="{{ video.preview_image | img_url: '70x' }}">
                           <button type="button" class="Product__SlideshowNavPlay" data-action="play-video" aria-label="{{ 'home_page.featured_video.play' | t }}">{% include 'icon' with 'play' %}</button>
                         </span>
@@ -276,7 +288,10 @@
                       {%- endif -%}
 
                       {%- if section.settings.stack_images -%}
-                        <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                        <a href="#Image{{ image.id }}" data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio" 
+                          {% comment %} style="--aspect-ratio: {{ image.aspect_ratio }}" {% endcomment %}
+                          style="--aspect-ratio: 0.86"
+                        >
                           <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
 
                           {%- if is_video -%}
@@ -284,7 +299,10 @@
                           {%- endif -%}
                         </a>
                       {%- else -%}
-                        <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio {% if forloop.first %}is-selected{% endif %}" style="--aspect-ratio: {{ image.aspect_ratio }}">
+                        <span data-image-id="{{ image.id }}" class="Product__SlideshowNavImage {% if is_video %}Product__SlideshowNavImage--video{% endif %} AspectRatio" 
+                          {% comment %} style="--aspect-ratio: {{ image.aspect_ratio }}" {% endcomment %}
+                          style="--aspect-ratio: 0.86"
+                        >
                           <img class="lazyload Image--lazyLoad" src="{{ image | img_url: '70x' }}">
 
                           {%- if is_video -%}
