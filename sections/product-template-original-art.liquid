@@ -484,11 +484,11 @@
   {% assign ellipsis = '' %} {% endcomment %}
   <script id="_original_art_exclusive_info">
     {
-      "behind_this_artwork": "{{ behind_this_artwork | remove: "[read_more]" }}",
-      "about_the_charity": "{{ about_the_charity | remove: "[read_more]" }}",
-      "buyers_protection": "{{ buyers_protection | remove: "[read_more]" }}",
-      "shipping_information": "{{ shipping_information | remove: "[read_more]" }}",
-      "payment_and_return_policies": "{{ payment_and_return_policies | remove: "[read_more]" }}"
+      "behind_this_artwork": "{{ behind_this_artwork | remove: "[read_more]" | escape | newline_to_br | strip_newlines }}",
+      "about_the_charity": "{{ about_the_charity | remove: "[read_more]" | escape | newline_to_br | strip_newlines }}",
+      "buyers_protection": "{{ buyers_protection | remove: "[read_more]" | escape | newline_to_br | strip_newlines }}",
+      "shipping_information": "{{ shipping_information | remove: "[read_more]" | escape | newline_to_br | strip_newlines }}",
+      "payment_and_return_policies": "{{ payment_and_return_policies | remove: "[read_more]" | escape | newline_to_br | strip_newlines }}"
     }
   </script>
 
@@ -590,7 +590,7 @@
     $('.original_art_read_more').click(function() {
       $(this).addClass('hide');
       let content_container = $(this).closest('.original_art_exclusive_info_item_content');
-      content_container.text(data[content_container.attr('data-content')]);
+      content_container.html(data[content_container.attr('data-content')]);
     });
   </script>
 {% endif %}
