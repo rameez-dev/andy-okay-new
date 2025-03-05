@@ -88,7 +88,7 @@
         <div class="original_art_artist_content">
           <div class="original_art_artist_name">
             {% if original_art.artist.value.url != blank %}
-              <a href="{{ original_art.artist.value.url }}">{{ original_art.artist.value.name }}</a>
+              <a href="{{ original_art.artist.value.url }}" target="_blank">{{ original_art.artist.value.name }}</a>
             {% else %}
               {{ original_art.artist.value.name }}
             {% endif %}
