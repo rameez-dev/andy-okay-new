@@ -2092,6 +2092,12 @@ THE EXACT SAME ATTRIBUTES.
       container.insertAdjacentHTML('beforeend', new_elemet);
     }
 
+    if (user__country == "United States") {
+      var container = document.getElementById('first-truststar');
+      var new_elemet = `<p class="uk-only"><img class="green_checkmark" src="{{ 'check_green.png' | asset_url }}"><strong>Shop with confidence</strong> - No additional fees on US orders</p>`
+      container.insertAdjacentHTML('beforeend', new_elemet);
+    }
+
     if (truststar_flag && country_flag)
     { 
       truststar_flag.src = 'https://cdn.shopify.com/s/files/1/0082/5619/2602/files/' + country_flag + '.png'; 
