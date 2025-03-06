@@ -529,6 +529,20 @@
     "image_carousel_6TtTf3": {
       "type": "image-carousel",
       "blocks": {
+        "mobile_image_bbRBVd": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_carousel_mob2.jpg",
+            "link": "shopify:\/\/products\/cool-people-live-here"
+          }
+        },
+        "desktop_image_TfMUQP": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_carousel_web2.jpg",
+            "link": "shopify:\/\/products\/cool-people-live-here"
+          }
+        },
         "mobile_image_cgWgdQ": {
           "type": "mobile_image",
           "settings": {
@@ -556,29 +570,15 @@
             "image": "shopify:\/\/shop_images\/image_carousel_web1.jpg",
             "link": "shopify:\/\/collections\/motivational-art"
           }
-        },
-        "mobile_image_bbRBVd": {
-          "type": "mobile_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_carousel_mob2.jpg",
-            "link": "shopify:\/\/products\/cool-people-live-here"
-          }
-        },
-        "desktop_image_TfMUQP": {
-          "type": "desktop_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_carousel_web2.jpg",
-            "link": "shopify:\/\/products\/cool-people-live-here"
-          }
         }
       },
       "block_order": [
+        "mobile_image_bbRBVd",
+        "desktop_image_TfMUQP",
         "mobile_image_cgWgdQ",
         "desktop_image_LBRweq",
         "mobile_image_KQ3pz8",
-        "desktop_image_GQygX4",
-        "mobile_image_bbRBVd",
-        "desktop_image_TfMUQP"
+        "desktop_image_GQygX4"
       ],
       "settings": {}
     },
