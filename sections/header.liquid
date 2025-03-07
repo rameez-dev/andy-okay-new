@@ -304,8 +304,8 @@ HEADER CONTENT
               {% endif %}
             </span>
             <span class="cart_icon"> 
-              <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
-              <span class="hidden-phone">{%- include 'icon' with 'cart-desktop' -%} </span>
+              <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart-new' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
+              <span class="hidden-phone">{%- include 'icon' with 'cart-new' -%} </span>
             </span>
           </a>
         </div>
@@ -506,18 +506,22 @@ HEADER CONTENT
                 {%- endif -%}
               {%- endcapture -%}
               {% assign additional-class = '' %}
+              {% assign additional_link_class = '' %}
               {% if link.title == 'REVIEWS' %}
                 {% assign additional-class = 'push-reviews-right' %}
                 {% assign currency-converter-class = 'push-currency-left' %}
-              {% elsif link.title contains 'CLUB' %}
-                {% assign additional-class = 'push-members-right' %}
+              {% elsif link.title contains 'ABOUT US' %}
+                {% assign additional-class = 'push-about-right with-megamenu' %}
               {% elsif link.title contains 'IMPACT' %}
                 {% assign additional-class = 'impact-link' %}
               {% endif %}
               <li class="HorizontalList__Item {{ additional-class }} {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
-                <a href="{{ link.url }}">
+                <a class="header_link" href="{{ link.url }}">
                   {{- link.title | escape -}}
-
+                  {% if link.title contains 'REVIEWS' %}
+                    {% assign looxstats = shop.metafields.loox["global_stats"] | split: ',' %}
+                    <div class="header-reviews-counter">{{looxstats[1]}}</div>
+                  {% endif %}
                   {%- if use_mega_menu or menu_item_dropdown == blank -%}
                     <span class="Header__LinkSpacer">{{ link.title | escape }}</span>
                   {%- endif -%}
@@ -620,8 +624,8 @@ HEADER CONTENT
         <span class="cart_icon">
         
         
-        <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
-        <span class="hidden-phone">{%- include 'icon' with 'cart-desktop' -%} </span>
+        <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart-new' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
+        <span class="hidden-phone">{%- include 'icon' with 'cart-new' -%} </span>
         </span>
         
       </a>
@@ -705,8 +709,8 @@ HEADER CONTENT
           {% endif %}
         </span>
         <span class="cart_icon">
-            <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart' -%}</span>
-            <span class="hidden-phone">{%- include 'icon' with 'cart-desktop' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
+            <span class="hidden-tablet-and-up">{%- include 'icon' with 'cart-new' -%}</span>
+            <span class="hidden-phone">{%- include 'icon' with 'cart-new' -%} <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}">{{cart.item_count}}</span></span>
             
         </span>
       </a>
@@ -884,18 +888,32 @@ HEADER CONTENT
   
   .Header__Icon.cart_wrapper{
   	 padding:5px 15px;
+     padding-right: 0px;
     /* background: #e5e5e5; */
      border-radius:5px;
      display:inline-flex;
      align-items:center;
      align-content:center;
      justify-content:center;
+     height: 38px;
+  }
+  .Header__Icon.cart_wrapper::before {
+    content: '';
+    width: 1px;
+    background: #bfbfbf;
+    height: 28px;
+    top: 50%;
+    transform: translateY(-50%);
   }
   @media (max-width: 767px) {
+    .Header__Icon.cart_wrapper::before {
+      content: unset;
+    }
     .Header__Icon.cart_wrapper{
   	 padding:5px 7px;
      background: #fff;
-     min-height: 40px;
+     min-height: 38px;
+     border: none;
   	}
     
   	
@@ -909,22 +927,23 @@ HEADER CONTENT
   }
   
   .Header__Icon span.cart_amount{
-  	color:#2e34b9;
+  	color:#001bcf;
     font-size:13px;
-    font-weight:bold;
+    /* font-weight:bold; */
     display:inline-block;
     margin-right:5px;
     text-align:right;
     white-space: nowrap;
+    font-family: DIN Next LT Pro;
   }
   @media (max-width: 767px) {
   	.Header__Icon span.cart_amount{
-      font-size:11px;
+      font-size:10px;
     }
   }
   @media (max-width: 440px) {
   	.Header__Icon span.cart_amount{
-      font-size:9px;
+      font-size:10px;
     }
   }
   
@@ -932,7 +951,7 @@ HEADER CONTENT
   .Header__Icon span.cart_amount b{
   	color:#000; 
     font-size:12px; 
-    font-weight:bold;
+    font-weight: normal;
     text-decoration:line-through;
   }
   
@@ -943,7 +962,7 @@ HEADER CONTENT
   }
   @media (max-width: 440px) {
   	.Header__Icon span.cart_amount b{
-  		font-size:9px;
+  		font-size:10px;
   	}
   }
   
