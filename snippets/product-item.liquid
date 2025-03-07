@@ -110,7 +110,9 @@
           {% if product.tags contains "atelier" %}
             <div class="limited-release-label atelier-label limited-label-product-item"><span>Atelier Exclusive</span></div>
           {% elsif product.tags contains "essentials" %}
-            <div class="limited-release-label essentials-label limited-label-product-item"><span>Essentials</span></div>   
+            <div class="limited-release-label essentials-label limited-label-product-item"><span>Essentials</span></div> 
+          {% elsif product.tags contains "Original Art" %}
+            <div class="limited-release-label original-art-label limited-label-product-item"><span>Orignal Art</span></div>   
           {% elsif limited_edition_tag %}
             <img class="limited-release-img" src="{{ 'limitedrelease.jpg' |  asset_url }}" alt="limited-release"> 
           {% endif %}  
@@ -146,7 +148,12 @@
       .ProductItem__price--custom {
         color : #808080 !important;
       }
-    </style>      
+    </style>
+        {% if product.tags contains "Original Art" %}
+          {% if has_artist %}
+            <div class="artist_name">{{ artist_name }}</div>
+          {% endif %}    
+        {% else %}  
           {%- if product.template_suffix != 'coming-soon' -%}
             {% unless is_sold_out_collection %}
             <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %}">
@@ -164,6 +171,7 @@
             </div>
             {% endunless %}
           {%- endif -%}
+        {% endif %}
         </div>
 
         {%- comment -%} //removed as per requirement
