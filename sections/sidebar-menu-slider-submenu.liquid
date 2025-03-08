@@ -114,7 +114,7 @@
             {% assign link_color = '' %}
             {% if link.title contains 'CLUB' %}
               {% assign link_color = 'members-club-color' %}
-            {% elsif link.title == 'IMPACT' %}
+            {% elsif link.title contains 'IMPACT' %}
               {% assign link_color = 'impact-link' %}
             {% elsif link.title == 'ALMOST GONE' %}
               {% assign link_color = 'almost_gone_color' %}
@@ -131,7 +131,7 @@
                       {% assign link_color = '' %}
                       {% if sub_link.title contains 'CLUB' %}
                         {% assign link_color = 'members-club-color' %}
-                      {% elsif sub_link.title == 'IMPACT' %}
+                      {% elsif sub_link.title contains 'IMPACT' %}
                         {% assign link_color = 'impact-link' %}
                       {% elsif sub_link.title == 'ALMOST GONE' %}
                         {% assign link_color = 'almost_gone_color' %}
@@ -147,7 +147,7 @@
                               {% assign link_color = '' %}
                               {% if grandchild_link.title contains 'CLUB' %}
                                 {% assign link_color = 'members-club-color' %}
-                              {% elsif grandchild_link.title == 'IMPACT' %}
+                              {% elsif grandchild_link.title contains 'IMPACT' %}
                                 {% assign link_color = 'impact-link' %}
                               {% elsif grandchild_link.title == 'ALMOST GONE' %}
                                 {% assign link_color = 'almost_gone_color' %}
