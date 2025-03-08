@@ -24,7 +24,7 @@
   position: relative;
   width: 80%;
   max-width: 370px;
-  display: flex !important;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
