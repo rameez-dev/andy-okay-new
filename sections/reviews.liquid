@@ -24,7 +24,8 @@
           <img src="{{ 'Truststars_5.png' | asset_img_url: '100x100' }}" alt="">
          </div>
         <div class="product_rev_text">
-          <p>Based on +3800 <a href="{{shop.url}}/pages/reviews">reviews</a></p>
+          {% assign looxstats = shop.metafields.loox["global_stats"] | split: ',' %}
+          <p>Based on {{looxstats[1]}} <a href="{{shop.url}}/pages/reviews">reviews</a></p>
         </div>
       </div>
       
