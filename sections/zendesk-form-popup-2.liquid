@@ -22,6 +22,10 @@
                         </ul>
                     </div>
                     <form id="zendesk_form-{{ section.id }}" onsubmit="zendesk_submit(event)">
+                        {% if template.name == 'product' %}
+                            <input type="hidden" name="25291691930514" value="{{ product.title }}">
+                        {% endif %}
+
                         <div class="Form__Item">
                             <label class="Form__FloatingLabel-custom">Your name</label>
                             <input type="text" class="Form__Input" name="name" aria-label="name" required>
