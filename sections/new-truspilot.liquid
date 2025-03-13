@@ -122,7 +122,8 @@
     <div class="details-cont">
         <span class="details-heading">{{ section.settings.heading }}</span>
         <img class="details-img" src="{{ 'Truststars_5.png' |  asset_url}}">
-        <span class="details-subheading">{{ section.settings.subheading }}</span>
+        {% assign looxstats = shop.metafields.loox["global_stats"] | split: ',' %}
+        <span class="details-subheading">{{ section.settings.subheading |  replace: '[reviews_count]', looxstats[1] }}</span>
     </div>
     <div class="review-super-cont">
         <button type="button" class="slick-prev review-prev">{% include 'icon' with 'select-arrow-left' %}</button>
