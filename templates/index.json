@@ -481,15 +481,27 @@
         "button_text": ""
       }
     },
-    "1643642736f42e4efd": {
+    "16616061592e8072c4": {
+      "type": "front-page-section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Andyokay_X_Non-Violence-Project_knotted-Gun.jpg",
+        "title": "ANDY OKAY X NON-VIOLENCE",
+        "content": "<p>Andy okay and The Non-Violence Project Foundation are thrilled to announce a significant long-term charity collaboration, pairing the organization with some of the best artists in the world.<\/p>",
+        "button_label": "Explore the collection",
+        "button_link": "shopify:\/\/collections\/andy-okay-x-non-violence-project",
+        "bg_color": "#000000",
+        "text_color": "#ffffff"
+      }
+    },
+    "1616425487e7f8d53c": {
       "type": "featured-collections",
       "blocks": {
-        "1643642736f42e4efd-0": {
+        "1616425487e7f8d53c-0": {
           "type": "collection",
           "settings": {
-            "collection": "going-fast",
-            "title": "ALMOST GONE",
-            "grid_items_count": 8,
+            "collection": "motivational-art",
+            "title": "",
+            "grid_items_count": 12,
             "button_text": "View all >",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
@@ -498,10 +510,10 @@
         }
       },
       "block_order": [
-        "1643642736f42e4efd-0"
+        "1616425487e7f8d53c-0"
       ],
       "settings": {
-        "title": "Soon lost forever",
+        "title": "Boost your mood",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -513,17 +525,36 @@
         "background_color": "#f0f0f0"
       }
     },
-    "16616061592e8072c4": {
-      "type": "front-page-section",
-      "disabled": true,
+    "161039065890033dbc": {
+      "type": "featured-collections",
+      "blocks": {
+        "161039065890033dbc-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "pop-art",
+            "title": "Pop Art",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "161039065890033dbc-0"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/ringo_starr_beatles_andyokay.jpg",
-        "title": "YOU SHOP – WE GIVE",
-        "content": "<p>Art is a fantastic way to bring attention to important causes that need our attention. This is how Art for Causes changes lives...<\/p>",
-        "button_label": "Learn more",
-        "button_link": "https:\/\/andyokay.com\/pages\/cause-of-the-month",
-        "bg_color": "#000000",
-        "text_color": "#ffffff"
+        "title": "Icons reimagined",
+        "subheading_color": "#8a8a8a",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
       }
     },
     "image_carousel_6TtTf3": {
@@ -582,6 +613,70 @@
       ],
       "settings": {}
     },
+    "1571758473108": {
+      "type": "featured-collections",
+      "blocks": {
+        "18bd032c-7869-430d-8d86-b3c9c5e04384": {
+          "type": "collection",
+          "settings": {
+            "collection": "photography",
+            "title": "PHOTO ART",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#ffffff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "18bd032c-7869-430d-8d86-b3c9c5e04384"
+      ],
+      "settings": {
+        "title": "Perfectly fits any room",
+        "subheading_color": "#8a8a8a",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
+    "featured_collections_3AVxCi": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_DLjGVz": {
+          "type": "collection",
+          "settings": {
+            "collection": "illustrations-1",
+            "title": "",
+            "grid_items_count": 16,
+            "button_text": "View all >",
+            "button_text_color": "#fff",
+            "show_overlay_dot": false,
+            "overlay_dot_color": "#fff"
+          }
+        }
+      },
+      "block_order": [
+        "collection_DLjGVz"
+      ],
+      "settings": {
+        "title": "Modern visual poetry",
+        "subheading_color": "#8a8a8a",
+        "layout_mode": "carousel",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "1",
+        "grid_desktop_items_per_row": 4,
+        "is_sold_out_collection": false,
+        "background_color": "#f0f0f0"
+      }
+    },
     "1616425219eaa2e028": {
       "type": "featured-collections",
       "blocks": {
@@ -614,15 +709,15 @@
         "background_color": "#f0f0f0"
       }
     },
-    "1616425487e7f8d53c": {
+    "1643642736f42e4efd": {
       "type": "featured-collections",
       "blocks": {
-        "1616425487e7f8d53c-0": {
+        "1643642736f42e4efd-0": {
           "type": "collection",
           "settings": {
-            "collection": "motivational-art",
-            "title": "",
-            "grid_items_count": 12,
+            "collection": "going-fast",
+            "title": "ALMOST GONE",
+            "grid_items_count": 8,
             "button_text": "View all >",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
@@ -631,10 +726,10 @@
         }
       },
       "block_order": [
-        "1616425487e7f8d53c-0"
+        "1643642736f42e4efd-0"
       ],
       "settings": {
-        "title": "Boost your mood",
+        "title": "Soon lost forever",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -665,70 +760,6 @@
         "button_link": "https:\/\/andyokay.com\/blogs\/okay-blog",
         "button_text": "View All >",
         "button_text_color": "#000000"
-      }
-    },
-    "161039065890033dbc": {
-      "type": "featured-collections",
-      "blocks": {
-        "161039065890033dbc-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "pop-art",
-            "title": "Pop Art",
-            "grid_items_count": 16,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff",
-            "show_overlay_dot": false,
-            "overlay_dot_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "161039065890033dbc-0"
-      ],
-      "settings": {
-        "title": "Icons reimagined",
-        "subheading_color": "#8a8a8a",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
-      }
-    },
-    "1571758473108": {
-      "type": "featured-collections",
-      "blocks": {
-        "18bd032c-7869-430d-8d86-b3c9c5e04384": {
-          "type": "collection",
-          "settings": {
-            "collection": "photography",
-            "title": "PHOTO ART",
-            "grid_items_count": 16,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff",
-            "show_overlay_dot": false,
-            "overlay_dot_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "18bd032c-7869-430d-8d86-b3c9c5e04384"
-      ],
-      "settings": {
-        "title": "Perfectly fits any room",
-        "subheading_color": "#8a8a8a",
-        "layout_mode": "carousel",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4,
-        "is_sold_out_collection": false,
-        "background_color": "#f0f0f0"
       }
     },
     "1640887620025213cd": {
@@ -1002,14 +1033,15 @@
     "1625374692c4d0a8c9",
     "16131224958a8baaef",
     "16059880715e2bb83c",
-    "1643642736f42e4efd",
     "16616061592e8072c4",
-    "image_carousel_6TtTf3",
-    "1616425219eaa2e028",
     "1616425487e7f8d53c",
-    "1629722279ac42c7cf",
     "161039065890033dbc",
+    "image_carousel_6TtTf3",
     "1571758473108",
+    "featured_collections_3AVxCi",
+    "1616425219eaa2e028",
+    "1643642736f42e4efd",
+    "1629722279ac42c7cf",
     "1640887620025213cd",
     "1597932365863",
     "160614414236913c9b",
