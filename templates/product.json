@@ -393,6 +393,15 @@
         "link": ""
       }
     },
+    "donation-choose-popup-2": {
+      "type": "donation-choose-popup-2",
+      "settings": {
+        "title": "Shared Impact Fund",
+        "content": "<p><strong>Give to yourself and give back<\/strong><br\/><br\/>Our mission is to support charity and artists while providing stunning art to customers at the world's most affordable price. <br\/><br\/>Through unique collaborations we can release limited edition art at never-before-seen prices, leaving room for a personal donation to a charity of your choice.<br\/><br\/>And the best part? <br\/><br\/>These limited edition drops help to bring important environmental stories into homes and workspaces all around the world creating critical dialogue and inspiring positive action.<br\/><br\/><a href=\"https:\/\/andyokay.com\/pages\/cause-of-the-month\" target=\"_blank\" title=\"https:\/\/andyokay.com\/pages\/cause-of-the-month\">Click here<\/a> for learn more about our charity partners.<\/p>",
+        "link_text": "",
+        "link": ""
+      }
+    },
     "gallery-experience-choose-popup": {
       "type": "gallery-experience-choose-popup",
       "settings": {
@@ -495,6 +504,7 @@
     "newsletter",
     "frame-choose-popup",
     "donation-choose-popup",
+    "donation-choose-popup-2",
     "gallery-experience-choose-popup",
     "size-chart-popup",
     "b9ca1c76-c277-4252-8da2-792273eac538",
