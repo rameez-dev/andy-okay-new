@@ -1358,7 +1358,7 @@ for size, we use it to display a size chart (if applicable)
     <div class="dp-product-section-head">
       <span class="label">
         Choose Donation
-        <span class="dp-product-donation-name">WWF</span>
+        <span class="dp-product-donation-name">{{ charity_product.selected_or_first_available_variant.title }}</span>
       </span>
       <div id="cart-popup-overlay">
       </div>
@@ -1393,6 +1393,11 @@ for size, we use it to display a size chart (if applicable)
                 data-title="{{c_variant.title}}" type="radio" name="donation" value="{{c_variant.id}}"
                 data-gtm-form-interact-field-id="1" />
               <span class="donation_container_text">{{c_variant.title}}</span>
+              {% if charity_title == "shared-impact-fund" %}
+                <div class="shared_impact_fund_info shared_impact_icon_cont">
+                  <img class="shared_impact_icon" src="{{ 'question-mark.svg' |  asset_url }}">
+                </div>
+              {% endif %}
             </label>
             {% endfor %}
           </div>
@@ -2797,6 +2802,13 @@ THE EXACT SAME ATTRIBUTES.
 
     $('.donation_info').click(function () {
       $('.donation-choose').addClass('visible');
+      document.getElementById("cart-popup-overlay").style.display = "block";
+    });
+
+    $('.shared_impact_fund_info').click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      $('.donation-choose-2').addClass('visible');
       document.getElementById("cart-popup-overlay").style.display = "block";
     });
 
