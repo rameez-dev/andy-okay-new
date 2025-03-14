@@ -3356,6 +3356,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           if(!drawerMain) return;
 
           drawerMain.removeAttribute('data-scrollable');
+          collapsibleSlider.setAttribute('data-scrollable', '');
+
+          let parentSlider = collapsibleSlider.parentNode.closest('.Collapsible__Slider');
+          if(parentSlider) {
+            parentSlider.removeAttribute('data-scrollable')
+          }
         }
       }
 
@@ -3395,6 +3401,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         let collapsibleSlider = drawer.querySelector(`.Collapsible__Slider[data-header-id="${header_id}"]`);
         if(!collapsibleSlider) return;
+
+        collapsibleSlider.removeAttribute('data-scrollable');
+
+        let parentSlider = collapsibleSlider.parentNode.closest('.Collapsible__Slider');
+        if(parentSlider) {
+          parentSlider.setAttribute('data-scrollable', '');
+        }
 
         var collapsible = collapsibleSlider.closest('.Collapsible');
         var collapsibleButton = collapsible.querySelector('[data-action="toggle-collapsible"]');
