@@ -129,13 +129,13 @@
                   <div class="Collapsible__Slider" aria-hidden="true" data-header-id="link_{{ forloop.index0 }}" data-position="first_level">
                     {%- for sub_link in link.links -%}
                       {% assign link_color = '' %}
-                      {% if sub_link.title contains 'CLUB' %}
+                      {% comment %} {% if sub_link.title contains 'CLUB' %}
                         {% assign link_color = 'members-club-color' %}
                       {% elsif sub_link.title contains 'IMPACT' %}
                         {% assign link_color = 'impact-link' %}
                       {% elsif sub_link.title == 'ALMOST GONE' %}
                         {% assign link_color = 'almost_gone_color' %}
-                      {% endif %}
+                      {% endif %} {% endcomment %}
                       <div class="Collapsible">
                         {%- if sub_link.links != blank -%}
                           <button class="Collapsible__Button Heading u-h6 {{ link_color }}" data-action="toggle-collapsible" aria-expanded="false">
@@ -145,13 +145,13 @@
                           <div class="Collapsible__Slider" aria-hidden="true" data-header-id="link_{{ forloop.parentloop.index0  }}_{{ forloop.index0 }}">
                             {%- for grandchild_link in sub_link.links -%}
                               {% assign link_color = '' %}
-                              {% if grandchild_link.title contains 'CLUB' %}
+                              {% comment %} {% if grandchild_link.title contains 'CLUB' %}
                                 {% assign link_color = 'members-club-color' %}
                               {% elsif grandchild_link.title contains 'IMPACT' %}
                                 {% assign link_color = 'impact-link' %}
                               {% elsif grandchild_link.title == 'ALMOST GONE' %}
                                 {% assign link_color = 'almost_gone_color' %}
-                              {% endif %}
+                              {% endif %} {% endcomment %}
                               <div class="Collapsible">
                                 <a href="{{ grandchild_link.url }}" class="Collapsible__Button Heading Link Link--primary u-h6 {{ link_color }}">
                                   {{ grandchild_link.title | escape }}
