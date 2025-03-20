@@ -69,7 +69,7 @@
         "item_zH38hm": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NewRelease_v2.jpg",
+            "image": "shopify:\/\/shop_images\/voicemail_ff88ca5c-7f8f-40dc-bb97-f7af5dd55a2f.jpg",
             "title": "New Release",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -84,7 +84,7 @@
         "item_FDWeF9": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TrendingNow.jpg",
+            "image": "shopify:\/\/shop_images\/trendingnow_c605d26d-99f5-49ee-9200-be87a6faf89f.jpg",
             "title": "Trending Now",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -108,6 +108,21 @@
             "popup_description_color": "#fafaff",
             "popup_btn_copy": "",
             "popup_btn_url": "shopify:\/\/collections\/motivational-art",
+            "left": true
+          }
+        },
+        "item_ckyBFy": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/becoolorleave_2bd906c4-92c6-4713-baf7-d017a43c74d9.jpg",
+            "title": "Illustration",
+            "popup_background_color": "#000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/illustrations-1",
             "left": true
           }
         },
@@ -222,6 +237,7 @@
         "item_zH38hm",
         "item_FDWeF9",
         "item_tVRQUm",
+        "item_ckyBFy",
         "item_Wdrjft",
         "item_7hEeQh",
         "item_gPjyxV",

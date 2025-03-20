@@ -184,7 +184,7 @@
         "82d2cc96-d2b1-4349-b7f1-4c9223e6f176": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/NewRelease_v2.jpg",
+            "image": "shopify:\/\/shop_images\/voicemail.jpg",
             "title": "New Release",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
@@ -199,7 +199,7 @@
         "item_3QQrEV": {
           "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/TrendingNow.jpg",
+            "image": "shopify:\/\/shop_images\/trendingnow_71a63bc0-c413-40ad-a677-33af98f3dd9c.jpg",
             "title": "Trending Now",
             "popup_background_color": "#000000",
             "popup_title": "",
@@ -226,6 +226,21 @@
             "left": true
           }
         },
+        "item_zgxPfR": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/becoolorleave.jpg",
+            "title": "Illustrations",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/illustrations-1",
+            "left": true
+          }
+        },
         "d88674ca-5101-4547-8740-9abba5891fec": {
           "type": "item",
           "settings": {
@@ -245,7 +260,7 @@
           "type": "item",
           "settings": {
             "image": "shopify:\/\/shop_images\/Landscapes.jpg",
-            "title": "Landscapes",
+            "title": "Landscape",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
             "popup_title_color": "#0d2b2b",
@@ -253,6 +268,36 @@
             "popup_description_color": "#0d2b2b",
             "popup_btn_copy": "",
             "popup_btn_url": "shopify:\/\/collections\/nature",
+            "left": true
+          }
+        },
+        "7ffcaee8-eae3-48f3-b659-f208ba42991b": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Flowers.jpg",
+            "title": "Floral",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/floral",
+            "left": true
+          }
+        },
+        "0961a735-eda2-4c2c-a7c4-0ea6437b5489": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Space_e23ec4eb-9bd4-4a64-94c4-d7e2dc7c32df.jpg",
+            "title": "Space",
+            "popup_background_color": "#000000",
+            "popup_title": "",
+            "popup_title_color": "#fafaff",
+            "popup_text": "",
+            "popup_description_color": "#fafaff",
+            "popup_btn_copy": "",
+            "popup_btn_url": "shopify:\/\/collections\/space",
             "left": true
           }
         },
@@ -290,7 +335,7 @@
           "type": "item",
           "settings": {
             "image": "shopify:\/\/shop_images\/Surreal_7684fa80-1ff2-42e5-a188-eda238535503.jpg",
-            "title": "Surreal Art",
+            "title": "Surreal",
             "popup_background_color": "#fcf2e8",
             "popup_title": "",
             "popup_title_color": "#0d2b2b",
@@ -300,36 +345,6 @@
             "popup_btn_url": "shopify:\/\/collections\/surreal",
             "left": true
           }
-        },
-        "7ffcaee8-eae3-48f3-b659-f208ba42991b": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Flowers.jpg",
-            "title": "Flowers",
-            "popup_background_color": "#000000",
-            "popup_title": "",
-            "popup_title_color": "#fafaff",
-            "popup_text": "",
-            "popup_description_color": "#fafaff",
-            "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/floral",
-            "left": true
-          }
-        },
-        "0961a735-eda2-4c2c-a7c4-0ea6437b5489": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Space_e23ec4eb-9bd4-4a64-94c4-d7e2dc7c32df.jpg",
-            "title": "Space",
-            "popup_background_color": "#000000",
-            "popup_title": "",
-            "popup_title_color": "#fafaff",
-            "popup_text": "",
-            "popup_description_color": "#fafaff",
-            "popup_btn_copy": "",
-            "popup_btn_url": "shopify:\/\/collections\/space",
-            "left": true
-          }
         }
       },
       "block_order": [
@@ -337,13 +352,14 @@
         "82d2cc96-d2b1-4349-b7f1-4c9223e6f176",
         "item_3QQrEV",
         "7c219c9e-ef62-4df1-8c09-cb7211f1fb50",
+        "item_zgxPfR",
         "d88674ca-5101-4547-8740-9abba5891fec",
         "3640fa5c-e34e-40dd-a9c3-7e2a5dbfa452",
+        "7ffcaee8-eae3-48f3-b659-f208ba42991b",
+        "0961a735-eda2-4c2c-a7c4-0ea6437b5489",
         "6af4f2c7-c3fc-4b20-9ae5-abfb137f1c78",
         "d5cdba60-5ac4-4c04-8388-b3a585d3c601",
-        "d8eaad19-3aaa-4527-9d03-edb9cb337db2",
-        "7ffcaee8-eae3-48f3-b659-f208ba42991b",
-        "0961a735-eda2-4c2c-a7c4-0ea6437b5489"
+        "d8eaad19-3aaa-4527-9d03-edb9cb337db2"
       ],
       "settings": {
         "title": "",
@@ -655,9 +671,9 @@
             "title": "",
             "grid_items_count": 16,
             "button_text": "View all >",
-            "button_text_color": "#fff",
+            "button_text_color": "#ffffff",
             "show_overlay_dot": false,
-            "overlay_dot_color": "#fff"
+            "overlay_dot_color": "#ffffff"
           }
         }
       },
