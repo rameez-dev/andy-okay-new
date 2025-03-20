@@ -61,6 +61,24 @@
                                 <input type="text" class="Form__Input" name="{{ field_title }}" aria-label="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %} {% if block.settings.only_numbers %}oninput="this.value = this.value.replace(/[^0-9]/g, '');"{% endif %}>
                             {%- endif -%}
                             </div>
+                        {%- elsif block.type == 'currency' -%}
+                            <div class="Form__Item currency_form_item">
+                                {% if block.settings.label != blank %}
+                                    <label class="Form__FloatingLabel-custom">{{ block.settings.label | escape }} 
+                                        {% unless block.settings.is_required %}<span class="optional">(optional)</span>{% endunless %}
+                                    </label>
+                                {% endif %}
+                                <div class="currency_form_item_input">
+                                    <div class="currency_form_item_currency">{{ localization.country.currency.iso_code }}</div>
+                                    <input type="text" class="Form__Input" data-offer-currency="{{ localization.country.currency.iso_code }}" name="{{ field_title }}" aria-label="{{ block.settings.title | escape }}" {% if block.settings.is_required %}required{% endif %} oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                    <div class="currency_form_item_percentage_cont">
+                                        <span class="currency_form_item_percentage"></span>
+                                    </div>
+                                </div>
+                                <div class="currency_form_item_message hide">
+                                    An offer that is too low is less likely to be accepted by the artist. We recommend that you increase your offer to acquire this artwork.
+                                </div>
+                            </div>
                         {%- elsif block.type == 'dropdown' -%}
                             {%- assign values = block.settings.values | split: ', ' -%}
 
@@ -123,6 +141,40 @@
         });
     });
 
+    {% if product.metafields.custom.original_art_data != blank %}
+        {% assign original_art = product.metafields.custom.original_art_data.value %}
+        let estimated_price = {{ original_art.estimated_price | default: 0 }};
+        function getDiscountPercentage(price, offer) {
+            if (price <= 0) return 0;
+            let percentage = ((price - offer) / price) * 100;
+            return Math.min(100, Math.max(0, Math.round(percentage)));
+        }
+        $('.currency_form_item .Form__Input').on('change input', function(){
+            let curr_val = $(this).val();
+            if(estimated_price && curr_val) {
+                curr_val = parseInt(curr_val);
+                let percentage = getDiscountPercentage(estimated_price, curr_val);
+                if(percentage > 0) {
+                    $('.currency_form_item_percentage').text(`-${percentage}%`);
+                    if(percentage > 59) {
+                        $('.currency_form_item_message').removeClass("hide");
+                    }
+                    else {
+                        $('.currency_form_item_message').addClass("hide");
+                    }
+                }
+                else {
+                    $('.currency_form_item_percentage').text("");
+                    $('.currency_form_item_message').addClass("hide");
+                }
+            }
+            else {
+                $('.currency_form_item_percentage').text("");
+                $('.currency_form_item_message').addClass("hide");
+            }
+        })
+    {% endif %}
+
     function zendesk_submit(event){
         var error = document.getElementById('error-{{ section.id }}');
         var error_list = document.querySelector('#error-{{ section.id }} .Alert__ErrorList');
@@ -133,6 +185,11 @@
         btn.innerHTML = 'Submitting...';
 
         var formData = new FormData(form);
+
+        document.querySelectorAll("input[data-offer-currency]").forEach(input => {
+            let newValue = input.getAttribute("data-offer-currency") + ' ' +  input.value;
+            formData.set(input.name, newValue);
+        });
         
         var jsonData = {};
         var form_files = [];
@@ -286,6 +343,30 @@
             "id": "only_numbers",
             "label": "Only numbers allowed",
             "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "is_required",
+            "label": "Field is required",
+            "default": false
+        }
+        ]
+    },
+    {
+        "type": "currency",
+        "name": "Currency field",
+        "settings": [
+        {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "Custom field"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Name",
+            "default": "Custom field"
         },
         {
             "type": "checkbox",
