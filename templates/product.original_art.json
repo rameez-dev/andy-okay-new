@@ -406,12 +406,10 @@
           }
         },
         "text_AERVtx": {
-          "type": "text",
+          "type": "currency",
           "settings": {
             "label": "Your offer (in local currency)",
             "title": "25050361526162",
-            "use_long_text": false,
-            "only_numbers": false,
             "is_required": true
           }
         }
