@@ -16126,3 +16126,103 @@ a[name="new-currency-object"] {
 .currency_form_item_message.hide {
   display: none;
 }
+
+
+.custom_collection_section {
+  flex-direction: row;
+  font-family: Adobe Caslon Pro;
+  line-height: 1.8;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.custom_collection_section.no_image {
+  text-align: center;
+}
+.image_first {
+  flex-direction: row-reverse;
+}
+
+.custom_collection_section.mobile_section {
+  display: none;
+  margin-left: 10px;
+  margin-bottom: 35px;
+  font-size: 14px;
+  padding: 15px;
+  gap: 20px;
+}
+.custom_collection_section.desktop_section {
+  display: flex;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  padding: 40px;
+  gap: 40px;
+}
+.custom_collection_section img {
+  border-radius: 10px;
+}
+.custom_collection_section.desktop_section .collection_section_text {
+  padding-inline: 40px;
+  width: 100%;
+}
+.custom_collection_section.mobile_section .collection_section_text {
+  padding-inline: 20px;
+  padding-block: 15px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .custom_collection_section {
+    flex-direction: column;
+  }
+
+  .custom_collection_section.mobile_section {
+    display: flex;
+  }
+  .custom_collection_section.desktop_section {
+    display: none;
+  }
+}
+
+.custom_collection_bottom_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom_collection_bottom_box_cont {
+  width: 60%;
+  padding: 4% 7%;
+}
+.bottom_box_heading {
+  font-family: DIN Next LT Pro Cond;
+  font-weight: 500;
+  font-size: 20px;
+}
+.bottom_box_text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Adobe Caslon Pro;
+  font-size: 15px;
+  line-height: 22px;
+  margin: 10px 0;
+}
+@media only screen and (max-width: 768px) {
+  .custom_collection_bottom_box_cont {
+    width: 90%;
+    margin: 30px 0;
+    padding: 0;
+  }
+  .bottom_box_heading {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .bottom_box_text {
+    -webkit-line-clamp: 6;
+    line-height: 24px;
+    text-align: center;
+  }
+}

@@ -452,12 +452,71 @@
     {%- paginate collection.products by section.settings.grid_items_per_page -%}
       <div class="ProductListWrapper">
         <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
+          {% assign mobile_box_1 = false %}
+          {% assign desktop_box_1 = false %}
+          {% assign mobile_box_2 = false %}
+          {% assign desktop_box_2 = false %}
           {%- for product in collection.products -%}
-{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
-{% if product.type=='giftbox_ghost_product' %}{%continue%}{%endif%}
+            {% if product.type=='giftbox_ghost_product' %}{% continue %}{% endif %}
+            {% if product.type=='giftbox_ghost_product' %}{% continue %}{% endif %}
             <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
               {%- include 'product-item', show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
             </div>
+
+            {% if collection.metafields.custom.box_1 != blank %}
+              {% assign box_1 = collection.metafields.custom.box_1.value %}
+              {% if mobile_box_1 == false and forloop.index == 4 or collection.all_products_count < 5 and forloop.last %}
+                <div class="custom_collection_section mobile_section {% if box_1.image == blank %}no_image{% endif %}" style="background-color: {{ box_1.background_color | default: 'white' }}; color: {{ box_1.text_color | default: 'black' }}">
+                  {% if box_1.image != blank %}
+                    <img src="{{ box_1.image | image_url: width: 500 }}" width="100%" height="auto">
+                  {% endif %}
+                  <div class="collection_section_text">
+                    {{ box_1.text | newline_to_br }}
+                  </div>
+                </div>
+                {% assign mobile_box_1 = true %}
+              {% endif %}
+
+              {% if desktop_box_1 == false and forloop.index == 6 or collection.all_products_count < 7 and forloop.last %}
+                <div class="custom_collection_section desktop_section {% if box_1.image == blank %}no_image {% endif %}{% if box_1.image_first %}image_first{% endif %}" style="background-color: {{ box_1.background_color | default: 'white' }}; color: {{ box_1.text_color | default: 'black' }}">
+                  <div class="collection_section_text">
+                    {{ box_1.text | newline_to_br }}
+                  </div>
+                  {% if box_1.image != blank %}
+                    <img src="{{ box_1.image | image_url: width: 1000 }}" width="35%" height="auto">
+                  {% endif %}
+                </div>
+                {% assign desktop_box_1 = true %}
+              {% endif %}
+            {% endif %}
+
+            {% if collection.metafields.custom.box_2 != blank %}
+              {% assign box_2 = collection.metafields.custom.box_2.value %}
+              {% if mobile_box_2 == false and forloop.index == 8 or collection.all_products_count < 9 and forloop.last %}
+                <div class="custom_collection_section mobile_section {% if box_2.image == blank %}no_image{% endif %}" style="background-color: {{ box_2.background_color | default: 'white' }}; color: {{ box_2.text_color | default: 'black' }}">
+                  {% if box_2.image != blank %}
+                    <img src="{{ box_2.image | image_url: width: 500 }}" width="100%" height="auto">
+                  {% endif %}
+                  <div class="collection_section_text">
+                    {{ box_2.text | newline_to_br }}
+                  </div>
+                </div>
+                {% assign mobile_box_2 = true %}
+              {% endif %}
+
+              {% if desktop_box_2 == false and forloop.index == 12 or collection.all_products_count < 13 and forloop.last %}
+                <div class="custom_collection_section desktop_section {% if box_2.image == blank %}no_image {% endif %}{% if box_2.image_first %}image_first{% endif %}" style="background-color: {{ box_2.background_color | default: 'white' }}; color: {{ box_2.text_color | default: 'black' }}">
+                  <div class="collection_section_text">
+                    {{ box_2.text | newline_to_br }}
+                  </div>
+                  {% if box_2.image != blank %}
+                    <img src="{{ box_2.image | image_url: width: 1000 }}" width="35%" height="auto">
+                  {% endif %}
+                </div>
+                {% assign desktop_box_2 = true %}
+              {% endif %}
+            {% endif %}
+
           {%- endfor -%}
         </div>
       </div>
@@ -590,9 +649,11 @@
         font-family: 'Adobe Caslon Pro';
         font-style: italic;
         text-decoration: underline;
-        margin-top: 30px;
+        margin-top: -50px;
+        padding-top: 50px;
         margin-bottom: 20px;
         text-underline-offset: 5px;
+        background: linear-gradient(rgba(243, 243, 243, 0), rgba(243, 243, 243, 1), rgba(243, 243, 243, 1));
       }
       .collection-page-header-content-text{
           display: -webkit-box;
@@ -611,7 +672,7 @@
           margin-top: 0px;
         }
         .collection-page-header-content-text{
-          -webkit-line-clamp: 4;
+          -webkit-line-clamp: 3;
         }
         .collection-page-header-image{
           height: auto;
@@ -629,8 +690,8 @@
             </div>
             <div class="collection-page-header-content-container">
                 <span class="collection-page-header-content-title">{{ collection.title }}</span>  
-                <span class="collection-page-header-content-text">{{- collection.description -}}</span>
-                <span class="readmore" style="display: none;">Read More</span>
+                <span class="collection-page-header-content-text readmore_text">{{- collection.description -}}</span>
+                <span class="readmore" style="display: none;">Show More</span>
             </div>
           </div>
         {% comment %} customised header for collections with an image {% endcomment %}
@@ -1087,6 +1148,17 @@
           {{- collection_toolbar -}}
         {%- endif -%}
       </div>
+
+      {% if collection.metafields.custom.bottom_box != blank %}
+        {% assign box = collection.metafields.custom.bottom_box.value %}
+        <div class="custom_collection_bottom_box" style="background-color: {{ box.background_color | default: 'white' }}; color: {{ box.text_color | default: 'black' }}">
+          <div class="custom_collection_bottom_box_cont">
+            <div class="bottom_box_heading">{{ box.heading }}</div>
+            <div class="bottom_box_text readmore_text">{{ box.text | newline_to_br }}</div>
+            <span class="readmore" style="display: none;">Show More</span>
+          </div>
+        </div>
+      {% endif %}
     {%- else -%}
       <div class="EmptyState">
         <div class="Container">
@@ -1293,16 +1365,21 @@
 {% endschema %}
 
 <script>
-  var textbox = $('.collection-page-header-content-text');
   var readmore = $('.readmore');
-  var height = textbox.prop('scrollHeight');
+
+  readmore.each(function() {
+    var textbox = $(this).closest("div").find(".readmore_text");
+    var height = textbox.prop('scrollHeight');
+    if (height > 100) {
+      readmore.css("display", "inline-block")
+    }
+
+  })
   
-  if (height > 100) {
-    readmore.css("display", "inline-block")
-  }
 
   readmore.click(function(){
-    readmore.css("display", "none");
+    var textbox = $(this).closest("div").find(".readmore_text");
+    $(this).css("display", "none");
     textbox.css("display", "block");
   });
 </script>
