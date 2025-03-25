@@ -505,9 +505,34 @@
         "content": "<p>Andy okay and The Non-Violence Project Foundation are thrilled to announce a significant long-term charity collaboration, pairing the organization with some of the best artists in the world.<\/p>",
         "button_label": "Explore the collection",
         "button_link": "shopify:\/\/collections\/andy-okay-x-non-violence-project",
-        "bg_color": "#000000",
-        "text_color": "#ffffff"
+        "bg_color": "#f4f2eb",
+        "text_color": "#000000"
       }
+    },
+    "image_carousel_L6Czm8": {
+      "type": "image-carousel",
+      "blocks": {
+        "desktop_image_UKPcY7": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Non-Violence-Project-Foundation-X-Andy-okay_web.jpg",
+            "link": "https:\/\/andyokay.com\/collections\/andy-okay-x-non-violence-project"
+          }
+        },
+        "mobile_image_TArDPB": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Non-Violence-Project-Foundation-X-Andy-okay_00416493-77cf-4d18-93a9-714d8f6bbb31.jpg",
+            "link": "https:\/\/andyokay.com\/collections\/andy-okay-x-non-violence-project"
+          }
+        }
+      },
+      "block_order": [
+        "desktop_image_UKPcY7",
+        "mobile_image_TArDPB"
+      ],
+      "disabled": true,
+      "settings": {}
     },
     "1616425487e7f8d53c": {
       "type": "featured-collections",
@@ -576,20 +601,6 @@
     "image_carousel_6TtTf3": {
       "type": "image-carousel",
       "blocks": {
-        "mobile_image_bbRBVd": {
-          "type": "mobile_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_carousel_mob2.jpg",
-            "link": "shopify:\/\/products\/cool-people-live-here"
-          }
-        },
-        "desktop_image_TfMUQP": {
-          "type": "desktop_image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_carousel_web2.jpg",
-            "link": "shopify:\/\/products\/cool-people-live-here"
-          }
-        },
         "mobile_image_cgWgdQ": {
           "type": "mobile_image",
           "settings": {
@@ -602,6 +613,20 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/valentines_desk.jpg",
             "link": "shopify:\/\/collections\/exclusive-valentines-drop"
+          }
+        },
+        "mobile_image_bbRBVd": {
+          "type": "mobile_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_carousel_mob2.jpg",
+            "link": "shopify:\/\/products\/cool-people-live-here"
+          }
+        },
+        "desktop_image_TfMUQP": {
+          "type": "desktop_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_carousel_web2.jpg",
+            "link": "shopify:\/\/products\/cool-people-live-here"
           }
         },
         "mobile_image_KQ3pz8": {
@@ -620,10 +645,10 @@
         }
       },
       "block_order": [
-        "mobile_image_bbRBVd",
-        "desktop_image_TfMUQP",
         "mobile_image_cgWgdQ",
         "desktop_image_LBRweq",
+        "mobile_image_bbRBVd",
+        "desktop_image_TfMUQP",
         "mobile_image_KQ3pz8",
         "desktop_image_GQygX4"
       ],
@@ -771,8 +796,8 @@
         "1629722279ac42c7cf-0"
       ],
       "settings": {
-        "subheading": "Read the good news, artist interviews and some really impactful guides that makes a difference.",
-        "title": "The Good News",
+        "subheading": "Go beyond the frame – discover the stories behind the art that truly make a difference...",
+        "title": "OKAY UNFRAMED",
         "button_link": "https:\/\/andyokay.com\/blogs\/okay-blog",
         "button_text": "View All >",
         "button_text_color": "#000000"
@@ -1050,6 +1075,7 @@
     "16131224958a8baaef",
     "16059880715e2bb83c",
     "16616061592e8072c4",
+    "image_carousel_L6Czm8",
     "1616425487e7f8d53c",
     "161039065890033dbc",
     "image_carousel_6TtTf3",
