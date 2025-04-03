@@ -375,7 +375,7 @@
             "collection": "best-sellers",
             "title": "",
             "grid_items_count": 10,
-            "button_text": "View all >",
+            "button_text": "All",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -386,7 +386,7 @@
         "162537469203ba0fa9-0"
       ],
       "settings": {
-        "title": "Grab yours before it's gone",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -407,7 +407,7 @@
             "collection": "just-released",
             "title": "",
             "grid_items_count": 16,
-            "button_text": "View all >",
+            "button_text": "View all",
             "button_text_color": "#000000",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -418,7 +418,7 @@
         "16131224958a8baaef-0"
       ],
       "settings": {
-        "title": "The latest and greatest",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -543,7 +543,7 @@
             "collection": "motivational-art",
             "title": "",
             "grid_items_count": 12,
-            "button_text": "View all >",
+            "button_text": "View all",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -554,7 +554,7 @@
         "1616425487e7f8d53c-0"
       ],
       "settings": {
-        "title": "Boost your mood",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -575,7 +575,7 @@
             "collection": "pop-art",
             "title": "Pop Art",
             "grid_items_count": 16,
-            "button_text": "View all >",
+            "button_text": "View all",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -586,7 +586,7 @@
         "161039065890033dbc-0"
       ],
       "settings": {
-        "title": "Icons reimagined",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -663,7 +663,7 @@
             "collection": "photography",
             "title": "PHOTO ART",
             "grid_items_count": 16,
-            "button_text": "View all >",
+            "button_text": "View all",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -674,7 +674,7 @@
         "18bd032c-7869-430d-8d86-b3c9c5e04384"
       ],
       "settings": {
-        "title": "Perfectly fits any room",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -695,7 +695,7 @@
             "collection": "illustrations-1",
             "title": "",
             "grid_items_count": 16,
-            "button_text": "View all >",
+            "button_text": "View all",
             "button_text_color": "#ffffff",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -706,7 +706,7 @@
         "collection_DLjGVz"
       ],
       "settings": {
-        "title": "Modern visual poetry",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -727,7 +727,7 @@
             "collection": "astronauts",
             "title": "",
             "grid_items_count": 16,
-            "button_text": "View all >",
+            "button_text": "View all",
             "button_text_color": "#0086bc",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
@@ -738,7 +738,7 @@
         "161642521918356043-0"
       ],
       "settings": {
-        "title": "Above and beyond",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -759,8 +759,8 @@
             "collection": "going-fast",
             "title": "ALMOST GONE",
             "grid_items_count": 8,
-            "button_text": "View all >",
-            "button_text_color": "#ffffff",
+            "button_text": "View all",
+            "button_text_color": "#2200cc",
             "show_overlay_dot": false,
             "overlay_dot_color": "#ffffff"
           }
@@ -770,7 +770,7 @@
         "1643642736f42e4efd-0"
       ],
       "settings": {
-        "title": "Soon lost forever",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -856,7 +856,7 @@
         "1597932365863-0"
       ],
       "settings": {
-        "title": "Gone forever",
+        "title": "",
         "subheading_color": "#8a8a8a",
         "layout_mode": "carousel",
         "show_product_info": true,
@@ -871,15 +871,6 @@
     "160614414236913c9b": {
       "type": "tags",
       "blocks": {
-        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9": {
-          "type": "tag",
-          "settings": {
-            "label": "Love Valentines Art",
-            "url": "shopify:\/\/collections\/exclusive-valentines-drop",
-            "filling_color": "#f0f0f0",
-            "text_color": "#000000"
-          }
-        },
         "ee60afc2-b8f1-4e59-a424-5e67f69905d9": {
           "type": "tag",
           "settings": {
@@ -954,7 +945,6 @@
         }
       },
       "block_order": [
-        "5cf79a58-43d3-43b2-bfb2-e3ab79fb99b9",
         "ee60afc2-b8f1-4e59-a424-5e67f69905d9",
         "606c5e46-b137-4b08-9d2d-1e27294edfcc",
         "8859c39a-9d69-43ce-b677-20a87cac74a0",
