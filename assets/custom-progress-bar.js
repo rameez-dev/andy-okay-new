@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update progress bar based on the cart count
     function updateProgressBar(cartCount) {
-        console.log('this is update progress bar function');
         let step = Math.min(cartCount, maxCartItems); // Don't exceed the max steps
         const stepProgress = [0, 15, 38, 64, 87, 100]; // Adjust progress percentages
         
@@ -120,8 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             Promise.all([fetchDiscountCollection(collectionHandle), fetchCart()])
                 .then(([discountCollectionProductIds, cart]) => {
                     const eligibleCount = countEligibleProducts(cart, discountCollectionProductIds);
-
-                    console.log(`Total eligible items in cart: ${eligibleCount}`);
                     updateProgressBar(eligibleCount);
                 })
                 .catch(error => console.error('Error in checking cart for discounts:', error));
@@ -136,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create a MutationObserver to detect changes in innerText
     const observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-            console.log('innerText changed to:', elementToObserve.innerText);
             checkCartForDiscounts();
         });
     });

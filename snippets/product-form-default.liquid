@@ -2521,7 +2521,6 @@ THE EXACT SAME ATTRIBUTES.
         $("#reset-passe-money").css("color", "#af182b");
         $(".passe-money").css("opacity", "1");
       }
-      console.log('herere');
       xVariantPrice = xVariants[xid].price;
       xVariantCompare_at_price = xVariants[xid].compare_at_price;
       let selected_frame_id = $('input[name="frame"]:checked').val();
@@ -2590,12 +2589,10 @@ THE EXACT SAME ATTRIBUTES.
         let formData = {
           'items': [{
             'id': xid,
-            'quantity': 1,
-            properties: {
-              /*_compare_at_price: cm_at_price_to_pass*/
-            }
+            'quantity': 1
           }]
         };
+        let itemProperties = {};
         if( $('input[name="frame"]:checked').val() && $('input[name="frame"]:checked').val() != 0 ){
 
         var frame_cm_at_price_to_pass = (Shopify.formatMoney(frames_all_variants[selected_frame_id].compare_at_price, "{{ shop.money_format }}")).replace(/\.00$/, '');
@@ -2604,15 +2601,22 @@ THE EXACT SAME ATTRIBUTES.
           properties: {
               /*_compare_at_price: frame_cm_at_price_to_pass*/
             } });
+            itemProperties['Frame Selection'] = ($('input[name="frame"]:checked').attr('title')).toUpperCase();
         
           if ($("#mat_board_input").is(':checked')) {
               formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
+              itemProperties['Matboard Selection'] = 'Yes';
           }
         }
         else if (typeof isFrame !== "undefined" && isFrame) {
           if ($("#mat_board_input").is(':checked')) {
               formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
+              itemProperties['Matboard Selection'] = 'Yes';
           }
+        }
+
+        if (Object.keys(itemProperties).length > 0) {
+          formData.items[0].properties = itemProperties;
         }
 
         fetch(window.Shopify.routes.root + 'cart/add.js', {
@@ -2687,13 +2691,10 @@ THE EXACT SAME ATTRIBUTES.
       let formData = {
         'items': [{
           'id': xid,
-          'quantity': 1,
-          properties: {
-            /*_compare_at_price: cm_at_price_to_pass*/
-          }
+          'quantity': 1
         }]
       };
-
+      let itemProperties = {};
       if( $('input[name="frame"]:checked').val() && $('input[name="frame"]:checked').val() != 0 ){
         var frame_cm_at_price_to_pass = (Shopify.formatMoney(frames_all_variants[selected_frame_id].compare_at_price, "{{ shop.money_format }}")).replace(/\.00$/, '');
         formData['items'].push({ 
@@ -2702,15 +2703,23 @@ THE EXACT SAME ATTRIBUTES.
               /*_compare_at_price: frame_cm_at_price_to_pass*/
             }
           });
+          itemProperties['Frame Selection'] = ($('input[name="frame"]:checked').attr('title')).toUpperCase();
+        
         if ($("#mat_board_input").is(':checked')) {
           console('mat board is checked ...');
             formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
+            itemProperties['Matboard Selection'] = 'Yes';
         }
       }
       else if (typeof isFrame !== "undefined" && isFrame) {
         if ($("#mat_board_input").is(':checked')) {
             formData['items'].push({ 'id': $("#mat_board_input").attr('value') });
+            itemProperties['Matboard Selection'] = 'Yes';
         }
+      }
+
+      if (Object.keys(itemProperties).length > 0) {
+        formData.items[0].properties = itemProperties;
       }
 
       fetch(window.Shopify.routes.root + 'cart/add.js', {
